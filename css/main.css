@@ -1,0 +1,79 @@
+/* CSS Document */
+/* Inital Design by James P. Galovic */
+/* Version 3.1 */
+
+/* Font */
+@font-face {
+	font-family: Nevis;
+	src: url(../font/nevis.ttf);
+}
+
+/* General Settings */
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: Nevis;
+}
+
+body {
+	background-color: #555555;
+	margin: 0;
+	padding: 0;
+}
+
+/* Layout Settings */
+.full {
+	display: block;
+	width: 100%;
+}
+
+.half {
+	display: block;
+	width: 50%;
+}
+
+.quater {
+	display: block;
+	width: 25%;
+}
+
+.flex_container {
+	-moz-display: flex;
+	-webkit-display: flex;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* Header & Menu Settings */
+#site_header {
+	background-color: #222222;
+	border-bottom: 1px solid #FFFFFF;
+	padding: 10px;
+	width: 100%;
+	z-index: 100;
+}
+
+#site_header img {
+	height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
