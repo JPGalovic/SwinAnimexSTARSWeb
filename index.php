@@ -12,7 +12,7 @@
 		echo('<meta charset="utf-8">');
 		echo('<meta name="viewport" content="width=device-width, initial-scale=1">');
 		echo('<title>SwinAnime</title>');
-		echo('<link href="style/main.css" rel="stylesheet" type="text/css">');
+		echo('<link href="css/main.css" rel="stylesheet" type="text/css">');
 	echo('</head>');
 
 	// site header

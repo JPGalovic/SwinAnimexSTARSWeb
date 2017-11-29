@@ -46,7 +46,7 @@ body {
 }
 
 /* Header & Menu Settings */
-#site_header {
+.site_header {
 	background-color: #222222;
 	border-bottom: 1px solid #FFFFFF;
 	padding: 10px;
@@ -54,10 +54,30 @@ body {
 	z-index: 100;
 }
 
-#site_header img {
+.site_header img {
 	height: 20px;
 }
 
+/* Site Footer */
+.site_footer {
+	background-color: #222222;
+	border-top: 1px solid #FFFFFF;
+	bottom: 0px;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-weight: lighter;
+	letter-spacing: 2px;
+	padding: 10px;
+	position: fixed;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+	z-index: 100;
+}
+
+.buffer_bottom {
+	height: 31px;
+}
 
 
 
