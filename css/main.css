@@ -38,11 +38,28 @@ body {
 	width: 25%;
 }
 
+/* Containers */
 .flex_container {
 	-moz-display: flex;
 	-webkit-display: flex;
 	display: flex;
 	flex-wrap: wrap;
+}
+
+.flex_half {
+	-moz-display: inline-flex;
+	-webkit-display: inline-flex;
+	display: inline-flex;
+	flex-wrap: wrap;
+	width: 50%;
+}
+
+.flex_quater {
+	-moz-display: inline-flex;
+	-webkit-display: inline-flex;
+	display: inline-flex;
+	flex-wrap: wrap;
+	width: 50%;
 }
 
 /* Header & Menu Settings */
@@ -79,7 +96,20 @@ body {
 	height: 31px;
 }
 
+/* Page Header */
+#page_header {
+	background-color: #B3B3B3;
+	text-align: center;
+}
 
+#page_header section {
+	padding: 15px;
+}
+
+#page_header img {
+	max-width: 200px;
+	width: 90%;
+}
 
 
 

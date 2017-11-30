@@ -21,7 +21,12 @@
 
 
 	// site body
-
+	//if($page == 'all_events')
+		//include('page/all_events.php');
+	//else if($page == 'full')
+		//include('page/full.php');
+	//else
+		include('page/home.php');
 
 	// site footer
 	echo('<div class="buffer_bottom"></div>');
