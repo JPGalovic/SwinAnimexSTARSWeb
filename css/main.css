@@ -22,6 +22,10 @@ body {
 	padding: 0;
 }
 
+article {
+	padding: 0;
+}
+
 /* Layout Settings */
 .full {
 	display: block;
