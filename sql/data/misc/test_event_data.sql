@@ -2,10 +2,16 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 		("2016-10-06 11-30-00", 0, "Hawthron Sessions", 0, 1372064459476406, "Unione_URL")
 	,	("2016-10-13 11-30-00", 0, "Hawthron Sessions", 0, 1271401466213157, "Unione_URL")
 	,	("2016-10-20 11-30-00", 0, "Hawthron Sessions", 0, 1058220767546615, "Unione_URL")
+	,	("2018-10-06 11-30-00", 0, "Hawthron Sessions", 0, 1372064459476406, "Unione_URL")
+	,	("2018-10-13 11-30-00", 0, "Hawthron Sessions", 0, 1271401466213157, "Unione_URL")
+	,	("2018-10-20 11-30-00", 0, "Hawthron Sessions", 0, 1058220767546615, "Unione_URL")
 ;
 
 INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
 		("2016-10-06 11-30-00", "Ben-to", 0, 1)
 	,	("2016-10-13 11-30-00", "Ben-to", 0, 2)
 	,	("2016-10-20 11-30-00", "Ben-to", 0, 3)
+	,	("2018-10-06 11-30-00", "Ben-to", 0, 1)
+	,	("2018-10-13 11-30-00", "Ben-to", 0, 2)
+	,	("2018-10-20 11-30-00", "Ben-to", 0, 3)
 ;

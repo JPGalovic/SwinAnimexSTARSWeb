@@ -111,8 +111,17 @@ body {
 	width: 90%;
 }
 
+/* Event Table Display */
+#event_display {
+	background-color: #FFFFFF;
+}
 
+#event_display h4 {
+	padding-left: 10px;
+	text-transform: uppercase;
+}
 
+/* Event Card Display */
 
 
 
