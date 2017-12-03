@@ -4,7 +4,7 @@
 	include('sql/sql_login.php');
 
 	//Construct Section
-	echo('<article id="event_display">');
+	echo('<article class="flex_container" id="event_display">');
 
 	//Get Next 4 Events
 	include('sql/events/get_next_four.php');
@@ -18,7 +18,7 @@
 			include('sql/events/get_previous_four.php');
 			if($get_previous_four_ok)
 			{
-				echo('<header class="flex_container"><h4>Past Events:</h4></header>');
+				echo('<header class="full"><h4>Past Events:</h4></header>');
 				echo('<section class="flex_container">');
 				
 				while($event_row = $get_next_four_data->fetch_assoc())
@@ -43,7 +43,7 @@
 		}
 		else
 		{
-			echo('<header><h4>Upcoming Events:</h4></header>');
+			echo('<header class="full"><h4>Upcoming Events:</h4></header>');
 			echo('<section class="flex_container">');
 			
 			while($event_row = $get_next_four_data->fetch_assoc())

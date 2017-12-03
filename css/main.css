@@ -22,23 +22,22 @@ body {
 	padding: 0;
 }
 
-article {
-	padding: 0;
-}
-
 /* Layout Settings */
 .full {
 	display: block;
+	margin: 0;
 	width: 100%;
 }
 
 .half {
 	display: block;
+	margin: 0;
 	width: 50%;
 }
 
 .quater {
 	display: block;
+	margin: 0;
 	width: 25%;
 }
 
