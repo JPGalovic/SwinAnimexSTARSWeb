@@ -125,6 +125,18 @@ body {
 }
 
 /* Event Card Display */
+#event_card {
+	padding: 10px;
+}
+
+#event_card img {
+	width: 100%;
+}
+
+#classification {
+	width: 75%;
+	max-width: 250px;
+}
 
 
 
@@ -138,4 +150,20 @@ body {
 
 
 
+/* Mobile & Small Tablet */
+@media (max-width: 767px){
+	.quater	{
+		width: 100%;
+	}
+	
+	.half {
+		width: 100%;
+	}
+}
 
+/* Small Desktops */
+@media (min-width: 768px) and (max-width: 1196px){
+	.quater	{
+		width: 50%;
+	}
+}
