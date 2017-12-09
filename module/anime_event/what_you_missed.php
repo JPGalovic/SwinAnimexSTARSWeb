@@ -9,7 +9,7 @@
 			$number_of_episodes += $session_row['NUMBER_OF_EPISODES'];
 		if($number_of_episodes > 0)
 		{
-			include('sql/events/get_anime_episode_data.php');
+			include('sql/anime/episode/get_anime_episode_data.php');
 			if($get_anime_episode_ok)
 			{
 				echo('<article class="flex_container" id="what_you_missed">');
@@ -33,18 +33,3 @@
 		}
 	}
 ?>
-
-
-
-	
-	
-		
-		
-	
-	
-	
-		
-		
-		
-	
-	
