@@ -51,11 +51,12 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("M - Infrequent coarse language")
 	,	("M - Infrequent animated violence and sexual references")
 	,	("M - Animated violence and infrequent coarse language")
+	,	("M - Sexualised imagery and animated nudity")
 ;
 
 -- Data for MA15+ Classifications
 INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
-("MA15+ - Frequent animated nudity and sexualised imagery")
+		("MA15+ - Frequent animated nudity and sexualised imagery")
 	,	("MA15+ - Strong animated violence")
 	,	("MA15+ - Strong animated violence and sex scenes")
 	,	("MA15+ - Strong themes and animated violence")
