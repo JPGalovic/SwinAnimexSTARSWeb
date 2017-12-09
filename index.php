@@ -13,6 +13,7 @@
 		echo('<meta name="viewport" content="width=device-width, initial-scale=1">');
 		echo('<title>SwinAnime</title>');
 		echo('<link href="css/main.css" rel="stylesheet" type="text/css">');
+		echo('<link href="image/icon.png" rel="icon">');
 	echo('</head>');
 
 	// site header
@@ -21,11 +22,11 @@
 
 
 	// site body
-	//if($page == 'all_events')
-		//include('page/all_events.php');
-	//else if($page == 'full')
-		//include('page/full.php');
-	//else
+	if($page == 'all_events')
+		include('page/all_events.php');
+	else if($page == 'anime_event')
+		include('page/anime_event.php');
+	else
 		include('page/home.php');
 
 	// site footer
