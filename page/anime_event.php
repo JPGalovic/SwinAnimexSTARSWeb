@@ -26,6 +26,9 @@
 						
 						//Construct Page
 						include('module/anime_event/event_header.php');
+						include('module/anime_event/volume_plug.php');
+						include('module/anime_event/what_you_missed.php');
+						include('module/home/events_table.php');
 					}
 				}
 			}

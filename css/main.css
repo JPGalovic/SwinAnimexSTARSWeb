@@ -80,10 +80,15 @@ body {
 	padding: 10px;
 	width: 100%;
 	z-index: 100;
+	position: fixed;
 }
 
 .site_header img {
 	height: 20px;
+}
+
+.buffer_top {
+	height: 45px;
 }
 
 /* Site Footer */
@@ -186,6 +191,33 @@ body {
 #classification {
 	width: 75%;
 	max-width: 250px;
+}
+
+/* Volume Display Table */
+#anime_volume_table {
+	background-color: #FFFFFF;
+}
+
+#anime_volume_table header {
+	padding: 15px;
+	background-image: url("../image/pallerax.png");
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: #FFFFFF;
+}
+
+#anime_volume_table aside {
+	padding: 15px;
+}
+
+#anime_volume_table section{
+	max-width: 180px;
+	padding: 10px;
+}
+
+#anime_volume_table section img{
+	max-height: 220px;
 }
 
 /* Sponsor */
@@ -296,6 +328,41 @@ body {
 	-moz-transform: scale(1.1);
 	-webkit-transform: scale(1.1);
 	transform: scale(1.1);
+}
+
+/* What you missed */
+#what_you_missed {
+	color: #FFFFFF;
+}
+
+#what_you_missed header {
+	padding-left: 15px;
+}
+
+#what_you_missed h1 {
+	display: inline-block;
+	font-size: 50px;
+}
+
+#what_you_missed h4 {
+	font-size: 21px;
+	color: #555555;
+	font-weight: bold;
+}
+
+#what_you_missed_image {
+	float: right;
+	height: 100%;
+}
+
+#what_you_missed section {
+	background-color: #FFFFFF;
+	color: #000000;
+	padding: 10px;
+}
+
+#what_you_missed section img {
+	width: 100%;
 }
 
 /* Mobile & Small Tablet */
