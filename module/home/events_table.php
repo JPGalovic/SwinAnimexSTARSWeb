@@ -18,7 +18,7 @@
 			include('sql/events/get_previous_four.php');
 			if($get_previous_four_ok)
 			{
-				echo('<header class="full"><h4>Past Events:</h4></header>');
+				echo('<header class="full"><h1>Past Events:</h1><img src="image/events_table.png" id="event_display_image"></header>');
 				echo('<section class="flex_container">');
 				
 				while($event_row = $get_next_four_data->fetch_assoc())
@@ -43,7 +43,7 @@
 		}
 		else
 		{
-			echo('<header class="full"><h4>Upcoming Events:</h4></header>');
+			echo('<header class="full"><h1>Upcoming Events:</h1><img src="image/events_table.png" id="event_display_image"></header>');
 			echo('<section class="flex_container">');
 			
 			while($event_row = $get_next_four_data->fetch_assoc())

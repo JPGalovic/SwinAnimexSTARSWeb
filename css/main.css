@@ -127,6 +127,15 @@ body {
 	width: 90%;
 }
 
+#page_header a {
+	text-decoration: none;
+	color: #DA5454;
+}
+
+#page_header a:hover {
+	color: #DA0000;
+}
+
 /* Event Page Header */
 #event_page_header {
 	background-color: #FFFFFF;
@@ -174,9 +183,21 @@ body {
 	background-color: #FFFFFF;
 }
 
-#event_display h4 {
-	padding-left: 10px;
+#event_display header {
+	background-color: #555555;
+	padding-left: 15px;
+}
+
+#event_display header h1 {
+	color: #FFFFFF;
+	display: inline-block;
+	font-size: 50px;
 	text-transform: uppercase;
+}
+
+#event_display_image {
+	float: right;
+	height: 100%;
 }
 
 /* Event Card Display */
@@ -186,6 +207,21 @@ body {
 
 #event_card img {
 	width: 100%;
+}
+
+#event_card h4 {
+	font-size: 18px;
+	color: #555555;
+	font-weight: bold;
+}
+
+#event_card a {
+	text-decoration: none;
+	color: #DA5454;
+}
+
+#event_card a:hover {
+	color: #DA0000;
 }
 
 #classification {
@@ -264,34 +300,35 @@ body {
 	background-color: #FFFFFF;
 }
 
-#contact_card {
-}
-
 #contact_card section{
 	padding: 10px;
 	text-align: center;
 }
 
 #contact_card h3 {
-	color: #B3B3B3;
+	color: #555555;
 	text-transform: uppercase;
 	letter-spacing: 4px;
 }
 
 #contact_card h4 {
-	color: #B3B3B3;
+	color: #555555;
 	margin-left: 10px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
 
 #contact_card p {
-	color: #717070;
+	color: #333333;
 }
 
 #contact_card a {
 	color: #DA5454;
 	text-decoration: none;
+}
+
+#contact_card a:hover {
+	color: #DA0000;
 }
 
 #h_map, #c_map, #w_map {
