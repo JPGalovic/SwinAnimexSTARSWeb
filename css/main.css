@@ -411,11 +411,23 @@ body {
 	.half {
 		width: 100%;
 	}
+	
+	#what_you_missed_image {
+		display: none;
+	}
+	
+	#event_display_image {
+		display: none;
+	}
 }
 
 /* Small Desktops */
 @media (min-width: 768px) and (max-width: 1196px){
 	.quater	{
 		width: 50%;
+	}
+	
+	#event_display_image {
+		display: none;
 	}
 }
