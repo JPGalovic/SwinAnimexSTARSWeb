@@ -5,7 +5,7 @@ INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIP
 		 "It's time for second term, and the assassination classroom is ready for a semester filled with intense training, studying, and new ways to kill their teacher. But even their most creative plans are falling flatter than a two-ton pudding. That is, until a powerful student decides to come back to class! Koro Sensei's days may finally be numbered. As their skills grow, so does their confidence. But will this lead to a successful assassination or reckless missteps that land them in trouble They'll have to keep their attitudes in check because a dangerous lesson with the Reaper awaits them. Not to mention clashing against A Class in another harsh round of midterms! Through it all, they'll have to face a question more challenging than any final exam-do they save the world or save the world's greatest teacher...",
 		 "It's time for second term, and the assassination classroom is ready for a semester filled with intense training, studying, and new ways to kill their teacher.",
 		 "Madman",
-		 "&copy; Â&copyYusei Matsui/SHUEISHA,ASSASSINATION CLASSROOM Committee"
+		 "&copy; &#194;&copyYusei Matsui/SHUEISHA,ASSASSINATION CLASSROOM Committee"
 		)
 ;
 

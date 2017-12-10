@@ -252,8 +252,17 @@ body {
 	padding: 10px;
 }
 
-#anime_volume_table section img{
+#anime_volume_table section img {
 	max-height: 220px;
+}
+
+#anime_volume_table a {
+	text-decoration: none;
+	color: #DA5454;
+}
+
+#anime_volume_table a:hover {
+	color: #DA0000;
 }
 
 /* Sponsor */
