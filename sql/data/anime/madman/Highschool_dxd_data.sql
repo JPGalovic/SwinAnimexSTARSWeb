@@ -1,22 +1,23 @@
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
-		("High School DxD",
+		("HighSchool DxD",
 		 12,
 		 "The story centers around Issei Hyoudou, a perverted high school student who was nearly nearly killed by his first date, later revealed to be a Fallen Angel. He is soon saved by Rias Gremory, a crimson-haired beauty who reveals herself as a Devil of the Gremory Family, and finds out that he himself has been reborn as a Devil made to serve her. The story focuses on the ongoing battle among the Fallen Angels, Angels, and Devils, and Issei's ongoing relationship with Rias, her peerage, alongside other Devils and Angels.",
 		 "The story centers around Issei Hyoudou, a perverted high school student who was nearly nearly killed by his first date, later revealed to be a Fallen Angel. He is soon saved by Rias Gremory, a crimson-haired beauty who reveals herself as a Devil of the Gremory Family, and finds out that he himself has been reborn as a Devil made to serve her. The story focuses on the ongoing battle among the Fallen Angels, Angels, and Devils, and Issei's ongoing relationship with Rias, her peerage, alongside other Devils and Angels.",
-		 "Madman"
+		 "Madman",
 		 "&copy;Tetsuya Yanagisawa, Takao Yoshioka / TNK"
 		)
 ;
 
 INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
-		("High School DxD (Blu-Ray)",
+		("HighSchool DxD",
 		 4,
 		 1,
 		 "MA15+ - Strong sexual references, animated nudity and violence",
 		 12,
 		 "https://www.madman.com.au/catalogue/view/20932"
-	,	("High School DxD (DVD)",
+		) 
+	,	("HighSchool DxD",
 		 4,
 		 1,
 		 "MA15+ - Strong sexual references, animated nudity and violence",
@@ -53,7 +54,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 		)
 	,	("Highschool DxD",
 		 6,
-		 ""I Work as a Devil!",
+		 "I Work as a Devil!",
 		 "After Raynare's demise, new living arrangements are made for Asia, who has been living in the club's room. Meanwhile, Issei begins a new training regimen with Rias to improve his physical fitness. During training, Issei is surprised to find Asia and her boxes. Rias asked Asia her living preferences and she chose Issei's home. Asia also begins attending school where she is placed in Issei's class. She quickly attracts other classmates including jealousy from Matsuda and Motohama. The following night, Issei is assigned another job and is unable to receive a pact. Issei thinks it over during P.E. class and ends up sleeping in the infirmary along with Rias. Noting Issei's lecherous desires, Rias offers her body to him in exchange for a pact. That night, Rias accompanies him on his next job: helping a foreign exchange student named Susan inside a Samurai outfit to retrieve her notebook. She also requests help to attract her love. After the unusual meet up with her love, Issei successfully completes the job. He tries to get his reward from Rias, but loses when the other members arrive. Rias instead gives him a hug, shocking everyone. "
 		)
 	,	("Highschool DxD",
