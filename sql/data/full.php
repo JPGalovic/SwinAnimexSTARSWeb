@@ -9,7 +9,6 @@
 	// Anime Data
 	include('anime/hanabee/plastic_memories_data.sql');
 
-	include('anime/madman/assassination_classroom_data.sql');
 	include('anime/madman/assassination_classroom_season_2_data.sql');
 	include('anime/madman/ben-to_data.sql');
 	include('anime/madman/highschool_dxd_data.sql');
