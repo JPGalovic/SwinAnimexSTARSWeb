@@ -4,7 +4,7 @@ INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIP
 		 24,
 		 "Takakura Kanba and his twin brother Shoma live together with their younger sister Himari. Their parents are missing and Himari is critically ill. Kanba and Shoma will do anything to make her last days memorable. On a visit to the aquarium, they buy her a cute, yet silly penguin hat. The trip abruptly ends when Himari collapses and dies, but the mysterious spirit that resides in the penguin hat brings her back to life... temporarily, on the condition that they find the &quot;penguindrum.&quot; To help them on their quest, each sibling is accompanied by a penguin that only they can see. Unfortunately, these cute penguins are anything but helpful, in their quest to find the Penguindrum, and change Himari's fate.",
 		 "Takakura Kanba and his twin brother Shoma live together with their younger sister Himari. Their parents are missing and Himari is critically ill. Kanba and Shoma will do anything to make her last days memorable. On a visit to the aquarium, they buy her a cute, yet silly penguin hat...",
-		 "Siren Visual",
+		 "Siren",
 		 ""
 		)
 ;
@@ -87,7 +87,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 		 "The Wheel That Spins Us Round",
 		 "Kanba goes home and is called by Sanetoshi claiming that Himari will die once more. Shoma goes into detail of what happened 16 years ago, as Shoma and Kanba's parents were high-ranking members of a religious cult and were responsible for a terrible incident which killed Momoka. Himari still possessed loses her strength and tells Shoma and Ringo to acquire the Penguin Drum and to stop &quot;them&quot;. Himari is then transferred to a hospital and Kanba is called by Shoma. He arrives to find Himari lying dead and tries to once more make a pact to give her his life, but it does not work as she says she must leave to &quot;The Destination of Fate&quot;. Just as Himari seems to be truly dead, Sanetoshi appears. "
 		)
-	,	("Mawaru Penguindrum",`
+	,	("Mawaru Penguindrum",
 		 13,
 		 "Our Crime & Punishment",
 		 "Sanetoshi offers Kanba a special medicine to revive Himari, though mentions there will be a steep price in return. Kanba recalls three years ago when he and Shoma learned about their parents being criminals. Later, Sanetoshi contacts Natsume, who had also made a contract with him to save Mario, telling her who has the other half of Ringo's Diary. Meanwhile, Ringo talks to Tabuki, who helps put her worries to rest."
