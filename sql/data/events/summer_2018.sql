@@ -41,6 +41,10 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 	,	("2018-02-02 11-30-00", "Assassination Classroom Season 2", 0, 2)
 	,	("2018-02-09 11-30-00", "Assassination Classroom Season 2", 0, 3)
 	
+	,	("2018-01-26 16-30-00", "Little Busters Refrain", 0, 1)
+	,	("2018-02-02 16-30-00", "Little Busters Refrain", 0, 2)
+	,	("2018-02-09 16-30-00", "Little Busters Refrain", 0, 3)
+	
 	,	("2018-01-26 19-30-00", "Queens Blade 2 The Evil Eye", 0, 1)
 	,	("2018-02-02 19-30-00", "Queens Blade 2 The Evil Eye", 0, 2)
 	,	("2018-02-09 19-30-00", "Queens Blade 2 The Evil Eye", 0, 3)
