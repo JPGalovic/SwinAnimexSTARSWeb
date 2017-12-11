@@ -18,7 +18,7 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		 "https://www.madman.com.au/catalogue/view/20932"
 		) 
 	,	("HighSchool DxD",
-		 4,
+		 3,
 		 1,
 		 "MA15+ - Strong sexual references, animated nudity and violence",
 		 12,
@@ -27,15 +27,15 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 ;
 
 INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
-       ,	("Highschool DxD",
+        ("Highschool DxD",
 		 1,
-		 I Got a Girlfriend!,
+		 "I Got a Girlfriend!",
 		 "Issei Hyodo is a high school student who is unpopular with girls at Kuoh Academy. One day, Rias Gremory, the crimson-red haired top idol of the academy and president of the Occult Research Club, discovers Issei and asks her vice-president Akeno Himejima about his identity. As he dreams of having a girlfriend, another girl named Yuma Amano shyly asks Issei out, to his excitement. Shortly afterwards, Yuma asks Issei to die for her sake and reveals herself as Raynare, a fallen angel. After Raynare kills Issei, he sees a vision of Rias. Assuming the incident to be a dream, he resumes his normal life. However, when Issei encounters another fallen angel, Dohnaseek, he is wounded. Just as Dohnaseek is about to finish Issei, Rias intervenes and saves him. The next morning, Issei discovers he and Rias are naked together in his bedroom. Reassuring that the dreams were real, Rias introduces herself as a devil and his new master. "
 		)
-       ,         ("Highschool DxD",
+       ,("Highschool DxD",
 		 2,
 		 "I'm Done Being Human!",
-		 "Rias explains to Issei that she used her magic to heal his wounds as she gets ready for school, and also reveals that she is a virgin. At Kuoh Academy, the school prince Yuto Kiba leads Issei to the Occult Research Club where he meets the popular "mascot" girl Koneko Toujou and the club's vice-president Akeno Himejima. Rias briefs Issei on the current situation with angels, fallen angels, and devils; and the duties assigned to him. After going to his first assignment which involves an otaku, he encounters another fallen angel named Kalawarner, but uses his Sacred Gear to transform his hand into an armored Dragon Arm and defeats her. Shortly afterwards, Rias warns Issei that since he has the Sacred Gear, he will be sought after by the fallen angels. "
+		 "Rias explains to Issei that she used her magic to heal his wounds as she gets ready for school, and also reveals that she is a virgin. At Kuoh Academy, the school prince Yuto Kiba leads Issei to the Occult Research Club where he meets the popular &quot;mascot&quot; girl Koneko Toujou and the club's vice-president Akeno Himejima. Rias briefs Issei on the current situation with angels, fallen angels, and devils; and the duties assigned to him. After going to his first assignment which involves an otaku, he encounters another fallen angel named Kalawarner, but uses his Sacred Gear to transform his hand into an armored Dragon Arm and defeats her. Shortly afterwards, Rias warns Issei that since he has the Sacred Gear, he will be sought after by the fallen angels."
 		)
 	,	("Highschool DxD",
 		 3,
