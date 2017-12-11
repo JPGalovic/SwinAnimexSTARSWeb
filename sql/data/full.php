@@ -17,6 +17,7 @@
 	include('anime/madman/yurikuma_arashi_data.sql');
 	
 	include('anime/siren/mawaru_penguindrum_data.sql');
+	include('anime/siren/queens_blade_2_data.sql')
 	
 	// Events Data
 	include('events/summer_2018.sql');
