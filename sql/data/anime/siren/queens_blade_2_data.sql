@@ -3,14 +3,14 @@ INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIP
 		 12,
 		 "All of the female warriors intent on participating in the Queen's Blade tournament have now assembled in Gynos, the capital of reigning Queen Aldra.There they are joined by Nyx, a normally-timid woman who possesses both a demonic staff and a serious grudge against Elina, and Nanael, who has been assigned by Heaven to participate in the Queen's Blade herself so that Heaven can ferret out what, exactly, Queen Aldra is really up to.",
 		 "All of the female warriors intent on participating in the Queen's Blade tournament have now assembled in Gynos, the capital of reigning Queen Aldra...",
-		 "Siren Visual",
+		 "Siren",
 		 "Kinji Yoshimoto"
 		)
 ;
 
 INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
 		("Queen's Blade 2: The Evil Eye",
-		 1,
+		 3,
 		 1,
 		 "M - Violence, Sexual references and Nudity",
 		 12,
@@ -27,7 +27,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Queen's Blade 2: The Evil Eye",
 		 2,
 		 "Cursh the Evil! The Unexpected Battle",
-		 "Leina is having trouble finding accommodations until she mentions she is in the Queen's Blade, and the greedy hotel manager rushes to fill her order and ends up rooming her with Echidna. Tomoe and Shizuka meet Melpha, and Tomoe admires her for dressing more appropriately than other competitors. It is revealed that Nyx used to be a maid for the Vance Family, and was treated cruelly by Elina. Aldra wants a new servant to lead the Assassins, and sends a fake letter to lure Risty to her palace. Once there, she awakens the hate in Risty's soul, making Risty her servant. The first match is fought: Tomoe vs Melpha, where Tomoe finds that Melpha uses the lewd \"Holy Poses\" to fight, giving Tomoe the resolve to defeat her perversion. Another match begins: Elina vs Nyx."
+		 "Leina is having trouble finding accommodations until she mentions she is in the Queen's Blade, and the greedy hotel manager rushes to fill her order and ends up rooming her with Echidna. Tomoe and Shizuka meet Melpha, and Tomoe admires her for dressing more appropriately than other competitors. It is revealed that Nyx used to be a maid for the Vance Family, and was treated cruelly by Elina. Aldra wants a new servant to lead the Assassins, and sends a fake letter to lure Risty to her palace. Once there, she awakens the hate in Risty's soul, making Risty her servant. The first match is fought: Tomoe vs Melpha, where Tomoe finds that Melpha uses the lewd &quot;Holy Poses&quot; to fight, giving Tomoe the resolve to defeat her perversion. Another match begins: Elina vs Nyx."
 		 )
 	,	("Queen's Blade 2: The Evil Eye",
 		 3,
@@ -42,7 +42,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Queen's Blade 2: The Evil Eye",
 		 5,
 		 "Intrigue! Grief in the Royal Palace",
-		 "Ymir uses the fact that her bout is being broadcast to advertise the effectiveness of her weapons, especially since Leina is using a Cattleya weapon. Leina emerges victorious, however. Lana is hanging on to Cattleya during her fight with Airi, but actually proves to be helpful as Airi cannot bring herself to kill him. Cattleya is winning when she sees that Owen is frozen inside one of the stones in Aldra's "Palace of Grief" and breaks down crying, conceding defeat. Aldra promises to reunite Cattleya with her husband, and does so by turning her to stone as well. Filled with grief, Lana grabs Cattleya's spear and tries to attack Aldra. Aldra is about to turn him to stone too when Airi rescues him and they escape. They are confronted by Risty and the Assassins of the Fang, but when Risty is about to strike Lana down, she remembers the orphans she used to care for and hesitates, allowing them to escape. Lana keeps following Airi around, and she resolves to care for him in Cattleya's stead. When Cattleya does not return, Ymir asks Leina to allow her to care for her sword from now on. The next match is set: Claudette vs Menace."
+		 "Ymir uses the fact that her bout is being broadcast to advertise the effectiveness of her weapons, especially since Leina is using a Cattleya weapon. Leina emerges victorious, however. Lana is hanging on to Cattleya during her fight with Airi, but actually proves to be helpful as Airi cannot bring herself to kill him. Cattleya is winning when she sees that Owen is frozen inside one of the stones in Aldra's &quot;Palace of Grief&quot; and breaks down crying, conceding defeat. Aldra promises to reunite Cattleya with her husband, and does so by turning her to stone as well. Filled with grief, Lana grabs Cattleya's spear and tries to attack Aldra. Aldra is about to turn him to stone too when Airi rescues him and they escape. They are confronted by Risty and the Assassins of the Fang, but when Risty is about to strike Lana down, she remembers the orphans she used to care for and hesitates, allowing them to escape. Lana keeps following Airi around, and she resolves to care for him in Cattleya's stead. When Cattleya does not return, Ymir asks Leina to allow her to care for her sword from now on. The next match is set: Claudette vs Menace."
 		 )
 	,	("Queen's Blade 2: The Evil Eye",
 		 6,
