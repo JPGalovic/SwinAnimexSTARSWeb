@@ -54,6 +54,7 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("M - Infrequent animated violence and sexual references")
 	,	("M - Animated violence and infrequent coarse language")
 	,	("M - Sexualised imagery and animated nudity")
+	,	("M - Mature themes, sexual references and coarse language")
 ;
 
 -- Data for MA15+ Classifications
