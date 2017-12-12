@@ -26,7 +26,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 		)
 	,	("Queen's Blade 2: The Evil Eye",
 		 2,
-		 "Cursh the Evil! The Unexpected Battle",
+		 "Crush the Evil! The Unexpected Battle",
 		 "Leina is having trouble finding accommodations until she mentions she is in the Queen's Blade, and the greedy hotel manager rushes to fill her order and ends up rooming her with Echidna. Tomoe and Shizuka meet Melpha, and Tomoe admires her for dressing more appropriately than other competitors. It is revealed that Nyx used to be a maid for the Vance Family, and was treated cruelly by Elina. Aldra wants a new servant to lead the Assassins, and sends a fake letter to lure Risty to her palace. Once there, she awakens the hate in Risty's soul, making Risty her servant. The first match is fought: Tomoe vs Melpha, where Tomoe finds that Melpha uses the lewd &quot;Holy Poses&quot; to fight, giving Tomoe the resolve to defeat her perversion. Another match begins: Elina vs Nyx."
 		 )
 	,	("Queen's Blade 2: The Evil Eye",
