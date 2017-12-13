@@ -40,6 +40,7 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("M - Coarse language")
 	,	("M - Mature themes")
 	,	("M - Mature themes and sexual refernces")
+	,	("M - Mature themes and animated violence")
 	,	("M - Mature themes, animated violence and coarse language")
 	,	("M - Mature themes, drug references, sexual references and animated violence")
 	,	("M - Sexual references")
