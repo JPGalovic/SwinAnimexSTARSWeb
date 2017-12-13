@@ -30,6 +30,7 @@
 							include('module/event_card/anime_event_card.php');
 							break;
 						case 'Social Episode Event':
+							include('module/event_card/social_event_card.php');
 							break;
 						case 'Workshop Event':
 							break;
@@ -55,6 +56,7 @@
 						include('module/event_card/anime_event_card.php');
 						break;
 					case 'Social Episode Event':
+						include('module/event_card/social_event_card.php');
 						break;
 					case 'Workshop Event':
 						break;
