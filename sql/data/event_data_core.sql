@@ -22,7 +22,10 @@ CREATE TABLE IF NOT EXISTS EVENT_LOCATION (
 );
 
 INSERT INTO EVENT_LOCATION (LOCATION_ID, CAMPUS, ROOM, ADDRESS) VALUES
-		(0, "Swinburne Hawthorn", "AD108", "John St, Hawthorn VIC 3122")
+		(0, "Swinburne Hawthorn", NULL, "John St, Hawthorn VIC 3122")
+	,	(1, NULL, NULL, "Crown Entertainment Complex, 8 Whiteman St, Southbank VIC 3006")
+	,	(2, NULL, NULL, "Sorrento Oceach Beach, Ocean Beach Rod, Sorrento VIC 3943")
+	,	(3, NULL, NULL, "Hawthorn Aquatic &amp; Leasure Center, 1 Grace St, Hawthorn VIC 3122")
 ;
 
 -- Table for Basic Event Data
