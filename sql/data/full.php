@@ -12,12 +12,16 @@
 
 	include('anime/madman/assassination_classroom_season_2_data.sql');
 	include('anime/madman/ben-to_data.sql');
+	include('anime/madman/danganronpa_data.sql');
+	include('anime/madman/death_note_data.sql');
 	include('anime/madman/highschool_dxd_data.sql');
 	include('anime/madman/highschool_dxd_season_2_data.sql');
+	include('anime/madman/one_punch_man_data.sql');
 	include('anime/madman/yurikuma_arashi_data.sql');
 	
 	include('anime/siren/mawaru_penguindrum_data.sql');
 	include('anime/siren/queens_blade_2_data.sql');
+	include('anime/siren/queens_blade_3_data.sql');
 	
 	// Events Data
 	include('events/summer_2018.sql');
