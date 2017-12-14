@@ -340,7 +340,17 @@ body {
 	color: #DA0000;
 }
 
-#h_map, #c_map, #w_map {
+/* Map Display */
+#location_map {
+	padding: 10px;
+	text-align: center;
+}
+
+#location_map p {
+	color: #333333;
+}
+
+#map {
 	width: 100%;
 	height: 400px;
 }

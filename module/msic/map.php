@@ -45,4 +45,4 @@
 		var marker = new google.maps.Marker({position: loc, map: map});
 	}
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh2DChK1HnsYWfIVxbIDU4agPC_BRl3UA&callback=initMap"></script>
+<script async defer type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyCh2DChK1HnsYWfIVxbIDU4agPC_BRl3UA&callback=initMap"></script>
