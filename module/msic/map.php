@@ -1,18 +1,41 @@
 <?php
-	$lat = 0;
-	$lng = 0;
-	$zoom = 17;
-	$text = '';
+	if(!isset($location_id))
+		$location_id = 0;
+	include('sql/events/get_event_location.php');
+	if($get_event_location_ok)
+	{
+		$event_location_row = $get_event_location_data->fetch_assoc();
+		
+		$lat = $event_location_row['LAT'];
+		$lng = $event_location_row['LNG'];
+		$zoom = $event_location_row['ZOOM'];
+		if(!isset($location_text))
+		{
+			$location_text = '';
+			if($event_location_row['CAMPUS'] != MYSQLI_TYPE_NULL && $event_location_row['ROOM'] != MYSQLI_TYPE_NULL)
+			{
+				$location_text += $event_location_row['CAMPUS'].' - '.$event_location_row['ROOM'];
+				if($event_location_row['ADDRESS'] != MYSQLI_TYPE_NULL)
+				{
+					$location_text += $event_location_row['ADDRESS'];
+				}
+			}
+			else if($event_location_row['ADDRESS'] != MYSQLI_TYPE_NULL)
+			{
+				$location_text += $event_location_row['ADDRESS'];
+			}
+		}
 
-	// Display Map, Half Width
-	echo('<section class="half" id="location_map">');
-		echo('<div id="map"></div>');
+		// Display Map, Half Width
+		echo('<section class="half" id="location_map">');
+			echo('<div id="map"></div>');
 
-		echo('<p>');
-			echo($text);
-		echo('</p>');
+			echo('<p>');
+				echo($location_text);
+			echo('</p>');
 
-	echo('</section>');
+		echo('</section>');
+	}
 ?>
 
 <script>

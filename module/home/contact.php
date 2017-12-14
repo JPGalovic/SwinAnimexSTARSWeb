@@ -31,20 +31,10 @@
 			echo('</section>');
 		echo('</article>');
 
+		$location_text = 'Hawthorn Screenings every Friday.<br>Starting, 12:30am, 3:30pm, 5:30pm &amp; 8:30pm.<br>Showcase Screenings every Monday. <br> Starting, 3:30pm &amp; 4:30pm.<br>See the events above for more details.';
 		// Find Us
-		echo('<article class="half" id="contact_card">');
-			echo('<section>');
-				echo('<div id="h_map"></div>');
-
-				echo('<p>');
-					echo('Hawthorn Screenings every Friday.<br>Starting, 12:30am, 3:30pm, 5:30pm &amp; 8:30pm.');
-					echo('<br>Showcase Screenings every Monday. <br> Starting, 3:30pm &amp; 4:30pm.');
-					echo('<br>See the events above for more details.');
-				echo('</p>');
-
-			echo('</section>');
-		echo('</article>');
-
+		include('module/msic/map.php');
+		
 	echo('</section>');
 ?>
 
