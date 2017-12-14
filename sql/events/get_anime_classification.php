@@ -65,9 +65,10 @@
 										$episode_count = 0;
 										while($event_session_row = $get_anime_sessions_data->fetch_assoc())
 											$episode_count += $event_session_row['NUMBER_OF_EPISODES'];
-										while($episode_count >= 0)
+										while($episode_count > 0)
 										{
-											$anime_classification_row = $get_anime_classification_data->fetch_assoc();
+											if(!$anime_classification_row = $get_anime_classification_data->fetch_assoc())
+												$episode_count = 0;
 											$get_anime_classification = $anime_classification_row['CLASSIFICATION'];
 											$episode_count -= $anime_classification_row['NUMBER_OF_EPISODES'];
 										}
@@ -76,9 +77,10 @@
 										$episode_count = 0;
 										while($event_session_row = $get_anime_sessions_data->fetch_assoc())
 											$episode_count += $event_session_row['NUMBER_OF_EPISODES'];
-										while($episode_count >= 0)
+										while($episode_count > 0)
 										{
-											$anime_classification_row = $get_anime_classification_data->fetch_assoc();
+											if(!$anime_classification_row = $get_anime_classification_data->fetch_assoc())
+												$episode_count = 0;
 											$get_anime_classification = $anime_classification_row['CLASSIFICATION'];
 											$episode_count -= $anime_classification_row['NUMBER_OF_EPISODES'];
 										}
@@ -129,9 +131,10 @@
 												$episode_count = 0;
 												while($event_session_row = $get_anime_sessions_data->fetch_assoc())
 													$episode_count += $event_session_row['NUMBER_OF_EPISODES'];
-												while($episode_count >= 0)
+												while($episode_count > 0)
 												{
-													$anime_classification_row = $get_anime_classification_data->fetch_assoc();
+													if(!$anime_classification_row = $get_anime_classification_data->fetch_assoc())
+														$episode_count = 0;
 													$get_anime_classification = $anime_classification_row['CLASSIFICATION'];
 													$episode_count -= $anime_classification_row['NUMBER_OF_EPISODES'];
 												}
@@ -140,9 +143,10 @@
 												$episode_count = 0;
 												while($event_session_row = $get_anime_sessions_data->fetch_assoc())
 													$episode_count += $event_session_row['NUMBER_OF_EPISODES'];
-												while($episode_count >= 0)
+												while($episode_count > 0)
 												{
-													$anime_classification_row = $get_anime_classification_data->fetch_assoc();
+													if(!$anime_classification_row = $get_anime_classification_data->fetch_assoc())
+														$episode_count = 0;
 													$get_anime_classification = $anime_classification_row['CLASSIFICATION'];
 													$episode_count -= $anime_classification_row['NUMBER_OF_EPISODES'];
 												}
