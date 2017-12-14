@@ -1,7 +1,7 @@
 <?php
 	if(!isset($location_id))
 		$location_id = 0;
-	include('sql/events/get_event_location.php');
+	include('../msic/sql/events/get_event_location.php');
 	if($get_event_location_ok)
 	{
 		$event_location_row = $get_event_location_data->fetch_assoc();
