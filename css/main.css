@@ -265,6 +265,15 @@ body {
 	color: #DA0000;
 }
 
+/* Anime Event Details */
+#anime_details {
+	background-color: #FFFFFF;
+}
+
+#anime_details section {
+	padding: 10px;
+}
+
 /* Sponsor */
 .sponsor {
 	padding: 100px;

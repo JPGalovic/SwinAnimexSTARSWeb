@@ -12,17 +12,25 @@
 		if(!isset($location_text))
 		{
 			$location_text = '';
-			if($event_location_row['CAMPUS'] != MYSQLI_TYPE_NULL && $event_location_row['ROOM'] != MYSQLI_TYPE_NULL)
+			if(!($event_location_row['CAMPUS'] == NULL))
 			{
-				$location_text += $event_location_row['CAMPUS'].' - '.$event_location_row['ROOM'];
-				if($event_location_row['ADDRESS'] != MYSQLI_TYPE_NULL)
+				$location_text = $location_text.$event_location_row['CAMPUS'];
+				if(!($event_location_row['ROOM'] == NULL))
 				{
-					$location_text += $event_location_row['ADDRESS'];
+					$location_text = $location_text.' - '.$event_location_row['ROOM'];
+					if(!($event_location_row['ADDRESS'] == NULL))
+					{
+						$location_text = $location_text.', '.$event_location_row['ADDRESS'];
+					}
+				}
+				else if(!($event_location_row['ADDRESS'] == NULL))
+				{
+					$location_text = $location_text.', '.$event_location_row['ADDRESS'];
 				}
 			}
-			else if($event_location_row['ADDRESS'] != MYSQLI_TYPE_NULL)
+			else if(!($event_location_row['ADDRESS'] == NULL))
 			{
-				$location_text += $event_location_row['ADDRESS'];
+				$location_text = $event_location_row['ADDRESS'];
 			}
 		}
 
