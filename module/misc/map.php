@@ -1,7 +1,7 @@
 <?php
 	if(!isset($location_id))
 		$location_id = 0;
-	include('../msic/sql/events/get_event_location.php');
+	include('sql/events/get_event_location.php');
 	if($get_event_location_ok)
 	{
 		$event_location_row = $get_event_location_data->fetch_assoc();
@@ -40,8 +40,8 @@
 
 <script>
 	function initMap() {
-		var loc = {lat: "<?php echo($lat);?>", lng: "<?php echo($lng);?>"};
-		var map = new google.maps.Map(document.getElementById('map'), {zoom: "<?php echo($zoom)?>", center: loc});
+		var loc = {lat:<?php echo($lat);?>, lng:<?php echo($lng);?>};
+		var map = new google.maps.Map(document.getElementById('map'), {zoom:<?php echo($zoom)?>, center: loc});
 		var marker = new google.maps.Marker({position: loc, map: map});
 	}
 </script>
