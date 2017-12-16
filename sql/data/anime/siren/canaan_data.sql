@@ -13,7 +13,7 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		 1,
 		 1,
 		 "MA 15+ - Strong Animated Violence",
-		 12,
+		 13,
 		 "http://sirenvisual.com.au/index.php/shop/canaan.html"
 		)
 ;
