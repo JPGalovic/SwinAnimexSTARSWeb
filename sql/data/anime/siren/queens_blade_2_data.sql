@@ -86,3 +86,4 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("Queens Blade 2 The Evil Eye", 0, 2, 4)
 	,	("Queens Blade 2 The Evil Eye", 0, 3, 4)
 ;
+

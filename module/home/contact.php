@@ -31,28 +31,9 @@
 			echo('</section>');
 		echo('</article>');
 
+		$location_text = 'Hawthorn Screenings every Friday.<br>Starting, 12:30am, 3:30pm, 5:30pm &amp; 8:30pm.<br>Showcase Screenings every Monday. <br> Starting, 3:30pm &amp; 4:30pm.<br>See the events above for more details.';
 		// Find Us
-		echo('<article class="half" id="contact_card">');
-			echo('<section>');
-				echo('<div id="h_map"></div>');
-
-				echo('<p>');
-					echo('Hawthorn Screenings every Friday.<br>Starting, 12:30am, 3:30pm, 5:30pm &amp; 8:30pm.');
-					echo('<br>Showcase Screenings every Monday. <br> Starting, 3:30pm &amp; 4:30pm.');
-					echo('<br>See the events above for more details.');
-				echo('</p>');
-
-			echo('</section>');
-		echo('</article>');
-
+		include('module/misc/map.php');
+		
 	echo('</section>');
 ?>
-
-<script>
-	function initMap() {
-		var h_loc = {lat:-37.822576, lng:145.037561};
-		var h_map = new google.maps.Map(document.getElementById('h_map'), {zoom: 17, center: h_loc});
-		var h_marker = new google.maps.Marker({position: h_loc, map: h_map});
-	}
-</script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh2DChK1HnsYWfIVxbIDU4agPC_BRl3UA&callback=initMap"></script>

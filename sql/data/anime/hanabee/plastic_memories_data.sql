@@ -112,3 +112,4 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("Plastic Memories", 0, 2, 4)
 	,	("Plastic Memories", 0, 3, 5)
 ;
+

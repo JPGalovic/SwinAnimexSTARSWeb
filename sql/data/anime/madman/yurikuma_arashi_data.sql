@@ -98,3 +98,4 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("Yurikuma Arashi", 0, 2, 4)
 	,	("Yurikuma Arashi", 0, 3, 4)
 ;
+

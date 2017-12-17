@@ -265,6 +265,15 @@ body {
 	color: #DA0000;
 }
 
+/* Anime Event Details */
+#anime_details {
+	background-color: #FFFFFF;
+}
+
+#anime_details section {
+	padding: 10px;
+}
+
 /* Sponsor */
 .sponsor {
 	padding: 100px;
@@ -340,7 +349,17 @@ body {
 	color: #DA0000;
 }
 
-#h_map, #c_map, #w_map {
+/* Map Display */
+#location_map {
+	padding: 10px;
+	text-align: center;
+}
+
+#location_map p {
+	color: #333333;
+}
+
+#map {
 	width: 100%;
 	height: 400px;
 }
