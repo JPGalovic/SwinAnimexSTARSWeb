@@ -1,7 +1,7 @@
 <?php
 	echo('<section class="quater" id="event_card">');
 		// Event Image
-		echo('<img src="image/event/'.$event_row['EVENT_TITLE'].'.png" alt="'.$event_row['EVENT_TITLE'].'">');
+		echo('<img src="image/event/'.strtolower($event_row['EVENT_TITLE']).'.png" alt="'.$event_row['EVENT_TITLE'].'">');
 
 		// Event Title & Info
 		echo('<h4>'.$event_row['EVENT_TITLE'].'</h4>');

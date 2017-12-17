@@ -53,7 +53,7 @@
 						if(!$volume_row['VOLUME_TYPE_ID'] == 0)
 						{
 							echo('<section>');
-								echo('<img src="image/anime/'.$anime_event_row['ANIME_TITLE'].'/volume/'.$volume_row['VOLUME_TYPE_ID'].$volume_row['VOLUME_NUMBER'].'.png" onerror="this.src='."'image/no_cover_image.png'".'" alt="Volume Image">');
+								echo('<img src="image/anime/'.strtolower($anime_event_row['ANIME_TITLE']).'/volume/'.$volume_row['VOLUME_TYPE_ID'].$volume_row['VOLUME_NUMBER'].'.png" onerror="this.src='."'image/no_cover_image.png'".'" alt="Volume Image">');
 
 								echo('<a href="'.$volume_row['PURCHACE_URL'].'">');
 									switch($volume_row['VOLUME_TYPE_ID'])

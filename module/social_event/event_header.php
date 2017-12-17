@@ -3,7 +3,7 @@
 		//Event Image
 		echo('<header class="full">');
 
-			echo('<img src="image/event/'.$event_row['EVENT_TITLE'].'.png" alt="'.$event_row['EVENT_TITLE'].'">');
+			echo('<img src="image/event/'.strtolower($event_row['EVENT_TITLE']).'.png" alt="'.$event_row['EVENT_TITLE'].'">');
 
 		echo('</header>');
 

@@ -17,7 +17,7 @@
 					/** Event Card Code Generation **/
 					echo('<section class="quater" id="event_card">');
 						//Event Image
-						echo('<img src="image/anime/'.$anime_event_row['ANIME_TITLE'].'/session/'.$anime_event_row['SESSION_TYPE_ID'].$anime_event_row['SESSION_NUMBER'].'.jpg" alt="'.$anime_event_row['ANIME_TITLE'].'">');
+						echo('<img src="image/anime/'.strtolower($anime_event_row['ANIME_TITLE']).'/session/'.$anime_event_row['SESSION_TYPE_ID'].$anime_event_row['SESSION_NUMBER'].'.jpg" alt="'.$anime_event_row['ANIME_TITLE'].'">');
 					
 						//Core Event Info
 						echo('<h4>'.$event_row['EVENT_TITLE'].' - '.$anime_event_row['ANIME_TITLE'].'</h4>');
