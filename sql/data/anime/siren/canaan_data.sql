@@ -12,7 +12,7 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		("Canaan",
 		 1,
 		 1,
-		 "MA 15+ - Strong Animated Violence",
+		 "MA15+ - Strong Animated Violence",
 		 13,
 		 "http://sirenvisual.com.au/index.php/shop/canaan.html"
 		)
@@ -21,7 +21,7 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
 		("Canaan",
 		 1,
-		 "Evil, Flood-Colored City"
+		 "Evil, Flood-Colored City",
 		 "Maria Ōsawa and Minoru Minorikawa are dispatched to Shanghai from Japan, two years after the events of 428: Shibuya Scramble, to cover the upcoming International Anti-Terrorism Conference in the city with various world leaders coming to attend the meeting. Canaan, a Middle Eastern teenaged mercenary, was in the city as well after meeting with the unknown female contact with information that her rival Alphard Al Sheya was captured and secretly detained in Karachi, Pakistan by covert operators of the CIA's Special Activities Division. When Maria comes to see an unknown man dead with the Ua virus, Canaan saves her from being assassinated by masked gunmen before she defeats the rest of them without alerting and panicking the public with heightened senses in synesthesia. Meanwhile, the CIA's SAD convoy comes under attack from an IED ambush while transporting Alphard in their custody."
 		)
 	,	("Canaan",
@@ -37,7 +37,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Canaan",
 		 4,
 		 "Lingering Sunset",
-		 "Canaan remembers why she wanted to take down Alphard while removing the bullet head from her left arm sustained from being shot in the tunnels of the Bund Sightseeing Tunnel. Maria later has PTSD over the events of her detention and rescue by Canaan, not knowing that Canaan is really an armed mercenary and assassin for real and not the girl she knew from years ago. Alphard, with Liang Qi and Cummings, attend a public function dedicated to the upcoming NBCR International Anti-Terrorism Conference with the selection of the Daedala Corporation, a Private military company that has the Chinese government as its major client to assist Chinese security forces in safeguarding diplomats for the upcoming conference with Cummings as the public head of the company. In a public toilet, Canaan confronts Alphard privately with the latter taunting her for her failure to protect Siam from getting killed years ago. Canaan later flees when Alphard fires her FN Five-Seven USG at the sprinklers. ",
+		 "Canaan remembers why she wanted to take down Alphard while removing the bullet head from her left arm sustained from being shot in the tunnels of the Bund Sightseeing Tunnel. Maria later has PTSD over the events of her detention and rescue by Canaan, not knowing that Canaan is really an armed mercenary and assassin for real and not the girl she knew from years ago. Alphard, with Liang Qi and Cummings, attend a public function dedicated to the upcoming NBCR International Anti-Terrorism Conference with the selection of the Daedala Corporation, a Private military company that has the Chinese government as its major client to assist Chinese security forces in safeguarding diplomats for the upcoming conference with Cummings as the public head of the company. In a public toilet, Canaan confronts Alphard privately with the latter taunting her for her failure to protect Siam from getting killed years ago. Canaan later flees when Alphard fires her FN Five-Seven USG at the sprinklers. "
 		 )
 	,	("Canaan",
 		 5,
@@ -52,7 +52,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Canaan",
 		 7,
 		 "Gravestones",
-		 "The American government convenes an emergency meeting after a dignitary dies from a Ua virus infection. Alphard ignores Liang Qi's anger over her qualms of killing Canaan. Kenji Ōsawa, head of Okashi Pharmaceutical, had planned to send the anti-Ua virus vaccine to Shanghai when he was supposedly killed in a car bomb. This "event" forced the American military to send in B-2 bombers from Guam to bomb the entire Shanghai International Conference Hall in order to purge the Ua virus in flames and prevent in from spreading throughout Shanghai. Canaan infiltrates the hall, rescuing Maria after fending off several Daedala security forces personnel impending her progress. Canaan and Yuri Natsume worked together to hack the B-2's GPS system and let the bombs miss the conference hall to save the dignitaries inside while heavily armed PLA Special Operations Forces troopers escorted Kenji safely at the outskirts of the hall. Alphard and Cummings retreat underground with a handful of Daedala security forces, the former already deciding to abandon Liang Qi to let her fend for herself. When Maria and Canaan emerge outside, Canaan had collapsed due to her exhaustive use of her synesthesia abilities. "
+		 "The American government convenes an emergency meeting after a dignitary dies from a Ua virus infection. Alphard ignores Liang Qi's anger over her qualms of killing Canaan. Kenji Ōsawa, head of Okashi Pharmaceutical, had planned to send the anti-Ua virus vaccine to Shanghai when he was supposedly killed in a car bomb. This &quot;event&quot; forced the American military to send in B-2 bombers from Guam to bomb the entire Shanghai International Conference Hall in order to purge the Ua virus in flames and prevent in from spreading throughout Shanghai. Canaan infiltrates the hall, rescuing Maria after fending off several Daedala security forces personnel impending her progress. Canaan and Yuri Natsume worked together to hack the B-2's GPS system and let the bombs miss the conference hall to save the dignitaries inside while heavily armed PLA Special Operations Forces troopers escorted Kenji safely at the outskirts of the hall. Alphard and Cummings retreat underground with a handful of Daedala security forces, the former already deciding to abandon Liang Qi to let her fend for herself. When Maria and Canaan emerge outside, Canaan had collapsed due to her exhaustive use of her synesthesia abilities. "
 		 )
 	,	("Canaan",
 		 8,
