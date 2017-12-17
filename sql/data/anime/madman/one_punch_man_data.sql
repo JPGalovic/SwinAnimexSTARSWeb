@@ -94,3 +94,4 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("One Punch Man", 0, 2, 4)
 	,	("One Punch Man", 0, 3, 4)
 ;
+

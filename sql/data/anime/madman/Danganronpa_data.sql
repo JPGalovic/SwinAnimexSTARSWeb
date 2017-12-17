@@ -100,3 +100,4 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("Danganronpa", 0, 2, 4)
 	,	("Danganronpa", 0, 3, 5)
 ;
+

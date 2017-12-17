@@ -95,3 +95,4 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("Highschool DxD", 0, 2, 4)
 	,	("Highschool DxD", 0, 3, 4)
 ;
+

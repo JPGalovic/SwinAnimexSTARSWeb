@@ -173,3 +173,4 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("Assassination Classroom Season 2", 0, 2, 8)
 	,	("Assassination Classroom Season 2", 0, 3, 9)
 ;
+

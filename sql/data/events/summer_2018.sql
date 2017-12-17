@@ -53,3 +53,4 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 	,	("2018-02-02 19-30-00", "Queens Blade 2 The Evil Eye", 0, 2)
 	,	("2018-02-09 19-30-00", "Queens Blade 2 The Evil Eye", 0, 3)
 ;
+
