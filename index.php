@@ -26,6 +26,8 @@
 		include('page/all_events.php');
 	else if($page == 'anime_event')
 		include('page/anime_event.php');
+	else if($page == 'social_event')
+		include('page/social_event.php');
 	else
 		include('page/home.php');
 
