@@ -1450,6 +1450,98 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("Yurikuma Arashi", 0, 3, 4)
 ;
 
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Canaan",
+		 13,
+		 "UA: Experimental virus thought to be developed by the CIA, its name taken from the Swahili word for &quot;kill&quot; and &quot;flower&quot;. Exposure to UA usually results in death within 12 hours from severe bleeding. There is no known cure, though clandestine organisations are working on an anti-virus. Survivors of the virus are known as Borners and are left with permanent blood vessel patterns on the skin resembling spidery flowers. Canaan is a war orphan from the Middle East, rescued from the ruins of her war-torn village and raised by an ex-mercenary named Sham. Gifted with synaesthesia (a rare condition in which the body's senses trigger visual patterns), Canaan's life is set for revenge when Sham is murdered by Alphard - the leader of a bio-terrorism organisation known as Snake, who have claimed responsibility for UA attacks on China and Japan. Close to obtaining the only known anti-virus to UA and wishing to profit from its possession, Alphard's only obstacle is a woman from her past known as Canaan... An explosive anime thriller set in the marketplaces and remote countryside of China, Canaan is an incendiary conspiracy story directed by Masahiro Ando (Full Metal Alchemist, Cowboy Bebop, Sword of the Stranger) and animated by P.A. Works (Afro Samurai: Resurrection, Angel Beats!).",
+		 "UA: Experimental virus thought to be developed by the CIA, its name taken from the Swahili word for &quot;kill&quot; and &quot;flower&quot;.",
+		 "Siren",
+		 "Masahiro Ando"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Canaan",
+		 1,
+		 1,
+		 "MA15+ - Strong Animated Violence",
+		 13,
+		 "http://sirenvisual.com.au/index.php/shop/canaan.html"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Canaan",
+		 1,
+		 "Evil, Flood-Colored City",
+		 "Maria Ōsawa and Minoru Minorikawa are dispatched to Shanghai from Japan, two years after the events of 428: Shibuya Scramble, to cover the upcoming International Anti-Terrorism Conference in the city with various world leaders coming to attend the meeting. Canaan, a Middle Eastern teenaged mercenary, was in the city as well after meeting with the unknown female contact with information that her rival Alphard Al Sheya was captured and secretly detained in Karachi, Pakistan by covert operators of the CIA's Special Activities Division. When Maria comes to see an unknown man dead with the Ua virus, Canaan saves her from being assassinated by masked gunmen before she defeats the rest of them without alerting and panicking the public with heightened senses in synesthesia. Meanwhile, the CIA's SAD convoy comes under attack from an IED ambush while transporting Alphard in their custody."
+		)
+	,	("Canaan",
+		 2,
+		 "Worthless Games",
+		 "Liang Qi and Cummings led an airborne attack against the CIA SAD convoy consisting of air-to-surface-missiles and GPMG gunfire in order to free Alphard from their custody. Minoru, in a flashback, remembers that his superiors requested him to train Maria in order to become a professional photographer after surviving the events in Shibuya. While eating dinner in Shanghai, Maria and Minoru are targeted by an unknown old man who resembled the official Minoru saw on television en route to the city. Canaan arrives on the scene to save the two reporters from the Mini-Uzi-wielding man, before she was targeted for death by the man himself. He then dies by electrocution. The two reporters were later kicked out of their hotel room due to the mess created by unknown men. Minoru later contemplated about the mysterious T-shaped purple mark he saw from the old man and a corpse found from the festival he visited a day earlier."
+		 )
+	,	("Canaan",
+		 3,
+		 "Trivialities",
+		 "Deciding to take a lead in the T-shaped purple mark Minoru saw recently, he and Maria visited a Japanese-themed bar to ask a woman before he is stopped by the establishment's bartender. Meanwhile, Alphard began to make plans for an unknown event while Liang Qi is irritated over Alphard's ignorance for her to attack Canaan right away. Canaan later was able to visit Maria with the help of her synesthesia-based abilities despite that she and Minoru were forced to stay in a run-down apartment. Maria and Canaan later decide to take a tour around Shanghai, the two of them visiting the Bund Sightseeing Tunnel when Canaan was lured away from the tram to check on a supposed trap before running back to see Maria missing. Canaan fights against a young boy who told her that he is a Borner due to his mysterious ability after being infected with the Ua virus, which in case gave him the ability to hide in narrow passages. Canaan killed him with a well-placed shot in the body to obtain the detonator for the explosive placed on Maria's head after she was restrained."
+		 )
+	,	("Canaan",
+		 4,
+		 "Lingering Sunset",
+		 "Canaan remembers why she wanted to take down Alphard while removing the bullet head from her left arm sustained from being shot in the tunnels of the Bund Sightseeing Tunnel. Maria later has PTSD over the events of her detention and rescue by Canaan, not knowing that Canaan is really an armed mercenary and assassin for real and not the girl she knew from years ago. Alphard, with Liang Qi and Cummings, attend a public function dedicated to the upcoming NBCR International Anti-Terrorism Conference with the selection of the Daedala Corporation, a Private military company that has the Chinese government as its major client to assist Chinese security forces in safeguarding diplomats for the upcoming conference with Cummings as the public head of the company. In a public toilet, Canaan confronts Alphard privately with the latter taunting her for her failure to protect Siam from getting killed years ago. Canaan later flees when Alphard fires her FN Five-Seven USG at the sprinklers. "
+		 )
+	,	("Canaan",
+		 5,
+		 "Friends",
+		 "Maria stays with a girl named Yunyun in her personal houseboat a day after she wanders off in an alleyway without Canaan. Yunyun is later summoned by Liang Qi with a mission assigned to her. Maria and Minoru later investigate the T-shaped marks with the assistance of Japanese physicians back in Japan to study them and find out what has caused them for themselves. Canaan later meets Yunyun embarrassingly as part of the latter's mission is to get rid of her. Despite pleas from Maria, Canaan and Yunyun continue to face off against each other unsuccessfully with a plan by Yunyun to kill herself and Canaan with dynamite mounted throughout her entire body before Canaan decides to save the girl out of pity for Maria since she is her only friend. Back in Maria and Minoru's rented apartment room, Yunyun confesses to her true state as a Borner, but without any kind of special abilities granted to her by the Ua virus' infection since it merely gave her two appendixes. Minoru later pays him with money to help her be a double agent to both him and the Snakes as his personal informant. "
+		 )
+	,	("Canaan",
+		 6,
+		 "Love and Piece",
+		 "Minoru later learns of a village in the Kashmir region, where most of its residents were purposely infected by the Ua virus with a few survivors being dubbed as Borners for having mysterious abilities given to them by the virus. Minoru later meets with Hakko, one of the employees of the bar he visited revealed to the reporter his suspicions that she was a Borner. The NBCR Anti-Terrorism Conference was now underway with armed Daedala PMCs protecting the dignitaries in the Shanghai International Conference Hall with armed policemen of the Chinese Ministry of Public Security. Liang Qi later perpetrates the bombing of the hall's interior after the American President concluded his speech. Canaan and Minoru head to the hall themselves to secure Maria themselves after hearing the bombings. Armed Public Security policemen later confronted Daedala contractors when they, later with Alphard, attacked the officers when they were trying to get to the building's central control room. Maria is detained by Daedala forces under Liang Qi's instruction to lure Canaan in and kill her. But remembering the words taught to her by Siam in her youth, Alphard shoots Liang Qi to prevent her from further attacking Maria. Meanwhile, all of the dignitaries were in the underground bunker as planned in case of a terrorist attack in order to be eventually infected by the Ua virus. "
+		 )
+	,	("Canaan",
+		 7,
+		 "Gravestones",
+		 "The American government convenes an emergency meeting after a dignitary dies from a Ua virus infection. Alphard ignores Liang Qi's anger over her qualms of killing Canaan. Kenji Ōsawa, head of Okashi Pharmaceutical, had planned to send the anti-Ua virus vaccine to Shanghai when he was supposedly killed in a car bomb. This &quot;event&quot; forced the American military to send in B-2 bombers from Guam to bomb the entire Shanghai International Conference Hall in order to purge the Ua virus in flames and prevent in from spreading throughout Shanghai. Canaan infiltrates the hall, rescuing Maria after fending off several Daedala security forces personnel impending her progress. Canaan and Yuri Natsume worked together to hack the B-2's GPS system and let the bombs miss the conference hall to save the dignitaries inside while heavily armed PLA Special Operations Forces troopers escorted Kenji safely at the outskirts of the hall. Alphard and Cummings retreat underground with a handful of Daedala security forces, the former already deciding to abandon Liang Qi to let her fend for herself. When Maria and Canaan emerge outside, Canaan had collapsed due to her exhaustive use of her synesthesia abilities. "
+		 )
+	,	("Canaan",
+		 8,
+		 "Voice",
+		 "Canaan emerged safe after she collapsed, being told by Maria that she was simply tired. Kenji, in a phone conversation with Minoru, further informs him of the Ua virus and how sometimes people can survive from the virus' infection. The American Vice President later has a tapped phone conversation with Alphard, thanking him for the cooperation she had with him in the nature of ensuring &quot;anti-terrorism&quot; business keeps going for a few more years. During a public concert, Hakko showed off her Borner ability with people having severe headaches without them being aware. It later forced Canaan and Maria to flee as Hakko had nightmares of how she first knew of her ability from being infected with the Ua virus. Minoru later confronts Santana, Hakko's &quot;guardian&quot;, over the nature of the Borners and the Ua virus. Canaan and Maria later go on a long cruise with Santana, Minoru and Hakko in a SUV that took them to the desert regions of China. Maria and Canaan later talked about being together and reaffirming their friendship since it helped them over problems they had such as Canaan's inability to see colors from her synesthesia or from Maria having Canaan by her side all the way, straining the two of them in potential danger. Hakko tries to strangle Canaan in her sleep, remarking to the mercenary that it was her fault. The group later encounters Yunyun, traveling on a bicycle."
+		)
+	,	("Canaan",
+		 9,
+		 "Flowers of the Past",
+		 "Canaan and the others arrive at the outskirts of an abandoned village, where Santana reveals to everyone that it had been the staging grounds of the Ua virus when a said infestation would have actually occurred. He later resigns from the CIA in disgust when he learns that CIA operatives had disguised themselves as Centers for Disease Control and Prevention personnel with the Snakes under Alphard in order to tests it effectiveness on the villagers, which resulted in the creation of both the Borners and the Unblooms in an effort to create supersoldiers under the &quotFlower Garden Plan.&quot; Alphard later encounters Santana, telling him that she would head to the &quot;Factory&quot;. A Snake chopper under Liang Qi's control ambushed Canaan when she targeted her by firing rockets, temporarily sealing her in rubble with Alphard encountering the mercenary. When Alphard left, she informed the ex-CIA agent that he needs to tell Canaan her real name. As Canaan was about to get out of the rubble, Alphard tells Santana that Canaan's real name was &quot;Despair&quot;."
+		)
+	,	("Canaan",
+		 10,
+		 "Loss",
+		 "With Santana's assistance, he was able to lead Canaan and the others inside the &quot;Factory&quot;. They were ambushed by Unbloom zombies after being inside, different from the Unblooms Santana had rescued personally after leaving the CIA as they have completely lost all human emotions. Hakko later encounters Liang Qi via TV screen and begins to mock her to come after her. When Hakko returns to the chapel-like room to face Liang Qi, she inadvertently kills Santana with the power of her voice when he had been captured and gagged earlier after being separated. Natsume comes to Canaan and Minoru aid after blasting her way into the facility. Minoru and Canaan encounter a distraught Hakko, who begins shooting randomly, and Minoru attempts to calm her down. Maria and Yunyun enter the &quot;Factory&quot; themselves while wearing mascot head costumes before arriving in the flower gardens. However, Natsume enters the area and encounters the two of them. Seeing that Maria and Yunyun may impede her, Natsume draws out her pistol and aims it at them. "
+		 )
+	,	("Canaan",
+		 11,
+		 "See-Saw",
+		 "Alphard enters the flower gardens and stops Natsume. Alphard then threatens Maria and Yunyun to leave; they reluctantly obey, and go to meet up with Canaan. Alphard and Natsume are now alone, and it is revealed that Natsume is a secret agent for the Japanese Defense Intelligence Headquarters and was actually trying to obtain data related to the Ua virus. Canaan wakes up Minoru, who had been injured during his attempt to calm Hakko down. They meet up with Maria and Yunyun, who ask where Hakko and Santana is. Canaan decides to go back to the factory one more time, promising to find Hakko. Back in the Factory, Liang Qi grows increasingly unstable as Alphard and Cummings try to deal with her, and ultimately has to be killed after she takes a dose of the Ua virus in a mad bid for Alphard's attention with horrific results due to her not having the necessary genetics for synaesthesia. Meanwhile, a covert American task force known as Task Force 124 is deployed from Afghanistan, with orders to take down the Factory. While the bombers are on their way, Canaan fights off the advance of Delta Force operators already in the Factory while the PLA was deployed to the Factory. She finds a depressed Hakko and a dead Santana, and Hakko tells her to leave her behind and take the medicine she found for Yunyun. Canaan returns to her friends to safely retreat as the factory collapses with Hakko inside. As they mourn Hakko and Santana's deaths, Maria requests to take Canaan's picture, who solemnly replies. "
+		 )
+	,	("Canaan",
+		 12,
+		 "The Seasonal Train",
+		 "The group is in low spirits in the wake of Hakko and Santana's deaths. Maria, troubled by Canaan's despair, tries to cheer her up, with limited success, and she notices how depressing Canaan looks in the picture she took of Canaan in the previous episode. The next morning, they find themselves stranded when their car breaks down. Minoru volunteers to stay behind to take care of the car while the girls take a train back to Shanghai. However, the train is stopped in a supposed inspection. While Canaan leaves to investigate after hearing gunshots, she is struck by a hallucination of Siam, who tells her to see the truth with her own eyes, while a vision of Hakko blames her for everybody's deaths. Meanwhile, Alphard strolls into the same cabin as Maria and Yunyun while the train was covertly hijacked by Daedala contractors. She convinces Maria to assist her in a decisive match with Canaan, which Maria complies by taking Alphard's picture. Alphard shoots Maria and locks her and Yunyun in a car rigged with a bomb in an effort to get Canaan to fight at her full power. As Canaan and Alphard fight, Alphard continually taunts Canaan by saying she is the reason for Siam's death. Maria, not wanting Canaan to be burdened by her, has Yunyun detach her train car as the bomb counts down. "
+		 )
+	,	("Canaan",
+		13,
+		"The Promised Land",
+		"As the bomb counts down, Yunyun has second thoughts and runs after the detached carriage to save Maria. The bomb eventually explodes and Canaan reacts, as what presumably is her &quot;true strength&quot; becomes apparent, slowly being able to overpower Alphard. Despite some assistance from the remnants of Alphard's Daedala forces, Canaan was able to defeat her without relying on the attempted bombing on Maria in the Daedala-hijacked train. Canaan tries to save Alphard after she trips and falls down from the top of the train carriage, but Alphard instead opts to free herself from Siam's influence and chooses to amputate her left arm by using Canaan's pistol. Maria wakes up in a hospital and sees Minoru, with whom she discusses her ties with Canaan. Canaan contemplates her friendship with Maria. Maria and Minoru are set to leave Shanghai. Minoru, once again, fails to find a good story, since he decides to keep the story of Canaan out, and he wonders about getting a new job. Maria thinks more on her part in this story as most of the cast go about their separate ways. Some time later, in Bologna, Canaan receives a new assignment, that being to find and kill a woman missing one arm. "
+		 );
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Canaan", 0, 1, 4)
+	,	("Canaan", 0, 2, 4)
+	,	("Canaan", 0, 3, 5)
+;
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Mawaru Penguindrum",
@@ -1785,6 +1877,88 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("Queen's Blade 3: Rebellion", 0, 3, 4)
 ;
 
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Welcome to Irabu's Office",
+		 11,
+		 "A pro baseball player with the yips, a man with a permanent erection, a hopeless yakuza underboss, an obsessive compulsive university lecturer, a mobile phone addict and an anxious circus performer...Welcome to Irabu's office!",
+		 "A pro baseball player with the yips, a man with a permanent erection, a hopeless yakuza underboss, an obsessive compulsive university lecturer, a mobile phone addict and an anxious circus performer...Welcome to Irabu's office!",
+		 "Siren",
+		 "Kenji Nakamura"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Welcome to Irabu's Office",
+		 1,
+		 1,
+		 "M - Mature Themes, Sexual References and Coarse Language",
+		 11,
+		 "http://sirenvisual.com.au/index.php/shop/welcome-to-irabu-s-office.html"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Welcome to Irabu's Office",
+		 1,
+		 "Flying Trapeze",
+		 "Kohei Yamashita is an aerialist who repeatedly misses his partners in his trapeze act. He blames the newly recruited foreign circus artists and grows distant and distrusting of them. Due to the stress of getting his act together for an upcoming performance, he has developed a sleep disorder and anxiety problems. He is a third-generation circus performer after his father and grandfather. As a child, he learned to distance himself from other children because he had to constantly move with the circus. Because of this, he couldn't develop trust in strangers. He realizes that he was the one messing up the stunt after watching a video of his practice. He is represented by a penguin."
+		)
+	,	("Welcome to Irabu's Office",
+		 2,
+		 "Keep on Erecting",
+		 "Tetsuya Taguchi, public servant at the ward office, has developed an erectile dysfunction (a constantly erect penis) due to emotional issues at work and with his ex-wife. He is represented by a rhino with a dotted horn."		 
+		 )
+	,	("Welcome to Irabu's Office",
+		 3,
+		 "Romance Novelist",
+		 "Romance novelist Junichi Hoshiyama suffering from OCD and psychogenic induced vomiting. He believes that he has already done the ideas that come to his head for new books. His animal form is a rooster and the scenes of vomiting are overlaid by pink feathers flying through the air."
+		 )
+	,	("Welcome to Irabu's Office",
+		 4,
+		 "The Third Base",
+		 "Shinichi Bando, a superstar pro-baseball player and third baseman for the Tokyo Yakult Swallows, is troubled by yips as he suddenly can not throw the ball anymore. This problem is brought on by a younger and more popular contender for his position on the team. He appears as a red horse with blue hair after the vitamin shot."
+		 )
+	,	("Welcome to Irabu's Office",
+		 5,
+		 "My Father In-Law's..",
+		 "Tatsuro Ikeyama is a neurology lecturer with obsessive–compulsive disorder and a compulsion for inappropriate behavior. For example, he fantasizes about dumping the load of a dump truck stopped at a traffic light and swinging on a chandelier at his school reunion. His father-in-law is Dr. Nomura, the faculty head at his university and the head of the university hospital's surgical department. The treatment that Irabu prescribes for Ikeyama includes farting in a crowded elevator, changing the television channel to a baseball game while his extended family is watching opera, and finally, removing his father-in-law's wig in public. The cause of his compulsions is his controlled lifestyle; before he was married, he enjoyed playing pranks and watched baseball instead of opera. After his vitamin shot, Tatsuro appears as a multi-colored chameleon who often turns invisible."
+		 )
+	,	("Welcome to Irabu's Office",
+		 6,
+		 "Friends",
+		 "Yuta Tsuda is a high school student who suffers from a mobile phone addiction. He panics and suffers withdrawal when he is not on his phone. When he gets his phone confiscated in class, he goes home instantly and asks his mom to get a new one. Irabu starts to text him on his phone after getting one himself. Yuta asks Mayumi for her phone number, but she doesn't have one because she has no friends. After turning up to a Christmas party, Yuta starts to realize that his friends take advantage of him and make fun of him for his mobile addiction. Yuta subsequently starts removing all his contacts out of his SIM card, when Irabu and Mayumi call from the hospital and invite him to a Christmas party at Irabu's office. In this episode, Irabu mostly appears as his &quot;big&quot; form and shortly changes to his &quot;little&quot; form. This is the only episode so far where Irabu doesn't appear in his feminine &quot;middle&quot; form. After the vitamin shot, Yuta turns into a pale blue woodpecker with different colored spots."
+		 )
+	,	("Welcome to Irabu's Office",
+		 7,
+		 "Hedgehog",
+		 "Seiji Ino is a Yakuza (more specifically: Designated Crime Syndicate - Koi Group Underground) who has an obsessive compulsive fear of edges (belonephobia), which includes knives, forks, needles, some fish, and even table edges. Seiji is known in the criminal world as &quot;the wise seiji&quot;; he shows this by saving a fellow member (his brother) from a rival group through challenging Yoshiyasu's (rival group leader) to Russian Roulette. He almost loses his mind when Irabu gets Mayumi to give him a vitamin shot. His Wife who runs a bar with Seiji puts a deposit on another bar that's owned by Yoshiyasu's syndicate, this causes more friction between the two factions. Irabu suggests that Seiji try sunglasses, as his fear is mainly getting sharp objects in the eye, he tries on some Sunglasses, but eventually purchases Ski Goggles. Seiji and his brother then negotiate the protection arrangements with Kohei from the first episode, with Irabu in tow. Seiji satisfyingly pokes his ski goggles with a pen, until he notices the table's edges. He then has a panic attack and saws off each edge of the table, then has another attack from the saw he used to neutralize the table. At home, Seiji's wife tells him that she's put down the deposit on the bar, in a panic and then logical moment, he decides to meet up with Yoshiyasu at the Restorante Pero's to retrieve the Deposit. Before meeting with his rival, he stops by Irabu General Hospital where Irabu is taking a photo of his Christmas pudding to send to Yuta. Seiji asks Irabu desperately for some medication, but instead Irabu ends up coming to Pero's with Seiji, being introduced as Irabu the Quack from Hiroshima. There, Irabu observes Yoshiyasu's own Obsessive Compulsion, that he uses his knife as a security blanket. Irabu then takes the knife away and holds onto it, allowing for Seiji to open up to Yoshiyasu and retrieve the Deposit. Christmas eve, Seiji shows signs of starting to overcome his Compulsive fear of sharp edges. Seiji appears as a small dog after the vitamin injection."
+		 )
+	,	("Welcome to Irabu's Office",
+		 8,
+		 "I Couldn't Sit",
+		 "Yoshio Iwamura is a newspaper-magazine journalist, who has a classic case of check obsessive compulsive disorder, commonly fearing he forgot to put out a cigarette or a kettle, or turn the water off. He ends up rushing back to his house to make sure he hasn't flooded or burned down his building. As a treatment, Irabu takes him to a rival hospital (they stole one of his patients, and are corrupt), where Irabu encourages Yoshio to throw rocks at the hospital. Irabu points out the Hospital Director's car and suggests they loosen the tire bolts. After Irabu throws a rock, and after hesitating, Yoshio throws a rock only to break a window, they both then flee. Because of his disorder, Yoshio is moved to another magazine, this time a teen mag, popular with Girls. He is sent to investigate into a man called the &quot;Homeless Poet&quot; who turns out to be a fraud, and uses the article on him to lure girls. Upon finding out Yoshio gets infuriated and tracks him down, the final chase takes Yoshio running with the Homeless Poet's bag, and trying to get the hospital director to stop after worrying that Irabu has loosened the tires. He jumps in front of the car, where the homeless poet tackles him, spreading papers onto the cars windscreen, the director then crashes the car, and medical waste pours out, and upon looking at the papers that came out of the homeless poet's bag, finds out he's using his dead family records to help Illegal immigrants into Japan. Yoshio then does an article on the two Thugs and immediately becomes a famous reporter again. Irabu thanks Yoshio for exposing the corruptness of the rival hospital, and offers to let him meet Bando, Irabu tells Yoshio that his disorder did good, made him famous, and that he'd be ok if someone was home. On his way home, Yoshio finds an add for a share house. After the injection, Yoshio is represented as a raccoon."
+		)
+	,	("Welcome to Irabu's Office",
+		 9,
+		 "Gifted Child Actor",
+		 "Hiromi Yasukawa is an actor (ex-child actor) who suffers from narcissistic personality disorder. He now only gets roles as extras, but gets kicked out of a role as a student in a drama for smiling constantly during a tense scene. In the past, he was a popular child actor who had his own television show. His agent (who Irabu is hitting on) offers him an audition to a movie that he refuses, because there's a sex scene. He's then a guest on a Japanese live TV show, where they make fun of him for his role in the School Drama where he's smiling during a serious scene, and that his role had the name &quot;Student-A&quot;. Hiromi gets very upset and not knowing what else to do, starts smiling, this brings an awkward silence to the audience. Afterwards, Hiromi's agent tells him that he's going to lose his contract, and her because of his behavior. Hiromi starts to smile, and has a breakdown. Back at his apartment, Hiromi is under his covers crying. Irabu tries to cheer him up, giving him a list of other things he could do instead of acting. After Hiromi refuses, Irabu gives him the sheet for the audition for the movie. Three days later, Hiromi turns up for the Audition wearing causal clothes rather than his usual child actor attire, surprising his agent. The calendar then flashes back to the day after Irabu gives him the audition sheet. Hiromi appears at Irabu's office and the two discuss the movie role. After Irabu gives him another shot, he notices that he doesn't smile when in pain, he rushes off home where he attaches pegs to his nipples. He turns up to the audition with the pain treatment, where he meets Irabu, who plans on auditioning for the part himself. During his audition, Hiromi has a moment of panic when he's reminded about his role on the school drama as Student-A. He rips his shirt off to remove the pegs that are causing him much pain. This turns out good for him, as he realizes he can make fun of himself, and not need to worry about his image. Irabu and Hiromi both don't get the part, although Hiromi is now a successful variety show host, where he uses some of his old Hiro-chan act."
+		)
+	,	("Welcome to Irabu's Office",
+		 10,
+		 "Owner",
+		 "Mitsuo Tanabe is a successful businessman who owns the Great Japan Newspaper Company, and the Mighty Japan Great Powers Baseball team (the opponent of Tokyo Yakult Swallows in the fourth episode) who suffers from a panic disorder where he gets flashbacks. When he turns up to Irabu's office after the events of the last episode, he is given an injection. Both Irabu and Mayumi are shocked that he hasn't turned into an animal. The calendar goes back to December 17, where Bando has his first problems with his Yips, after the game Mitsuo is confronted by media that ask him questions on an apparent scandal that he has influence over the leader of a political party, and that he's made him postpone tax changes. The flashes from the journalist cameras start to disturb him, and he has flashbacks to the post war Tokyo, and moments afterwards including the construction of the Tokyo Tower, and the first Bullet Train service, as well as moments in the 1960s and 70s, he then faints. His doctor (Dr. Ikeyama from another episode) refers him over to Dr. Irabu. In Irabu's office after giving him an injection, Mayumi notices that a faltering fluorescent light is starting to upset Mitsuo, and she turns it off before he has an attack. Irabu then takes this chance to diagnose him with panic disorder and orders Mayumi to turn off all the lights. Mitsuo starts to have an attack, when a scared Irabu suddenly pounces him and Mayumi turns the lights back on. Irabu comments how he's afraid of the dark and still has a night light. Mitsuo then explains how he has visions of the past, suggesting he has PTSD, and that his Panic Disorder is brought on through his stressful role of Power. Irabu tells Mitsuo that he can wear sunglasses to soften the flashes, but that the best medicine is to retire. Mitsuo strongly disagrees, stating that he still has things to do. Later on, Irabu and Mitsuo go shopping, and he explains to Irabu that Japan is still an immature country as it depends on the US, and that he wants to change that. In the sunglasses shop, Seiji from a past episode has a panic attack while also purchasing glasses. A couple of days later, there is another baseball game, where Bando throws and injures another player; after the game the media confront Mitsuo, and he is outraged that they call Bando a &quot;terrorist&quot;. Again the media start to harass him, and he has another attack. In Mitsuo's office, after suffering an attack with the setting sun, and reading the newspapers reporting on Mitsuo's outburst, Irabu warns him that this continued problem can lead to depression. Mitsuo's aid tells him that he needs to leave for an appointment, Irabu carries him out to his limo where the media hound him again, and again he has a delusion that a dark mass is enveloping his limo. Irabu then offers to drive him in his Porsche Boxster Convertible. Irabu and Mitsuo speed off, outrunning the tabloids on their motorcycles, escaping them. Irabu drives past Shinbashi Station, where Mitsuo has a flashback to World War II when he was a young Soldier of the recovery operation of Tokyo at the end of the war, as well as watching baseball on an old television set in the 1950s. Then while driving past the Tokyo Tower, he flashes back to being a journalist, having a discussion with the workers on a lunch break. Then a N700 Series Shinkansen goes by above them, much to Irabu's inner train-spotter's joy. Then Mitsuo flashing back to watching the first Shinkansen service with his son. Irabu and Mitsuo stop to watch a baseball game, where he has a flashback to meeting his wife at a baseball game in the past. During this moment of peace, he realizes that he's been living in the past and that things have changed greatly already. His flashbacks start to diminish, and he starts to appear in his modern form, instead of him in the past. He has gray hair and glasses. Just as Mitsuo tries to catch the ball Bando has hit after curing his Yips, Irabu abruptly intercepts, and catches it himself. The next day, Mitsuo calls a press conference where he announces his retirement. On his way home, a couple of journalists, including Yoshio Iwamura (who has appeared several times throughout this episode) ask him for advice to become good journalists. Mitsuo accepts and invites the journalists in for a drink. "
+		 )
+	,	("Welcome to Irabu's Office",
+		 11,
+		 "Canary",
+		 "After the chairman of a newspaper publishing company visits Dr. Irabu complaining of mysterious illnesses, Dr. Irabu does what he does best: injects him with a big dose of vitamins, hoping to see what kind of animal he’ll become. Excep this time, it doesn’t work!"
+		 );
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Welcome to Irabu's Office", 0, 1, 4)
+	,	("Welcome to Irabu's Office", 0, 2, 4)
+	,	("Welcome to Irabu's Office", 0, 3, 3)
+;
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
 		("2018-01-05 11-30-00", 0, "Summer Sessions", 0, 0, "0")
 	,	("2018-01-12 11-30-00", 0, "Summer Sessions", 0, 0, "0")

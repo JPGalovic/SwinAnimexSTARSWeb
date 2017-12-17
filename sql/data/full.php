@@ -24,11 +24,13 @@
 		,	13 => 'anime/madman/one_punch_man_data.sql'
 		,	14 => 'anime/madman/yurikuma_arashi_data.sql'
 		
-		,	15 => 'anime/siren/mawaru_penguindrum_data.sql'
-		,	16 => 'anime/siren/queens_blade_2_data.sql'
-		,	17 => 'anime/siren/queens_blade_3_data.sql'
+		,	15 => 'anime/siren/canaan_data.sql'
+		,	16 => 'anime/siren/mawaru_penguindrum_data.sql'
+		,	17 => 'anime/siren/queens_blade_2_data.sql'
+		,	18 => 'anime/siren/queens_blade_3_data.sql'
+		,	19 => 'anime/siren/welcome_to_irabus_office_data.sql'
 		
-		,	18 => 'events/summer_2018.sql'
+		,	20 => 'events/summer_2018.sql'
 	);
 
 	//,	n => ''
