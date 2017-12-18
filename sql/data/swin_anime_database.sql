@@ -87,6 +87,7 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("M - Animated violence and infrequent coarse language")
 	,	("M - Sexualised imagery and animated nudity")
 	,	("M - Mature themes, sexual references and coarse language")
+	,	("M - Animated nudity and sexualised imagery")
 ;
 
 -- Data for MA15+ Classifications
@@ -2066,6 +2067,8 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 	,	("2018-02-02 19-30-00", 0, "Summer After Dark", 0, 0, "0")
 	,	("2018-02-09 19-30-00", 0, "Summer After Dark", 0, 0, "0")
 	
+	,	("2018-01-08 14-30-00", 0, "Summer Showcase", 0, 0, "0")
+	
 	,	("2018-01-10 10-00-00", 1, "Beach Episode", 2, 0, "0")
 	,	("2018-01-17 10-00-00", 1, "Arcade Episode", 1, 0, "0")
 	,	("2018-01-31 10-00-00", 1, "Pool Episode", 3, 0, "0")
@@ -2095,5 +2098,7 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 	,	("2018-01-26 19-30-00", "Queens Blade 2 The Evil Eye", 0, 1)
 	,	("2018-02-02 19-30-00", "Queens Blade 2 The Evil Eye", 0, 2)
 	,	("2018-02-09 19-30-00", "Queens Blade 2 The Evil Eye", 0, 3)
+	
+	,	("2018-01-08 14-30-00", "Vividred Operation", 3, 1)
 ;
 
