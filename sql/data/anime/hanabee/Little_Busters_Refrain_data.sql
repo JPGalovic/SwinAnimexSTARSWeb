@@ -2,8 +2,8 @@
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Little Busters Refrain",
 		 13,
-		 "On the back of their first baseball game, the Little Busters team is closer than ever. But amongst the celebration, Riki can't help but notice a strong sense of Déjà vu over everything that has happened. As the oddities of the world continue to unfold, the answers to Riki's questions appear to lie in the hands of a cat. Can Riki and Rin muster enough courage to fulfill the mission given to them and confront the truth of their reality that has been in front of them all along?",
-		 "On the back of their first baseball game, the Little Busters team is closer than ever. But amongst the celebration, Riki can't help but notice a strong sense of Déjà vu over everything that has happened.",
+		 "On the back of their first baseball game, the Little Busters team is closer than ever. But amongst the celebration, Riki can't help but notice a strong sense of D&eacute;j&agrave; vu over everything that has happened. As the oddities of the world continue to unfold, the answers to Riki's questions appear to lie in the hands of a cat. Can Riki and Rin muster enough courage to fulfill the mission given to them and confront the truth of their reality that has been in front of them all along?",
+		 "On the back of their first baseball game, the Little Busters team is closer than ever. But amongst the celebration, Riki can't help but notice a strong sense of D&eacute;j&agrave; vu over everything that has happened.",
 		 "Hanabee",
 		 "&copy;Yoshinobu Yamakawa, Michiru Shimada / J.C.Staff"
 		)

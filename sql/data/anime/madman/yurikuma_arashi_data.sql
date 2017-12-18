@@ -2,11 +2,9 @@
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Yurikuma Arashi",
 		 12,
-		 "From Kunihiko Ikuhara, the director of Sailor Moon and Revolutionary Girl Utena, comes a beautifully animated, allegorical tale of love, loss, and bear attacks - Yurikuma Arashi. 
-
-		 In a world divided between humans and hyper-intelligent, man-eating bears, Kureha attends an all-girls school and holds onto a simple wish—to spend the rest of her life with her classmate and soul mate, Sumika. But after a secret rendezvous ends in tragedy, Kureha vows to never back down on her love and put a bullet in any bear she meets. 
-
-		 As she plots her revenge, the bear-attack body count begins to rise and two strange girls transfer into Kureha&apos;s class. She doesn&apos;t know it yet, but the girls who call themselves Ginko and Lulu are actually criminal bears in disguise! As they try to win Kureha&apos;s heart , an army of high school girls gears up to go to war with all of bear-kind and anyone else who stands up for love. At this rate, getting the yuri seal of approval from an interdimensional tribunal of cool, beautiful, sexy judges is going to be the least of their troubles.",
+		 "<p>From Kunihiko Ikuhara, the director of Sailor Moon and Revolutionary Girl Utena, comes a beautifully animated, allegorical tale of love, loss, and bear attacks - Yurikuma Arashi.</p>
+		 <p>In a world divided between humans and hyper-intelligent, man-eating bears, Kureha attends an all-girls school and holds onto a simple wish&#8212;to spend the rest of her life with her classmate and soul mate, Sumika. But after a secret rendezvous ends in tragedy, Kureha vows to never back down on her love and put a bullet in any bear she meets.</p>
+		 <p>As she plots her revenge, the bear-attack body count begins to rise and two strange girls transfer into Kureha&apos;s class. She doesn&apos;t know it yet, but the girls who call themselves Ginko and Lulu are actually criminal bears in disguise! As they try to win Kureha&apos;s heart , an army of high school girls gears up to go to war with all of bear-kind and anyone else who stands up for love. At this rate, getting the yuri seal of approval from an interdimensional tribunal of cool, beautiful, sexy judges is going to be the least of their troubles.</p>",
 		 "In a world divided between humans and hyper-intelligent, man-eating bears, Kureha attends an all-girls school and holds onto a simple wish&#8212;to spend the rest of her life with her classmate and soul mate, Sumika.",
 		 "Madman",
 		 "&copy; 2015 Ikunigomamonaka/Yurikumanikuru"
@@ -39,7 +37,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Yurikuma Arashi",
 		 2,
 		 "I Will Never Forgive You",
-		 "Sumika is declared dead, much to the shock of Kureha, while Mitsuko remains suspicious of Ginko and Lulu. Later, Ginko and Lulu show up at Kureha's house, where Ginko starts making a move on Kureha until Mitsuko shows up, aiming her gun at Ginko and Lulu. As Mitsuko chases after them, Kureha receives another anonymous call calling her to the rooftop, where another bear — who is secretly her classmate Konomi Yurikawa — attacks her, being jealous of Mitsuko's closeness to Kureha. After another yuri trial, during which Ginko and Lulu once again lick nectar from Kureha's lily, Mitsuko shows up to shoot the attacking bear. While Kureha rests from the experience, it is revealed that Mitsuko is actually a bear herself, the one who killed Sumika, and is now targeting Kureha."
+		 "Sumika is declared dead, much to the shock of Kureha, while Mitsuko remains suspicious of Ginko and Lulu. Later, Ginko and Lulu show up at Kureha's house, where Ginko starts making a move on Kureha until Mitsuko shows up, aiming her gun at Ginko and Lulu. As Mitsuko chases after them, Kureha receives another anonymous call calling her to the rooftop, where another bear &#8212; who is secretly her classmate Konomi Yurikawa &#8212; attacks her, being jealous of Mitsuko's closeness to Kureha. After another yuri trial, during which Ginko and Lulu once again lick nectar from Kureha's lily, Mitsuko shows up to shoot the attacking bear. While Kureha rests from the experience, it is revealed that Mitsuko is actually a bear herself, the one who killed Sumika, and is now targeting Kureha."
 		)
 	,	("Yurikuma Arashi",
 		 3,
