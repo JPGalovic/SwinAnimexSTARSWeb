@@ -6,31 +6,32 @@
 
 	// Data Collation
 	$data_array = array(
-			0 => 'drop_data.sql'
-		,	1 => 'company_data.sql'
-		,	2 => 'classification_data.sql'
-		,	3 => 'anime_data_core.sql'
-		,	4 => 'event_data_core.sql'
+			0 =>  'drop_data.sql'
+		,	1 =>  'company_data.sql'
+		,	2 =>  'classification_data.sql'
+		,	3 =>  'anime_data_core.sql'
+		,	4 =>  'event_data_core.sql'
 		
-		,	5 => 'anime/hanabee/little_busters_refrain_data.sql'
-		,	6 => 'anime/hanabee/plastic_memories_data.sql'
+		,	5 =>  'anime/hanabee/little_busters_refrain_data.sql'
+		,	6 =>  'anime/hanabee/plastic_memories_data.sql'
 		
-		,	7 => 'anime/madman/assassination_classroom_season_2_data.sql'
-		,	8 => 'anime/madman/ben-to_data.sql'
-		,	9 => 'anime/madman/danganronpa_data.sql'
+		,	7 =>  'anime/madman/assassination_classroom_season_2_data.sql'
+		,	8 =>  'anime/madman/ben-to_data.sql'
+		,	9 =>  'anime/madman/danganronpa_data.sql'
 		,	10 => 'anime/madman/death_note_data.sql'
 		,	11 => 'anime/madman/highschool_dxd_data.sql'
 		,	12 => 'anime/madman/highschool_dxd_season_2_data.sql'
 		,	13 => 'anime/madman/one_punch_man_data.sql'
-		,	14 => 'anime/madman/yurikuma_arashi_data.sql'
+		,	14 => 'anime/madman/vividred_operation_data.sql'
+		,	15 => 'anime/madman/yurikuma_arashi_data.sql'
 		
-		,	15 => 'anime/siren/canaan_data.sql'
-		,	16 => 'anime/siren/mawaru_penguindrum_data.sql'
-		,	17 => 'anime/siren/queens_blade_2_data.sql'
-		,	18 => 'anime/siren/queens_blade_3_data.sql'
-		,	19 => 'anime/siren/welcome_to_irabus_office_data.sql'
+		,	16 => 'anime/siren/canaan_data.sql'
+		,	17 => 'anime/siren/mawaru_penguindrum_data.sql'
+		,	18 => 'anime/siren/queens_blade_2_data.sql'
+		,	19 => 'anime/siren/queens_blade_3_data.sql'
+		,	20 => 'anime/siren/welcome_to_irabus_office_data.sql'
 		
-		,	20 => 'events/summer_2018.sql'
+		,	21 => 'events/summer_2018.sql'
 	);
 
 	//,	n => ''
