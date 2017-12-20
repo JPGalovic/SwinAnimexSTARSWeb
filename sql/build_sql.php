@@ -35,16 +35,17 @@
 		,	12 => 'data/anime/madman/highschool_dxd_data.sql'
 		,	13 => 'data/anime/madman/highschool_dxd_season_2_data.sql'
 		,	14 => 'data/anime/madman/one_punch_man_data.sql'
-		,	15 => 'data/anime/madman/vividred_operation_data.sql'
-		,	16 => 'data/anime/madman/yurikuma_arashi_data.sql'
+		,	15 => 'data/anime/madman/pandora_in_the_crimson_shell_data.sql'
+		,	16 => 'data/anime/madman/vividred_operation_data.sql'
+		,	17 => 'data/anime/madman/yurikuma_arashi_data.sql'
 		
-		,	17 => 'data/anime/siren/canaan_data.sql'
-		,	18 => 'data/anime/siren/mawaru_penguindrum_data.sql'
-		,	19 => 'data/anime/siren/queens_blade_2_data.sql'
-		,	20 => 'data/anime/siren/queens_blade_3_data.sql'
-		,	21 => 'data/anime/siren/welcome_to_irabus_office_data.sql'
+		,	18 => 'data/anime/siren/canaan_data.sql'
+		,	19 => 'data/anime/siren/mawaru_penguindrum_data.sql'
+		,	20 => 'data/anime/siren/queens_blade_2_data.sql'
+		,	21 => 'data/anime/siren/queens_blade_3_data.sql'
+		,	22 => 'data/anime/siren/welcome_to_irabus_office_data.sql'
 		
-		,	22 => 'data/events/summer_2018.sql'
+		,	23 => 'data/events/summer_2018.sql'
 	);
 
 	//,	n => ''
