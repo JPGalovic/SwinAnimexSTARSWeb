@@ -47,6 +47,7 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("M - Sexual references, animated violence and nudity")
 	,	("M - Sexual references and sexualised imagery")
 	,	("M - Sexual references and animated nudity")
+	,	("M - Sexualised imagery and sexual innuendo")
 	,	("M - Mature themes and sexual references")
 	,	("M - Sexual themes")
 	,	("M - Supernatural themes and animated violence")
