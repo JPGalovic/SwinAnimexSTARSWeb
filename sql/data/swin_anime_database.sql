@@ -4,7 +4,9 @@ CREATE USER IF NOT EXISTS 'swinan01'@'localhost' IDENTIFIED BY 'qdVbzdb498';
 GRANT ALL PRIVILEGES ON swinan01_smart_web.* TO 'swinan01'@'localhost';
 
 -- Use the swinan01_smart_web database
-USE swinan01_smart_web;-- Clear out Database
+USE swinan01_smart_web;
+
+-- Clear out Database
 DROP TABLE IF EXISTS EVENT_ANIME_DATA;
 DROP TABLE IF EXISTS EVENT_DATA;
 DROP TABLE IF EXISTS EVENT_DETAILS;

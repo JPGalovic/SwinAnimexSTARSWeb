@@ -1,0 +1,19 @@
+
+RewriteEngine on
+
+
+
+
+
+RewriteCond %{HTTP_HOST} ^swinanime\.net$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.swinanime\.net$
+RewriteRule ^facegroup\/?(.*)$ "https\:\/\/www\.facebook\.com\/groups\/swinanimeclub$1" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^swinanime\.net$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.swinanime\.net$
+RewriteRule ^ssaa$ "https\:\/\/www\.myssaa\.com\.au\/Clubs\/Swinburne_Anime_Club" [R=301,L]
+
+
+RewriteRule .*\.()$ - [F,NC]
+
+RewriteRule .*\.()$ - [F,NC]
