@@ -4,7 +4,7 @@ INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIP
 		 12,
 		 "Yoko Nishikawa lived a life of privilege until her father’s company went under. From princess to pauper, she faces life with a non-existent budget and is stuck eating bread crusts. Alone and distraught, everything changes when glutton Futaba and scary class rep Teru stumble into her life—literally. Together, they’ll discover a new friendship and survive the day-to-day trials of being in high school.",
 		 "Yoko Nishikawa lived a life of privilege until her father’s company went under. From princess to pauper, she faces life with a non-existent budget and is stuck eating bread crusts.",
-		 "Madman"
+		 "Madman",
 		 "&copy;Â&copy 2016 arai-cherry / Houbunsha, Three leaves, three colors Project"
 		)
 ;
