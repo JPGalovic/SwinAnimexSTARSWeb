@@ -4,7 +4,7 @@ INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIP
 		 24,
 		 "Souma is a teenage chef who is always looking for the perfect flavours and combinations in his art -- the art of cooking. So when his father suddenly closes down the family diner, his hopes of someday owning a diner fade away. But Souma's dad has bigger plans for him and enrols him in a cut throat culinary school to prove his worth. Will he make the cut, or will his pot boil over? Find out in Food Wars!",
 		 "Souma is a teenage chef who is always looking for the perfect flavours and combinations in his art -- the art of cooking. So when his father suddenly closes down the family diner, his hopes of someday owning a diner fade away.",
-		 "Madman"
+		 "Madman",
 		 "&copy;Yuto Tsukuda, Shun Saeki / Shueisha, Food Wars! Shokugeki no Soma Committee"
 		)
 ;
