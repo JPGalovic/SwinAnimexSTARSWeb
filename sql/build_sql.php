@@ -30,7 +30,7 @@
 		
 		,	8 =>  'data/anime/madman/assassination_classroom_season_2_data.sql'
 		,	9 =>  'data/anime/madman/ben-to_data.sql'
-		,	10 =>  'data/anime/madman/danganronpa_data.sql'
+		,	10 => 'data/anime/madman/danganronpa_data.sql'
 		,	11 => 'data/anime/madman/death_note_data.sql'
 		,	12 => 'data/anime/madman/food_wars_data.sql'
 		,	13 => 'data/anime/madman/highschool_dxd_data.sql'
