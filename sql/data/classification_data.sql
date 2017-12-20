@@ -25,6 +25,8 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("PG - Mild themes, sexual references and coarse language")
 	,	("PG - Mild violence, themes, drug references and coarse language")
 	,	("PG - Mild themes, animated violence and coarse language")
+	,	("PG - Mild animated violence")
+	,	("PG - Mild themes")
 ;
 
 -- Data for M Classifications
@@ -77,5 +79,6 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("MA15+ - Strong sexual references and frequent animated nudity")
 	,	("MA15+ - Strong sexual references, animated nudity and violence")
 	,	("MA15+ - Strong sexual innuendo")
+	,	("MA15+ - Strong supernatural themes and animated violence")
 ;
 
