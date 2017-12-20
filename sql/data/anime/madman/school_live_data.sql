@@ -4,7 +4,7 @@ INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIP
 		 12,
 		 "Why would anyone form a School Living Club? Could four girls, their advisor, and a puppy really love their school so much that they’d want to live in it? Or is there another reason, something that lurks behind the façade of their comfortable existence? Something that waits outside their school’s doors. Something that has already robbed one girl of her sanity? While the others try to come to grips with a dark new reality, the rest of the world falls to ruin at the hands of a ravenous force, and insanity may be the last hope for survival. Shocks, heartbreak and stunning revelations await as the as the twisted tale unfolds in SCHOOL-LIVE!",
 		 "Why would anyone form a School Living Club? Could four girls, their advisor, and a puppy really love their school so much that they’d want to live in it? Or is there another reason, something that lurks behind the façade of their comfortable existence?",
-		 "Madman"
+		 "Madman",
 		 "&copy;Nitroplus / Norimitsu Kaihou, Sadoru Chiba, Houbunsha / Gakkougurashi Production Committee"
 		)
 ;
