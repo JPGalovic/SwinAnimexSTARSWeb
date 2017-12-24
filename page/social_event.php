@@ -16,7 +16,7 @@
 				
 				include('module/social_event/event_header.php');
 				include('module/social_event/event_details.php');
-				include('module/home/events_table.php');
+				include('module/events_table/4_events_table.php');
 			}
 		}
 	}
