@@ -56,7 +56,7 @@
 <file name="junjo_romantica_data.sql" server="ftp.swinanime.net" local="131580585699176004" remote="131581074600000000" Dst="2" />
 <file name="kamisama_kiss_data.sql" server="ftp.swinanime.net" local="131580585699181004" remote="131581074600000000" Dst="2" />
 <file name="kancolle_data.sql" server="ftp.swinanime.net" local="131580585699186013" remote="131581074600000000" Dst="2" />
-<file name="magical_warfare_data.sql" server="ftp.swinanime.net" local="131580585699191016" remote="131581074600000000" Dst="2" />
+<file name="magical_warfare_data.sql" server="ftp.swinanime.net" local="131585568814922257" remote="131585869200000000" Dst="2" />
 <file name="maria_the_virgin_witch_data.sql" server="ftp.swinanime.net" local="131580585699196019" remote="131581074600000000" Dst="2" />
 <file name="mobile_suit_gundam_iron_blooded_orphans_data.sql" server="ftp.swinanime.net" local="131580585699201019" remote="131581074600000000" Dst="2" />
 <file name="mr_osomatsu_data.sql" server="ftp.swinanime.net" local="131580585699206019" remote="131581074600000000" Dst="2" />
@@ -84,6 +84,6 @@
 <file name="yurikuma_arashi_data.sql" server="ftp.swinanime.net" local="131580585699321096" remote="131581074600000000" Dst="2" />
 <file name="yuru_yuri_data.sql" server="ftp.swinanime.net" local="131580585699326099" remote="131581074600000000" Dst="2" />
 <file name="zetman_data.sql" server="ftp.swinanime.net" local="131580585699331096" remote="131581074600000000" Dst="2" />
-<file name="pandora_in_the_crimson_shell_data .sql" server="ftp.swinanime.net" local="131582110019474487" remote="131582019000000000" Dst="2" />
+<file name="pandora_in_the_crimson_shell_data .sql" server="ftp.swinanime.net" local="131585561205955961" remote="131585869200000000" Dst="2" />
 <file name="three_leaves_three_colors_data.sql" server="ftp.swinanime.net" local="131582126306249963" remote="131582019000000000" Dst="2" />
 </dwsync>
