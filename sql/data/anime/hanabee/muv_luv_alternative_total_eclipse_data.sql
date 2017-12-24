@@ -151,10 +151,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 ;
 
 INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
-		("Muv-Luv Alternative Total Eclipse", 0, 1, 4)
-	,	("Muv-Luv Alternative Total Eclipse", 0, 2, 4)
-	,	("Muv-Luv Alternative Total Eclipse", 0, 3, 4)
-	,	("Muv-Luv Alternative Total Eclipse", 0, 4, 4)
-	,	("Muv-Luv Alternative Total Eclipse", 0, 5, 4)
-	,	("Muv-Luv Alternative Total Eclipse", 0, 6, 4)
+		("Muv-Luv Alternative Total Eclipse", 0, 1, 8)
+	,	("Muv-Luv Alternative Total Eclipse", 0, 2, 8)
+	,	("Muv-Luv Alternative Total Eclipse", 0, 3, 8)
 ;
