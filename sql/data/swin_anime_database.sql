@@ -1,11 +1,3 @@
--- Creates Database and User for webpage if database is not found
-CREATE DATABASE IF NOT EXISTS swinan01_smart_web;
-CREATE USER IF NOT EXISTS 'swinan01'@'localhost' IDENTIFIED BY 'qdVbzdb498';
-GRANT ALL PRIVILEGES ON swinan01_smart_web.* TO 'swinan01'@'localhost';
-
--- Use the swinan01_smart_web database
-USE swinan01_smart_web;
-
 -- Clear out Database
 DROP TABLE IF EXISTS EVENT_ANIME_DATA;
 DROP TABLE IF EXISTS EVENT_DATA;
@@ -400,224 +392,6 @@ CREATE TABLE IF NOT EXISTS EVENT_GAME_DATA (
 	,	FOREIGN KEY						(GAME_TITLE) REFERENCES GAME (GAME_TITLE)
 	,	FOREIGN KEY						(GAME_EVENT_TYPE) REFERENCES GAME_EVENT_TYPE (TYPE_ID)
 );
-
--- Anime Data
-INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
-		("Little Busters Refrain",
-		 13,
-		 "On the back of their first baseball game, the Little Busters team is closer than ever. But amongst the celebration, Riki can't help but notice a strong sense of D&eacute;j&agrave; vu over everything that has happened. As the oddities of the world continue to unfold, the answers to Riki's questions appear to lie in the hands of a cat. Can Riki and Rin muster enough courage to fulfill the mission given to them and confront the truth of their reality that has been in front of them all along?",
-		 "On the back of their first baseball game, the Little Busters team is closer than ever. But amongst the celebration, Riki can't help but notice a strong sense of D&eacute;j&agrave; vu over everything that has happened.",
-		 "Hanabee",
-		 "&copy;Yoshinobu Yamakawa, Michiru Shimada / J.C.Staff"
-		)
-;
-
-INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
-		("Little Busters Refrain",
-		 4,
-		 1,
-		 "M - Mature themes, sexual references and coarse language",
-		 13,
-		 "https://hanabee.com.au/products/little-busters-refrain-blu-ray"
-		)
-    ,	("Little Busters Refrain",
-		 3,
-		 1,
-		 "M - Mature themes, sexual references and coarse language",
-		 13,
-		 "https://hanabee.com.au/products/little-busters-refrain"
-		)
-;
-
-INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
-		("Little Busters Refrain",
-		 1,
-		 "It Struck Without Warning",
-		 "Following the loss of their first baseball game, the Little Busters have a pancake party. While returning from the party, Yuiko overhears some girls badmouthing her, claiming that they will pay her back for being humiliated in the past. Some time later, Riki and the others learn that someone had filled Kudryavka's bag with thumbtacks and destroyed Komari's notes. Suspicious of a girl who was overhearing them, Riki follows her and finds the same girls Yuiko had noticed the other day in a classroom, figuring that they are the culprits. Despite being confronted by Riki, the girls claim that there is nothing he can without any evidence of what they did, until Yuiko appears and plays a recorded conversation between them that proves their involvement. Despite that, the girls refuse to give up and claim that they will keep tormenting Yuiko's friends until Yuiko destroys the room's door with a single kick and threatens to do the same with their faces, forcing them to give up. When a teacher arrives and discovers the damage, Kyousuke and the other boys cover for Yuiko and Riki as they escape by themselves to the broadcast room. The room seems familiar to Riki despite never having been there before and with his memories confused, he suffers another attack of narcolepsy and collapses. "
-		)
-	,	("Little Busters Refrain",
-		 2,
-		 "It Was Also Raining at That Time",
-		 "After waking up, Riki learns from Yuiko that she was taking care of him while he was asleep and cannot shake the suspicion that the whole situation has happened with them in the past. Some time later, Kyousuke and the other boys point out that Riki is behaving strangely since his last encounter with Yuiko. Believing that he has fallen in love with her, they decide to have him lure the girls to the school building as they prepare a fireworks show for them, with instructions to find a way to get alone with Yuiko to set up the mood for his &quot;confession&quot;. Wondering if he is actually in love with someone, Riki does as they say, but ends up alone with Yuiko by accident when the fireworks begin. The following day, Riki realizes that the same events of the previous day are being repeated as the date is also the same, June 20. "
-		)
-	,	("Little Busters Refrain",
-		 3,
-		 "I Always Wanted to Stay Here",
-		 "The day of June 20 keeps repeating without anyone taking heed of it, except for Riki himself, and no one else seems to find it strange even when it starts snowing. Riki decides to look for Kyousuke to ask for his advice but he is nowhere to be found. However, Riki learns that Yuiko is the only other person who knows the truth and she claims that it all is her fault. Her wish for staying with the Little Busters forever had been granted in the form of a dream, and she tells Riki that she only knew what happiness was after meeting Riki and his friends. Yuiko tells him that things will return to normal when he wakes up from the dream, but Riki will forget everything that happened. Before bidding farewell, Yuiko warns Riki to take care of Rin, as the &quot;fated day&quot; is at hand. "
-		)
-	,	("Little Busters Refrain",
-		 4,
-		 "Riki and Rin",
-		 "While thinking about what Yuiko said to him, Riki is approached by a girl who confesses her feelings for him, but claims that she knows he already likes someone else and flees. Wondering what she meant, Rin's image come to Riki's mind, and upon learning what happened, Kyousuke reveals that a third-year student had also confessed to Rin, but he helped her decline him. Later that day, Rin asks Riki to help her buy some cat food and on the way back, she suggests they start dating and Riki agrees after confirming that she likes him. Riki has trouble trying tell Kyouske about it the next day, but Kyousuke claims that he already knew about it. Riki and Rin later tell the rest of the Little Busters, who congratulate them, but Riki chases after Rin after she runs away embarrassed. The white cat Lennon brings them another mysterious letter telling them that they have one final task to do before &quot;learning the truth of the world&quot;, which is to &quot;volunteer themselves during homeroom&quot;. "
-		)
-	,	("Little Busters Refrain",
-		 5,
-		 "The Final Task",
-		 "Members of the Prefectural Assembly are expected to make an inspection of the school and realizing that it is part of the &quot;final task&quot;, Riki and Rin volunteer themselves to guide them around. Despite Rin's shy demeanor, she manages to guide the visitors properly and they later invite her to take part in a student exchange program to help the students of another school overcome a tragedy that claimed the lives of some of their classmates. Riki at first asks Rin to decline their invitation, but he later realizes that this could be an important experience for her to grow as a person. However, when Riki tries to encourage her to take part in the program, she gets angry at him and ultimately accepts the invitation. On the eve of Rin's departure, Riki realizes that all the tasks they received helped her to mature and improve her confidence. He concludes that it was all a part of Kyousuke's plans, including inviting Komari and the other girls to become part of their group. His suspicions are confirmed when Riki finds Lennon with Kyousuke and then he confronts him about the &quot;truth of the world&quot; he mentioned in his letters. However, before getting some answers, they are forced to run away after being caught outdoors during curfew and when Riki trips over, Kyousuke disappears in front of him. "
-		)
-	,	("Little Busters Refrain",
-		 6,
-		 "At the End of the Escape",
-		 "After Riki and the others watch Rin leave the school without a word, Riki is then left with the impression that Kyousuke sent her away and that he is trying to break apart the Little Busters. Riki continues getting text messages from Rin saying that she does not know what to do at the school, and all he can do is tell her to &quot;hang in there&quot;. Concerned for Rin being isolated, Riki decides to go after her, but he is stopped by Kyousuke, who makes a deal that he will bring her back for weekends only. When Rin come back the following weekend, she is depressed and stays in bed. Riki goes to Kengo for advice, who tells him he has to fight Kyousuke to keep Rin from going back to the school. Kyousuke agrees to settle it over a baseball game with Masato as his partner, but Riki and Kengo ultimately fail. Kengo claims that Kyousuke rigged the game and punches him before being restrained by Riki and Masato. The next morning, Riki tells Rin that they are running away together. They travel to a house in the country where they played as kids, but they are eventually discovered by the police who raid the house. "
-		)
-	,	("Little Busters Refrain",
-		 7,
-		 "May 13",
-		 "Riki awakens several months before, with no memories about what happened during that time. Riki goes to stop Masato from fighting Kengo, but neither of them listen to him and Kyousuke is nowhere to be found. The result of the fight leads to Kengo fracturing his right arm, putting him out of commission for kendo practice; Kengo asks Riki to think of something fun all of them could do together. Rin is now afraid of everyone but Riki, who routinely drops her off at a local elementary school during the day. Meanwhile, Kyousuke is depressed and stays cooped up in his room reading manga. Initially unsuccessful to find something Rin enjoys to do, he eventually discovers her affinity for playing catch. Riki tries to invite Kyousuke to join in, but he refuses. Riki also invites Masato and Kengo to play a baseball game, but Kengo angrily refuses to participate, and Masato leaves shortly thereafter. Knowing the others are hiding something from him and Rin, Riki resolves to become a leader like Kyousuke and reform the Little Busters. "
-		)
-	,	("Little Busters Refrain",
-		 8,
-		 "Proof of the Strongest",
-		 "Determined to reform the Little Busters, Riki attempts to invite Masato, who refuses, claiming that what only matters to him is to &quot;become the strongest&quot;. Soon after, Riki and Rin hear news of Masato attacking other students and devise a trap to stop him. However, the trap fails to restrain him fully and he starts pursuing them. After setting another trap with Rin's help, Riki manages to wear down Masato to the point of being able to defeat him barehanded. The knocked down Masato then reminisces that before meeting Kyousuke, he used to be treated as a fool by his peers until he trained his body enough to beat down whoever insulted him. This resulted in him becoming isolated because of it, until Kyousuke appeared and defeated him by also using traps, leading to them becoming friends. Masato began his rampage at school because he suddenly started seeing everyone else as a copy of himself and believed that he could only distinguish himself from the others by becoming the strongest of them all. After renewing his friendship with Masato, Riki realizes that he must eventually confront Kyousuke as well for his and his friends' sake, while a serious Kengo watches over him from afar. "
-		)
-	,	("Little Busters Refrain",
-		 9,
-		 "A Friend's Tears",
-		 "Riki's next step to reassemble his friends is to convince Kengo to join their side, but Kengo refuses to listen to him, claiming that all Riki and Rin need to do is to rely on their friends. Riki visits Kyousuke, who hints that Kengo is lying about something and Riki realizes that Kengo's arm is not injured as he claims. Rin learns from Masato that Kengo originally joined the Little Busters after Kyousuke defeated his father in a kendo match. This leads Riki to challenge Kengo to a baseball match instead, with the first one to strike a home run being the winner and Kengo rejoining the Little Busters should he lose. After several attempts, Riki manages to land a home run but is too exhausted to throw the ball, so Rin takes his place. Rin's throws are fast but with initially no control, and when she manages to throw the ball properly, she succeeds in having Kengo strikeout, winning the match. Kengo rejoins the Little Busters, determined to follow Riki as long as he can. "
-		)
-	,	("Little Busters Refrain",
-		 10,
-		 "And So I'll Do It Over Again",
-		 "Having assembled the rest of the original Little Busters, Riki intends to save Kyousuke from despair the same way he did for him when his parents died. Meanwhile, Kyousuke reminisces that in fact the world they are living in was created by his spirit with the purpose of preparing both Riki and Rin to live without him and the others, as all of them except the pair apparently died during an accident. Since then, Kyousuke created an alternate timeline that was always reset when Riki or Rin had fallen into despair. However, Kyousuke's power to maintain this realm is waning, leading to the strange events occurring in the previous loop, and the departure of the other girls. When Riki and Rin ran away after the latter broke down from being separated from the others, Kyousuke was losing his faith, until Riki managed to establish himself as the leader, and once reunited with his friends, Kyousuke claims that the time for him and the others to bid farewell to Riki and Rin has come. "
-		)
-	,	("Little Busters Refrain",
-		 11,
-		 "The End of the World",
-		 "After having the Little Busters once again reunited, Riki suggests for them to play baseball, and the others accept. During the match, Kyousuke reveals to Riki that the world they are currently in was created by him and the others after a bus accident killed all students aboard except for Riki and Rin. Kyousuke explains that this world was meant to prepare them to move forward with their lives, so Kyousuke and the others gave the duo a series of trials to have them mature and become stronger. After Masato and Kengo bid their farewells, Kyousuke tearfully instructs Riki to take Rin past the school gates back to the real world, as the time for them to part has come. As Riki and Rin get past the gates, Kyousuke has one last tour around the school before sitting at his desk and disappearing along with the world he created. "
-		)
-	,	("Little Busters Refrain",
-		 12,
-		 "A Single Request",
-		 "Riki and Rin awaken in the real world and recall that during their field trip, their bus got into an accident and Masato and Kengo used their own bodies to protect them. Despite being injured, they flee from the site of the accident to avoid being caught in the impending explosion, but after reaching a safe distance, Riki leaves Rin behind to return and attempt to help the others. However, he starts suffering another attack of narcolepsy and struggles to keep himself awake. Meanwhile, Rin has a meeting with Komari and the other girls in spirit and wishing to not part ways with them, she decides to look for a way to save them as well. "
-		)
-	,	("Little Busters Refrain",
-		 13,
-		 "Little Busters",
-		 "Having another attack of narcolepsy, Riki realizes that he always falls asleep at the sight of unpleasant situations, since he saw his parents' dead bodies in a car accident when he was a child, and determined to overcome this weakness, he awakens with Rin's help. Knowing that the bus will explode, Riki and Rin start rescuing the other students from the wreckage only to discover that Kyousuke is using his own body to prevent the gas from leaking further, leaving the duo no other option but to pick him up after carrying all the others to safety. The bus explodes just after Riki and Rin return to rescue Kyousuke, but the incident ends with no deaths. Three months later, all of the students have returned from the hospital except Kyousuke, who is still in a coma, and the other Little Busters spend their days together, waiting for him to return. Once Kyousuke finally returns, the Little Busters have their own, private field trip to the beach together. "
-		)
-		
-;
-
-INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
-		("Little Busters Refrain", 0, 1, 4)
-	,	("Little Busters Refrain", 0, 2, 4)
-	,	("Little Busters Refrain", 0, 3, 5)
-;
-
-INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
-		("Plastic Memories",
-		 13,
-		 "Tsukasa Mizugaki is a recent hire of the SAI Corporation, renown for its production and management of androids capable of feeling human emotions called &quot;Giftia&quot;. Assigned to the terminal service department, Tsukasa is tasked with recovering Giftias who are nearing their expiration from their owners before they corrupt. But in this dead end department, Tsukasa is about to meet Isla, a female Giftia. Beneath her quiet exterior, she was once known as the best in Giftia retrievals and Tsukasa is determined to find out why she stopped.",
-		 "From the writer of &quot;Steins;Gate&quot;, Naotaka Hayashi, comes an original love story!",
-		 "Hanabee",
-		 ""
-		)
-;
-
-INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
-		("Plastic Memories",
-		 1,
-		 1,
-		 "M - Mature themes and sexual references",
-		 7,
-		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories"
-		)
-	,	("Plastic Memories",
-		 1,
-		 2,
-		 "M - Mature themes and sexual references",
-		 6,
-		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories-part-2"
-		)
-	,	("Plastic Memories",
-		 2,
-		 1,
-		 "M - Mature themes and sexual references",
-		 7,
-		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories-blu-ray"
-		)
-	,	("Plastic Memories",
-		 2,
-		 2,
-		 "M - Mature themes and sexual references",
-		 6,
-		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories-part-2-blu-ray"
-		)
-;
-
-INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
-		("Plastic Memories",
-		 1,
-		 "The First Partner",
-		 "On the first day of his new job, Tsukasa Mizugaki rushes to Terminal Service No. 1, which is one of the offices in SAI Corp, where he is taught about Giftia, androids who survive on synthetic souls for a maximum lifespan of nine years and four months. Normally, humans and Giftia work in pairs to collect expired Giftia, where the human is assigned the job of a 'spotter' that is in-charge of overseeing his Giftia partner at work while the Giftia earns the job of a 'marksman' that persuades the owners to give up their Giftia. Tsukasa is then partnered with Isla, a Giftia who is highly regarded in the office and famous for a wide knowledge of herbs and tea. The two are led out by Tsukasa's trainer Michiru Kinushima and her partner Zack; Zack retrieves a Giftia, as a demonstration of their job for Tsukasa, and Michiru explains their job to him. Not long after, Tsukasa and Isla are assigned a mission to retrieve Nina, a child-type Giftia owned by an old woman named Chizu Shirohana. After multiple tries, Isla is unable to persuade Chizu to talk to them, which makes Tsukasa doubt her abilities. She finally manages to win a chance to talk with Nina, and Chizu overhears Nina giving her consent to be taken away so as not to cause trouble for Chizu, whom she loves dearly. Chizu, realising she had not considered Nina's feelings in the matter, finally allows Nina to be taken away, and thanks Tsukasa when he apologizes."
-		)
-	,	("Plastic Memories",
-		 2,
-		 "Don't Want to Cause Trouble",
-		 "Tsukasa meets Yasutaka Hanada, a spotter and a ten-year veteran at Terminal Service No. 1, whose aloof behavior surprises him, as well as annoys his partner Sherry. When Yasutaka asks him about how he got the job, Tsukasa reveals that his father is a friend of one of the higher-ups in the company, who decided to help him after he failed his entrance exams. After another failed attempt at retrieving and a scolding from Michiru, Tsukasa takes the blame despite it being Isla who caused the problem. Back in the office, he is prompted by a message about her and heads to the Unit Testing Room, where he meets Eru Miru and Mikijiro Tetsuguro, who are measuring Isla's physical skills. Tsukasa asks Isla about the physical training, and she tells him of her belief that she is holding him back because of all the time she spent off the field. Because of this, Tsukasa decides to do the negotiating with Giftia owners instead of Isla, in spite of the fact that it isn't what a spotter does. The next day, he begins putting together his own manual about owner negotiations and is assisted by Michiru and Zack. Once he is finished, he comes across Yasutaka, who learns about Isla's visits to the Unit Testing Room and remarks the pointless nature of those visits, explaining that Isla's physical capabilities are on a consistent decline that cannot be fixed, a characteristic of Giftia. Later on, Tsukasa and Isla successfully retrieve the Giftia they were previously assigned to, while Kazuki Kuwanomi, an experienced spotter, and Yasutaka talk about Isla's lifespan, which is set to expire in less than 2,000 hours, giving her less than three months to live."
-		 )
-	,	("Plastic Memories",
-		 3,
-		 "We've Just Started Living Together",
-		 "Tsukasa is assigned to live with Isla in the company dormitory, a rule mandated for all marksmen and spotter duos in Terminal Service No. 1. However, he is unsettled by the fact that Isla repeatedly ignores him there. At Terminal Service No. 1, he confides to other employees about the problem, although their individual suggestions fail miserably at helping him attract her attention. Finally, Kazuki approaches Tsukasa about the problem and tells him she ignores other people during her personal time, not just him. She then tells him to take Isla out somewhere if he wants some interaction with her. Following through with the suggestion, he successfully asks Isla to accompany him to a shopping mall. There, they go to a herb shop and, to buy some more time, Tsukasa asks Isla to help him pick out some herbs as a present to a person who he unintentionally describes as being a lot like her. Afterwards, they go to a nearby amusement park, where Tsukasa admits the person he was describing was Isla herself. When he says he did this to make some memories with her about their partnership, she emotionally shuts down and tells him that she was not built to play at an amusement park, which shocks him. When Isla runs off, he purchases a key ring pendant from the amusement park and gives it to her at their dorm room, telling her she can throw it away if she doesn't want it. She also apologizes apprehensively about her escape, and even though Eru had previously told Tsukasa that Isla didn't accept gifts, Isla makes the keychain an exception."
-		)
-	,	("Plastic Memories",
-		 4,
-		 "I Just Don't Know How to Smile",
-		 "The Terminal Service No. 1 staff receives seven brand-new retrieval missions, and Tsukasa and Isla are assigned to retrieve a Giftia named Marcia. They are also warned of the presence of criminals who assume the identities of Terminal Service employees to retrieve Giftia and sell them on the black market. Tsukasa and Isla head to Marcia's residence, where they learn she is raising her owner, Souta Wakanae, in the role of an older sister after his parents died. When Souta arrives home from school, he acts hostile towards Tsukasa and Isla, but is surprisingly willing to sign the agreement form to take Marcia away, citing that she is just a Giftia and adding that Giftias cannot be trusted in telling the truth. Unable to acquire a signature as a result of Souta's attitude, Tsukasa confides in Michiru about the encounter, and she advises him to solve the problem by having Souta believe he was truly loved by Marcia. As a result, Tsukasa, Isla, and Marcia decide to bake a cake for his birthday on the following day, and are assisted by Michiru and Zack. Afterwards, Michiru tells Tsukasa that she tried all she could to keep her father, a Giftia, from being retrieved, which resulted in him becoming a Wanderer, a Giftia that still retains its motor skills but loses its personality and memories, causing it to become instinctual and aggressive. Later, Souta returns home and is surprised by the group. Upon spotting the birthday cake, which was modeled after one used for his birthday three years ago, he remembers his family and tearfully apologies to Marcia. On the day before the retrieval, Souta is visited by a shady man, who claims to be Tsukasa and Isla's replacement from the Terminal Service and asks for Marcia."
-		)
-	,	("Plastic Memories",
-		 5,
-		 "The Promise I Wanted to Keep",
-		 "While returning home with groceries, Marcia is suddenly ambushed by the man from the previous episode. Later, Tsukasa and Isla are contacted by Souta, who informs them about Marcia's disappearance, and they assume it is the work of a black market retriever. With only 24 hours left on Marcia's lifespan, Tsukasa resolves to retrieve Marcia and return her to Souta, and the rest of Terminal Service No. 1 joins the search. The following day, the office narrows down the search to an area where a black market retrieval service is possibly located, although their efforts are hindered by a unit from R. Security, a private security firm that was hired to assist in the investigation. Kazuki confronts the unit's supervisor, Shinonome, who gives her a map of the area under scrutiny. As the retrievers get ready to converge on the area, Tsukasa is equipped with and learns about a gun-like device designed to forcibly crash all of a Giftia's functions when they turn into Wanderers. He is then approached by Kazuki, who asks him if Isla will be able to handle the situation, but is forced to drop the subject soon afterward. Michiru later tells Tsukasa about how Kazuki tried to retrieve her father when he became a Wanderer, only for him to injure Kazuki and then be shot down by members of R. Security. Soon afterward, the black market retriever is found unconscious and it is concluded that Marcia turned into a Wanderer. Kazuki orders the rest of the retrievers to stop Marcia before she is destroyed by R. Security. Tsukasa and Isla find Marcia, only to realize Souta had been following them. Marcia then injures Isla and kidnaps Souta. Despite Isla's injuries, she and Tsukasa follow her to a rooftop, where Tsukasa nearly manages to convince Marcia to surrender. However, when Souta speaks her name, Marcia snaps and begins strangling him, forcing Tsukasa to pull out his software destruction device and prepare to shoot Marcia. However, Isla suddenly dashes towards Marcia, just as Tsukasa fires the device. The scene then cuts to the Terminal Service office during the next morning, where it is revealed that Isla hasn't signed into the attendance log."
-		 )
-	,	("Plastic Memories",
-		 6,
-		 "Welcome Home the Both of Us",
-		 "Three years ago, it is revealed that Isla began blaming herself for not accompanying Kazuki when she retrieved Michiru's father, which wound up costing Kazuki her ankle. As a result, Kazuki retired from her position as Isla's spotter. In the present day, it is revealed that Marcia was hit by Tsukasa's device, although Isla was able to block most of the blow without being hit herself. With Isla now under maintenance for her injuries inflicted by Marcia, Tsukasa is reassigned to desk duty. After a visit from Tsukasa, Isla notes that he is still remaining optimistic despite what happened and privately questions his feelings about the situation. Once most of her maintenance is done, Isla returns to the office and realizes that she has been paying attention to Tsukasa a lot more closely lately. She confides in Michiru and Eru about it, although they misinterpret her feelings as being motivated by love and Eru decides to help Isla stalk Tsukasa. However, after multiple attempts at observing him fail miserably, Isla confesses to Michiru about her confusion on Tsukasa's unwavering optimism. Michiru then tells her that Tsukasa never forgot about the incident with Marcia, even neglecting his desk duties to go and apologize to Souta for what happened, and assumes that he is smiling out of sadness. After finishing the last of her maintenance, Isla returns to the dorm, only to find he isn't there. When night falls and Tsukasa has yet to return home, she goes to the office, where she finds Tsukasa learning that she has 1,000 hours left in her lifespan, which translates to a month. However, when given the chance to partner up with a new Giftia, Tsukasa declares that he wants to remain partnered with Isla, which makes her happy."
-		)
-	,	("Plastic Memories",
-		 7,
-		 "How to Ask Her Out",
-		 "One morning, Tsukasa decides to ask Isla out on a date. While trying to find opportunities to do so, he finds that Isla has been doing chores for him at their dormitory and the office. After asking her about it, he learns she is trying to be useful to him, much to his chagrin. When Tsukasa musters the courage to ask her out, Isla accepts his request and decides to go to the amusement park after discussing it with Michiru and Eru, later reasoning to Tsukasa that she felt guilty about running out on him during their previous time there. However, while reading Isla's diary, Tsukasa realizes that she and Kazuki often went there when they were still partners. The next day, the two of them go there and sit at a bench, Isla's favorite spot in the park, as she was able to observe the happiness and joy of so many people, which comforted her. After learning that Isla has never tried any of the park attractions, Tsukasa takes her on a tour through the entire area, eventually ending at the Ferris wheel. As they sit inside, Isla expresses her gratitude that she is riding it with Tsukasa. As he thinks about Isla's happiness, Tsukasa faints after working too hard lately, ending the date. In the end, Tsukasa wakes up and Isla apologizes for not telling him earlier that she has 1,000 hours remaining in her lifespan. Tsukasa promises that he will stay with Isla until the end, no matter what. He then asks if she would be willing to go out with him again, to which she smiles and takes his hand. However, as he sleeps, she observes him with a doubtful expression."
-		)
-	,	("Plastic Memories",
-		 8,
-		 "The Fireworks I've Never Seen",
-		 "During a retrieval mission, Tsukasa is surprised when the owner of the newly assigned Giftia opts to delete the latter's current personality and memories by replacing her OS and start over from scratch instead of handing over the Giftia proper, having done it several times already. Intrigued, he asks around the office if a Giftia who has gone through that experience is capable of retaining their old memories, but everyone replies there is no precedent to that. Later on, Kazuki announces that a marksman from the Terminal Service No. 3 office will be sent in, as the assigned Giftia and his owner have gone into hiding, and assigns Tsukasa and Isla to assist her. They later meet the marksman, Andie; shortly afterward, they have an awkward encounter with Eru, who mistakes Andie for her friend Olivia. After the mission is a success, Tsukasa learns from Eru that Andie is indeed Olivia, whose OS was replaced due to the company cutting costs. Later on, Eru tells Tsukasa that she reconnected with Andie and mentioned a carnival they used to go to together when Andie was still Olivia, which caused Andie to decide to go there. Not wanting to deal with her memories of Olivia, Eru tries to get Tsukasa to take Andie to the carnival instead. However, Tsukasa convinces Eru to come along, and they take Isla and Andie to the carnival the following night. There, Eru decides to let go of Olivia and create new memories with Andie, concluding it wouldn't be fair to either of them if she saw them as one and the same. Later, Isla gets lost in the crowd and Tsukasa begins searching for her, eventually finding her at a lonely walkway, terrified by exploding fireworks. After he consoles her, Isla brings up Andie and asks if her presence is hurting him. He replies that it does, but insists on continuing to be her partner. When she asks why, Tsukasa responds that it is because he loves her. Shocked and embarrassed by the sudden confession, Isla shouts that she cannot accept his love."
-		)
-	,	("Plastic Memories",
-		 9,
-		 "After the Festival",
-		 "In the wake of being shot down by Isla at the carnival, Tsukasa has maintained a heartbroken, depressed attitude that is evident at the office. Seeing this, Michiru asks Isla about it, and she tells her that she was just confused when she shot Tsukasa down and now feels guilty about hurting his feelings. Michiru suggests having the two of them live apart for a few days so Isla could have time to sort out her own feelings, and she transfers Isla to Eru's room and Tsukasa to hers and Zack's. When Tsukasa recovers from his stupor, Michiru consoles him and tells him the reason why she joined Terminal Service No. 1. The next day, Michiru sets up a lunch between Tsukasa and Isla, during which they agree to allow Isla more time to consider her true feelings. Later on, Michiru questions the effectiveness of her treatment over the whole situation. After observing Tsukasa and Isla acting like average coworkers at the office, Michiru approaches Isla one day and asks her about her feelings for Tsukasa, and she responds after a lengthy explanation that she does return his feelings. However, she concludes from this that she must stay away from Tsukasa. When a shocked Michiru asks why, Isla confesses to her that she has approximately one month left in her lifespan. Angered by this, Michiru confronts Tsukasa about it and asks for his true intention for confessing to Isla when he knew about her lifespan beforehand; he replies that he only wishes to make memories for the both of them. When she lashes out at him for refusing to see what kind of pain will result from his decisions, he insists on keeping Isla as a partner. When he returns back to his dorm room, Tsukasa finds Kazuki already there. As Isla also arrives, Kazuki announces she intends to dissolve their partnership."
-		)
-	,	("Plastic Memories",
-		 10,
-		 "No Longer Partners",
-		 "Kazuki elaborates that she is dissolving Tsukasa and Isla's partnership on the basis that romantic relationships in the office are not allowed, and intends to reassign Tsukasa to her marksman Constance while she takes charge of Isla. Though Tsukasa protests against the decision, Isla immediately agrees, later explaining that it would be better for the both of them. At the office, Tsukasa confronts Kazuki about her decision, after which she reveals she only did it to protect them both from the inevitable pain that would've resulted. However, when Tsukasa proclaims he still intends on staying as Isla's spotter, Kazuki cryptically tells him to leave the situation to her. Later on, Tsukasa and Isla go out on separate retrieval missions with Constance and Kazuki, respectively. During her retrieval mission, Isla agrees to befriend Sarah, the Giftia in question, at the request of the owner Antonio Horizon, whose lifestyle as a mafia boss made it impossible for the Giftia to live a normal life. Simultaneously, Tsukasa and Constance talk about Isla's work performance and how she had closed herself off after Kazuki dissolved their partnership three years ago. Constance then tells Tsukasa that Kazuki has faith in entrusting him with Isla. Returning to the office, Kazuki reveals to Isla that she intentionally set her up for the mission and tries to convince her to stay with Tsukasa, saying that tearing herself away from him will only create painful memories for him. The following night, Isla muses about the unfulfilled expectations she had from her separation with Kazuki. The next day, she returns to the office, approaches Tsukasa, and explains her reason for rejecting him. Then, she proclaims that she wants to make more memories with him until the end and that she is in love with him."
-		)
-	,	("Plastic Memories",
-		 11,
-		 "Rice Omelette Day",
-		 "In the wake of starting their relationship, Tsukasa and Isla have found it difficult to talk to one another without being embarrassed. However, Tsukasa is able to ask Isla out to dinner. At the office, their approving colleagues decide to give them advice on how to appease the other. At Kazuki's suggestion, Isla asks Michiru to help her learn how to cook for Tsukasa. However, upon finding out she doesn't know any of Tsukasa's favorite foods, Isla asks him, only for Constance to suggest that the two of them just cook together. After debating on what to cook for dinner, Tsukasa suggests rice omelettes. Later on, the two travel to Antonio's manor to visit Sarah. There, Tsukasa asks Sarah what would make her happy, and she recites a sentence Isla told her during her last visit, that people are at their happiest when they are with the ones they love. Afterwards, they go to the shopping mall to purchase herbs and pajamas for Isla, after which Tsukasa admits he doesn't know what to do to make her happy. She responds that she is already happy spending time with him. Returning home, the two begin cooking rice omelettes, and although the final product was not what they were expecting, they are able to enjoy it nevertheless. Isla then allows Tsukasa to read her latest diary entries, both of which recount the days she spent with him. When Tsukasa goes to sleep, Isla adds a new entry, in which she expresses her hope that she would be able to spend another wonderful day with him."
-		)
-	,	("Plastic Memories",
-		 12,
-		 "Filling Up with Memories",
-		 "In the middle of the night, Isla breaks down in tears and sleeps in Tsukasa's bed for comfort. The next morning, she has reverted to a bright and cheery personality, much to Tsukasa's surprise and relief. At the office, the other employees give Tsukasa tickets to a number of events that he could take Isla to. The two then use tickets given to them by Michiru and Zack to watch a romantic movie. The next day, they return to work despite having taken that day off. Following Isla's visit to the Unit Testing Room, Michiru and Eru discuss about the necessity of her increasingly frequent visits. Meanwhile, Kazuki approaches Tsukasa in private and gives him a retrieval agreement form for Isla, telling him to sign it. Overhearing their conversation, Isla decides to begin teaching Tsukasa how to raise the herbs she had been cultivating in her spare time, as well as how to make tea. While serving Michiru tea, Tsukasa is confronted by her about why he and Isla are coming to work despite taking the day off, and he responds that it was a part of their decision to carry on as they were. The following night, Tsukasa gives Isla the retrieval agreement form, and she gives him her approval in signing it. The next day, they go to retrieve Sarah, their last retrieval mission together. Before erasing Sarah's memories, Isla whispers something indiscernible to her. They then return to the office, where they find the others holding a party in commemoration for Isla's last retrieval mission. After the party, Tsukasa asks Isla what she told Sarah, and she replies that she told her of her hope that she would be reunited with the person they cherished."
-		)
-	,	("Plastic Memories",
-		 13,
-		 "I Hope One Day, You'll be Reunited",
-		 "It is the last day of Isla's lifespan and she and Tsukasa decide to first spend it by reading entries in her diary. They then spend the morning cleaning up their dormitory room and then taking a bath. They then head over to the office, where they take care of Isla's herbs and she leaves notes for the other employees. They are approached by an early Kazuki, who teases Isla for one last time. The two then decide to spend the day's remaining hours at the amusement park, which they enjoy to their hearts' content. Eventually, they stand at Isla's favorite bench, where she describes how she always observed the emotions of the park's many visitors and how contented they would be at the end of the day in bringing their happy memories home with them. Then, as the park closes, Tsukasa and Isla convince the operator to let them ride the Ferris wheel one last time after closing hours. There, they take turns describing what they love about each other, and Isla finally admits she loved the way Tsukasa held back his sadness and smiled, despite her worry over that characteristic. She then hands him her deactivation ring, saying that she wanted him to be the one to do it. Tsukasa begins crying, and Isla notes that it was the first time she ever saw him cry. He then puts the ring on, expresses his hope that she would be reunited with the person they cherished, and kisses Isla as her time expires. As he carries her to the vehicle, he is met by Kazuki, who thanks him for being there for her, which causes him to break down in tears. The other Terminal Service employees read Isla's letters, in which she thanks them for all the memories she had of them. In the epilogue, Tsukasa takes the same elevator where he met Isla and muses what it would be like if his lifespan was predetermined, concluding afterward that he would live that life to the fullest. Nine months later, he returns from a training course to resume work with Terminal Service No. 1, and is introduced to his new Giftia. "
-		)
-;
-
-INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
-		("Plastic Memories", 0, 1, 4)
-	,	("Plastic Memories", 0, 2, 4)
-	,	("Plastic Memories", 0, 3, 5)
-;
 
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
@@ -2233,6 +2007,224 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("Yurikuma Arashi", 0, 3, 4)
 ;
 
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Little Busters Refrain",
+		 13,
+		 "On the back of their first baseball game, the Little Busters team is closer than ever. But amongst the celebration, Riki can't help but notice a strong sense of D&eacute;j&agrave; vu over everything that has happened. As the oddities of the world continue to unfold, the answers to Riki's questions appear to lie in the hands of a cat. Can Riki and Rin muster enough courage to fulfill the mission given to them and confront the truth of their reality that has been in front of them all along?",
+		 "On the back of their first baseball game, the Little Busters team is closer than ever. But amongst the celebration, Riki can't help but notice a strong sense of D&eacute;j&agrave; vu over everything that has happened.",
+		 "Hanabee",
+		 "&copy;Yoshinobu Yamakawa, Michiru Shimada / J.C.Staff"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Little Busters Refrain",
+		 4,
+		 1,
+		 "M - Mature themes, sexual references and coarse language",
+		 13,
+		 "https://hanabee.com.au/products/little-busters-refrain-blu-ray"
+		)
+    ,	("Little Busters Refrain",
+		 3,
+		 1,
+		 "M - Mature themes, sexual references and coarse language",
+		 13,
+		 "https://hanabee.com.au/products/little-busters-refrain"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Little Busters Refrain",
+		 1,
+		 "It Struck Without Warning",
+		 "Following the loss of their first baseball game, the Little Busters have a pancake party. While returning from the party, Yuiko overhears some girls badmouthing her, claiming that they will pay her back for being humiliated in the past. Some time later, Riki and the others learn that someone had filled Kudryavka's bag with thumbtacks and destroyed Komari's notes. Suspicious of a girl who was overhearing them, Riki follows her and finds the same girls Yuiko had noticed the other day in a classroom, figuring that they are the culprits. Despite being confronted by Riki, the girls claim that there is nothing he can without any evidence of what they did, until Yuiko appears and plays a recorded conversation between them that proves their involvement. Despite that, the girls refuse to give up and claim that they will keep tormenting Yuiko's friends until Yuiko destroys the room's door with a single kick and threatens to do the same with their faces, forcing them to give up. When a teacher arrives and discovers the damage, Kyousuke and the other boys cover for Yuiko and Riki as they escape by themselves to the broadcast room. The room seems familiar to Riki despite never having been there before and with his memories confused, he suffers another attack of narcolepsy and collapses. "
+		)
+	,	("Little Busters Refrain",
+		 2,
+		 "It Was Also Raining at That Time",
+		 "After waking up, Riki learns from Yuiko that she was taking care of him while he was asleep and cannot shake the suspicion that the whole situation has happened with them in the past. Some time later, Kyousuke and the other boys point out that Riki is behaving strangely since his last encounter with Yuiko. Believing that he has fallen in love with her, they decide to have him lure the girls to the school building as they prepare a fireworks show for them, with instructions to find a way to get alone with Yuiko to set up the mood for his &quot;confession&quot;. Wondering if he is actually in love with someone, Riki does as they say, but ends up alone with Yuiko by accident when the fireworks begin. The following day, Riki realizes that the same events of the previous day are being repeated as the date is also the same, June 20. "
+		)
+	,	("Little Busters Refrain",
+		 3,
+		 "I Always Wanted to Stay Here",
+		 "The day of June 20 keeps repeating without anyone taking heed of it, except for Riki himself, and no one else seems to find it strange even when it starts snowing. Riki decides to look for Kyousuke to ask for his advice but he is nowhere to be found. However, Riki learns that Yuiko is the only other person who knows the truth and she claims that it all is her fault. Her wish for staying with the Little Busters forever had been granted in the form of a dream, and she tells Riki that she only knew what happiness was after meeting Riki and his friends. Yuiko tells him that things will return to normal when he wakes up from the dream, but Riki will forget everything that happened. Before bidding farewell, Yuiko warns Riki to take care of Rin, as the &quot;fated day&quot; is at hand. "
+		)
+	,	("Little Busters Refrain",
+		 4,
+		 "Riki and Rin",
+		 "While thinking about what Yuiko said to him, Riki is approached by a girl who confesses her feelings for him, but claims that she knows he already likes someone else and flees. Wondering what she meant, Rin's image come to Riki's mind, and upon learning what happened, Kyousuke reveals that a third-year student had also confessed to Rin, but he helped her decline him. Later that day, Rin asks Riki to help her buy some cat food and on the way back, she suggests they start dating and Riki agrees after confirming that she likes him. Riki has trouble trying tell Kyouske about it the next day, but Kyousuke claims that he already knew about it. Riki and Rin later tell the rest of the Little Busters, who congratulate them, but Riki chases after Rin after she runs away embarrassed. The white cat Lennon brings them another mysterious letter telling them that they have one final task to do before &quot;learning the truth of the world&quot;, which is to &quot;volunteer themselves during homeroom&quot;. "
+		)
+	,	("Little Busters Refrain",
+		 5,
+		 "The Final Task",
+		 "Members of the Prefectural Assembly are expected to make an inspection of the school and realizing that it is part of the &quot;final task&quot;, Riki and Rin volunteer themselves to guide them around. Despite Rin's shy demeanor, she manages to guide the visitors properly and they later invite her to take part in a student exchange program to help the students of another school overcome a tragedy that claimed the lives of some of their classmates. Riki at first asks Rin to decline their invitation, but he later realizes that this could be an important experience for her to grow as a person. However, when Riki tries to encourage her to take part in the program, she gets angry at him and ultimately accepts the invitation. On the eve of Rin's departure, Riki realizes that all the tasks they received helped her to mature and improve her confidence. He concludes that it was all a part of Kyousuke's plans, including inviting Komari and the other girls to become part of their group. His suspicions are confirmed when Riki finds Lennon with Kyousuke and then he confronts him about the &quot;truth of the world&quot; he mentioned in his letters. However, before getting some answers, they are forced to run away after being caught outdoors during curfew and when Riki trips over, Kyousuke disappears in front of him. "
+		)
+	,	("Little Busters Refrain",
+		 6,
+		 "At the End of the Escape",
+		 "After Riki and the others watch Rin leave the school without a word, Riki is then left with the impression that Kyousuke sent her away and that he is trying to break apart the Little Busters. Riki continues getting text messages from Rin saying that she does not know what to do at the school, and all he can do is tell her to &quot;hang in there&quot;. Concerned for Rin being isolated, Riki decides to go after her, but he is stopped by Kyousuke, who makes a deal that he will bring her back for weekends only. When Rin come back the following weekend, she is depressed and stays in bed. Riki goes to Kengo for advice, who tells him he has to fight Kyousuke to keep Rin from going back to the school. Kyousuke agrees to settle it over a baseball game with Masato as his partner, but Riki and Kengo ultimately fail. Kengo claims that Kyousuke rigged the game and punches him before being restrained by Riki and Masato. The next morning, Riki tells Rin that they are running away together. They travel to a house in the country where they played as kids, but they are eventually discovered by the police who raid the house. "
+		)
+	,	("Little Busters Refrain",
+		 7,
+		 "May 13",
+		 "Riki awakens several months before, with no memories about what happened during that time. Riki goes to stop Masato from fighting Kengo, but neither of them listen to him and Kyousuke is nowhere to be found. The result of the fight leads to Kengo fracturing his right arm, putting him out of commission for kendo practice; Kengo asks Riki to think of something fun all of them could do together. Rin is now afraid of everyone but Riki, who routinely drops her off at a local elementary school during the day. Meanwhile, Kyousuke is depressed and stays cooped up in his room reading manga. Initially unsuccessful to find something Rin enjoys to do, he eventually discovers her affinity for playing catch. Riki tries to invite Kyousuke to join in, but he refuses. Riki also invites Masato and Kengo to play a baseball game, but Kengo angrily refuses to participate, and Masato leaves shortly thereafter. Knowing the others are hiding something from him and Rin, Riki resolves to become a leader like Kyousuke and reform the Little Busters. "
+		)
+	,	("Little Busters Refrain",
+		 8,
+		 "Proof of the Strongest",
+		 "Determined to reform the Little Busters, Riki attempts to invite Masato, who refuses, claiming that what only matters to him is to &quot;become the strongest&quot;. Soon after, Riki and Rin hear news of Masato attacking other students and devise a trap to stop him. However, the trap fails to restrain him fully and he starts pursuing them. After setting another trap with Rin's help, Riki manages to wear down Masato to the point of being able to defeat him barehanded. The knocked down Masato then reminisces that before meeting Kyousuke, he used to be treated as a fool by his peers until he trained his body enough to beat down whoever insulted him. This resulted in him becoming isolated because of it, until Kyousuke appeared and defeated him by also using traps, leading to them becoming friends. Masato began his rampage at school because he suddenly started seeing everyone else as a copy of himself and believed that he could only distinguish himself from the others by becoming the strongest of them all. After renewing his friendship with Masato, Riki realizes that he must eventually confront Kyousuke as well for his and his friends' sake, while a serious Kengo watches over him from afar. "
+		)
+	,	("Little Busters Refrain",
+		 9,
+		 "A Friend's Tears",
+		 "Riki's next step to reassemble his friends is to convince Kengo to join their side, but Kengo refuses to listen to him, claiming that all Riki and Rin need to do is to rely on their friends. Riki visits Kyousuke, who hints that Kengo is lying about something and Riki realizes that Kengo's arm is not injured as he claims. Rin learns from Masato that Kengo originally joined the Little Busters after Kyousuke defeated his father in a kendo match. This leads Riki to challenge Kengo to a baseball match instead, with the first one to strike a home run being the winner and Kengo rejoining the Little Busters should he lose. After several attempts, Riki manages to land a home run but is too exhausted to throw the ball, so Rin takes his place. Rin's throws are fast but with initially no control, and when she manages to throw the ball properly, she succeeds in having Kengo strikeout, winning the match. Kengo rejoins the Little Busters, determined to follow Riki as long as he can. "
+		)
+	,	("Little Busters Refrain",
+		 10,
+		 "And So I'll Do It Over Again",
+		 "Having assembled the rest of the original Little Busters, Riki intends to save Kyousuke from despair the same way he did for him when his parents died. Meanwhile, Kyousuke reminisces that in fact the world they are living in was created by his spirit with the purpose of preparing both Riki and Rin to live without him and the others, as all of them except the pair apparently died during an accident. Since then, Kyousuke created an alternate timeline that was always reset when Riki or Rin had fallen into despair. However, Kyousuke's power to maintain this realm is waning, leading to the strange events occurring in the previous loop, and the departure of the other girls. When Riki and Rin ran away after the latter broke down from being separated from the others, Kyousuke was losing his faith, until Riki managed to establish himself as the leader, and once reunited with his friends, Kyousuke claims that the time for him and the others to bid farewell to Riki and Rin has come. "
+		)
+	,	("Little Busters Refrain",
+		 11,
+		 "The End of the World",
+		 "After having the Little Busters once again reunited, Riki suggests for them to play baseball, and the others accept. During the match, Kyousuke reveals to Riki that the world they are currently in was created by him and the others after a bus accident killed all students aboard except for Riki and Rin. Kyousuke explains that this world was meant to prepare them to move forward with their lives, so Kyousuke and the others gave the duo a series of trials to have them mature and become stronger. After Masato and Kengo bid their farewells, Kyousuke tearfully instructs Riki to take Rin past the school gates back to the real world, as the time for them to part has come. As Riki and Rin get past the gates, Kyousuke has one last tour around the school before sitting at his desk and disappearing along with the world he created. "
+		)
+	,	("Little Busters Refrain",
+		 12,
+		 "A Single Request",
+		 "Riki and Rin awaken in the real world and recall that during their field trip, their bus got into an accident and Masato and Kengo used their own bodies to protect them. Despite being injured, they flee from the site of the accident to avoid being caught in the impending explosion, but after reaching a safe distance, Riki leaves Rin behind to return and attempt to help the others. However, he starts suffering another attack of narcolepsy and struggles to keep himself awake. Meanwhile, Rin has a meeting with Komari and the other girls in spirit and wishing to not part ways with them, she decides to look for a way to save them as well. "
+		)
+	,	("Little Busters Refrain",
+		 13,
+		 "Little Busters",
+		 "Having another attack of narcolepsy, Riki realizes that he always falls asleep at the sight of unpleasant situations, since he saw his parents' dead bodies in a car accident when he was a child, and determined to overcome this weakness, he awakens with Rin's help. Knowing that the bus will explode, Riki and Rin start rescuing the other students from the wreckage only to discover that Kyousuke is using his own body to prevent the gas from leaking further, leaving the duo no other option but to pick him up after carrying all the others to safety. The bus explodes just after Riki and Rin return to rescue Kyousuke, but the incident ends with no deaths. Three months later, all of the students have returned from the hospital except Kyousuke, who is still in a coma, and the other Little Busters spend their days together, waiting for him to return. Once Kyousuke finally returns, the Little Busters have their own, private field trip to the beach together. "
+		)
+		
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Little Busters Refrain", 0, 1, 4)
+	,	("Little Busters Refrain", 0, 2, 4)
+	,	("Little Busters Refrain", 0, 3, 5)
+;
+
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Plastic Memories",
+		 13,
+		 "Tsukasa Mizugaki is a recent hire of the SAI Corporation, renown for its production and management of androids capable of feeling human emotions called &quot;Giftia&quot;. Assigned to the terminal service department, Tsukasa is tasked with recovering Giftias who are nearing their expiration from their owners before they corrupt. But in this dead end department, Tsukasa is about to meet Isla, a female Giftia. Beneath her quiet exterior, she was once known as the best in Giftia retrievals and Tsukasa is determined to find out why she stopped.",
+		 "From the writer of &quot;Steins;Gate&quot;, Naotaka Hayashi, comes an original love story!",
+		 "Hanabee",
+		 ""
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Plastic Memories",
+		 1,
+		 1,
+		 "M - Mature themes and sexual references",
+		 7,
+		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories"
+		)
+	,	("Plastic Memories",
+		 1,
+		 2,
+		 "M - Mature themes and sexual references",
+		 6,
+		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories-part-2"
+		)
+	,	("Plastic Memories",
+		 2,
+		 1,
+		 "M - Mature themes and sexual references",
+		 7,
+		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories-blu-ray"
+		)
+	,	("Plastic Memories",
+		 2,
+		 2,
+		 "M - Mature themes and sexual references",
+		 6,
+		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories-part-2-blu-ray"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Plastic Memories",
+		 1,
+		 "The First Partner",
+		 "On the first day of his new job, Tsukasa Mizugaki rushes to Terminal Service No. 1, which is one of the offices in SAI Corp, where he is taught about Giftia, androids who survive on synthetic souls for a maximum lifespan of nine years and four months. Normally, humans and Giftia work in pairs to collect expired Giftia, where the human is assigned the job of a 'spotter' that is in-charge of overseeing his Giftia partner at work while the Giftia earns the job of a 'marksman' that persuades the owners to give up their Giftia. Tsukasa is then partnered with Isla, a Giftia who is highly regarded in the office and famous for a wide knowledge of herbs and tea. The two are led out by Tsukasa's trainer Michiru Kinushima and her partner Zack; Zack retrieves a Giftia, as a demonstration of their job for Tsukasa, and Michiru explains their job to him. Not long after, Tsukasa and Isla are assigned a mission to retrieve Nina, a child-type Giftia owned by an old woman named Chizu Shirohana. After multiple tries, Isla is unable to persuade Chizu to talk to them, which makes Tsukasa doubt her abilities. She finally manages to win a chance to talk with Nina, and Chizu overhears Nina giving her consent to be taken away so as not to cause trouble for Chizu, whom she loves dearly. Chizu, realising she had not considered Nina's feelings in the matter, finally allows Nina to be taken away, and thanks Tsukasa when he apologizes."
+		)
+	,	("Plastic Memories",
+		 2,
+		 "Don't Want to Cause Trouble",
+		 "Tsukasa meets Yasutaka Hanada, a spotter and a ten-year veteran at Terminal Service No. 1, whose aloof behavior surprises him, as well as annoys his partner Sherry. When Yasutaka asks him about how he got the job, Tsukasa reveals that his father is a friend of one of the higher-ups in the company, who decided to help him after he failed his entrance exams. After another failed attempt at retrieving and a scolding from Michiru, Tsukasa takes the blame despite it being Isla who caused the problem. Back in the office, he is prompted by a message about her and heads to the Unit Testing Room, where he meets Eru Miru and Mikijiro Tetsuguro, who are measuring Isla's physical skills. Tsukasa asks Isla about the physical training, and she tells him of her belief that she is holding him back because of all the time she spent off the field. Because of this, Tsukasa decides to do the negotiating with Giftia owners instead of Isla, in spite of the fact that it isn't what a spotter does. The next day, he begins putting together his own manual about owner negotiations and is assisted by Michiru and Zack. Once he is finished, he comes across Yasutaka, who learns about Isla's visits to the Unit Testing Room and remarks the pointless nature of those visits, explaining that Isla's physical capabilities are on a consistent decline that cannot be fixed, a characteristic of Giftia. Later on, Tsukasa and Isla successfully retrieve the Giftia they were previously assigned to, while Kazuki Kuwanomi, an experienced spotter, and Yasutaka talk about Isla's lifespan, which is set to expire in less than 2,000 hours, giving her less than three months to live."
+		 )
+	,	("Plastic Memories",
+		 3,
+		 "We've Just Started Living Together",
+		 "Tsukasa is assigned to live with Isla in the company dormitory, a rule mandated for all marksmen and spotter duos in Terminal Service No. 1. However, he is unsettled by the fact that Isla repeatedly ignores him there. At Terminal Service No. 1, he confides to other employees about the problem, although their individual suggestions fail miserably at helping him attract her attention. Finally, Kazuki approaches Tsukasa about the problem and tells him she ignores other people during her personal time, not just him. She then tells him to take Isla out somewhere if he wants some interaction with her. Following through with the suggestion, he successfully asks Isla to accompany him to a shopping mall. There, they go to a herb shop and, to buy some more time, Tsukasa asks Isla to help him pick out some herbs as a present to a person who he unintentionally describes as being a lot like her. Afterwards, they go to a nearby amusement park, where Tsukasa admits the person he was describing was Isla herself. When he says he did this to make some memories with her about their partnership, she emotionally shuts down and tells him that she was not built to play at an amusement park, which shocks him. When Isla runs off, he purchases a key ring pendant from the amusement park and gives it to her at their dorm room, telling her she can throw it away if she doesn't want it. She also apologizes apprehensively about her escape, and even though Eru had previously told Tsukasa that Isla didn't accept gifts, Isla makes the keychain an exception."
+		)
+	,	("Plastic Memories",
+		 4,
+		 "I Just Don't Know How to Smile",
+		 "The Terminal Service No. 1 staff receives seven brand-new retrieval missions, and Tsukasa and Isla are assigned to retrieve a Giftia named Marcia. They are also warned of the presence of criminals who assume the identities of Terminal Service employees to retrieve Giftia and sell them on the black market. Tsukasa and Isla head to Marcia's residence, where they learn she is raising her owner, Souta Wakanae, in the role of an older sister after his parents died. When Souta arrives home from school, he acts hostile towards Tsukasa and Isla, but is surprisingly willing to sign the agreement form to take Marcia away, citing that she is just a Giftia and adding that Giftias cannot be trusted in telling the truth. Unable to acquire a signature as a result of Souta's attitude, Tsukasa confides in Michiru about the encounter, and she advises him to solve the problem by having Souta believe he was truly loved by Marcia. As a result, Tsukasa, Isla, and Marcia decide to bake a cake for his birthday on the following day, and are assisted by Michiru and Zack. Afterwards, Michiru tells Tsukasa that she tried all she could to keep her father, a Giftia, from being retrieved, which resulted in him becoming a Wanderer, a Giftia that still retains its motor skills but loses its personality and memories, causing it to become instinctual and aggressive. Later, Souta returns home and is surprised by the group. Upon spotting the birthday cake, which was modeled after one used for his birthday three years ago, he remembers his family and tearfully apologies to Marcia. On the day before the retrieval, Souta is visited by a shady man, who claims to be Tsukasa and Isla's replacement from the Terminal Service and asks for Marcia."
+		)
+	,	("Plastic Memories",
+		 5,
+		 "The Promise I Wanted to Keep",
+		 "While returning home with groceries, Marcia is suddenly ambushed by the man from the previous episode. Later, Tsukasa and Isla are contacted by Souta, who informs them about Marcia's disappearance, and they assume it is the work of a black market retriever. With only 24 hours left on Marcia's lifespan, Tsukasa resolves to retrieve Marcia and return her to Souta, and the rest of Terminal Service No. 1 joins the search. The following day, the office narrows down the search to an area where a black market retrieval service is possibly located, although their efforts are hindered by a unit from R. Security, a private security firm that was hired to assist in the investigation. Kazuki confronts the unit's supervisor, Shinonome, who gives her a map of the area under scrutiny. As the retrievers get ready to converge on the area, Tsukasa is equipped with and learns about a gun-like device designed to forcibly crash all of a Giftia's functions when they turn into Wanderers. He is then approached by Kazuki, who asks him if Isla will be able to handle the situation, but is forced to drop the subject soon afterward. Michiru later tells Tsukasa about how Kazuki tried to retrieve her father when he became a Wanderer, only for him to injure Kazuki and then be shot down by members of R. Security. Soon afterward, the black market retriever is found unconscious and it is concluded that Marcia turned into a Wanderer. Kazuki orders the rest of the retrievers to stop Marcia before she is destroyed by R. Security. Tsukasa and Isla find Marcia, only to realize Souta had been following them. Marcia then injures Isla and kidnaps Souta. Despite Isla's injuries, she and Tsukasa follow her to a rooftop, where Tsukasa nearly manages to convince Marcia to surrender. However, when Souta speaks her name, Marcia snaps and begins strangling him, forcing Tsukasa to pull out his software destruction device and prepare to shoot Marcia. However, Isla suddenly dashes towards Marcia, just as Tsukasa fires the device. The scene then cuts to the Terminal Service office during the next morning, where it is revealed that Isla hasn't signed into the attendance log."
+		 )
+	,	("Plastic Memories",
+		 6,
+		 "Welcome Home the Both of Us",
+		 "Three years ago, it is revealed that Isla began blaming herself for not accompanying Kazuki when she retrieved Michiru's father, which wound up costing Kazuki her ankle. As a result, Kazuki retired from her position as Isla's spotter. In the present day, it is revealed that Marcia was hit by Tsukasa's device, although Isla was able to block most of the blow without being hit herself. With Isla now under maintenance for her injuries inflicted by Marcia, Tsukasa is reassigned to desk duty. After a visit from Tsukasa, Isla notes that he is still remaining optimistic despite what happened and privately questions his feelings about the situation. Once most of her maintenance is done, Isla returns to the office and realizes that she has been paying attention to Tsukasa a lot more closely lately. She confides in Michiru and Eru about it, although they misinterpret her feelings as being motivated by love and Eru decides to help Isla stalk Tsukasa. However, after multiple attempts at observing him fail miserably, Isla confesses to Michiru about her confusion on Tsukasa's unwavering optimism. Michiru then tells her that Tsukasa never forgot about the incident with Marcia, even neglecting his desk duties to go and apologize to Souta for what happened, and assumes that he is smiling out of sadness. After finishing the last of her maintenance, Isla returns to the dorm, only to find he isn't there. When night falls and Tsukasa has yet to return home, she goes to the office, where she finds Tsukasa learning that she has 1,000 hours left in her lifespan, which translates to a month. However, when given the chance to partner up with a new Giftia, Tsukasa declares that he wants to remain partnered with Isla, which makes her happy."
+		)
+	,	("Plastic Memories",
+		 7,
+		 "How to Ask Her Out",
+		 "One morning, Tsukasa decides to ask Isla out on a date. While trying to find opportunities to do so, he finds that Isla has been doing chores for him at their dormitory and the office. After asking her about it, he learns she is trying to be useful to him, much to his chagrin. When Tsukasa musters the courage to ask her out, Isla accepts his request and decides to go to the amusement park after discussing it with Michiru and Eru, later reasoning to Tsukasa that she felt guilty about running out on him during their previous time there. However, while reading Isla's diary, Tsukasa realizes that she and Kazuki often went there when they were still partners. The next day, the two of them go there and sit at a bench, Isla's favorite spot in the park, as she was able to observe the happiness and joy of so many people, which comforted her. After learning that Isla has never tried any of the park attractions, Tsukasa takes her on a tour through the entire area, eventually ending at the Ferris wheel. As they sit inside, Isla expresses her gratitude that she is riding it with Tsukasa. As he thinks about Isla's happiness, Tsukasa faints after working too hard lately, ending the date. In the end, Tsukasa wakes up and Isla apologizes for not telling him earlier that she has 1,000 hours remaining in her lifespan. Tsukasa promises that he will stay with Isla until the end, no matter what. He then asks if she would be willing to go out with him again, to which she smiles and takes his hand. However, as he sleeps, she observes him with a doubtful expression."
+		)
+	,	("Plastic Memories",
+		 8,
+		 "The Fireworks I've Never Seen",
+		 "During a retrieval mission, Tsukasa is surprised when the owner of the newly assigned Giftia opts to delete the latter's current personality and memories by replacing her OS and start over from scratch instead of handing over the Giftia proper, having done it several times already. Intrigued, he asks around the office if a Giftia who has gone through that experience is capable of retaining their old memories, but everyone replies there is no precedent to that. Later on, Kazuki announces that a marksman from the Terminal Service No. 3 office will be sent in, as the assigned Giftia and his owner have gone into hiding, and assigns Tsukasa and Isla to assist her. They later meet the marksman, Andie; shortly afterward, they have an awkward encounter with Eru, who mistakes Andie for her friend Olivia. After the mission is a success, Tsukasa learns from Eru that Andie is indeed Olivia, whose OS was replaced due to the company cutting costs. Later on, Eru tells Tsukasa that she reconnected with Andie and mentioned a carnival they used to go to together when Andie was still Olivia, which caused Andie to decide to go there. Not wanting to deal with her memories of Olivia, Eru tries to get Tsukasa to take Andie to the carnival instead. However, Tsukasa convinces Eru to come along, and they take Isla and Andie to the carnival the following night. There, Eru decides to let go of Olivia and create new memories with Andie, concluding it wouldn't be fair to either of them if she saw them as one and the same. Later, Isla gets lost in the crowd and Tsukasa begins searching for her, eventually finding her at a lonely walkway, terrified by exploding fireworks. After he consoles her, Isla brings up Andie and asks if her presence is hurting him. He replies that it does, but insists on continuing to be her partner. When she asks why, Tsukasa responds that it is because he loves her. Shocked and embarrassed by the sudden confession, Isla shouts that she cannot accept his love."
+		)
+	,	("Plastic Memories",
+		 9,
+		 "After the Festival",
+		 "In the wake of being shot down by Isla at the carnival, Tsukasa has maintained a heartbroken, depressed attitude that is evident at the office. Seeing this, Michiru asks Isla about it, and she tells her that she was just confused when she shot Tsukasa down and now feels guilty about hurting his feelings. Michiru suggests having the two of them live apart for a few days so Isla could have time to sort out her own feelings, and she transfers Isla to Eru's room and Tsukasa to hers and Zack's. When Tsukasa recovers from his stupor, Michiru consoles him and tells him the reason why she joined Terminal Service No. 1. The next day, Michiru sets up a lunch between Tsukasa and Isla, during which they agree to allow Isla more time to consider her true feelings. Later on, Michiru questions the effectiveness of her treatment over the whole situation. After observing Tsukasa and Isla acting like average coworkers at the office, Michiru approaches Isla one day and asks her about her feelings for Tsukasa, and she responds after a lengthy explanation that she does return his feelings. However, she concludes from this that she must stay away from Tsukasa. When a shocked Michiru asks why, Isla confesses to her that she has approximately one month left in her lifespan. Angered by this, Michiru confronts Tsukasa about it and asks for his true intention for confessing to Isla when he knew about her lifespan beforehand; he replies that he only wishes to make memories for the both of them. When she lashes out at him for refusing to see what kind of pain will result from his decisions, he insists on keeping Isla as a partner. When he returns back to his dorm room, Tsukasa finds Kazuki already there. As Isla also arrives, Kazuki announces she intends to dissolve their partnership."
+		)
+	,	("Plastic Memories",
+		 10,
+		 "No Longer Partners",
+		 "Kazuki elaborates that she is dissolving Tsukasa and Isla's partnership on the basis that romantic relationships in the office are not allowed, and intends to reassign Tsukasa to her marksman Constance while she takes charge of Isla. Though Tsukasa protests against the decision, Isla immediately agrees, later explaining that it would be better for the both of them. At the office, Tsukasa confronts Kazuki about her decision, after which she reveals she only did it to protect them both from the inevitable pain that would've resulted. However, when Tsukasa proclaims he still intends on staying as Isla's spotter, Kazuki cryptically tells him to leave the situation to her. Later on, Tsukasa and Isla go out on separate retrieval missions with Constance and Kazuki, respectively. During her retrieval mission, Isla agrees to befriend Sarah, the Giftia in question, at the request of the owner Antonio Horizon, whose lifestyle as a mafia boss made it impossible for the Giftia to live a normal life. Simultaneously, Tsukasa and Constance talk about Isla's work performance and how she had closed herself off after Kazuki dissolved their partnership three years ago. Constance then tells Tsukasa that Kazuki has faith in entrusting him with Isla. Returning to the office, Kazuki reveals to Isla that she intentionally set her up for the mission and tries to convince her to stay with Tsukasa, saying that tearing herself away from him will only create painful memories for him. The following night, Isla muses about the unfulfilled expectations she had from her separation with Kazuki. The next day, she returns to the office, approaches Tsukasa, and explains her reason for rejecting him. Then, she proclaims that she wants to make more memories with him until the end and that she is in love with him."
+		)
+	,	("Plastic Memories",
+		 11,
+		 "Rice Omelette Day",
+		 "In the wake of starting their relationship, Tsukasa and Isla have found it difficult to talk to one another without being embarrassed. However, Tsukasa is able to ask Isla out to dinner. At the office, their approving colleagues decide to give them advice on how to appease the other. At Kazuki's suggestion, Isla asks Michiru to help her learn how to cook for Tsukasa. However, upon finding out she doesn't know any of Tsukasa's favorite foods, Isla asks him, only for Constance to suggest that the two of them just cook together. After debating on what to cook for dinner, Tsukasa suggests rice omelettes. Later on, the two travel to Antonio's manor to visit Sarah. There, Tsukasa asks Sarah what would make her happy, and she recites a sentence Isla told her during her last visit, that people are at their happiest when they are with the ones they love. Afterwards, they go to the shopping mall to purchase herbs and pajamas for Isla, after which Tsukasa admits he doesn't know what to do to make her happy. She responds that she is already happy spending time with him. Returning home, the two begin cooking rice omelettes, and although the final product was not what they were expecting, they are able to enjoy it nevertheless. Isla then allows Tsukasa to read her latest diary entries, both of which recount the days she spent with him. When Tsukasa goes to sleep, Isla adds a new entry, in which she expresses her hope that she would be able to spend another wonderful day with him."
+		)
+	,	("Plastic Memories",
+		 12,
+		 "Filling Up with Memories",
+		 "In the middle of the night, Isla breaks down in tears and sleeps in Tsukasa's bed for comfort. The next morning, she has reverted to a bright and cheery personality, much to Tsukasa's surprise and relief. At the office, the other employees give Tsukasa tickets to a number of events that he could take Isla to. The two then use tickets given to them by Michiru and Zack to watch a romantic movie. The next day, they return to work despite having taken that day off. Following Isla's visit to the Unit Testing Room, Michiru and Eru discuss about the necessity of her increasingly frequent visits. Meanwhile, Kazuki approaches Tsukasa in private and gives him a retrieval agreement form for Isla, telling him to sign it. Overhearing their conversation, Isla decides to begin teaching Tsukasa how to raise the herbs she had been cultivating in her spare time, as well as how to make tea. While serving Michiru tea, Tsukasa is confronted by her about why he and Isla are coming to work despite taking the day off, and he responds that it was a part of their decision to carry on as they were. The following night, Tsukasa gives Isla the retrieval agreement form, and she gives him her approval in signing it. The next day, they go to retrieve Sarah, their last retrieval mission together. Before erasing Sarah's memories, Isla whispers something indiscernible to her. They then return to the office, where they find the others holding a party in commemoration for Isla's last retrieval mission. After the party, Tsukasa asks Isla what she told Sarah, and she replies that she told her of her hope that she would be reunited with the person they cherished."
+		)
+	,	("Plastic Memories",
+		 13,
+		 "I Hope One Day, You'll be Reunited",
+		 "It is the last day of Isla's lifespan and she and Tsukasa decide to first spend it by reading entries in her diary. They then spend the morning cleaning up their dormitory room and then taking a bath. They then head over to the office, where they take care of Isla's herbs and she leaves notes for the other employees. They are approached by an early Kazuki, who teases Isla for one last time. The two then decide to spend the day's remaining hours at the amusement park, which they enjoy to their hearts' content. Eventually, they stand at Isla's favorite bench, where she describes how she always observed the emotions of the park's many visitors and how contented they would be at the end of the day in bringing their happy memories home with them. Then, as the park closes, Tsukasa and Isla convince the operator to let them ride the Ferris wheel one last time after closing hours. There, they take turns describing what they love about each other, and Isla finally admits she loved the way Tsukasa held back his sadness and smiled, despite her worry over that characteristic. She then hands him her deactivation ring, saying that she wanted him to be the one to do it. Tsukasa begins crying, and Isla notes that it was the first time she ever saw him cry. He then puts the ring on, expresses his hope that she would be reunited with the person they cherished, and kisses Isla as her time expires. As he carries her to the vehicle, he is met by Kazuki, who thanks him for being there for her, which causes him to break down in tears. The other Terminal Service employees read Isla's letters, in which she thanks them for all the memories she had of them. In the epilogue, Tsukasa takes the same elevator where he met Isla and muses what it would be like if his lifespan was predetermined, concluding afterward that he would live that life to the fullest. Nine months later, he returns from a training course to resume work with Terminal Service No. 1, and is introduced to his new Giftia. "
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Plastic Memories", 0, 1, 4)
+	,	("Plastic Memories", 0, 2, 4)
+	,	("Plastic Memories", 0, 3, 5)
+;
+
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Canaan",
 		 13,
@@ -2768,6 +2760,7 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 	,	("2018-02-09 19-30-00", 0, "Summer After Dark", 0, 0, "0")
 	
 	,	("2018-01-08 14-30-00", 0, "Summer Showcase", 0, 0, "0")
+	,	("2018-01-08 15-30-00", 0, "Summer Showcase", 0, 0, "0")
 	
 	,	("2018-01-10 10-00-00", 1, "Beach Episode", 2, 0, "0")
 	,	("2018-01-17 10-00-00", 1, "Arcade Episode", 1, 0, "0")
@@ -2800,5 +2793,6 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 	,	("2018-02-09 19-30-00", "Queens Blade 2 The Evil Eye", 0, 3)
 	
 	,	("2018-01-08 14-30-00", "Vividred Operation", 3, 1)
+	,	("2018-01-08 15-30-00", "Magical Warfare", 3, 1)
 ;
 
