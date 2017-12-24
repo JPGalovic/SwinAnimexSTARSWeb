@@ -6,7 +6,7 @@
 :root {
 	--color_dart_grey_0: #000000;
 	--color_dart_grey_1: #222222;
-	--color_dart_grey_2: #6A6A6A;
+	--color_dart_grey_2: #555555;
 	--color_dart_grey_3: #A6A6A6;
 	--color_dart_grey_4: #FFFFFF;
 	
@@ -167,7 +167,7 @@ a:hover {
 }
 
 #event_page_header footer {
-	background-color: #000000;
+	background-color: var(--color_dart_grey_0);
 	color: var(--color_dart_grey_4);
 	padding-left: 15px;
 	padding-right: 15px;
@@ -200,7 +200,7 @@ a:hover {
 }
 
 #event_display header {
-	background-color: #555555;
+	background-color: var(--color_dart_grey_2);
 	padding-left: 15px;
 }
 
@@ -231,7 +231,7 @@ a:hover {
 
 #event_card h4 {
 	font-size: 18px;
-	color: #555555;
+	color: var(--color_dart_grey_2);
 	font-weight: bold;
 }
 
@@ -326,20 +326,20 @@ a:hover {
 }
 
 #contact_card h3 {
-	color: #555555;
+	color: var(--color_dart_grey_2);
 	text-transform: uppercase;
 	letter-spacing: 4px;
 }
 
 #contact_card h4 {
-	color: #555555;
+	color: var(--color_dart_grey_2);
 	margin-left: 10px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
 
 #contact_card p {
-	color: #333333;
+	color: var(--color_dart_grey_1);
 }
 
 /* Map Display */
@@ -349,7 +349,7 @@ a:hover {
 }
 
 #location_map p {
-	color: #333333;
+	color: var(--color_dart_grey_1);
 }
 
 #map {
@@ -361,7 +361,7 @@ a:hover {
 #connect_display {
 	text-align: center;
 	padding: 20px;
-	background-color: #222222;
+	background-color: var(--color_dart_grey_1);
 }
 
 #connect_display h4 {
@@ -404,7 +404,7 @@ a:hover {
 
 #what_you_missed h4 {
 	font-size: 21px;
-	color: #555555;
+	color: var(--color_dart_grey_2);
 	font-weight: bold;
 }
 
@@ -415,7 +415,7 @@ a:hover {
 
 #what_you_missed section {
 	background-color: var(--color_dart_grey_4);
-	color: #000000;
+	color: var(--color_dart_grey_0);
 	padding: 10px;
 }
 
