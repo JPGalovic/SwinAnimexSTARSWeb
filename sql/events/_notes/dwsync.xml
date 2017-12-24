@@ -9,7 +9,5 @@
 <file name="get_anime_volume_data.php" server="ftp.swinanime.net" local="131572815327182897" remote="131579581800000000" Dst="2" />
 <file name="get_event_details_data.php" server="ftp.swinanime.net" local="131579702834314489" remote="131579604600000000" Dst="2" />
 <file name="get_event_location.php" server="ftp.swinanime.net" local="131579454548125519" remote="131579581800000000" Dst="2" />
-<file name="get_next_four.php" server="ftp.swinanime.net" local="131579454548177497" remote="131579581800000000" Dst="2" />
 <file name="get_specific_event_data.php" server="ftp.swinanime.net" local="131579454548268879" remote="131579581800000000" Dst="2" />
-<file name="get_previous_four.php" server="ftp.swinanime.net" local="131579454548227540" remote="131579581800000000" Dst="2" />
 </dwsync>

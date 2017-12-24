@@ -1,7 +1,5 @@
 <?php
 	// Section displays next 8 events not including subsiqent part events
-
-	//Section gets next 4 Upcoming Events, in the case where no more upcoming events are found Section gets previous 4 events
 	//Login to Database
 	include('sql/sql_login.php');
 
@@ -23,8 +21,14 @@
 			
 			$no_remaining = 8;
 			
-			$used_titles = array(); // Array to store anime titles
-			
+			if(isset($anime_title))
+			{
+				$used_titles = array($anime_title); // Array to store anime titles
+			}
+			else
+			{
+				$used_titles = array(); // Array to store anime titles
+			}
 			
 			echo('<header class="full"><h1>Upcoming Events:</h1><img src="image/events_table.png" id="event_display_image"></header>');
 			echo('<section class="flex_container">');
@@ -37,7 +41,7 @@
 					if(!$get_next_data->num_rows == 0)
 					{
 						$event_row = $get_next_data->fetch_assoc();
-						$event_time = $event_row['EVENT_TIME']; // Set Event Time
+						$this_event_time = $event_row['EVENT_TIME']; // Set Event Time
 
 						switch($event_row['EVENT_TYPE_DESCRIPTION'])
 						{
