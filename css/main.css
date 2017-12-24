@@ -195,6 +195,10 @@ body {
 	text-transform: uppercase;
 }
 
+#event_display section {
+	padding: 10px;
+}
+
 #event_display_image {
 	float: right;
 	height: 100%;
