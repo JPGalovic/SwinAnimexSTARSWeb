@@ -1,17 +1,14 @@
--- Creates Database and User for webpage if database is not found
-CREATE DATABASE IF NOT EXISTS swinan01_smart_web;
-CREATE USER IF NOT EXISTS 'swinan01'@'localhost' IDENTIFIED BY 'qdVbzdb498';
-GRANT ALL PRIVILEGES ON swinan01_smart_web.* TO 'swinan01'@'localhost';
-
--- Use the swinan01_smart_web database
-USE swinan01_smart_web;
-
 -- Clear out Database
 DROP TABLE IF EXISTS EVENT_ANIME_DATA;
+DROP TABLE IF EXISTS EVENT_GAME_DATA;
 DROP TABLE IF EXISTS EVENT_DATA;
 DROP TABLE IF EXISTS EVENT_DETAILS;
 DROP TABLE IF EXISTS EVENT_LOCATION;
 DROP TABLE IF EXISTS EVENT_TYPE;
+DROP TABLE IF EXISTS GAME_EVENT_TYPE;
+DROP TABLE IF EXISTS GAME_PLATFORM;
+DROP TABLE IF EXISTS GAME;
+DROP TABLE IF EXISTS PLATFORM;
 DROP TABLE IF EXISTS ANIME_SESSION;
 DROP TABLE IF EXISTS ANIME_SESSION_TYPE;
 DROP TABLE IF EXISTS ANIME_EPISODE;
@@ -19,9 +16,7 @@ DROP TABLE IF EXISTS ANIME_VOLUME;
 DROP TABLE IF EXISTS ANIME_VOLUME_TYPE;
 DROP TABLE IF EXISTS ANIME;
 DROP TABLE IF EXISTS CLASSIFICATION;
-DROP TABLE IF EXISTS COMPANY;
-
--- Table for Sponsors
+DROP TABLE IF EXISTS COMPANY;-- Table for Sponsors
 CREATE TABLE IF NOT EXISTS COMPANY (
 		COMPANY_NAME			VARCHAR(50)
 	,	COMPANY_URL				VARCHAR(250)
@@ -63,6 +58,8 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("PG - Mild themes, sexual references and coarse language")
 	,	("PG - Mild violence, themes, drug references and coarse language")
 	,	("PG - Mild themes, animated violence and coarse language")
+	,	("PG - Mild animated violence")
+	,	("PG - Mild themes")
 ;
 
 -- Data for M Classifications
@@ -85,6 +82,7 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("M - Sexual references, animated violence and nudity")
 	,	("M - Sexual references and sexualised imagery")
 	,	("M - Sexual references and animated nudity")
+	,	("M - Sexualised imagery and sexual innuendo")
 	,	("M - Mature themes and sexual references")
 	,	("M - Sexual themes")
 	,	("M - Supernatural themes and animated violence")
@@ -113,6 +111,8 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("MA15+ - Strong supernatural themes and violence")
 	,	("MA15+ - Strong sexual references and frequent animated nudity")
 	,	("MA15+ - Strong sexual references, animated nudity and violence")
+	,	("MA15+ - Strong sexual innuendo")
+	,	("MA15+ - Strong supernatural themes and animated violence")
 ;
 
 -- Table for Anime Data
@@ -193,7 +193,57 @@ CREATE TABLE IF NOT EXISTS ANIME_SESSION (
 	,	FOREIGN KEY					(SESSION_TYPE_ID) REFERENCES ANIME_SESSION_TYPE (SESSION_TYPE_ID)
 );
 
--- Table for Event Type
+-- Table for Game Platform
+CREATE TABLE IF NOT EXISTS PLATFORM (
+		PLATFORM_ID						INT(11)
+	,	PLATFORM_NAME					VARCHAR(100)
+	,	PLATFORM_DESCRIPTION			VARCHAR(500)
+	,	PRIMARY KEY						(PLATFORM_ID)
+);
+
+-- Data for Game Platform
+INSERT INTO PLATFORM (PLATFORM_ID, PLATFORM_NAME, PLATFORM_DESCRIPTION) VALUES
+		(0, "Windows Game", "This game runs on Microsoft Windows.")
+	,	(1, "MAC Game", "This game runs on Apple Macontosh.")
+	,	(3, "Linux Game", "This game runs on Linux.")
+	,	(4, "Board Game", "This game is a phisical board game.")
+	,	(5, "Card Game", "This game is a phisical card game.")
+	,	(6, "Role Playing Game", "This game is a phisical role playing game.")
+	,	(7, "Live Action Role Playing Game", "This game is a LARP.")
+;
+
+-- Table for Game Data
+CREATE TABLE IF NOT EXISTS GAME (
+		GAME_TITLE						VARCHAR(100)
+	,	GAME_DESCIRPTION				VARCHAR(500)
+	,	MIN_NUMBER_OF_PLAYERS			INT(11)
+	,	MAX_NUMBER_OF_PLAYERS			INT(11)
+	,	RECOMMENDED_NUMBER_OF_PLAYERS	INT(11)
+	,	GAME_CLASSIFICATION				VARCHAR(100)
+	,	PRIMARY KEY						(GAME_TITLE)
+);
+
+-- Table for Game Platform Definitions
+CREATE TABLE IF NOT EXISTS GAME_PLATFORM (
+		GAME_TITLE						VARCHAR(100)
+	,	PLATFORM_ID						INT(11)
+	,	PRIMARY KEY						(GAME_TITLE, PLATFORM_ID)
+	,	FOREIGN KEY						(GAME_TITLE) REFERENCES GAME (GAME_TITLE)
+	,	FOREIGN KEY						(PLATFORM_ID) REFERENCES PLATFORM (PLATFORM_ID)
+);
+
+-- Table for Game Event Type
+CREATE TABLE IF NOT EXISTS GAME_EVENT_TYPE (
+		TYPE_ID							INT(11)
+	,	DESCRIPTION						VARCHAR(500)
+	,	PRIMARY KEY						(TYPE_ID)
+);
+
+-- DATA for Game Event Type
+INSERT INTO GAME_EVENT_TYPE (TYPE_ID, DESCRIPTION) VALUES
+		(0, "Game Tourniment")
+	,	(1, "Game Session")
+;-- Table for Event Type
 CREATE TABLE IF NOT EXISTS EVENT_TYPE (
 		EVENT_TYPE_ID					INT(11)
 	,	EVENT_TYPE_DESCRIPTION			VARCHAR(100)
@@ -227,8 +277,6 @@ INSERT INTO EVENT_LOCATION (LOCATION_ID, CAMPUS, ROOM, ADDRESS, LAT, LNG, ZOOM) 
 	,	(2, NULL, NULL, "Sorrento Oceach Beach, Ocean Beach Rod, Sorrento VIC 3943", -38.345876, 144.727014, 17)
 	,	(3, NULL, NULL, "Hawthorn Aquatic &amp; Leasure Center, 1 Grace St, Hawthorn VIC 3122", -37.820791, 145.034434, 17)
 ;
-
-
 
 -- Table for Event Details (MISC)
 CREATE TABLE IF NOT EXISTS EVENT_DETAILS(
@@ -333,223 +381,16 @@ CREATE TABLE IF NOT EXISTS EVENT_ANIME_DATA (
 	,	FOREIGN KEY						(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) REFERENCES ANIME_SESSION (ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER)
 );
 
--- Anime Data
-INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
-		("Little Busters Refrain",
-		 13,
-		 "On the back of their first baseball game, the Little Busters team is closer than ever. But amongst the celebration, Riki can't help but notice a strong sense of D&eacute;j&agrave; vu over everything that has happened. As the oddities of the world continue to unfold, the answers to Riki's questions appear to lie in the hands of a cat. Can Riki and Rin muster enough courage to fulfill the mission given to them and confront the truth of their reality that has been in front of them all along?",
-		 "On the back of their first baseball game, the Little Busters team is closer than ever. But amongst the celebration, Riki can't help but notice a strong sense of D&eacute;j&agrave; vu over everything that has happened.",
-		 "Hanabee",
-		 "&copy;Yoshinobu Yamakawa, Michiru Shimada / J.C.Staff"
-		)
-;
-
-INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
-		("Little Busters Refrain",
-		 4,
-		 1,
-		 "M - Mature themes, sexual references and coarse language",
-		 13,
-		 "https://hanabee.com.au/products/little-busters-refrain-blu-ray"
-		)
-    ,	("Little Busters Refrain",
-		 3,
-		 1,
-		 "M - Mature themes, sexual references and coarse language",
-		 13,
-		 "https://hanabee.com.au/products/little-busters-refrain"
-		)
-;
-
-INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
-		("Little Busters Refrain",
-		 1,
-		 "It Struck Without Warning",
-		 "Following the loss of their first baseball game, the Little Busters have a pancake party. While returning from the party, Yuiko overhears some girls badmouthing her, claiming that they will pay her back for being humiliated in the past. Some time later, Riki and the others learn that someone had filled Kudryavka's bag with thumbtacks and destroyed Komari's notes. Suspicious of a girl who was overhearing them, Riki follows her and finds the same girls Yuiko had noticed the other day in a classroom, figuring that they are the culprits. Despite being confronted by Riki, the girls claim that there is nothing he can without any evidence of what they did, until Yuiko appears and plays a recorded conversation between them that proves their involvement. Despite that, the girls refuse to give up and claim that they will keep tormenting Yuiko's friends until Yuiko destroys the room's door with a single kick and threatens to do the same with their faces, forcing them to give up. When a teacher arrives and discovers the damage, Kyousuke and the other boys cover for Yuiko and Riki as they escape by themselves to the broadcast room. The room seems familiar to Riki despite never having been there before and with his memories confused, he suffers another attack of narcolepsy and collapses. "
-		)
-	,	("Little Busters Refrain",
-		 2,
-		 "It Was Also Raining at That Time",
-		 "After waking up, Riki learns from Yuiko that she was taking care of him while he was asleep and cannot shake the suspicion that the whole situation has happened with them in the past. Some time later, Kyousuke and the other boys point out that Riki is behaving strangely since his last encounter with Yuiko. Believing that he has fallen in love with her, they decide to have him lure the girls to the school building as they prepare a fireworks show for them, with instructions to find a way to get alone with Yuiko to set up the mood for his &quot;confession&quot;. Wondering if he is actually in love with someone, Riki does as they say, but ends up alone with Yuiko by accident when the fireworks begin. The following day, Riki realizes that the same events of the previous day are being repeated as the date is also the same, June 20. "
-		)
-	,	("Little Busters Refrain",
-		 3,
-		 "I Always Wanted to Stay Here",
-		 "The day of June 20 keeps repeating without anyone taking heed of it, except for Riki himself, and no one else seems to find it strange even when it starts snowing. Riki decides to look for Kyousuke to ask for his advice but he is nowhere to be found. However, Riki learns that Yuiko is the only other person who knows the truth and she claims that it all is her fault. Her wish for staying with the Little Busters forever had been granted in the form of a dream, and she tells Riki that she only knew what happiness was after meeting Riki and his friends. Yuiko tells him that things will return to normal when he wakes up from the dream, but Riki will forget everything that happened. Before bidding farewell, Yuiko warns Riki to take care of Rin, as the &quot;fated day&quot; is at hand. "
-		)
-	,	("Little Busters Refrain",
-		 4,
-		 "Riki and Rin",
-		 "While thinking about what Yuiko said to him, Riki is approached by a girl who confesses her feelings for him, but claims that she knows he already likes someone else and flees. Wondering what she meant, Rin's image come to Riki's mind, and upon learning what happened, Kyousuke reveals that a third-year student had also confessed to Rin, but he helped her decline him. Later that day, Rin asks Riki to help her buy some cat food and on the way back, she suggests they start dating and Riki agrees after confirming that she likes him. Riki has trouble trying tell Kyouske about it the next day, but Kyousuke claims that he already knew about it. Riki and Rin later tell the rest of the Little Busters, who congratulate them, but Riki chases after Rin after she runs away embarrassed. The white cat Lennon brings them another mysterious letter telling them that they have one final task to do before &quot;learning the truth of the world&quot;, which is to &quot;volunteer themselves during homeroom&quot;. "
-		)
-	,	("Little Busters Refrain",
-		 5,
-		 "The Final Task",
-		 "Members of the Prefectural Assembly are expected to make an inspection of the school and realizing that it is part of the &quot;final task&quot;, Riki and Rin volunteer themselves to guide them around. Despite Rin's shy demeanor, she manages to guide the visitors properly and they later invite her to take part in a student exchange program to help the students of another school overcome a tragedy that claimed the lives of some of their classmates. Riki at first asks Rin to decline their invitation, but he later realizes that this could be an important experience for her to grow as a person. However, when Riki tries to encourage her to take part in the program, she gets angry at him and ultimately accepts the invitation. On the eve of Rin's departure, Riki realizes that all the tasks they received helped her to mature and improve her confidence. He concludes that it was all a part of Kyousuke's plans, including inviting Komari and the other girls to become part of their group. His suspicions are confirmed when Riki finds Lennon with Kyousuke and then he confronts him about the &quot;truth of the world&quot; he mentioned in his letters. However, before getting some answers, they are forced to run away after being caught outdoors during curfew and when Riki trips over, Kyousuke disappears in front of him. "
-		)
-	,	("Little Busters Refrain",
-		 6,
-		 "At the End of the Escape",
-		 "After Riki and the others watch Rin leave the school without a word, Riki is then left with the impression that Kyousuke sent her away and that he is trying to break apart the Little Busters. Riki continues getting text messages from Rin saying that she does not know what to do at the school, and all he can do is tell her to &quot;hang in there&quot;. Concerned for Rin being isolated, Riki decides to go after her, but he is stopped by Kyousuke, who makes a deal that he will bring her back for weekends only. When Rin come back the following weekend, she is depressed and stays in bed. Riki goes to Kengo for advice, who tells him he has to fight Kyousuke to keep Rin from going back to the school. Kyousuke agrees to settle it over a baseball game with Masato as his partner, but Riki and Kengo ultimately fail. Kengo claims that Kyousuke rigged the game and punches him before being restrained by Riki and Masato. The next morning, Riki tells Rin that they are running away together. They travel to a house in the country where they played as kids, but they are eventually discovered by the police who raid the house. "
-		)
-	,	("Little Busters Refrain",
-		 7,
-		 "May 13",
-		 "Riki awakens several months before, with no memories about what happened during that time. Riki goes to stop Masato from fighting Kengo, but neither of them listen to him and Kyousuke is nowhere to be found. The result of the fight leads to Kengo fracturing his right arm, putting him out of commission for kendo practice; Kengo asks Riki to think of something fun all of them could do together. Rin is now afraid of everyone but Riki, who routinely drops her off at a local elementary school during the day. Meanwhile, Kyousuke is depressed and stays cooped up in his room reading manga. Initially unsuccessful to find something Rin enjoys to do, he eventually discovers her affinity for playing catch. Riki tries to invite Kyousuke to join in, but he refuses. Riki also invites Masato and Kengo to play a baseball game, but Kengo angrily refuses to participate, and Masato leaves shortly thereafter. Knowing the others are hiding something from him and Rin, Riki resolves to become a leader like Kyousuke and reform the Little Busters. "
-		)
-	,	("Little Busters Refrain",
-		 8,
-		 "Proof of the Strongest",
-		 "Determined to reform the Little Busters, Riki attempts to invite Masato, who refuses, claiming that what only matters to him is to &quot;become the strongest&quot;. Soon after, Riki and Rin hear news of Masato attacking other students and devise a trap to stop him. However, the trap fails to restrain him fully and he starts pursuing them. After setting another trap with Rin's help, Riki manages to wear down Masato to the point of being able to defeat him barehanded. The knocked down Masato then reminisces that before meeting Kyousuke, he used to be treated as a fool by his peers until he trained his body enough to beat down whoever insulted him. This resulted in him becoming isolated because of it, until Kyousuke appeared and defeated him by also using traps, leading to them becoming friends. Masato began his rampage at school because he suddenly started seeing everyone else as a copy of himself and believed that he could only distinguish himself from the others by becoming the strongest of them all. After renewing his friendship with Masato, Riki realizes that he must eventually confront Kyousuke as well for his and his friends' sake, while a serious Kengo watches over him from afar. "
-		)
-	,	("Little Busters Refrain",
-		 9,
-		 "A Friend's Tears",
-		 "Riki's next step to reassemble his friends is to convince Kengo to join their side, but Kengo refuses to listen to him, claiming that all Riki and Rin need to do is to rely on their friends. Riki visits Kyousuke, who hints that Kengo is lying about something and Riki realizes that Kengo's arm is not injured as he claims. Rin learns from Masato that Kengo originally joined the Little Busters after Kyousuke defeated his father in a kendo match. This leads Riki to challenge Kengo to a baseball match instead, with the first one to strike a home run being the winner and Kengo rejoining the Little Busters should he lose. After several attempts, Riki manages to land a home run but is too exhausted to throw the ball, so Rin takes his place. Rin's throws are fast but with initially no control, and when she manages to throw the ball properly, she succeeds in having Kengo strikeout, winning the match. Kengo rejoins the Little Busters, determined to follow Riki as long as he can. "
-		)
-	,	("Little Busters Refrain",
-		 10,
-		 "And So I'll Do It Over Again",
-		 "Having assembled the rest of the original Little Busters, Riki intends to save Kyousuke from despair the same way he did for him when his parents died. Meanwhile, Kyousuke reminisces that in fact the world they are living in was created by his spirit with the purpose of preparing both Riki and Rin to live without him and the others, as all of them except the pair apparently died during an accident. Since then, Kyousuke created an alternate timeline that was always reset when Riki or Rin had fallen into despair. However, Kyousuke's power to maintain this realm is waning, leading to the strange events occurring in the previous loop, and the departure of the other girls. When Riki and Rin ran away after the latter broke down from being separated from the others, Kyousuke was losing his faith, until Riki managed to establish himself as the leader, and once reunited with his friends, Kyousuke claims that the time for him and the others to bid farewell to Riki and Rin has come. "
-		)
-	,	("Little Busters Refrain",
-		 11,
-		 "The End of the World",
-		 "After having the Little Busters once again reunited, Riki suggests for them to play baseball, and the others accept. During the match, Kyousuke reveals to Riki that the world they are currently in was created by him and the others after a bus accident killed all students aboard except for Riki and Rin. Kyousuke explains that this world was meant to prepare them to move forward with their lives, so Kyousuke and the others gave the duo a series of trials to have them mature and become stronger. After Masato and Kengo bid their farewells, Kyousuke tearfully instructs Riki to take Rin past the school gates back to the real world, as the time for them to part has come. As Riki and Rin get past the gates, Kyousuke has one last tour around the school before sitting at his desk and disappearing along with the world he created. "
-		)
-	,	("Little Busters Refrain",
-		 12,
-		 "A Single Request",
-		 "Riki and Rin awaken in the real world and recall that during their field trip, their bus got into an accident and Masato and Kengo used their own bodies to protect them. Despite being injured, they flee from the site of the accident to avoid being caught in the impending explosion, but after reaching a safe distance, Riki leaves Rin behind to return and attempt to help the others. However, he starts suffering another attack of narcolepsy and struggles to keep himself awake. Meanwhile, Rin has a meeting with Komari and the other girls in spirit and wishing to not part ways with them, she decides to look for a way to save them as well. "
-		)
-	,	("Little Busters Refrain",
-		 13,
-		 "Little Busters",
-		 "Having another attack of narcolepsy, Riki realizes that he always falls asleep at the sight of unpleasant situations, since he saw his parents' dead bodies in a car accident when he was a child, and determined to overcome this weakness, he awakens with Rin's help. Knowing that the bus will explode, Riki and Rin start rescuing the other students from the wreckage only to discover that Kyousuke is using his own body to prevent the gas from leaking further, leaving the duo no other option but to pick him up after carrying all the others to safety. The bus explodes just after Riki and Rin return to rescue Kyousuke, but the incident ends with no deaths. Three months later, all of the students have returned from the hospital except Kyousuke, who is still in a coma, and the other Little Busters spend their days together, waiting for him to return. Once Kyousuke finally returns, the Little Busters have their own, private field trip to the beach together. "
-		)
-		
-;
-
-INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
-		("Little Busters Refrain", 0, 1, 4)
-	,	("Little Busters Refrain", 0, 2, 4)
-	,	("Little Busters Refrain", 0, 3, 5)
-;
-
-INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
-		("Plastic Memories",
-		 13,
-		 "Tsukasa Mizugaki is a recent hire of the SAI Corporation, renown for its production and management of androids capable of feeling human emotions called &quot;Giftia&quot;. Assigned to the terminal service department, Tsukasa is tasked with recovering Giftias who are nearing their expiration from their owners before they corrupt. But in this dead end department, Tsukasa is about to meet Isla, a female Giftia. Beneath her quiet exterior, she was once known as the best in Giftia retrievals and Tsukasa is determined to find out why she stopped.",
-		 "From the writer of &quot;Steins;Gate&quot;, Naotaka Hayashi, comes an original love story!",
-		 "Hanabee",
-		 ""
-		)
-;
-
-INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
-		("Plastic Memories",
-		 1,
-		 1,
-		 "M - Mature themes and sexual references",
-		 7,
-		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories"
-		)
-	,	("Plastic Memories",
-		 1,
-		 2,
-		 "M - Mature themes and sexual references",
-		 6,
-		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories-part-2"
-		)
-	,	("Plastic Memories",
-		 2,
-		 1,
-		 "M - Mature themes and sexual references",
-		 7,
-		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories-blu-ray"
-		)
-	,	("Plastic Memories",
-		 2,
-		 2,
-		 "M - Mature themes and sexual references",
-		 6,
-		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories-part-2-blu-ray"
-		)
-;
-
-INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
-		("Plastic Memories",
-		 1,
-		 "The First Partner",
-		 "On the first day of his new job, Tsukasa Mizugaki rushes to Terminal Service No. 1, which is one of the offices in SAI Corp, where he is taught about Giftia, androids who survive on synthetic souls for a maximum lifespan of nine years and four months. Normally, humans and Giftia work in pairs to collect expired Giftia, where the human is assigned the job of a 'spotter' that is in-charge of overseeing his Giftia partner at work while the Giftia earns the job of a 'marksman' that persuades the owners to give up their Giftia. Tsukasa is then partnered with Isla, a Giftia who is highly regarded in the office and famous for a wide knowledge of herbs and tea. The two are led out by Tsukasa's trainer Michiru Kinushima and her partner Zack; Zack retrieves a Giftia, as a demonstration of their job for Tsukasa, and Michiru explains their job to him. Not long after, Tsukasa and Isla are assigned a mission to retrieve Nina, a child-type Giftia owned by an old woman named Chizu Shirohana. After multiple tries, Isla is unable to persuade Chizu to talk to them, which makes Tsukasa doubt her abilities. She finally manages to win a chance to talk with Nina, and Chizu overhears Nina giving her consent to be taken away so as not to cause trouble for Chizu, whom she loves dearly. Chizu, realising she had not considered Nina's feelings in the matter, finally allows Nina to be taken away, and thanks Tsukasa when he apologizes."
-		)
-	,	("Plastic Memories",
-		 2,
-		 "Don't Want to Cause Trouble",
-		 "Tsukasa meets Yasutaka Hanada, a spotter and a ten-year veteran at Terminal Service No. 1, whose aloof behavior surprises him, as well as annoys his partner Sherry. When Yasutaka asks him about how he got the job, Tsukasa reveals that his father is a friend of one of the higher-ups in the company, who decided to help him after he failed his entrance exams. After another failed attempt at retrieving and a scolding from Michiru, Tsukasa takes the blame despite it being Isla who caused the problem. Back in the office, he is prompted by a message about her and heads to the Unit Testing Room, where he meets Eru Miru and Mikijiro Tetsuguro, who are measuring Isla's physical skills. Tsukasa asks Isla about the physical training, and she tells him of her belief that she is holding him back because of all the time she spent off the field. Because of this, Tsukasa decides to do the negotiating with Giftia owners instead of Isla, in spite of the fact that it isn't what a spotter does. The next day, he begins putting together his own manual about owner negotiations and is assisted by Michiru and Zack. Once he is finished, he comes across Yasutaka, who learns about Isla's visits to the Unit Testing Room and remarks the pointless nature of those visits, explaining that Isla's physical capabilities are on a consistent decline that cannot be fixed, a characteristic of Giftia. Later on, Tsukasa and Isla successfully retrieve the Giftia they were previously assigned to, while Kazuki Kuwanomi, an experienced spotter, and Yasutaka talk about Isla's lifespan, which is set to expire in less than 2,000 hours, giving her less than three months to live."
-		 )
-	,	("Plastic Memories",
-		 3,
-		 "We've Just Started Living Together",
-		 "Tsukasa is assigned to live with Isla in the company dormitory, a rule mandated for all marksmen and spotter duos in Terminal Service No. 1. However, he is unsettled by the fact that Isla repeatedly ignores him there. At Terminal Service No. 1, he confides to other employees about the problem, although their individual suggestions fail miserably at helping him attract her attention. Finally, Kazuki approaches Tsukasa about the problem and tells him she ignores other people during her personal time, not just him. She then tells him to take Isla out somewhere if he wants some interaction with her. Following through with the suggestion, he successfully asks Isla to accompany him to a shopping mall. There, they go to a herb shop and, to buy some more time, Tsukasa asks Isla to help him pick out some herbs as a present to a person who he unintentionally describes as being a lot like her. Afterwards, they go to a nearby amusement park, where Tsukasa admits the person he was describing was Isla herself. When he says he did this to make some memories with her about their partnership, she emotionally shuts down and tells him that she was not built to play at an amusement park, which shocks him. When Isla runs off, he purchases a key ring pendant from the amusement park and gives it to her at their dorm room, telling her she can throw it away if she doesn't want it. She also apologizes apprehensively about her escape, and even though Eru had previously told Tsukasa that Isla didn't accept gifts, Isla makes the keychain an exception."
-		)
-	,	("Plastic Memories",
-		 4,
-		 "I Just Don't Know How to Smile",
-		 "The Terminal Service No. 1 staff receives seven brand-new retrieval missions, and Tsukasa and Isla are assigned to retrieve a Giftia named Marcia. They are also warned of the presence of criminals who assume the identities of Terminal Service employees to retrieve Giftia and sell them on the black market. Tsukasa and Isla head to Marcia's residence, where they learn she is raising her owner, Souta Wakanae, in the role of an older sister after his parents died. When Souta arrives home from school, he acts hostile towards Tsukasa and Isla, but is surprisingly willing to sign the agreement form to take Marcia away, citing that she is just a Giftia and adding that Giftias cannot be trusted in telling the truth. Unable to acquire a signature as a result of Souta's attitude, Tsukasa confides in Michiru about the encounter, and she advises him to solve the problem by having Souta believe he was truly loved by Marcia. As a result, Tsukasa, Isla, and Marcia decide to bake a cake for his birthday on the following day, and are assisted by Michiru and Zack. Afterwards, Michiru tells Tsukasa that she tried all she could to keep her father, a Giftia, from being retrieved, which resulted in him becoming a Wanderer, a Giftia that still retains its motor skills but loses its personality and memories, causing it to become instinctual and aggressive. Later, Souta returns home and is surprised by the group. Upon spotting the birthday cake, which was modeled after one used for his birthday three years ago, he remembers his family and tearfully apologies to Marcia. On the day before the retrieval, Souta is visited by a shady man, who claims to be Tsukasa and Isla's replacement from the Terminal Service and asks for Marcia."
-		)
-	,	("Plastic Memories",
-		 5,
-		 "The Promise I Wanted to Keep",
-		 "While returning home with groceries, Marcia is suddenly ambushed by the man from the previous episode. Later, Tsukasa and Isla are contacted by Souta, who informs them about Marcia's disappearance, and they assume it is the work of a black market retriever. With only 24 hours left on Marcia's lifespan, Tsukasa resolves to retrieve Marcia and return her to Souta, and the rest of Terminal Service No. 1 joins the search. The following day, the office narrows down the search to an area where a black market retrieval service is possibly located, although their efforts are hindered by a unit from R. Security, a private security firm that was hired to assist in the investigation. Kazuki confronts the unit's supervisor, Shinonome, who gives her a map of the area under scrutiny. As the retrievers get ready to converge on the area, Tsukasa is equipped with and learns about a gun-like device designed to forcibly crash all of a Giftia's functions when they turn into Wanderers. He is then approached by Kazuki, who asks him if Isla will be able to handle the situation, but is forced to drop the subject soon afterward. Michiru later tells Tsukasa about how Kazuki tried to retrieve her father when he became a Wanderer, only for him to injure Kazuki and then be shot down by members of R. Security. Soon afterward, the black market retriever is found unconscious and it is concluded that Marcia turned into a Wanderer. Kazuki orders the rest of the retrievers to stop Marcia before she is destroyed by R. Security. Tsukasa and Isla find Marcia, only to realize Souta had been following them. Marcia then injures Isla and kidnaps Souta. Despite Isla's injuries, she and Tsukasa follow her to a rooftop, where Tsukasa nearly manages to convince Marcia to surrender. However, when Souta speaks her name, Marcia snaps and begins strangling him, forcing Tsukasa to pull out his software destruction device and prepare to shoot Marcia. However, Isla suddenly dashes towards Marcia, just as Tsukasa fires the device. The scene then cuts to the Terminal Service office during the next morning, where it is revealed that Isla hasn't signed into the attendance log."
-		 )
-	,	("Plastic Memories",
-		 6,
-		 "Welcome Home the Both of Us",
-		 "Three years ago, it is revealed that Isla began blaming herself for not accompanying Kazuki when she retrieved Michiru's father, which wound up costing Kazuki her ankle. As a result, Kazuki retired from her position as Isla's spotter. In the present day, it is revealed that Marcia was hit by Tsukasa's device, although Isla was able to block most of the blow without being hit herself. With Isla now under maintenance for her injuries inflicted by Marcia, Tsukasa is reassigned to desk duty. After a visit from Tsukasa, Isla notes that he is still remaining optimistic despite what happened and privately questions his feelings about the situation. Once most of her maintenance is done, Isla returns to the office and realizes that she has been paying attention to Tsukasa a lot more closely lately. She confides in Michiru and Eru about it, although they misinterpret her feelings as being motivated by love and Eru decides to help Isla stalk Tsukasa. However, after multiple attempts at observing him fail miserably, Isla confesses to Michiru about her confusion on Tsukasa's unwavering optimism. Michiru then tells her that Tsukasa never forgot about the incident with Marcia, even neglecting his desk duties to go and apologize to Souta for what happened, and assumes that he is smiling out of sadness. After finishing the last of her maintenance, Isla returns to the dorm, only to find he isn't there. When night falls and Tsukasa has yet to return home, she goes to the office, where she finds Tsukasa learning that she has 1,000 hours left in her lifespan, which translates to a month. However, when given the chance to partner up with a new Giftia, Tsukasa declares that he wants to remain partnered with Isla, which makes her happy."
-		)
-	,	("Plastic Memories",
-		 7,
-		 "How to Ask Her Out",
-		 "One morning, Tsukasa decides to ask Isla out on a date. While trying to find opportunities to do so, he finds that Isla has been doing chores for him at their dormitory and the office. After asking her about it, he learns she is trying to be useful to him, much to his chagrin. When Tsukasa musters the courage to ask her out, Isla accepts his request and decides to go to the amusement park after discussing it with Michiru and Eru, later reasoning to Tsukasa that she felt guilty about running out on him during their previous time there. However, while reading Isla's diary, Tsukasa realizes that she and Kazuki often went there when they were still partners. The next day, the two of them go there and sit at a bench, Isla's favorite spot in the park, as she was able to observe the happiness and joy of so many people, which comforted her. After learning that Isla has never tried any of the park attractions, Tsukasa takes her on a tour through the entire area, eventually ending at the Ferris wheel. As they sit inside, Isla expresses her gratitude that she is riding it with Tsukasa. As he thinks about Isla's happiness, Tsukasa faints after working too hard lately, ending the date. In the end, Tsukasa wakes up and Isla apologizes for not telling him earlier that she has 1,000 hours remaining in her lifespan. Tsukasa promises that he will stay with Isla until the end, no matter what. He then asks if she would be willing to go out with him again, to which she smiles and takes his hand. However, as he sleeps, she observes him with a doubtful expression."
-		)
-	,	("Plastic Memories",
-		 8,
-		 "The Fireworks I've Never Seen",
-		 "During a retrieval mission, Tsukasa is surprised when the owner of the newly assigned Giftia opts to delete the latter's current personality and memories by replacing her OS and start over from scratch instead of handing over the Giftia proper, having done it several times already. Intrigued, he asks around the office if a Giftia who has gone through that experience is capable of retaining their old memories, but everyone replies there is no precedent to that. Later on, Kazuki announces that a marksman from the Terminal Service No. 3 office will be sent in, as the assigned Giftia and his owner have gone into hiding, and assigns Tsukasa and Isla to assist her. They later meet the marksman, Andie; shortly afterward, they have an awkward encounter with Eru, who mistakes Andie for her friend Olivia. After the mission is a success, Tsukasa learns from Eru that Andie is indeed Olivia, whose OS was replaced due to the company cutting costs. Later on, Eru tells Tsukasa that she reconnected with Andie and mentioned a carnival they used to go to together when Andie was still Olivia, which caused Andie to decide to go there. Not wanting to deal with her memories of Olivia, Eru tries to get Tsukasa to take Andie to the carnival instead. However, Tsukasa convinces Eru to come along, and they take Isla and Andie to the carnival the following night. There, Eru decides to let go of Olivia and create new memories with Andie, concluding it wouldn't be fair to either of them if she saw them as one and the same. Later, Isla gets lost in the crowd and Tsukasa begins searching for her, eventually finding her at a lonely walkway, terrified by exploding fireworks. After he consoles her, Isla brings up Andie and asks if her presence is hurting him. He replies that it does, but insists on continuing to be her partner. When she asks why, Tsukasa responds that it is because he loves her. Shocked and embarrassed by the sudden confession, Isla shouts that she cannot accept his love."
-		)
-	,	("Plastic Memories",
-		 9,
-		 "After the Festival",
-		 "In the wake of being shot down by Isla at the carnival, Tsukasa has maintained a heartbroken, depressed attitude that is evident at the office. Seeing this, Michiru asks Isla about it, and she tells her that she was just confused when she shot Tsukasa down and now feels guilty about hurting his feelings. Michiru suggests having the two of them live apart for a few days so Isla could have time to sort out her own feelings, and she transfers Isla to Eru's room and Tsukasa to hers and Zack's. When Tsukasa recovers from his stupor, Michiru consoles him and tells him the reason why she joined Terminal Service No. 1. The next day, Michiru sets up a lunch between Tsukasa and Isla, during which they agree to allow Isla more time to consider her true feelings. Later on, Michiru questions the effectiveness of her treatment over the whole situation. After observing Tsukasa and Isla acting like average coworkers at the office, Michiru approaches Isla one day and asks her about her feelings for Tsukasa, and she responds after a lengthy explanation that she does return his feelings. However, she concludes from this that she must stay away from Tsukasa. When a shocked Michiru asks why, Isla confesses to her that she has approximately one month left in her lifespan. Angered by this, Michiru confronts Tsukasa about it and asks for his true intention for confessing to Isla when he knew about her lifespan beforehand; he replies that he only wishes to make memories for the both of them. When she lashes out at him for refusing to see what kind of pain will result from his decisions, he insists on keeping Isla as a partner. When he returns back to his dorm room, Tsukasa finds Kazuki already there. As Isla also arrives, Kazuki announces she intends to dissolve their partnership."
-		)
-	,	("Plastic Memories",
-		 10,
-		 "No Longer Partners",
-		 "Kazuki elaborates that she is dissolving Tsukasa and Isla's partnership on the basis that romantic relationships in the office are not allowed, and intends to reassign Tsukasa to her marksman Constance while she takes charge of Isla. Though Tsukasa protests against the decision, Isla immediately agrees, later explaining that it would be better for the both of them. At the office, Tsukasa confronts Kazuki about her decision, after which she reveals she only did it to protect them both from the inevitable pain that would've resulted. However, when Tsukasa proclaims he still intends on staying as Isla's spotter, Kazuki cryptically tells him to leave the situation to her. Later on, Tsukasa and Isla go out on separate retrieval missions with Constance and Kazuki, respectively. During her retrieval mission, Isla agrees to befriend Sarah, the Giftia in question, at the request of the owner Antonio Horizon, whose lifestyle as a mafia boss made it impossible for the Giftia to live a normal life. Simultaneously, Tsukasa and Constance talk about Isla's work performance and how she had closed herself off after Kazuki dissolved their partnership three years ago. Constance then tells Tsukasa that Kazuki has faith in entrusting him with Isla. Returning to the office, Kazuki reveals to Isla that she intentionally set her up for the mission and tries to convince her to stay with Tsukasa, saying that tearing herself away from him will only create painful memories for him. The following night, Isla muses about the unfulfilled expectations she had from her separation with Kazuki. The next day, she returns to the office, approaches Tsukasa, and explains her reason for rejecting him. Then, she proclaims that she wants to make more memories with him until the end and that she is in love with him."
-		)
-	,	("Plastic Memories",
-		 11,
-		 "Rice Omelette Day",
-		 "In the wake of starting their relationship, Tsukasa and Isla have found it difficult to talk to one another without being embarrassed. However, Tsukasa is able to ask Isla out to dinner. At the office, their approving colleagues decide to give them advice on how to appease the other. At Kazuki's suggestion, Isla asks Michiru to help her learn how to cook for Tsukasa. However, upon finding out she doesn't know any of Tsukasa's favorite foods, Isla asks him, only for Constance to suggest that the two of them just cook together. After debating on what to cook for dinner, Tsukasa suggests rice omelettes. Later on, the two travel to Antonio's manor to visit Sarah. There, Tsukasa asks Sarah what would make her happy, and she recites a sentence Isla told her during her last visit, that people are at their happiest when they are with the ones they love. Afterwards, they go to the shopping mall to purchase herbs and pajamas for Isla, after which Tsukasa admits he doesn't know what to do to make her happy. She responds that she is already happy spending time with him. Returning home, the two begin cooking rice omelettes, and although the final product was not what they were expecting, they are able to enjoy it nevertheless. Isla then allows Tsukasa to read her latest diary entries, both of which recount the days she spent with him. When Tsukasa goes to sleep, Isla adds a new entry, in which she expresses her hope that she would be able to spend another wonderful day with him."
-		)
-	,	("Plastic Memories",
-		 12,
-		 "Filling Up with Memories",
-		 "In the middle of the night, Isla breaks down in tears and sleeps in Tsukasa's bed for comfort. The next morning, she has reverted to a bright and cheery personality, much to Tsukasa's surprise and relief. At the office, the other employees give Tsukasa tickets to a number of events that he could take Isla to. The two then use tickets given to them by Michiru and Zack to watch a romantic movie. The next day, they return to work despite having taken that day off. Following Isla's visit to the Unit Testing Room, Michiru and Eru discuss about the necessity of her increasingly frequent visits. Meanwhile, Kazuki approaches Tsukasa in private and gives him a retrieval agreement form for Isla, telling him to sign it. Overhearing their conversation, Isla decides to begin teaching Tsukasa how to raise the herbs she had been cultivating in her spare time, as well as how to make tea. While serving Michiru tea, Tsukasa is confronted by her about why he and Isla are coming to work despite taking the day off, and he responds that it was a part of their decision to carry on as they were. The following night, Tsukasa gives Isla the retrieval agreement form, and she gives him her approval in signing it. The next day, they go to retrieve Sarah, their last retrieval mission together. Before erasing Sarah's memories, Isla whispers something indiscernible to her. They then return to the office, where they find the others holding a party in commemoration for Isla's last retrieval mission. After the party, Tsukasa asks Isla what she told Sarah, and she replies that she told her of her hope that she would be reunited with the person they cherished."
-		)
-	,	("Plastic Memories",
-		 13,
-		 "I Hope One Day, You'll be Reunited",
-		 "It is the last day of Isla's lifespan and she and Tsukasa decide to first spend it by reading entries in her diary. They then spend the morning cleaning up their dormitory room and then taking a bath. They then head over to the office, where they take care of Isla's herbs and she leaves notes for the other employees. They are approached by an early Kazuki, who teases Isla for one last time. The two then decide to spend the day's remaining hours at the amusement park, which they enjoy to their hearts' content. Eventually, they stand at Isla's favorite bench, where she describes how she always observed the emotions of the park's many visitors and how contented they would be at the end of the day in bringing their happy memories home with them. Then, as the park closes, Tsukasa and Isla convince the operator to let them ride the Ferris wheel one last time after closing hours. There, they take turns describing what they love about each other, and Isla finally admits she loved the way Tsukasa held back his sadness and smiled, despite her worry over that characteristic. She then hands him her deactivation ring, saying that she wanted him to be the one to do it. Tsukasa begins crying, and Isla notes that it was the first time she ever saw him cry. He then puts the ring on, expresses his hope that she would be reunited with the person they cherished, and kisses Isla as her time expires. As he carries her to the vehicle, he is met by Kazuki, who thanks him for being there for her, which causes him to break down in tears. The other Terminal Service employees read Isla's letters, in which she thanks them for all the memories she had of them. In the epilogue, Tsukasa takes the same elevator where he met Isla and muses what it would be like if his lifespan was predetermined, concluding afterward that he would live that life to the fullest. Nine months later, he returns from a training course to resume work with Terminal Service No. 1, and is introduced to his new Giftia. "
-		)
-;
-
-INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
-		("Plastic Memories", 0, 1, 4)
-	,	("Plastic Memories", 0, 2, 4)
-	,	("Plastic Memories", 0, 3, 5)
-;
+-- Table for Game Events
+CREATE TABLE IF NOT EXISTS EVENT_GAME_DATA (
+		EVENT_TIME						DATETIME
+	,	GAME_TITLE						VARCHAR(100)
+	,	GAME_EVENT_TYPE					INT(11)
+	,	PRIMARY KEY						(EVENT_TIME)
+	,	FOREIGN KEY						(EVENT_TIME) REFERENCES EVENT_DATA (EVENT_TIME)
+	,	FOREIGN KEY						(GAME_TITLE) REFERENCES GAME (GAME_TITLE)
+	,	FOREIGN KEY						(GAME_EVENT_TYPE) REFERENCES GAME_EVENT_TYPE (TYPE_ID)
+);
 
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
@@ -1152,6 +993,165 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Food Wars",
+		 24,
+		 "Souma is a teenage chef who is always looking for the perfect flavours and combinations in his art -- the art of cooking. So when his father suddenly closes down the family diner, his hopes of someday owning a diner fade away. But Souma's dad has bigger plans for him and enrols him in a cut throat culinary school to prove his worth. Will he make the cut, or will his pot boil over? Find out in Food Wars!",
+		 "Souma is a teenage chef who is always looking for the perfect flavours and combinations in his art -- the art of cooking. So when his father suddenly closes down the family diner, his hopes of someday owning a diner fade away.",
+		 "Madman",
+		 "&copy;Yuto Tsukuda, Shun Saeki / Shueisha, Food Wars! Shokugeki no Soma Committee"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Food Wars",
+		 4,
+		 1,
+		 "M - Sexualised imagery and sexual innuendo",
+		 24,
+		 "https://www.madman.com.au/catalogue/view/39915"
+		)
+	,	("Food Wars",
+		 3,
+		 1,
+		 "M - Sexualised imagery and sexual innuendo",
+		 24,
+		 "https://www.madman.com.au/catalogue/view/35262"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Food Wars",
+		 1,
+		 "An Endless Wasteland",
+		 "Soma Yukihira has been working at his father Joichiro's diner since a young age, establishing an interest in cooking and vowing to beat his father some day, for Joichiro has been beating him hollow everytime during their cooking battles. One day while his father is away, Yaeko Minegasaki, an urban life planner, arrives and threatens to demolish the restaurant to build a luxury hotel in its place, spoiling all the meat in the pantry to try and get the diner to close down. Remembering Soma's promise to always satisfy every customer that comes to dine, Yaeko orders him to make her a tasty meat dish to her satisfaction, and if he does she will never disturb him again. In response to the setback, Soma gathers his wits and uses potatoes and bacon bought while shopping to create an imitation roast pork dish, which Yaeko greatly enjoys and fulfills her portion of the deal. Despite the restaurant being saved, Joichiro decides to close it down for three years, opting to travel (and cook) abroad, sending Soma to the prestigious Totsuki Culinary Academy to take the entrance exam and study cooking there as part of the high school division."
+		)
+	,	("Food Wars",
+		 2,
+		 "God Tongue",
+		 "Upon arriving there, Soma is shocked by the grandness of the school building, the greatness of the school campus, and how famous Totsuki actually is, being one of the top culinary schools in the world. Soma also meets many other chefs, all of whom are descendants of gourmet chefs or heirs to high-class food businesses, who have likewise come to take the entrance exam and transfer in. Due to his background as a low-class diner chef, Soma is looked down on until most of the participants flee upon hearing that Erina Nakiri, a legendary food genius with the most selective palate known to mankind (nicknamed 'The God Tongue') will be their examiner. For fun, Erina changes the course of the exam and orders Soma to cook an egg dish to satisfy her instead. He conjures an ordinary-looking rice with seasoning, only to show it's true chicken flavour and egg saltiness enveloped inside. Despite being overwhelmingly impressed with his dish, Erina fails him, having taken an immediate dislike to his nonchalant and perceived cocky attitude, and feeling that her pride would be threatened if she allowed a person of his social standing to be admitted. Later in the day, her grandfather Senzaemon, the director of the school, tastes Soma's dish and is impressed, laughing and crumpling up his rejected application, implicitly overruling Erina's decision. "
+		)
+	,	("Food Wars",
+		 3,
+		 "That Chef Never Smiles",
+		 "At the entrance ceremony, Soma is introduced as the only student who managed to transfer into Totsuki's high school division, and he declares that he will become the top student at Totsuki, instantly earning the ire of the entire student body with his nonchalant attitude towards the school and its reputation. He is then paired up with meek girl Megumi Tadokoro, who has the worst grades among the first-years and is one E grade away from expulsion. Soma's first class consists of making Beef Bourguignon to satisfy the French teacher Roland Chapelle, known as &quot;The Chef that Never Smiles&quot; due to his notoriously strict grading. Megumi is determined to follow the recipe to earn a passing grade, but encounters a setback when two other students sabotages their dish by throwing in lots of salt. Luckily, Soma comes through by using honey to quickly tenderize the meat. The class is astonished when Chapelle smiles for the first time upon trying Soma and Megumi's dish, and proclaims that his only regret is he cannot give them a grade higher than an A. The two saboteurs, having been distracted by Chapelle smiling, accidentally burn their own dish and receive a failing grade. Meanwhile, Erina is told about Soma's success in Chapelle's class and furiously vows to get him expelled. "
+		)
+	,	("Food Wars",
+		 4,
+		 "The Madonna of the Polar Star",
+		 "Soma is sent to Polar Star Dormitory, a dormitory for students whose home is further away from the school. He is greeted by Fumio Daimidō, the caretaker, and is required to cook a dish that satisfies her in order to become a resident. Not knowing that he was supposed to provide his own ingredients, Soma nevertheless conjures a mackerel burger meal using leftover ingredients in the kitchen, which impresses Fumio greatly. Now a Polar Star Dormitory resident, Soma meets the other residents: first-year Yūki Yoshino who specialises in wild game, her best friend and fellow first-year Ryōko Sakaki who specializes in fermentation and alcoholic beverages, quiet first-year Shun Ibusaki who specialises in smoked food, first-year nerd Zenji Marui, bickering freshmans Daigo Aoki and Shōji Satō, enthusiastic second-year Satoshi Isshiki, as well as Megumi. During a welcoming party, Soma is further introduced to the academy's inner workings, such as the Elite Ten, the highest decision-making body in the school other than the school director himself, which consists of ten exceptionally talented students, the 10th seat being Erina while the 7th seat being Satoshi. Satoshi decides to challenge Soma to a cookoff. Satoshi presents his peppered mackerel dish and Soma is shocked by the elevated quality of Satoshi's cooking."
+		)
+	,	("Food Wars",
+		 5,
+		 "The Ice Queen and the Spring Storm",
+		 "Soma presents his dish, mackerel onigiri chazuke using seaweed tea. Everybody is impressed, and the cookoff is declared a draw. Having his sights set on becoming a member on the Elite Ten, he challenges Satoshi for his spot only to find out that it can only be obtained through a high-stakes cooking duel called a Shokugeki, and Soma has nothing of value to wager that is of equivalent value to his Elite Ten membership. Meanwhile, Erina challenges the Chanko Research Society president Kiyoshi Godabayashi to a Shokugeki for the rights to his clubroom, which she wins with ease. She then has his clubroom demolished in order to make room for a new wing for her personal cooking facilities."
+		)
+	,	("Food Wars",
+		 6,
+		 "The Meat Invader",
+		 "Megumi helps Soma to look for a club to join and stumble upon the Don Research Society, which is being targeted for disbandment by Erina for her expansion project. Ikumi Mito, one of Erina's enforcers known as &quot;The Meat Master&quot;, challenges the club president Kanichi Konishi, telling him that no matter what he cooks his dish will never beat her A5 grade meat. Seeing the events unfold, Soma volunteers to partake in the Shokugeki in Kanichi's place, with the challenge being to cook a donburi dish with meat as the main ingredient. The terms for the contest are that if Soma wins, the club stays with increased funding and Ikumi must join, but if Ikumi wins, the club disbands and Soma will be expelled. In preparing for the Shokugeki, Soma makes numerous donburi dishes through research and modifies them with the realization that the club's budget is limited. Soma settles on the Chaliapin steak, while Ikumi, heir to a massive meat packaging business, contacts her family to deliver the best cut of A5 grade beef available."
+		)
+	,	("Food Wars",
+		 7,
+		 "A Quiet Don, An Eloquent Don",
+		 "At the Shokugeki, Ikumi wows the audience with her A5 grade beef, while Soma is mocked for using discount supermarket beef. Ikumi completes her A5 Japanese Beef Roti Don first, with the judges being extremely impressed with the taste and quality of her beef. Soon after, Soma presents his Chaliapin Steak Don to the judges, who, after initially refusing to taste it, try his dish and are unable to stop eating, resulting in a unanimous win for Soma. Soma addresses Ikumi's dish, pointing out that she misunderstood the concept of donburi by placing too much emphasis on the beef and not the donburi as a whole, as the judges were too full from eating the beef to finish the rice. With Soma's victory, Ikumi has her personal kitchen taken away from her by Erina but develops a crush on Soma after he calls her by her nickname &quotNikumi&quot;. Ikumi joins Don RS and is immediately outraged and embarrassed to learn Soma did not join the club with her, as he had only visited Don RS in the first place to research donburi recipes to add to his restaurants menu."
+		)
+	,	("Food Wars",
+		 8,
+		 "The Concerto of Inspiration and Imagination",
+		 "The first year students at Totsuki Academy go to a training camp as their first major challenge during which about half of the first year students usually receive a failing grade and are expelled. The students are given various challenges with alumni from the school brought in to be judges. The first challenge for Soma's group, that includes Megumi and the Aldini twins Takumi and Isami, is to make a dish that can be served at a Japanese restaurant using ingredients gathered from nature in the area surrounding the kitchen with former Second Seat Hinako Inui judging their dishes. Takumi, heir to his family restaurant in Tuscany, &quot;Tratoria Aldini&quot;, challenges Soma to a duel to see who can cook the better dish as they both specialize in diner-style dishes. Most of the students gather fish while the Aldini twins find a duck for their dish. They are the first to complete their dish and Inui passes them."
+		)
+	,	("Food Wars",
+		 9,
+		 "The Breading to Adorn the Mountains",
+		 "Having come up with ideas for their dish, Soma makes a list of ingredients for he and Megumi to gather. Soma takes Inui's kaki peanuts on the understanding that any ingredient found in the area can be used. Soma and Megumi gather ingredients and arrive with 15 minutes left and they make the Char Okakiage using the peanuts as a crust for the fish. Inui expresses her satisfaction and passes Soma and Megumi, but she does not declare a winner between Takumi and Soma as she is ordered to depart immediately. Takumi leaves vowing to challenge Soma to a Shokugeki should they meet again. The students return to the hotel where they are ordered to each cook 50 servings of a steak dinner to serve to the Bodybuilding, Football and Wrestling Clubs with no chance to rest after having spent all day cooking, and with the risk of immediate expulsion unless all 50 servings are cooked within 1 hour. Soma finishes quickly and heads to the public bath where he runs into Erina, having just finished her own bath."
+		)
+	,	("Food Wars",
+		 10,
+		 "The Heavenly Recette",
+		 "Soma apologizes for knocking Erina over, but Erina refuses his help thinking that she is letting her guard down. Soma meets alumnus and Totsuki Resort head chef Gin Dojima in the bath, who is surprised to see that Soma finished so quickly. Dojima wishes Soma good luck as Takumi Aldini enters the bath, with Aldini shocked to see Soma having casual conversation with a legend like Dojima. The next day, Soma and Megumi are assigned the task of making the Nine Vegetable Terrine, but this time individually instead of as partners. Alumnus Kojiro Shinomiya, who will be judging the dishes, tells the students to think of each other as enemies. In the mad rush to claim the best ingredients, the unassertive Megumi is pushed aside and finds only bad heads of cauliflower remaining by the time she reaches the table. Thinking about what Soma would do in such a situation, Megumi uses wine vinegar to preserve the color and enhance the seasoning of the cauliflower. Shinomiya passes Soma, but fails Megumi for making unauthorized changes to the recipe. Soma defends Megumi fearlessly in the face of the intimidating Shinomiya, angering the latter, who reveals that he intentionally provided a limited number of good cauliflower heads to limit the number of students who could pass. A furious Soma challenges Shinomiya to a Shokugeki to get Megumi's expulsion rescinded."
+		)
+	,	("Food Wars",
+		 11,
+		 "The Magician from the East",
+		 "Shinomiya initially refuses Soma's challenge, however Dojima and Inui were passing by and pressured him into accepting the challenge. Thus, Soma and Megumi battle Shinomiya in an unofficial Shokugeki under the condition that Megumi is the lead chef as this Shokugeki is designed to prove Megumi's worthiness as a chef. While Shinomiya makes his dish, Megumi becomes tense at the sight of his dish. Soma tells her to relax and to focus on making something that's representative of herself and not what Shinomiya is doing. Shinomiya presents his dish first, the Chou farci, and the judges give overwhelming praise to the dish. However Dojima is not satisfied by the dish as it was not from one of his specialties. Megumi then presents her dish, the Rainbow Terrine. "
+		)
+	,	("Food Wars",
+		 12,
+		 "The Memory of a Dish",
+		 "Megumi manages to impress the judges with her Rainbow Terrine, which emphasises the maturity of vegetables. However, when it comes down to voting, all three judges vote for Shinomiya's dish based on the difference between their skill. Just then, Dojima gives his own vote towards Megumi's dish, stating that Shinomiya has allowed his cooking to become stale, his status as a world famous chef having prevented him from developing his skills any further. This is revealed in flashbacks to be related to how his climb to fame involved making sure his dishes were totally by the book with no tolerance for any kind of changes to an established recipe. When Shinomiya tries Megumi's dish for himself, he comes to understand how her dish was geared towards the needs of those eating it and puts in his own vote for Megumi. With Inui also casting her vote for Megumi, the Shokugeki ends in a tie, with Shinomiya revoking Megumi's expulsion. As Megumi returns back to her concerned friends, Soma laments what is technically his very first defeat."
+		)
+	,	("Food Wars",
+		 13,
+		 "The Eggs Before Dawn",
+		 "Before the students have a chance to sleep for the night, Dojima announces his next task, in which the students must prepare a buffet-style egg dish to be served at breakfast early next morning. With everyone spending the night trying to come up with a recipe, Soma decides on a soufflé omelette, which is met with silent criticism from some of the other students. As breakfast comes the next day, it is revealed the judges will consist of the hotel's guests and staff, with students needing to hand out 200 servings of their dish in order to pass. While many of the students including Erina, Megumi, and Takumi all manage to impress with their dishes, Soma struggles to serve his dish to anyone."
+		)
+	,	("Food Wars",
+		 14,
+		 "Metamorphosis",
+		 "Due to the specific timing required for his soufflé omelette, Soma struggles to get any customers to try his dish before they end up deflating. With half an hour left in the challenge, Soma calmly analyzes the situtation and changes his approach, cooking in front of his customers in order to attract a crowd while also delivering the dish in its peak condition. Optimizing his preparation time to cook his omelettes as quickly as possible, Soma manages to complete his 200 servings goal with merely seconds to spare. Afterwards, Soma is introduced to Erina's cousin, Alice Nakiri, who considers both Soma and Erina her rivals. Following another task a few hours later, Dojima treats all the surviving students with a banquet to celebrate the end of the training camp, while withholding information about the next event: the Autumn Selection."
+		)
+	,	("Food Wars",
+		 15,
+		 "The Man Called Demon",
+		 "As the students make their way home, Shinomiya decides to return to France to make his restaurant the best in Paris, while the other alumni explain how the training camp also serves as a recruitment ground to determine potential for future employment. Going back for his headband, Soma ends up missing his bus and has to hitch a ride back to school with Erina, who explains about the Autumn Festival while hiding the fact that she, along with Dojima, are shown to have fond memories of Joichiro. Returning to the Polar Star Dormitory, Soma is surprised to see Joichiro, who is revealed to be an alumnus and former member of the Elite Ten who went by the name Jouchirou Saiba. As Joichiro treats the returning residents to a meal, Fumio explains that Joichiro and Dojima were once fellow Polar Star residents who were responsible for many of the luxuries the dorm has. Later that night, Joichiro tells Soma about his campus memories, filling him with more determination. The next morning, Joichiro decides to have a cooking contest against Soma."
+		)
+	,	("Food Wars",
+		 16,
+		 "The Chef Who's Crossed A Thousand Leagues",
+		 "With Fumio, Megumi, and Satoshi winding up as judges, Soma and Joichiro are challenged to use ingredients from the kitchen to make a light yet energizing breakfast dish that will wake them up. Soma presents an apple risotto, which provides a crisp taste which changes with the addition of black pepper. Joichiro, on the other hand, presents the unusual choice of ramen which, despite its heavy appearance, turns out to be a mellow and warming vegetarian dish, providing powerful flavor without meat or fish. The judges unanimously vote Joichiro's dish the winner, though Soma's dish also receives some praise. As Jouichirou takes his leave, he leaves a message recommending Soma visit the Yukihira Diner during the holiday."
+		)
+	,	("Food Wars",
+		 17,
+		 "The Seductive Karaage",
+		 "Arriving back home, Soma temporarily re-opens Yukihira Diner to serve his loyal customers, including his childhood friend, Mayu Kurase, who has a crush on him. He learns that the Sumire Shopping District has been doing poor business lately due to the arrival of a popular karaage chain shop, Mozuya. Wanting to help revive the shopping district, Soma decides to come up with a competing karaage recipe, calling in Ikumi as his meat expert while Mayu winds up as his taste tester (due to the efforts of mutual friend Aki Koganei to set Mayu up with Soma). The three do some recon at Mozuya, where they find its CEO Kinu Nakamozu to be a spiteful woman, before beginning work on a karaage recipe of their own. As Soma takes up Mayu's suggestion to use their shopping district location to their advantage, it is revealed that the figure behind Mozuya's success is one of the Elite Ten."
+		)
+	,	("Food Wars",
+		 18,
+		 "The Karaage of Youth",
+		 "Noting that the shopping district focuses more on walk-and-eat food, as opposed to Mozuya's packaged approach, Soma shifts his focus towards creating a karaage that can be enjoyed straight out of the fryer. Opting to go with chicken thigh meat with a chilli-based marinade, Soma gets inspiration from a bento shop owner and decides to serve his karaage in rice flour wraps with salad, providing enhanced flavor, portability, and appeal all at once. This brings a large amount of business, which in turns helps the rest of the shopping district come back to life, with Nakamozu having no choice but to admit defeat. Afterwards, Soma puts Mayu in charge of helping with the karaage's sales, having noted her good qualities. Returning to the academy, Soma is brought before Mozuya's puppetmaster, Etsuya Eizan, the ninth seat of the Elite Ten, who informs him that he has been chosen for the Autumn Elections."
+		)
+	,	("Food Wars",
+		 19,
+		 "The Chosen One",
+		 "The contestants and rules for the Autumn Elections are announced, in which the sixty selected contestants are split into two groups which they must top in order to advance to the tournament phase. Meanwhile, Megumi is approached by a girl named Miyoko Hojo, who was interested in her shokugeki with Shinomiya but becomes disappointed when she hears she was helped by Soma. After learning the first dish of the elections is a curry dish, Soma and Megumi pay a visit to Jun Shiomi, an instructor and former Polar Star alumna who specializes in curry and spices, along with her assistant Akira Hayama, who is also in the elections. Using Jun's theories on spices, Akira demonstrates how preparing the same ingredients of a curry dish in different ways can yield drastically different results. Becoming wowed by the powerful flavors of Akira's curry, Soma becomes determined to beat him with an even better curry dish at the preliminaries. "
+		)
+	,	("Food Wars",
+		 20,
+		 "The Dragon Lies Down and Ascends the Skies",
+		 "With the challenge of creating a curry dish set, many of the contestants set off to visit their families and study up on spices during the remainder of the summer while Soma stays at the dorms to try out various combinations. The Autumn Election preliminaries soon arrive, with only the top four from each group able to make it through to the tournament phase. As each of the contestants start bringing out each of their unique methods, Soma appears to have fallen asleep. "
+		)
+	,	("Food Wars",
+		 21,
+		 "The Unknown Known",
+		 "Soma awakens from his nap at the exact moment he senses his spice and vegetable infused rice is cooked to perfection. Meanwhile, Megumi brings out a monkfish for her dish, having learnt how to butcher it in order to help her family. With the cooking period over, the judging soon begins with a harsh panel of judges hitting most of the students with low scores. In Group B, Nao Sadatsuka, a somewhat creepy girl with an obsession with Erina, presents an extremely pungent laksa dish made using kusaya that secretly carries a delicious flavor under its strong odor, scoring 84 points as a result. Meanwhile, Erina's secretary and childhood friend Hisako Arato, who Nao has a rivalry with, presents a mutton curry made using medicinal cuisine which undoes the cursive effects of Nao's curry, scoring 92 points. "
+		)
+	,	("Food Wars",
+		 22,
+		 "The One Who Surpasses the Ordinary",
+		 "Miyoko scores 87 points with her pineapple-fragranced cha-han while Yuki gets 86 points for her wild game curry. Afterwards, the Aldini brothers face off against each other, with Isami presenting a curry calzone that scores 87 points while Takumi presents a curry pasta dish using tamari soy sauce and cheese filled pasta that scores 90 points. Alice then presents her deconstructed curry dish that leaves the judges bewildered, earning 95 points and taking the lead. Finally, Megumi presents her dish, monkfish dobu-jiru, which emphasises the taste of her hometown, earning her 88 points and landing her a spot in the next round alongside Alice, Hisako, and Takumi."
+		)
+	,	("Food Wars",
+		 23,
+		 "The Competition of the Blossoming Individuals",
+		 "Back in Group A, contestants are struggling to score as one of the main judges, Natsume Sendawara, keeps giving out zero scores. This streak soon breaks when Ryo Kurokiba, Alice's aide, presents a lobster curry made using a cognac base, earning 93 points. Next, Ikumi presents a Dongpo pork curry, using what she had learned from her Shokugeki with Soma to impress the judges with a complete dish and earning score of 86. Afterwards, Ryoko presents a Dal curry made with charcoal-grilled natto and soy sauce rice malt, also scoring 86, while both Marui and Ibusaki earn 88 points with their white potage curry udon and smoked curry respectively. Akira soon presents his dish, an unconventional dish that soon turns out to be a fragrance bomb."
+		)
+	,	("Food Wars",
+		 24,
+		 "The Banquet of Warriors",
+		 "Akira's dish, which on top of its powerful fragrance also uses the power of holy basil and yogurt, earns a score of 94 from the judges, two of which gave him a perfect 20. Finally, Soma presents his own fragrance bomb, combining his past two failures into a curry risotto omurice containing a mango chutney that deepens the flavor. The dish earns Soma 93 points, landing him second place behind Akira, though it is noted by the crowd that despite Akira receiving a higher score overall three of the five judges ranked Soma's dish higher than Akira's, with the implication being that in a Shokugeki, this would have given Soma the victory. As the contestants hold an afterparty celebrating and lamenting their victories and losses in the preliminaries, Soma becomes determined to improve his cooking finesse."
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Food Wars", 0, 1, 4)
+	,	("Food Wars", 0, 2, 4)
+	,	("Food Wars", 0, 3, 4)
+	,	("Food Wars", 0, 4, 4)
+	,	("Food Wars", 0, 5, 4)
+	,	("Food Wars", 0, 6, 4)
+;
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("HighSchool DxD",
 		 12,
 		 "The story centers around Issei Hyoudou, a perverted high school student who was nearly nearly killed by his first date, later revealed to be a Fallen Angel. He is soon saved by Rias Gremory, a crimson-haired beauty who reveals herself as a Devil of the Gremory Family, and finds out that he himself has been reborn as a Devil made to serve her. The story focuses on the ongoing battle among the Fallen Angels, Angels, and Devils, and Issei's ongoing relationship with Rias, her peerage, alongside other Devils and Angels.",
@@ -1347,6 +1347,104 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Magical Warfare",
+		 12,
+		 "In this modern magic action story, Takeshi Nanase is an ordinary high school boy who has a somewhat dark past. However, one day, he comes across a girl named Mui Aiba, in a uniform he has never seen before, collapsed on the school campus. This encounters changes Takeshi's destiny completely. Mui tells Takeshi that she is a magician, and she apologizes, for she turned Takeshi into a magician, too. What Takeshi once knew as one world is actually two - the world where magicians live and the world where humans live.",
+		 "In this modern magic action story, Takeshi Nanase is an ordinary high school boy who has a somewhat dark past.",
+		 "Madman",
+		 "&copy;Hisashi Suzuki/PUBLISHED BY KADOKAWA CORPORATION MEDIAFACTORY/SUBARU Magic School Project"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Magical Warfare",
+		 0,
+		 1,
+		 "M - Animated violence and sexual references",
+		 12,
+		 "https://www.animelab.com/shows/magical-warfare"
+		)
+	,	("Magical Warfare",
+		 3,
+		 1,
+		 "M - Animated violence and sexual references",
+		 12,
+		 "https://www.madman.com.au/catalogue/view/33119/magical-warfare-series-collection"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Magical Warfare",
+		 1,
+		 "Midsummer Magical Girl",
+		 "Takeshi Nanase is an ordinary high school boy who has a somewhat dark past. One day, he comes across a girl named Mui Aiba, in a uniform he has never seen before, collapsed on the school campus. This encounter changes Takeshi's destiny completely. Mui tells Takeshi that she is a magician, and she apologizes, for she turned Takeshi into a magician, too. What Takeshi once knew as one world is actually two — the world where magicians live and the world where humans live."
+		)
+	,	("Magical Warfare",
+		 2,
+		 "Another World",
+		 ""
+		)
+	,	("Magical Warfare",
+		 3,
+		 "The Magic Academy and Love Fortunes",
+		 ""
+		)
+	,	("Magical Warfare",
+		 4,
+		 "Mui and Tsuganashi of the Ruined World",
+		 ""
+		)
+	,	("Magical Warfare",
+		 5,
+		 "Magic Tests and Winter Vacation",
+		 ""
+		)
+	,	("Magical Warfare",
+		 6,
+		 "Battle and Recovery",
+		 ""
+		)
+	,	("Magical Warfare",
+		 7,
+		 "The Magic Sword's Secret",
+		 "After the return of Tsuganashi Aiba, Takeshi keeps having nightmares during his sleep. That nightmares are caused by someone that used magic. In order to end the nightmare, he has to explore his dream and settle things with this magic user."
+		)
+	,	("Magical Warfare",
+		 8,
+		 "Wizard Brace's Darkness",
+		 "It's now April, and Subaru Magic Academy bustles with activity welcoming its new students. Among them are Ida's younger sister Futaba. Due to an unfortunate little incident between the Ida siblings, Futaba has become a magician as well. Also among the new students is Takeshi's younger brother Gekkō."
+		)
+	,	("Magical Warfare",
+		 9,
+		 "Prelude to Destruction",
+		 "Ryuusenji Kazuma, the leader of the Ghost Trailers, had fallen into endless slumber after the previous Great War. Now that he has awoken once again, the curtain rises upon the Second Great Magic War."
+		)
+	,	("Magical Warfare",
+		 10,
+		 "Vanishing Boundaries",
+		 "After revealing that he is a Ghost Trailer, Gekkō takes Kurumi and Twilight away from Takeshi. The badly wounded Takeshi is rescued by Kisaki Ena and her companions from the Community known as &quot;Camelot.&quot;"
+		)
+	,	("Magical Warfare",
+		 11,
+		 "The Battle of Pendragon",
+		 "Takeshi continues training at Camelot in order to rescue Kurumi. Meanwhile, at the Ghost Trailers' headquarters, Kurumi confronts Gekkō. Taking advantage of a moment's carelessness, Kurumi manages to escape her prison."
+		)
+	,	("Magical Warfare",
+		 12,
+		 "Gone From This World",
+		 "Takeshi heads home and finds Gekkō, wielding a modified Twilight dripping blood, exiting the house. He fears the worst, given his precognitive dream (that Gekkō kills their mother) and demands that Gekkō let him pass. Gekkō informs Takeshi that the accident was actually an assassination attempt arranged by their mother. Unwilling to believe that, a fight between the brothers ensues with Takeshi now able to fight with Gekkō on even terms thanks to his mother's training. He is on the verge of gaining the upper hand when Gekkō resorts to subterfuge to get Takeshi to drop his guard. Meanwhile, Kurumi has been searching the battlefield for Takeshi. She finds him just as Gekkō is about to stab him and interposes herself at the last second, saving Takeshi, to the horror of both brothers. This galvanizes Takeshi and he starts fighting his brother in earnest. The engagement becomes so intense that their powers start to go out of control. Momoka appears and shoots a magical &quot;bomb&quot; towards both of them, causing them to disappear from the battlefield. Kazuma is shown in Takeshi's house. He has healed Yōko and after calling her mother, he takes a picture of Isoshima from his pocket - that same picture of her that Takeshi has. The focus then shifts to a just-awakened Takeshi who finds himself on the Academy grounds, but they are strangely untouched by recent events. His mother and one of his teachers appear, only the teacher is calling her Sensei and Takeshi realizes that something is off. A nearby poster indicates that the year is 1998 - 16 years in the past. He then encounters other people he has met including Momoko, Washizu, Tsukiomi and Kazuma who appear to be friends. To his further surprise, Gekkō runs up to the group while Takeshi sits on a bench trying to make sense of everything. The group walks past Takeshi and Gekkō menacingly greets him."
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Magical Warfare", 0, 1, 4)
+	,	("Magical Warfare", 0, 2, 4)
+	,	("Magical Warfare", 0, 3, 4)
+	,	("Magical Warfare", 3, 1, 2)
+;
+
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("One Punch Man",
 		 12,
 		 "Saitama only became a hero for fun, but after three years of special training, he finds that he can beat even the mightiest opponents with a single punch. Though he faces new enemies every day, it turns out being devastatingly powerful is actually kind of a bore. Can a hero be too strong?",
@@ -1442,6 +1540,374 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("One Punch Man", 0, 3, 4)
 ;
 
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Pandora in the Crimson Shell",
+		 12,
+		 "From Shirow Masamune, the creator of Ghost in the Shell, comes a lighthearted story of two cyborg girls who fight to save their home. Nene Nanakorobi is your typical girl next door except for that fact that she’s a rare type of full-body cyborg. She’s thrilled to finally meet another cyborg named Clarion and hopes they’ll be best friends. This is the beginning of their adventures together.",
+		 "From Shirow Masamune, the creator of Ghost in the Shell, comes a lighthearted story of two cyborg girls who fight to save their home. Nene Nanakorobi is your typical girl next door except for that fact that she’s a rare type of full-body cyborg.",
+		 "Madman",
+		 "&copy;Shirow Masamune, Koushi Rikudou / KADOKAWA, Benipan"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Pandora in the Crimson Shell",
+		 3,
+		 1,
+		 "MA15+ - Strong sexual innuendo",
+		 13,
+		 "https://www.madman.com.au/catalogue/view/35729"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Pandora in the Crimson Shell",
+		 1,
+		 "Adepter",
+		 "In an age of advanced technology, a cyborg named Nene Nanakorobi meets an inventor named Uzal Delilah and her cyborg pet, Clarion, on their way to Cenancle Island. Shortly after the girls arrive on the island, the city comes under attack by an army of robots controlled by a group of rebels who despise Uzal. In order to battle against them, Uzal gives Nene authority to use the Pandora Device inside of Clarion, updating her operating system to temporarily give her the skill to use a gun. After the robots are stopped, Uzal brings Nene to her laboratory where she gives Nene an optical camouflage for when she uses the Pandora Device, before the rebels ask for Uzal's help in stopping a robot that had gone berserk. "
+		)
+	,	("Pandora in the Crimson Shell",
+		 2,
+		 "Geofront",
+		 "Nene and Clarion are tasked with stopping BUER, a giant boring robot belonging to Uzal's company that went berserk after her underlings tried to use it against her. After the underlings trick BUER into firing its laser cannon, Clarion aims to reach its main console while Nene acts as her bodyguard. However, a large piece of rubble interrupts Clarion before she complete her mission, so she instead operates some smaller robots to allow Nene to reach the console and shut BUER down. With forces approaching on the laboratory, Uzal detaches BUER's Central Nervous Unit before having Nene and the others escape from the lab as it self-destructs, leaving Clarion in Nene's care. Upon reaching the surface, Nene and the others find themselves surrounded by Cenancle's Defense Force."
+		)
+	,	("Pandora in the Crimson Shell",
+		 3,
+		 "Terrarium",
+		 "Thanks to Uzal's efforts, Nene and Clarion are treated like rescued hostages and are escorted to the residence of Nene's aunt, Takumi Korobase, who is acquaintances with Uzal. Later, as Takumi takes a dangerous interest in Clarion's ears, Nene manages to see through a simulation Takumi had placed them in when they arrived and stop her. The next day, Nene and Clarion are approached by one of Uzal's underlings, Bunny, who asks for BUER's authentication key in order to help her comrades. As Bunny delivers the key to a mysterious man named Ian Kurtz, who plans to use it for his own gain, Clarion digs up BUER's central nervous unit. "
+		)
+	,	("Pandora in the Crimson Shell",
+		 4,
+		 "Kitchen Drudge",
+		 "After Nene manages to enrol in a prestigious online school, Takumi, wanting to have some time alone to examine BUER, sends Nene and Clarion to observe some of her companies as part of her homework. With the companies being too aware of Takumi's status to provide any useful information, Nene goes to a charity event where a TV reporter named Prosperina allows her to observe her work. When some thugs suddenly show up and start wrecking the place, Nene and Clarion step up against them, encouraging the other volunteers to stand up against them too. With most of the food ruined by the attack, Nene uses the Pandora Device to learn cooking skills and cook up some replacement meals."
+		)
+	,	("Pandora in the Crimson Shell",
+		 5,
+		 "System Down",
+		 "While pondering if it is right to keep borrowing Clarion's power to achieve world peace, Nene meets an old woman named Anna who is adjusting to a robotic arm. Just then, a network disturbance occurs across the entire island, causing almost all of its systems and transportation to shut down. Nene and Clarion soon come across a man named Robert, who helps out everyone they comes across and manages to stop a pair of thieves, before coming across Anna, whose life is in danger because of the disturbance affecting her artificial organs. Using the Pandora Device, Nene becomes a paramedic to treat Anna's symptoms and take her to the hospital. After the network is restored, Nene is thanked by Anna for saving her, while Robert, who is part of the island's defense force, is given a task by Kurtz. "
+		)
+	,	("Pandora in the Crimson Shell",
+		 6,
+		 "Central Nervous Unit",
+		 "Nene goes in for a medical checkup at hospital, where a girl named Amy Gilliam is also visiting to have a new leg installed, only to find her cat Lean has sneaked in as well. While searching for Lean, Amy comes across BUER, who joins her in her search. The two are soon found by Nene and Clarion while Anna manages to find Leon and reunite her with Amy. When Amy rips her dress before her appointment, Nene uses the Pandora Device to become a couturier and sew it back together, allowing her to go to her appointment with a smile. When they return to the park, they find it has been completely torn down, with its residents evacuated by the CDF. As they pass by Kurtz, Clarion is cautious of a cyborg following behind him. "
+		)
+	,	("Pandora in the Crimson Shell",
+		 7,
+		 "Puppeteer",
+		 "A family of robot thieves known as the Chicken Brothers catch Clarion off guard and capture Nene. As Clarion tracks the thieves down to their hideout, Nene comes across all the other androids the thieves had taken and, upon reuniting with Clarion, uses the Pandora Device to take control of them and stop the thieves. "
+		)
+	,	("Pandora in the Crimson Shell",
+		 8,
+		 "Inferno",
+		 "Nene and Clarion go to the Herme's department store, where government chairman Janus North is serving as manager-for-a-day. Following another network disturbance, North and his secretary become stuck in an elevator with Nene and Clarion. The group manage to find their way out of the elevator, only to discover a fire has broken out across the entire department store. Wanting to help North and the secretary escape, Nene uses her Pandora Device skills to create a fireproof cart and lead them to the emergency stairs. Spotting a boy still trapped in the fire, Nene goes back to rescue him despite Clarion's warnings, using what little oxygen she has to keep him alive. Putting Nene's wishes over her own common sense, Clarion manages to catch up to her and get both Nene and the boy out safely. "
+		)
+	,	("Pandora in the Crimson Shell",
+		 9,
+		 "Assault",
+		 "The fire at the department store is revealed to have been caused by a laser fired from BUER's body after Kurtz tries to hack into it. Deducing this herself and deciding not to get Nene involved, Clarion approaches Takumi about BUER going out of control again and borrows some of her robots for an assault on Uzal's base in order to stop it. Making her way past Bunny and her robot defenses, Clarion soon comes up against Kurtz' cyborg bodyguard, Fear. "
+		)
+	,	("Pandora in the Crimson Shell",
+		 10,
+		 "Fear",
+		 "Nene wakes up to find Clarion has gone, leaving behind a note saying not to involved, and begins feeling lonely without her around. Meanwhile, Robert receives a confidential message from Uzal warning him about Kurtz' plans to use BUER. As Nene struggles to try and do things by herself, she receives some helpful advice from Robert before learning from BUER about what Clarion is actually involved in. Meanwhile, Clarion brings out her strongest weapons against Fear, who is revealed to be an android, but is caught off guard when it targets Bunny. Wanting to help Clarion, Nene sneaks out with BUER's help to go and find her. "
+		)
+	,	("Pandora in the Crimson Shell",
+		 11,
+		 "Ghost Urn",
+		 "Nene infiltrates the base, where she gets mistaken for a dummy robot and temporarily shut down by Kurtz. While BUER follows Kurtz, Nene finds herself in the disposal area with Bunny, who tasks her with diving into the base's system and finding a way out before they are disposed of. Remembering when she started out moving her cyborg, Nene manages to move about freely in cyberspace and unlock the emergency hatch. While Bunny heads off to save her allies, BUER attempts to stop Kurtz from hacking his main body only to be thwarted by Takumi's own hacking attempts. As Nene reaches the central room and is confronted by Fear, she is aided by the arrival of Clarion, who managed to survive Fear's attack. Wanting to help Clarion protect the island, Nene uses the Pandora Device and joins Clarion is facing up against Fear. "
+		)
+	,	("Pandora in the Crimson Shell",
+		 12,
+		 "Elpis",
+		 "Nene uses her ability to support Clarion as she fights against Fear, allowing her to destroy it. Meanwhile, BUER's defenses are taken down by Takumi, allowing Kurtz to activate it. Instead of gaining control, however, Kurtz is shocked to find that all he has done is leaked BUER's collection of panty shots across the world. As BUER goes on a rampage out of pure embarrassment, Uzal gets in contact with Nene, stating that BUER must be stopped by using Clarion to activate his self-destruct system. Not wanting to lose Clarion, Nene chooses a riskier alternative, going inside of BUER and managing to calm him down. After Uzal sinks BUER's body and seals off the geofront, Nene and Clarion resume their everyday life of seeking world peace together. "
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Pandora in the Crimson Shell", 0, 1, 4)
+	,	("Pandora in the Crimson Shell", 0, 2, 4)
+	,	("Pandora in the Crimson Shell", 0, 3, 4)
+;
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Samurai Jack",
+		 13,
+		 "Long ago in a distant land, I, Aku, the shape-shifting Master of Darkness, unleashed an unspeakable evil! But a foolish Samurai warrior wielding a magic sword stepped forth to oppose me. Before the final blow was struck, I tore open a portal in time and flung him into the future, where my evil is law! Now the fool seeks to return to the past, and undo the future that is Aku!",
+		 "Long ago in a distant land, I, Aku, the shape-shifting Master of Darkness, unleashed an unspeakable evil! But a foolish Samurai warrior wielding a magic sword stepped forth to oppose me.",
+		 "Madman",
+		 "&copy;Genndy Tartakovsky, Dana Ritchey"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Samurai Jack",
+		 3,
+		 1,
+		 "PG - Mild animated violence",
+		 13,
+		 "https://www.madman.com.au/catalogue/view/18508/samurai-jack-the-complete-seasons-14"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Samurai Jack",
+		 1,
+		 "Samurai Jack: The Premiere Movie part 1",
+		 "Aku, an evil shape-shifting demon, devastates a young prince's land, and his parents send him into exile. After years of intensive training, the prince receives a mystical sword and samurai's robes, and frees his people from Aku's minions. He then defeats Aku in battle, but before striking the final blow the latter casts a spell to send him into the future."
+		)
+	,	("Samurai Jack",
+		 2,
+		 "Samurai Jack: The Premiere Movie part 2",
+		 "The samurai is plunged into a dystopian world ruled by Aku, adopting the name &quot;Jack&quot;. After getting in a fight at a nightclub, he is hired by a group of canine miners to protect them from Aku's forces."
+		)
+	,	("Samurai Jack",
+		 3,
+		 "Samurai Jack: The Premiere Movie part 3",
+		 "Armed with various weapons and traps, Jack single-handledly defeats Akus &quot;beetle-bots&quot;. He subsequently vows to fight the demons oppression until he can return to the past."
+		)
+	,	("Samurai Jack",
+		 4,
+		 "Jack, the Woolies, and the Chritchellites",
+		 "Jack helps free the Woolies from the tyrannical Chritchellites. In return, the leader of the Woolies bestows his wisdom upon Jack."
+		)
+	,	("Samurai Jack",
+		 5,
+		 "Jack in Space",
+		 "After accidentally exposing a colony of scientists seeking to escape Earth, Jack trains as an astronaut to protect them from Aku's robots."
+		)
+	,	("Samurai Jack",
+		 6,
+		 "Jack and the Warrior Woman",
+		 "A talented warrior named Ikra joins Jack as he seeks a magical jewel that could send him back to his own time. However, her true motives threaten to derail his quest."
+		)
+	,	("Samurai Jack",
+		 7,
+		 "Jack and the Three Blind Archers",
+		 "Jack learns of a powerful wishing well that can return him to the past, but must find a way past the three deadly archers who protect it."
+		)
+	,	("Samurai Jack",
+		 8,
+		 "Jack vs. Mad Jack",
+		 "Angered by the failure of his bounty hunters and mercenaries to defeat Jack, Aku uses the samurai's inner darkness to create an evil clone whose sole purpose is to destroy him."
+		)
+	,	("Samurai Jack",
+		 9,
+		 "Jack Under the Sea",
+		 "Jack has an underwater adventure while hunting for an ancient time portal. The denizens of the deep, known as the Triceraquins, seem welcoming, but may prove to be untrustworthy."
+		)
+	,	("Samurai Jack",
+		 10,
+		 "Jack and the Lava Monster",
+		 "Jack survives a series of traps and encounters a Viking king transformed into a giant rock figure by Aku, who insists that Jack slay him in battle so that he can reach Valhalla."
+		)
+	,	("Samurai Jack",
+		 11,
+		 "Jack and the Scotsman",
+		 "Jack meets the Scotsman, a warrior who also wields an enchanted sword, and they argue on a bridge. After realizing that Aku has placed bounties on both of them, however, they join forces to escape."
+		)
+	,	("Samurai Jack",
+		 12,
+		 "Jack and the Gangsters",
+		 "Jack teams up with some gangsters to try to get close to Aku. The only way to do it is to get a mystical jewel guarded by three elementals."
+		)
+	,	("Samurai Jack",
+		 13,
+		 "Aku's Fairy Tales",
+		 "Seeking to weaken Jack's popularity among his subjects, Aku gathers the children of the world in his palace and tells them a series of &quot;fairy tales&quot;, all of which portray himself as a hero and Jack as the villain."
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Samurai Jack", 0, 1, 4)
+	,	("Samurai Jack", 0, 2, 4)
+	,	("Samurai Jack", 0, 3, 5)
+;
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("School-Live!",
+		 12,
+		 "Why would anyone form a School Living Club? Could four girls, their advisor, and a puppy really love their school so much that they’d want to live in it? Or is there another reason, something that lurks behind the façade of their comfortable existence? Something that waits outside their school’s doors. Something that has already robbed one girl of her sanity? While the others try to come to grips with a dark new reality, the rest of the world falls to ruin at the hands of a ravenous force, and insanity may be the last hope for survival. Shocks, heartbreak and stunning revelations await as the as the twisted tale unfolds in SCHOOL-LIVE!",
+		 "Why would anyone form a School Living Club? Could four girls, their advisor, and a puppy really love their school so much that they’d want to live in it? Or is there another reason, something that lurks behind the façade of their comfortable existence?",
+		 "Madman",
+		 "&copy;Nitroplus / Norimitsu Kaihou, Sadoru Chiba, Houbunsha / Gakkougurashi Production Committee"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("School-Live!",
+		 4,
+		 1,
+		 "MA15+ - Strong supernatural themes and animated violence",
+		 12,
+		 "https://www.madman.com.au/catalogue/view/39916"
+		)
+	,	("School-Live!",
+		 3,
+		 1,
+		 "MA15+ - Strong supernatural themes and animated violence",
+		 12,
+		 "https://www.madman.com.au/catalogue/view/34317"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("School-Live!",
+		 1,
+		 "Beginning",
+		 "Yuki Takeya is a cheerful high school girl who lives at school and spends time with the School Living Club alongside fellow members Kurumi Ebisuzawa, Yūri Wakasa, and Miki Naoki, and their advisor, Megumi Sakura. During classes, Yuki and Miki chase after their pet dog, Tarōmaru, who decides to go wandering off on his own, eventually tracking him down. Later on, as Miki accompanies Yuki as she retrieves her bag from class, it is revealed that Yuki's view of a rosy school life with her fellow classmates is all in her head. In reality, she and the other members of the School Living Club are the only survivors of their school following a zombie outbreak. "
+		)
+	,	("School-Live!",
+		 2,
+		 "Memories",
+		 "Kurumi recalls an upperclassman that she had a crush on before he became a zombie. As Kurumi scouts the school for any wandering zombies, she is shocked to see one of them was once the upperclassman's girlfriend, which she is forced to kill. Later, Yuki suggests that everyone go on a test of courage through the school, which the others use as a motive to obtain supplies. While exploring the library, Yuki comes close to encountering a zombie, but is calmed down by Megumi and encouraged to hide while the others lure it away and finish it off, with Yuki remaining unaware. "
+		)
+	,	("School-Live!",
+		 3,
+		 "That Time",
+		 "Writing in her diary, Megumi recalls the events of the day everything changed. Going through what should've been a normal day of school, Megumi helps Yuki with a make-up test while giving Kurumi some love advice. After discovering some disturbing texts from her mother about the situation outside, Megumi takes Yuki to the rooftops, where Yūri had been attending the garden. There, Megumi learns about the zombie attack, with Kurumi and her injured upperclassman also making their way up to the rooftop. As the others are forced to barricade the door from approaching zombies, Kurumi is attacked by her zombified upperclassman and is forced to kill him in front of Yuki. Back in the present, Yuki suggests everyone participate in a camping trip during a power outage, with everyone feeling thankful for everything Megumi has done for them. "
+		)
+	,	("School-Live!",
+		 4,
+		 "Outing",
+		 "Miki recalls her experiences of the incident, in which she and her friend, Kei Shido, along with Tarōmaru, were at a shopping mall when the outbreak occurred. As the three spend the following weeks hiding out in the mall's upper offices, Kei eventually grows tired of being inside all of the time and sets off outside, leaving Miki and Tarōmaru by themselves. Meanwhile, Yuki proposes to the club that they go on a school outing. As the girls take Megumi's car and make their way towards the mall, Miki discovers that Tarōmaru has gone missing too. "
+		)
+	,	("School-Live!",
+		 5,
+		 "Meeting",
+		 "Yuki and the others arrive at the shopping mall, exploring the place for supplies while taking care to avoid zombies. While visiting the supermarket section, Kurumi comes across Tarōmaru, who the group decide to take with them. As the girls end up disturbing a large group of zombies and are forced to retreat, Miki hears their cries and goes off in search of them. Just as the girls start to head back to the school, Yuki manages to hear Miki as she becomes cornered by zombies, allowing the girls to come to her rescue in the nick of time. "
+		)
+	,	("School-Live!",
+		 6,
+		 "Welcome",
+		 "Given a tour of the school by Yuki upon waking up, Miki quickly comes to learn about her delusions, including the fact that the existence of Megumi is also one of them. Later, Yuri and Kurumi later explain to Miki how the real Megumi, who founded the School Living Club with Yuri, sacrificed herself in order to protect her students from the zombies, the shock of which left Yuki with the delusion that Megumi and the other students are still alive. Asked by the others to play along with this act, Miki reluctantly takes part in a sports meet with everyone, where she learns a little about how Yuki's way of thinking helps everyone. Wanting to understand more, Miki decides to become a trial member of the School Living Club. "
+		)
+	,	("School-Live!",
+		 7,
+		 "A Letter",
+		 "Back in the present, as Yuki's delusion starts to show signs of cracking, Miki grows concerned that letting things continue this way is doing Yuki more harm than good. Later, Yuki manages to find a stationery set among Megumi's belongings, which the club decide to use to write letters to send outside, while Miki finds a key, which she gives to Yuri for safekeeping. The next day, the girls send off their letters on balloons, with Miki writing one for Kei. "
+		)
+	,	("School-Live!",
+		 8,
+		 "Future",
+		 "After Yuki and Kurumi give Tarōmaru a much-needed bath, the girls discuss their plans after they graduate while Yūri recalls the day, she and Megumi started the School Living Club. Later that night, Miki becomes curious about the school's excessive facilities that has allowed them to survive and joins Yūri in searching the staff room for whatever Megumi's key unlocks. With Yuki's help, they find a hidden safe containing an emergency manual, which reveals the school was involved with a biological weapon and was constructed as a safe house in the event of an outbreak. "
+		)
+	,	("School-Live!",
+		 9,
+		 "Holiday",
+		 "As the girls further inspect the manual, learning of a shelter hidden in the school's basement, Yuki ropes everyone into cleaning the school's water tank to use as a swimming pool. While the girls take their minds off of things by swimming and having water fights, Miki finds herself able to grow closer to Tarōmaru, who was cold to her before. Afterwards, Yuki gives Miki some advice that if she enjoys herself, she will surely meet Kei again. Later that night, Tarōmaru breaks free from his leash and goes down into the basement, where he comes across a familiar looking zombie. "
+		)
+	,	("School-Live!",
+		 10,
+		 "Rainy Day",
+		 "Upon discovering that Tarōmaru has gone missing, the girls go off in search for him. Following his tracks down to the basement, Kurumi finds Tarōmaru, only to find he had become infected. Managing to lock Tarōmaru up, Kurumi enters the underground shelter only to discover that the zombie who bit him is none other than Megumi herself, becoming bitten by her when she hesitates to attack her. As the girls struggle over what to do as Kurumi's condition worsens, Miki learns of an antidote located in the shelter and decides to go to the basement, but is soon overcome with grief over Tarōmaru. Meanwhile, as zombies start making their way inside the school, Yuki begins to remember something. "
+		)
+	,	("School-Live!",
+		 11,
+		 "Scar",
+		 "With zombies spreading across the school, Yuki rushes over to Miki's aid, giving her the encouragement she needs to go off in search of the antidote. Meanwhile, a thunderstorm strikes the school's power generator, cutting the school's power, while Yūri comes close to killing Kurumi before she completely turns, but can't bring herself to do it. Down in the basement, Miki comes face to face with Megumi, assuring her that the others are doing fine before putting her to rest. Miki manages to find the antidote, only to become cornered by zombies alerted by the backup power's alerts. Meanwhile, Yuki, who gradually remembers what really happened, is guided by her version of Megumi towards the broadcasting room, finally coming to terms with Megumi's death. "
+		)
+	,	("School-Live!",
+		 12,
+		 "Graduation",
+		 "Arriving at the broadcasting room, Yuki is cornered by zombies but is saved by Tarōmaru, who had instinctively come to her rescue. Realising that the zombies still retain their residual memories, Yuki manages to send all the zombie students away by telling them to go home, allowing Miki to deliver the antidote. Although the antidote manages to cure Kurumi of her condition, Tarōmaru is left weak from being infected for so long and passes away in Miki's arms. After giving Tarōmaru a proper burial alongside Megumi, the girls learn that the reason he went down to the basement was to search for another puppy that was somewhere in the school. With the school no longer habitable due to the damage done to the electricity, the girls decide to head towards a university marked on a map by Megumi, holding a graduation ceremony to bid their farewells to the school. As the girls set off on their &quot;graduation trip&quot;, another girl elsewhere comes across one of their letters. "
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("School-Live!", 0, 1, 4)
+	,	("School-Live!", 0, 2, 4)
+	,	("School-Live!", 0, 3, 4)
+;
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Three Leaves, Three Colors",
+		 12,
+		 "Yoko Nishikawa lived a life of privilege until her father’s company went under. From princess to pauper, she faces life with a non-existent budget and is stuck eating bread crusts. Alone and distraught, everything changes when glutton Futaba and scary class rep Teru stumble into her life—literally. Together, they’ll discover a new friendship and survive the day-to-day trials of being in high school.",
+		 "Yoko Nishikawa lived a life of privilege until her father’s company went under. From princess to pauper, she faces life with a non-existent budget and is stuck eating bread crusts.",
+		 "Madman",
+		 "&copy;Â&copy 2016 arai-cherry / Houbunsha, Three leaves, three colors Project"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Three Leaves, Three Colors",
+		 3,
+		 1,
+		 "PG - Mild themes",
+		 12,
+		 "https://www.madman.com.au/catalogue/view/36925"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Three Leaves, Three Colors",
+		 1,
+		 "These Are Bread Crusts",
+		 "While on lunch break, Odagiri Futaba, who decides to take a shortcut to her classroom, and Hayama, who is chasing a cat, stumble upon Nishikawa Yoko eating alone. When Futaba asks Yoko what's on her hand, she immediately says that they are bread crusts. Then, the three of them end up having lunch together and introduce themselves. Futaba asks Yoko whether she has no friends, where she replies that Futaba is too direct in asking it. That night, Yoko tries to deep fry the break crusts."
+		)
+	,	("Three Leaves, Three Colors",
+		 2,
+		 "Nothing Good for You is Tasty",
+		 "While lunch, Hayama offers Yoko her rolled egg, which the latter refuse. Futaba asks both of them being so polite to each other, and they should call each other by using nicknames. Suddenly, a cat appears out of nowhere, which makes Hayama shows her soft side for animals. She tells them that she has a pet cat named 'Beelzebub' at home, which she nicknamed 'Bel'."
+		)
+	,	("Three Leaves, Three Colors",
+		 3,
+		 "A Taste of Maid",
+		 "When Yoko goes to school, it is revealed that Yamaji always inspects whether she locked properly after she goes out. A week later, Futaba reveals that she is running out of money due to her accidentally use her allowance to eat the expensive grilled sea urchin. When Futaba decided she probably should work part-time, Yoko plans to do the same as well, while asking what should be a good place for her to work."
+		)
+	,	("Three Leaves, Three Colors",
+		 4,
+		 "Actually, This Is What I Live For",
+		 "When Yoko-sama invited her friends to her home, they all play pretend to be a married woman, wife of a chairman and wife of a real estate magnate, as Yamaji tells Futaba and Teru a tale from Yoko's childhood. In Futaba's case, it is revealed that she has been a walking black hole since she was in primary school, eating a loaf of bread (with jam) for snacks. When they ask about Teru's past, she tells them that Santa didn't give her none of what she wanted back then (either a white tiger, a puma, a snow leopard or a sabre-toothed cat). Suspecting it is because she has been a bad girl, she vows to be a good girl and study hard, even though it is all just for show. Both Futaba and Sonobe are initially jealous of Teru who has a good older sister, but retract their statement after seeing her act in the present."
+		)
+	,	("Three Leaves, Three Colors",
+		 5,
+		 "Your Birthmarks Have Faded",
+		 "During a very hot day in summer, Futaba comes to Teru's house, shouting &quot;Teru-chan, let's play!&quot; until she comes out angry and points out that she should just ring the chime. After annoyed by hearing that Futaba just come to play Old Maid with her, Teru suggests that they go to somewhere cooler. In a restaurant named Jonafull, as the three friends sit down, Yoko-sama dozes off, and hit her head quite hard on the table. They learn that Yoko is exhausted from working."
+		)
+	,	("Three Leaves, Three Colors",
+		 6,
+		 "Veggies, Meat, Meat, Meat, Meat, Meat, Meat, and Fish",
+		 "During August, Yoko, Futaba and Teru arrive at the beach... not to play, but to work with Sonobe by managing her beach hut, Himitsu no Hanazono (秘密の花園, literally Secret Garden), Beach Hut Version. (Not) surprisingly, Yoko-sama don't know what a beach hut is, and Sonobe's attempt on explaining it to her end in failure. An overprotective Yamaji brings along a metal bat, with the intention of swinging it to anyone who stare at Yoko-sama."
+		)
+	,	("Three Leaves, Three Colors",
+		 7,
+		 "Ten Yen Short",
+		 "Autumn has arrived, as Yoko, Futaba and Teru return home from school. Futaba only thinks about food, and says that it is an autumn of eating, while adding that she can eat five times as much in autumn. They meet with a blue-haired boy, who shouts &quot;Odagiri Futaba!&quot;, and runs before anyone can say anything else."
+		)
+	,	("Three Leaves, Three Colors",
+		 8,
+		 "You've Got Them Hooked",
+		 "In a Cat Cafe named &quot;Nekonimashi&quot; (猫にまし), Serina is playing with the cats there happily. Suddenly, a new customer enters, and Teru sits besides Serina. Both of them are surprised to see each other there. The story then flashbacks to that morning. Kou asks Teru to go out with her, and when she points to Nekonimashi, Teru reveals that she has a coupon to there already, which is the reason of Serina's encounter with Teru."
+		)
+	,	("Three Leaves, Three Colors",
+		 9,
+		 "Curry Tastes Better on the Second Day",
+		 "It is the time for Cultural Festival. Class 1-3 students are thinking of an event to do, and Futaba suggests curry shop. When they ask about costumes, Sonobe Shino appears out of nowhere and suggests that they just use school uniforms, and make the theme to be &quot;ordinary curry made by high school girls&quot;, before disappearing without anyone else but Asako, Serina, Futaba and Teru notices her real identity."
+		)
+	,	("Three Leaves, Three Colors",
+		 10,
+		 "A Day to Gorge on Chicken and Cake",
+		 "It's almost Christmas season. Yoko claims that it is the season for her heating bill to be high, since it is cold. Yamaji, who happens to be passing flyers, hearing that Yoko is going to cut cost by being in a blanket, says that he will buy a heater for Yoko-sama. The three leaves ignore him and walk away."
+		)
+	,	("Three Leaves, Three Colors",
+		 11,
+		 "A Day to Gorge on Chocolate",
+		 "It's almost the season for Valentine Day. Yoko claims that it is the season that she want winter to end so that she can save on heating bills. Teru points out that they seems to have this conversation before. Futaba claims that Valentine Day is the day to gorge on chocolate, while Yoko disagrees, and Teru once again feel a déjà vu."
+		)
+	,	("Three Leaves, Three Colors",
+		 12,
+		 "I Am Graduating from Bread Crusts",
+		 "Yoko goes to school, as Odagiri Futaba greets her with &quot;Yoko-san&quot; (and wears a green katyusha), which Yoko feels very weird. Teru lazily greets them as well (and she doesn't wear any spectacles), and Futaba calls her &quot;Teru-san&quot; (too polite of a namecall), as Yoko feels weird and weirder. Yoko thought that it was all an act, as Futaba points out that Yoko is acting weird."
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Three Leaves, Three Colors", 0, 1, 4)
+	,	("Three Leaves, Three Colors", 0, 2, 4)
+	,	("Three Leaves, Three Colors", 0, 3, 4)
+;
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Vividred Operation",
@@ -1636,6 +2102,224 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 		("Yurikuma Arashi", 0, 1, 4)
 	,	("Yurikuma Arashi", 0, 2, 4)
 	,	("Yurikuma Arashi", 0, 3, 4)
+;
+
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Little Busters Refrain",
+		 13,
+		 "On the back of their first baseball game, the Little Busters team is closer than ever. But amongst the celebration, Riki can't help but notice a strong sense of D&eacute;j&agrave; vu over everything that has happened. As the oddities of the world continue to unfold, the answers to Riki's questions appear to lie in the hands of a cat. Can Riki and Rin muster enough courage to fulfill the mission given to them and confront the truth of their reality that has been in front of them all along?",
+		 "On the back of their first baseball game, the Little Busters team is closer than ever. But amongst the celebration, Riki can't help but notice a strong sense of D&eacute;j&agrave; vu over everything that has happened.",
+		 "Hanabee",
+		 "&copy;Yoshinobu Yamakawa, Michiru Shimada / J.C.Staff"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Little Busters Refrain",
+		 4,
+		 1,
+		 "M - Mature themes, sexual references and coarse language",
+		 13,
+		 "https://hanabee.com.au/products/little-busters-refrain-blu-ray"
+		)
+    ,	("Little Busters Refrain",
+		 3,
+		 1,
+		 "M - Mature themes, sexual references and coarse language",
+		 13,
+		 "https://hanabee.com.au/products/little-busters-refrain"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Little Busters Refrain",
+		 1,
+		 "It Struck Without Warning",
+		 "Following the loss of their first baseball game, the Little Busters have a pancake party. While returning from the party, Yuiko overhears some girls badmouthing her, claiming that they will pay her back for being humiliated in the past. Some time later, Riki and the others learn that someone had filled Kudryavka's bag with thumbtacks and destroyed Komari's notes. Suspicious of a girl who was overhearing them, Riki follows her and finds the same girls Yuiko had noticed the other day in a classroom, figuring that they are the culprits. Despite being confronted by Riki, the girls claim that there is nothing he can without any evidence of what they did, until Yuiko appears and plays a recorded conversation between them that proves their involvement. Despite that, the girls refuse to give up and claim that they will keep tormenting Yuiko's friends until Yuiko destroys the room's door with a single kick and threatens to do the same with their faces, forcing them to give up. When a teacher arrives and discovers the damage, Kyousuke and the other boys cover for Yuiko and Riki as they escape by themselves to the broadcast room. The room seems familiar to Riki despite never having been there before and with his memories confused, he suffers another attack of narcolepsy and collapses. "
+		)
+	,	("Little Busters Refrain",
+		 2,
+		 "It Was Also Raining at That Time",
+		 "After waking up, Riki learns from Yuiko that she was taking care of him while he was asleep and cannot shake the suspicion that the whole situation has happened with them in the past. Some time later, Kyousuke and the other boys point out that Riki is behaving strangely since his last encounter with Yuiko. Believing that he has fallen in love with her, they decide to have him lure the girls to the school building as they prepare a fireworks show for them, with instructions to find a way to get alone with Yuiko to set up the mood for his &quot;confession&quot;. Wondering if he is actually in love with someone, Riki does as they say, but ends up alone with Yuiko by accident when the fireworks begin. The following day, Riki realizes that the same events of the previous day are being repeated as the date is also the same, June 20. "
+		)
+	,	("Little Busters Refrain",
+		 3,
+		 "I Always Wanted to Stay Here",
+		 "The day of June 20 keeps repeating without anyone taking heed of it, except for Riki himself, and no one else seems to find it strange even when it starts snowing. Riki decides to look for Kyousuke to ask for his advice but he is nowhere to be found. However, Riki learns that Yuiko is the only other person who knows the truth and she claims that it all is her fault. Her wish for staying with the Little Busters forever had been granted in the form of a dream, and she tells Riki that she only knew what happiness was after meeting Riki and his friends. Yuiko tells him that things will return to normal when he wakes up from the dream, but Riki will forget everything that happened. Before bidding farewell, Yuiko warns Riki to take care of Rin, as the &quot;fated day&quot; is at hand. "
+		)
+	,	("Little Busters Refrain",
+		 4,
+		 "Riki and Rin",
+		 "While thinking about what Yuiko said to him, Riki is approached by a girl who confesses her feelings for him, but claims that she knows he already likes someone else and flees. Wondering what she meant, Rin's image come to Riki's mind, and upon learning what happened, Kyousuke reveals that a third-year student had also confessed to Rin, but he helped her decline him. Later that day, Rin asks Riki to help her buy some cat food and on the way back, she suggests they start dating and Riki agrees after confirming that she likes him. Riki has trouble trying tell Kyouske about it the next day, but Kyousuke claims that he already knew about it. Riki and Rin later tell the rest of the Little Busters, who congratulate them, but Riki chases after Rin after she runs away embarrassed. The white cat Lennon brings them another mysterious letter telling them that they have one final task to do before &quot;learning the truth of the world&quot;, which is to &quot;volunteer themselves during homeroom&quot;. "
+		)
+	,	("Little Busters Refrain",
+		 5,
+		 "The Final Task",
+		 "Members of the Prefectural Assembly are expected to make an inspection of the school and realizing that it is part of the &quot;final task&quot;, Riki and Rin volunteer themselves to guide them around. Despite Rin's shy demeanor, she manages to guide the visitors properly and they later invite her to take part in a student exchange program to help the students of another school overcome a tragedy that claimed the lives of some of their classmates. Riki at first asks Rin to decline their invitation, but he later realizes that this could be an important experience for her to grow as a person. However, when Riki tries to encourage her to take part in the program, she gets angry at him and ultimately accepts the invitation. On the eve of Rin's departure, Riki realizes that all the tasks they received helped her to mature and improve her confidence. He concludes that it was all a part of Kyousuke's plans, including inviting Komari and the other girls to become part of their group. His suspicions are confirmed when Riki finds Lennon with Kyousuke and then he confronts him about the &quot;truth of the world&quot; he mentioned in his letters. However, before getting some answers, they are forced to run away after being caught outdoors during curfew and when Riki trips over, Kyousuke disappears in front of him. "
+		)
+	,	("Little Busters Refrain",
+		 6,
+		 "At the End of the Escape",
+		 "After Riki and the others watch Rin leave the school without a word, Riki is then left with the impression that Kyousuke sent her away and that he is trying to break apart the Little Busters. Riki continues getting text messages from Rin saying that she does not know what to do at the school, and all he can do is tell her to &quot;hang in there&quot;. Concerned for Rin being isolated, Riki decides to go after her, but he is stopped by Kyousuke, who makes a deal that he will bring her back for weekends only. When Rin come back the following weekend, she is depressed and stays in bed. Riki goes to Kengo for advice, who tells him he has to fight Kyousuke to keep Rin from going back to the school. Kyousuke agrees to settle it over a baseball game with Masato as his partner, but Riki and Kengo ultimately fail. Kengo claims that Kyousuke rigged the game and punches him before being restrained by Riki and Masato. The next morning, Riki tells Rin that they are running away together. They travel to a house in the country where they played as kids, but they are eventually discovered by the police who raid the house. "
+		)
+	,	("Little Busters Refrain",
+		 7,
+		 "May 13",
+		 "Riki awakens several months before, with no memories about what happened during that time. Riki goes to stop Masato from fighting Kengo, but neither of them listen to him and Kyousuke is nowhere to be found. The result of the fight leads to Kengo fracturing his right arm, putting him out of commission for kendo practice; Kengo asks Riki to think of something fun all of them could do together. Rin is now afraid of everyone but Riki, who routinely drops her off at a local elementary school during the day. Meanwhile, Kyousuke is depressed and stays cooped up in his room reading manga. Initially unsuccessful to find something Rin enjoys to do, he eventually discovers her affinity for playing catch. Riki tries to invite Kyousuke to join in, but he refuses. Riki also invites Masato and Kengo to play a baseball game, but Kengo angrily refuses to participate, and Masato leaves shortly thereafter. Knowing the others are hiding something from him and Rin, Riki resolves to become a leader like Kyousuke and reform the Little Busters. "
+		)
+	,	("Little Busters Refrain",
+		 8,
+		 "Proof of the Strongest",
+		 "Determined to reform the Little Busters, Riki attempts to invite Masato, who refuses, claiming that what only matters to him is to &quot;become the strongest&quot;. Soon after, Riki and Rin hear news of Masato attacking other students and devise a trap to stop him. However, the trap fails to restrain him fully and he starts pursuing them. After setting another trap with Rin's help, Riki manages to wear down Masato to the point of being able to defeat him barehanded. The knocked down Masato then reminisces that before meeting Kyousuke, he used to be treated as a fool by his peers until he trained his body enough to beat down whoever insulted him. This resulted in him becoming isolated because of it, until Kyousuke appeared and defeated him by also using traps, leading to them becoming friends. Masato began his rampage at school because he suddenly started seeing everyone else as a copy of himself and believed that he could only distinguish himself from the others by becoming the strongest of them all. After renewing his friendship with Masato, Riki realizes that he must eventually confront Kyousuke as well for his and his friends' sake, while a serious Kengo watches over him from afar. "
+		)
+	,	("Little Busters Refrain",
+		 9,
+		 "A Friend's Tears",
+		 "Riki's next step to reassemble his friends is to convince Kengo to join their side, but Kengo refuses to listen to him, claiming that all Riki and Rin need to do is to rely on their friends. Riki visits Kyousuke, who hints that Kengo is lying about something and Riki realizes that Kengo's arm is not injured as he claims. Rin learns from Masato that Kengo originally joined the Little Busters after Kyousuke defeated his father in a kendo match. This leads Riki to challenge Kengo to a baseball match instead, with the first one to strike a home run being the winner and Kengo rejoining the Little Busters should he lose. After several attempts, Riki manages to land a home run but is too exhausted to throw the ball, so Rin takes his place. Rin's throws are fast but with initially no control, and when she manages to throw the ball properly, she succeeds in having Kengo strikeout, winning the match. Kengo rejoins the Little Busters, determined to follow Riki as long as he can. "
+		)
+	,	("Little Busters Refrain",
+		 10,
+		 "And So I'll Do It Over Again",
+		 "Having assembled the rest of the original Little Busters, Riki intends to save Kyousuke from despair the same way he did for him when his parents died. Meanwhile, Kyousuke reminisces that in fact the world they are living in was created by his spirit with the purpose of preparing both Riki and Rin to live without him and the others, as all of them except the pair apparently died during an accident. Since then, Kyousuke created an alternate timeline that was always reset when Riki or Rin had fallen into despair. However, Kyousuke's power to maintain this realm is waning, leading to the strange events occurring in the previous loop, and the departure of the other girls. When Riki and Rin ran away after the latter broke down from being separated from the others, Kyousuke was losing his faith, until Riki managed to establish himself as the leader, and once reunited with his friends, Kyousuke claims that the time for him and the others to bid farewell to Riki and Rin has come. "
+		)
+	,	("Little Busters Refrain",
+		 11,
+		 "The End of the World",
+		 "After having the Little Busters once again reunited, Riki suggests for them to play baseball, and the others accept. During the match, Kyousuke reveals to Riki that the world they are currently in was created by him and the others after a bus accident killed all students aboard except for Riki and Rin. Kyousuke explains that this world was meant to prepare them to move forward with their lives, so Kyousuke and the others gave the duo a series of trials to have them mature and become stronger. After Masato and Kengo bid their farewells, Kyousuke tearfully instructs Riki to take Rin past the school gates back to the real world, as the time for them to part has come. As Riki and Rin get past the gates, Kyousuke has one last tour around the school before sitting at his desk and disappearing along with the world he created. "
+		)
+	,	("Little Busters Refrain",
+		 12,
+		 "A Single Request",
+		 "Riki and Rin awaken in the real world and recall that during their field trip, their bus got into an accident and Masato and Kengo used their own bodies to protect them. Despite being injured, they flee from the site of the accident to avoid being caught in the impending explosion, but after reaching a safe distance, Riki leaves Rin behind to return and attempt to help the others. However, he starts suffering another attack of narcolepsy and struggles to keep himself awake. Meanwhile, Rin has a meeting with Komari and the other girls in spirit and wishing to not part ways with them, she decides to look for a way to save them as well. "
+		)
+	,	("Little Busters Refrain",
+		 13,
+		 "Little Busters",
+		 "Having another attack of narcolepsy, Riki realizes that he always falls asleep at the sight of unpleasant situations, since he saw his parents' dead bodies in a car accident when he was a child, and determined to overcome this weakness, he awakens with Rin's help. Knowing that the bus will explode, Riki and Rin start rescuing the other students from the wreckage only to discover that Kyousuke is using his own body to prevent the gas from leaking further, leaving the duo no other option but to pick him up after carrying all the others to safety. The bus explodes just after Riki and Rin return to rescue Kyousuke, but the incident ends with no deaths. Three months later, all of the students have returned from the hospital except Kyousuke, who is still in a coma, and the other Little Busters spend their days together, waiting for him to return. Once Kyousuke finally returns, the Little Busters have their own, private field trip to the beach together. "
+		)
+		
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Little Busters Refrain", 0, 1, 4)
+	,	("Little Busters Refrain", 0, 2, 4)
+	,	("Little Busters Refrain", 0, 3, 5)
+;
+
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Plastic Memories",
+		 13,
+		 "Tsukasa Mizugaki is a recent hire of the SAI Corporation, renown for its production and management of androids capable of feeling human emotions called &quot;Giftia&quot;. Assigned to the terminal service department, Tsukasa is tasked with recovering Giftias who are nearing their expiration from their owners before they corrupt. But in this dead end department, Tsukasa is about to meet Isla, a female Giftia. Beneath her quiet exterior, she was once known as the best in Giftia retrievals and Tsukasa is determined to find out why she stopped.",
+		 "From the writer of &quot;Steins;Gate&quot;, Naotaka Hayashi, comes an original love story!",
+		 "Hanabee",
+		 ""
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Plastic Memories",
+		 1,
+		 1,
+		 "M - Mature themes and sexual references",
+		 7,
+		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories"
+		)
+	,	("Plastic Memories",
+		 1,
+		 2,
+		 "M - Mature themes and sexual references",
+		 6,
+		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories-part-2"
+		)
+	,	("Plastic Memories",
+		 2,
+		 1,
+		 "M - Mature themes and sexual references",
+		 7,
+		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories-blu-ray"
+		)
+	,	("Plastic Memories",
+		 2,
+		 2,
+		 "M - Mature themes and sexual references",
+		 6,
+		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories-part-2-blu-ray"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Plastic Memories",
+		 1,
+		 "The First Partner",
+		 "On the first day of his new job, Tsukasa Mizugaki rushes to Terminal Service No. 1, which is one of the offices in SAI Corp, where he is taught about Giftia, androids who survive on synthetic souls for a maximum lifespan of nine years and four months. Normally, humans and Giftia work in pairs to collect expired Giftia, where the human is assigned the job of a 'spotter' that is in-charge of overseeing his Giftia partner at work while the Giftia earns the job of a 'marksman' that persuades the owners to give up their Giftia. Tsukasa is then partnered with Isla, a Giftia who is highly regarded in the office and famous for a wide knowledge of herbs and tea. The two are led out by Tsukasa's trainer Michiru Kinushima and her partner Zack; Zack retrieves a Giftia, as a demonstration of their job for Tsukasa, and Michiru explains their job to him. Not long after, Tsukasa and Isla are assigned a mission to retrieve Nina, a child-type Giftia owned by an old woman named Chizu Shirohana. After multiple tries, Isla is unable to persuade Chizu to talk to them, which makes Tsukasa doubt her abilities. She finally manages to win a chance to talk with Nina, and Chizu overhears Nina giving her consent to be taken away so as not to cause trouble for Chizu, whom she loves dearly. Chizu, realising she had not considered Nina's feelings in the matter, finally allows Nina to be taken away, and thanks Tsukasa when he apologizes."
+		)
+	,	("Plastic Memories",
+		 2,
+		 "Don't Want to Cause Trouble",
+		 "Tsukasa meets Yasutaka Hanada, a spotter and a ten-year veteran at Terminal Service No. 1, whose aloof behavior surprises him, as well as annoys his partner Sherry. When Yasutaka asks him about how he got the job, Tsukasa reveals that his father is a friend of one of the higher-ups in the company, who decided to help him after he failed his entrance exams. After another failed attempt at retrieving and a scolding from Michiru, Tsukasa takes the blame despite it being Isla who caused the problem. Back in the office, he is prompted by a message about her and heads to the Unit Testing Room, where he meets Eru Miru and Mikijiro Tetsuguro, who are measuring Isla's physical skills. Tsukasa asks Isla about the physical training, and she tells him of her belief that she is holding him back because of all the time she spent off the field. Because of this, Tsukasa decides to do the negotiating with Giftia owners instead of Isla, in spite of the fact that it isn't what a spotter does. The next day, he begins putting together his own manual about owner negotiations and is assisted by Michiru and Zack. Once he is finished, he comes across Yasutaka, who learns about Isla's visits to the Unit Testing Room and remarks the pointless nature of those visits, explaining that Isla's physical capabilities are on a consistent decline that cannot be fixed, a characteristic of Giftia. Later on, Tsukasa and Isla successfully retrieve the Giftia they were previously assigned to, while Kazuki Kuwanomi, an experienced spotter, and Yasutaka talk about Isla's lifespan, which is set to expire in less than 2,000 hours, giving her less than three months to live."
+		 )
+	,	("Plastic Memories",
+		 3,
+		 "We've Just Started Living Together",
+		 "Tsukasa is assigned to live with Isla in the company dormitory, a rule mandated for all marksmen and spotter duos in Terminal Service No. 1. However, he is unsettled by the fact that Isla repeatedly ignores him there. At Terminal Service No. 1, he confides to other employees about the problem, although their individual suggestions fail miserably at helping him attract her attention. Finally, Kazuki approaches Tsukasa about the problem and tells him she ignores other people during her personal time, not just him. She then tells him to take Isla out somewhere if he wants some interaction with her. Following through with the suggestion, he successfully asks Isla to accompany him to a shopping mall. There, they go to a herb shop and, to buy some more time, Tsukasa asks Isla to help him pick out some herbs as a present to a person who he unintentionally describes as being a lot like her. Afterwards, they go to a nearby amusement park, where Tsukasa admits the person he was describing was Isla herself. When he says he did this to make some memories with her about their partnership, she emotionally shuts down and tells him that she was not built to play at an amusement park, which shocks him. When Isla runs off, he purchases a key ring pendant from the amusement park and gives it to her at their dorm room, telling her she can throw it away if she doesn't want it. She also apologizes apprehensively about her escape, and even though Eru had previously told Tsukasa that Isla didn't accept gifts, Isla makes the keychain an exception."
+		)
+	,	("Plastic Memories",
+		 4,
+		 "I Just Don't Know How to Smile",
+		 "The Terminal Service No. 1 staff receives seven brand-new retrieval missions, and Tsukasa and Isla are assigned to retrieve a Giftia named Marcia. They are also warned of the presence of criminals who assume the identities of Terminal Service employees to retrieve Giftia and sell them on the black market. Tsukasa and Isla head to Marcia's residence, where they learn she is raising her owner, Souta Wakanae, in the role of an older sister after his parents died. When Souta arrives home from school, he acts hostile towards Tsukasa and Isla, but is surprisingly willing to sign the agreement form to take Marcia away, citing that she is just a Giftia and adding that Giftias cannot be trusted in telling the truth. Unable to acquire a signature as a result of Souta's attitude, Tsukasa confides in Michiru about the encounter, and she advises him to solve the problem by having Souta believe he was truly loved by Marcia. As a result, Tsukasa, Isla, and Marcia decide to bake a cake for his birthday on the following day, and are assisted by Michiru and Zack. Afterwards, Michiru tells Tsukasa that she tried all she could to keep her father, a Giftia, from being retrieved, which resulted in him becoming a Wanderer, a Giftia that still retains its motor skills but loses its personality and memories, causing it to become instinctual and aggressive. Later, Souta returns home and is surprised by the group. Upon spotting the birthday cake, which was modeled after one used for his birthday three years ago, he remembers his family and tearfully apologies to Marcia. On the day before the retrieval, Souta is visited by a shady man, who claims to be Tsukasa and Isla's replacement from the Terminal Service and asks for Marcia."
+		)
+	,	("Plastic Memories",
+		 5,
+		 "The Promise I Wanted to Keep",
+		 "While returning home with groceries, Marcia is suddenly ambushed by the man from the previous episode. Later, Tsukasa and Isla are contacted by Souta, who informs them about Marcia's disappearance, and they assume it is the work of a black market retriever. With only 24 hours left on Marcia's lifespan, Tsukasa resolves to retrieve Marcia and return her to Souta, and the rest of Terminal Service No. 1 joins the search. The following day, the office narrows down the search to an area where a black market retrieval service is possibly located, although their efforts are hindered by a unit from R. Security, a private security firm that was hired to assist in the investigation. Kazuki confronts the unit's supervisor, Shinonome, who gives her a map of the area under scrutiny. As the retrievers get ready to converge on the area, Tsukasa is equipped with and learns about a gun-like device designed to forcibly crash all of a Giftia's functions when they turn into Wanderers. He is then approached by Kazuki, who asks him if Isla will be able to handle the situation, but is forced to drop the subject soon afterward. Michiru later tells Tsukasa about how Kazuki tried to retrieve her father when he became a Wanderer, only for him to injure Kazuki and then be shot down by members of R. Security. Soon afterward, the black market retriever is found unconscious and it is concluded that Marcia turned into a Wanderer. Kazuki orders the rest of the retrievers to stop Marcia before she is destroyed by R. Security. Tsukasa and Isla find Marcia, only to realize Souta had been following them. Marcia then injures Isla and kidnaps Souta. Despite Isla's injuries, she and Tsukasa follow her to a rooftop, where Tsukasa nearly manages to convince Marcia to surrender. However, when Souta speaks her name, Marcia snaps and begins strangling him, forcing Tsukasa to pull out his software destruction device and prepare to shoot Marcia. However, Isla suddenly dashes towards Marcia, just as Tsukasa fires the device. The scene then cuts to the Terminal Service office during the next morning, where it is revealed that Isla hasn't signed into the attendance log."
+		 )
+	,	("Plastic Memories",
+		 6,
+		 "Welcome Home the Both of Us",
+		 "Three years ago, it is revealed that Isla began blaming herself for not accompanying Kazuki when she retrieved Michiru's father, which wound up costing Kazuki her ankle. As a result, Kazuki retired from her position as Isla's spotter. In the present day, it is revealed that Marcia was hit by Tsukasa's device, although Isla was able to block most of the blow without being hit herself. With Isla now under maintenance for her injuries inflicted by Marcia, Tsukasa is reassigned to desk duty. After a visit from Tsukasa, Isla notes that he is still remaining optimistic despite what happened and privately questions his feelings about the situation. Once most of her maintenance is done, Isla returns to the office and realizes that she has been paying attention to Tsukasa a lot more closely lately. She confides in Michiru and Eru about it, although they misinterpret her feelings as being motivated by love and Eru decides to help Isla stalk Tsukasa. However, after multiple attempts at observing him fail miserably, Isla confesses to Michiru about her confusion on Tsukasa's unwavering optimism. Michiru then tells her that Tsukasa never forgot about the incident with Marcia, even neglecting his desk duties to go and apologize to Souta for what happened, and assumes that he is smiling out of sadness. After finishing the last of her maintenance, Isla returns to the dorm, only to find he isn't there. When night falls and Tsukasa has yet to return home, she goes to the office, where she finds Tsukasa learning that she has 1,000 hours left in her lifespan, which translates to a month. However, when given the chance to partner up with a new Giftia, Tsukasa declares that he wants to remain partnered with Isla, which makes her happy."
+		)
+	,	("Plastic Memories",
+		 7,
+		 "How to Ask Her Out",
+		 "One morning, Tsukasa decides to ask Isla out on a date. While trying to find opportunities to do so, he finds that Isla has been doing chores for him at their dormitory and the office. After asking her about it, he learns she is trying to be useful to him, much to his chagrin. When Tsukasa musters the courage to ask her out, Isla accepts his request and decides to go to the amusement park after discussing it with Michiru and Eru, later reasoning to Tsukasa that she felt guilty about running out on him during their previous time there. However, while reading Isla's diary, Tsukasa realizes that she and Kazuki often went there when they were still partners. The next day, the two of them go there and sit at a bench, Isla's favorite spot in the park, as she was able to observe the happiness and joy of so many people, which comforted her. After learning that Isla has never tried any of the park attractions, Tsukasa takes her on a tour through the entire area, eventually ending at the Ferris wheel. As they sit inside, Isla expresses her gratitude that she is riding it with Tsukasa. As he thinks about Isla's happiness, Tsukasa faints after working too hard lately, ending the date. In the end, Tsukasa wakes up and Isla apologizes for not telling him earlier that she has 1,000 hours remaining in her lifespan. Tsukasa promises that he will stay with Isla until the end, no matter what. He then asks if she would be willing to go out with him again, to which she smiles and takes his hand. However, as he sleeps, she observes him with a doubtful expression."
+		)
+	,	("Plastic Memories",
+		 8,
+		 "The Fireworks I've Never Seen",
+		 "During a retrieval mission, Tsukasa is surprised when the owner of the newly assigned Giftia opts to delete the latter's current personality and memories by replacing her OS and start over from scratch instead of handing over the Giftia proper, having done it several times already. Intrigued, he asks around the office if a Giftia who has gone through that experience is capable of retaining their old memories, but everyone replies there is no precedent to that. Later on, Kazuki announces that a marksman from the Terminal Service No. 3 office will be sent in, as the assigned Giftia and his owner have gone into hiding, and assigns Tsukasa and Isla to assist her. They later meet the marksman, Andie; shortly afterward, they have an awkward encounter with Eru, who mistakes Andie for her friend Olivia. After the mission is a success, Tsukasa learns from Eru that Andie is indeed Olivia, whose OS was replaced due to the company cutting costs. Later on, Eru tells Tsukasa that she reconnected with Andie and mentioned a carnival they used to go to together when Andie was still Olivia, which caused Andie to decide to go there. Not wanting to deal with her memories of Olivia, Eru tries to get Tsukasa to take Andie to the carnival instead. However, Tsukasa convinces Eru to come along, and they take Isla and Andie to the carnival the following night. There, Eru decides to let go of Olivia and create new memories with Andie, concluding it wouldn't be fair to either of them if she saw them as one and the same. Later, Isla gets lost in the crowd and Tsukasa begins searching for her, eventually finding her at a lonely walkway, terrified by exploding fireworks. After he consoles her, Isla brings up Andie and asks if her presence is hurting him. He replies that it does, but insists on continuing to be her partner. When she asks why, Tsukasa responds that it is because he loves her. Shocked and embarrassed by the sudden confession, Isla shouts that she cannot accept his love."
+		)
+	,	("Plastic Memories",
+		 9,
+		 "After the Festival",
+		 "In the wake of being shot down by Isla at the carnival, Tsukasa has maintained a heartbroken, depressed attitude that is evident at the office. Seeing this, Michiru asks Isla about it, and she tells her that she was just confused when she shot Tsukasa down and now feels guilty about hurting his feelings. Michiru suggests having the two of them live apart for a few days so Isla could have time to sort out her own feelings, and she transfers Isla to Eru's room and Tsukasa to hers and Zack's. When Tsukasa recovers from his stupor, Michiru consoles him and tells him the reason why she joined Terminal Service No. 1. The next day, Michiru sets up a lunch between Tsukasa and Isla, during which they agree to allow Isla more time to consider her true feelings. Later on, Michiru questions the effectiveness of her treatment over the whole situation. After observing Tsukasa and Isla acting like average coworkers at the office, Michiru approaches Isla one day and asks her about her feelings for Tsukasa, and she responds after a lengthy explanation that she does return his feelings. However, she concludes from this that she must stay away from Tsukasa. When a shocked Michiru asks why, Isla confesses to her that she has approximately one month left in her lifespan. Angered by this, Michiru confronts Tsukasa about it and asks for his true intention for confessing to Isla when he knew about her lifespan beforehand; he replies that he only wishes to make memories for the both of them. When she lashes out at him for refusing to see what kind of pain will result from his decisions, he insists on keeping Isla as a partner. When he returns back to his dorm room, Tsukasa finds Kazuki already there. As Isla also arrives, Kazuki announces she intends to dissolve their partnership."
+		)
+	,	("Plastic Memories",
+		 10,
+		 "No Longer Partners",
+		 "Kazuki elaborates that she is dissolving Tsukasa and Isla's partnership on the basis that romantic relationships in the office are not allowed, and intends to reassign Tsukasa to her marksman Constance while she takes charge of Isla. Though Tsukasa protests against the decision, Isla immediately agrees, later explaining that it would be better for the both of them. At the office, Tsukasa confronts Kazuki about her decision, after which she reveals she only did it to protect them both from the inevitable pain that would've resulted. However, when Tsukasa proclaims he still intends on staying as Isla's spotter, Kazuki cryptically tells him to leave the situation to her. Later on, Tsukasa and Isla go out on separate retrieval missions with Constance and Kazuki, respectively. During her retrieval mission, Isla agrees to befriend Sarah, the Giftia in question, at the request of the owner Antonio Horizon, whose lifestyle as a mafia boss made it impossible for the Giftia to live a normal life. Simultaneously, Tsukasa and Constance talk about Isla's work performance and how she had closed herself off after Kazuki dissolved their partnership three years ago. Constance then tells Tsukasa that Kazuki has faith in entrusting him with Isla. Returning to the office, Kazuki reveals to Isla that she intentionally set her up for the mission and tries to convince her to stay with Tsukasa, saying that tearing herself away from him will only create painful memories for him. The following night, Isla muses about the unfulfilled expectations she had from her separation with Kazuki. The next day, she returns to the office, approaches Tsukasa, and explains her reason for rejecting him. Then, she proclaims that she wants to make more memories with him until the end and that she is in love with him."
+		)
+	,	("Plastic Memories",
+		 11,
+		 "Rice Omelette Day",
+		 "In the wake of starting their relationship, Tsukasa and Isla have found it difficult to talk to one another without being embarrassed. However, Tsukasa is able to ask Isla out to dinner. At the office, their approving colleagues decide to give them advice on how to appease the other. At Kazuki's suggestion, Isla asks Michiru to help her learn how to cook for Tsukasa. However, upon finding out she doesn't know any of Tsukasa's favorite foods, Isla asks him, only for Constance to suggest that the two of them just cook together. After debating on what to cook for dinner, Tsukasa suggests rice omelettes. Later on, the two travel to Antonio's manor to visit Sarah. There, Tsukasa asks Sarah what would make her happy, and she recites a sentence Isla told her during her last visit, that people are at their happiest when they are with the ones they love. Afterwards, they go to the shopping mall to purchase herbs and pajamas for Isla, after which Tsukasa admits he doesn't know what to do to make her happy. She responds that she is already happy spending time with him. Returning home, the two begin cooking rice omelettes, and although the final product was not what they were expecting, they are able to enjoy it nevertheless. Isla then allows Tsukasa to read her latest diary entries, both of which recount the days she spent with him. When Tsukasa goes to sleep, Isla adds a new entry, in which she expresses her hope that she would be able to spend another wonderful day with him."
+		)
+	,	("Plastic Memories",
+		 12,
+		 "Filling Up with Memories",
+		 "In the middle of the night, Isla breaks down in tears and sleeps in Tsukasa's bed for comfort. The next morning, she has reverted to a bright and cheery personality, much to Tsukasa's surprise and relief. At the office, the other employees give Tsukasa tickets to a number of events that he could take Isla to. The two then use tickets given to them by Michiru and Zack to watch a romantic movie. The next day, they return to work despite having taken that day off. Following Isla's visit to the Unit Testing Room, Michiru and Eru discuss about the necessity of her increasingly frequent visits. Meanwhile, Kazuki approaches Tsukasa in private and gives him a retrieval agreement form for Isla, telling him to sign it. Overhearing their conversation, Isla decides to begin teaching Tsukasa how to raise the herbs she had been cultivating in her spare time, as well as how to make tea. While serving Michiru tea, Tsukasa is confronted by her about why he and Isla are coming to work despite taking the day off, and he responds that it was a part of their decision to carry on as they were. The following night, Tsukasa gives Isla the retrieval agreement form, and she gives him her approval in signing it. The next day, they go to retrieve Sarah, their last retrieval mission together. Before erasing Sarah's memories, Isla whispers something indiscernible to her. They then return to the office, where they find the others holding a party in commemoration for Isla's last retrieval mission. After the party, Tsukasa asks Isla what she told Sarah, and she replies that she told her of her hope that she would be reunited with the person they cherished."
+		)
+	,	("Plastic Memories",
+		 13,
+		 "I Hope One Day, You'll be Reunited",
+		 "It is the last day of Isla's lifespan and she and Tsukasa decide to first spend it by reading entries in her diary. They then spend the morning cleaning up their dormitory room and then taking a bath. They then head over to the office, where they take care of Isla's herbs and she leaves notes for the other employees. They are approached by an early Kazuki, who teases Isla for one last time. The two then decide to spend the day's remaining hours at the amusement park, which they enjoy to their hearts' content. Eventually, they stand at Isla's favorite bench, where she describes how she always observed the emotions of the park's many visitors and how contented they would be at the end of the day in bringing their happy memories home with them. Then, as the park closes, Tsukasa and Isla convince the operator to let them ride the Ferris wheel one last time after closing hours. There, they take turns describing what they love about each other, and Isla finally admits she loved the way Tsukasa held back his sadness and smiled, despite her worry over that characteristic. She then hands him her deactivation ring, saying that she wanted him to be the one to do it. Tsukasa begins crying, and Isla notes that it was the first time she ever saw him cry. He then puts the ring on, expresses his hope that she would be reunited with the person they cherished, and kisses Isla as her time expires. As he carries her to the vehicle, he is met by Kazuki, who thanks him for being there for her, which causes him to break down in tears. The other Terminal Service employees read Isla's letters, in which she thanks them for all the memories she had of them. In the epilogue, Tsukasa takes the same elevator where he met Isla and muses what it would be like if his lifespan was predetermined, concluding afterward that he would live that life to the fullest. Nine months later, he returns from a training course to resume work with Terminal Service No. 1, and is introduced to his new Giftia. "
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Plastic Memories", 0, 1, 4)
+	,	("Plastic Memories", 0, 2, 4)
+	,	("Plastic Memories", 0, 3, 5)
 ;
 
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
@@ -2173,6 +2857,7 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 	,	("2018-02-09 19-30-00", 0, "Summer After Dark", 0, 0, "0")
 	
 	,	("2018-01-08 14-30-00", 0, "Summer Showcase", 0, 0, "0")
+	,	("2018-01-08 15-30-00", 0, "Summer Showcase", 0, 0, "0")
 	
 	,	("2018-01-10 10-00-00", 1, "Beach Episode", 2, 0, "0")
 	,	("2018-01-17 10-00-00", 1, "Arcade Episode", 1, 0, "0")
@@ -2205,5 +2890,6 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 	,	("2018-02-09 19-30-00", "Queens Blade 2 The Evil Eye", 0, 3)
 	
 	,	("2018-01-08 14-30-00", "Vividred Operation", 3, 1)
+	,	("2018-01-08 15-30-00", "Magical Warfare", 3, 1)
 ;
 

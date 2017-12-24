@@ -29,7 +29,7 @@
 						include('module/anime_event/event_details.php');
 						include('module/anime_event/volume_plug.php');
 						include('module/anime_event/what_you_missed.php');
-						include('module/home/events_table.php');
+						include('module/events_table/4_events_table.php');
 					}
 				}
 			}
