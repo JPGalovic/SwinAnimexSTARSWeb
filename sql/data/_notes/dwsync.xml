@@ -2,9 +2,10 @@
 <dwsync>
 <file name="anime_data_core.sql" server="ftp.swinanime.net" local="131579454547868869" remote="131579581200000000" Dst="2" />
 <file name="company_data.sql" server="ftp.swinanime.net" local="131579454547892649" remote="131579581200000000" Dst="2" />
-<file name="classification_data.sql" server="ftp.swinanime.net" local="131582124282413140" remote="131582019000000000" Dst="2" />
-<file name="drop_data.sql" server="ftp.swinanime.net" local="131585561206005996" remote="131585869200000000" Dst="2" />
-<file name="swin_anime_database.sql" server="ftp.swinanime.net" local="131585561206156160" remote="131585869200000000" Dst="2" />
-<file name="event_data_core.sql" server="ftp.swinanime.net" local="131585561206071033" remote="131585869200000000" Dst="2" />
+<file name="classification_data.sql" server="ftp.swinanime.net" local="131586857619485363" remote="131587516800000000" Dst="2" />
+<file name="drop_data.sql" server="ftp.swinanime.net" local="131587609391274032" remote="131587516800000000" Dst="2" />
+<file name="swin_anime_database.sql" server="ftp.swinanime.net" local="131587622014222840" remote="131587516800000000" Dst="2" />
+<file name="event_data_core.sql" server="ftp.swinanime.net" local="131585982874285956" remote="131587516800000000" Dst="2" />
 <file name="prepare_local_database.sql" server="ftp.swinanime.net" local="131582099607899221" remote="131581994400000000" Dst="2" />
+<file name="game_data_core.sql" server="ftp.swinanime.net" local="131585982874290956" remote="131587516800000000" Dst="2" />
 </dwsync>
