@@ -28,6 +28,8 @@
 		include('page/anime_event.php');
 	else if($page == 'social_event')
 		include('page/social_event.php');
+	else if($page == 'anime_view')
+		include('page/anime_view.php');
 	else
 		include('page/home.php');
 

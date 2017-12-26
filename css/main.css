@@ -423,6 +423,37 @@ a:hover {
 	width: 100%;
 }
 
+/* Misc & Admin Styles */
+#anime_details {
+	background-color: var(--color_dart_grey_4);
+	border-bottom: 1px solid var(--color_dart_grey_3);
+}
+
+#anime_details header {
+	padding: 10px;
+}
+
+#anime_details img {
+	width: 100%;
+}
+
+#anime_volume {
+	background-color: var(--color_dart_grey_4);
+	border-bottom: 1px solid var(--color_dart_grey_3);
+}
+
+#anime_volume header {
+	padding: 10px;
+}
+
+#anime_volume section {
+	padding: 10px;
+}
+
+#anime_volume img {
+	max-height: 220px;
+}
+
 /* Mobile & Small Tablet */
 @media (max-width: 767px){
 	.quater	{
