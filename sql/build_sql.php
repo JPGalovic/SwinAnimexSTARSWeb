@@ -29,6 +29,7 @@
 	$madman_anime_data_array = array(
 			'data/anime/madman/assassination_classroom_season_2_data.sql'
 		,	'data/anime/madman/ben-to_data.sql'
+		,	'data/anime/madman/cowboy_bebop_data.sql'
 		,	'data/anime/madman/danganronpa_data.sql'
 		,	'data/anime/madman/death_note_data.sql'
 		,	'data/anime/madman/food_wars_data.sql'
