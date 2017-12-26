@@ -93,6 +93,5 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 		("Vividred Operation", 0, 1, 4)
 	,	("Vividred Operation", 0, 2, 4)
 	,	("Vividred Operation", 0, 3, 4)
-	,	("Vividred Operation", 2, 2, 12)
 	,	("Vividred Operation", 3, 1, 2)
 ;
