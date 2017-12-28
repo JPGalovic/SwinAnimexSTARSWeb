@@ -1,10 +1,14 @@
 <?php
+	include('code_gen/sql_login.php'); // Login and open connection to database
+	include('code_gen/misc_var.php'); // Include Global Variables
+
+	// Get page from url
 	$page = 'home';
 
 	if(isset($_GET['page']))
 		$page = $_GET['page'];
 
-	// form page head
+	// site head
 	echo('<!doctype html>');
 	echo('<html>');
 	
@@ -38,4 +42,6 @@
 	include('module/site_footer.php');
 
 	echo('</html>');
+
+	include('code_gen/sql_close.php');
 ?>

@@ -1,5 +1,4 @@
 <?php
-	include('sql/sql_login.php'); // Database Login
 	if(isset($_GET['session']))
 	{
 		$event_time = $_GET['session'];

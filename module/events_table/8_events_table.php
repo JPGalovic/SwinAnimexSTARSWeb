@@ -1,7 +1,5 @@
 <?php
 	// Section displays next 8 events not including subsiqent part events
-	//Login to Database
-	include('sql/sql_login.php');
 
 	//Construct Section
 	echo('<article class="flex_container" id="event_display">');

@@ -1,6 +1,4 @@
 <?php
-	include('sql/sql_login.php');
-
 	if(isset($_GET['anime']))
 	{
 		$anime_title = $_GET['anime'];

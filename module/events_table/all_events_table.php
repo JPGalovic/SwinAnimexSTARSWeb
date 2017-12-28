@@ -1,7 +1,5 @@
 <?php
 	//Section gets next 4 Upcoming Events, in the case where no more upcoming events are found Section gets previous 4 events
-	//Login to Database
-	include('sql/sql_login.php');
 
 	//Construct Section
 	echo('<article class="flex_container" id="event_display">');
