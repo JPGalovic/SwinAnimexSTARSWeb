@@ -25,7 +25,7 @@
 <file name="dagashi_kashi_data.sql" server="ftp.swinanime.net" local="131580585699020925" remote="131581074600000000" Dst="2" />
 <file name="danganronpa_data.sql" server="ftp.swinanime.net" local="131581074600000000" remote="131581074600000000" Dst="2" />
 <file name="date_a_live_data.sql" server="ftp.swinanime.net" local="131580585699025934" remote="131581074600000000" Dst="2" />
-<file name="deadman_wonderland_data.sql" server="ftp.swinanime.net" local="131580585699030918" remote="131581074600000000" Dst="2" />
+<file name="deadman_wonderland_data.sql" server="ftp.swinanime.net" local="131589293948089139" remote="131589620400000000" Dst="2" />
 <file name="death_note_data.sql" server="ftp.swinanime.net" local="131581074600000000" remote="131581074600000000" Dst="2" />
 <file name="dog_and_sizors_data.sql" server="ftp.swinanime.net" local="131580585699040924" remote="131581074600000000" Dst="2" />
 <file name="dot_hack_sign_data.sql" server="ftp.swinanime.net" local="131580585699045936" remote="131581074600000000" Dst="2" />
@@ -72,7 +72,7 @@
 <file name="scar-red_riders_xechs_data.sql" server="ftp.swinanime.net" local="131580585699266065" remote="131581074600000000" Dst="2" />
 <file name="samurai_warriors_data.sql" server="ftp.swinanime.net" local="131580585699261062" remote="131581074600000000" Dst="2" />
 <file name="punchline_data.sql" server="ftp.swinanime.net" local="131580585699236048" remote="131581074600000000" Dst="2" />
-<file name="school_live_data.sql" server="ftp.swinanime.net" local="131582126306209952" remote="131582019000000000" Dst="2" />
+<file name="school_live_data.sql" server="ftp.swinanime.net" local="131589574535536050" remote="131589620400000000" Dst="2" />
 <file name="seiyus_life_data.sql" server="ftp.swinanime.net" local="131580585699276074" remote="131581074600000000" Dst="2" />
 <file name="sword_oratoria_data.sql" server="ftp.swinanime.net" local="131580585699281074" remote="131581074600000000" Dst="2" />
 <file name="terror_in_resonance_data.sql" server="ftp.swinanime.net" local="131580585699286076" remote="131581074600000000" Dst="2" />
@@ -85,5 +85,5 @@
 <file name="yuru_yuri_data.sql" server="ftp.swinanime.net" local="131580585699326099" remote="131581074600000000" Dst="2" />
 <file name="zetman_data.sql" server="ftp.swinanime.net" local="131580585699331096" remote="131581074600000000" Dst="2" />
 <file name="three_leaves_three_colors_data.sql" server="ftp.swinanime.net" local="131582126306249963" remote="131582019000000000" Dst="2" />
-<file name="pandora_in_the_crimson_shell_data.sql" server="ftp.swinanime.net" local="131585982874255935" remote="131587516800000000" Dst="2" />
+<file name="pandora_in_the_crimson_shell_data.sql" server="ftp.swinanime.net" local="131589574535486024" remote="131589620400000000" Dst="2" />
 </dwsync>
