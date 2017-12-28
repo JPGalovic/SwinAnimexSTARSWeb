@@ -2,8 +2,8 @@
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Pandora in the Crimson Shell",
 		 12,
-		 "From Shirow Masamune, the creator of Ghost in the Shell, comes a lighthearted story of two cyborg girls who fight to save their home. Nene Nanakorobi is your typical girl next door except for that fact that she’s a rare type of full-body cyborg. She’s thrilled to finally meet another cyborg named Clarion and hopes they’ll be best friends. This is the beginning of their adventures together.",
-		 "From Shirow Masamune, the creator of Ghost in the Shell, comes a lighthearted story of two cyborg girls who fight to save their home. Nene Nanakorobi is your typical girl next door except for that fact that she’s a rare type of full-body cyborg.",
+		 "From Shirow Masamune, the creator of Ghost in the Shell, comes a lighthearted story of two cyborg girls who fight to save their home. Nene Nanakorobi is your typical girl next door except for that fact that she's a rare type of full-body cyborg. She's thrilled to finally meet another cyborg named Clarion and hopes they’ll be best friends. This is the beginning of their adventures together.",
+		 "From Shirow Masamune, the creator of Ghost in the Shell, comes a lighthearted story of two cyborg girls who fight to save their home. Nene Nanakorobi is your typical girl next door except for that fact that she's a rare type of full-body cyborg.",
 		 "Madman",
 		 "&copy;Shirow Masamune, Koushi Rikudou / KADOKAWA, Benipan"
 		)
