@@ -31,6 +31,7 @@
 		,	'data/anime/madman/ben-to_data.sql'
 		,	'data/anime/madman/cowboy_bebop_data.sql'
 		,	'data/anime/madman/danganronpa_data.sql'
+		,	'data/anime/madman/deadman_wonderland_data.sql'
 		,	'data/anime/madman/death_note_data.sql'
 		,	'data/anime/madman/food_wars_data.sql'
 		,	'data/anime/madman/highschool_dxd_data.sql'

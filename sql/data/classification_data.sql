@@ -85,5 +85,6 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("MA15+ - Strong violence")
 	,	("MA15+ - Strong animated violence and nudity")
 	,	("MA15+ - Strong animated violence and sexual references")
+	,	("MA15+ - Strong coarse language and animated violence");
 ;
 

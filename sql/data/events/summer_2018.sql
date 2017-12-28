@@ -72,7 +72,7 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 	,	("2018-01-08 15-30-00", "Magical Warfare", 3, 1)
 	
 	,	("2018-01-15 14-30-00", "Cowboy Bebop", 3, 1)
-	,	("2018-01-15 15-30-00", "", 3, 1)
+	,	("2018-01-15 15-30-00", "Deadman Wonderland", 3, 1)
 	
 	,	("2018-01-22 14-30-00", "", 3, 1)
 	,	("2018-01-22 15-30-00", "", 3, 1)
