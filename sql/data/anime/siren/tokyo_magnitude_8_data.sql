@@ -15,6 +15,13 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		 "PG - Mild Themes and Infrequent Coarse Language",
 		 11,
 		 "http://sirenvisual.com.au/index.php/shop/tokyo-magnitude-8-0-dvd.html"
+		),
+		("Tokyo Magnitude 8.0",
+		 2,
+		 1,
+		 "PG - Mild Themes and Infrequent Coarse Language",
+		 11,
+		 "http://sirenvisual.com.au/index.php/shop/tokyo-magnitude-8-0-blu-ray.html"
 		)
 ;
 
