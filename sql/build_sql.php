@@ -49,6 +49,9 @@
 	$hanabee_anime_data_array = array(
 			'data/anime/hanabee/little_busters_refrain_data.sql'
 		,	'data/anime/hanabee/plastic_memories_data.sql'
+		,	'data/anime/hanabee/muv_luv_alternative_total_eclipse_data.sql'
+		,	'data/anime/hanabee/is_it_wrong_to_pick_up_girls_in_a_dungeon_data.sql'
+		,	'data/anime/hanabee/the_irregular_at_magic_high_school_data.sql'
 	);
 
 	$siren_anime_data_array = array(
@@ -57,7 +60,11 @@
 		,	'data/anime/siren/queens_blade_2_data.sql'
 		,	'data/anime/siren/queens_blade_3_data.sql'
 		,	'data/anime/siren/welcome_to_irabus_office_data.sql'
-	
+		,	'data/anime/siren/tokyo_magnitude_8_data.sql'
+		,	'data/anime/siren/blasseiter_data.sql'
+		,	'data/anime/siren/ghost_hound_data.sql'
+		,	'data/anime/siren/ungo_data.sql'
+		,	'data/anime/siren/nadia_secret_of_blue_water_data.php'
 	);
 
 	$event_data_array = array(
