@@ -12,7 +12,7 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		("Blassreiter",
 		 1,
 		 1,
-		 "MA15+ - Strong Animated Violence",
+		 "MA15+ - Strong animated violence",
 		 24,
 		 "http://sirenvisual.com.au/index.php/shop/blassreiter-complete-series.html"
 		)
@@ -57,7 +57,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Blassreiter",
 		 8,
 		 "Weak no Longer",
-		 "Wolf is told by Beatrice that he came in contact with Demoniac blood and is going to become an Amalgam too. Beatrice also reveals the evolutionary process of the Demoniacs, how the infection spreads and the threat that Joseph Jobson poses to her plans. After taking the pill from Beatrice, Malek develops Blassreiter powers and kills his school bullies. Joseph detects Malek's actions so he rides to the school and tries to reason with Malek who is fighting the XAT forces. Malek attacks instead, then Joseph is wounded when he defends Malek from a .50 caliber sniper shot from Bradley &quot;Brad&quot; Guildford. After realizing that the Demoniac is Malek, Amanda shields him with her own body enabling Malek to escape from XAT, taking the wounded Joseph with him.",
+		 "Wolf is told by Beatrice that he came in contact with Demoniac blood and is going to become an Amalgam too. Beatrice also reveals the evolutionary process of the Demoniacs, how the infection spreads and the threat that Joseph Jobson poses to her plans. After taking the pill from Beatrice, Malek develops Blassreiter powers and kills his school bullies. Joseph detects Malek's actions so he rides to the school and tries to reason with Malek who is fighting the XAT forces. Malek attacks instead, then Joseph is wounded when he defends Malek from a .50 caliber sniper shot from Bradley &quot;Brad&quot; Guildford. After realizing that the Demoniac is Malek, Amanda shields him with her own body enabling Malek to escape from XAT, taking the wounded Joseph with him."
 		)
 	,	("Blassreiter",
 		 9,
@@ -67,12 +67,12 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Blassreiter",
 		 10,
 		 "Inside the Conspiracy",
-		 "Malek and Joseph are held in an experimental facility at the XAT, Joseph slowly self-repairing, but Malek still in a coma. Alvin "Al" Lutz and Brad tell Hermann and Amanda that they believe the Demoniacs are the result of human weapons research. With the help of a technician, Hermann and Amanda try to analyze Joseph and discover confidential information about Blassreiters. Victor Stachus then has Amanda and Hermann taken into custody fearing that the information will get out. Meanwhile, Amalgams are detected and while fighting them, Al and Brad see the new anti-Amalgum Paladin machines piloted by Geige, Senger and Clavier. As he recovers, Joseph has nightmarish visions of past events. While Wolf is having sex with Beatrice, he asks if he too will become a monster to be hunted and killed, but she says that it is up to him. She shows him her vision of the future, dominated by Demoniacs."
+		 "Malek and Joseph are held in an experimental facility at the XAT, Joseph slowly self-repairing, but Malek still in a coma. Alvin &quot;Al&quot; Lutz and Brad tell Hermann and Amanda that they believe the Demoniacs are the result of human weapons research. With the help of a technician, Hermann and Amanda try to analyze Joseph and discover confidential information about Blassreiters. Victor Stachus then has Amanda and Hermann taken into custody fearing that the information will get out. Meanwhile, Amalgams are detected and while fighting them, Al and Brad see the new anti-Amalgum Paladin machines piloted by Geige, Senger and Clavier. As he recovers, Joseph has nightmarish visions of past events. While Wolf is having sex with Beatrice, he asks if he too will become a monster to be hunted and killed, but she says that it is up to him. She shows him her vision of the future, dominated by Demoniacs."
 		 )
 	,	("Blassreiter",
 		 11,
 		 "Prelude to Apocolypse",
-		 "Victor is informed of Wolf's condition, and that a virus is circulating through the XAT. Al and Brad inspect the new Paladin machines and Brad encounters his old squad member, Clavier. A mysterious outbreak of Amalgams has the Paladin-equipped XAT officers dispatched to a public swimming pool. Later, infected XAT personnel turn into Amalgams and begin to take over XAT headquarters, cutting off communications with the outside world, while Al and Brad free Hermann and Amanda. Clavier and Senger head back to headquarters and are ambushed by Amalgams when they arrive, but Blue emerges and attacks the Amalgams. The surviving XAT operatives are devastated when Wolf reveals that he was instrumental in the infection of XAT staff and the Amalgam outbreak in the city. Beatrice confronts Joseph and tells him that even the Bundeswehr wouldn't be able to defeat Amalgams. Mei-Fong reports back to Victor that most of XAT are dead, forcing Victor to disband the organization while the "Three Knights" are assembled."
+		 "Victor is informed of Wolf's condition, and that a virus is circulating through the XAT. Al and Brad inspect the new Paladin machines and Brad encounters his old squad member, Clavier. A mysterious outbreak of Amalgams has the Paladin-equipped XAT officers dispatched to a public swimming pool. Later, infected XAT personnel turn into Amalgams and begin to take over XAT headquarters, cutting off communications with the outside world, while Al and Brad free Hermann and Amanda. Clavier and Senger head back to headquarters and are ambushed by Amalgams when they arrive, but Blue emerges and attacks the Amalgams. The surviving XAT operatives are devastated when Wolf reveals that he was instrumental in the infection of XAT staff and the Amalgam outbreak in the city. Beatrice confronts Joseph and tells him that even the Bundeswehr wouldn't be able to defeat Amalgams. Mei-Fong reports back to Victor that most of XAT are dead, forcing Victor to disband the organization while the &quot;Three Knights&quot; are assembled."
 		 )
 	,	("Blassreiter",
 		12,
@@ -139,6 +139,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 		"Promised Land",
 		"Joseph and Xargin engage each other in their Blassreiter forms. Elea convinces Victor to help the only remaining Zwölf personnel, Sasha and Mei-Fong, to counter the ICBMs being fired towards Germany. Although they succeed in intercepting the ICBM attack on Germany, Sasha dies when her Bow Rider explodes from overheating after firing the long range canon and Mei-Fong is killed after engaging a spacecraft above the Earth. Victor finally dies as power to Zwölf headquarters is terminated. Xargin beats Joseph who lapses into unconsciousness. However, first Hermann and then Gerd assist him with their powers by merging with his body, but it is not enough and Xargin still defeats him. As Joseph dies, the Isis anti-nanomachines are released with its particles killing Xargin and immobilizing the Demoniacs. Five years after the events of Blassreiter, Germany has been rebuilt and the federal government reformed a new XAT. Amanda accepts a position as Captain of the Guerrilla Squad and work with Malek to protect people who have turned into Amalgams with the ability to turn to Blassreiters but who now suffer persecution."
 		)
+;
 	
 INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
 		("Blassreiter", 0, 1, 8)
