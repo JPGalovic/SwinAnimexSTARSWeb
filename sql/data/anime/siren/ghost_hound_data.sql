@@ -12,7 +12,7 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		("Ghost Hound",
 		 1,
 		 1,
-		 "M - Medium Level Violence",
+		 "M - Medium level violence",
 		 22,
 		 "http://sirenvisual.com.au/index.php/shop/horror/ghost-hound-complete-series.html"
 		)
@@ -129,7 +129,8 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 		"Passage",
 		"Makoto and Masayuki help devise a plan to allow Tarō to enter the shrine where Miyako is being held as the leader of the Ōgami religious group. Only women and girls are allowed to enter, so the boys plan on dressing Tarō up as a young female so that he may enter and rescue Miyako. Hirata and Reika also assist in carrying out the plan."
 		)
-	
+;
+
 INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
 		("Ghost Hound", 0, 1, 8)
 	,	("Ghost Hound", 0, 2, 8)
