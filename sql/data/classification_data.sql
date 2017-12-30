@@ -27,6 +27,7 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("PG - Mild themes, animated violence and coarse language")
 	,	("PG - Mild animated violence")
 	,	("PG - Mild themes")
+	,	("PG - Mild Themes and infrequent coarse language")
 ;
 
 -- Data for M Classifications
