@@ -74,7 +74,8 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 		 "I'm Just Searching",
 		 "Shinjuurou, along with Rie, Izumi and some others, receive strange invitations supposedly sent by Rinroku. They are brought together at a table where they are presented with weapons, Shinjuurou believes that the imposter Rinroku was the one who appeared at Rie's home, deducing that the Diet member and Rinroku's bodyguard caused the explosion. It is at this point that Rinroku himself seemingly appears with Inga, only for Shinjuurou to deduce that he is actually Izumi's assistant, Hayami Seigen, using Bettenou's power, with the real Rinroku having disguised himself amongst the attendees, having previously faked his death. After a fierce battle, Inga defeats Bettenou and devours her. After the incident, Shinjuurou begins telling his story to Rie, including the origin of Inga's current body."
 		 )
-	
+;
+
 INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
 		("Un-Go", 0, 1, 4)
 	,	("Un-Go", 0, 2, 4)
