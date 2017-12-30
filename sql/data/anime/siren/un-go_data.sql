@@ -22,7 +22,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 		("Un-Go",
 		 1,
 		 "Murder at the Ball",
-		 "Kaoru Kanou, a corporate president who is under suspicion for arrest, holds a ballroom event. Among the invitees are detective Shinjuurou Yuuki; his strange partner, Inga; and Rie, the daughter of JJ Systems Chairman Rinroku Kaishou. During the event, Kanou walks onto the podium to profess his innocence, and falls dead just as he walks into the spotlight. Koyama finds that Kanou was murdered by a knife in his back. Kanou's wife blames the government for killing him, blaming a female SP officer, who was found shot dead in an elevator, for the assassination. However, Shinjuurou debunks this, questioning why the SP officer had her jacket next to her and a bullet in her chest. After deducing that Kanou's wife was the killer, Inga asks her, "What was your husband to you?" Compelled to answer, Kanou's wife states that Kanou was a hero for supporting Japan during the war. Not wanting to let the government arrest him, Kanou's wife killed the SP officer, impersonated her, and killed Kanou to ensure that he would die as a hero."
+		 "Kaoru Kanou, a corporate president who is under suspicion for arrest, holds a ballroom event. Among the invitees are detective Shinjuurou Yuuki; his strange partner, Inga; and Rie, the daughter of JJ Systems Chairman Rinroku Kaishou. During the event, Kanou walks onto the podium to profess his innocence, and falls dead just as he walks into the spotlight. Koyama finds that Kanou was murdered by a knife in his back. Kanou's wife blames the government for killing him, blaming a female SP officer, who was found shot dead in an elevator, for the assassination. However, Shinjuurou debunks this, questioning why the SP officer had her jacket next to her and a bullet in her chest. After deducing that Kanou's wife was the killer, Inga asks her, &quot;What was your husband to you?&quot; Compelled to answer, Kanou's wife states that Kanou was a hero for supporting Japan during the war. Not wanting to let the government arrest him, Kanou's wife killed the SP officer, impersonated her, and killed Kanou to ensure that he would die as a hero."
 		)
 	,	("Un-Go",
 		 2,
@@ -32,7 +32,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Un-Go",
 		 3,
 		 "Masked Mansion",
-		 "Rie calls on Shinjuurou and Inga to accept a request from Mitsuko Sasa, whose adopted brother Kazamori caught on fire and died, allegedly related to a curse from her father, Komamori, who died in a similar manner seven years ago. As Izumi's group conducts their own investigations on the cause of Kazamori's death, Inga uses her powers to reveal that Kazamori not human. Shinjuurou prompts Kazamori to show "himself", revealing that "he" is actually a computer program."
+		 "Rie calls on Shinjuurou and Inga to accept a request from Mitsuko Sasa, whose adopted brother Kazamori caught on fire and died, allegedly related to a curse from her father, Komamori, who died in a similar manner seven years ago. As Izumi's group conducts their own investigations on the cause of Kazamori's death, Inga uses her powers to reveal that Kazamori not human. Shinjuurou prompts Kazamori to show &quot;himself&quot;, revealing that &quot;he&quot; is actually a computer program."
 		 )
 	,	("Un-Go",
 		 4,
