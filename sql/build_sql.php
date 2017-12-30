@@ -68,7 +68,8 @@
 	);
 
 	$event_data_array = array(
-			'data/events/summer_2018.sql'
+			'data/events/2018_summer.sql'
+		,	'data/events/2018_semester_1.sql'
 	);
 
 	// Write Data to File
