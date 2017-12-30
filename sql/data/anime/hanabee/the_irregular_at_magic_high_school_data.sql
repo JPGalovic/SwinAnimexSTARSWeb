@@ -10,46 +10,46 @@ INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIP
 ;
 
 INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
-		("The irregular at magic high school-part 1",
+		("The irregular at magic high school",
 		 1,
 		 1,
 		 "MA15+ - Strong animated violence",
-		 26,
+		 7,
 		 "https://hanabee.com.au/products/irregular-at-magic-high-school-part-1"
 		)
 	,	("The irregular at magic high school",
 		 1,
 		 2,
 		 "MA15+ - Strong animated violence",
-		 26,
+		 11,
 		 "https://hanabee.com.au/products/irregular-at-magic-high-school-part-2"
 		)
 	,	("The irregular at magic high school",
 		 1,
 		 3,
 		 "MA15+ - Strong animated violence",
-		 26,
+		 8,
 		 "https://hanabee.com.au/products/irregular-at-magic-high-school-part-3"
 		)
 	,	("The irregular at magic high school",
 		 2,
 		 1,
 		 "MA15+ - Strong animated violence",
-		 26,
+		 7,
 		 "https://hanabee.com.au/products/irregular-at-magic-high-school-part-1-blu-ray"
 		)
 	,	("The irregular at magic high school",
 		 2,
 		 2,
 		 "MA15+ - Strong animated violence",
-		 26,
+		 11,
 		 "https://hanabee.com.au/products/irregular-at-magic-high-school-part-2-blu-ray"
 		)
 	,	("The irregular at magic high school",
 		 2,
 		 3,
 		 "MA15+ - Strong animated violence",
-		 26,
+		 8,
 		 "https://hanabee.com.au/products/irregular-at-magic-high-school-part-3-blu-ray"
 		)
 ;
