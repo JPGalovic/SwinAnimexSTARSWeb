@@ -71,8 +71,6 @@
 			'data/events/summer_2018.sql'
 	);
 
-	//,	n => ''
-
 	// Write Data to File
 
 	foreach ($core_data_array as $data_file)
