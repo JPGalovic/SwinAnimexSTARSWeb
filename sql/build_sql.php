@@ -63,8 +63,8 @@
 		,	'data/anime/siren/tokyo_magnitude_8_data.sql'
 		,	'data/anime/siren/blasseiter_data.sql'
 		,	'data/anime/siren/ghost_hound_data.sql'
-		,	'data/anime/siren/ungo_data.sql'
-		,	'data/anime/siren/nadia_secret_of_blue_water_data.php'
+		,	'data/anime/siren/un-go_data.sql'
+		,	'data/anime/siren/nadia_secret_of_blue_water_data.sql'
 	);
 
 	$event_data_array = array(
