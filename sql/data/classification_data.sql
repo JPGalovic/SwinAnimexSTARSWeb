@@ -63,6 +63,7 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("M - Mature themes, sexual references and coarse language")
 	,	("M - Animated nudity and sexualised imagery")
 	,	("M - Moderate violence, drug use")
+	,	("M - Medium level violence")
 ;
 
 -- Data for MA15+ Classifications
@@ -86,6 +87,6 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("MA15+ - Strong violence")
 	,	("MA15+ - Strong animated violence and nudity")
 	,	("MA15+ - Strong animated violence and sexual references")
-	,	("MA15+ - Strong coarse language and animated violence");
+	,	("MA15+ - Strong coarse language and animated violence")
 ;
 
