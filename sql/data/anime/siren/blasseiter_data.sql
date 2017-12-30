@@ -1,6 +1,6 @@
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Blassreiter",
-		 11,
+		 24,
 		 "Giant, biomechanical creatures of origins unknown are terrorizing the city. Labelled as Demoniacs, the creatures appear rabid and unpredictable, killing and maiming anything in their path. The town’s citizens are terrified, the media demands answers.",
 		 "Somewhere in Germany in the not-too-distant future all hell is breaking loose...",
 		 "Siren",
