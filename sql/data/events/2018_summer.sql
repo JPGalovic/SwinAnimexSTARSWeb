@@ -87,7 +87,7 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 	
 INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
 		("2018-01-22 14-30-00", "Shimoneta: A Boring World Where the Concept of Dirty Jokes Doesn't Exist", 3, 1)
--- 	,	("2018-01-22 15-30-00", "", 3, 1)
+	,	("2018-01-22 15-30-00", "Battle Girls: Time Paradox", 3, 1)
 
 -- 	,	("2018-01-29 14-30-00", "", 3, 1)
 -- 	,	("2018-01-29 15-30-00", "", 3, 1)
