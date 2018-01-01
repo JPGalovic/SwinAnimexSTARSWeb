@@ -12,7 +12,7 @@
 					// Session Card
 					echo('<section class="quater">');
 					
-						echo('<img src="image/anime/'.strtolower($anime_title).'/session/'.$session_row['SESSION_TYPE_ID'].$session_row['SESSION_NUMBER'].'.jpg" alt="'.$anime_title." Session Image: ".$session_row['SESSION_TYPE_ID'].$session_row['SESSION_NUMBER'].'">');
+						echo('<img src="image/anime/'.remove_illegal_char(strtolower($anime_title)).'/session/'.$session_row['SESSION_TYPE_ID'].$session_row['SESSION_NUMBER'].'.jpg" alt="'.$anime_title." Session Image: ".$session_row['SESSION_TYPE_ID'].$session_row['SESSION_NUMBER'].'">');
 					
 						echo('<p>Session Number: '.$session_row['SESSION_NUMBER'].'</p>');
 						echo('<p>Session Type: '.$session_row['SESSION_TYPE_DESCRIPTION'].'</p>');

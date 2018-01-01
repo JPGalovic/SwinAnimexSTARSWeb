@@ -3,7 +3,7 @@
 		//Event Image
 		echo('<header class="full">');
 
-			echo('<img src="image/anime/'.strtolower($anime_event_row['ANIME_TITLE']).'/session/'.$anime_event_row['SESSION_TYPE_ID'].$anime_event_row['SESSION_NUMBER'].'.jpg" alt="'.$anime_event_row['ANIME_TITLE'].'">');
+			echo('<img src="image/anime/'.remove_illegal_char(strtolower($anime_event_row['ANIME_TITLE'])).'/session/'.$anime_event_row['SESSION_TYPE_ID'].$anime_event_row['SESSION_NUMBER'].'.jpg" alt="'.$anime_event_row['ANIME_TITLE'].'">');
 
 		echo('</header>');
 

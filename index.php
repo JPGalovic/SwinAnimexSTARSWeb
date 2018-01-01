@@ -1,6 +1,8 @@
 <?php
+	// Include Required Code-Gen
 	include('code_gen/sql_login.php'); // Login and open connection to database
 	include('code_gen/misc_var.php'); // Include Global Variables
+	include('code_gen/process/remove_illegal_char.php'); // Include Fuctions for removal of illegal characters
 
 	// Get page from url
 	$page = 'home';

@@ -41,7 +41,7 @@
 						if(!$volume_row['VOLUME_TYPE_ID'] == 0)
 						{
 							echo('<section>');
-								echo('<img src="image/anime/'.strtolower($anime_title).'/volume/'.$volume_row['VOLUME_TYPE_ID'].$volume_row['VOLUME_NUMBER'].'.png" alt="Volume Image: '.$volume_row['VOLUME_TYPE_ID'].$volume_row['VOLUME_NUMBER'].'">');
+								echo('<img src="image/anime/'.remove_illegal_char(strtolower($anime_title)).'/volume/'.$volume_row['VOLUME_TYPE_ID'].$volume_row['VOLUME_NUMBER'].'.png" alt="Volume Image: '.$volume_row['VOLUME_TYPE_ID'].$volume_row['VOLUME_NUMBER'].'">');
 							
 								echo('<p>Volume Type: '.$volume_row['VOLUME_TYPE_DESCRIPTION'].'</p>');
 								echo('<p>Volume Number: '.$volume_row['VOLUME_NUMBER'].'</p>');

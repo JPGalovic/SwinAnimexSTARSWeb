@@ -17,7 +17,7 @@
 					while($episode_row = $get_anime_episode_data->fetch_assoc())
 					{
 						echo('<section class="quater">');
-							echo('<img src="image/anime/'.strtolower($anime_title).'/episode/'.$episode_row['EPISODE_NUMBER'].'.jpg" alt="'.$anime_title.' Episode '.$episode_row['EPISODE_NUMBER'].'">');
+							echo('<img src="image/anime/'.remove_illegal_char(strtolower($anime_title)).'/episode/'.$episode_row['EPISODE_NUMBER'].'.jpg" alt="'.$anime_title.' Episode '.$episode_row['EPISODE_NUMBER'].'">');
 							echo('<h4>Episode '.$episode_row['EPISODE_NUMBER'].', '.$episode_row['EPISODE_TITLE'].'</h4>');
 							echo('<p>'.$episode_row['EPISODE_SYNOPSYS'].'</p>');
 						echo('</section>');
