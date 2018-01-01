@@ -93,3 +93,8 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("MA15+ - Strong violence, drug use")
 ;
 
+-- Data for R18+ Classifications
+INSERT INTO CLASSIFICATON (CLASSIFICATION) VALUES
+		("R18+ - High impact sexual themes")
+;
+
