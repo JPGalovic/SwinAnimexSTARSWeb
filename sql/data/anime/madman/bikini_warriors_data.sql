@@ -24,7 +24,7 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		 1,
 		 "R18+ - High impact sexual themes",
 		 12,
-		 "URL"
+		 "https://www.madman.com.au/catalogue/view/34324"
 		)
 ;
 

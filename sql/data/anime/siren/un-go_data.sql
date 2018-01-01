@@ -12,7 +12,7 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		("Un-Go",
 		 1,
 		 1,
-		 "Check the Classification",
+		 "Animated violence and sexual references",
 		 11,
 		 "http://sirenvisual.com.au/index.php/shop/un-go.html"
 		)
