@@ -28,8 +28,11 @@
 		
 	$madman_anime_data_array = array(
 			'data/anime/madman/a_boring_world_where_the_concept_of_dirty_jokes_dont_exsist_data.sql'
+		,	'data/anime/madman/assassination_classroom_data.sql'
 		,	'data/anime/madman/assassination_classroom_season_2_data.sql'
+		,	'data/anime/madman/battle_girls_time_paradox.sql'
 		,	'data/anime/madman/ben-to_data.sql'
+		,	'data/anime/madman/bikini_warriors_data.sql'
 		,	'data/anime/madman/cowboy_bebop_data.sql'
 		,	'data/anime/madman/danganronpa_data.sql'
 		,	'data/anime/madman/deadman_wonderland_data.sql'
