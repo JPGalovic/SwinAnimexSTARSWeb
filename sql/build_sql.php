@@ -27,7 +27,8 @@
 	);
 		
 	$madman_anime_data_array = array(
-			'data/anime/madman/assassination_classroom_season_2_data.sql'
+			'data/anime/madman/a_boring_world_where_the_concept_of_dirty_jokes_dont_exsist_data.sql'
+		,	'data/anime/madman/assassination_classroom_season_2_data.sql'
 		,	'data/anime/madman/ben-to_data.sql'
 		,	'data/anime/madman/cowboy_bebop_data.sql'
 		,	'data/anime/madman/danganronpa_data.sql'
