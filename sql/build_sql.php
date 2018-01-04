@@ -44,6 +44,7 @@
 		,	'data/anime/madman/one_punch_man_data.sql'
 		,	'data/anime/madman/pandora_in_the_crimson_shell_data.sql'
 		,	'data/anime/madman/samurai_jack_data.sql'
+		,	'data/anime/madman/samurai_warriors_data.sql'
 		,	'data/anime/madman/school_live_data.sql'
 		,	'data/anime/madman/three_leaves_three_colors_data.sql'
 		,	'data/anime/madman/vividred_operation_data.sql'
