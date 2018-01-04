@@ -1152,10 +1152,9 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 ;
 
 INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
-		("Bikini Warriors", 0, 1, 4)
-	,	("Bikini Warriors", 0, 2, 4)
-	,	("Bikini Warriors", 0, 3, 4)
-	,	("Bikini Warriors", 3, 1, 2)
+		("Bikini Warriors", 1, 1, 12)
+	,	("Bikini Warriors", 2, 1, 12)
+	,	("Bikini Warriors", 3, 1, 12)
 ;
 
 -- Anime Data
