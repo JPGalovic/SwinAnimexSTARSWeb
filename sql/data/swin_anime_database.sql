@@ -4746,15 +4746,15 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 ;
 -- Summer A
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
-		("2018-01-05 11-30-00", 0, "Summer Sessions", 404, 0, "0")
+		("2018-01-05 11-30-00", 0, "Summer Sessions", 404, 1782517088487445, "0")
 	,	("2018-01-12 11-30-00", 0, "Summer Sessions", 404, 0, "0")
 	,	("2018-01-19 11-30-00", 0, "Summer Sessions", 404, 0, "0")
 	
-	,	("2018-01-05 16-30-00", 0, "Summer Sessions", 404, 0, "0")
+	,	("2018-01-05 16-30-00", 0, "Summer Sessions", 404, 171260956940198, "0")
 	,	("2018-01-12 16-30-00", 0, "Summer Sessions", 404, 0, "0")
 	,	("2018-01-19 16-30-00", 0, "Summer Sessions", 404, 0, "0")
 	
-	,	("2018-01-05 19-30-00", 0, "Summer After Dark", 404, 0, "0")
+	,	("2018-01-05 19-30-00", 0, "Summer After Dark", 404, 565658880444133, "0")
 	,	("2018-01-12 19-30-00", 0, "Summer After Dark", 404, 0, "0")
 	,	("2018-01-19 19-30-00", 0, "Summer After Dark", 404, 0, "0")
 ;
