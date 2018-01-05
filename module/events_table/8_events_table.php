@@ -5,12 +5,12 @@
 	echo('<article class="flex_container" id="event_display">');
 
 	//Get Next Event
-	include('sql/events/get_next_event.php');
+	include('sql/events/get_core_event_data.php');
 
 	//Check Data OK
-	if($get_next_ok)
+	if($get_core_event_data_ok)
 	{
-		if($get_next_data->num_rows == 0) //No future events found
+		if($get_core_event_data->num_rows == 0) //No future events found
 		{
 			// TODO: Show Previous Events?
 		}
@@ -20,13 +20,9 @@
 			$no_remaining = 8;
 			
 			if(isset($anime_title))
-			{
 				$used_titles = array($anime_title); // Array to store anime titles
-			}
 			else
-			{
 				$used_titles = array(); // Array to store anime titles
-			}
 			
 			echo('<header class="full"><h1>Upcoming Events:</h1><img src="image/events_table.png" id="event_display_image"></header>');
 			echo('<section class="flex_container">');
@@ -34,13 +30,13 @@
 			while($no_remaining > 0)
 			{
 				$is_ok = true;
-				if($get_next_ok)
+				if($get_core_event_data_ok)
 				{
-					if(!$get_next_data->num_rows == 0)
+					if(!$get_core_event_data->num_rows == 0)
 					{
-						$event_row = $get_next_data->fetch_assoc();
-						$this_event_time = $event_row['EVENT_TIME']; // Set Event Time
-
+						$event_row = $get_core_event_data->fetch_assoc();
+						$event_time = $event_row['EVENT_TIME']; // Set Event Time
+						
 						switch($event_row['EVENT_TYPE_DESCRIPTION'])
 						{
 							case 'Screening Session Event':
@@ -56,7 +52,7 @@
 						}
 					}
 				}
-				include('sql/events/get_next_event.php');
+				include('sql/events/get_core_event_data.php');
 				
 				if($is_ok)
 				{
