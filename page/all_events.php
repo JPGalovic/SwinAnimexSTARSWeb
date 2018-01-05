@@ -1,3 +1,3 @@
 <?php
-	include('module/events_table/all_events_table.php');
+	include('module/events_table/n_events_table.php');
 ?>

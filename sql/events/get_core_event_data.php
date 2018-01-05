@@ -34,13 +34,10 @@
 		}
 	}
 
-	$get_core_event_data_ok = true;
-
 	if(!$get_core_event_data = $DB->query($get_core_event_query))
 	{
 		$error_text = $DB->error + $get_core_event_query;
 		$error_no = $DB->error_no;
 		include('code_gen/error_report.php');
-		$get_core_event_data_ok = false;
 	}
 ?>
