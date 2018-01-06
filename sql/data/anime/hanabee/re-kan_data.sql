@@ -13,14 +13,14 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		("RE-KAN",
 		 4,
 		 1,
-		 "M - Mature themes & sexual references",
+		 "M - Mature themes and sexual references",
 		 13,
 		 "https://hanabee.com.au/products/re-kan-blu-ray"
 		)
 	,   ("RE-KAN",
 		 3,
 		 1,
-		 "M - Mature themes & sexual references",
+		 "M - Mature themes and sexual references",
 		 13,
 		 "https://hanabee.com.au/products/re-kan"
 		)
