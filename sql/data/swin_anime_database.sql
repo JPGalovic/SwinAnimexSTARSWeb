@@ -100,6 +100,7 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("M - Sexualised imagery and sexual innuendo")
 	,	("M - Supernatural themes and animated violence")
 	,	("M - Violence, sexual references and nudity")
+	,	("M - War themes and animated violence")
 ;
 
 -- Data for MA15+ Classifications
@@ -127,12 +128,17 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("MA15+ - Strong violence, drug use")
 ;
 
+-- Data for R18+ Classifications
+INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
+		("R18+ - High impact sexual themes")
+;
+
 -- Table for Anime Data
 CREATE TABLE IF NOT EXISTS ANIME (
 		ANIME_TITLE					VARCHAR(100)
 	,	NUMBER_OF_EPISODES			INT(11)
 	,	ANIME_SYNOPSIS				VARCHAR(10000)
-	,	ANIME_DESCRIPTION			VARCHAR(1000)
+	,	ANIME_DESCRIPTION			VARCHAR(2000)
 	, 	COMPANY_NAME				VARCHAR(50)
 	,	COPYRIGHT					VARCHAR(100)
 	,	PRIMARY KEY					(ANIME_TITLE)
@@ -173,8 +179,8 @@ CREATE TABLE IF NOT EXISTS ANIME_VOLUME (
 CREATE TABLE IF NOT EXISTS ANIME_EPISODE (
 		ANIME_TITLE					VARCHAR(100)
 	,	EPISODE_NUMBER				INT(11)
-	,	EPISODE_TITLE				VARCHAR(100)
-	,	EPISODE_SYNOPSYS			VARCHAR(500)
+	,	EPISODE_TITLE				VARCHAR(500)
+	,	EPISODE_SYNOPSYS			VARCHAR(5000)
 	,	PRIMARY KEY					(ANIME_TITLE, EPISODE_NUMBER)
 	,	FOREIGN KEY					(ANIME_TITLE) REFERENCES ANIME (ANIME_TITLE)
 );
@@ -286,8 +292,11 @@ CREATE TABLE IF NOT EXISTS EVENT_LOCATION (
 INSERT INTO EVENT_LOCATION (LOCATION_ID, CAMPUS, ROOM, ADDRESS, LAT, LNG, ZOOM) VALUES
 		(0, "Swinburne Hawthorn", NULL, "John St, Hawthorn VIC 3122", -37.822097, 145.038946, 17)
 	,	(1, NULL, NULL, "Crown Entertainment Complex, 8 Whiteman St, Southbank VIC 3006", -37.824871, 144.958181, 17)
-	,	(2, NULL, NULL, "Sorrento Oceach Beach, Ocean Beach Rod, Sorrento VIC 3943", -38.345876, 144.727014, 17)
+	,	(2, NULL, NULL, "Sorrento Oceach Beach, Ocean Beach Road, Sorrento VIC 3943", -38.345876, 144.727014, 17)
 	,	(3, NULL, NULL, "Hawthorn Aquatic &amp; Leasure Center, 1 Grace St, Hawthorn VIC 3122", -37.820791, 145.034434, 17)
+	
+	
+	,	(404, "Swinburne Hawthorn", "AS404", "Applied Sciences Building, Burwood Road, Hawthorn Victoria 3122", -37.822571, 145.037619, 17)
 ;
 
 -- Table for Event Details (MISC)
@@ -513,6 +522,167 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Assassination Classroom",
+		 22,
+		 "Forget about homework and pop quizzes. The students of Class 3E have a far more important assignment: kill their teacher before the end of the year! A tentacle-d sensei that moves at Mach 20 is out to conquer the classroom after destroying seventy percent of the moon. In addition to reading, writing, and arithmetic, the murderous monster behind the lectern will teach his students everything he knows about the assassination game. Should some eager beaver prove to be a quick study in killing, he or she will save Earth from extinction – and collect a hefty reward. But they’d better take some serious notes while class is in session because their slaughtering sensei has eight deadly tentacles just waiting to wreak havoc on humanity!",
+		 "Forget about homework and pop quizzes. The students of Class 3E have a far more important assignment: kill their teacher before the end of the year!",
+		 "Madman",
+		 "&copy;Yusei Matsui/SHUEISHA,ASSASSINATION CLASSROOM Committee"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Assassination Classroom",
+		 1,
+		 1,
+		 "M - Animated science fiction violence",
+		 11,
+		 "https://www.madman.com.au/catalogue/view/31750"
+		)
+	,	("Assassination Classroom",
+		 1,
+		 2,
+		 "M - Animated violence, sexualised imagery and sexual references",
+		 11,
+		 "https://www.madman.com.au/catalogue/view/37366"
+		)
+	,	("Assassination Classroom",
+		 2,
+		 1,
+		 "M - Animated science fiction violence",
+		 11,
+		 "https://www.madman.com.au/catalogue/view/36536"
+		)
+	,	("Assassination Classroom",
+		 2,
+		 2,
+		 "M - Animated violence, sexualised imagery and sexual references",
+		 11,
+		 "https://www.madman.com.au/catalogue/view/37367"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Assassination Classroom",
+		 1,
+		 "Assassination Time",
+		 "A tentacled creature of unknown origin destroys over seventy percent of the moon, and he announces that he will destroy the world in one year. Nonetheless, Ministry of Defense government worker Tadaomi Karasuma allows the creature to be the teacher of Kunugigaoka Junior High School's Class 3-E. The students are given weapons specially designed to hurt the creature and are offered a reward of ten billion yen to whoever can assassinate him before graduation. However, none of the students are able to assassinate him due to his Mach 20 speed. Class bully Ryōma Terasaka convinces Nagisa Shiota to wear a grenade filled with pellets. When the creature gets sleepy after assigning the students to write a poem, Terasaka detonates the grenade once Nagisa comes within close range of the creature, but the creature sheds his skin to protect himself and Nagisa from the blast. The creature threatens the other students to refrain from coming up with plans that will harm others. Kaede Kayano names the creature Koro-sensei, seeing him as an &quot;unkillable teacher&quot;."
+		)
+	,	("Assassination Classroom",
+		 2,
+		 "Baseball Time",
+		 "While Koro-sensei is reading a newspaper, Nagisa encourages Tomohito Sugino to attempt to assassinate Koro-sensei by a pitching a baseball embedded with pellets. However, Koro-sensei easily dodges the baseball and catches it with a baseball glove. Later after lunchtime, Sugino is downhearted when Koro-sensei crushes his dream of being a pro baseball star, but this is due to his wrists and elbows not being as flexible as they should be. Koro-sensei encourages Sugino to focus on his own strengths for future attempts of assassination. The students of Class 3-E fail to kill Koro-sensei, even when he deliberately ties himself to a tree branch. Karasuma joins Class 3-E as the physical education teacher, observing how the class is ridiculed by the other students of the school. Another student due to transfer into the class is informed of his mission. "
+		)
+	,	("Assassination Classroom",
+		 3,
+		 "Karma Time",
+		 "Karma Akabane transfers into Class 3-E following a suspension, managing to inflict some damage to Koro-sensei by giving a handshake with knife shards cleverly taped to his hand. While the students later take a quiz, Karma steals Koro-sensei's special gelato to get his attention, shooting him with an unloaded gun to catch him off guard. After hearing word from Nagisa that Koro-sensei worships the octopus, Karma leaves a dead octopus on Koro-sensei's desk. However, Koro-sensei cooks it into takoyaki to ridicule Karma. Throughout the day, Koro-sensei manages to anticipate every prank Karma tries to pull. As a last resort, Karma jumps off a cliff with a gun in hand, which would determine if Koro-sensei would risk his life for a student or would destroy his pride as a teacher. However, Koro-sensei manages to save Karma use his tentacles as a giant spiderweb, leading Karma to accept Koro-sensei as a teacher."
+		)
+	,	("Assassination Classroom",
+		 4,
+		 "Grown-Up Time",
+		 "The students of Class 3-E are introduced to their new foreign language teacher, Irina Jelavić, who is actually a professional Serbian assassin with no interest in teaching the students. After being seduced by her, Nagisa shares all of his notes about Koro-sensei's weak points to Irina. When Koro-sensei returns, Irina ropes him into the storage shed, so that her team of assassins can kill him. However, this fails as a result of using the wrong ammo on purpose and ignoring his keen sense of smell. Later, after the students of Class 3-E rebel against Irina when she refuses to teach them properly, Karasuma shows her how dedicated Koro-sensei is to teaching each of his students and how important education is for assassination. Realizing the error of her ways, Irina begins to earnestly teach her students, helping them learn the art of communication."
+		)
+	,	("Assassination Classroom",
+		 5,
+		 "Assembly Time",
+		 "Manami Okuda attempts to poison Koro-sensei, but to no effect. She has poor communication skills, but she has a passion for chemistry. Because of this, Koro-sensei offers to help Manami make an effective poison. However, it turns out to be a tonic that transforms him into a speedier liquid form, teaching Manami to improve her communication skills so she can successfully deceive him someday. Later, the students of Class 3-E are forced to travel from their old campus and head to the main campus to endure a school assembly. The students from others classes become envious due to the students of Class 3-E having Karasuma and Irina as cool teachers. Koro-sensei shows his support by disguising himself as a scholar, providing extra copies of handouts previously not given to Class 3-E. Afterwards, Nagisa manages to use his experiences in Class 3-E to handle himself against Nobuta Tanaka and Chōsuke Takada, two bullies from the main campus."
+		)
+	,	("Assassination Classroom",
+		 6,
+		 "Test Time",
+		 "School principal Gakuhō Asano pays a visit to Class 3-E to greet Koro-sensei. Having noticed how Nagisa stood up to Nobuta and Chōsuke, Gakuhō tells Koro-sensei to adhere to his educational system, which requires Class 3-E to be at its poorest to encourage the other students. Noticing the students of Class 3-E only caring about the bounty reward rather than getting high grades, Koro-sensei issues the ultimatum of leaving and destroying the school, should any of the students fail to score well enough in the midterm exams to rank among the top fifty students. During the midterm exams, the students of Class 3-E use what they learned from Koro-sensei's teaching methods to tackle each question they come across. However, they are stopped in their tracks by questions that Gakuhō had added at the last minute without informing Class 3-E of the changes, resulting in none of the students other than Karma ranking among the top fifty students. Downhearted from underestimating Gakuhō, Koro-sensei receives some encouragement from his class and becomes determined to turn things around for the final exams."
+		)
+	,	("Assassination Classroom",
+		 7,
+		 "School Trip Time/1st Period",
+		 "The students of Class 3-E prepare for a field trip to Kyoto, which is also being used as a venue to assassinate Koro-sensei. The students are arranged into groups, in which Nagisa, Kaede, Karma, Sugino, Manami and class idol Yukiko Kanzaki agree to be in a group. On the train ride to Kyoto, high school male delinquents steal Yukiko's itinerary noting the group activities. On the next day, the group visits all the assassination landmarks, but they are ambushed by the male delinquents, who kidnap Kaede and Yukiko. Whilst in captivity, Yukiko laments to Kaede about her rebellious acts due to being raised in a strict family. Nagisa, Karma, Sugino and Manami manage to use an extensive guidebook written by Koro-sensei, which provides a thorough procedure for hostage situations, to deduce where Kaede and Yukiko are being held. Koro-sensei arrives to deal with the delinquents, while Nagisa and the others knock out the delinquents with their guidebooks. Following the incident, Yukiko is encouraged by Koro-sensei's words of wisdom, in which those with the will to drive forward will come out strong regardless of situation or status."
+		)
+	,	("Assassination Classroom",
+		 8,
+		 "School Trip Time/2nd Period",
+		 "While the other groups are accompanying Koro-sensei on a tour of Kyoto, a sniper known as Red Eye is tasked with assassinating him at various spots. However, each of his attempts to shoot him are thwarted by improbable means, and his mission is called off when Nagisa's group gets into trouble with the high school male delinquents. Later that evening, Red Eye is approached by Koro-sensei himself, who treats Red Eye to a meal, thanking him for making the field trip a valuable learning experience for his students due to his assassination efforts. Red Eye, understanding Koro-sensei's morals as a teacher, decides to quit his job in order to explore the world. Back at their hotel, private time among the boys and girls eventually turns into a hunt for Koro-sensei when he eavesdrops on their gossips. Koro-sensei hides from the students, telling Karasuma that the students wanted him to talk about his past love life. As the field trip comes to a close, the world government prepares two special assassins to transfer into Class 3-E."
+		)
+	,	("Assassination Classroom",
+		 9,
+		 "Transfer Student Time",
+		 "The students of Class 3-E are greeted by their first transfer student, an artificial intelligence from Norway known as the Autonomous Intelligence Fixed Artillery, who uses calculations to assess the best way to shoot Koro-sensei, managing to blow off one of his fingertips with her second barrage of gunfire. However, the students quickly gets sick of her constantly firing her weapons during class, deciding to tape them shut themselves so they can study properly. After class, Koro-sensei makes some modifications to the Autonomous Intelligence Fixed Artillery, giving her a more human personality. The next day, the students appreciate her more and nickname her Ritsu. Later that night, Ritsu's inventors are outraged with the changes and decide to remove all the modifications. However, Ritsu manages to hide her new personality from them before it is deleted, deciding to secretly defy her inventors for the sake of keeping her promise to help her classmates."
+		)
+	,	("Assassination Classroom",
+		 10,
+		 "L and R Time",
+		 "Irina is caught off guard by retired Russian assassin Lovro Brovski, her former master, who advises her to give up trying to kill Koro-sensei. Instead, Koro-sensei proposes a match between Irina and Lovro to see who will be the first to &quot;kill&quot; Karasuma with a rubber knife, offering Karasuma his own incentive should neither of them win. Despite Lovro's doubts after he fails to &quot;kill&quot; Karasuma himself, Irina manages to use what she has learned targeting Koro-sensei to get close, with Karasuma accepting defeat at her hands and Lovro acknowledging her efforts. Nagisa, Karma and Ritsu later agree to accompany Koro-sensei at Mach 20 speed on a trip to Hawaii to watch the premiere of a new movie, getting a lecture along the way and learning a lot more about Koro-sensei's point of view. On their way back, a man in a white cloak observes alongside a boy, the second transfer student who claims to be Koro-sensei's younger brother."
+		)
+	,	("Assassination Classroom",
+		 11,
+		 "Transfer Student Time/2nd Period",
+		 "The students of Class 3-E prepare for the arrival of their second transfer student, who is allegedly more powerful than Ritsu. The man in the white cloak named Shiro enters the classroom and introduces the boy named Itona Horibe, who surprises the other students with his relation to Koro-sensei. When Itona faces against Koro-sensei later that day, Koro-sensei is overwhelmed by the fact that Itona possesses tentacles in his hair. While Shiro uses his knowledge of Koro-sensei's weaknesses to give Itona the advantage, Koro-sensei counterattacks with rubber knives to push Itona out of the ring, thereby winning the match. Itona goes berserk after seeing himself as weak, so Shiro knocks him unconscious and carries him out of the classroom. The students interrogate Koro-sensei about his true origins, but he remains tight-lipped, stating that they must continue their mission in order to find the answers that they seek. The students ask Karasuma to teach them more techniques, as they are determined to kill Koro-sensei before anyone else."
+		)
+	,	("Assassination Classroom",
+		 12,
+		 "Ball Game Tournament Time",
+		 "As a baseball tournament is to be held, the male students of Class 3-E are forced to play an exhibition match against the top players of the boys baseball club. Despite knowing the odds are against them, particularly when pitted against baseball club captain Kazutaka Shindō, Koro-sensei is prompted to coach the students for the match. On the day of the match, the students of Class 3-E use a bunting strategy to load the bases, allowing Sugino to help the team get an early lead. Not willing to let this slide, Gakuhō takes over as the baseball club's coach to put a stop to the bunting strategy, using the power of hypnosis to turn Shindō into a bloodthirsty warrior. With the bases now loaded against Class 3-E, Karma uses previous provocations he made concerning some unfair play to his own advantage, placing himself and class president Yūma Isogai very close to Shindō, who breaks down from trying to swing his baseball bat without hurting them. This allows the students of Class 3-E to win the match. Afterwards, Sugino expresses how he wanted to show off the friends he made in Class 3-E, managing to rekindle his old friendship with Shindō."
+		)
+	,	("Assassination Classroom",
+		 13,
+		 "Talent Time",
+		 "Karasuma evaluates the progress of the students during their training, but he briefly senses a fearsome aura, like that of a python, coming from Nagisa. Soon after, Karasuma's colleague Akira Takaoka is sent to Class 3-E to take over as the new physical education teacher. He initially uses a lightheaded personality to attract the students, but his true nature as a ruthless and sadistic instructor is soon unveiled. When Karasuma withholds Takaoka from torturing the students any longer, Karasuma is challenged to pick one of his star pupils to use a real knife in a match against Takaoka. Karasuma nominates Nagisa, who uses the assassination skills he learned from Karasuma. Nagisa manages to get the upper hand on Takaoka and wins the match. When Takaoka violently objects to defeat, Karasuma beats him back. Gakuhō arrives to fire Takaoka, and Karasuma returns to his position as the physical education teacher."
+		)
+	,	("Assassination Classroom",
+		 14,
+		 "Vision Time",
+		 "Koro-sensei takes the students of Class 3-E to their own private pool that he made, but the students are alerted when Koro-sensei's tentacles swell up when soaked in water. Meanwhile, Terasaka becomes irritated when his friends Takuya Muramatsu and Taisei Yoshida are getting along with Koro-sensei. Terasaka agrees to collaborate with Shiro and Itona in their assassination plan, previously dropping a &quot;bug bomb&quot; in the classroom to excrete Koro-sensei's mucus and secretly adding a transmitter in the pool. Then, Terasaka gathers the other students in the pool, using a gun connected to the transmitter as a signal for Shiro and Itona. Instead, the transmitter sets off an explosion and puts the students in danger, forcing Koro-sensei to get his tentacles soaked in order to rescue the students from being swept away. Koro-sensei is left at the mercy of Itona, while Sumire Hara is hanging onto a tree branch nearby. Following Karma's plan, Terasaka uses his shirt still affected by the &quot;bug bomb&quot; to infect Itona, allowing Koro-sensei to rescue Hara whilst the other students splash water to halt Itona. Shiro and Itona are forced to withdraw yet again."
+		)
+	,	("Assassination Classroom",
+		 15,
+		 "End-of-Term Time",
+		 "With the final exams approaching, Koro-sensei offers an incentive, in which each student who gets the best overall score in their top subject will get to shoot off one of his tentacles during their next assassination attempt. Meanwhile, Shindō informs the students of Class 3-E about Class 3-A's Big Five (Gakushū Asano, Teppei Araki, Ren Sakakibara, Natsuhiko Koyama and Tomoya Seo), who are all determined to take Class 3-E down. When Nagisa, Manami, Yukiko, Isogai and Rio Nakamura go to study in the main campus library, the Big Five proposes a contest, stating whichever class snags the most top spots in the exams can demand anything from the losing class. While Class 3-A sets their sights on making Class 3-E show complete servitude to them, Koro-sensei proposes his own suggestion of what Class 3-E can ask from their opponents. With both classes determined to win, the stage for the end-of-term final exams is set."
+		)
+	,	("Assassination Classroom",
+		 16,
+		 "School's Out/1st Term",
+		 "The students of Class 3-E and the students of Class 3-A fight against each other to slay the test problems before them, with the students of Class 3-E benefiting from Koro-sensei's unique teaching methods. When the results are revealed, Nakamura scores higher than Tomoya in English; Isogai scores higher than Gakushū in social studies; and Manami scores higher than Koyama in science. Koro-sensei shuns Karma for losing to Gakushū due to studying very little and being overconfident. Terasaka, Yoshida, Muramatsu and Kirara Hazama each earn an additional tentacle for scoring top marks in home economics, resulting in a total of seven tentacles overall. Having won the wager for the contest, the students of Class 3-E decide to use their reward, a summer vacation at an island resort in Okinawa, as the venue for their assassination attempt."
+		)
+	,	("Assassination Classroom",
+		 17,
+		 "Island Time",
+		 "Prior to their trip, biologist Hinano Kurahashi helps Nagisa, Sugino and Hiroto Maehara hunt for bugs, while pervert Taiga Okajima shows them his own trap laid out for Koro-sensei using a pile of porn magazines. However, Kurahashi becomes fascinated when Koro-sensei spots a rare stag beetle worth a ton of yen. Later, Lovro is called in to help train the students for their island assassination, taking interest in the two top marksmen of the class, Ryūnosuke Chiba and Rinka Hayami. After telling Nagisa about the world's most infamous assassin known only as The Reaper, Lovro decides to teach Nagisa a surefire assassination technique. The students of Class 3-E soon arrive at their island resort, making all the necessary preparations for their assassination. After having dinner, during which Koro-sensei inadvertently uses up his emergency shedding technique to get rid of sunburn, the class begin their assassination attempt aboard an on-sea chapel."
+		)
+	,	("Assassination Classroom",
+		 18,
+		 "Action Time",
+		 "Koro-sensei is forced to watch an hour-long movie edited and narrated by Kōki Mimura exposing all of Koro-sensei's embarrassing habits, used as a distraction from the chapel slowly filling with water and bloating up his tentacles. Once the students of Class 3-E shoot off the seven tentacles, they surround and block Koro-sensei with a hydraulic cage, allowing Chiba and Hayami to snipe him. However, Koro-sensei activates his ultimate defense, trapping himself in an indestructible crystal sphere, which will last for one day despite his limited movements. As the students lament their failed assassination attempt, many of them suddenly and severely fall ill. This is revealed to be the work of a mysterious third party who had spiked their drinks with a supposedly deadly virus, demanding that the remaining students and teachers bring him the immobilized Koro-sensei in exchange for the antidote. Deciding against the trade-off, Koro-sensei and Ritsu instead come up with a plan to infiltrate the high-security hotel and obtain the antidote."
+		)
+	,	("Assassination Classroom",
+		 19,
+		 "Pandemonium Time",
+		 "Manami and Kōtarō Takebayashi stay behind to take care of the poisoned students. A team of fifteen healthy students along with Karasuma, Irina and Koro-sensei scale up a mountainside to sneak into the hotel undetected. With the first floor lobby area heavily monitored by bodyguards, Irina uses the art of seduction and her skills in playing the piano to distract the bodyguards, so that the others can reach the next floor. On the third floor central hall, the group comes across their first opponent named Smog, who is responsible for serving the spiked drinks to poison the students with the virus. Smog hits Karasuma with a canister of paralysis gas, but Karasuma still musters up the strength to knock out Smog. On the fifth floor scenic walkway, the group finds their next opponent named Grip. Not intimidated when Grip easily breaks a glass window with his fist, Karma makes up for his failure in the final exams and steps up to fight against Grip."
+		)
+	,	("Assassination Classroom",
+		 20,
+		 "Karma Time/2nd Period",
+		 "After Karma dodges Grip with his fistful of grabs, Grip hits Karma with a canister of paralysis gas. However, Karma manages to cover his mouth with a handkerchief in time and hits Grip with another canister of paralysis gas, allowing the students to bind up Grip with duct tape and move onward with their mission. In order to unlock the back entrance to the stairs and reach the next floor undetected, Meg Kataoka has the female students dress up Nagisa as a girl, and they all make their way through the sixth floor lounge. A rich guy named Yūji Norita spots Nagisa and tries to impress by buying him a drink. However, when the girls call for Nagisa to leave with them, Yūji tries to stop them by dancing. Yūji ends up accidentally spilling a drink on a guest, prompting Hinata Okano to knock out the guest with a somersault kick before trouble arises. The students move on to the VIP floor, where Terasaka knocks out two bodyguards using some stun guns, obtaining two pistols that are given to Chiba and Hayami. Upon reaching a theater stage, the students face off against their next opponent named Gastro."
+		)
+	,	("Assassination Classroom",
+		 21,
+		 "Takaoka Time",
+		 "Gastro, who has a keen sense of pinpointing enemy gunfire, turns on all the stage lights, in which the students are forced to hide behind the theater seats. Koro-sensei instructs the students using varying nicknames in order to confuse Gastro about the students' movements, giving Chiba and Hayami the encouragement to rise above their failed assassination and get the drop on Gastro. Koro-sensei deduces that the mastermind is not an assassin, while Nagisa learns that Terasaka secretly has been infected with the virus this whole time. The students finally arrive on the top floor and discover that the mastermind is none other than Takaoka. He takes the antidote concealed in a suitcase and brings the group up to the roof. Wanting revenge for being humiliated during their previous knife fight, Takaoka calls up Nagisa to the heliport for a rematch. Takaoka demands Nagisa to kneel before him and apologize for pulling a cheap trick during their match. Although Nagisa complies with this, Takaoka detonates the antidote right in front of the class. This makes Nagisa pick up a knife in preparation to kill Takaoka."
+		)
+	,	("Assassination Classroom",
+		 22,
+		 "Nagisa Time",
+		 "Before Nagisa completely gives into his anger, Terasaka throws a stun gun at him, urging him not to become a murderer and think about what is truly important. Despite being heavily beaten by Takaoka, Nagisa uses what he learned from Lovro to perform his secret technique. Nagisa drops the knife and surprises Takaoka with a sudden clap, just before using the stun gun to bring him to his knees. Then, Nagisa shocks Takaoka unconscious after leaving him with a fearsome smile. Smog, Grip and Gastro suddenly arrive and reveal that the virus they created is nothing more than temporary food poisoning, as they did not agree with Takaoka's harsh methods. The next day, the poisoned students recover from their symptoms and Koro-sensei emerges from his crystallized state. The students make the most of the remainder of their vacation before returning to school for the second term of their assassination classroom."
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Assassination Classroom", 0, 1, 8)
+	,	("Assassination Classroom", 0, 2, 7)
+	,	("Assassination Classroom", 0, 3, 7)
+;
+
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Assassination Classroom Season 2",
 		 25,
 		 "It's time for second term, and the assassination classroom is ready for a semester filled with intense training, studying, and new ways to kill their teacher. But even their most creative plans are falling flatter than a two-ton pudding. That is, until a powerful student decides to come back to class! Koro Sensei's days may finally be numbered. As their skills grow, so does their confidence. But will this lead to a successful assassination or reckless missteps that land them in trouble They'll have to keep their attitudes in check because a dangerous lesson with the Reaper awaits them. Not to mention clashing against A Class in another harsh round of midterms! Through it all, they'll have to face a question more challenging than any final exam-do they save the world or save the world's greatest teacher...",
@@ -687,6 +857,111 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("Assassination Classroom Season 2", 0, 3, 9)
 ;
 
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Battle Girls: Time Paradox",
+		 13,
+		 "Yoshino Hide (nickname Hideyoshi) is your average, everyday teenager, interested only in fashion, snacks, and her afterschool free time. She's destined to fail her next history test without some sort of miraculous intervention, so she stops by the local shrine to offer up a prayer or two to any deity that might be listening. 
+
+		 Her prayers are interrupted by a mysterious blue light that engulfs her and leaves Hideyoshi stranded in a strange new world that appears to be feudal Japan. All the inhabitants of this world, however, including feudal warlord Oda Nobunaga, are women! Now Hideyoshi finds herself on a quest to gather the pieces of the Crimson Armor and help Nobunaga conquer the land! ",
+		 "Yoshino Hide (nickname Hideyoshi) is your average, everyday teenager, interested only in fashion, snacks, and her afterschool free time. She's destined to fail her next history test without some sort of miraculous intervention, so she stops by the local shrine to offer up a prayer or two to any deity that might be listening.",
+		 "Madman",
+		 "&copy; HEIWA / Sengoku Otome Project"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Battle Girls: Time Paradox",
+		 0,
+		 1,
+		 "M - Nudity",
+		 13,
+		 "https://www.animelab.com/shows/battle-girls-time-paradox"
+		)
+	,	("Battle Girls: Time Paradox",
+		 3,
+		 1,
+		 "M - Nudity",
+		 13,
+		 "https://www.madman.com.au/catalogue/view/19768"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Battle Girls: Time Paradox",
+		 1,
+		 "Transfer Maiden",
+		 "Yoshino &quot;Hideyoshi&quot; Hide is an average student who has to brush up on her history knowledge for a test in order to avoid summer classes. As she goes to a shrine to pray for her success, she spots a woman performing a strange ritual inside the shrine. When she is spotted, she clumsily stumbles towards the woman and they both disappear. When Hideyoshi comes to, she finds herself in a forest and discovers a blazing village, where a warrior resembling her friend Akemi is fighting against some vandals before a scantily-clad mysterious woman saves her. The two women take Hideyoshi back to their palace, where they introduce themselves as Oda Nobunaga and Akechi Mitsuhide, and become curious about the technology Hideyoshi has. With Hideyoshi seeming to think that she has warped to the Sengoku period, but with historical figures portrayed as women, Hideyoshi attempts to leave to find her way home, but gets lost and is retrieved by Nobunaga. Nobunaga reveals her ambition to gather the pieces of the Crimson Armor, and Hideyoshi innocently agrees to help her. Later, Hideyoshi is approached by a helmet-wearing white puppy named Shiro who, to her surprise, is somehow able to talk."
+		)
+	,	("Battle Girls: Time Paradox",
+		 2,
+		 "Confused Maiden",
+		 "Hideyoshi, Nobunaga and Mitsuhide head to the village that was burnt down the previous night. With the victims downhearted due to losing their homes, Hideyoshi uses her own unique methods to lift everyone's spirits. Later that day, Hideyoshi speaks with the talking dog she met earlier named Shiro, who tells her she has ended up in the past of an alternate world which doesn't have any men. The next day, Mitsuhide starts training Hideyoshi to become a warrior. Despite losing all of her sparring matches with Mitsuhide, Hideyoshi shows promise fighting with a staff, having previously seen a tv program about Kung Fu, and is made Nobunaga's retainer."
+		)
+	,	("Battle Girls: Time Paradox",
+		 3,
+		 "Sky Maiden",
+		 "Nobunaga, Hideyoshi and Mitsuhide go to meet with Imagawa Yoshimoto to negotiate for the left leg of the Crimson Armor, along with Tokugawa Ieyasu, who also resembles one of Hideyoshi's high school friends, but Yoshimoto refuses to hand it over. Not wanting to use her forces to obtain, Nobunaga gets an idea from Hideyoshi and settle things via recreation, challenging Yoshimoto to a variety of games. After reaching a tie, the final game involves kite fighting, with Hideyoshi and Ieyasu attached to kites with fireworks attached to them. Hideyoshi's firework doesn't go off thanks to Ieyasu's attacks and Ieyasu goes up instead. Hideyoshi manages to catch her from falling, but then her firework goes off after all. At the end of the day, Yoshimoto admits her loss and gives Nobunaga the armor piece and Hideyoshi is rewarded with some Japanese sweets."
+		)
+	,	("Battle Girls: Time Paradox",
+		 4,
+		 "Confrontation Maiden",
+		 "Nobunaga, Hideyoshi and Akechi bear witness to a lengthy battle between Uesugi Kenshin and Takeda Shingen, who both possess pieces of the Crimson Armor. As Hideyoshi tries to take a picture with her phone, it gets hit with an electrical discharge from the battle and breaks. Mitsuhide becomes downhearted when her idea to retrieve the armor is rejected by Nobunaga. After running into Ieyasu, Mitsuhide decides to go behind Nobunaga's back to try to obtain the armor for her by turning Kenshin and Shingen against each other, tying up Hideyoshi when she learns of it. After Nobunaga frees Hideyoshi, she punishes her by stealing her glasses before going to meet Kenshin and Shingen herself, challenging them both to a battle for the armor. After Nobunaga defeats Shingen in battle, she agrees to relinquish the armor if she kills her, but Kenshin stands in their way, offering her life to save Shingen. Nobunaga chooses not to kill either of them and accepts both pieces of the armor."
+		)
+	,	("Battle Girls: Time Paradox",
+		 5,
+		 "Ghost Story Maiden",
+		 "Yoshimoto and Ieyasu invite Nobunaga, Hideyoshi, Mitsuhide, Shingen and Kenshin to go hawk-hunting, in which they use trained hawks to hunt for food. When the hawk goes into a mysterious wood while chasing after a rabbit, the others venture in, where they find Date Masamune sitting round a gathering of dead samurai who are forcing her to tell 100 ghost stories. The others soon learn they can't leave the forest until they tell all 100 stories, which proves to be difficult since none of Nobunaga's stories are scary and Mitsuhide is easily frightened. Being mocked by the others, Hideyoshi gives Nobunaga a story from her time, the performance of which proves to be so scary it puts out all the remaining candles, allowing the dead samurai to pass on and the others to leave. Ieyasu is seen conspiring with her aides, planning to encourage Nobunaga to complete the armor so that she can take it from her."
+		)
+	,	("Battle Girls: Time Paradox",
+		 6,
+		 "Memory Maiden",
+		 "Mitsuhide recalls the day she first met Nobunaga, who took a liking to her and showed her a world outside of her workaholic life, asking for her help in conquering the land. Meanwhile, Nobunaga takes Hideyoshi through the inspection tunnels, talking about the good luck charm she received from her grandmother, Nobusada. However, as they prepare to head back, Hideyoshi accidentally activates the security system, filling the way back with deadly traps. Meanwhile, Masamune talks with Mitsuhide, before Nobunaga and Hideyoshi manage to escape from the tunnel. It is revealed that Masamune is actually Hideyoshi's teacher, Ms. Date, who travelled back from the present after discovering someone that came out of the shrine and then disappeared."
+		)
+	,	("Battle Girls: Time Paradox",
+		 7,
+		 "Drama Maiden",
+		 "As Nobunaga and co. put together a play as per Hideyoshi's recommendation, Mitsuhide becomes irritated with Hideyoshi. Having trouble coming up with a script, Hideyoshi ends up adapting one of Yoshimoto's yuri stories. After rehearsals, Hideyoshi is troubled both by Shingen and Kenshin vying for bigger roles and Ieyasu's controversial suggestion for an ending. On the day of the play, after the various script changes pan out, Ieyasu's servant, Hattori Hanzō, ends up setting fire to the stage, trapping Hideyoshi inside, but Nobunaga comes to her rescue. Following the success of the failed play, Masamune informs Nobunaga about the location of the last pieces of the Crimson Armor."
+		)
+	,	("Battle Girls: Time Paradox",
+		 8,
+		 "Fever Maiden",
+		 "Nobunaga, Hideyoshi and Mitsuhide travel on foot towards Saigoku to negotiate for the remaining armor pieces. Stopping in a town to rest, the villagers show fear towards Nobunaga, believing rumors that she eats children. This turns out to be due to Mitsuhide's attempt to spread word of Nobunaga's kindness, which somehow got scrambled as it was passed along from person to person. After another long hike, they came across a village with a hot spring, which Hideyoshi spends too long in and catches a fever. With her fever worsening, Masamune anonymously donates some modern medicine from her time, claiming it to be from overseas. With Hideyoshi unable to swallow the medicine without water, Nobunaga try giving her some water through mouth to mouth method, which Mitsuhide happens to witness. As Hideyoshi recovers the next morning and the trio arrive in Saigoku, the three owners of the armor keep an eye on them."
+		)
+	,	("Battle Girls: Time Paradox",
+		 9,
+		 "Saigoku Maiden",
+		 "As Mitsuhide becomes downhearted having mistaken the 'kiss' between Hideyoshi and Nobunaga, the trio are confronted by the three owners of the armor, Chosokabe Motochika, Otomo Sorin and Mori Motonari. However, they are easily restrained by Nobunaga, who tickle tortures them into telling her the location of a chest containing the armor. However, Mitsuhide becomes too focused on her jealousy that she doesn't notice the chest is booby-trapped before handing it to Nobunaga, who barely avoids it. The Saigoku Trio escape and kidnap Hideyoshi, taking her to the top of the mountain and demanding Nobunaga bring the rest of the armor. Nobunaga and Mitsuhide become separated, with Nobunaga facing Motonari while under the effect of an anesthetic, while Mitsuhide faces Motochika and Sorin, who exploit the weaknesses in her confidence. However, they manage to regain their resolve and win their respective battles and gather the remaining armor. As Mitsuhide falls deeper into despair over Nobunaga's preference towards Hideyoshi, Ieyasu and Masamune make plans to claim the armor."
+		)
+	,	("Battle Girls: Time Paradox",
+		 10,
+		 "Double Suicide Maiden",
+		 "As the trio stop by Honnouji on the way back, Hideyoshi reads up on her history of her world, in which Mitsuhide betrayed and killed Nobunaga. Overhearing Mitsuhide talking to herself about potentially killing Nobunaga, Masamune tells her to test her bonds first and gives her some supposedly strong sake. That night, Mitsuhide ties up Hideyoshi and offers the sake to Nobunaga until she passes out, before setting the inn she is on fire. Before walking into the flames herself, Hideyoshi breaks free and stands before Mitsuhide, telling her that she should face her feelings before heading inside to search for Nobunaga. As Mitsuhide goes in after her, she finds Nobunaga, who stops her from throwing her life away by reminding her how important she is to her. When Mitsuhide stops breathing as a result of taking in too much smoke, Nobunaga performs CPR on her to bring her back. As Hideyoshi continues to search the burning building, she discovers Masamune attempting to steal the Crimson Armor. As she awakens after being saved by her, Hideyoshi comes to realization that Masamune is actually her teacher. As Masamune escapes with the armor, she is confronted by Ieyasu."
+		)
+	,	("Battle Girls: Time Paradox",
+		 11,
+		 "Pillaging Maiden",
+		 "As Nobunaga, Hideyoshi and Mitsuhide catch up to Masamune, they find her already beaten, the armor taken by Ieyasu who is now attacking Nobunaga's castle. As Nobunaga and Mitsuhide head to the castle, Masamune explains to Hideyoshi how she travelled back in time to obtain the Crimson Armor and allow the Date clan to conquer Japan, inadvertently ending up in the alternate past and bringing Hideyoshi with her. She explains she had encountered a Date clan member from the future, later discovering a jewel that could send her through time and a scroll containing the legend of the Crimson Armor. As Ieyasu sneaks into the castle to try to retrieve the remaining pieces of armor, Masamune warns Hideyoshi that the armor will go out of control if not equipped with the jewel she brought with her. Ieyasu uses her magic to activate the armor, awakening the evil heart inside her."
+		)
+	,	("Battle Girls: Time Paradox",
+		 12,
+		 "Warring Maiden",
+		 "As Ieyasu becomes possessed by the armor and unleashes her power on the village, Nobunaga asks the other feudal lords for her help in stopping her, with Hideyoshi insisting that they find a way to do it without killing her. Working together, the group combine their attacks to overwhelm Ieyasu, giving Nobunaga the opportunity to break the armor, turning Ieyasu back to normal, albeit with a newfound fondness for Nobunaga."
+		)
+	,	("Battle Girls: Time Paradox",
+		 13,
+		 "Sunshine Maiden",
+		 "As Nobunaga begins rebuilding her castle, Masamune finds the Crimson Armor amongst the wreckage and becomes swayed by it. As Masamune pleas that she needs to wear the armor to change the world, Nobunaga tells her how her recent experiences taught her that there is more to being a leader than to rule with power. As her friends stand to fight against her should she try, Nobunaga destroys the armor, saying there is no need for it, bringing Masamune back to her senses. Afterward, Masamune tells Hideyoshi that they need to return to their own time. In the epilogue, Hideyoshi stops in front of the temple and spots a dog who reminds her of Shiro. When she confronts the dog, it is none other than Shiro who is elated to Hideyoshi but he can't play with her because of an important mission he has to complete. Hideyoshi begs him to know what he's doing, so he whispers it to her."
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Battle Girls: Time Paradox", 0, 1, 4)
+	,	("Battle Girls: Time Paradox", 0, 2, 4)
+	,	("Battle Girls: Time Paradox", 0, 3, 5)
+	,	("Battle Girls: Time Paradox", 3, 1, 2)
+;
+		
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Ben-to",
 		 12,
@@ -781,6 +1056,103 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 		("Ben-to", 0, 1, 4)
 	,	("Ben-to", 0, 2, 4)
 	,	("Ben-to", 0, 3, 4)
+;
+
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Bikini Warriors",
+		 12,
+		 "Prepare yourself for an adventure of epic proportions. With warriors so skilled at battling questionable slimes and taming tumescent tentacles, there's no need for all that bulky armor. Brought to you by some of the masters of the female form, Bikini Warriors features character designs by Rei Hiroe (Black Lagoon), Tony Taka, Odanon (Queen's Blade), and Hisasi. 
+
+		 All your favorite RPG classes beginning with the athletic Fighter, elegant Paladin, and enchanting Mage--are busting the min/max barriers for maximum blood loss! Are you equipped? Unsheathe your sword and prepare for battle!",
+		 "All your favorite RPG classes beginning with the athletic Fighter, elegant Paladin, and enchanting Mage--are busting the min/max barriers for maximum blood loss! Are you equipped? Unsheathe your sword and prepare for battle!",
+		 "Madman",
+		 "&copy; HOBBY JAPAN"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Bikini Warriors",
+		 0,
+		 1,
+		 "R18+ - High impact sexual themes",
+		 12,
+		 "https://www.animelab.com/shows/bikini-warriors"
+		)
+	,	("Bikini Warriors",
+		 3,
+		 1,
+		 "R18+ - High impact sexual themes",
+		 12,
+		 "https://www.madman.com.au/catalogue/view/34324"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Bikini Warriors",
+		 1,
+		 "It's Not a Bikini If It's Armor",
+		 "The heroines are introduced in a story in which they are sold scantily-cut bikini outfits, only to find to their surprise that they actually protect them far better than their old bikini outfits."
+		)
+	,	("Bikini Warriors",
+		 2,
+		 "A Quest Needs Money to Rest",
+		 "A powerful king intends to hire the Bikini Warriors for a dangerous mission, but when he proves too avaricious and the heroines begin to haggle about their expedition's expenses, they end up bondaged in the king's dungeon."
+		)
+	,	("Bikini Warriors",
+		 3,
+		 "Even Heroes Have Needs",
+		 "With their funds completely drained, the Bikini Warriors abuse their hero status to strip the townsfolk of their possessions in order to have a comfortable time - only to have that scheme backfire on them in the end."
+		)
+	,	("Bikini Warriors",
+		 4,
+		 "A Hero Needs No Reward",
+		 "In order to pass through a dangerous dungeon, the Bikini Warriors require a key in the possession of a town's mayor. In order to get that key, the Fighter must submit herself to a number of hazardous - and embarrassing - jobs, only to discover in the end that the &quot;key&quot; is not of a materialistc nature, compelling the Fighter to exact vengeance on her idealistic employer."
+		)
+	,	("Bikini Warriors",
+		 5,
+		 "Saving Things That Go Unused",
+		 "In order to purchase a magical crystal staff they need to defeat a dangerous dungeon monster, the Bikini Warriors decide to sell all the possessions they think they no longer need, such as their old armor and supply of healing elixirs. However, eventually they find out that doing so was a very bad idea."
+		)
+	,	("Bikini Warriors",
+		 6,
+		 "Heroes Overcome the Impossible",
+		 "The Bikini Warriors seek out and fight a dangerous woman-hunting monster in the woods, in conjunction with a lot of strategically implemented optical censoring."
+		)
+	,	("Bikini Warriors",
+		 7,
+		 "Allies From Taverns May Disappoint",
+		 "As the Bikini Warriors search for new members to reinforce their party, they reminisce about the time when the Dark Elf had first joined them, only for her haughtiness producing mixed results for her new teammates."
+		)
+	,	("Bikini Warriors",
+		 8,
+		 "Every Journey Finds New Friends",
+		 "The Hunter and the Valkyrie are introduced competing to join the Bikini Warriors, only to end up as extremely close friends."
+		)
+	,	("Bikini Warriors",
+		 9,
+		 "A Hero Betrayed Has But One Choice",
+		 "The Bikini Warriors kill an evil magician, but with his dying curse, the sorcerer takes control of the Mage's body, forcing her to attack her teammates while still remaining conscious about her deeds, but unable to protest her innocence. As a result, the Mage is killed by her misunderstanding fellow warriors."
+		)
+	,	("Bikini Warriors",
+		 10,
+		 "You Don't Always Get What You Want or Need",
+		 "The Bikini Warriors are delving through a hazardous dungeon, but despite their great expectations of a great reward, all treasure chests they come upon hold nothing but traps. When they finally get the chance to win a great idealistic reward, they promptly blow it in their disappointment."
+		)
+	,	("Bikini Warriors",
+		 11,
+		 "A Snare To Trap A Pure Maiden",
+		 "This episode deals with the self-sacrificial and closeted lascivious nature of the Paladin, who is willing to marry a lecherous mayor in order to aid her teammate's progress."
+		)
+	,	("Bikini Warriors",
+		 12,
+		 "No One Knows The End",
+		 "This episode is a non-sequential, trailer-like collection of clips within a world-saving frame story, featuring the Bikini Warriors in several intensive personal moments and the additional company of the Hunter and Valkyrie."
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Bikini Warriors", 3, 1, 12)
 ;
 
 -- Anime Data
@@ -2124,6 +2496,105 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("Samurai Jack", 0, 2, 4)
 	,	("Samurai Jack", 0, 3, 5)
 ;
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Samurai Warriors",
+		 12,
+		 "Based on the hit video game series from the Dynasty Warriors franchise, this dramatic reimagining of one of Japan's most revered historical periods throws you head first into the middle of an epic battle royale. Follow along as your favorite hacking, slashing characters from the video game meet once more on the battlefield. 
+		 Under the banner of Hideyoshi Toyotomi, brothers Yukimura and Nobuyuki Sanada fought to end the wars raging across Japan uniting the country under one peaceful rule. After many hard-won battles their victory was sealed, but unfortunately the peace lasted only as long as Hideyoshi himself. After his untimely death, the very men who believed in his cause were split down the middle… and for the first time, the Sanada brothers found themselves on opposing sides of a conflict. As they gear up to go to war with one another they find themselves torn between their duty as warriors, and their bond as brothers. At the end of the day, only one side can win—but which brother will come out on top?",
+		 "Based on the hit video game series from the Dynasty Warriors franchise, this dramatic reimagining of one of Japan's most revered historical periods throws you head first into the middle of an epic battle royale. Follow along as your favorite hacking, slashing characters from the video game meet once more on the battlefield.",
+		 "Madman",
+		 "&copy; KOEI TECMO GAMES CO., LTD./ANIME SENGOKUMUSOU PROJECT"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Samurai Warriors",
+		 0,
+		 1,
+		 "M - War themes and animated violence",
+		 12,
+		 "https://www.animelab.com/shows/samurai-warriors"
+		)
+	,	("Samurai Warriors",
+		 3,
+		 1,
+		 "M - War themes and animated violence",
+		 12,
+		 "https://www.madman.com.au/catalogue/view/32012"
+		)	
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Samurai Warriors",
+		 1,
+		 "Best Cherry Blossoms of the World",
+		 "Mitsunari and Ieyasu overlook the fog at Sekigahara. Both reflect on the past and the relationships they have built until the conflict, repeating many key scenes from the base game verbatim. The narration resets the setting to the second siege of Odawara Castle. Mitsunari is entrusted by Hideyoshi to take it, and three unsuccessful months pass due to the Hōjō's iron defenses and high morale. Hideyoshi is confident in Mitsunari's success against Ieyasu's doubts. He entrusts Ieyasu to rule Kanto after the Hōjō are defeated. Hidetada protests the decision after their audience, claiming that it will lower their family affluence. Back at Odawara, Mitsunari gives the order for a full strike to take advantage of the Hōjō's lowered supply line. Nobuyuki disapproves, voicing his concerns for the future government. While deliberations continue amongst the war council, Yukimura mounts his steed and charges into battle by himself. He rams through the castle barricade to challenge Ujiyasu to a duel. Kaihime and Lady Hayakawa intercept; Ujiyasu interrupts the moment they are pushed back. The Toyotomi army ride to Yukimura's assistance during their duel. Kunoichi keeps the women at bay, and Nobuyuki eventually reunites with his brother. Ujiyasu is ultimately defeated by Yukimura and gives his last will to the Sanada brothers. Hideyoshi gathers the victors for a cherry blossom banquet to celebrate his unification. Mitsunari speaks in Yukimura's favor when reporting to Hideyoshi; his lord complements his plan regardless and sympathizes with his retainer's hardship. He hopes Mitsunari and Ieyasu can work together for the land's future; realizing they are at odds, he states the same for the Sanada brothers. His illness is hinted when he drops his saucer."
+		)
+	,	("Samurai Warriors",
+		 2,
+		 "Parting at Inubushi",
+		 "Hideyoshi falls deathly ill. Before he perishes he pleads Ieyasu and Mitsunari to look after his son, Hideyori, for him. Toshiie inherits Hideyoshi's will and dies from illness soon afterwards. Nene leaves Osaka Castle because it pains her to remember her departed husband, entrusting her &quot;children&quot; with the future. Kanetsugu acts as his lord's representative at the conference to decide the clan's future, explaining that the Uesugi require time to establish their newly assigned power in Aizu. Ieyasu mentions a rumor that they're building a new castle and raises concerns of the divide that is beginning within the Toyotomi ranks. Mitsunari's foul attitude and nonpartisan decisions deepen the gap. The Sanada brothers are reminded of the Takeda's fall and seek to protect their family name at all costs. One day at Osaka Castle, they overhear Kiyomasa and Masanori protesting Mitsunari's order to head to Kyushu. Mitsunari remains distant to his childhood friends' outbursts and their separation from him. During their return to Ueda Castle, Nobuyuki and Inahime are called to attend an audience with Ieyasu. The Tokugawa lord has gathered a discrete circle of retainers to defend the remnants of Toyotomi unity, citing the Uesugi's worrisome behavior as an act of self-motivated ambition. Osaka receives word of Ieyasu's march to arms, causing Mitsunari to believe that Ieyasu is targeting the innocent Uesugi for his own ambitions. Yukimura learns his brother has joined Ieyasu but cannot abandon his friendship with Kanetsugu and Mitsunari. Kunoichi delivers an invite to Nobuyuki to meet his brother at a temple in Inubushi. Yukimura tries to convince Nobuyuki to join Mitsunari due to their past obligation to him. Nobuyuki remains adamant because he foresees the Toyotomi's fall. The older brother wants his sibling to be by his side for the conflict. Since neither can give up their set of ideals, they part ways as enemies."
+		)
+	,	("Samurai Warriors",
+		 3,
+		 "Storm at Ueda Castle",
+		 "Movements for Sekigahara starts with each side splitting their forces. Hidetada and Nobuyuki are entrusted to be the mountain supply line; Kagekatsu's attempt to attack Ieyasu's flank is foiled by the Date forces. While the Uesugi clash with the Date in Aizu, Yukimura rallies the men at Ueda Castle to fight for Mitsunari. Although they are aghast to learn the older Sanada brother is their foe, Yukimura restores morale by declaring that their reunion will come with Mitsunari's victory. In spite of everything that has transpired, Yukimura remembers the days when the Sanada clan became homeless after the Takeda's fall. The brothers created Ueda Castle together and he treasures it as the clan's only home. Sincerely believing in his brother's return, he intends to protect it by using the tactics his brother taught him during their childhood. Hidetada's forces near Ueda Castle and the Tokugawa heir seeks to topple it with numbers. Nobuyuki suspects his brother's intentions and tries to remind his liege of their current mission, yet Hidetada believes he is selfishly protecting Yukimura and ignores his recommendations. As he had predicted, the ill prepared Tokugawa troops become victims to a Sanada ambush the next day. The brothers are forced into a duel when Nobuyuki protects Hidetada's escape; Nobuyuki flees after Hidetada is safe. Cross with his failure, Hidetada declares he will continue attacking the castle. During their night reprieve, both siblings reflect on their actions and renew their conflicted resolve. Meanwhile, Mitsunari and Ieyasu's forces have reached Sekigahara. Each side uses the night to rest and consider their movements the next day, many characters repeating key lines they share in the base game. Dawn gives Yukimura strength to attack, and he charges into battle. The episode ends with Yukimura rushing straight for Hidetada."
+		)
+	,	("Samurai Warriors",
+		 4,
+		 "Sekigahara Sunset",
+		 "Continuing from Yukimura's charge from the last episode, Nobuyuki duels his brother again to defend Hidetada. As their strikes intensify, Hidetada tries to eliminate both brothers by ordering his infantry to fire at them. Kunoichi and Tsukimaru drop smoke bombs to end the fighting. Ueda Castle has been damaged by heavy cannon bombardment and the Tokugawa troops withdraw to reunite with Ieyasu's force at Sekigahara. The Uesugi also continue their clash against the Date in Aizu. At Sekigahara, movements for the two sides loosely mirrors history. The fighting begins once Naomasa charges towards the front and the Western army respond with cannon fire. While Sakon directs the vanguard and dies in a duel with Naomasa, Yoshitsugu attempts to deal with Kobayakawa's defection to the Tokugawa forces. He is interrupted by Takatora who tries to mend their broken friendship. Their duel is stopped when Yoshitsugu is fatally wounded by Tokugawa arrows sustained to his unguarded back; he dies in Takatora's arms while apologizing to Mitsunari. Realizing the situation is lost and Tadakatsu threatens his main camp, Mitsunari attempts a desperate final charge towards Ieyasu. He dies from injuries he sustains from his rush; he collapses a few meters away from Ieyasu and fondly remembers Hideyoshi in his final moments. Back at Ueda Castle, Yukimura is helping his injured troops recover from the battle. Nobuyuki and Ina march back to their doorstep to report Mitsunari's death; Yukimura mourns for him."
+		)
+	,	("Samurai Warriors",
+		 5,
+		 "Life's Destination",
+		 "Ueda Castle is given to Nobuyuki and Yukimura is placed under house arrest. Kunoichi attempts to cheer her master by offering him chestnuts and sticky rice. Her fondness for the treat causes her to reminisce about their childhood days together. Yukimura, however, is preparing himself for his honorable execution. He solemnly terminates her contract to him, urging her to live her own life through her tearful protests. News of Mitsunari's defeat spreads to the west and east. Kanetsugu mourns for his friend as he suggests for the Uesugi to retreat. Nene inspects the battered Sekigahara and weeps when she discovers Mitsunari's broken headpiece. Osaka Castle is buzzing with anxiety, many worried that the Toyotomi will be next. Kaihime, who had been sent to live there after the Hōjō's fall, calms the maids and asks Hideyori for his thoughts in his garden. The young lord faintly concedes to Ieyasu's progress in Toyotomi servitude. The final agenda in the Tokugawa conference is deciding Yukimura's fate. Hidetada urges for his death due to the lives he took at Ueda Castle, yet Tadakatsu and Inahime cite that Hidetada's impetuousness led to Yukimura's retaliation. Takatora stresses that Yukimura is too dangerous to leave alive. In spite of his sincere affections for his brother, Nobuyuki prioritizes the dream of peace and advocates for the death sentence. Ieyasu surprises the room when he commands for Yukimura's exile at Mt. Koya. He scolds the whining Hidetada and places his son under house arrest for his disgraceful conduct. Nobuyuki personally delivers the decree to Ueda Castle; Yukimura is upset to be forced to live in shame and declares his intent to commit suicide in Mitsunari's memory. The older brother snarls for Yukimura to survive and reevaluate his own life; the Sanada's fate now lies in Nobuyuki's hands. During the evening hours, several parties reflect on the verdict. Nobuyuki vents his personal regrets for abandoning Yukimura to Inahime. A bedridden Naomasa curses that the wound he received from Sakon prevented his attendance as he would have made Yukimura perish. Tadakatsu admits his earnest surprise for his lord's mercy and his praise for Yukimura's tenacity. Ieyasu elaborates his intentions to realize peace by driving the definitive nail through perpetual warfare; by sparing the young hero now, he can sacrifice Yukimura to end all samurai values later. Hidetada throws a tantrum in his personal quarters and blames the Sanada responsible for his misfortune. Kotarō cryptically sneaks in with the offer to end his adversaries. Yukimura leaves Ueda the next day. He requests for the cherry blossom tree to be cared for and pardons his group of subordinates to serve his brother. Kunoichi resolves to be with him with Inahime's silent understanding. Losing control over his emotions during their departure, Nobuyuki strains a futile wail to his brother's retreating figure. The episode ends with Ieyasu being named shogun."
+		)
+	,	("Samurai Warriors",
+		 6,
+		 "Caged Heart",
+		 "A lone Nobuyuki is ordered to act as Ieyasu's envoy for the vengeful Uesugi. The air is tense when he arrives in Aizu to deliver the decree: slash the Uesugi's wealth to a quarter and relocate to Yonezawa. Kanetsugu acts as the Uesugi correspondent and declares a staunch defiance. Before the Uesugi lunge for his throat, Nobuyuki reasons for him to consider the Uesugi's survival. The Sanada lord shares the severity of leadership and what he has done to protect his clan. The chief advisor feels he is being honest by remembering Yukimura's past impressions of Nobuyuki. Although Kanetsugu briefly hesitates to answer and has lingering regrets for his departed friend, the Uesugi consent without bloodshed. Inahime is relieved when her husband returns to her in one piece. Yukimura is surrounded by Tokugawa guards and listless in his exile, contemplating his next goal in life. Kunoichi is permitted to be by his side. The village residents are unnerved by his arrival, only aware that he is being punished for an untold crime. A peasant girl named Suzu overcomes her fright and lightens his monotony by sharing a rice ball with him. She tells him to forgive and forget before she is chased away by the lax patrol. Nene visits Yukimura at nightfall to deliver Mitsunari's broken headpiece to him. The younger Sanada sibling remarks he is not worthy of it, stating his will to give up war and watch over the new era of peace. While their visitor leaves, Kunoichi shares her uncertainties for her master's well being. Nene assures her to have faith in him, hinting that peace is still uncertain. She entrusts Kunoichi to give Yukimura his friend's keepsake when and if he chooses to fight again. On the way back to their hut, Kunoichi overhears Suzu's mother in distress. Her daughter has come down with a high fever, and the mother wishes to rush her to a doctor who lives at the bottom of the mountain. The Tokugawa guards block the main road and the other path is a hazardous track in the wilderness. Yukimura overhears the ruckus and insists on carrying the girl himself, despite facing the threat of death for leaving his prison. He intimidates the guards to move and slides down the path. As she assists her master through the terrain, Kunoichi is reminded of her first meeting with Yukimura in their childhood. She had collapsed in the snowy mountains alone, and Yukimura selflessly carried her on his back to safety. Once Suzu is entrusted to the doctor, Yukimura willingly returns to his imprisonment. In the Tokugawa stronghold, Masanori is upset by Ieyasu's growing influence. Kiyomasa assuages him by having faith that Ieyasu will pass the title to Hideyori. They are shocked when Ieyasu passes the title to Hidetada; Nobuyuki feels the timing is too rash and bound to incite Toyotomi loyalists to arms. While Hidetada privately gloats on his new sovereignty, Kotarō corrupts his psyche to hatred by harassing him with illusions of Yukimura. Naomasa continues to fume over Yukimura's survival, even with Tadakatsu's endorsement for their lord. The episode ends with an impaired Naomasa leaving the castle, suited up and carrying his weapon and Yukimura's spear on his mount."
+		)
+	,	("Samurai Warriors",
+		 7,
+		 "Crimson Blade",
+		 "Nobuyuki is made envoy again to the Toyotomi keep, delivering the news of the second Tokugawa shogun and Ieyasu's wishes to meet with Hideyori at Nijo Castle. Well aware of the Toyotomi retainers' anger towards Ieyasu's disrespect, Hideyori formally excuses Nobuyuki to hold private council with his men. While he poses the risk of starting another war to the quick-tempered crowd, Kaihime guides their guest to his quarters. She vouches for her infatuation in Hideyori's puzzling qualities and trust in his wise restraint. Kiyomasa scouts the streets of Edo and reports that the people are happy. Masanori rants that Ieyasu is taking credit for Hideyoshi's vision by taking away the Toyotomi pedestal. Takatora, who had eavesdropped on the duo before, deems them of being dangerously disloyal to the Tokugawa. Before the young men shed blood, Tadakatsu hollers for them to cease their aggressions. He vows to keep quiet about the incident to Ieyasu. Yukimura has been placed under stricter house arrest and is not permitted to have guests at his adobe. Since she is barred from seeing him, Kunoichi spends time with her pet and catches up with a visiting Inahime. The sister-in-law implores for the duo to endure the exile. She has faith that Yukimura will be pardoned once peace is declared, leaving behind gifts with her departure. During the twilight hours, Naomasa barges into the prisoner's hut and declares an ultimatum to Yukimura: to die fighting or to die as a defenseless criminal. Denouncing violence and clinging to his promise to contemplate his life, Yukimura stops Naomasa's spear thrust by catching its blade. The nearby village is suddenly set on fire by Kotarō and his army of clones. Concern for the village overrides samurai pride, as Naomasa and Yukimura hurry to save them. A Kotarō clone smashes at Naomasa's injury during the fighting, making the damage inevitably fatal. He has enough strength to defeat a few clones, hurl Yukimura's spear, and remind Yukimura of his warrior roots before dying. Yukimura and Kunoichi defend the villagers, and the fires are put out by sunrise. Yukimura gains conviction to fight for the ones dear to him; when Kunoichi gives him Mitsunari's memento, he swears to never again turn his back on their pledge of friendship."
+		)
+	,	("Samurai Warriors",
+		 8,
+		 "Moment of Truth",
+		 "To protect the villagers and to resume his life as a warrior, Yukimura and Kunoichi escape Kudoyama. Kiyomasa and Masanori desert the Tokugawa to directly support Hideyori. The two parties' destination is Osaka Castle. After receiving a report of Naomasa's death, Ieyasu orders Masamune to kill the two defectors and Takatora to slay Yukimura before they reach it. He forgoes the generals' respective wishes to switch their targets, hoping to stifle their personal pride as warriors. He privately shares with Tadakatsu his plans for the survivors to discard their past means of mayhem to someday focus on a legislation that can foster peace for the future. Hideyori agrees to meet with Ieyasu to gauge his rival's thoughts. Kaihime reminds him of the retainers who are contentious towards the Tokugawa, an opinion that the pacifistic lord has previously perceived and acknowledges. He seeks to avoid war if possible. Nobuyuki departs and is surrounded by bandits at a mountain path. He flees toward the nearby river to defend himself. Before they attack, a lounging Keiji rises and correctly identifies the bandits as Toyotomi retainers in disguise; he outs them by calling attention to their expensive swords. The wild man proceeds to beat one and intimidates the rest to flee. Nobuyuki and Keiji recognize one another and share a friendly chat. Keiji informs Nobuyuki of Yukimura's escape, causing the elder sibling to leave at once on his mount to intercept. Meanwhile, the Date trap Kiyomasa and Masanori. They are saved by Nene and her smoke bombs. Both men apologize to her for their actions, and she happily praises them for finding their paths in life. Simultaneously, Nobuyuki requests to join Takatora's subjugation. Suspecting mercy and sentimentality from him, Takatora declines and has Nobuyuki taken into custody. While Takatora surrounds the Sanada trio, Keiji rides to their assistance and Nobuyuki breaks free from his confinement. Yukimura and company safely escape and are blocked by a lone Nobuyuki. Yukimura explains his renewed convictions to continue fighting for the late Mitsunari's dream and discards his family ties with Nobuyuki. For now on, they are enemies."
+		)
+	,	("Samurai Warriors",
+		 9,
+		 "Osaka Tempest",
+		 "While Nobuyuki reports about Hideyori to Ieyasu, Yukimura's party arrives at Osaka which is filling in with landless samurai. Kaihime meets the trio in the streets and guides them to the Toyotomi lord. Hideyori privately welcomes Yukimura and Keiji for their stay; his refined conduct and ambitious defiance reminds them of the late Hideyoshi. The young lord's ties with Toshiie amuses Keiji enough to enlist into the Toyotomi troops. Before Hideyori leaves for Nijo Castle, Kiyomasa and Masanori arrive to pledge their loyalties to the Toyotomi family again. Despite criticism from nameless observers, Hideyori pardons them and has them accompany him. Ieyasu addresses the rumors that the Toyotomi are preparing for war during their talk and Hidetada questions Yukimura's whereabouts; the young lord fibs that he is merely sheltering the victims of Sekigahara and many men have used the hero's name for their self-benefit. Expressing concern for the future, Ieyasu entreats Hideyori to reside in Edo. Hideyori counters with a mocking proposal for the retired Ieyasu to live at Osaka. Realizing that negotiations are blemished by Hideyori's blooming potential, Ieyasu privately organizes his loyalists to take arms. He believes they should quickly end the Toyotomi to prevent a relapse to the cycle of warfare under Hideyori's name. The Toyotomi inner circle spend an evening bonding before they plan their defensive. Yukimura has scouted the grounds and offers his opinions to defend their pivotal front wall. He suggests for a fortress to be built, which Keiji proudly dubs in Yukimura's honor. During its construction, the Tokugawa forces rout Toyotomi forces scattered along their path. By the time they surround Osaka Castle, they face the completed Sanada Maru."
+		)
+	,	("Samurai Warriors",
+		 10,
+		 "Extraordinary Fortress",
+		 "The fighting is staged on three fronts. Yukimura defends the south against Takatora, and Keiji protects the east from Kanetsugu. Western gates have the Date army clashing against Kiyomasa and Masanori. The Toyotomi defend their ground well due to exploiting the castle moats and Sanada Maru for a month. Before the Toyotomi concoct a December counteroffensive, Ieyasu arranges for long ranged cannons to directly bombard the main keep. Kunoichi volunteers to take them out alone to allow Yukimura to redirect their defenses. She is mildly successful but is forced to withdraw when she is injured by Takatora. Cannon fire continues for several days and morale on both sides is diminishing. Nobuyuki proposes an armistice before the Tokugawa forces lose to the winter frost. Ieyasu refuses to a cease fire, driving the elder Sanada to approach the Toyotomi himself. Kanetsugu approves his courage and agrees to assist him. Her husband leaves her to avoid placing her in danger; Inahime loses her composure hearing the jeering Hidetada and slaps him. Formations are slightly changed in the next shown charge. This time Kanetsugu and Yukimura's armies face one another, and Keiji duels Tadakatsu. The Date counter the western moats by charging in with their makeshift bridges and infiltrate the castle ground. Kiyomasa takes the bullet from Masamune's pistol for Masanori and dies. Meanwhile, Nobuyuki alone infiltrates the Sanada Maru's hidden entrances to make his way into the main keep. He proposes the truce to Hideyori directly, and Hideyori rationally agrees to it. With peace declared, the cannons stop and each side licks their wounds. Nobuyuki leaves the castle, warning his brother that their next fight shall be to the death."
+		)
+	,	("Samurai Warriors",
+		 11,
+		 "Isolated Castle",
+		 "A ceasefire is put into place. As a sign of trust, the outer moats are filled in and Takatora oversees reconstruction efforts. Aggressions between the two clans remains when Takatora's methods appear reproachful to local loyalists. Yukimura remembers his brother's parting words and warns Hideyori that another war shall be inevitable. Although Osaka Castle lays defenseless and its main keep remains charred from cannon fire, its people stay faithful to the late Hideyoshi's vision for unification. Understanding the hearts of his followers, Hideyori willingly breaks the treaty by declining an order to exile the rogue samurai from his castle. Both sides reflect on the past and steel their hearts for war, each of the Sanada brothers readying themselves to kill one another for their beliefs. Hidetada still feels the sting of Inahime's slap and vents his insecurities to a passing Nobuyuki. Inahime's slight outburst has him realize he is crushing under the pressures of leadership. He feels he is still inferior to his father and loathes war. The elder Sanada brother praises his pacifistic implications yet criticizes him to respect the fallen. If he doesn't mature soon, Hidetada is turning his back to their wishes. Although he pouts at the Sanada lord's support, Hidetada appreciates his opinion. Yukimura and company intercept the Tokugawa forces on the path towards Osaka Castle. Their offensive is admirable but the Tokugawa numbers overwhelm them. Within a short time, the Tokugawa forces plow towards their destination and rest near its borders. Nene pays Ieyasu a private visit, inquiring if this shall be the final battle. She entrusts him to realize her late husband's dream and vanishes, sharing her desire to witness the age that shall begin under Tokugawa rule. Kunoichi wants Yukimura's survival, but her call to duty silences her from speaking her thoughts. Kaihime catches onto her insecurities and encourages her to voice her heart before daybreak. As the Tokugawa troops come closer, Kunoichi tries confessing her feelings to Yukimura. She cuts herself short and instead asks for a promise to revisit the cherry blossom tree at Ueda Castle after the war. He agrees and exchanges a promise of his own: to hold Mitsunari's keepsake and return it to him when the war ends. Kunoichi swears again to protect him in soliloquy. The episode ends with the crimson armored Toyotomi troops roaring a vigorous war cry to their foes."
+		)
+	,	("Samurai Warriors",
+		 12,
+		 "Mightiest Warrior in Japan",
+		 "War breaks out with the Toyotomi forces pushing towards the Tokugawa center. Their goal is to distract the main forces away from Yukimura's lone charge towards Ieyasu. Nobuyuki catches onto his brother's plan yet he is obstructed by Keiji. Masanori squares off against Masamune to avenge his friends, eventually disarming him with a definitive punch to the gut. Kaihime fights until the castle is threatened, rushing back to check on her family's safety. A lone Tadakatsu rides towards the battle and intercepts Yukimura. During their duel, Kunoichi spots three Tokugawa snipers and is shot taking them out. Yukimura grieves for her until he notices that Mitsunari's keepsake had prevented the bullet from being fatal. He gains the courage he needs to land a decisive blow on Tadakatsu, impressing the veteran to concede defeat for his last battle. Tadakatsu respectfully watches over the unconscious Kunoichi for him. Nobuyuki is relieved of Keiji shortly after when Kanetsugu replaces him. Both brothers ride towards Ieyasu. Finding the resolve to speak his thoughts as a leader, Hidetada calmly orders Takatora to capture the main keep of Osaka Castle before the war escalates. By the time the general arrives, the main keep is set ablaze by Hideyori. All three leaders feel the era of war has ended, and Hideyori decides to end it with his demise. Defeat halts the Toyotomi ranks yet Yukimura persists to challenge Ieyasu. Nobuyuki catches up with him and fights him to defend Ieyasu. Their duel injures both brothers and is interrupted when Hidetada rides closer with reinforcements. After he again entrusts the future of their clan to his brother, Yukimura chooses to die a warrior's death by charging towards the Tokugawa infantry. His death marks the start of a peaceful age. In the voiceless credits montage, Kaihime is living with the surviving castle maids. Masanori makes a grave for his friends and pays his respects. The others enjoy the era of peace and restoration. Kunoichi recovers from her injuries thanks to Tadakatsu's patronage. She returns to Ueda Castle to fulfill her promise to Yukimura, leaving Mitsunari's keepsake underneath the blooming cherry tree."
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Samurai Warriors", 0, 1, 4)
+	,	("Samurai Warriors", 0, 2, 4)
+	,	("Samurai Warriors", 0, 3, 4)
+	,	("Samurai Warriors", 3, 1, 2)
+;
+		
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("School-Live!",
@@ -4173,7 +4644,7 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		("Un-Go",
 		 1,
 		 1,
-		 "Check the Classification",
+		 "M - Animated violence and sexual references",
 		 11,
 		 "http://sirenvisual.com.au/index.php/shop/un-go.html"
 		)
@@ -4475,17 +4946,17 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 ;
 -- Summer A
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
-		("2018-01-05 11-30-00", 0, "Summer Sessions", 0, 0, "0")
-	,	("2018-01-12 11-30-00", 0, "Summer Sessions", 0, 0, "0")
-	,	("2018-01-19 11-30-00", 0, "Summer Sessions", 0, 0, "0")
+		("2018-01-05 11-30-00", 0, "Summer Sessions", 404, 1782517088487445, "0")
+	,	("2018-01-12 11-30-00", 0, "Summer Sessions", 404, 0, "0")
+	,	("2018-01-19 11-30-00", 0, "Summer Sessions", 404, 0, "0")
 	
-	,	("2018-01-05 16-30-00", 0, "Summer Sessions", 0, 0, "0")
-	,	("2018-01-12 16-30-00", 0, "Summer Sessions", 0, 0, "0")
-	,	("2018-01-19 16-30-00", 0, "Summer Sessions", 0, 0, "0")
+	,	("2018-01-05 16-30-00", 0, "Summer Sessions", 404, 171260956940198, "0")
+	,	("2018-01-12 16-30-00", 0, "Summer Sessions", 404, 0, "0")
+	,	("2018-01-19 16-30-00", 0, "Summer Sessions", 404, 0, "0")
 	
-	,	("2018-01-05 19-30-00", 0, "Summer After Dark", 0, 0, "0")
-	,	("2018-01-12 19-30-00", 0, "Summer After Dark", 0, 0, "0")
-	,	("2018-01-19 19-30-00", 0, "Summer After Dark", 0, 0, "0")
+	,	("2018-01-05 19-30-00", 0, "Summer After Dark", 404, 565658880444133, "0")
+	,	("2018-01-12 19-30-00", 0, "Summer After Dark", 404, 0, "0")
+	,	("2018-01-19 19-30-00", 0, "Summer After Dark", 404, 0, "0")
 ;
 
 INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
@@ -4504,11 +4975,11 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 
 -- Summer Showcase A
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
-		("2018-01-08 14-30-00", 0, "Summer Showcase", 0, 0, "0")
-	,	("2018-01-08 15-30-00", 0, "Summer Showcase", 0, 0, "0")
+		("2018-01-08 14-30-00", 0, "Summer Showcase", 404, 0, "0")
+	,	("2018-01-08 15-30-00", 0, "Summer Showcase", 404, 0, "0")
 	
-	,	("2018-01-15 14-30-00", 0, "Summer Showcase", 0, 0, "0")
-	,	("2018-01-15 15-30-00", 0, "Summer Showcase", 0, 0, "0")
+	,	("2018-01-15 14-30-00", 0, "Summer Showcase", 404, 0, "0")
+	,	("2018-01-15 15-30-00", 0, "Summer Showcase", 404, 0, "0")
 ;
 
 INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES	
@@ -4521,17 +4992,17 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 
 -- Summer B
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
-		("2018-01-26 11-30-00", 0, "Summer Sessions", 0, 0, "0")
-	,	("2018-02-02 11-30-00", 0, "Summer Sessions", 0, 0, "0")
-	,	("2018-02-09 11-30-00", 0, "Summer Sessions", 0, 0, "0")
+		("2018-01-26 11-30-00", 0, "Summer Sessions", 404, 0, "0")
+	,	("2018-02-02 11-30-00", 0, "Summer Sessions", 404, 0, "0")
+	,	("2018-02-09 11-30-00", 0, "Summer Sessions", 404, 0, "0")
 	
-	,	("2018-01-26 16-30-00", 0, "Summer Sessions", 0, 0, "0")
-	,	("2018-02-02 16-30-00", 0, "Summer Sessions", 0, 0, "0")
-	,	("2018-02-09 16-30-00", 0, "Summer Sessions", 0, 0, "0")
+	,	("2018-01-26 16-30-00", 0, "Summer Sessions", 404, 0, "0")
+	,	("2018-02-02 16-30-00", 0, "Summer Sessions", 404, 0, "0")
+	,	("2018-02-09 16-30-00", 0, "Summer Sessions", 404, 0, "0")
 	
-	,	("2018-01-26 19-30-00", 0, "Summer After Dark", 0, 0, "0")
-	,	("2018-02-02 19-30-00", 0, "Summer After Dark", 0, 0, "0")
-	,	("2018-02-09 19-30-00", 0, "Summer After Dark", 0, 0, "0")
+	,	("2018-01-26 19-30-00", 0, "Summer After Dark", 404, 0, "0")
+	,	("2018-02-02 19-30-00", 0, "Summer After Dark", 404, 0, "0")
+	,	("2018-02-09 19-30-00", 0, "Summer After Dark", 404, 0, "0")
 ;
 
 INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
@@ -4550,22 +5021,22 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 
 -- Summer Showcase B
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
-		("2018-01-22 14-30-00", 0, "Summer Showcase", 0, 0, "0")
-	,	("2018-01-22 15-30-00", 0, "Summer Showcase", 0, 0, "0")
+		("2018-01-22 14-30-00", 0, "Summer Showcase", 404, 0, "0")
+	,	("2018-01-22 15-30-00", 0, "Summer Showcase", 404, 0, "0")
 	
-	,	("2018-01-29 14-30-00", 0, "Summer Showcase", 0, 0, "0")
-	,	("2018-01-29 15-30-00", 0, "Summer Showcase", 0, 0, "0")
+	,	("2018-01-29 14-30-00", 0, "Summer Showcase", 404, 0, "0")
+	,	("2018-01-29 15-30-00", 0, "Summer Showcase", 404, 0, "0")
 	
-	,	("2018-02-05 14-30-00", 0, "Summer Showcase", 0, 0, "0")
-	,	("2018-02-05 15-30-00", 0, "Summer Showcase", 0, 0, "0")
+	,	("2018-02-05 14-30-00", 0, "Summer Showcase", 404, 0, "0")
+	,	("2018-02-05 15-30-00", 0, "Summer Showcase", 404, 0, "0")
 ;
 	
 INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
 		("2018-01-22 14-30-00", "Shimoneta: A Boring World Where the Concept of Dirty Jokes Doesn't Exist", 3, 1)
 	,	("2018-01-22 15-30-00", "Battle Girls: Time Paradox", 3, 1)
 
--- 	,	("2018-01-29 14-30-00", "", 3, 1)
--- 	,	("2018-01-29 15-30-00", "", 3, 1)
+	,	("2018-01-29 14-30-00", "Bikini Warriors", 3, 1)
+	,	("2018-01-29 15-30-00", "Samurai Warriors", 3, 1)
 
 -- 	,	("2018-02-05 14-30-00", "", 3, 1)
 -- 	,	("2018-02-05 15-30-00", "", 3, 1)

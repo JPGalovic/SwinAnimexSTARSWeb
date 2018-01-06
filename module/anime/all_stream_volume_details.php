@@ -45,7 +45,10 @@
 							
 								echo('<p>Volume Type: '.$volume_row['VOLUME_TYPE_DESCRIPTION'].'</p>');
 								echo('<p>Volume Number: '.$volume_row['VOLUME_NUMBER'].'</p>');
+							
 								echo('<p>Volume Classification: '.$volume_row['CLASSIFICATION'].'</p>');
+								echo('<img src="image/classification/'.$volume_row['CLASSIFICATION'].'.png" alt="'.$volume_row['CLASSIFICATION'].'" id="classification"/>');
+								
 								echo('<a href="'.$volume_row['PURCHACE_URL'].'"><p>Volume URL: '.$volume_row['PURCHACE_URL'].'</p></a>');
 								echo('<p>Number of Episodes: '.$volume_row['NUMBER_OF_EPISODES'].'</p>');
 

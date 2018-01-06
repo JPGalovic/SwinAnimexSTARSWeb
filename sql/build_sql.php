@@ -28,8 +28,11 @@
 		
 	$madman_anime_data_array = array(
 			'data/anime/madman/a_boring_world_where_the_concept_of_dirty_jokes_dont_exsist_data.sql'
+		,	'data/anime/madman/assassination_classroom_data.sql'
 		,	'data/anime/madman/assassination_classroom_season_2_data.sql'
+		,	'data/anime/madman/battle_girls_time_paradox_data.sql'
 		,	'data/anime/madman/ben-to_data.sql'
+		,	'data/anime/madman/bikini_warriors_data.sql'
 		,	'data/anime/madman/cowboy_bebop_data.sql'
 		,	'data/anime/madman/danganronpa_data.sql'
 		,	'data/anime/madman/deadman_wonderland_data.sql'
@@ -41,6 +44,7 @@
 		,	'data/anime/madman/one_punch_man_data.sql'
 		,	'data/anime/madman/pandora_in_the_crimson_shell_data.sql'
 		,	'data/anime/madman/samurai_jack_data.sql'
+		,	'data/anime/madman/samurai_warriors_data.sql'
 		,	'data/anime/madman/school_live_data.sql'
 		,	'data/anime/madman/three_leaves_three_colors_data.sql'
 		,	'data/anime/madman/vividred_operation_data.sql'

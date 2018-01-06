@@ -65,6 +65,7 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("M - Sexualised imagery and sexual innuendo")
 	,	("M - Supernatural themes and animated violence")
 	,	("M - Violence, sexual references and nudity")
+	,	("M - War themes and animated violence")
 ;
 
 -- Data for MA15+ Classifications
@@ -90,5 +91,10 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("MA15+ - Strong themes, animated violence, sex scenes and nudity")
 	,	("MA15+ - Strong violence")
 	,	("MA15+ - Strong violence, drug use")
+;
+
+-- Data for R18+ Classifications
+INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
+		("R18+ - High impact sexual themes")
 ;
 
