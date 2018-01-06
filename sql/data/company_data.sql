@@ -15,6 +15,6 @@ INSERT INTO COMPANY (COMPANY_NAME, COMPANY_URL, IS_SPONSOR) VALUES
 	,	("Rewardle", "https://patrons.rewardle.com/", TRUE)
 	,	("Grain and Nori", "http://www.grainandnori.com.au/", TRUE)
 	,	("Resistance Bar and Cafe", "https://www.facebook.com/TheResistanceBarandCafe/", TRUE)
-	,	("Glenferrie Crepe Cafe", "https://www.facebook.com/GlenferrieCrepeCafe/", TRUE)
+	,	("Glenferrie Crepe Cafe", "http://www.glenferriecrepecafe.com.au/", TRUE)
 ;
 
