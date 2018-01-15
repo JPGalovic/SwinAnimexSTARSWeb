@@ -1,51 +1,156 @@
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
-		("Title",
-		 n,
-		 "Synopsys",
-		 "Description",
-		 "Company",
-		 "Copyright"
+		("Accel world",
+		 24,
+		 "In the near future our lives will be organised and played out through devices known as Neurolinkers. Utilising it enables access to a virtual reality where there are no limits on an individual, for Harayuki Arita, this is freedom. Neither rich, popular nor particularly attractive, Harayuki spends his time building his ideal self here. He dominates this space until it is cruelly taken away from him from his high school bullies. However salvation is at hand when Kuroyukihime, the school's most popular girl, offers him another chance to escape and become the person he's always wanted to be. Except this offer has a catch and it deals with his life.",
+		 "In the near future our lives will be organised and played out through devices known as Neurolinkers. Utilising it enables access to a virtual reality where there are no limits on an individual, for Harayuki Arita, this is freedom.",
+		 "Hanabee",
+		 ""
 		)
 ;
 
 INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
-		("Title",
-		 n,
-		 m,
-		 "Classification",
-		 x,
-		 "URL"
+		("Accel world",
+		 4,
+		 1,
+		 "M - Animated violence and coarse language",
+		 24,
+		 "https://hanabee.com.au/products/boxset-accel-world-blu-ray"
+		)
+	,	("Accel world",
+		 3,
+		 1,
+		 "M - Animated violence and coarse language",
+		 24,
+		 "https://hanabee.com.au/products/boxset-accel-world"
 		)
 ;
 
 INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
-		("Title",
-		 n,
-		 "Episode_Title",
-		 "Episode_Synopsys"
+		("Accel world",
+		 1,
+		 "Acceleration",
+		 "Haruyuki 'Haru' Arita is a short, overweight boy with low self-esteem due to frequent ridicule by bullies at Umesato Junior High School led by a guy named Araya. To vent his frustration, he resorts to playing squash in the school's virtual world network where he always gets the highest scores. Haruyuki's childhood friend, Chiyuri Kurashima offers to have lunch and suggests that he report the delinquents to the school board, but he rejects her pity, knocking her lunch basket to the ground. Later, on returning to play squash, he discovers that his highest score was beaten by Kuroyukihime, the Student Council Vice-President, who invites him to lunch the following day. Haruyuki meets with Kuroyukihime, who offers to cable with him, shocking the other upperclassmen. She then transfers a program called Brain Burst to him. After it successfully installs, Araya shows up and Kuroyukihime provokes him into punching Haruyuki at which point she shows him how to activate the potential of Brain Burst, virtually accelerating their cognitive processes to the point at which time around them seems to stop. While in the accelerated mode, Kuroyukihime advises Haruyuki to let Araya's punch connect with him, knocking himself at her so that the school's cameras and nearby witnesses will catch Araya violently attacking them, ending Haruyuki's ridicule. Haruyuki complies which ends with Araya and his gang being detained by security. After school, as Haruyuki and Chiyuri head home, they meetup with Takumu Mayuzumi, Haruyuki's other childhood friend, but Haruyuki runs away after thinking that Chiyuri told Takumu about the delinquents. Later that night, Haruyuki has a nightmare of encountering delinquents and Chiyuri and Takumu pitying him which he wishes to fly free from his torment before waking up. Despite being told by Kuroyukihime not to connect to the globalnet, Haruyuki forgets and steps out of his home where he is transported into a war-torn world with a new robotic avatar body."
+		)
+	,	("Accel world",
+		 2,
+		 "Transformation",
+		 "Haruyuki starts to realize Brain Burst is in fact a VRMMO fighting game before he is defeated by another Burst Linker named Ash Roller. At lunch, Kuroyukihime explains to Haruyuki the rules of Brain Burst where Burst Linkers must duel each other in order to obtain Burst Points which can be expended for acceleration powers. She also explains that his Brain Burst avatar, Silver Crow, was created from his subconscious as a result of his inferiority complex. Despite Kuroyukihime offering him to return to his normal life, Haruyuki declines, wishing instead to help her since she helped him with the delinquents. After they log out, Kuroyukihime explains to some curious students about her and Haruyuki's relationship, claiming she confessed to him but he rejected her, much to the students surprise and Haruyuki's horror. After school, armed with new knowledge by Kuroyukihime, Haruyuki enters the Accelerated World to have a rematch with Ash Roller. Performing a surprise attack, Silver Crow runs to the top of a building, hoping to win by timeout since Ash Roller can't climb buildings due to his motorcycle. Although, Ash Roller, had upgraded his motorcycle to climb walls, manages to reach the top and repeatedly overruns Silver Crow. After suffering from his attacks, Silver Crow manages to figure out Ash Roller's weakness; his motorcycle's rear wheel drive. He then lifts the rear wheel off the ground, immobilizing Ash Roller and finishing him off with a headbutt, winning the duel whilst impressing the other spectating Burst Linkers. As Haruyuki logs out, he is congratulated by Kuroyukihome. Just then Chiyuri confronts Kuroyukihime, demanding to know if she is manipulating Haruyuki."
+		)
+	,	("Accel world",
+		 3,
+		 "Investigation",
+		 "Kuroyukihime tells Chiyuri that she is dating Haru and drags him to a cafe. While there, Kuroyukihime explains her dilemma to Haru. Brain Burst was anonymously created seven years ago which allows acceleration only to those who were born with the neuro-linker. Therefore, all Burst Linkers are children age 15 and younger, allowing its existence to be concealed from the public. Kuroyukihime wants to meet the creator to learn the purpose of the program. To do that, she needs to reach level 10, which requires five wins over level 9 Burst Linkers and one defeat results in the permanent uninstallation of Brain Burst. Two years ago, Kuroyukihime was one of the Kings of Pure Color, a group of level 9 Burst Linkers that agreed to not fight each other, but she did not agree to the treaty and beheaded the Red King, causing her to be branded a traitor and leading her to seal away Black Lotus. Since then, she has stayed offline, only logging on to the school's local net with a dummy avatar. Recently, she was challenged to a duel by a Burst Linker named Cyan Pile, which could lead to her identity as Black Lotus being exposed. Thus, she must find Cyan Pile's identity. She suspects Chiyuri, which is why she provoked her, although Haru doubts it knowing that Chiyuri is bad at games. Haru begins the investigation by going to Chiyuri's home under the pretense of apologizing for lunch the other day. The two link up with each other with an extremely short cable and reconcile with each other, with Chiyuri letting Haru know that Takumu was not told about the ridicule. During the conversation, Haru discovers that while Chiyuri is not Cyan Pile, there is a back door connection that could lead to finding its identity."
+		)
+	,	("Accel world",
+		 4,
+		 "Declaration",
+		 "As Haru chooses not to meddle with the backdoor to avoid detection, he finds Kuroyukihime starting to act strangely around him when he mentions how close he had gotten to Chiyuri. When Haru is interviewed by a pair of gossip club students, they hint that Kuroyukihime legitimately likes him, which he refuses to believe. As Kuroyukihime and Haru walk together that day, Haru resigns himself to just being a pawn, prompting a slap from her. Just then, an out of control car (driven by a mad Araya) heads straight towards Haru and Kuroyukihime, prompting them to go into the Accel World. As Kuroyukihime confesses to Haru that she is in love with him, she uses a powerful move called Physical Full Burst, which causes her to lose nearly all of her Burst Points, allowing her to manipulate her body in the Accelerated World to push Haru out of the way of the car, leading to only her being hit. As Kuroyukihime is taken into intensive care, Haru comes to realize that if she was to be attacked by a Burst Linker now, she would be completely vulnerable, and so chooses to stay the night. As the morning comes, Haru spots Takumu coming into the hospital and comes to realize that he is the true Cyan Pile. With just a split second to act, Haru rushes to challenge Takumu to a Brain Burst match before he can challenge Kuroyukihime. "
+		)
+	,	("Accel world",
+		 5,
+		 "Aviation",
+		 "As Haru learns just how horrible of a person Takumu is, he flees from Cyan Pile's attacks, losing one of Silver Crow's arms in the process. Haru initially gets the advantage thanks to his speed, but is soon hit by Takumu's special attack and loses a foot as well. As Takumu vents his anger on how Chiyuri is always thinking about Haru, he hits him with a powerful attack that leaves him with a fraction of health. Haru finds himself in a basement where he finds Kuroyukihime's sleeping avatar, whose beating heart reminds him how strength isn't always about winning. Just then, Haru gains a new power in the form of wings, making him the first flying Brain Burst avatar and allowing him to fly back up and overcome Takumu's attack. In lieu of defeating Takumu, causing him to lose all his points and his Burst Linker status, Haru asks him to become one of his allies and start over. Afterwards, Kuroyukihime appears and decides to reveal her avatar's true form, Black Lotus, announcing her goals to the spectators. Everyone was shocked to see that Black Lotus is still alive. Later, as Haru visits Kuroyukihime in hospital, she tells him her real name (although it's censored)."
+		)
+	,	("Accel world",
+		 6,
+		 "Retribution",
+		 "After Haru and Takumu reveal everything to Chiyuri, who doesn't take it too well, the two begin training to work as a tag team. Haru earns enough points to upgrade to level 2, though in his haste, he upgrades too early and is left with a low amount of Burst Points as a result. Takumu offers to share some of his points with Haru, but he declines, saying it would take all the honor out of fighting. Afterwards, the two go over to Chiyuri's, where they eat ice cream together and explain to Chiyuri about Brain Burst. It is here where Takumu gets the idea to have Haru hire a bodyguard known as Aqua Current to protect him until he gets his points up. As Haru goes through the procedures to hire Current, he inadvertently discovers it is actually a girl. Haru discusses things with Current, and then Aqua Current arranges a battle with two Burst Linkers. Aqua helps Haru to defeat them. Afterwards, Haru gains Burst Points and Aqua erases his memory because he knows her real identity and vows to never meet him again. Takumu goes to the hospital to meet Kuroyukihime, who activates her Burst Link and challenges him to a duel, during which she confronts him, asks him why he left the ken-do club, and why he wants to forcibly uninstall the Brain Burst program. During this, Takumu realizes how much Haru admires him."
+		)
+	,	("Accel world",
+		 7,
+		 "Restoration",
+		 "As Kuroyukihime suddenly challenges Takumu to a match, confronting him about his intention to quit kendo and eventually uninstall Brain Burst, Current agrees to join Haru until he can get his points up to 50 and enters a tag match with him. As Kuroyukihime teaches Takumu to stop feeling guilty and trust his friends more, Haru and Current manage to work together to win their match, getting his points back up to 54. Just then, Current challenges Haru to a match with the intention of taking all his points. As Haru shows he is still willing to believe in her and doesn't fight back, she reveals she was lying, telling him to treasure his friends before erasing his memory of her. The next day, Takumu transfers into Haru and Chiyuri's school wearing glasses, hoping to see the true world with his own eyes. "
+		)
+	,	("Accel world",
+		 8,
+		 "Temptation",
+		 "As Kuroyukihime's team attempts to claim more territories, Haru finds his tactics are becoming easily read by his opponents. He returns home to be greeted by Tomoko Saito, who is allegedly his second cousin who is staying with him while her parents are away. Haru soon deduces that she is in fact a Burst Linker known as Scarlet Rain, revealed by Kuroyukihime to be the Red King. Following a mishap in the bathroom, Tomoko challenges him to a Brain Burst match, proving to be too powerful for him. As Tomoko wins the match, she requests a real life meeting with Kuroyukihime. As Haru discusses the matter with Kuroyukihime, she reveals she had a thing for the previous Red King, Red Rider, whom she had beheaded when she betrayed the other Level 9s. "
+		)
+	,	("Accel world",
+		 9,
+		 "Escalation",
+		 "After discussing with Takumu, Kuroyukihime agrees to meet up with Tomoko, whose real name is Yuniko Kozuki. Yuniko explains how she wishes to borrow Haru's power of flight to destroy the Armor of Catastrophe, an external item that turns Burst Linkers into Chrome Disasters which Kuroyukihime had thought was long destroyed. After Kuroyukihime explains to everyone about how she had fought the last Burst Linker who was possessed by the armor, Yuniko reveals that the current Chrome Disaster is from her own legion, explaining how she needs Haru's flight to get close enough to use an ability to instantly defeat him. After agreeing to the terms, Kuroyukihime becomes jealous of Yuniko and decides to spend the night at Haru's home."
+		)
+	,	("Accel world",
+		 10,
+		 "Activation",
+		 "After having another misunderstanding cleared up for her, Chiyuri expresses an interest in becoming a Burst Linker. As Kuroyukihime explains how the ability to give someone a copy of Brain Burst and become their guardian can only be used once, Haru becomes intrigued as to who her guardian was. When asked, Kuroyukihime only replies that it is someone who betrayed her trust, also explaining how a relationship between guardian and protegé is different from others. Later that day, Haru, Kuroyukihime, Takumu and Yuniko gather together and enter the Unlimited Accel World to search for Chrome Disaster. As they make their ways towards them, they are ambushed by a group of Burst Linkers led by the Yellow King, Yellow Radio. "
+		)
+	,	("Accel world",
+		 11,
+		 "Obligation",
+		 "Both Silver Crow and Scarlet Rain realize that Yellow Radio was the one responsible for the fifth Chrome Disaster. He then takes out Black Lotus by displaying a recording of herself beheading Red Rider, the first Red King, demoralizing her enough that she faints. Silver Crow, Scarlet Rain and Cyan Pile are then forced to endure the onslaught from the Yellow Legion. During the battle, Cyan Pile sacrifices himself to buy the others time to escape, however their path is blocked by Yellow Radio's illusory special attack. As the Yellow Legion starts to overwhelm them, Silver Crow manages to wake up Black Lotus by reminding her of her goals. Black Lotus, with Silver Crow's and Scarlet Rain's help then eliminate the remaining members of the Yellow Legion before Black Lotus engages in battle with Yellow Radio, being the first time two level 9 Burst Linkers ever battled in the Accelerated World. Just as they both charge up their special attacks, Yellow Radio is impaled by Chrome Disaster. "
+		)
+	,	("Accel world",
+		 12,
+		 "Absolution",
+		 "As Yellow Radio retreats, Black Lotus and Silver Crow face off against Chrome Disaster. However Scarlet Rain attacks Chrome Disaster even though Black Lotus is within range, incapacitating her. Despite Rain's supposed betrayal, Black Lotus assures Silver Crow that she is simply scared of having bonds within Brain Burst. As Chrome Disaster attempts to escape the Unlimited Field, Silver Crow manages to counterstrike by using the wires that he uses for aerial maneuvering against him, defeating him in the process. Scarlet Rain then delivers the Judgement Blow, removing him from Brain Burst. Afterwards, Scarlet Rain laments how, after Cherry Rook had introduced her to Brain Burst, she became ignorant to his problems after achieving level 9, but Silver Crow is able to assure her that they could still be friends even outside of the Accelerated World. After checking that the Armor of Destruction was completely destroyed the group turns to log out. Silver Crow hears a faint echo but logs out, unaware that a fragment of the armor lynched onto his back. Later, Haruyuki once again finds Yuniko at his apartment, where she explains the reason Cherry Rook was so desperate to become stronger, because he was about to move in the real world and didn't want their bond in Brain Burst to be severed. However, in the end, thanks to Haruyuki's assurance she realizes that there are more VR games that they could play together. "
+		)
+	,	("Accel world",
+		 13,
+		 "Violation",
+		 "Chiyuri gets Takumu to transfer the Brain Burst program to her and both Takumu and Haruyuki are shocked to learn that it successfully installs. The next day as a new school year begins Haruyuki, Chiyuri and Takumu are transferred to the same class. During assembly Haruyuki notices some odd behavior from Kuroyukihime, believing there may be another Burst Linker among the new students. While checking to see if any new Burst Linkers are around, with no such luck, Haruyuki and Takumu help Chiyuri get a grasp of dueling within Brain Burst, learning that she gained the Duel Avatar: Lime Bell, with healing abilities. Haruyuki reports this to Kuroyukihime, who explains that Chiyuri is likely to be sought after since her ability is so rare that only two other healers exists within Brain Burst, one who retired from the game long ago and one of the Six Kings of Color, whom she doesn't name. Kuroyukihime then reveals she is going on a school trip to Okinawa, tasking Haruyuki and the others with defending Nega Nebulus' territory while she is away. Later, as Takumu participates in a kendo tournament, Haruyuki suspects that his opponent, a freshman named Seiji Nomi, is using some sort of acceleration power, but he doesn't appear to be a Burst Linker upon inspection. "
+		)
+	,	("Accel world",
+		 14,
+		 "Arrestation",
+		 "As Haruyuki, Takumu and Chiyuri discuss what exactly Seiji is, Takumu deduces that the ability Seiji used was probably Physical Burst, a command which accelerates the user's consciousness up to 10 times for 3 seconds, enabling a faster reaction time. However, as his name still doesn't show up on the player list, they attempt to obtain proof of Seiji being a Burst Linker just as Kuroyukihime heads off on her school trip. Haruyuki beings trailing Seiji after kendo practice which leads him to the girls' shower room; a trap set by Seiji using visual masking to manipulate Haruyuki's nero-linker's field of digital vision. Chiyuri finds Haruyuki and is forced to hide him. The next day, Haruyuki is confronted by Seiji, who admits to the trap and shows him a video taken from a hidden camera he set up of Haruyuki going into the girls' shower room, blackmailing Haruyuki into transferring him Burst Points whenever he wants them. Chiyuri defends Haruyuki, but Seiji plays his trump card: letting the camera be discovered by the school, thereby implicating Haruyuki should Seiji release the video. As Seiji sadistically threatens Chiyuri, Haruyuki charges at him and they both use Physical Burst with Seiji knocking Haruyuki to the ground by means of a feint attack. Seiji then cables with Haruyuki and initiates a duel with him, revealing his avatar, Dusk Taker. "
+		)
+	,	("Accel world",
+		 15,
+		 "Destruction",
+		 "As Silver Crow and Dusk Taker's duel commences, he is able to deduce that the reason Dusk Taker's level is above his, because he doesn't duel, instead threatening other Burst Linkers. Silver Crow is able to initially dominate the match, however just as Dusk Taker's SP gauge fills completely, he uses his special ability: Demonic Command which he uses to steal Silver Crow's Aviation ability permanently, leaving him completely devastated. Unable to fight back, Silver Crow then loses the match and a portion of his Burst Points. Leaving the Accelerated World, Seiji boasts that he won't return the ability until he graduates. Seiji then proceed reminds Haruyuki and Chiyuri about the power he holds over them, forcing them to keep it a secret from Takumu and Kuroyukihime. As Haruyuki tries to keep what happened a secret from Takumu, their friendship is strained. Eventually Haruyuki falls into depression and becomes uncertain about what to do, even contemplating uninstalling Brain Burst. He then goes to the Green Legion's territory since he must still duel to obtain points and enters another match with Ash Roller. However, feeling useless without his wings Silver Crow loses the will to fight. Taking pity on his lack of motivation, Ash Roller takes Silver Crow to the old Tokyo Tower within the Unlimited Field to meet his parent and Silver Crow's predecessor in terms of aerial ability: Sky Raker."
+		)
+	,	("Accel world",
+		 16,
+		 "Imagination",
+		 "EpisoSky Raker explains to Silver Crow that although he had lost his wings, he may be able to fly if he learns to use the Incarnate System, which allows Burst Linkers access to abilities using their will power alone. Silver Crow then accepts her offer to teach him how to use the system. Later that night, Sky Raker explains how her enhanced jumping ability led to an obsession of possessing true aviation, sending her into madness, by falling out with her friend, Black Lotus, asking the latter to amputate her avatar's legs. As the training begins, Sky Raker tasks Silver Crow with climbing up the Unlimited Field's version of the Tokyo Tower, which proves easy enough in the desert phase. However, a transition changes the field into the Demonic City and the tower turns into impenetrable metal. Silver Crow realizes that he can pierce the metal if he wills himself to, literally bending the nature of Brain Burst's programming code, also taking into consideration what Kuroyukihime told him about his speed. On the 7th day, Silver Crow finally puts his new knowledge to the test and reaches the top of the tower whilst awakening a new piercing ability. The next day, Sky Raker meets with Haruyuki in the real world and transfers her armament, Gale Thruster. Haruyuki then promises to regain his flight using his own power so he can return her armament back to her some day, as well as reassuring her that her bond with Kuroyukihime is not broken. de_Synopsys"
+		)
+	,	("Accel world",
+		 17,
+		 "Fragmentation",
+		 "As Haruyuki contemplates how to go about facing Seiji, he receives a video call from Kuroyukihime, who mentions sending information about Seiji's test scores to Takumu. During gym that day, Takumu challenges Seiji to a duel after deducing that he would accelerate to cheat during a test on the same period. Cyan Pile also reveals he knew about Silver Crow's ability being stolen. Although Cyan Pile initially gains the upper hand, Dusk Taker uses the Incarnate System to give himself powerful melee attacks and overwhelm Cyan Pile, leaving Silver Crow to wonder how he knows about the system. Before Dusk taker can take Cyan Pile's Burst Points, Silver Crow manages to trick him into switching to Battle Royale mode so he can fight against him as well. Utilizing his new knowledge of the Incarnate System Silver Crow manages to surprise and cut off one of his arms. Dusk Taker activates Silver Crow's wings in combination with pyro equipment and attacks Silver Crow also making mention of the group he is part of. Silver Crow then equips the Gale Thruster he received from Sky Raker, enabling him to face Dusk Taker in the air head on and manages to beat him with assistance from Cyan Pile. However, before Silver Crow can finish him off, Lime Bell appears and heals Dusk Taker shocking both Silver Crow and Cyan Pile. "
+		)
+	,	("Accel world",
+		 18,
+		 "Invitation",
+		 "Over in Okinawa, Kuroyukihime is on her school trip with her friend Megumi. As the two go souvenir shopping for each other, Kuroyukihime is suddenly challenged to a duel by two local Burst Linkers, Ruka Asato (Lagoon Dolphin) and Mana Itosu (Coral Merrow) after a fierce battle black lotus (kuroyukihime) wind the battle and she complements them of their fast and swift kicks and says that they need to practice them after that which ask her to meet them in a cafe however black lotus is reluctant to meet them in the real world and in the cafe they ask her to help their master fight against a monster that is plaguing their community within the Accelerated World. The discussion causes Kuroyukihime to lose track of time and forget to buy Megumi a present, which upsets her. Kuroyukihime apologizes to Megumi by telling her that, since discovering Brain Burst seven years ago, she is the one who kept her tied to the real world. The next day, Kuroyukihime enters the Unlimited Field with Ruka and Mana to meet up with their master, who turns out to be an old acquaintance of Black Lotus. "
+		)
+	,	("Accel world",
+		 19,
+		 "Revolution",
+		 "Black Lotus is reunited with Crimson Kingbolt, aka 'Crikin', a Burst Linker who moved from Tokyo to Okinawa after his parents divorced. Just then, they are surprised by the mysterious threat, revealed to be a Burst Linker named Sulfur Pot, who has the power to tame &quot;enemie&quot;. When it is mentioned that Sulfur Pot doesn't appear on the challenge list, Black Lotus realizes that he's from Tokyo, using a backdoor program to dive into Okinawa. As they fight, in the real world, Megumi finds Kuroyukihime, Ruka and Mana's bodies slumbering while linked up. As she reaches to disconnect Kuroyukihime, she sees a vision of her younger self, urging her not to do it. Megumi then spots a spare cable and plugs into the Unlimited Field. Her avatar, Orchid Oracle, causes a landscape transition to the ocean phase and disappears, giving Black Lotus and her allies an advantage against Sulfur Pot. After severing control of his mount, the enemy then devours him. Crimson Kingbolt then gives Black Lotus the enhanced armament that Sulfur Pot used to control the enemy, figuring she may use it one day. As Kuroyukihime departs Okinawa, Ruka and Mana see her off. Crimson Kingbolt then sends her a message informing her that the trail on Sulfur Pot has gone cold. Kuroyukihime can then only wonder about the mysterious faction Sulfur Pot belongs to. It is then revealed that Kuroyukihime did indeed get a present for Megumi, the latter of whom attributes the events of the Unlimited Field as a dream. "
+		)
+	,	("Accel world",
+		 20,
+		 "Domination",
+		 "Having been fully healed by Lime Bell, Dusk Taker makes short work of Cyan Pile after he snaps and charges, defeating him in horrific fashion. As Silver Crow is overcome by rage, a sinister power awakens within him and urges him to destroy Dusk Taker. He then manifests a power similar to Dusk Taker's, though the timer ends the battle before it can escalate any further. Upon returning to the real world, Haruyuki and Takumu confront Chiyuri, who claims she has joined up with Seiji and his &quot;group&quot; of her own will. Believing there is something more to this, Haruyuki tells Takumu about the Incarnate System, suggesting they should find a way for him to learn it before facing Seiji again. As Haruyuki grows fearful of the dark power within him, he calls up Kuroyukihime for a little bit. Later, Haruyuki and Takumu believe they may be able to learn something about the Incarnate System from Yuniko (Scarlet Rain). At school, Haruyuki finds himself under suspicion over the camera found in the girl's shower room and is again socially tormented, with only Sky Raker's words of protecting his friends supporting him, whilst Seiji smirks at his own deviance. "
+		)
+	,	("Accel world",
+		 21,
+		 "Insurrection",
+		 "As they make their way to meet up with Yuniko, Haruyuki explains to Takumu how Seiji had set him up, and dragging Chiyuri along. After hearing about their situation, Yuniko agrees to teach Haruyuki and Takumu about the Incarnate System, explaining the different skills that can be performed with them. Silver Crow demonstrates the ability he achieved via his training with Sky Raker, with Scarlet Rain suggesting he give it a name so he can have easier access to it, thus he dubs it Laser Sword. As the type of skills an avatar can learn depends on the user's personal traumas, Takumu explains how he was bullied in elementary school, which gave rise Cyan Pile's combat ability. As Scarlet Rain begins training Cyan Pile, Haruyuki logs out to learn more about how Seiji masks himself from the matching list. He is then joined by Yuniko's ally, Blood Leopard, who takes him to Akihabara to begin the investigation. They arrive and enter Akihabara's virtual world and proceed to the Akihabara Battle Grounds, a neutral fighting arena for Burst Linkers which is also being plagued by another unlisted Burst Linker called Rust Jigsaw who enters the Dive Cafe where Haruyuki and Blood Leopard's real bodies are. "
+		)
+	,	("Accel world",
+		 22,
+		 "Determination",
+		 "Blood Leopard explains to Silver Crow, the risk of overusing the Incarnate System since the power that it draws out, comes at a high price of causing a Burst Linker to lose their sense of self and give rise to a Chrome Disaster. Despite this, Crow decides to believe in the good of Brain Burst. Leopard then uses Silver Crow as bait to draw out Rust Jigsaw into a duel, where they quickly beat him and return to the real world to hopefully spot his real body. Haruyuki catches a glimpse of him while making a strange swiping gesture but quickly loses him. Later Haruyuki and Takumu plan their next moves with the latter grasping the basic concept of incarnation from Yuniko. The next day, Haruyuki decides to talk to Chiyuri, who begins participating in battles with Dusk Taker, and although he doesn't understand her train of thought, swears to take back what Seiji stole from him. Later, Haruyuki analyzes all the data he has on Seiji (Dusk Taker). Based on the swiping gesture Rust Jigsaw made whilst not wearing a Neuro-Linker Haruyuki deduces that their faction is using illegal Brain Implant Chips which they connect to networks with and only use their Neuro-Linkers just as they enter a duel thus masking them from the matching list. The next day, Haruyuki confronts Seiji with his discovery and they agree on an ultimatum: settling their score with a final duel in the Unlimited Field where the winner claims all of the losers Burst Points. Haruyuki, with Takumu supporting him, determines to end their plight before Kuroyukihime returns. "
+		)
+	,	("Accel world",
+		 23,
+		 "Consolidation",
+		 "As the day of the duel arrives, Chiyuri asks to join Haruyuki and Takumu in the Unlimited Field. Choosing to believe in her, they comply. Silver Crow, Cyan Pile and Lime Bell approach the battle ground, the school's sporting field, where they encounter Dusk Taker and begin the duel using a Sudden Death Duel Card. As the battle begins, a new Burst Linker, Black Vice ambushes them and immobilizes Silver Crow. Taker explains that Vice possess a Deceleration ability via his Brain Implant Chip. Taker then battles Cyan Pile who manifests his incarnation ability, Cyan Blade, and overcomes Taker's Demonic Possession due to Taker already having too many abilities, and slices off an arm. Dusk Taker explains that he was bullied by his older brother who was also his Brain Burst parent, forcing him to obtain points for him. This drove him taking revenge on his brother by repeatedly killing him within the Unlimited Field and stripping him of Brain Burst. Taker then takes Lime Bell hostage and tortures her, explaining that the bonds they have are illusions. This proves too much for Cyan Pile, causing him to lose focus, giving Taker an advantage and cuts off both his arms. As Haruyuki laments on the hopelessness of the situation, he loses the will to fight. But he eventually regains his resolve from his avatar (Silver Crow) and his memory of Kuroyukihime. He manages to overpower Black Vice, at the cost of his metallic armor, and surprises Dusk Taker but instead falls to the ground. Just as all hope seems to truly be lost, Dusk Taker is stopped from finishing off Cyan Pile by Black Lotus, who appears on a level 15 Enemy using the reins obtained from Crimson Kingbolt. As Taker is taken aback by her arrival, Black Vice introduces themselves officially, as being a part of the Acceleration Research Society (which Sulfur Pot was also a part of). Black Lotus then deems them her enemies for trampling on her Legion members and fiercely attacks Black Vice while encouraging Silver Crow to stand and face Dusk Taker once and for all. "
+		)
+	,	("Accel world",
+		 24,
+		 "Reincarnation",
+		 "Realizing that they won't be able to understand each other's ideals, Dusk Taker takes to the skies followed by Silver Crow upon equipping the Gale Thruster. As their aerial battle commences, Crow manages to strike Taker as the Thruster's SP gauge runs out but is able to recharge it quickly using incarnation and deal Taker a powerful strike. At that moment, Lime Bell uses Citron Call, with the wave enveloping both Crow and Taker. In a dramatic turn of events Taker is healed but, the wings return to Silver Crow. As Taker begins to fall, the wings merge with the Gale Thruster enabling Crow unlimited rapid air-speed which he further combines with his Laser Sword to deliver a final devastating blow to Dusk Taker. After the battle, Lime Bell reveals that her ability isn't healing but in fact, Time Reversal, which she used on Dusk Taker to revert him back to the state in which he didn't possess Crow's wings. She also reveals that she only stuck with Taker so that she could level up and wait for the right moment to use her ability. Reduced to nothing more than his torso, Taker begins pleading with the Black Legion and even Black Vice to spare him, or else he would reveal all of their information and the Acceleration Research Legion to the real world. Vice declines to help him and instead retreats, having no grudge against them and that Seiji's Brain Implant Chip would dissolve after Brain Burst is removed, tying up the loose ends. After Silver Crow delivers the final blow, Lime Bell reveals she informed Black Lotus of the events prior to their battle and officially joins Nega Nebulus. Back in the real world, as Kuroyukihime returns, Haruyuki gives her the full story and she tearfully embraces him, worried that she might have lost him and vows to stay by his side. She also clears Haruyuki's name at school whilst Seiji lost all memories pertaining to Brain Burst. After school the group along with Yuniko and Blood Leopard theorize about Brain Burst's effects on a person's memories after it is removed, concluding that they should reach Level 10 and ask its creator directly. Finally Kuroyukihime accompanies Haruyuki as he keeps true to his promise of returning Sky Raker's armament to her. Kuroyukihime tearfully calls out to Raker as she leaves wanting to repair their friendship and they run and embrace each other. At this point, they refer to each other by name, Sky Raker being Fuuko Kurasaki and Kuroyukihime being &quot;Sac-chan&quot;. Haruyuki concludes by saying that no matter what difficulties and changes lie ahead, humans will continue to accelerate forward. "
 		)
 ;
 
 INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
-		("Title", x, y, z)
+		("Accel world", 0, 1, 8)
+	,	("Accel world", 0, 2, 8)
+	,	("Accel world", 0, 3, 8)
 ;
-		
--- General Anime Volume Data
-	,	("Title",
-		 n,
-		 m,
-		 "Classification",
-		 x,
-		 "URL"
-		)
-		
--- General Anime Episode Data
-	,	("Title",
-		 n,
-		 "Episode_Title",
-		 "Episode_Synopsys"
-		)
-		
--- General Anime Session Data
-	,	("Title", x, y, z)
