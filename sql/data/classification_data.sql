@@ -79,6 +79,7 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("MA15+ - Strong sexual innuendo")
 	,	("MA15+ - Strong sexual references and frequent animated nudity")
 	,	("MA15+ - Strong sexual references, animated nudity and violence")
+	,	("MA15+ - Strong sexual themes")
 	,	("MA15+ - Strong sexual themes, frequent animated nudity and sexualised imagery")
 	,	("MA15+ - Strong sexual themes, frequent animated nudity, sex and sexual violence")
 	,	("MA15+ - Strong sexual themes, references and innuendo, sexualised imagery and coarse language")
