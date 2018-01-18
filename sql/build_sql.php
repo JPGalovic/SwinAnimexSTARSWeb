@@ -146,7 +146,6 @@
 		,	'data/anime/siren/welcome_to_irabus_office_data.sql'
 		,	'data/anime/siren/tokyo_magnitude_8_data.sql'
 		,	'data/anime/siren/un-go_data.sql'
-		,	'data/anime/siren/welcome_to_irabus_office_data.sql'
 	);
 
 	$event_data_array = array(
