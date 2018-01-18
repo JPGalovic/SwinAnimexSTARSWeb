@@ -121,7 +121,7 @@
 	//	,	'data/anime/hanabee/akb0048_data.sql'
 	//	,	'data/anime/hanabee/alien_9_data.sql'
 		,	'data/anime/hanabee/beautiful_bones_data.sql'
-		,	'data/anime/hanabee/gataman_crowds_data.sql'
+		,	'data/anime/hanabee/gatchaman_crowds_data.sql'
 		,	'data/anime/hanabee/is_it_wrong_to_pick_up_girls_in_a_dungeon_data.sql'
 	//	,	'data/anime/hanabee/kokoro_connect_data.sql'
 		,	'data/anime/hanabee/little_busters_refrain_data.sql'
