@@ -22,15 +22,63 @@ DROP TABLE IF EXISTS COMPANY;
 CREATE TABLE IF NOT EXISTS COMPANY (
 		COMPANY_NAME			VARCHAR(50)
 	,	COMPANY_URL				VARCHAR(250)
+	,	IS_SPONSOR				BOOLEAN 			NOT NULL
+	,	FREE_MEMBER_BENIFIT		VARCHAR(1000)
+	,	PREMIUM_MEMBER_BENIFIT	VARCHAR(1000)
+	,	REDEMPTION_INSTRUCTIONS	VARCHAR(1000)
 	,	PRIMARY KEY				(COMPANY_NAME)
 );
 
 -- Data for Sponsors
-INSERT INTO COMPANY (COMPANY_NAME, COMPANY_URL) VALUES
-		("Madman", "https://madman.com.au/")
-	,	("AnimeLab", "https://animelab.com")
-	,	("Hanabee", "https://hanabee.com.au/")
-	,	("Siren", "https://sirenvisual.com.au/")
+INSERT INTO COMPANY (COMPANY_NAME, COMPANY_URL, IS_SPONSOR, FREE_MEMBER_BENIFIT, PREMIUM_MEMBER_BENIFIT, REDEMPTION_INSTRUCTIONS) VALUES
+		("Madman",
+		 "https://madman.com.au/",
+		 TRUE,
+		 "Free Members are elegable for special prize packs.",
+		 "Premium Members are elegable for all offered prize packs and upto 20% discount on purchaces made via the club.",
+		 "All competitions can be entered by either attendance, or by spending the required points on the clubs Rewardle Tablet. Purchace Orders are to be submitted to the Club's Treasurer at any event, payment been maid via Eftpos or Credit Card, paid to Swinburne Student Life, All Purchace Orders are processed at the end of the calandar month, only after payment has been made, Goods from Purchace Orders can be collected from the next club Screening Session once package has arrived and been processed.")
+	,	("AnimeLab",
+		 "https://animelab.com",
+		 TRUE,
+		 "Free Members are not eleagible for any benifit.",
+		 "Premium Members are elegable for a discount on purchaces of annual premium membership.",
+		 "Premium Members who have accepted the conditions to recive premium discounts will recive usable codes for purchace.")
+	,	("Hanabee",
+		 "https://hanabee.com.au/",
+		 TRUE,
+		 "Free Members are elegable for special prize packs.",
+		 "Premium Members are elegable for all offered prize packs and a discount on purchaces on the Hanabee website.",
+		 "All competitions can be entered by either attendance, or by spending the required points on the clubs Rewardle Tablet. Premium Members who have accepted the conditions to recive premium discounts will recive usable codes for purchace.")
+	,	("Siren",
+		 "https://sirenvisual.com.au/",
+		 TRUE,
+		 "Free Members are elegable for special prize packs.",
+		 "Premium Members are elegable for all offered prize packs and a discount on purchaces on the Hanabee website.", 
+		 "All competitions can be entered by either attendance, or by spending the required points on the clubs Rewardle Tablet. Premium Members who have accepted the conditions to recive premium discounts will recive usable codes for purchace.")
+	,	("Rewardle",
+		 "https://patrons.rewardle.com/",
+		 TRUE,
+		 NULL,
+		 NULL,
+		 NULL)
+	,	("Grain and Nori",
+		 "http://www.grainandnori.com.au/",
+		 TRUE,
+		 "All Club members are eleigable to recive a free drink with any purchace over $10.",
+		 NULL,
+		 "Show your membership card at time of purchace to claim your benifit")
+	,	("Resistance Bar and Cafe",
+		 "https://www.facebook.com/TheResistanceBarandCafe/",
+		 TRUE,
+		 "All members are eleagble to recive a 5% discount on purchaces.",
+		 NULL,
+		 "Show your membership card at time of purchace to claim your benifit")
+	,	("Glenferrie Crepe Cafe",
+		 "http://www.glenferriecrepecafe.com.au/",
+		 TRUE,
+		 "All members are eleagble to recive a discount on purchaces.",
+		 NULL,
+		 "Show your membership card at time of purchace to claim your benifit")
 ;
 
 -- Table For Classifications
@@ -70,6 +118,7 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 		("M - Adult themes")
 	,	("M - Animated nudity and sexualised imagery")
 	,	("M - Animated science fiction violence")
+	,	("M - Animated violence and coarse language")
 	,	("M - Animated violence and infrequent coarse language")
 	,	("M - Animated violence and sexual references")
 	,	("M - Animated violence and supernatural themes")
@@ -3228,4 +3277,2392 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 		("Beautiful bones", 0, 1, 4)
 	,	("Beautiful bones", 0, 2, 4)
 	,	("Beautiful bones", 0, 3, 4)
+;-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Gatchaman Crowds",
+		 12,
+		 "GALAX is the latest social app to sweep the world by storm. Make friends, play games and help save the world, there isn't anything that GALAX can't do. But this great social app might cause more problems than it solves when people become involved with the CROWDS system, a self-empowering side app to GALAX. Providing ordinary individuals? unprecedented power and led by a half-crazed individual named Katze, who wishes to destroy the world as its creator - trouble is surely afoot. But there's one more line of defence before it all turns to chaos and they're known as Gatchaman. Hidden superheroes with unique powers, they will solve all of our problems.",
+		 "GALAX is the latest social app to sweep the world by storm. Make friends, play games and help save the world, there isn't anything that GALAX can't do. But this great social app might cause more problems than it solves when people become involved with the CROWDS system, a self-empowering side app to GALAX.",
+		 "Hanabee",
+		 "&copy;Tatsunoko Productions"
+		)
 ;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Gatchaman Crowds",
+		 4,
+		 1,
+		 "M - Mature themes and animated violence",
+		 12,
+		 "https://hanabee.com.au/products/gatchaman-crowds-blu-ray"
+		)
+	,	("Gatchaman Crowds",
+		 3,
+		 1,
+		 "M - Mature themes and animated violence",
+		 12,
+		 "https://hanabee.com.au/products/gatchaman-crowds"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Gatchaman Crowds",
+		 1,
+		 "Avant-garde",
+		 "Hajime Ichinose is a rather eccentric schoolgirl who is obsessed with notebooks. One day, she is approached by a mysterious man named JJ who pulls out a journal called a NOTE from her body, declaring her to be the new member of the elusive Gatchaman team. She later follows the words appearing in her NOTE to the mall, where a Gatchaman named Sugane Tachibana manages to defeat an alien that had disguised itself as a human. Later that day, Sugane brings Hajime to the Gatchaman's hideout where she meets the other members, Joe Hibiki, OD, Utsutsu, and their leader, Paiman. Sugane explains that their duty is to protect Earth from a hostile alien race known as the MESS that has been abducting humans. Hajime and Sugane are soon called upon by JJ to fight a MESS at the bus station, during which Hajime transforms for the first time, whilst a mysterious figure watches. "
+		)
+	,	("Gatchaman Crowds",
+		 2,
+		 "Asymmetry",
+		 "Hajime annoys Sugane after she ends up interfering and allowing the MESS to escape. The next day, Hajime moves into a new apartment block where the other Gatchaman live. Later that day, Hajime teaches Sugane about a popular social app called GALAX, which allows users in the vicinity to help each other, and decides to take him to an offline meet-up. Later, as Hajime and Sugane are sent in to fight another MESS, Hajime chooses not to fight it but instead communicate with it, managing to befriend it. Meanwhile, as the mysterious figure causes another accident, someone named Rui revels in the success of the GALAX app whilst wielding their own NOTE. "
+		)
+	,	("Gatchaman Crowds",
+		 3,
+		 "Futurism",
+		 "After Hajime befriended the MESS, which she decided to nickname Messy, there hasn't been any more abduction cases involving the MESS, who had released all the humans they abducted, leading the other Gatchaman to become curious as to whether they were hostile at all. The next day, GALAX users at Hajime and Sugane's school receive word from Rui, under the guise of X, that some spoiled milk has been sent to their school, prompting Hajime and the other students to try to get the word out. With help from Sugane, Hajime manages to warn the other students and shut down the vending machines distributing the milk. Later that day, when a helicopter crash puts some citizens on a gondola at risk, Rui approves the usage of something known as &quot;Crowds&quot; whilst Joe comes across a curious alien capable of assuming a human's form by kissing them. "
+		)
+	,	("Gatchaman Crowds",
+		 4,
+		 "Kitsch",
+		 "The Crowds are revealed to be strange beings controlled by the GALAX users, which help to stabilise the gondola until help arrives. Meanwhile, Joe fights against the strange alien, known as Berg Katze, but is beaten back when Katze uses a NOTE of their own. As Joe relays this to the others, Paiman and OD remain oddly quiet on the matter. Later, Hajime hears from Utsutsu about her power and how it keeps her from touching others. Meanwhile, it is shown Rui gained the Crowds ability from Berg drawing out his NOTE. The next day, Rui is shocked to witness Berg use another human's form to run down and kill several innocent citizens right in front of him. "
+		)
+	,	("Gatchaman Crowds",
+		 5,
+		 "Collaboration",
+		 "As Hajime discusses with Sugane and Paiman about why the Gatchaman are so secretive, Rui speaks with one of his &quot;Hundred&quot;, Umeda, who has his own ideals that Crowds should be used to kill evil politicians and earn the credit, against Rui's vision of a selfless world. Meanwhile, as Hajime and the others join another GALAX offline meeting, they come across a tunnel where the ceiling is collapsed and begin to help the wounded. With the situation being too much for them alone, Rui reluctantly permits the use of Crowds to help evacuate the citizens. When a fire breaks out, Hajime makes the decision to activate her Gatchaman powers. "
+		)
+	,	("Gatchaman Crowds",
+		 6,
+		 "Originality",
+		 "Despite knowing the risk it puts her life in, Utsutsu uses her power to heal the wounded, with Joe lending her his life force as well. Meanwhile, Sugane is at a loss for words when Hajime reveals her identity to Rui, which is captured on camera and broadcast across the city. The next day, as Hajime and Utsusu try to evade the press, she receives an invitation to meet with Rui in exchange for a successful escape with the help from some chosen GALAXers. They soon arrive at a hotel where they meet Rui, later joined by Sugane, who was also invited. Rui states that Gatchaman are unnecessary in the world he is trying to create with GALAX, though Hajime straight out rejects his suggestion to quit being Gatchaman. "
+		)
+	,	("Gatchaman Crowds",
+		 7,
+		 "Abjection",
+		 "Rui decides to face against Katze using the might of Crowds, but becomes overwhelmed when Katze uses their Gatchaman power. As Joe arrives on the scene to fight Katze, Sugane hears from Rui about the power he had received from them. With Joe becoming easily defeated by Katze, Hajime and Utsutsu arrive on the scene with help from Paiman's Gatchaman form, with Hajime questioning Katze before they retreat whilst Utsutsu heals the injured. "
+		)
+	,	("Gatchaman Crowds",
+		 8,
+		 "Genuine",
+		 "Katze copies Rui's form in order to take control of his X program, locking him out of the GALAX network. Meanwhile, Hajime suggests the Gatchaman reveal themselves to the public by holding an event at a kindergarten, where Hajime warns everyone about Katze and asks Rui to come meet them there. As Katze uses Rui's form to meet Umeda and set up a new Neo Hundred for the Crowds, Rui gets to the kindergarten, where he learns from a girl who has her father in a coma that the Crowds users who were defeated by Katze had become hospitalized. "
+		)
+	,	("Gatchaman Crowds",
+		 9,
+		 "Forgery",
+		 "Hajime takes Rui to her apartment, where she cheers him up and Utsutsu heals his wounds. Meanwhile, Katze gives the Crowds program to all the people Rui declined to give it to because they were too dangerous, and have them attack several government buildings along with Umeda. Before going into action, Hajime sets up a 'Gatchannel' live stream, where Rui publicly apologies over the usage of Crowds, urging those that have it to not use it, and Hajime explains that the Gatchaman will confront Katze even if she is still unsure they can win. Inspired by Hajime, Sugane goes to the Gatchaman Cage and tells JJ they do not need his prophesies anymore, and will protect the world on their own. "
+		)
+	,	("Gatchaman Crowds",
+		 10,
+		 "Crowds",
+		 "Hajime encounters Katze on GALAX, who leaves her with a cryptic poem before instructing the Neo Hundred to go after the prime minister, offering a rare Crowds to whoever can take him down. As the Crowds attack Tachikawa, the Gatchaman arrive and make the Crowds visible to normal humans, before working to capture them so that their users won't slip into comas. Joe, having lost confidence in himself, prepares to leave with the evacuees, but receives a message from Sugane, encouraging him to fight again. As the man who assigned as the Neo Hundred's leader, Koichi Umeda, objects to attacks occurring in the city his wife and daughter lives in, he falls into despair when Katze turns on him and posts his personal information on the Internet. "
+		)
+	,	("Gatchaman Crowds",
+		 11,
+		 "Gamification",
+		 "The Gatchaman look back on how Hajime has influenced their lives since joining them. Meanwhile, Rui manages to get reunite with X once more, allowing the Gatchaman and the citizens to receive assistance from the GALAX network. Hajime gets the Prime Minister Sugiyama to broadcast on the Gatchannel, where he shows more of his honest side and requests everyone sign up to GALAX, before he helps with the evacuation efforts. However, Katze suddenly appears in the guise of Sugiyama, luring the citizens to utilize Crowds. "
+		)
+	,	("Gatchaman Crowds",
+		 12,
+		 "Collage",
+		 "Chaos ensues with more citizens using Crowds and fighting against each other as OD calls Katze out to the Gatchaman's hideout for a showdown. As Katze makes their way to meet OD, Hajime talks with them and promises she will not kill them, inviting them on a &quot;date&quot; after everything is settled. Katze and OD fight, and although OD is heavily damaged by Katze, they manage to retrieve Rui's NOTE and deliver it to him. Rui then sends every GALAX user a Crowds app to take part in a &quot;Tachikawa Crowds Game&quot;, setting up various types of games to encourage users to help out the community and defeat the Neo Hundred Crowds. After the situation is dealt with, Hajime gives her mother a call and reassures her that no matter what happens she will always be herself, and then goes to meet with Katze for their &quot;date&quot; showdown. A year later, the use of Crowds has become widespread, and Hajime, now in her third year of high school, makes her way to school while talking with Katze, whose voice comes out from Hajime herself. "
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Gatchaman Crowds", 0, 1, 4)
+	,	("Gatchaman Crowds", 0, 2, 4)
+	,	("Gatchaman Crowds", 0, 3, 4)
+;-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Is it wrong to try to pick up girls in a dungeon",
+		 13,
+		 "It's a tale of adventure in the depths of darkness! Bell Cranel is an adventurer and the lone member to the Goddess Hestia's Familia in the bustling city of Orario. Trying to make ends meet and hoping to strike fortune he delves under the cities labyrinth known as the Dungeon to battle the legions of monsters lurking beneath.",
+		 "It's a tale of adventure in the depths of darkness! Bell Cranel is an adventurer and the lone member to the Goddess Hestia's Familia in the bustling city of Orario.",
+		 "Hanabee",
+		 "&copy; J.C.Staff"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Is it wrong to try to pick up girls in a dungeon",
+		 4,
+		 1,
+		 "MA15+ - Strong animated violence and sexual references",
+		 13,
+		 "https://hanabee.com.au/products/is-it-wrong-to-try-to-pick-up-girls-in-a-dungeon-blu-ray"
+		)
+	,	("Is it wrong to try to pick up girls in a dungeon",
+		 3,
+		 1,
+		 "MA15+ - Strong animated violence and sexual references",
+		 13,
+		 "https://hanabee.com.au/products/is-it-wrong-to-try-to-pick-up-girls-in-a-dungeon"
+		)
+		
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Is it wrong to try to pick up girls in a dungeon",
+		 1,
+		 "Adventurer (Bell Cranel)",
+		 "Gods who created the Universe descended from Heaven to live among humans on the condition they swore to never again use their godly powers. The Gods only remaining power is the Blessing, which they grant to humans to level up their powers (Similar to how characters level up in video games). These humans, known as Familia, become that Gods family. Bell Cranel, the only Familia of the Goddess, Hestia, is almost killed by a Minotaur. He is saved by Ais Wallenstein, Familia of the Goddess Loki, and falls in love with her. Hestia realises he has gained the magical skill Learis Freese, which will raise his level rapidly based on the strength of his feelings as he fights, but decides to keep it secret as it makes him very valuable and other Gods may try to acquire him. The next day, after more adventuring, Bells stats rises dramatically. Bell plans on talking to Ais but he overhears another Familia talking about how he embarrassed himself fighting the Minotaur. Realising how pathetic he must seem compared to Ais he re-enters the dungeon, desperately slaying as many monsters as he can and returns to Hestia in the morning, beaten and bleeding."
+		)
+	,	("Is it wrong to try to pick up girls in a dungeon",
+		 2,
+		 "Monster Festival (Monsterphilia)",
+		 "Hestia continues to keep Learis Freese secret from Bell, passing off his improvement as the result of hard work, and announces she will be gone for several days. Hestia seeks out the God of Smiths, Hephaistos and begs her to forge a weapon for Bell. After hours of grovelling in the Dogeza position Hestia convinces Hephaistos to forge a weapon, on condition Hestia pays for it no matter how many centuries it takes. Hephaistos forge an enchanted Tantō for Bell. Bell is asked by the maids of the Hostess of Fertility Pub to return a purse to Syr, a waitress with a crush on Bell, who got so excited about the festival she forgot it. An unnamed Goddess contacts Loki trying to locate a Familia she intends on acquiring, the description of whom matches Bell perfectly. Hestia locates Bell and insists they go on a romantic date. The unnamed Goddess releases a captured albino gorilla monster, ordering it to capture Bell. It corners Hestia and Bell, who attacks it with his original knife only for it to shatter. Desperate to protect Hestia he locks her on the other side of a metal gate and prepares to fight the gorilla unarmed."
+		)
+	,	("Is it wrong to try to pick up girls in a dungeon",
+		 3,
+		 "The Blade of a God (Hestia Knife)",
+		 "Separating himself from Hestia in order to protect her, Bell confronts a monster in the streets with no chance to win, until Hestia returns with the weapon she ordered for him, the &quot;Hestia Knife&quot; and he makes a comeback. "
+		)
+	,	("Is it wrong to try to pick up girls in a dungeon",
+		 4,
+		 "The Weak (Supporter)",
+		 "After Eina took Bell to the city so Bell can get some new armor, Bell meets a supporter, Liliruca Arde, who offers herself to be his partner, unaware of her true intentions."
+		)
+	,	("Is it wrong to try to pick up girls in a dungeon",
+		 5,
+		 "Magic Book (Grimoire)",
+		 "Bell comes across a magic book that grants him a powerful, new spell and collapses while testing it out in the dungeon, just to be rescued by Ais again. Meanwhile, Liliruca decides that the time to end her partnership with Bell is at hand."
+		)
+	,	("Is it wrong to try to pick up girls in a dungeon",
+		 6,
+		 "Reason (Liliruca Arde)",
+		 "Liliruca sets a trap for Bell, stealing his knife in the occasion. However, she is captured and left for dead by a group of thugs, and despite her betrayal, Bell arrives in the nick of time to protect her. "
+		)
+	,	("Is it wrong to try to pick up girls in a dungeon",
+		 7,
+		 "Sword Princess (Ais Wallenstein)",
+		 "Now with Liliruca as his partner for good, Bell finally has a proper meeting with Ais and starts training under her, much to Hestia's jealousy when she finds out."
+		)
+	,	("Is it wrong to try to pick up girls in a dungeon",
+		 8,
+		 "Wanting To Be A Hero (Argonaut)",
+		 "After finishing his training with Ais, Bell is attacked by a powerful minotaur but instead of running away, he decides to confront the beast by himself in order to buy time for Lily to get away. Ais arrived later to help him but was refused by Bell who wishes to become stronger."
+		)
+	,	("Is it wrong to try to pick up girls in a dungeon",
+		 9,
+		 "Blacksmith (Welf Crozzo)",
+		 "Bell's victory against the Minotaur earns him quite the reputation among the other adventures for being the quickest adventurer who gets to level 2 overtaking Ais Wallenstein's record. He later befriends Welf Crozzo, a young blacksmith who is also a level 2 adventurer who wishes to join his party. "
+		)
+	,	("Is it wrong to try to pick up girls in a dungeon",
+		 10,
+		 "Procession of Monsters (Pass Parade)",
+		 "Just when Bell's new party start exploring the intermediate floors of the dungeon, they was forced into a dire situation when a party used them as decoy to escape from monster train. Ended up missing, Hestia assembles a rescue party to search for them. "
+		)
+	,	("Is it wrong to try to pick up girls in a dungeon",
+		 11,
+		 "Labyrinth Utopia (Under Resort)",
+		 "With their last ounces of strength, Bell and friends reach the safe area in the eighteenth floor, where they are rescued and treated by Ais and her guild, who are returning to the surface after finishing their expedition. Hestia arrives later and reunite with him. "
+		)
+	,	("Is it wrong to try to pick up girls in a dungeon",
+		 12,
+		 "Malice (Show)",
+		 "Bell and the others prepare themselves to return to the surface when a group of rogue adventurers, envious of Bell's fame, kidnap Hestia in order to set a trap for him. "
+		)
+	,	("Is it wrong to try to pick up girls in a dungeon",
+		 13,
+		 "The Story of a Familia (Familia Myth)",
+		 "A powerful monster appears in the 18th floor without warning, leading Bell and the other adventurers to fight for their lives against it."
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Is it wrong to try to pick up girls in a dungeon", 0, 1, 4)
+	,	("Is it wrong to try to pick up girls in a dungeon", 0, 2, 4)
+	,	("Is it wrong to try to pick up girls in a dungeon", 0, 3, 5)
+;-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Little Busters Refrain",
+		 13,
+		 "On the back of their first baseball game, the Little Busters team is closer than ever. But amongst the celebration, Riki can't help but notice a strong sense of D&eacute;j&agrave; vu over everything that has happened. As the oddities of the world continue to unfold, the answers to Riki's questions appear to lie in the hands of a cat. Can Riki and Rin muster enough courage to fulfill the mission given to them and confront the truth of their reality that has been in front of them all along?",
+		 "On the back of their first baseball game, the Little Busters team is closer than ever. But amongst the celebration, Riki can't help but notice a strong sense of D&eacute;j&agrave; vu over everything that has happened.",
+		 "Hanabee",
+		 "&copy;Yoshinobu Yamakawa, Michiru Shimada / J.C.Staff"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Little Busters Refrain",
+		 4,
+		 1,
+		 "M - Mature themes, sexual references and coarse language",
+		 13,
+		 "https://hanabee.com.au/products/little-busters-refrain-blu-ray"
+		)
+    ,	("Little Busters Refrain",
+		 3,
+		 1,
+		 "M - Mature themes, sexual references and coarse language",
+		 13,
+		 "https://hanabee.com.au/products/little-busters-refrain"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Little Busters Refrain",
+		 1,
+		 "It Struck Without Warning",
+		 "Following the loss of their first baseball game, the Little Busters have a pancake party. While returning from the party, Yuiko overhears some girls badmouthing her, claiming that they will pay her back for being humiliated in the past. Some time later, Riki and the others learn that someone had filled Kudryavka's bag with thumbtacks and destroyed Komari's notes. Suspicious of a girl who was overhearing them, Riki follows her and finds the same girls Yuiko had noticed the other day in a classroom, figuring that they are the culprits. Despite being confronted by Riki, the girls claim that there is nothing he can without any evidence of what they did, until Yuiko appears and plays a recorded conversation between them that proves their involvement. Despite that, the girls refuse to give up and claim that they will keep tormenting Yuiko's friends until Yuiko destroys the room's door with a single kick and threatens to do the same with their faces, forcing them to give up. When a teacher arrives and discovers the damage, Kyousuke and the other boys cover for Yuiko and Riki as they escape by themselves to the broadcast room. The room seems familiar to Riki despite never having been there before and with his memories confused, he suffers another attack of narcolepsy and collapses. "
+		)
+	,	("Little Busters Refrain",
+		 2,
+		 "It Was Also Raining at That Time",
+		 "After waking up, Riki learns from Yuiko that she was taking care of him while he was asleep and cannot shake the suspicion that the whole situation has happened with them in the past. Some time later, Kyousuke and the other boys point out that Riki is behaving strangely since his last encounter with Yuiko. Believing that he has fallen in love with her, they decide to have him lure the girls to the school building as they prepare a fireworks show for them, with instructions to find a way to get alone with Yuiko to set up the mood for his &quot;confession&quot;. Wondering if he is actually in love with someone, Riki does as they say, but ends up alone with Yuiko by accident when the fireworks begin. The following day, Riki realizes that the same events of the previous day are being repeated as the date is also the same, June 20. "
+		)
+	,	("Little Busters Refrain",
+		 3,
+		 "I Always Wanted to Stay Here",
+		 "The day of June 20 keeps repeating without anyone taking heed of it, except for Riki himself, and no one else seems to find it strange even when it starts snowing. Riki decides to look for Kyousuke to ask for his advice but he is nowhere to be found. However, Riki learns that Yuiko is the only other person who knows the truth and she claims that it all is her fault. Her wish for staying with the Little Busters forever had been granted in the form of a dream, and she tells Riki that she only knew what happiness was after meeting Riki and his friends. Yuiko tells him that things will return to normal when he wakes up from the dream, but Riki will forget everything that happened. Before bidding farewell, Yuiko warns Riki to take care of Rin, as the &quot;fated day&quot; is at hand. "
+		)
+	,	("Little Busters Refrain",
+		 4,
+		 "Riki and Rin",
+		 "While thinking about what Yuiko said to him, Riki is approached by a girl who confesses her feelings for him, but claims that she knows he already likes someone else and flees. Wondering what she meant, Rin's image come to Riki's mind, and upon learning what happened, Kyousuke reveals that a third-year student had also confessed to Rin, but he helped her decline him. Later that day, Rin asks Riki to help her buy some cat food and on the way back, she suggests they start dating and Riki agrees after confirming that she likes him. Riki has trouble trying tell Kyouske about it the next day, but Kyousuke claims that he already knew about it. Riki and Rin later tell the rest of the Little Busters, who congratulate them, but Riki chases after Rin after she runs away embarrassed. The white cat Lennon brings them another mysterious letter telling them that they have one final task to do before &quot;learning the truth of the world&quot;, which is to &quot;volunteer themselves during homeroom&quot;. "
+		)
+	,	("Little Busters Refrain",
+		 5,
+		 "The Final Task",
+		 "Members of the Prefectural Assembly are expected to make an inspection of the school and realizing that it is part of the &quot;final task&quot;, Riki and Rin volunteer themselves to guide them around. Despite Rin's shy demeanor, she manages to guide the visitors properly and they later invite her to take part in a student exchange program to help the students of another school overcome a tragedy that claimed the lives of some of their classmates. Riki at first asks Rin to decline their invitation, but he later realizes that this could be an important experience for her to grow as a person. However, when Riki tries to encourage her to take part in the program, she gets angry at him and ultimately accepts the invitation. On the eve of Rin's departure, Riki realizes that all the tasks they received helped her to mature and improve her confidence. He concludes that it was all a part of Kyousuke's plans, including inviting Komari and the other girls to become part of their group. His suspicions are confirmed when Riki finds Lennon with Kyousuke and then he confronts him about the &quot;truth of the world&quot; he mentioned in his letters. However, before getting some answers, they are forced to run away after being caught outdoors during curfew and when Riki trips over, Kyousuke disappears in front of him. "
+		)
+	,	("Little Busters Refrain",
+		 6,
+		 "At the End of the Escape",
+		 "After Riki and the others watch Rin leave the school without a word, Riki is then left with the impression that Kyousuke sent her away and that he is trying to break apart the Little Busters. Riki continues getting text messages from Rin saying that she does not know what to do at the school, and all he can do is tell her to &quot;hang in there&quot;. Concerned for Rin being isolated, Riki decides to go after her, but he is stopped by Kyousuke, who makes a deal that he will bring her back for weekends only. When Rin come back the following weekend, she is depressed and stays in bed. Riki goes to Kengo for advice, who tells him he has to fight Kyousuke to keep Rin from going back to the school. Kyousuke agrees to settle it over a baseball game with Masato as his partner, but Riki and Kengo ultimately fail. Kengo claims that Kyousuke rigged the game and punches him before being restrained by Riki and Masato. The next morning, Riki tells Rin that they are running away together. They travel to a house in the country where they played as kids, but they are eventually discovered by the police who raid the house. "
+		)
+	,	("Little Busters Refrain",
+		 7,
+		 "May 13",
+		 "Riki awakens several months before, with no memories about what happened during that time. Riki goes to stop Masato from fighting Kengo, but neither of them listen to him and Kyousuke is nowhere to be found. The result of the fight leads to Kengo fracturing his right arm, putting him out of commission for kendo practice; Kengo asks Riki to think of something fun all of them could do together. Rin is now afraid of everyone but Riki, who routinely drops her off at a local elementary school during the day. Meanwhile, Kyousuke is depressed and stays cooped up in his room reading manga. Initially unsuccessful to find something Rin enjoys to do, he eventually discovers her affinity for playing catch. Riki tries to invite Kyousuke to join in, but he refuses. Riki also invites Masato and Kengo to play a baseball game, but Kengo angrily refuses to participate, and Masato leaves shortly thereafter. Knowing the others are hiding something from him and Rin, Riki resolves to become a leader like Kyousuke and reform the Little Busters. "
+		)
+	,	("Little Busters Refrain",
+		 8,
+		 "Proof of the Strongest",
+		 "Determined to reform the Little Busters, Riki attempts to invite Masato, who refuses, claiming that what only matters to him is to &quot;become the strongest&quot;. Soon after, Riki and Rin hear news of Masato attacking other students and devise a trap to stop him. However, the trap fails to restrain him fully and he starts pursuing them. After setting another trap with Rin's help, Riki manages to wear down Masato to the point of being able to defeat him barehanded. The knocked down Masato then reminisces that before meeting Kyousuke, he used to be treated as a fool by his peers until he trained his body enough to beat down whoever insulted him. This resulted in him becoming isolated because of it, until Kyousuke appeared and defeated him by also using traps, leading to them becoming friends. Masato began his rampage at school because he suddenly started seeing everyone else as a copy of himself and believed that he could only distinguish himself from the others by becoming the strongest of them all. After renewing his friendship with Masato, Riki realizes that he must eventually confront Kyousuke as well for his and his friends' sake, while a serious Kengo watches over him from afar. "
+		)
+	,	("Little Busters Refrain",
+		 9,
+		 "A Friend's Tears",
+		 "Riki's next step to reassemble his friends is to convince Kengo to join their side, but Kengo refuses to listen to him, claiming that all Riki and Rin need to do is to rely on their friends. Riki visits Kyousuke, who hints that Kengo is lying about something and Riki realizes that Kengo's arm is not injured as he claims. Rin learns from Masato that Kengo originally joined the Little Busters after Kyousuke defeated his father in a kendo match. This leads Riki to challenge Kengo to a baseball match instead, with the first one to strike a home run being the winner and Kengo rejoining the Little Busters should he lose. After several attempts, Riki manages to land a home run but is too exhausted to throw the ball, so Rin takes his place. Rin's throws are fast but with initially no control, and when she manages to throw the ball properly, she succeeds in having Kengo strikeout, winning the match. Kengo rejoins the Little Busters, determined to follow Riki as long as he can. "
+		)
+	,	("Little Busters Refrain",
+		 10,
+		 "And So I'll Do It Over Again",
+		 "Having assembled the rest of the original Little Busters, Riki intends to save Kyousuke from despair the same way he did for him when his parents died. Meanwhile, Kyousuke reminisces that in fact the world they are living in was created by his spirit with the purpose of preparing both Riki and Rin to live without him and the others, as all of them except the pair apparently died during an accident. Since then, Kyousuke created an alternate timeline that was always reset when Riki or Rin had fallen into despair. However, Kyousuke's power to maintain this realm is waning, leading to the strange events occurring in the previous loop, and the departure of the other girls. When Riki and Rin ran away after the latter broke down from being separated from the others, Kyousuke was losing his faith, until Riki managed to establish himself as the leader, and once reunited with his friends, Kyousuke claims that the time for him and the others to bid farewell to Riki and Rin has come. "
+		)
+	,	("Little Busters Refrain",
+		 11,
+		 "The End of the World",
+		 "After having the Little Busters once again reunited, Riki suggests for them to play baseball, and the others accept. During the match, Kyousuke reveals to Riki that the world they are currently in was created by him and the others after a bus accident killed all students aboard except for Riki and Rin. Kyousuke explains that this world was meant to prepare them to move forward with their lives, so Kyousuke and the others gave the duo a series of trials to have them mature and become stronger. After Masato and Kengo bid their farewells, Kyousuke tearfully instructs Riki to take Rin past the school gates back to the real world, as the time for them to part has come. As Riki and Rin get past the gates, Kyousuke has one last tour around the school before sitting at his desk and disappearing along with the world he created. "
+		)
+	,	("Little Busters Refrain",
+		 12,
+		 "A Single Request",
+		 "Riki and Rin awaken in the real world and recall that during their field trip, their bus got into an accident and Masato and Kengo used their own bodies to protect them. Despite being injured, they flee from the site of the accident to avoid being caught in the impending explosion, but after reaching a safe distance, Riki leaves Rin behind to return and attempt to help the others. However, he starts suffering another attack of narcolepsy and struggles to keep himself awake. Meanwhile, Rin has a meeting with Komari and the other girls in spirit and wishing to not part ways with them, she decides to look for a way to save them as well. "
+		)
+	,	("Little Busters Refrain",
+		 13,
+		 "Little Busters",
+		 "Having another attack of narcolepsy, Riki realizes that he always falls asleep at the sight of unpleasant situations, since he saw his parents' dead bodies in a car accident when he was a child, and determined to overcome this weakness, he awakens with Rin's help. Knowing that the bus will explode, Riki and Rin start rescuing the other students from the wreckage only to discover that Kyousuke is using his own body to prevent the gas from leaking further, leaving the duo no other option but to pick him up after carrying all the others to safety. The bus explodes just after Riki and Rin return to rescue Kyousuke, but the incident ends with no deaths. Three months later, all of the students have returned from the hospital except Kyousuke, who is still in a coma, and the other Little Busters spend their days together, waiting for him to return. Once Kyousuke finally returns, the Little Busters have their own, private field trip to the beach together. "
+		)
+		
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Little Busters Refrain", 0, 1, 4)
+	,	("Little Busters Refrain", 0, 2, 4)
+	,	("Little Busters Refrain", 0, 3, 5)
+;
+
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Monster musume - Everyday life with monster girls",
+		 12,
+		 "No one expected the government to suddenly acknowledge the existence of demi-human species like harpies and centaurs, but when a careless Integration Agent shows up on Kimihito Kurusu's doorstep with an attractive Lamia in tow, he suddenly finds himself designated as a &quot;Host Family&quot;. This might not be so bad, except that while Miia's top half is all girl and quickly develops a crush on her new human host, her snakelike bottom half makes that crush literal with a tendency to squeeze the life out of him! Plus, there's also the little problem that it's illegal for humans and non-humans to have THOSE kinds of relationships.",
+		 "No one expected the government to suddenly acknowledge the existence of demi-human species like harpies and centaurs, but when a careless Integration Agent shows up on Kimihito Kurusu's doorstep with an attractive Lamia in tow, he suddenly finds himself designated as a &quot;Host Family&quot;.",
+		 "Hanabee",
+		 "&copy;Lerche"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Monster musume - Everyday life with monster girls",
+		 4,
+		 1,
+		 "MA15+ - Strong sexual themes, sexual innuendo and animated nudity",
+		 12,
+		 "https://hanabee.com.au/products/monster-musume-everyday-life-with-monster-girls-blu-ray"
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 3,
+		 1,
+		 "MA15+ - Strong sexual themes, sexual innuendo and animated nudity",
+		 12,
+		 "https://hanabee.com.au/products/monster-musume-everyday-life-with-monster-girls"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Monster musume - Everyday life with monster girls",
+		 1,
+		 "Everyday Life with a Lamia",
+		 "Kimihito Kurusu wakes up to find Miia crushing him in her sleep. After escaping, he draws a bath for her to warm up and goes to make breakfast. In the kitchen he is surprised by Smith, who has come to make sure he isn't engaging in any prohibited activities with Miia, such as sex. After Smith leaves, Miia tries to seduce him, only to accidentally dislocate his shoulder. The two go on a field trip, including a visit to an all-species lingerie shop. Afterwards, they run into a racist couple who harass Miia, and Kimihito has to jump in the way when she tries to strike them with her tail, to keep her from breaking the law. Trying to escape from a curious crowd, they hide in a love hotel, where they are ambushed by the Interspecies Exchange Security Squad. However, Smith recognizes them and fixes the situation. Leaving the hotel, they encounter the couple, and when they begin harassing Miia again Kimihito punches them. At home, Miia resumes her advances on Kimihito, only for them to be interrupted by Smith. "
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 2,
+		 "Everyday Life with a Harpy and Centaur",
+		 "Kimihito is kidnapped by Papi, who brings him to a park, where he buys her ice cream. Papi then takes a bath in a public fountain, where Miia finds them. With various mishaps, the three work together to save a girl who was stuck in a tree. When a policeman arrives, Kimihito claims to be Papi's host family to keep her from being deported. The officer is skeptical, but Smith arrives with Papi's papers just in time, and tells Kimihito that she was on her way to make the harpy live with him, and Papi (much to her delight) joins the household. While out grocery shopping, Kimihito collides with Centorea. She becomes convinced that Kimihito is her destined master. Encountering a motorcycle-riding purse-snatcher, the two pursue him. They eventually catch him, despite various embarrassing accidents. When the thief tries to attack Centorea with her dropped sword, Kimihito leaps in front of her and takes the blow, but survives due to the sword being a replica. Later, Smith explains that Kimihito riding Centorea could be viewed as akin to rape, since only a centaur's chosen master may ride them. Centorea chooses him as her master, resulting in her joining his household. "
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 3,
+		 "Everyday Life Under Dangerous Circumstances",
+		 "When Papi tries to seduce Kimihito during their bath, Centorea rescues him and they flee to the park where they share a tender moment. They are soon followed and interrupted by Miia and Papi, and the three begin fighting for Kimihito's affection. Smith arrives with a tranquilizer gun to stop them, but accidentally shoots Kimihito instead. When he wakes up at home, the three are apologetic for the harm they have caused him, but he dismisses their worries. Smith then announces that there have been proposed changes to the Interspecies Exchange Bill, and she wants him to marry one of the girls as a test case. That night, Miia arrives in Kimihito's room and tries to seduce him, only to be interrupted by Papi, who crashes through the window. Centorea arrives to rescue Kimihito from Papi and explains that the full moon is to blame their abnormal behavior since it heightens liminal emotions; however, it soon becomes clear that she is also affected. Kimihito realizes that they are not in control of themselves and he is in serious danger of being injured or killed through their amorous advances. Waking up the next morning, none of the three girls remember the events of the previous night. An injured Kimihito announces his plans to begin dating all three of them before collapsing unconscious on the floor. "
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 4,
+		 "Everyday Life with a Slime",
+		 "While waiting for dinner, Miia opens a pot on the stove and is attacked by a slime. Centorea explains that slimes are one of many species as yet unrecognized by human society; the slime then attacks again, and when Centorea's sword has no effect, both she and Kimihito end up covered in slime. When he goes to take a bath, she joins him after being unable to get clean. She conjectures that the slime was attacking them to get water; it then attacks them again in the bath. When Centorea slips and is knocked unconscious, the slime takes the form of a woman and begins imitating Kimihito's washing of Cerea by washing him; due to her body being liquid, however, she absorbs and almost drowns him before he escapes by diluting her in the tub. They debate what to do with her, and Papi (who seems to have immediately taken to the newcomer) reveals that she has named her Suu. The girls point out that she is likely an illegal immigrant; Papi overhears this and, thinking they mean to turn Suu in, flees with her. When Kimihito catches up with them, they meet up with a group of children who often play with Papi (who at such times has sneaked out without Kimihito's knowledge). When one of the children is almost hit by a truck driven by the racist couple from the first episode, Suu saves her but falls off a bridge. Luckily, Kimihito gets under her with the crashed truck before she falls in the water. After that, he decides to let her stay at his house. They go home, only to find Smith there. "
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 5,
+		 "Everyday Life with a Mermaid",
+		 "A construction crew from the Interspecies Exchange Security Squad arrives while the girls are making a plan to hide Suu from Smith. The girls sneak out with Suu, only to realize that they have left Kimihito behind. They are forced to hide when security forces appear, seemingly pursuing them. Each of the three girls somehow get wet, causing them all to be assaulted by a dehydrated Suu. Meanwhile, Kimihito is searching for them when he is hit by a girl in a runaway wheelchair, who introduces herself as Mero. When they arrive at the park, Mero is almost assaulted by Suu, but Kimihito catches her in a plastic bag. Arriving home, they thank Smith for building a room for Suu; however, she reveals that the room is not for Suu but for Mero, who is revealed to be a mermaid. Miia becomes jealous when her accidentally breaking Mero's wheelchair results in Kimihito having to carry the mermaid around the house. She unsuccessfully attempts to enlist Centorea and Papi's help in foiling the mermaid. When Kimihito knocks Mero into the pool to save her from a once-again dehydrated Suu, Miia thinks Mero is making a romantic advance and dives in after them, almost drowning when the cold water makes her sluggish. Later, as Miia and Mero take a bath together, the mermaid reveals that she has no intention of attempting to woo Kimihito away from Miia; all mermaids want to experience a tragic love similar to &quot;The Little Mermaid&quot;. Centorea and Papi overhear this and believe that the two are plotting. "
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 6,
+		 "Everyday Life with Shedding and Egg Laying",
+		 "While trying to learn to cook, Miia accidentally burns her hands on a hot pot. Attempting to console her, Kimihito learns that she is shedding and can't do so properly with her hands bandaged. He agrees to help her shed; however, while attempting to shed the belly of her snake body, he accidentally touches a sensitive spot and she reflexively knocks him unconscious. To apologize, she makes him dinner (which turns out to be inedible due to her not using a cookbook). Later, when Kimihito comes home from shopping, Papi announces that she is going to lay an egg, causing the other girls to leap to conclusions before being told that it is unfertilized. Kasegi then arrives at the house, claiming to be shooting a documentary on interspecies exchange. While touring the house, he causes various incidents, such as filming Mero when her swimsuit slips, groping Centorea when she says she doesn't wear a bra and taking Miia's shed skin. Mero then arrives to announce that Papi is about to lay her egg. While Kasegi is filming Kimihito helping Papi, Suu reads his mind, revealing his true intent of selling the egg and the footage. Kimihito distracts him with a store egg that he pretends is Papi's and uses the opportunity to punch him unconscious. Papi then lays her egg; later, Miia accidentally cooks it after Papi stores it in the refrigerator. At the end of the episode, Kasegi is seen berating an Arachne (whom he is exploiting) for building webs everywhere. She then wraps him up in thread and states that she is interested in his story about Kimihito. "
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 7,
+		 "Everyday Life with MON and an Arachne",
+		 "The Orc Pioneer Foundation performs an armed takeover of a dōjinshi store. After taking human hostages, they demand an increase in the amount of orc-related content appearing in erotic manga titles. Because of gaps in the provisions of the Interspecies Exchange Bill, the police are unable to act. Smith claims that she can resolve the situation. Using their sense of smell, the orcs detect a female agent attempting to infiltrate the building and shoot her. The chief of police admits that he needs Smith's help. Meanwhile, the orcs find another girl hiding inside the store. While they struggle with her, the blinds are ripped from the store windows, allowing long-range sniper Manako to shoot the orcs' guns from a distant rooftop. Tionishia then breaks in to release the hostages. The agent who was shot earlier then reveals herself to be a zombie, Zombina, while the other hostage turns out to be Doppel, a shape-shifter. They subdue and arrest the orcs. Later, MON responds to an emergency call from the wrapped-up Kasegi, but the Arachne escapes. Smith and the girls soon realize that Kimihito has been kidnapped by her. In a deserted warehouse, Kimihito wakes up bound and hanging upside-down. The Arachne introduces herself as Rachnera Arachnera and begins to torment him. She is surprised when he shows no signs of being repelled by her spider lower-half. When Smith, the MON Squad, and the police arrive to arrest her, Kimihito mistakenly thinks they are there to arrest him for assaulting Kasegi, and Rachnera realizes that she likes him. With the situation resolved, Smith (with some subtle prodding from Rachnera) decides to transfer Rachnera into Kimihito's household. "
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 8,
+		 "Everyday Life in Poor Health",
+		 "Rachnera settles in as a member of the Kurusu household; Miia and Cerea however, who don't trust her, are not so enthusiastic as Papi, Suu and Mero. Cerea begins to stick very close to Kimihito, protecting him from potentially embarrassing situations created by Rachnera. When Rachnera tries to seduce Kimihito in his bedroom, Cerea rescues him and flees with him into the city streets. The male from The Couple and his gang begin harassing Kimihito and Cerea but Rachnera makes a timely appearance and rescues the two. She then comes to an understanding with Cerea, and Cerea realizes that Rachnera can be trusted. Later, Kimihito comes down with a bad cold; Ms. Smith immediately puts him in quarantine in his bedroom and orders the other girls to keep away from him, fearing a possible pandemic. She states that she will care for Kimihito (an obvious ploy to ditch her mountain of paperwork), but almost immediately conks out. The girls decide to take matters into their own hands; realizing that Suu (as a Slime) is the only one who can come into contact with Kimihito without becoming sick, Miia, Papi, Cerea and Mero coach her in different ways of taking care of him (each proving more disastrously lewd than the one before). With her telepathic ability, Suu learns that Kimihito caught his cold in a rain storm while out looking for her and then proceeds to use her own lewd method of treatment, which ultimately proves successful. Kimihito recovers completely, but Ms. Smith winds up catching his cold."
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 9,
+		 "Everyday Life with Threatening Letters",
+		 "The girls are shocked when it appears that Kimihito is going on a date with Ms. Smith. Miia, Papi, Cerea, Mero and Suu immediately begin following them, first to a maid cafe (where Mero disguises herself as one of the maids, using Suu as a uniform), then to an arcade (where Papi is disguised as a cosplayer), then to an ice cream truck (where Miia and Cerea impersonate servers), but they fail each time. Finally, Miia follows Kimihito and Ms. Smith to a love hotel, where she meets up with Rachnera (who has been trailing them all along). Rachnera tries to sneak into Ms. Smith and Kimihito's room but is hindered by Miia, causing them to be grabbed by the MON Squad. Ms. Smith explains that Kimihito had received a threatening letter from someone named &quot;D,&quot; and their &quot;date&quot; was actually a ploy to lure the culprit out. Since they failed to do so, Ms. Smith asks all the girls to go on dates with Kimihito. Kimihito's first date is with Miia (with Mero in tow, much to Miia's annoyance); they go to an aquarium where Mero is treated like royalty. Upset that Kimihito seems to be paying more attention to Mero, Miia storms off, only to bump into a reptilian liminal, a Dragonewt named Draco, who takes her out on a boat where he attempts to sexually assault her. Kimihito (with some help from Mero) rescues Miia and inadvertently exposes Draco as actually being a female. While Draco did not write the letter, she is arrested by Ms. Smith for being out without her host family. "
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 10,
+		 "Everyday Life with D",
+		 "Kimihito's second &quot;date&quot; involves an outdoor barbecue (in a wooded area where industrial nutrient waste was once dumped) with Papi and Suu (with Zombina, who is supposed to be shadowing them, freeloading on the cooking meat!). However, the barbecue is interrupted by a giant tree kaiju that seems to know Papi and grabs both her and Kimihito. Papi recognizes her as Kii, a dryad she had once rescued (but completely forgotten about), but Kii (who has been poisoned by the illegally dumped waste) is on a rampage with a grudge against all humans and stomps Zombina into the ground. Suu (who fell into the industrial waste) grows to Godzilla-size and battles Kii to save Kimihito and Papi; she tells them that the only way to stop Kii may be to extract the waste from her body ... which they are forced to do using a very lewd/embarrassing (but for Kii enjoyable!) method. With Kii calmed and restored to her normal size (and cleared from being the mysterious &quot;D&quot; because she can't write), Ms. Smith offers her a new host family, but she decides to remain in the forest, as long as Papi and Suu can visit her. The third &quot;date&quot; is with Cerea, who is going all out to protect Kimihito (including wearing full armor!). Manako, the MON member shadowing this &quot;date&quot; and already completely flustered by Cerea's intensity, is completely blindsided by Lilith, a devil, who looks like a child but is actually an adult and who enjoys pulling pranks on people; Lilith then turns her hypnotic tricks on Cerea, who because of earlier incidents is feeling inadequate as Kimihito's &quot;servant&quot;, but the prank is interrupted by a very large and angry wild boar that attacks her. Kimihito manages to distract it and Cerea subdues it, and Kimihito reassures Cerea that he trusts her and has done so from the beginning. Cerea's confidence is restored and she is put in charge of salad-making, but Lilith, who tried her tricks on Rachnera (who had been secretly keeping an eye on Kimihito and Cerea), is caught and severely &quot;punished&quot; by the Arachne, who learns that Lilith is not &quot;D&quot; either"
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 11,
+		 "Everyday Life with Dullahan",
+		 "Frustrated because of their repeated failure to uncover the mysterious &quot;D&quot;, who has sent a second and more threatening letter, the MON members (minus Doppel, who isn't interested) decide to take matters into their own hands and have Kimihito date each and ALL of them in one day! First, Tionishia nearly kills Kimihito by dragging him (literally!) off to different shops, including a dress shop where even the largest size proves too small for her, but Kimihito's revealing that he can expertly alter normal clothing to fit liminals wins her over. Next, Zombina drags Kimihito off to a zombie film; later, when her hand comes off and he uses his sewing skills to reattach it, she is impressed (as well as by his seeing her as a girl and a person rather than a &quot;monster&quot;) but in order to tease him deliberately detaches a breast and gets him to sew it back on as well! The last &quot;date&quot; is with a very self-conscious Manako, who becomes flustered by his being able to look her straight in the eye. The &quot;date&quot; is interrupted by Manako spotting a shadowy figure following them, and all three MON girls team up to apprehend the stalker, who is indeed &quot;D&quot; but revealed to be Doppel, who sent the first letter as a joke ... but not the second, as Kimihito finds out when a scythe is pressed against his throat by a mysterious girl with purple skin and dressed in black! Later that evening, the girls are shocked when Kimihito brings home a headless girl, totally freaking Miia out! Kimihito, Cerea, Papi, Mero and a very reluctant Miia search the nearby park where the head rolled into; the head is eventually located and actually talks to Kimihito, admitting that she sent the second letter and asking him to restore her to her body! The conversation is interrupted by the jumpy police officer, who totally freaks out upon seeing Kimihito holding the head! Thanks to some unexpected and unintentional help from Papi, the gang gets away and returns home with the head. Once she and her head are restored to each other, the girl reveals herself as a dullahan, a reaper of souls, and that she has come to claim a member of the household who &quot;is on the verge of death&quot; ... Kimihito! "
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 12,
+		 "Everyday Life with Monster Girls",
+		 "To prevent the dullahan from collecting Kimihito's soul, the girls decide to take him away from her as far as possible, but (as usual) their attempts only cause him more injures. Rachnera appears with the dullahan, claiming that if she is really a reaper of souls, then there is nothing they can do to prevent Kimihito's death. When Miia decides to die along with Kimihito, claiming that she cannot bear losing him, Kimihito decides to stop running away and face his imminent death, but to everybody's surprise nothing happens. Back at home, Kimihito and the girls discover from Ms. Smith that the dullahan's name is Lala and she isn't a real reaper of souls at all, having run away from several host families where she previously lived (because no one there was dying). Ms. Smith lets Lala live with Kimihito and the others by her request. When questioned about how he saw through Lala's lies, Kimihito answers that he simply realized that she has a late case of eighth grade syndrome (a quick flashback shows that he had the same thing when he was younger). Some time later, Kimihito realizes that due to the massive food bill caused by his liminal guests he is in major financial trouble and, after Miia's latest attempt at cooking ends up a total disaster, there is no more food in the house. He then sets out grocery-shopping with Cerea, Papi, Mero and Suu, and the monster girls' sympathy with the local vendors earn them plenty of merchandise with special discounts. To obtain some extra vegetables, Kimihito and Suu visit Kii, who guides them to an area with edible plants, and Kimihito learns that Suu has the ability to differentiate between fit-for-consumption ones and poisonous ones by tasting them. On the way back home, Kimihito is attacked by Draco, but Suu defends him with the poison she absorbed from the plant tasting. Once home, Kimihito prepares dinner for the girls, but Ms. Smith and the girls from MON suddenly appear to dine with them as well, completely wiping out the house's food supply once again. Kimihito is in despair, but Smith explains that the Interspecies Program will reimburse him for all the girls' food expenses ... something she hadn't told him before, to his chagrin."
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Monster musume - Everyday life with monster girls", 0, 1, 4)
+	,	("Monster musume - Everyday life with monster girls", 0, 2, 4)
+	,	("Monster musume - Everyday life with monster girls", 0, 3, 4)
+;-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Muv-Luv Alternative Total Eclipse",
+		 24,
+		 "Having fought with a hostile alien race known as BETA since 1967 humanity is at their last line of defence known as a Tactical Surface Fighter. For two pilots – Yui Takamura of the Imperial Royal Guards of Japan and Yuuya Bridges of the US Army – are about to be apart of Project Prominence, a last ditch effort to overcome these vicious creatures.",
+		 "Having fought with a hostile alien race known as BETA since 1967 humanity is at their last line of defence known as a Tactical Surface Fighter.",
+		 "hanabee",
+		 ""
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Muv-Luv Alternative Total Eclipse",
+		 4,
+		 1,
+		 "MA15+ - Strong animated violence and nudity",
+		 24,
+		 "https://hanabee.com.au/products/boxset-muv-luv-total-eclipse-blu-ray"
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 3,
+		 1,
+		 "MA15+ - Strong animated violence and nudity",
+		 24,
+		 "https://hanabee.com.au/products/boxset-muv-luv-total-eclipse"
+		)
+		
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Muv-Luv Alternative Total Eclipse",
+		 1,
+		 "The Imperial Capital Burns - Part One",
+		 "In 1967, humanity discovers a hostile alien race called the BETA on the Moon. Despite their attempts to stop them, the BETA makes landfall on Earth in 1973, which leads to a long, grueling 30-year war where the BETA conquers half the Eurasian continent while humanity can only stall them. In 1998, Yui Takamura is a student of the Kyoto Royal Guard Academy where she studies to become an Imperial Guard TSF pilot along with her friends Aki Iwami, Izumi Noto, Shimako Kai and her rival turn friend Kazusa Yamashiro. As the Asian front lines turn dire, Yui's uncle Eiji Iwaya meets with Yuuhi Koubuin of the Shogunate family over a new weapon that might help turn the tide against the BETA. As Yui and her friends improve themselves in TSF combat training, the Korea peninsula is overrun by the BETA. As the Korean front falls and the BETA invades the Japanese isles, Yui and her fellow cadets are ordered to assist the Japanese army in defending the capital of Kyoto. "
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 2,
+		 "The Imperial Capital Burns - Part Two",
+		 "Despite help by the US Navy, the Japanese forces cannot stop the BETAs due to their numbers, forcing the military to perform scorched earth tactics on Kyoto to destroy them. When their supply base has been overrun by the BETA, Yui's unit are ordered to retreat but her teammates are killed one by one including her friends; Aki is smashed by a Destroyer-Class BETA, Shinmako is shot down by a Laser-Class BETA, Izumi and Kazusa TSFs crash where they are eaten by Soldier-Class BETAs. As Yui is about to suffer the same fate as Kazusa and Izumi, she is rescued by a Takemikazuchi TSF who easily kills the BETAs before she falls unconscious. Yui later awakes, upon learning Kyoto fell and many lives were lost, she mourns for her friends. Three years later, Yui, now a Lieutenant in the Japanese Imperial Guard, heads to Alaska. "
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 3,
+		 "Verdant Yukon",
+		 "US test pilot Yuuya Bridges and his engineer friend Vincent Lowell transfers to Yukon, Alaska to be part of the United Nation's international test corp Project PROMINENCE, which aims to test and experiment new TSF technology. Yuuya and Vincent join the Argos Test Flight, which aims to develop a new TSF for Japan. After getting to know the members of Argos Flight, the Turkish commander Ibrahim Doğulu, test pilots Nepali Tarisa Manandal, Italian Valerio Giacosa and Sweden's Stella Bremer and Development Chief Yui, Tarisa refuses to accept Yuuya as the new leader of Argos Flight due to the fact he has never fought in the front lines unlike the rest of them. To settle things, Yuuya proposes a two on two TSF duel between him and Stella against Tarisa and Valerio. To make things fair, he allows Tarisa to pilot the advance F-15･ACTV TSF while the rest pilot the F-15E TSF. Yuuya uses his tactical genius and teamwork with Stella to defeat Valerio and Tarisa which the latter finally accepts him. Later, Yuuya encounters Yui and is angered when she didn't find his duel impressive but disappointing. "
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 4,
+		 "A Flock of Hazy Moon",
+		 "Tensions grow between Yuuya and Yui over their countries different combat doctrine and Yui commenting over his Japanese heritage which Yuuya doesn't like as he hates Japanese people due to racism he suffered as a child. Ordered to fly a Japanese Zuikaku TSF with the rest of Argos Flight in a virtual simulation battle against the BETA, Yuuya is unable to get used to the Zuikaku's controls and is unable to keep up with his seasoned teammates in fighting. After another heated argument with Yui, Yuuya meets Inia Sestina, a Soviet Russian pilot from the Idar Test Flight and one of the &quot;Scarlet Twins&quot;. Inia befriends Yuuya and invites him to see her teddy bear Misha at the Soviet sector of the base. However, this gets Yuuya into trouble when Inia's co-pilot, Cryska Barchenowa has Yuuya apprehended, believing he is a Japanese spy. As he is about to be tortured by Soviet interrogators, Yuuya is ordered to be released thanks to Yui's intervention. Inia stills wants to be friends with Yuuya despite Cryska telling her to stay away from him. The next day, Yuuya begins piloting the Type-94 Shiranui TSF. "
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 5,
+		 "The Right Stuff",
+		 "Still disappointed by Yuuya's performance on piloting Japanese TSFs, Yui gives some advice to him that he shouldn't force the TSF to do things his way but understand it like the proverb &quot;A man and his horse are one&quot;. Vincent suggest he should listen to it since he and Yui are not so different; both having a cold attitude but a kind side which they are too stubborn to show. As Argos Flight heads towards their next destination, they suddenly encounter Yui piloting a Takemikazuchi TSF and duels against them. After defeating everyone by melee combat, Yui fights against Yuuya. Finally understanding what Yui told him, Yuuya manages to better pilot the Shiranui to disarm Yui. As his teammates congratulate him, Yui is proud of Yuuya's results. "
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 6,
+		 "Ultramarine",
+		 "The Argos Flight and Idar Flight crews head to the West Indies to gather test flight data in tropical regions while having R & R at the resorts and participating in a PR photo shoot to raise morale. At first the vacation goes fine until Inia and Tarisa almost start a fight until the resort's commander suggest they settle things in a paddleboat race tomorrow. Yui and Cryska team up when Cryska suddenly faints. Yuuya swims over to help them but a storm suddenly comes, which the three are forced to seek refuge in a cave on a nearby island. As Yuuya heads to check their boat, Cryska, wondering why Inia is interested with Yuuya, asks Yui what is her relationship with him, much to the latter's shock."
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 7,
+		 "Wanderer's Whereabouts",
+		 "Yui is unable to answer Cryska why her partner Inia likes being with Yuuya and suggests she should ask him himself. Yuuya returns to the ladies, informing them that their boat was swept away by the storm. As Yuuya and Cryska heads out to figure out where they are, Cryska faints and is about to fall before Yuuya catches her. Cryska reveals she has a fear being near the ocean hence her recent fainting spells. However, Yui arrives mistakenly thinking Yuuya and Cryska are hugging, which makes her jealous. As all three of them are back in the cave, Cryska asks why Yuuya doesn't like being called a Japanese. Yuuya tells Cryska with Yui listening that it is due to his Japanese father; his father left his American mother before he was born and never came back which angered his maternal grandfather to believe the Japanese are scum that shouldn't be trusted. Rescue finally arrives for the three when Inia, Tarisa, Valerio and Stella find them in their TSFs. For troubling everyone, the resort's commander has Yui, Cryska and Inia participate in a swimsuit photo-shoot for the troops while the Argos crew bothers Yuuya if anything happen between him and Yui."
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 8,
+		 "Far East Battle Lines",
+		 "Project PROMINENCE heads to the Kamchatka front lines to gather test flight data in cold regions and their first live battle data with the BETA along with Yui being pressured by both the UN and Japanese government to test her uncle's new weapon, the EML-99X rapid-fire railgun. The Argos crew notices Yuuya and Yui are now more friendlier with each other and support it. Yui shows Yuuya the railgun and tells him to abandon it and escape to safety should something bad happens during the test and destroy it to prevent other nations from copying it but he assures her that both he and railgun will come back. As he heads back to his quarters, he discovers Cryska and Inia being ganged up by a group of young Soviet pilots. The pilots express their hatred for Russians like Cryska and Inia due to the fact when the Soviet Union fell to the BETA, the Russians were the first to get refuge in Alaska while they, the Georgians and Kazakhs, were left behind and were forced to fight the BETA themselves. Cryska is unable to defend Inia due to a serious headache. When one of the pilots attempts to rape Inia, Yuuya attacks him. The pilots are about to surround Yuuya when their commanding officer orders them to stand down and leave. The next day, Ibrahim briefs the Argos, Idar and Bao-Feng Flight crews on where they will be doing their tests during an upcoming BETA invasion and introduces the woman who's battalion will be protecting them, Lieutenant Colonel Fikatsia Latrova of the Zhar Battalion, the officer who saved Yuuya, Cryska and Inia."
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 9,
+		 "Falling Tears",
+		 "Latrova tells the UN Flight crews to do their tests while her battalion protects them and not to interfere with her job. Cryska, now better but seemingly having no memory of the events of yesterday, tortures one of the Zhar Battalion pilots who attacked them and warns them to stay away from her and Inia or she will kill them. On the day of the test, Yuuya is nervous since this will be his first real battle, no making things better with the Zhar pilots mocking him but the rest of Argos crew ensures they will protect while he tests the railgun. As the BETA invades the coast, Yui realize something is wrong when she notices there is not enough ground forces protecting the Flight crews. Yui asks her Soviet counterpart to call for reinforcements, unaware that reinforcements won't come as the Soviet higher ups wants the railgun test to fail even at the cost of Latrova's battalion. Realizing they will be overrun soon, Yuuya convinces Latrova to order everyone to fall back so he has the clear to fire the railgun, which she does after realizing what her superior's plan in sacrificing her pilots. With everyone falling back, Yuuya fires the railgun which destroys all of the invading BETA forces. As everyone celebrates, Yui tells Yuuya that she's glad he's safe and tells him to return to base."
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 10,
+		 "Premonition",
+		 "Yuuya is given a heroes welcome at the Kamchatka base but the Zhar pilots don't see him as one when they were the ones doing the fighting. Realizing they are right, Yuuya asks Yui for a TSF melee combat in the next TSF test. As he's put on standby, Yuuya encounters Latrova, who thanks him for saving their lives and gives him some advice before her second in command, Natasha Ivanova, fetches her. With the railgun being in repairs and his TSF still under maintenance, Yui decides she will take over Yuuya in the next live battle test. However, the President of the company contracted to build Japan's newest TSF insist Yuuya being in the next test. Latrova briefs her pilots, who she considers like her children as she hopes to find her son before her superiors give the Zhar Battalion their next mission. As the UN Flight crews and Zhar Battalion does another sortie against the BETA, which they find it strange they are fighting the remnants of the last attack. Much to everyone's shock, the BETA have another force coming underground which arrives near the Kamchatka base."
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 11,
+		 "BETA Offensive",
+		 "As the BETA travel to the base, the Soviet commander tells all but the Soviet TSFs to retreat to an area further than usual, with the intention of using the Soviet forces to buy time. With respect to this, the commander issues that all personnel in the base evacuate, leaving everything behind. Lt. Dahl and Yui confirm their suspicions that the evacuation is all but a ploy for the Soviet to get their hands on the Type 99. Yui evades Soviet troops and plans to blow up the Type 99. The Soviets altered the self-destruct code, rendering it incapable of being blown up. Suddenly, some BETA have already reached the base."
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 12,
+		 "The End of the Fight to the Death",
+		 "Yui is trapped in the abandoned supply base, and she plans to lure the BETA to the cannon's core module, taking her with it. Meanwhile the Soviet command, actively jamming all radio communications from the UN command, is joyous at the prospect of obtaining the type 99. The BETA infiltrates the hangar and nearly kill Yui when Yuuya and Stella arrive timely and saves her. Yui continues her plan to blow up the Type 99. Simultaneously, the main BETA force arrive and are heading toward them. "
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 13,
+		 "The Value of Choice",
+		 "Yuuya uses the Type 94 to destroy the Type 99. Disobeying Yui's request, he destroys all but its core module, which will make reconstructing it again easier. The Soviet command, aware that they are trying to salvage the cannon, orders the base to be completely blown up by bombers. In their escape, the Type 94's arm, carrying the module, was bitten off. Yuuya, carrying Yui inside his TSF, can't fight for the reason that Yui will hurt herself as she is not wearing a fortified suit. Yuuya transfers Yui to Stella's TSF due to his fear that the TSF has already sustained heavy damage. Yuuya and Stella use the base's runway for takeoff. However only Stella was able to takeoff as Yuuya's TSF is already too damage. Yuuya decides to stay and fight till his last."
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 14,
+		 "A Pilot's Honour",
+		 "Yuuya's TSF is already critically damaged and is no longer able to fly. Before he is finished off, the Zhar Battalion arrives timely and save him. The bombers arrive and start blowing up the base, but the unexpected arrival of laser-class BETAs wipe them out. With Yuuya's TSF unable to fly, Lt. Latrova orders her battalion to escort him to safety, while the rest will attempt to flank the laser-class BETAs. An unknown and very powerful TSF is detected approaching them from the rear, and Latrova stays back to confront it. The mysterious TSF intercepts and kills her. In Alaska, the UN force mourns Yuuya's death, with Yui mourning the most. In a miracle, Yuuya's TSF appears in the horizon, walking in its damaged state. Fast forward, and the XFJ project unveils its newest creation, the XFJ-01a, Shiranui Second. Vincent tells Yuuya that the whole Zhar battalion was annihilated, but not after defeating the laser-class and the remaining BETA. They were named The Heroes of the Russian Federation."
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 15,
+		 "Hot-on-heels Cross",
+		 "In order to promote solidarity between nations, a military exercise called the Blue Flag was held, much to Yuuya and Yui's disgust. Meanwhile a party is held to celebrate the return of the Argos test flight. Yui cooks up a homemade meal for Yuuya, making him remember on how his mother used to make it. Out of the blue, Cui Yifei of the United Chinese Front appears and compliments Yuuya for his humility while also expressing her romantic interest. The next day, Cryska finds Yuuya in hopes that he knows where Inia is. She smiles (for the first time in the series) and tells him Inia likes him. They spend all night searching for Inia to no avail. That night, Yuuya sees his old flight mate and partner, Leo Kuze, who express his desire to best him."
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 16,
+		 "Pale Blue Flame",
+		 "After meeting with Yuuya again, Leo expresses intent on ending Project XFJ by beating it with supposedly superior American technology. Leo and his girlfriend Sharon Heim visit a bar where they meet Vincent once more. Vincent tells him that Yuuya has changed for the better, but Leo blocks him off saying that he has not forgotten what Yuuya did to him years back. In the morning of Blue Flag exercises, Idar Flight is pitted against Slechtvalk Flight. In what appears to be unbelievable, the Scarlet twins destroy the whole flight within ten minutes, a colossal feat. In the afternoon, Argos test flight is pitted against Bao Feng test flight, where the former is outmatched by the teamwork of the latter. Knowing that Cui wants him to fight her one-on-one, Yuuya subjects to it. Initially being outmatched by the Chinese TSF's brute force, Yuuya uses the Type 94 2's more agile movements to turn the tide and win the match. In another scene, the twins are shown to be submerged inside a tank due to their slightly unsatisfactory performance. "
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 17,
+		 "Dark Recollection",
+		 "While submerged in the tank, Cryska reminisces on her lonely childhood, how she met Inia, and their first meeting with Lt. Jerry Sandek. The Blue Flag exercises are in full swing, and the USA's Infinity flight demonstrates its Raptor with its advanced stealth technology against Bao Feng flight, and the latter is easily defeated within 4 minutes. After the fight, Yuuya meets the Scarlet Twins where he finds out that both twins share similar feelings for Yuuya, and Cryska wants to find out why. Yuuya tells him it might be because they share the same stubborn and perfectionist personality and she agrees. Their talk is disturbed by Cui while Yui sees everything and runs away with jealousy. Later that night Yuuya finds Yui in a bar and he asks her for Japanese sword-fighting lessons. Leo interrupts them and threatens Yuuya to tell him about his military history, which the latter punches him for. A bar fight ensues and the MP arrive, forcing them to escape. "
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 18,
+		 "The Sound of Twisted Wings",
+		 "In 2000, Yuuya and his team are testing the F-22 Raptor. Yuuya strives to push the Raptor to the limit, which gets their Squad leader killed by accident. This is revealed to be the reason Leo bears a grudge on Yuuya. Yuuya reveals this to Inia, and she tells him that no one should blame anyone in an accident. That night Vincent, who won the bet of Argos winning their first fight, treats everyone for drinks. Yuuya chats with Natalie, the bartender, about his friends. While going to the bar, Yui meets Cui and the latter tells her to forget about Yuuya as she will never understand him. Cryska and Inia meet with Sandek who reveals that he has plans for Yuuya. "
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 19,
+		 "Deep Green",
+		 "To quell the increasing rivalries between the nations competing in Blue Flag, the high ranking officers involved in the Prominence project decide to send the test pilots on a wilderness backpacking trip. While walking towards their objective, Argos, Idar, Bao Feng, and Infinity converge on a hot spring. They have dinner together and enjoy the spring. While relaxing, VG and Vincent get beaten up by Lt. Blazer, Inia and Cryska meet Yuuya on the hot pool naked, and Cui continues her rivalry with Yui. "
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 20,
+		 "The World Bares its Fangs",
+		 "Cui offers Argos flight to a practice fight to prepare for their upcoming fight with Infinity in exchange for a date with Yuuya. Mysterious men posing as contractors arrive at the base, disguising as the military. Upon infiltrating, they kill a huge number of military personnel and wrest control of several TSFs. In addition, they capture all the top officials and cut off all communications, prompting Yuuya to return to the base. Yui barely survives the attach and meet Cryska. The mysterious men announce themselves as the Refugee Liberation Front. Natalie, revealing herself as one of the RLF, confront Yuuya, Cui, and Tarissa and announce their plans on changing the world. As she was about to mention something about the US's secret research, she is killed by one of her own for revealing too much. Yuuya creates a diversion and the trio escape. "
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 21,
+		 "The Future Tears Open",
+		 "The RLF take control of an underground research facility that is trying to breed BETAs. Argos test flight, Cryska, and Cui, being uncaptured, attempts to retake the base using the remaining TSF. Meanwhile, the RLF have achieved full control of the base. Sandek escapes and they pilot to the Soviet base for resupply. Lt. Dahl, who stayed at the commander center to send a distress call, meets some RLF members who plead him to fight their cost. Idar Test Flight is destroyed by the RFL TSF, and only Inia escapes thanks to Infinity test flight. The remaining TSF rushes to regroup in an area, but are intercepted by RLF TSFs, led by Ozlem Saner. "
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 22,
+		 "Untainted Revenge",
+		 "Badly outnumbered, Yuuya volunteers to fight all 24 TSFs himself to buy time for the rest of Argos to escape. While he destroys many of them, he is soon surrounded; he is however saved by the timely intervention of Inia. The rest of them return, citing that they saw and followed Inia. With the tables turned, Ozlem executes a suicide attack. Mariem, one of the RLF, confronts Dahl and pleads that he join them; when she receives news of her sister's death, she tries to kill Dahl but fails. The RLF announces to the world and announces their demands. In addition, they announce to the whole world of the US secret BETA research facility (where they released all the BETA) and the Red shift, a last ditch plan that incorporates Hydrogen bombs buried beneath Alaska to create a new defense line in case of a BETA invasion. However this will mean the mass extermination of all Soviet citizens leaving near the area. Yuuya plans to steal weapons from a Soviet patrol base, citing guerrilla reasons. Major Christopher, the head of the RLF invasion, initiates his own plan. "
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 23,
+		 "The Victory Song of the Dead",
+		 "The remaining pilots refuel and restock at the patrol station. They will attempt to get communications back online to give the US and USSR a visual of the BETA invasion. Returning to the base, they are confronted by the RLF led by Christopher and a chase ensues, with the team attempting to stop the BETA. Major Christopher reveals himself to be an Allegiant, a group of people who worship the BETA as gods, and refuses to help in the BETA attack. Seeing that they were used, the remaining RLF commit suicide to maintain their dignity. Leo and Sharon join the fight. In a desperate effort, Sandek gives the order for the Scarlet twins to activate Prafka, a state of mind that greatly heightens their piloting skills. The twins wake up in a shared unconscious, and Cryska wonders what happened to their bodies. "
+		)
+	,	("Muv-Luv Alternative Total Eclipse",
+		 24,
+		 "White Darkness",
+		 "As the twins activate their Prafka, Christopher activates an unknown device in an attempt to gain control of them. Instead of gaining control, it drives the twins berserk and they crush Christopher. Under some heavy hypnosis, the twins go on a rampage and mistakes everyone as the enemy. It dismantles Tarisa's TSF, and nearly defeats Yui. Sandek informs Yuuya that for some reason he is the only one that can stop them, lest the twins will destroy everything in sight. Seeking to give the twins what everyone around him has given him, he drops his weapon and allow the twins to impale him. The impaling shocks the twins back to reality. The blade misses Yuuya by mere centimeters and he is shown unscathed. Lt. Dahl with some Soviet special forces retake command of the HQ. The master, the mysterious leader of the RLF, acknowledges the plan's failure and sets his eyes on Japan. With the invasion repelled, the rest of the world is calling for an investigation of the Red Shift. Yui is sent back to Japan, with the possibility of the XFJ Project cancelled. Yui tells Dahl she will return to Yukon. Infinity test leaves for the US. Yuuya sees Yui, and they give their final salutes to each other. As Yui leaves, Cryska finds her and tells her of her romantic feelings toward Yuuya, which Yui replies that they will be rivals in love. "
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Muv-Luv Alternative Total Eclipse", 0, 1, 8)
+	,	("Muv-Luv Alternative Total Eclipse", 0, 2, 8)
+	,	("Muv-Luv Alternative Total Eclipse", 0, 3, 8)
+;
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("No game No life",
+		 12,
+		 "Just as their urban legend suggests the siblings Sora and Shiro are gods when it comes to the gaming. Blazing across the internet they are known as NEET (Not in Education, Employment, or Training) gamers. Until one day a boy calling himself &quot;God&quot; introduces them to a parallel fantasy world where everything is decided by games. In this world, all armed conflict and violence have been banned and the races must resolve their disagreements through gaming. Can the siblings find be as brilliant as their reputation to be the salvation of all humanity? The odds aren't in their favour, but Shiro and Sora are going to duel till the end in No Game, No Life.",
+		 "Just as their urban legend suggests the siblings Sora and Shiro are gods when it comes to the gaming. Blazing across the internet they are known as NEET (Not in Education, Employment, or Training) gamers.",
+		 "Hanabee",
+		 "&copy;Madhouse"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("No game No life",
+		 4,
+		 1,
+		 "MA15+ - Strong sexual themes",
+		 12,
+		 "https://hanabee.com.au/products/no-game-no-life-blu-ray"
+		)
+	,	("No game No life",
+		 3,
+		 1,
+		 "MA15+ - Strong sexual themes",
+		 12,
+		 "https://hanabee.com.au/products/no-game-no-life"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("No game No life",
+		 1,
+		 "Beginner",
+		 "Sora and Shiro are two siblings and are known in online games as the undefeated group named The Blank. In real life, they are hikikomori who are ostracized by the world. One day, they receive a challenge from Tet to a game of chess and are victorious. In response he offers to send them to a world which revolves around games and they accept, believing it to be a joke. They are then summoned to a reality known as Disboard where a spell, known as the Ten Pledges, prevents violence and enforces the rules and outcomes of games. They travel to Elkia, the nation inhabited by humans, where Sora plays poker against a woman for her money and wins by out-cheating her. He and Shiro rest at an inn and decide their next goal is to find a home."
+		)
+	,	("No game No life",
+		 2,
+		 "Challenger",
+		 "Stephanie Dola, granddaughter of Elkia's deceased king, loses against Kurami Zell in a contest to decide the next ruler; she then confronts Sora for not revealing how her opponent was cheating. Sora tricks her into a game of rock-paper-scissors and after winning, uses the Pledges to make her fall in love with him. Sora and Shiro then move into the palace with Stephanie where they learn more about world and decide to help Stephanie revitalize Elkia. "
+		)
+	,	("No game No life",
+		 3,
+		 "Expert",
+		 "During Kurami's coronation, Sora reveals she was using magic from the elf, Fil Nilvalen, to win her games. Kurami salvages the situation but is forced to play a game against Sora and Shiro. Originally, they believe the game is chess, but Sora deduces it is a war simulator with chess themed pieces; Sora's charisma rallies his army, giving them an advantage and forcing Kurami to cheat by corrupting Sora's soldiers. In return, Sora persuades Kurami's queen to join his army by declaring her king to be corrupt. "
+		)
+	,	("No game No life",
+		 4,
+		 "Grandmaster",
+		 "Kurami's army begin defecting to her former queen; eventually her king is assassinated due to her tyrannical rule and Sora is victorious. Sora denounces Kurami's plan in assimilating humans with the elves, declaring humanity is stronger than she thinks. Sora and Shiro are crowned the king and queen of humanity and begin solving Elkia's political and economical problems. They later attend the formal coronation and receive humanity's race piece, a chess piece which represents humanity's rights and free-will. Tet visits Sora and Shiro and explains that whoever gathers all sixteen chess pieces, one for each species, will earn the right to challenge him for his title of god; in response Sora and Shiro accept his challenge, declaring they will be the winner. "
+		)
+	,	("No game No life",
+		 5,
+		 "Weak Square",
+		 "Sora and Shiro leave Elkia's political responsibilities to Stephanie until she is challenged to a game by nobles who refuse the reform. She challenges Sora to blackjack in hopes of binding him to the Pledges to perform his duties; she attempts to use false shuffling but loses due to card counting. Understanding her predicament, Sora trumps the nobles and uses the previous game to have Stephanie act like a dog. Stephanie tries several more games on Sora to take responsibility as Elkia's king but fails. Sora and Shiro reveal they were not slacking, but are researching ways to conquer the other nations; in response Stephanie redirects them to Elkia's library which is owned by the flügel Jibril. "
+		)
+	,	("No game No life",
+		 6,
+		 "Interesting",
+		 "Sora and Shiro challenge Jibril by betting their tablet computer full of books, considering it of high value, Jibril offers her freedom in exchange. They begin a game of materialization shiritori, where the words they use will materialize or disappear from the environment. From the game, Sora and Shiro deduce Disboard's scientific research is lacking, and uses this knowledge to their advantage; they succeed after removing coulomb's law and inducing a hypernova, removing Jibril from the game. Impressed by the two, Jibril solemnly pledges her loyalty to them."
+		)
+	,	("No game No life",
+		 7,
+		 "Sacrifice",
+		 "Jibril shares her knowledge about the werebeasts, revealing they have been undefeated for decades and always take the memories of the game away from the opponents. When Sora learns Elkia's king challenged the werebeasts eight times and lost a large amount of land, he denounces the king and upsets Stephanie. Upon further investigation, Sora questions the king's motives and eventually learns about the king's will from Stephanie. Using the key from the will, Sora and Shiro find a hidden library in the king's chambers; there, they discover information regarding the werebeasts and their choice of games. "
+		)
+	,	("No game No life",
+		 8,
+		 "Fake End",
+		 "Sora and Shiro enter the embassy of the Eastern Federation, nation of the werebeasts, to issue a formal challenge. Sora and Shiro reveals the werebeasts use video games and threatens to leak that information to the elves if their challenge is not accepted; Sora bets humanity's chess piece in return for all of the land on the continent. As the Eastern Federation makes preparations for the game, Sora waits for the missing piece needed for victory; the next day, Shiro realizes everyone has forgotten about Sora. "
+		)
+	,	("No game No life",
+		 9,
+		 "Sky Walk",
+		 "Believing Shiro's memories have been tampered with, Jibril arranges a chess game to remove the memories regarding Sora; Shiro decides her memories are real and wins the match. After investigating, Shiro recalls Sora arranged a game of reversi with Kurami; the game's pieces consist of the components making up Sora and Kurami's identity. Having lost most of his pieces, Sora was nearly erased from existence but the last three pieces allow Shiro to keep her memories of him. Shiro finds the pieces in her room and places them on an invisible board, winning the game and restoring Sora. From his victory, Sora shares his memories with Kurami, allowing them to form an alliance, and gains the right to manipulate Fil's memories. "
+		)
+	,	("No game No life",
+		 10,
+		 "Blue Rose",
+		 "Sora and friends bond with Kurami and Fil as they make the final preparations to conquer the Eastern Federation. Per Sora's demands, the match against the werebeasts is made public in order to prevent them from cheating. The game begins and Sora, Shiro, Stephanie, Jibril, and their opponent Izuna Hatsuse, are sent to a virtual reality world which resembles Tokyo. Sora and Shiro's agoraphobia acts up and they enter a devoid state. "
+		)
+	,	("No game No life",
+		 11,
+		 "Killing Giant",
+		 "Recalling they are in virtual reality, Sora and Shiro return to normal; the game is a form of cops and robbers where they use guns that fire heart-shaped bullets. While Stephanie remains clueless about the game, Sora, Shiro, and Jibril battle against Izuna and deduce that her grandfather, Ino Hatsuse, is relaying their location and state of mind to her. Sora and friends regroup as Shiro makes the proper adjustments to their plans. Executing the unspoken plan, Sora and Shiro corner Izuna, forcing her to use an ability called Blood Destruction to augment her abilities. "
+		)
+	,	("No game No life",
+		 12,
+		 "Rule Number 10",
+		 "Sora and Shiro are defeated; as Izuna drops her guard, she is shot by Stephanie riding a NPC. Sora reveals he bound Stephanie to the Pledges to hide her intent while Shiro calculated the NPC's movements, allowing Stephanie to hide her location. While Izuna laments the werebeasts' fate, Sora assures her of his goodwill. Sora forces political pressure on the Eastern Federation leader, the nameless miko, to challenge him to a game. They have a coin flip where Sora has it land on its edge. He convinces the miko to declare they both win and as a result, Elkia can share resources with the Eastern Federation while the werebeasts maintain their self-rule; the allied nation is named the Elkia Federation. In the aftermath, Sora and friends have the miko channel an old deus for a game. "
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("No game No life", 0, 1, 4)
+	,	("No game No life", 0, 2, 4)
+	,	("No game No life", 0, 3, 4)
+;INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Plastic Memories",
+		 13,
+		 "Tsukasa Mizugaki is a recent hire of the SAI Corporation, renown for its production and management of androids capable of feeling human emotions called &quot;Giftia&quot;. Assigned to the terminal service department, Tsukasa is tasked with recovering Giftias who are nearing their expiration from their owners before they corrupt. But in this dead end department, Tsukasa is about to meet Isla, a female Giftia. Beneath her quiet exterior, she was once known as the best in Giftia retrievals and Tsukasa is determined to find out why she stopped.",
+		 "From the writer of &quot;Steins;Gate&quot;, Naotaka Hayashi, comes an original love story!",
+		 "Hanabee",
+		 ""
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Plastic Memories",
+		 1,
+		 1,
+		 "M - Mature themes and sexual references",
+		 7,
+		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories"
+		)
+	,	("Plastic Memories",
+		 1,
+		 2,
+		 "M - Mature themes and sexual references",
+		 6,
+		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories-part-2"
+		)
+	,	("Plastic Memories",
+		 2,
+		 1,
+		 "M - Mature themes and sexual references",
+		 7,
+		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories-blu-ray"
+		)
+	,	("Plastic Memories",
+		 2,
+		 2,
+		 "M - Mature themes and sexual references",
+		 6,
+		 "https://hanabee.com.au/collections/anime-p-to-z/products/plastic-memories-part-2-blu-ray"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Plastic Memories",
+		 1,
+		 "The First Partner",
+		 "On the first day of his new job, Tsukasa Mizugaki rushes to Terminal Service No. 1, which is one of the offices in SAI Corp, where he is taught about Giftia, androids who survive on synthetic souls for a maximum lifespan of nine years and four months. Normally, humans and Giftia work in pairs to collect expired Giftia, where the human is assigned the job of a 'spotter' that is in-charge of overseeing his Giftia partner at work while the Giftia earns the job of a 'marksman' that persuades the owners to give up their Giftia. Tsukasa is then partnered with Isla, a Giftia who is highly regarded in the office and famous for a wide knowledge of herbs and tea. The two are led out by Tsukasa's trainer Michiru Kinushima and her partner Zack; Zack retrieves a Giftia, as a demonstration of their job for Tsukasa, and Michiru explains their job to him. Not long after, Tsukasa and Isla are assigned a mission to retrieve Nina, a child-type Giftia owned by an old woman named Chizu Shirohana. After multiple tries, Isla is unable to persuade Chizu to talk to them, which makes Tsukasa doubt her abilities. She finally manages to win a chance to talk with Nina, and Chizu overhears Nina giving her consent to be taken away so as not to cause trouble for Chizu, whom she loves dearly. Chizu, realising she had not considered Nina's feelings in the matter, finally allows Nina to be taken away, and thanks Tsukasa when he apologizes."
+		)
+	,	("Plastic Memories",
+		 2,
+		 "Don't Want to Cause Trouble",
+		 "Tsukasa meets Yasutaka Hanada, a spotter and a ten-year veteran at Terminal Service No. 1, whose aloof behavior surprises him, as well as annoys his partner Sherry. When Yasutaka asks him about how he got the job, Tsukasa reveals that his father is a friend of one of the higher-ups in the company, who decided to help him after he failed his entrance exams. After another failed attempt at retrieving and a scolding from Michiru, Tsukasa takes the blame despite it being Isla who caused the problem. Back in the office, he is prompted by a message about her and heads to the Unit Testing Room, where he meets Eru Miru and Mikijiro Tetsuguro, who are measuring Isla's physical skills. Tsukasa asks Isla about the physical training, and she tells him of her belief that she is holding him back because of all the time she spent off the field. Because of this, Tsukasa decides to do the negotiating with Giftia owners instead of Isla, in spite of the fact that it isn't what a spotter does. The next day, he begins putting together his own manual about owner negotiations and is assisted by Michiru and Zack. Once he is finished, he comes across Yasutaka, who learns about Isla's visits to the Unit Testing Room and remarks the pointless nature of those visits, explaining that Isla's physical capabilities are on a consistent decline that cannot be fixed, a characteristic of Giftia. Later on, Tsukasa and Isla successfully retrieve the Giftia they were previously assigned to, while Kazuki Kuwanomi, an experienced spotter, and Yasutaka talk about Isla's lifespan, which is set to expire in less than 2,000 hours, giving her less than three months to live."
+		 )
+	,	("Plastic Memories",
+		 3,
+		 "We've Just Started Living Together",
+		 "Tsukasa is assigned to live with Isla in the company dormitory, a rule mandated for all marksmen and spotter duos in Terminal Service No. 1. However, he is unsettled by the fact that Isla repeatedly ignores him there. At Terminal Service No. 1, he confides to other employees about the problem, although their individual suggestions fail miserably at helping him attract her attention. Finally, Kazuki approaches Tsukasa about the problem and tells him she ignores other people during her personal time, not just him. She then tells him to take Isla out somewhere if he wants some interaction with her. Following through with the suggestion, he successfully asks Isla to accompany him to a shopping mall. There, they go to a herb shop and, to buy some more time, Tsukasa asks Isla to help him pick out some herbs as a present to a person who he unintentionally describes as being a lot like her. Afterwards, they go to a nearby amusement park, where Tsukasa admits the person he was describing was Isla herself. When he says he did this to make some memories with her about their partnership, she emotionally shuts down and tells him that she was not built to play at an amusement park, which shocks him. When Isla runs off, he purchases a key ring pendant from the amusement park and gives it to her at their dorm room, telling her she can throw it away if she doesn't want it. She also apologizes apprehensively about her escape, and even though Eru had previously told Tsukasa that Isla didn't accept gifts, Isla makes the keychain an exception."
+		)
+	,	("Plastic Memories",
+		 4,
+		 "I Just Don't Know How to Smile",
+		 "The Terminal Service No. 1 staff receives seven brand-new retrieval missions, and Tsukasa and Isla are assigned to retrieve a Giftia named Marcia. They are also warned of the presence of criminals who assume the identities of Terminal Service employees to retrieve Giftia and sell them on the black market. Tsukasa and Isla head to Marcia's residence, where they learn she is raising her owner, Souta Wakanae, in the role of an older sister after his parents died. When Souta arrives home from school, he acts hostile towards Tsukasa and Isla, but is surprisingly willing to sign the agreement form to take Marcia away, citing that she is just a Giftia and adding that Giftias cannot be trusted in telling the truth. Unable to acquire a signature as a result of Souta's attitude, Tsukasa confides in Michiru about the encounter, and she advises him to solve the problem by having Souta believe he was truly loved by Marcia. As a result, Tsukasa, Isla, and Marcia decide to bake a cake for his birthday on the following day, and are assisted by Michiru and Zack. Afterwards, Michiru tells Tsukasa that she tried all she could to keep her father, a Giftia, from being retrieved, which resulted in him becoming a Wanderer, a Giftia that still retains its motor skills but loses its personality and memories, causing it to become instinctual and aggressive. Later, Souta returns home and is surprised by the group. Upon spotting the birthday cake, which was modeled after one used for his birthday three years ago, he remembers his family and tearfully apologies to Marcia. On the day before the retrieval, Souta is visited by a shady man, who claims to be Tsukasa and Isla's replacement from the Terminal Service and asks for Marcia."
+		)
+	,	("Plastic Memories",
+		 5,
+		 "The Promise I Wanted to Keep",
+		 "While returning home with groceries, Marcia is suddenly ambushed by the man from the previous episode. Later, Tsukasa and Isla are contacted by Souta, who informs them about Marcia's disappearance, and they assume it is the work of a black market retriever. With only 24 hours left on Marcia's lifespan, Tsukasa resolves to retrieve Marcia and return her to Souta, and the rest of Terminal Service No. 1 joins the search. The following day, the office narrows down the search to an area where a black market retrieval service is possibly located, although their efforts are hindered by a unit from R. Security, a private security firm that was hired to assist in the investigation. Kazuki confronts the unit's supervisor, Shinonome, who gives her a map of the area under scrutiny. As the retrievers get ready to converge on the area, Tsukasa is equipped with and learns about a gun-like device designed to forcibly crash all of a Giftia's functions when they turn into Wanderers. He is then approached by Kazuki, who asks him if Isla will be able to handle the situation, but is forced to drop the subject soon afterward. Michiru later tells Tsukasa about how Kazuki tried to retrieve her father when he became a Wanderer, only for him to injure Kazuki and then be shot down by members of R. Security. Soon afterward, the black market retriever is found unconscious and it is concluded that Marcia turned into a Wanderer. Kazuki orders the rest of the retrievers to stop Marcia before she is destroyed by R. Security. Tsukasa and Isla find Marcia, only to realize Souta had been following them. Marcia then injures Isla and kidnaps Souta. Despite Isla's injuries, she and Tsukasa follow her to a rooftop, where Tsukasa nearly manages to convince Marcia to surrender. However, when Souta speaks her name, Marcia snaps and begins strangling him, forcing Tsukasa to pull out his software destruction device and prepare to shoot Marcia. However, Isla suddenly dashes towards Marcia, just as Tsukasa fires the device. The scene then cuts to the Terminal Service office during the next morning, where it is revealed that Isla hasn't signed into the attendance log."
+		 )
+	,	("Plastic Memories",
+		 6,
+		 "Welcome Home the Both of Us",
+		 "Three years ago, it is revealed that Isla began blaming herself for not accompanying Kazuki when she retrieved Michiru's father, which wound up costing Kazuki her ankle. As a result, Kazuki retired from her position as Isla's spotter. In the present day, it is revealed that Marcia was hit by Tsukasa's device, although Isla was able to block most of the blow without being hit herself. With Isla now under maintenance for her injuries inflicted by Marcia, Tsukasa is reassigned to desk duty. After a visit from Tsukasa, Isla notes that he is still remaining optimistic despite what happened and privately questions his feelings about the situation. Once most of her maintenance is done, Isla returns to the office and realizes that she has been paying attention to Tsukasa a lot more closely lately. She confides in Michiru and Eru about it, although they misinterpret her feelings as being motivated by love and Eru decides to help Isla stalk Tsukasa. However, after multiple attempts at observing him fail miserably, Isla confesses to Michiru about her confusion on Tsukasa's unwavering optimism. Michiru then tells her that Tsukasa never forgot about the incident with Marcia, even neglecting his desk duties to go and apologize to Souta for what happened, and assumes that he is smiling out of sadness. After finishing the last of her maintenance, Isla returns to the dorm, only to find he isn't there. When night falls and Tsukasa has yet to return home, she goes to the office, where she finds Tsukasa learning that she has 1,000 hours left in her lifespan, which translates to a month. However, when given the chance to partner up with a new Giftia, Tsukasa declares that he wants to remain partnered with Isla, which makes her happy."
+		)
+	,	("Plastic Memories",
+		 7,
+		 "How to Ask Her Out",
+		 "One morning, Tsukasa decides to ask Isla out on a date. While trying to find opportunities to do so, he finds that Isla has been doing chores for him at their dormitory and the office. After asking her about it, he learns she is trying to be useful to him, much to his chagrin. When Tsukasa musters the courage to ask her out, Isla accepts his request and decides to go to the amusement park after discussing it with Michiru and Eru, later reasoning to Tsukasa that she felt guilty about running out on him during their previous time there. However, while reading Isla's diary, Tsukasa realizes that she and Kazuki often went there when they were still partners. The next day, the two of them go there and sit at a bench, Isla's favorite spot in the park, as she was able to observe the happiness and joy of so many people, which comforted her. After learning that Isla has never tried any of the park attractions, Tsukasa takes her on a tour through the entire area, eventually ending at the Ferris wheel. As they sit inside, Isla expresses her gratitude that she is riding it with Tsukasa. As he thinks about Isla's happiness, Tsukasa faints after working too hard lately, ending the date. In the end, Tsukasa wakes up and Isla apologizes for not telling him earlier that she has 1,000 hours remaining in her lifespan. Tsukasa promises that he will stay with Isla until the end, no matter what. He then asks if she would be willing to go out with him again, to which she smiles and takes his hand. However, as he sleeps, she observes him with a doubtful expression."
+		)
+	,	("Plastic Memories",
+		 8,
+		 "The Fireworks I've Never Seen",
+		 "During a retrieval mission, Tsukasa is surprised when the owner of the newly assigned Giftia opts to delete the latter's current personality and memories by replacing her OS and start over from scratch instead of handing over the Giftia proper, having done it several times already. Intrigued, he asks around the office if a Giftia who has gone through that experience is capable of retaining their old memories, but everyone replies there is no precedent to that. Later on, Kazuki announces that a marksman from the Terminal Service No. 3 office will be sent in, as the assigned Giftia and his owner have gone into hiding, and assigns Tsukasa and Isla to assist her. They later meet the marksman, Andie; shortly afterward, they have an awkward encounter with Eru, who mistakes Andie for her friend Olivia. After the mission is a success, Tsukasa learns from Eru that Andie is indeed Olivia, whose OS was replaced due to the company cutting costs. Later on, Eru tells Tsukasa that she reconnected with Andie and mentioned a carnival they used to go to together when Andie was still Olivia, which caused Andie to decide to go there. Not wanting to deal with her memories of Olivia, Eru tries to get Tsukasa to take Andie to the carnival instead. However, Tsukasa convinces Eru to come along, and they take Isla and Andie to the carnival the following night. There, Eru decides to let go of Olivia and create new memories with Andie, concluding it wouldn't be fair to either of them if she saw them as one and the same. Later, Isla gets lost in the crowd and Tsukasa begins searching for her, eventually finding her at a lonely walkway, terrified by exploding fireworks. After he consoles her, Isla brings up Andie and asks if her presence is hurting him. He replies that it does, but insists on continuing to be her partner. When she asks why, Tsukasa responds that it is because he loves her. Shocked and embarrassed by the sudden confession, Isla shouts that she cannot accept his love."
+		)
+	,	("Plastic Memories",
+		 9,
+		 "After the Festival",
+		 "In the wake of being shot down by Isla at the carnival, Tsukasa has maintained a heartbroken, depressed attitude that is evident at the office. Seeing this, Michiru asks Isla about it, and she tells her that she was just confused when she shot Tsukasa down and now feels guilty about hurting his feelings. Michiru suggests having the two of them live apart for a few days so Isla could have time to sort out her own feelings, and she transfers Isla to Eru's room and Tsukasa to hers and Zack's. When Tsukasa recovers from his stupor, Michiru consoles him and tells him the reason why she joined Terminal Service No. 1. The next day, Michiru sets up a lunch between Tsukasa and Isla, during which they agree to allow Isla more time to consider her true feelings. Later on, Michiru questions the effectiveness of her treatment over the whole situation. After observing Tsukasa and Isla acting like average coworkers at the office, Michiru approaches Isla one day and asks her about her feelings for Tsukasa, and she responds after a lengthy explanation that she does return his feelings. However, she concludes from this that she must stay away from Tsukasa. When a shocked Michiru asks why, Isla confesses to her that she has approximately one month left in her lifespan. Angered by this, Michiru confronts Tsukasa about it and asks for his true intention for confessing to Isla when he knew about her lifespan beforehand; he replies that he only wishes to make memories for the both of them. When she lashes out at him for refusing to see what kind of pain will result from his decisions, he insists on keeping Isla as a partner. When he returns back to his dorm room, Tsukasa finds Kazuki already there. As Isla also arrives, Kazuki announces she intends to dissolve their partnership."
+		)
+	,	("Plastic Memories",
+		 10,
+		 "No Longer Partners",
+		 "Kazuki elaborates that she is dissolving Tsukasa and Isla's partnership on the basis that romantic relationships in the office are not allowed, and intends to reassign Tsukasa to her marksman Constance while she takes charge of Isla. Though Tsukasa protests against the decision, Isla immediately agrees, later explaining that it would be better for the both of them. At the office, Tsukasa confronts Kazuki about her decision, after which she reveals she only did it to protect them both from the inevitable pain that would've resulted. However, when Tsukasa proclaims he still intends on staying as Isla's spotter, Kazuki cryptically tells him to leave the situation to her. Later on, Tsukasa and Isla go out on separate retrieval missions with Constance and Kazuki, respectively. During her retrieval mission, Isla agrees to befriend Sarah, the Giftia in question, at the request of the owner Antonio Horizon, whose lifestyle as a mafia boss made it impossible for the Giftia to live a normal life. Simultaneously, Tsukasa and Constance talk about Isla's work performance and how she had closed herself off after Kazuki dissolved their partnership three years ago. Constance then tells Tsukasa that Kazuki has faith in entrusting him with Isla. Returning to the office, Kazuki reveals to Isla that she intentionally set her up for the mission and tries to convince her to stay with Tsukasa, saying that tearing herself away from him will only create painful memories for him. The following night, Isla muses about the unfulfilled expectations she had from her separation with Kazuki. The next day, she returns to the office, approaches Tsukasa, and explains her reason for rejecting him. Then, she proclaims that she wants to make more memories with him until the end and that she is in love with him."
+		)
+	,	("Plastic Memories",
+		 11,
+		 "Rice Omelette Day",
+		 "In the wake of starting their relationship, Tsukasa and Isla have found it difficult to talk to one another without being embarrassed. However, Tsukasa is able to ask Isla out to dinner. At the office, their approving colleagues decide to give them advice on how to appease the other. At Kazuki's suggestion, Isla asks Michiru to help her learn how to cook for Tsukasa. However, upon finding out she doesn't know any of Tsukasa's favorite foods, Isla asks him, only for Constance to suggest that the two of them just cook together. After debating on what to cook for dinner, Tsukasa suggests rice omelettes. Later on, the two travel to Antonio's manor to visit Sarah. There, Tsukasa asks Sarah what would make her happy, and she recites a sentence Isla told her during her last visit, that people are at their happiest when they are with the ones they love. Afterwards, they go to the shopping mall to purchase herbs and pajamas for Isla, after which Tsukasa admits he doesn't know what to do to make her happy. She responds that she is already happy spending time with him. Returning home, the two begin cooking rice omelettes, and although the final product was not what they were expecting, they are able to enjoy it nevertheless. Isla then allows Tsukasa to read her latest diary entries, both of which recount the days she spent with him. When Tsukasa goes to sleep, Isla adds a new entry, in which she expresses her hope that she would be able to spend another wonderful day with him."
+		)
+	,	("Plastic Memories",
+		 12,
+		 "Filling Up with Memories",
+		 "In the middle of the night, Isla breaks down in tears and sleeps in Tsukasa's bed for comfort. The next morning, she has reverted to a bright and cheery personality, much to Tsukasa's surprise and relief. At the office, the other employees give Tsukasa tickets to a number of events that he could take Isla to. The two then use tickets given to them by Michiru and Zack to watch a romantic movie. The next day, they return to work despite having taken that day off. Following Isla's visit to the Unit Testing Room, Michiru and Eru discuss about the necessity of her increasingly frequent visits. Meanwhile, Kazuki approaches Tsukasa in private and gives him a retrieval agreement form for Isla, telling him to sign it. Overhearing their conversation, Isla decides to begin teaching Tsukasa how to raise the herbs she had been cultivating in her spare time, as well as how to make tea. While serving Michiru tea, Tsukasa is confronted by her about why he and Isla are coming to work despite taking the day off, and he responds that it was a part of their decision to carry on as they were. The following night, Tsukasa gives Isla the retrieval agreement form, and she gives him her approval in signing it. The next day, they go to retrieve Sarah, their last retrieval mission together. Before erasing Sarah's memories, Isla whispers something indiscernible to her. They then return to the office, where they find the others holding a party in commemoration for Isla's last retrieval mission. After the party, Tsukasa asks Isla what she told Sarah, and she replies that she told her of her hope that she would be reunited with the person they cherished."
+		)
+	,	("Plastic Memories",
+		 13,
+		 "I Hope One Day, You'll be Reunited",
+		 "It is the last day of Isla's lifespan and she and Tsukasa decide to first spend it by reading entries in her diary. They then spend the morning cleaning up their dormitory room and then taking a bath. They then head over to the office, where they take care of Isla's herbs and she leaves notes for the other employees. They are approached by an early Kazuki, who teases Isla for one last time. The two then decide to spend the day's remaining hours at the amusement park, which they enjoy to their hearts' content. Eventually, they stand at Isla's favorite bench, where she describes how she always observed the emotions of the park's many visitors and how contented they would be at the end of the day in bringing their happy memories home with them. Then, as the park closes, Tsukasa and Isla convince the operator to let them ride the Ferris wheel one last time after closing hours. There, they take turns describing what they love about each other, and Isla finally admits she loved the way Tsukasa held back his sadness and smiled, despite her worry over that characteristic. She then hands him her deactivation ring, saying that she wanted him to be the one to do it. Tsukasa begins crying, and Isla notes that it was the first time she ever saw him cry. He then puts the ring on, expresses his hope that she would be reunited with the person they cherished, and kisses Isla as her time expires. As he carries her to the vehicle, he is met by Kazuki, who thanks him for being there for her, which causes him to break down in tears. The other Terminal Service employees read Isla's letters, in which she thanks them for all the memories she had of them. In the epilogue, Tsukasa takes the same elevator where he met Isla and muses what it would be like if his lifespan was predetermined, concluding afterward that he would live that life to the fullest. Nine months later, he returns from a training course to resume work with Terminal Service No. 1, and is introduced to his new Giftia. "
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Plastic Memories", 0, 1, 4)
+	,	("Plastic Memories", 0, 2, 4)
+	,	("Plastic Memories", 0, 3, 5)
+;
+
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("RE-KAN",
+		 13,
+		 "Befriending classmates is not a hard task for Narumi Inoue, except when one of them claims that they can interact with ghosts. But with a little coaxing and a familiar face, Inoue is about to explore the other side. She's not alone however as fellow classmates Kyoko, Kana and Makoto are all getting caught in this paranormal phenomenon. Helping the dead might not be every teenager'۪s dream but it's their reality in RE-KAN.",
+		 "Befriending classmates is not a hard task for Narumi Inoue, except when one of them claims that they can interact with ghosts. But with a little coaxing and a familiar face, Inoue is about to explore the other side.",
+		 "Hanabee",
+		 "&copy; Pierrot"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("RE-KAN",
+		 4,
+		 1,
+		 "M - Mature themes and sexual references",
+		 13,
+		 "https://hanabee.com.au/products/re-kan-blu-ray"
+		)
+	,   ("RE-KAN",
+		 3,
+		 1,
+		 "M - Mature themes and sexual references",
+		 13,
+		 "https://hanabee.com.au/products/re-kan"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("RE-KAN",
+		 1,
+		 "I Can See Them",
+		 "Narumi Inoue, a girl who doesn't like scary things, meets Hibiki Amami, a girl with a sixth sense who can communicate with ghosts. "
+		)
+	,	("RE-KAN",
+		 2,
+		 "This Is My Friend",
+		 ""
+		)
+	,	("RE-KAN",
+		 3,
+		 "Delicious Fried Eggs",
+		 "Narumi tries to appease to her younger cousin, Yuki, who is picky about the fried eggs she makes. As Narumi and Hibiki try to find out what will satisfy Yuki, they learn from his mother that he wants to eat the eggs his late father used to make. Following a recipe from the ghost of Narumi's grandmother, Narumi manages to make the eggs that Yuki wanted to eat. "
+		)
+	,	("RE-KAN",
+		 4,
+		 "Summer Means the Beach",
+		 "The girls go on a trip to the beach, where Kyoko Esumi, a former delinquent, becomes concerned about classmate Kenta Yamada bringing his brother, a police officer who had developed a crush on her. "
+		)
+	,	("RE-KAN",
+		 5,
+		 "The Legendary Culture Festival",
+		 "As the girls prepare a haunted house for the school festival, one featuring actual ghosts, they get to meet Hibiki's father, Asahi, who recounts how Hibiki got her sixth sense from her late mother. "
+		)
+	,	("RE-KAN",
+		 6,
+		 "A Super Awesome Holy Night",
+		 "Hibiki is possessed by a Kogal Ghost, who wants to use her body to say goodbye to someone so she can pass on. During this time, she learns about how Kana Uehara doesn't get to spend much time with her parents because of their careers. After the ghost eventually manages to say goodbye to her mother, she encourages Kana to spend Christmas with her parents. "
+		)
+	,	("RE-KAN",
+		 7,
+		 "A Busy New Year",
+		 "Concerned about Hibiki's increasing fatigue due to constantly helping out girls, the others give her special glasses to cut off her sixth sense so she can get some rest. However, when a child goes missing, Hibiki is forced to take them off in order to get help from her ghost friends. Later, Hibiki and the others celebrate New Year's Day, sharing the fun with humans and ghosts alike. "
+		)
+	,	("RE-KAN",
+		 8,
+		 "Let's All Play Together",
+		 "With a lot of buzz surrounding a pair of teachers, Moriya and Kimura, who recently got engaged to each other, Hibiki comes across the ghost of a young girl who appears to be losing her memories, meaning that she won't be able to pass on if she forgets her lingering attachment. As Hibiki and the others spend time with her, they find she has some connection to Moriya. While Hibiki has Moriya spend some time with the ghost, the others learn from Kimura that the ghost was a sickly girl Moriya was friends with when he was hospitalized as a child. Later that night, after Hibiki gets a glance of her memories, the ghost, having fulfilled her promise of meeting Moriya again, gives her farewell to him on his wedding day and passes on."
+		)
+	,	("RE-KAN",
+		 9,
+		 "The Secret Valentine",
+		 "With Valentine's Day approaching, the gang become curious when Hibiki starts looking up how to make home-made chocolates. Determined to find out if she has a crush or not, Narumi and the others follow Hibiki to the park, where she meets up with a grumpy old man, who they assume is the one she has a crush on. When Valentine's Day arrives, Hibiki delivers chocolates to the old man, which are revealed to be azuki bean chocolates she made based on his late wife's recipe in order to fulfil her Valentine's wish, after which she shares some chocolates with her friends. "
+		)
+	,	("RE-KAN",
+		 10,
+		 "We've Entered Our Second Year",
+		 "Upon entering her second year of high school, Hibiki quickly ends up scaring the new freshman when she tries to get her ghost friends to help them out. When giving Hibiki an image change fails to work, the other try giving the ghosts a makeover, which has similarly bad luck. Later, zombie enthusiast Makoto Ogawa creates a teddy bear for Roll Call Samurai to possess, explaining how an old amateur manga inspired her love of creepy zombie dolls. When another spirit possesses Makoto's zombie doll and starts leading her somewhere, the girls receive help from an umbrella ghost to help the spirit pass on. The next day, Hibiki's attraction to ghosts leads some of her underclassmen to end up liking her."
+		)
+	,	("RE-KAN",
+		 11,
+		 "My Wish",
+		 "Hibiki invites everyone over to celebrate Tanabata, claiming that her family's wishes really do come true. As everyone tries to come up with wishes, Roll Call Samurai and the Kogal Spirit notice Hibiki holding back from hanging up a wish to see her mother, who died when she was born. Having sensed a warm feeling when the Kogal Spirit possessed Hibiki before, the two ghosts venture inside Hibiki's memories, where they meet with Hibiki's mother, Yuhi, who had been watching over Hibiki from within her memories. Yuhi explains that even though she wants to see Hibiki herself, she can't leave as she needs to keep her power going in order to project some flowers from wilting. To this end, Hibiki's ghost friends offer to temporarily take Yuhi's place, allowing her to finally meet with her daughter. The next morning, however, Hibiki discovers she is no longer able to see or hear ghosts. "
+		)
+	,	("RE-KAN",
+		 12,
+		 "We Are All Connected",
+		 "Narumi and the others quickly become aware of Hibiki's situation, unable to see the ghosts through their phones either. As Hibiki passes out from anxiety over not being able to see her ghost friends, she stays at home, unable to face the others. Concerned that Hibiki hasn't been eating properly, Narumi asks Asuhi to teach her how to cook Yuhi's fried eggs, getting Hibiki to eat and open up to her, lamenting how she's lost the bonds she formed with the ghosts. Narumi decides to take Hibiki outside, where they encounter all the people she's helped thanks to her sixth sense before meeting with Yuki and his new little sister Kyouka, who was partially named after Hibiki as thanks for her help, showing that even without her sixth sense, she still has so many bonds. The kindness Hibiki feels from Narumi's friendship restores the flower in her soul, bringing back her sixth sense and her ghost friends."
+		)
+	,	("RE-KAN",
+		 13,
+		 "Summer Memories",
+		 "Hibiki and the others go to an amusement park, with Kyoko and Kana inviting the ghosts to come along. The group soon pay a visit to the park's haunted house, which provides some unique reactions from both the living and the dead. Later, Hibiki comes across a girl helping a lost child, who she soon remembers was someone who helped her when she was lost a child. Afterwards, everyone comes over to Hibiki's house for a sleepover, where Hibiki helps Narumi sleep through the night. "
+		)
+	
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("RE-KAN", 0, 1, 4)
+	,	("RE-KAN", 0, 2, 4)
+	,	("RE-KAN", 0, 3, 5)
+;-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("The irregular at magic high school",
+		 26,
+		 "Off the back of the Nine Schools Competition comes the Thesis Competition, an event to flaunt the intelligence of the students representing the nine major schools. Whilst Tatsuya gets recruited to help present a study on Gravity Control-type magic, there's trouble brewing in the host city.",
+		 "Off the back of the Nine Schools Competition comes the Thesis Competition, an event to flaunt the intelligence of the students representing the nine major schools.",
+		 "Hanabee",
+		 ""
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("The irregular at magic high school",
+		 1,
+		 1,
+		 "MA15+ - Strong animated violence",
+		 7,
+		 "https://hanabee.com.au/products/irregular-at-magic-high-school-part-1"
+		)
+	,	("The irregular at magic high school",
+		 1,
+		 2,
+		 "MA15+ - Strong animated violence",
+		 11,
+		 "https://hanabee.com.au/products/irregular-at-magic-high-school-part-2"
+		)
+	,	("The irregular at magic high school",
+		 1,
+		 3,
+		 "MA15+ - Strong animated violence",
+		 8,
+		 "https://hanabee.com.au/products/irregular-at-magic-high-school-part-3"
+		)
+	,	("The irregular at magic high school",
+		 2,
+		 1,
+		 "MA15+ - Strong animated violence",
+		 7,
+		 "https://hanabee.com.au/products/irregular-at-magic-high-school-part-1-blu-ray"
+		)
+	,	("The irregular at magic high school",
+		 2,
+		 2,
+		 "MA15+ - Strong animated violence",
+		 11,
+		 "https://hanabee.com.au/products/irregular-at-magic-high-school-part-2-blu-ray"
+		)
+	,	("The irregular at magic high school",
+		 2,
+		 3,
+		 "MA15+ - Strong animated violence",
+		 8,
+		 "https://hanabee.com.au/products/irregular-at-magic-high-school-part-3-blu-ray"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("The irregular at magic high school",
+		 1,
+		 "Enrollment Part I",
+		 "In 2095, Tatsuya Shiba and his sister Miyuki enroll at the First Private Magic University Affiliated High School, but due to the difference in their grades in the practical exam, Miyuki is placed in the Course 1 curriculum with the other students who have demonstrated high magical skills, (informally known as &quot;Blooms&quot;) while Tatsuya, on the other hand, having scored poorly on the practical exam is assigned to the Course 2 curriculum (insultingly called &quot;Weeds&quot; by Course 1 students) even though he placed first in the theoretical exam. Tatsuya becomes acquainted with several Course 2 students including Erika Chiba, Leo Saijo and Mizuki Shibata. The chasm between the Weeds and Blooms leads to a confrontation when a number of Miyuki's classmates object to her hanging around with her brother and his new friends. Violence seems imminent but the magic sequence is disrupted by the student council president as she arrives with the chairman of the disciplinary committee."
+		)
+	,	("The irregular at magic high school",
+		 2,
+		 "Enrollment Part II",
+		 "Tatsuya's skills and wits have earned him and his sister the scrutiny of Mayumi Saegusa, Student Council president and Mari Watanabe, leader of the Public Morals Committee. Mayumi invites Miyuki to join the Student Council as the first year representative but she initially declines and puts her brother's name forward. Upon learning that by school regulation, year representatives must be Course 1 students, she accepts. Not wanting to waste his talents, Mari proposes that Tatsuya be the Student Council's nominee for a vacant position on the Public Morals Committee, which President Saegusa agrees to. At a meeting later that day, Student Council vice-president Hanzo Gyoubushoujo Hattori opposes Tatsuya's nomination which prompts Miyuki to defend him. Hanzo reprimands her for her seeming bias towards her brother which causes Tatsuya to challenge him to a magic duel. Tatsuya easily defeats Hanzo, much to the surprise of the Student Council. "
+		)
+	,	("The irregular at magic high school",
+		 3,
+		 "Enrollment Part III",
+		 "The Council cannot reconcile Tatsuya's flawless victory in his duel with Hanzo with his poor showing in the practical exam. Once he regains consciousness, Hanzo tacitly withdraws his objection to Tatsuya's nomination by apologizing to Miyuki. Mari introduces Tatsuya to the other members of the Public Morals Committee, who note the fact that he's a Course 2 student, but warmly welcome him on learning of his victory over the previously undefeated Hanzo. To his dismay, Mari informs Tatsuya that Shun Morisaki, the Course 1 student who started the altercation on their first day, is also joining the Committee on a faculty recommendation. His first taste of action involves a confrontation between the kendo club and kenjutsu club. The head of the kenjutsu club, who combines magic with swordplay, forces Sayaka Mibu, a member of the kendo club and Weed, to spar. When he loses, he uses magic in a follow-up attack, in contravention of the rules. Tatsuya steps in and arrests him but is assaulted by the rest of the kenjutsu club who refuse to acknowledge his authority just because he is a Weed. "
+		)
+	,	("The irregular at magic high school",
+		 4,
+		 "Enrollment Part IV",
+		 "Tatsuya is approached by Sayaka Mibu, who wants his cooperation in a plan to put an end to the discrimination between the Blooms and Weeds at the school. He refrains from giving an immediate answer. His suspicions that she is being manipulated by someone else with ulterior motives are aroused when she is unable to give him proper answers to his questions. "
+		)
+	,	("The irregular at magic high school",
+		 5,
+		 "Enrollment Part V",
+		 "Tatsuya rejects Sayaka's offer and a group of Weeds led by her lock themselves in the broadcast room, creating a commotion at school. Mayumi elects to listen to their demands and discuss them in front of the student body. Debating the school's position by herself, she is about to arrange a compromise with the Weeds when the school gets suddenly attacked by terrorists. "
+		)
+	,	("The irregular at magic high school",
+		 6,
+		 "Enrollment Part VI",
+		 "The Student Council and Public Morals Committee defeat the terrorists and find out that the attack was merely a cover for an information raid on the school's computer library. Tatsuya and his friends are tasked with countering the raid. They defeat the terrorists, including Sayaka, and take them into custody. After learning of Sayaka's reasons for cooperating with Blanche, the terrorist organization behind the attack, Tatsuya decides to attack the enemy hideout in order to help clear her name and strike back at them for using her and invading the school. "
+		)
+	,	("The irregular at magic high school",
+		 7,
+		 "Enrollment Part VII",
+		 "Tatsuya and his friends storm Blanche's hideout where they confront the group's leader, who confirms that he had manipulated Sayaka's memory to attack the school. Despite a number of traps, the students are able to subdue the terrorists with no apparent injuries. After Sayaka is discharged from the hospital, Tatsuya and Miyuki's normal school life moves on. "
+		)
+	,	("The irregular at magic high school",
+		 8,
+		 "Nine Schools Competition Part I",
+		 "The inter-school sporting event known as the &quot:Nine Schools Competition&quot; is just around the corner, and Tatsuya, in recognition of his superior magic-tuning skills, is named to the engineering squad, over the objections of a number of Course 1 students. After school, Tatsuya surprises his sister when presents her with a magic tool he developed that allows a person to fly, a feat that no one has never done before. "
+		)
+	,	("The irregular at magic high school",
+		 9,
+		 "Nine Schools Competition Part II",
+		 "Tatsuya and Miyuki pay a visit to Four Leaves Technology, where Tatsuya unveils his flying CAD to Ushiyama, the other half of the genius magic engineer Taurus Silver. After a brief encounter with their father, the siblings set out for the Competition, but on the way there, a traffic accident occurs, putting the students in danger. "
+		)
+	,	("The irregular at magic high school",
+		 10,
+		 "Nine Schools Competition Part III",
+		 "Tatsuya, Miyuki, and Katsuto Jyumonji act to prevent the car from ramming into the bus. From traces that he is able to find, Tatsuya speculates that the incident was set up to look like a traffic accident but was instead a suicide attack. On arriving at their hotel, Tatsuya and Miyuki are surprised to find Erika and Mizuki present. The event opens with a banquet where the students from the nine competing schools mingle, unaware that unknown enemies are about to turn the competition topsy-turvy."
+		)
+	,	("The irregular at magic high school",
+		 11,
+		 "Nine Schools Competition Part IV",
+		 "The Nine Schools Competition begins and Tatsuya puts his tuning skills into practice in order to help his teammates performance, while staying on watch for further disturbances. "
+		)
+	,	("The irregular at magic high school",
+		 12,
+		 "Nine Schools Competition Part V",
+		 "One of Tatsuya's team member Mari Watanabe is involved in a serious accident during the competition and the other students increase their vigilance after Saegusa, Mayumi, and Tatsuya reveal that she was actually a victim of sabotage. "
+		)
+	,	("The irregular at magic high school",
+		 13,
+		 "Nine Schools Competition Part VI",
+		 "The &quot;No Head Dragon&quot;, an criminal syndicate is eager to interfere in the competition for the sake of their profits and the First High School is their main target. Meanwhile, the students under Tatsuya's care are doing better than expected in their events, drawing the attention of those who still can't acknowledge his talent just because he is a Course 2 student as well as First High School's main rivals from Third High School. "
+		)
+	,	("The irregular at magic high school",
+		 14,
+		 "Nine Schools Competition Part VII",
+		 "The Nine Schools Competition proceeds without further incident until the 1st High School Monolith Code's junior participants get seriously injured due to foul play. Appointed by Mayumi, Tatsuya is requested to compete and agrees to it after Juumonji's persuasion. "
+		)
+	,	("The irregular at magic high school",
+		 15,
+		 "Nine Schools Competition Part VIII",
+		 "Tatsuya enters the competition with his friends Leonhard Saijo and Mikihiko Yoshida in the &quot;Monolith Code&quot; event. While watching out for No Head Dragon's interference, Tatsuya proceeds to win the match using his strategies and they smoothly reach the final match against the 3rd High school's geniuses Red prince Masaki and Cardinal George. "
+		)
+	,	("The irregular at magic high school",
+		 16,
+		 "Nine Schools Competition Part IX",
+		 "Tatsuya and Masaki's teams face off in the final match. Despite knowing that with the rules standing, Masaki's abilities surpass his, Tatsuya confronts him head on, resulting in a spectacular duel. Making a critical mistake, Masaki breaks the rules by accidentally using a lethal attack on Tatsuya. Tatsuya takes the brunt of the attack and is seriously wounded. However, he uses his self-restoration to recover his injuries and while Masaki's still in trance, Tatsuya incapacitates him with a point-blank range magic. Meanwhile, Mikihiko faces off against Cardinal George in a lengthy duel, Mikihiko finally defeats George, but is on the verge of losing to the third member of Masaki's team, when Leo manages to deliver the final blow, allowing First High to win the match. "
+		)
+	,	("The irregular at magic high school",
+		 17,
+		 "Nine Schools Competition Part X",
+		 "Desperate with the recent developments, No Head Dragon start interfering with the competition directly, risking the lives of the players. A 1st high Mirage Bat participant ends up in an accident which causes physical trauma and consequently loses her magical abilities. Tatsuya remains vigilant to stop further accident and snaps when Miyuki's CAD is sabotaged in front of his eyes. After resolving the problem, Miyuki's Mirage Bat event starts and she has a hard time maintaining the leads. Miyuki requests her brother's permission to use Taurus Silver's fly magic sequence and wins the event with no critical mistakes. "
+		)
+	,	("The irregular at magic high school",
+		 18,
+		 "Nine Schools Competition Part XI",
+		 "During Miyuki's event victory celebration, Tatsuya snipes the meeting of the No Head Dragon high-ranking members by casting his diassembly magic from an adjacent building. After learning the name of the organization's head, Richard Sun, Tatsuya proceeds to kill everyone present at the meeting, mostly influenced by his feelings for his sister. On the next day, the competition ends with Jyumonji single-handedly winning the Monolith Code event, confirming the championship for First High School. After Mayumi and Jyumonji discuss the long-term effects that Tatsuya's victory over Masaki (the probable future head of the Ten Master Clans) as the reputation of the Ten Master Clans could be tarnished, Tatsuya is asked by Jyumonji to join the Ten Master Clans by marrying Mayumi or one of her sisters. "
+		)
+	,	("The irregular at magic high school",
+		 19,
+		 "Yokohama Disturbance Part I",
+		 "Following his feats in the Nine Schools Competition, Tatsuya is scouted to participate in another important event, the &quot;Magic Thesis Competition&quot and his team has only eleven days left to produce the applicable material before the deadline. Back at home, Tatsuya and Miyuki have an encounter with their step mother, who enlists Tatsuya's help to replicate an elusive relic that can change the history of magic forever, but a new group of enemies appear, intending to steal it. "
+		)
+	,	("The irregular at magic high school",
+		 20,
+		 "Yokohama Disturbance Part II",
+		 "While gathering the necessary material for the thesis, Tatsuya and his friends start their own investigation on those who are stalking him and was trying to hack him + his Four Leaves company. "
+		)
+	,	("The irregular at magic high school",
+		 21,
+		 "Yokohama Disturbance Part III",
+		 "The Magic Thesis Competition team meets continued success in developing their project, though Erika, Mikihiko, and Leo apprehend a fleeing student, Chiaki Hirakawa, who is revealed to be working as a spy against the First High team. Chiaki admits to working against Tatsuya personally, passionately believing that he is responsible for Kobayakawa's accident during the Mirage Bat event of the Nine Schools Competition. Erika and Leo take a day off together to train Leo how to use lethal magic, with Erika believing that the conflict will more likely escalate to kill or be killed. Mikihiko chases after an embarrassed Mizuki, unintentionally bumping into an ominous figure dressed in a First High student uniform. "
+		)
+	,	("The irregular at magic high school",
+		 22,
+		 "Yokohama Disturbance Part IV",
+		 "Lu Gonghu's attempt to remove Chiaki is thwarted by Watanabe and Naotsugu Chiba. Mr. Zhou visits Chiaki and appears to cast a memory alteration magic so that she will forget about his involvement with her. Saegusa, Watanabe, and Tatsuya go to the detention facility and elicit a confession from Sekimoto on his intention (and unsuccessful attempt) to steal the Magic Thesis project data and locate the relic. Lu Gonghu appears again, apparently to silence Sekimoto, but is defeated by the three and taken into custody."
+		)
+	,	("The irregular at magic high school",
+		 23,
+		 "Yokohama Disturbance Part V",
+		 "Chen Xiangshan appeals to Mr. Zhou for help freeing Lu Gonghu. Under condition that Chen promises to avoid Chinatown during his operation, Lu Gonghu is broken out. Ichihara visits Chioda and manipulates her to hold onto her feelings of bitterness for Tatsuya, believing that her capabilities will be important for 1st High future. Further questioning revealed that Sekimoto was operating against the Magic Thesis team under mind control by an adversary organization. At the convention, Juumonji elects to increase security and have all Joint Security Force members wear a bulletproof vest. The First High Magic Thesis team successfully delivers their presentation. Cardinal George congratulates Tatsuya backstage and claims that his school will defeat them. Before they can begin their presentation however, the convention center is attacked. "
+		)
+	,	("The irregular at magic high school",
+		 24,
+		 "Yokohama Disturbance Part VI",
+		 "The conventional joint defense forces engage the assaulting teams but are bogged down by slow progress with evacuating the students, but discover that the attack is being launched from an unidentified disguised ship anchored in the harbor. Armed assailants assault the main hall, but are easily countered by Tatsuya after he inspires the other students to fight back. Cardinal George confronts Tatsuya on using a top-secret technique used by STARS called Molecular Divider, but Tatsuya ignores him, saying that he doesn't have time to explain himself. Asuza casts a charm to calm everyone in the hall, and the evacuation begins to an underground shelter via an emergency underground tunnel. Tatsuya's group lead the counterattack against the main terrorist force attacking the convention center. Shizuku uses her family's privilege to take the group to a VIP conference room so they can use the network to get a better idea on what's going on outside, then meet with the rest of the First High student council members in the green room to discuss their next move. The group deciphers the enemy's motive to be to raid the Magic Association's main database. Just as the group decides to evacuate to the shelter with everyone else, Major Kazama and Fujibayashi arrive and dispatches new orders to Tatsuya, revealing to everyone's great surprise that he is a JSDF special operative. Major Kazama tells everyone that this is confidential information, and his status must remain secret. Miyuki unlocks the seals on Tatsuya's powers and sends him to answer the JSDF's call to defend the city."
+		)
+	,	("The irregular at magic high school",
+		 25,
+		 "Yokohama Disturbance Part VII",
+		 "Crimson Prince brutally kills the terrorists while his allies prepare a bus for their escape aboveground. Meanwhile, evacuation underground continues through the tunnels despite resistance, Mr. Tsuzura prevents a collapsed ceiling causes by Great Asian Alliance's war machines. Mayumi and Shizuku call their fathers to send helicopters to evacuate the personnels who were unable to reach the bunker, and everyone is extracted. Tatsuya takes to the skies in the flight suit, which R&D had improved beyond his own design, and begins by destroying the attackers' recon drones. The battle for the city continues, with notable First High members and Crimson Prince fighting back the attackers. In another group, while they were escaping, an ambush attack causes Kirihara's leg to be blown off and Kei pierced by shrapnel while protecting their girlfriend. Miyuki arrives, eliminating the attackers and calls for Tatsuya, who uses his magic to restore both Kirihara and Kei before departing to support another area. "
+		)
+	,	("The irregular at magic high school",
+		 26,
+		 "Yokohama Disturbance Part VIII",
+		 "The episode starts with Tatsuya and other airborne comrades obliterating an enemy mechanized battalion. Some enemy soldiers recognize him as Mahesvara, a demon from 3 years ago who appears for revenge when his sister and mother was critically injured. Meanwhile, Jummonji leads the magicians from Magic Branch Association charasmatically, resulting in the enemy retreating. The Crimson Prince reaches the Chinatown of Zhou Gongjin and demands that he surrender the escapees, to which Zhou agrees and assures The Prince that he had also been victimized. The scene then moves to the Saegusa helicopter. The students in the helicopter are very curious about Tatsuya's magic, which healed Kei and Kirihara's wounds. Miyuki explains Tatsuya's magic Regrowth, as well as its price: the user has to endure the same pain as the person healed, in a condensed form. Later, they defeat Lu Gong-Hu and his employer at the branch of Magic Association building. The battle proceeds with the airborne troops and the magicians led by Jummonji, sandwiching the enemy from 2 sides, successfully obliterating most of the enemies. Some manage to escape to the camouflaged ship, though. Later, Major Kazama authorizes Tatsuya to activate Strategic Class Magic, Material Burst, which converts mass into energy. Tatsuya uses Material Burst on the retreating Great Asian Alliance's navy, completely annihilating them. Furthermore, he also casts Material Burst onto the Great Asian Alliance departing Navy battalions and their harbor using satellite view and ends the war before it even begin. The event is referred to as 'Scorched Halloween', the day where magic is recognized as the strongest weapon and magicians begin their era of glory and suffering. The episode ends, with Maya Yotsuba inviting Kazama and the Shiba siblings to visit her on the same day, while Tatsuya hugs Miyuki, on his return. "
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("The irregular at magic high school", 0, 1, 8)
+	,	("The irregular at magic high school", 0, 2, 9)
+	,	("The irregular at magic high school", 0, 3, 9)
+;
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Blassreiter",
+		 24,
+		 "Giant, biomechanical creatures of origins unknown are terrorizing the city. Labelled as Demoniacs, the creatures appear rabid and unpredictable, killing and maiming anything in their path. The town’s citizens are terrified, the media demands answers.",
+		 "Somewhere in Germany in the not-too-distant future all hell is breaking loose...",
+		 "Siren",
+		 "Ichiro Itano"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Blassreiter",
+		 1,
+		 1,
+		 "MA15+ - Strong animated violence",
+		 24,
+		 "http://sirenvisual.com.au/index.php/shop/blassreiter-complete-series.html"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Blassreiter",
+		 1,
+		 "Prelude to Despair",
+		 "During a motorcycle race in Germany, a Demoniac attacks German policeman stationed at the race track before taking control of an ambulance and attacking several competitors. Motorcycle star Gerd Frentzen faces off against the Demoniac before armed XAT officers cordon the area. An unknown being in a blue Blassreiter form appears and kills the Demoniac. In the process, Gerd is injured and paralyzed from his waist down. Gerd is disillusioned when he discovers that he is being dropped from the team and Igor will take his place. Some time later, a mysterious doctor, Beatrice Grese, offers Gerd an experimental drug. During an XAT-led operation to track down a Demoniac hiding in an industrial complex, a Blassreiter appears and destroys the Demoniac. XAT officers Hermann Saltza and Amanda Werner are shocked to see the Blassreiter transform into Gerd who has fully recovered his ability to walk. Beatrice Grese seems satisfied with the results of her experiment with Gerd. "
+		)
+	,	("Blassreiter",
+		 2,
+		 "The Price of Glory",
+		 "XAT begins to conduct surveillance on Gerd after discovering that he has Blassreiter powers, despite being popular with the German public and his elimination of Demoniacs. Gerd heads back to meet his former girlfriend Jill Hoffmann, but sees her in the arms of his manager Matthew Grant who says that he'd been planning to drop Gerd from the team even before his accident. Enraged, Gerd transforms into his Blassreiter form and almost strangles Jill before Grant stabs Gerd and the XAT officers arrive. Gerd flees on his motorcycle, but is pursued by the blue Blassreiter. He escapes and is then chased by Hermann, however, due to the lack of control over his Blassreiter power, Gerd crashes off a cliff and his motorcycle is destroyed in an explosion."
+		 )
+	,	("Blassreiter",
+		 3,
+		 "The Infection Spreads",
+		 "Despite efforts to locate Gerd's possible corpse, the XAT only find his ruined motorcycle. As a precaution, XAT isolate Jill and Matthew after their contact with Gerd's Blassreiter form and continue the search for the blue Blassreiter who is declared a high priority target by Wolf Göring. Meanwhile Amanda's brother Malek is being bullied by older boys, but Joseph Jobson comes to his aid. Matthew turns into a Demoniac from exposure to Gerd's blood when he stabbed Gerd at Jill's house. The blue Blassreiter, Joseph Jobson, pursues him, but they are both hit by XAT rockets. Matthew goes back to Jill's house, where he becomes a Blassreiter, but Joseph Jobson again attacks Matthew and this time he finally destroys him."
+		 )
+	,	("Blassreiter",
+		 4,
+		 "Under Siege",
+		 "XAT is mobilized into action when multiple Demoniacs appear in several town blocks and attack armed policeman. Joseph intervenes in his Blassreiter form and chases down the Demoniacs but some XAT operatives hold him responsible for massacring policemen when they arrive late on the scene. His actions in protecting a citizen and consequent wounding cause Amanda Werner to question whether Joseph is really XAT's enemy. Jill's condition from contact with Gerd's blood becomes worse, forcing Wolf to have her heavily sedated. Meanwhile Malek is beaten up by his friend Johann who is also pressured by the bullies. Gerd survived his crash and is seen killing a motorcycle-possessed Demoniac out on the highway. However he has confusing visions and problems managing his Blassreiter form."
+		 )
+	,	("Blassreiter",
+		 5,
+		 "The Disdained",
+		 "Igor takes his motorcycle onto the track for late night practice when Gerd appears and they race each other. When Igor tries to run Gerd off the track he crashes. Later, on TV, he accuses Gerd of trying to kill him. Meanwhile Malek finds the injured Joseph and treats his wound. Jill is being transferred under XAT escort as precaution against an attack from Gerd, when she turns into a Demoniac and attacks the escort team. Gerd confronts and kills the Demoniac Jill, while under the eye of the media, and in his confusion, he takes out the media chopper flying overhead and retaliates when the XAT forces attack him. Hermann finally reaches through to him and Gerd returns to his human form. When Hermann gives Gerd the fan letter Malek wrote to him, Gerd angrily takes off, knowing that he isn't the hero that some people think he is any more."
+		 )
+	,	("Blassreiter",
+		 6,
+		 "The Song that Pities the Demon",
+		 "Joseph confronts Gerd, both in their Blassreiter forms, but after Joseph reveals his human form, Gerd asks Joseph to do him a small favor. At home, Amanda is about to confront Malek about his frequent absences from school when Hermann arrives and asks Malek to go with him and help reason with his idol, Gerd. Hermann and Malek meet Gerd and the two motorcycle racers decide to race for old times, watched by Joseph. During the race Gerd imagines that Hermann is a Demoniac and forces him to crash. As Gerd succumbs to the demonic side of the Blassreiter form, seeing everyone as Demoniacs, Joseph appears and kills Gerd, fulfilling the promise he made to end his life should he no longer control his Blassreiter powers."
+		 )
+	,	("Blassreiter",
+		 7,
+		 "At the End of Hatred",
+		 "Johann, Malek's friend, commits suicide, feeling guilty over attacking Malek to avoid being beaten by the bullies himself. Beatrice Grese delivers a video to the XAT revealing Joseph's human face. Malek begins to lose faith in god for the unfair treatment of Johann and his family and doesn't believe Amanda's promise to protect him. Meanwhile, the principal from Malek's school bribes Johann's mother to keep things quiet to preserve the establishment's reputation. While the police and XAT are on the hunt to capture Joseph, Beatrice appears to Malek and offers him the same pill she gave to Gerd that cured his paraplegia but also created his Blassreiter form."
+		 )
+	,	("Blassreiter",
+		 8,
+		 "Weak no Longer",
+		 "Wolf is told by Beatrice that he came in contact with Demoniac blood and is going to become an Amalgam too. Beatrice also reveals the evolutionary process of the Demoniacs, how the infection spreads and the threat that Joseph Jobson poses to her plans. After taking the pill from Beatrice, Malek develops Blassreiter powers and kills his school bullies. Joseph detects Malek's actions so he rides to the school and tries to reason with Malek who is fighting the XAT forces. Malek attacks instead, then Joseph is wounded when he defends Malek from a .50 caliber sniper shot from Bradley &quot;Brad&quot; Guildford. After realizing that the Demoniac is Malek, Amanda shields him with her own body enabling Malek to escape from XAT, taking the wounded Joseph with him."
+		)
+	,	("Blassreiter",
+		 9,
+		 "The Price and the Meaning of Power",
+		 "Wolf takes Amanda off active duty due to her relationship with Malek, referred to as Yellow. Amanda thinks back to when she adopted Malek and how she was unable to protect him. She breaks orders and tries to find Malek with Hermann. Malek and Joseph are hiding in an old church with Joseph badly wounded when they are found by Magwald Xargin. He attacks and nearly kills both of them without even changing to his Demoniac form. Amanda and Hermann arrive just after Xargin leaves and Malek regains consciousness long enough for him to tell Amanda that he regrets killing the delinquents. Joseph and Hermann are both shaken when they see Malek lose consciousness again."
+		)
+	,	("Blassreiter",
+		 10,
+		 "Inside the Conspiracy",
+		 "Malek and Joseph are held in an experimental facility at the XAT, Joseph slowly self-repairing, but Malek still in a coma. Alvin &quot;Al&quot; Lutz and Brad tell Hermann and Amanda that they believe the Demoniacs are the result of human weapons research. With the help of a technician, Hermann and Amanda try to analyze Joseph and discover confidential information about Blassreiters. Victor Stachus then has Amanda and Hermann taken into custody fearing that the information will get out. Meanwhile, Amalgams are detected and while fighting them, Al and Brad see the new anti-Amalgum Paladin machines piloted by Geige, Senger and Clavier. As he recovers, Joseph has nightmarish visions of past events. While Wolf is having sex with Beatrice, he asks if he too will become a monster to be hunted and killed, but she says that it is up to him. She shows him her vision of the future, dominated by Demoniacs."
+		 )
+	,	("Blassreiter",
+		 11,
+		 "Prelude to Apocolypse",
+		 "Victor is informed of Wolf's condition, and that a virus is circulating through the XAT. Al and Brad inspect the new Paladin machines and Brad encounters his old squad member, Clavier. A mysterious outbreak of Amalgams has the Paladin-equipped XAT officers dispatched to a public swimming pool. Later, infected XAT personnel turn into Amalgams and begin to take over XAT headquarters, cutting off communications with the outside world, while Al and Brad free Hermann and Amanda. Clavier and Senger head back to headquarters and are ambushed by Amalgams when they arrive, but Blue emerges and attacks the Amalgams. The surviving XAT operatives are devastated when Wolf reveals that he was instrumental in the infection of XAT staff and the Amalgam outbreak in the city. Beatrice confronts Joseph and tells him that even the Bundeswehr wouldn't be able to defeat Amalgams. Mei-Fong reports back to Victor that most of XAT are dead, forcing Victor to disband the organization while the &quot;Three Knights&quot; are assembled."
+		 )
+	,	("Blassreiter",
+		12,
+		"Judgement Day",
+		"The remaining XAT troops realize that they are probably infected from drinking contaminated water, except for Hermann and Amanda who were incarcerated. They decide break out and head for the heliport. Wolf announces that all XAT staff are infected and to kill them on sight. Meanwhile Beatrice defeats Joseph, but Xargin arrives and sends her on another mission. Only a few XAT troops make it to the helipad and are confronted by Wolf who and reveals his true purpose and his Blassreiter form. Hermann and Amanda manage to escape in a helicopter, thanks to the remaining XAT troops sacrificing themselves. As they leave, Mei-Fong on board an airborne mecha drops a bomb that destroys XAT headquarters and part of the city to prevent further Amalgam contamination. As their Aérospatiale Puma chopper was damaged during the bomb blast, Hermann gets Amanda to eject before it crashes to the ground and explodes with him still inside."
+		)
+	,	("Blassreiter",
+		13,
+		"Distant Memories",
+		"Amanda and Joseph take refuge in an abandoned church several miles from the deserted city where he grew up. Joseph tells Amanda that he was an orphaned Outsider, a class considered inferior in German society. He endured hardship and experienced discrimination from the upper class due to his heritage, but protected and helped care for the younger children. He even accepted blame for mischievous deeds done by wealthy local children to protect the orphanage. When he was 15 years old, a flood hit the nearby town and the church's priest died while assisting and sheltering refugees. Joseph was distraught at the death of the priest and what he saw as abandonment by God, but was amazed when a young Xargin arrived with humanitarian assistance."
+		)
+	,	("Blassreiter",
+		14,
+		"A Saintly Decision",
+		"Joseph continues his story, telling Amanda how while Xargin helped people at the church, it was torched by anti-Outsider rioters and Xargin was burned. When visiting Xargin in hospital, Joseph met Sasha who recognised his rosary and told Joseph that they were siblings separated at birth. At the time, Sasha was carrying out bio-engineering research at the university with nanomachines to overcome disease. To help the immigrant refugees displaced by the flood, Xargin and Joseph broke into the university for medicine, but were caught by the guards. Sasha negotiated with director Victor Stachus to have them released. After Sasha's apparent death by anti-Outsider hooligans and the deaths of Outsider children due to lack of medicine, Joseph learned that Victor was using her research to create living weapons. Angry at all the suffering, Xargin used Sasha's research to become a Blassreiter to end suffering in the world. When Joseph was injured trying to stop him, Xargin dropped some of his blood into Joseph's mouth, making him a Blassreiter. Back in the present, Amanda and Joseph are standing in the graveyard then two machines appear, piloted by Mei-Fong and Sasha, who is alive but looks different."
+		)
+	,	("Blassreiter",
+		15,
+		"The Millenary Knights of God",
+		"Amanda and Joseph are taken into custody by Mei-Fong and Sasha who are working for a paramilitary organization called Zwölf, known as the Knight Templars in the Middle Ages. Commander Victor Stachus watches as Amanda undergoes Zwölf training while Joseph undergoes surgery to release his latent Blassreiter powers. Amanda learns that Victor and Mei-Fong were loaned to XAT to help fight the Amalgums. Meanwhile, the three Apocalypse Knights are launched by Zwölf after the Bundeswehr and German police couldn't contain the rise of Demoniac outbreaks. Using a particle canon they destroy almost everything and everyone within the targeted radius, then land to finish the task manually. Amanda realizes that, although Zwölf has the solution to destroying the Amalgams, he was also the responsible for their creation. Meanwhile, Wolf tries to make Al, Brad and Lene into Blassreiters by applying transfusions of his own blood."
+		)
+	,	("Blassreiter",
+		16,
+		"Reunion",
+		"Amanda learns from Sacha the background to the Zwölf human weapons program. Hermann, now a Demoniac converted by Beatrice, infiltrates the Zwölf castle to rescue Amanda, but she refuses to leave. Meanwhile, Wolf leads a Demoniac force to attack the Zeppelin Air Base in order to draw the Apocalypse Knights into a trap. Above the airbase, Demoniac-manned Eurofighter Typhoons are used to intercept the Knights with Beatrice closing from the opposite direction. Hermann turns to his Blassreiter form and escapes with the 666, an experimental motorcycle, killing Zwölf defense personnel in his wake. Amanda pursues him in her XAT Paladin."
+		)
+	,	("Blassreiter",
+		17,
+		"Bellow of the Beast",
+		"The Apocalypse Knights take on the Demoniac Eurofighter Typhoons and Beatrice and manage to destroy most of the airbase and escape. Meanwhile Amanda confronts Hermann in his Blassreiter form and helps him realize what he is supposed to be fighting for. While the Apocalypse Knights repair the damage and re-engage Beatrice the remaining Demoniac Eurofighter Typhoons, Hermann and Amanda head toward the airbase, to face off against Wolf and his Amalgam cadre that survived the blast."
+		)
+	,	("Blassreiter",
+		18,
+		"The Fourth Apocalypse",
+		"Amanda and Hermann engage Wolf and his Amalgam cadre until Joseph arrives, but he loses control, attacking both friend and foe and the Apocalypse Knights retreat. At the United Nations, the ambassadors are concerned about the inability of German security forces to handle the Amalgams. They agree to take control of the country themselves and send in UN peacekeepers to eliminate the Amalgams. Victor tells the members of the German government that he will continue his own battle to save humankind. While trying to locate Hermann, Amanda encounters a young Blassreiter named Snow."
+		)
+	,	("Blassreiter",
+		19,
+		"Quondam Affections",
+		"Snow tells Amanda about her connection with Joseph and goes to talk him out of his berserk state. Hermann and Amanda confront Wolf and the remaining Amalgam cadre at the former besieged XAT Headquarters. At some personal cost and pain, Snow confronts Joseph and helps him regain his humanity. Wolf is almost defeated when a sniper Amalgam Al shoots at the two surviving XAT officers, but seeing his name on Amanda's Paladin brings Al back to his senses and he shoots Wolf instead. Amanda and Hermann then destroy Wolf for good. Afterwards, Al kills himself because he didn't feel that coming back to life was normal."
+		)
+	,	("Blassreiter",
+		20,
+		"Legion from the Netherworld",
+		"A horde of 30,000 Demoniacs head towards Zwölf under the command of Xargin with Beatrice alongside. Victor decides to send Joseph out alone to delay their advance towards Zwölf headquarters. Meanwhile Amanda and Herman gain entry to Zwölf castle in an attempt to rescue Malek. Joseph walks out to meet Xargin and Beatrice, and Beatrice attacks to prove her worth to Xargin. Changing to their Blassreiter forms, they engage in a fierce battle. Joseph wounds Beatrice is about to end her life when Xargin stops Joseph and easily subdues him despite the enhancements ordered by Victor. Xargin enters the castle and meets Sacha."
+		)
+	,	("Blassreiter",
+		21,
+		"Phantom Rider",
+		"Armed Zwölf defense personnel are mobilized to ward off the Demoniac invasion on Victor's orders. Amanda and Hermann search for Malek within the complex, and find him through a clue left by Shido. Sasha challenges Xargin, but cannot kill him and Xargin proceeds to the main server room. Amanda and Hermann leave with Malek, pick up the unconscious Joseph as they depart and take refuge in a small compound managed by a nun and friend of Shido. Victor heads down to the server room to secure computer data during the invasion, but Xargin reaches the room, and casually defeats him by integrating him into the computer system."
+		)
+	,	("Blassreiter",
+		22,
+		"Drifting Hearts",
+		"Sasha hands Amanda the Isis data, which contains the information about anti-nanomachines needed to defeat Xargin's Demoniac forces. Beatrice finds out about Isis, even after the data was deleted at Zwölf. Hermann finds Beatrice and attacks her but she is too powerful, and after defeating him, she goes for Amanda. Hermann calls to Malek who revives from his coma and attacks Beatrice to give Hermann time to fatally wound her before he is defeated. As Hermann dies, he is glad that Malek accepts him as an older brother. Meanwhile, United States Air Force B-2 Spirit bombers are deployed as part of the UN's mission to eliminate the Demoniacs in German soil."
+		)
+	,	("Blassreiter",
+		23,
+		"Scorched Earth",
+		"Sasha, Mei-Fong and Shido work together to intercept the United States Air Force B-2 Spirit bombers and F-35A fighters and prevent them from conducting a bombing sweep of Germany to clear out all Demoniacs. At Zwölf headquarters, Victor regains consciousness and begins to merge with the electronic systems. Shido, promising that he will not let the United States do to Germany what it did to Japan, (declares &quot;no more Nagasakis, no more Hiroshimas&quot;) and sacrifices himself by destroying his Sword Rider unit, defeating the last F-35As. Sasha and her Bow Rider shoot down the remaining missile, but Mei-Fong detects ICBMs being fired from a Space weapon. Malek leaves to meet Xargin alone and the two engage each other in their Blassreiter forms. Malek is no match for Xargin and is easily defeated. Joseph, now recovered, arrives and sends Malek back to headquarters with Elea on the GARM motorcycle. After swallowing the Isis pill, Joseph prepares to confront Xargin and the two men prepare to engage one another in their Blassreiter forms."
+		)
+	,	("Blassreiter",
+		24,
+		"Promised Land",
+		"Joseph and Xargin engage each other in their Blassreiter forms. Elea convinces Victor to help the only remaining Zwölf personnel, Sasha and Mei-Fong, to counter the ICBMs being fired towards Germany. Although they succeed in intercepting the ICBM attack on Germany, Sasha dies when her Bow Rider explodes from overheating after firing the long range canon and Mei-Fong is killed after engaging a spacecraft above the Earth. Victor finally dies as power to Zwölf headquarters is terminated. Xargin beats Joseph who lapses into unconsciousness. However, first Hermann and then Gerd assist him with their powers by merging with his body, but it is not enough and Xargin still defeats him. As Joseph dies, the Isis anti-nanomachines are released with its particles killing Xargin and immobilizing the Demoniacs. Five years after the events of Blassreiter, Germany has been rebuilt and the federal government reformed a new XAT. Amanda accepts a position as Captain of the Guerrilla Squad and work with Malek to protect people who have turned into Amalgams with the ability to turn to Blassreiters but who now suffer persecution."
+		)
+;
+	
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Blassreiter", 0, 1, 8)
+	,	("Blassreiter", 0, 2, 8)
+	,	("Blassreiter", 0, 3, 8)
+;
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Canaan",
+		 13,
+		 "UA: Experimental virus thought to be developed by the CIA, its name taken from the Swahili word for &quot;kill&quot; and &quot;flower&quot;. Exposure to UA usually results in death within 12 hours from severe bleeding. There is no known cure, though clandestine organisations are working on an anti-virus. Survivors of the virus are known as Borners and are left with permanent blood vessel patterns on the skin resembling spidery flowers. Canaan is a war orphan from the Middle East, rescued from the ruins of her war-torn village and raised by an ex-mercenary named Sham. Gifted with synaesthesia (a rare condition in which the body's senses trigger visual patterns), Canaan's life is set for revenge when Sham is murdered by Alphard - the leader of a bio-terrorism organisation known as Snake, who have claimed responsibility for UA attacks on China and Japan. Close to obtaining the only known anti-virus to UA and wishing to profit from its possession, Alphard's only obstacle is a woman from her past known as Canaan... An explosive anime thriller set in the marketplaces and remote countryside of China, Canaan is an incendiary conspiracy story directed by Masahiro Ando (Full Metal Alchemist, Cowboy Bebop, Sword of the Stranger) and animated by P.A. Works (Afro Samurai: Resurrection, Angel Beats!).",
+		 "UA: Experimental virus thought to be developed by the CIA, its name taken from the Swahili word for &quot;kill&quot; and &quot;flower&quot;.",
+		 "Siren",
+		 "Masahiro Ando"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Canaan",
+		 1,
+		 1,
+		 "MA15+ - Strong Animated Violence",
+		 13,
+		 "http://sirenvisual.com.au/index.php/shop/canaan.html"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Canaan",
+		 1,
+		 "Evil, Flood-Colored City",
+		 "Maria Ōsawa and Minoru Minorikawa are dispatched to Shanghai from Japan, two years after the events of 428: Shibuya Scramble, to cover the upcoming International Anti-Terrorism Conference in the city with various world leaders coming to attend the meeting. Canaan, a Middle Eastern teenaged mercenary, was in the city as well after meeting with the unknown female contact with information that her rival Alphard Al Sheya was captured and secretly detained in Karachi, Pakistan by covert operators of the CIA's Special Activities Division. When Maria comes to see an unknown man dead with the Ua virus, Canaan saves her from being assassinated by masked gunmen before she defeats the rest of them without alerting and panicking the public with heightened senses in synesthesia. Meanwhile, the CIA's SAD convoy comes under attack from an IED ambush while transporting Alphard in their custody."
+		)
+	,	("Canaan",
+		 2,
+		 "Worthless Games",
+		 "Liang Qi and Cummings led an airborne attack against the CIA SAD convoy consisting of air-to-surface-missiles and GPMG gunfire in order to free Alphard from their custody. Minoru, in a flashback, remembers that his superiors requested him to train Maria in order to become a professional photographer after surviving the events in Shibuya. While eating dinner in Shanghai, Maria and Minoru are targeted by an unknown old man who resembled the official Minoru saw on television en route to the city. Canaan arrives on the scene to save the two reporters from the Mini-Uzi-wielding man, before she was targeted for death by the man himself. He then dies by electrocution. The two reporters were later kicked out of their hotel room due to the mess created by unknown men. Minoru later contemplated about the mysterious T-shaped purple mark he saw from the old man and a corpse found from the festival he visited a day earlier."
+		 )
+	,	("Canaan",
+		 3,
+		 "Trivialities",
+		 "Deciding to take a lead in the T-shaped purple mark Minoru saw recently, he and Maria visited a Japanese-themed bar to ask a woman before he is stopped by the establishment's bartender. Meanwhile, Alphard began to make plans for an unknown event while Liang Qi is irritated over Alphard's ignorance for her to attack Canaan right away. Canaan later was able to visit Maria with the help of her synesthesia-based abilities despite that she and Minoru were forced to stay in a run-down apartment. Maria and Canaan later decide to take a tour around Shanghai, the two of them visiting the Bund Sightseeing Tunnel when Canaan was lured away from the tram to check on a supposed trap before running back to see Maria missing. Canaan fights against a young boy who told her that he is a Borner due to his mysterious ability after being infected with the Ua virus, which in case gave him the ability to hide in narrow passages. Canaan killed him with a well-placed shot in the body to obtain the detonator for the explosive placed on Maria's head after she was restrained."
+		 )
+	,	("Canaan",
+		 4,
+		 "Lingering Sunset",
+		 "Canaan remembers why she wanted to take down Alphard while removing the bullet head from her left arm sustained from being shot in the tunnels of the Bund Sightseeing Tunnel. Maria later has PTSD over the events of her detention and rescue by Canaan, not knowing that Canaan is really an armed mercenary and assassin for real and not the girl she knew from years ago. Alphard, with Liang Qi and Cummings, attend a public function dedicated to the upcoming NBCR International Anti-Terrorism Conference with the selection of the Daedala Corporation, a Private military company that has the Chinese government as its major client to assist Chinese security forces in safeguarding diplomats for the upcoming conference with Cummings as the public head of the company. In a public toilet, Canaan confronts Alphard privately with the latter taunting her for her failure to protect Siam from getting killed years ago. Canaan later flees when Alphard fires her FN Five-Seven USG at the sprinklers. "
+		 )
+	,	("Canaan",
+		 5,
+		 "Friends",
+		 "Maria stays with a girl named Yunyun in her personal houseboat a day after she wanders off in an alleyway without Canaan. Yunyun is later summoned by Liang Qi with a mission assigned to her. Maria and Minoru later investigate the T-shaped marks with the assistance of Japanese physicians back in Japan to study them and find out what has caused them for themselves. Canaan later meets Yunyun embarrassingly as part of the latter's mission is to get rid of her. Despite pleas from Maria, Canaan and Yunyun continue to face off against each other unsuccessfully with a plan by Yunyun to kill herself and Canaan with dynamite mounted throughout her entire body before Canaan decides to save the girl out of pity for Maria since she is her only friend. Back in Maria and Minoru's rented apartment room, Yunyun confesses to her true state as a Borner, but without any kind of special abilities granted to her by the Ua virus' infection since it merely gave her two appendixes. Minoru later pays him with money to help her be a double agent to both him and the Snakes as his personal informant. "
+		 )
+	,	("Canaan",
+		 6,
+		 "Love and Piece",
+		 "Minoru later learns of a village in the Kashmir region, where most of its residents were purposely infected by the Ua virus with a few survivors being dubbed as Borners for having mysterious abilities given to them by the virus. Minoru later meets with Hakko, one of the employees of the bar he visited revealed to the reporter his suspicions that she was a Borner. The NBCR Anti-Terrorism Conference was now underway with armed Daedala PMCs protecting the dignitaries in the Shanghai International Conference Hall with armed policemen of the Chinese Ministry of Public Security. Liang Qi later perpetrates the bombing of the hall's interior after the American President concluded his speech. Canaan and Minoru head to the hall themselves to secure Maria themselves after hearing the bombings. Armed Public Security policemen later confronted Daedala contractors when they, later with Alphard, attacked the officers when they were trying to get to the building's central control room. Maria is detained by Daedala forces under Liang Qi's instruction to lure Canaan in and kill her. But remembering the words taught to her by Siam in her youth, Alphard shoots Liang Qi to prevent her from further attacking Maria. Meanwhile, all of the dignitaries were in the underground bunker as planned in case of a terrorist attack in order to be eventually infected by the Ua virus. "
+		 )
+	,	("Canaan",
+		 7,
+		 "Gravestones",
+		 "The American government convenes an emergency meeting after a dignitary dies from a Ua virus infection. Alphard ignores Liang Qi's anger over her qualms of killing Canaan. Kenji Ōsawa, head of Okashi Pharmaceutical, had planned to send the anti-Ua virus vaccine to Shanghai when he was supposedly killed in a car bomb. This &quot;event&quot; forced the American military to send in B-2 bombers from Guam to bomb the entire Shanghai International Conference Hall in order to purge the Ua virus in flames and prevent in from spreading throughout Shanghai. Canaan infiltrates the hall, rescuing Maria after fending off several Daedala security forces personnel impending her progress. Canaan and Yuri Natsume worked together to hack the B-2's GPS system and let the bombs miss the conference hall to save the dignitaries inside while heavily armed PLA Special Operations Forces troopers escorted Kenji safely at the outskirts of the hall. Alphard and Cummings retreat underground with a handful of Daedala security forces, the former already deciding to abandon Liang Qi to let her fend for herself. When Maria and Canaan emerge outside, Canaan had collapsed due to her exhaustive use of her synesthesia abilities. "
+		 )
+	,	("Canaan",
+		 8,
+		 "Voice",
+		 "Canaan emerged safe after she collapsed, being told by Maria that she was simply tired. Kenji, in a phone conversation with Minoru, further informs him of the Ua virus and how sometimes people can survive from the virus' infection. The American Vice President later has a tapped phone conversation with Alphard, thanking him for the cooperation she had with him in the nature of ensuring &quot;anti-terrorism&quot; business keeps going for a few more years. During a public concert, Hakko showed off her Borner ability with people having severe headaches without them being aware. It later forced Canaan and Maria to flee as Hakko had nightmares of how she first knew of her ability from being infected with the Ua virus. Minoru later confronts Santana, Hakko's &quot;guardian&quot;, over the nature of the Borners and the Ua virus. Canaan and Maria later go on a long cruise with Santana, Minoru and Hakko in a SUV that took them to the desert regions of China. Maria and Canaan later talked about being together and reaffirming their friendship since it helped them over problems they had such as Canaan's inability to see colors from her synesthesia or from Maria having Canaan by her side all the way, straining the two of them in potential danger. Hakko tries to strangle Canaan in her sleep, remarking to the mercenary that it was her fault. The group later encounters Yunyun, traveling on a bicycle."
+		)
+	,	("Canaan",
+		 9,
+		 "Flowers of the Past",
+		 "Canaan and the others arrive at the outskirts of an abandoned village, where Santana reveals to everyone that it had been the staging grounds of the Ua virus when a said infestation would have actually occurred. He later resigns from the CIA in disgust when he learns that CIA operatives had disguised themselves as Centers for Disease Control and Prevention personnel with the Snakes under Alphard in order to tests it effectiveness on the villagers, which resulted in the creation of both the Borners and the Unblooms in an effort to create supersoldiers under the &quotFlower Garden Plan.&quot; Alphard later encounters Santana, telling him that she would head to the &quot;Factory&quot;. A Snake chopper under Liang Qi's control ambushed Canaan when she targeted her by firing rockets, temporarily sealing her in rubble with Alphard encountering the mercenary. When Alphard left, she informed the ex-CIA agent that he needs to tell Canaan her real name. As Canaan was about to get out of the rubble, Alphard tells Santana that Canaan's real name was &quot;Despair&quot;."
+		)
+	,	("Canaan",
+		 10,
+		 "Loss",
+		 "With Santana's assistance, he was able to lead Canaan and the others inside the &quot;Factory&quot;. They were ambushed by Unbloom zombies after being inside, different from the Unblooms Santana had rescued personally after leaving the CIA as they have completely lost all human emotions. Hakko later encounters Liang Qi via TV screen and begins to mock her to come after her. When Hakko returns to the chapel-like room to face Liang Qi, she inadvertently kills Santana with the power of her voice when he had been captured and gagged earlier after being separated. Natsume comes to Canaan and Minoru aid after blasting her way into the facility. Minoru and Canaan encounter a distraught Hakko, who begins shooting randomly, and Minoru attempts to calm her down. Maria and Yunyun enter the &quot;Factory&quot; themselves while wearing mascot head costumes before arriving in the flower gardens. However, Natsume enters the area and encounters the two of them. Seeing that Maria and Yunyun may impede her, Natsume draws out her pistol and aims it at them. "
+		 )
+	,	("Canaan",
+		 11,
+		 "See-Saw",
+		 "Alphard enters the flower gardens and stops Natsume. Alphard then threatens Maria and Yunyun to leave; they reluctantly obey, and go to meet up with Canaan. Alphard and Natsume are now alone, and it is revealed that Natsume is a secret agent for the Japanese Defense Intelligence Headquarters and was actually trying to obtain data related to the Ua virus. Canaan wakes up Minoru, who had been injured during his attempt to calm Hakko down. They meet up with Maria and Yunyun, who ask where Hakko and Santana is. Canaan decides to go back to the factory one more time, promising to find Hakko. Back in the Factory, Liang Qi grows increasingly unstable as Alphard and Cummings try to deal with her, and ultimately has to be killed after she takes a dose of the Ua virus in a mad bid for Alphard's attention with horrific results due to her not having the necessary genetics for synaesthesia. Meanwhile, a covert American task force known as Task Force 124 is deployed from Afghanistan, with orders to take down the Factory. While the bombers are on their way, Canaan fights off the advance of Delta Force operators already in the Factory while the PLA was deployed to the Factory. She finds a depressed Hakko and a dead Santana, and Hakko tells her to leave her behind and take the medicine she found for Yunyun. Canaan returns to her friends to safely retreat as the factory collapses with Hakko inside. As they mourn Hakko and Santana's deaths, Maria requests to take Canaan's picture, who solemnly replies. "
+		 )
+	,	("Canaan",
+		 12,
+		 "The Seasonal Train",
+		 "The group is in low spirits in the wake of Hakko and Santana's deaths. Maria, troubled by Canaan's despair, tries to cheer her up, with limited success, and she notices how depressing Canaan looks in the picture she took of Canaan in the previous episode. The next morning, they find themselves stranded when their car breaks down. Minoru volunteers to stay behind to take care of the car while the girls take a train back to Shanghai. However, the train is stopped in a supposed inspection. While Canaan leaves to investigate after hearing gunshots, she is struck by a hallucination of Siam, who tells her to see the truth with her own eyes, while a vision of Hakko blames her for everybody's deaths. Meanwhile, Alphard strolls into the same cabin as Maria and Yunyun while the train was covertly hijacked by Daedala contractors. She convinces Maria to assist her in a decisive match with Canaan, which Maria complies by taking Alphard's picture. Alphard shoots Maria and locks her and Yunyun in a car rigged with a bomb in an effort to get Canaan to fight at her full power. As Canaan and Alphard fight, Alphard continually taunts Canaan by saying she is the reason for Siam's death. Maria, not wanting Canaan to be burdened by her, has Yunyun detach her train car as the bomb counts down. "
+		 )
+	,	("Canaan",
+		13,
+		"The Promised Land",
+		"As the bomb counts down, Yunyun has second thoughts and runs after the detached carriage to save Maria. The bomb eventually explodes and Canaan reacts, as what presumably is her &quot;true strength&quot; becomes apparent, slowly being able to overpower Alphard. Despite some assistance from the remnants of Alphard's Daedala forces, Canaan was able to defeat her without relying on the attempted bombing on Maria in the Daedala-hijacked train. Canaan tries to save Alphard after she trips and falls down from the top of the train carriage, but Alphard instead opts to free herself from Siam's influence and chooses to amputate her left arm by using Canaan's pistol. Maria wakes up in a hospital and sees Minoru, with whom she discusses her ties with Canaan. Canaan contemplates her friendship with Maria. Maria and Minoru are set to leave Shanghai. Minoru, once again, fails to find a good story, since he decides to keep the story of Canaan out, and he wonders about getting a new job. Maria thinks more on her part in this story as most of the cast go about their separate ways. Some time later, in Bologna, Canaan receives a new assignment, that being to find and kill a woman missing one arm. "
+		 );
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Canaan", 0, 1, 4)
+	,	("Canaan", 0, 2, 4)
+	,	("Canaan", 0, 3, 5)
+;
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Ghost Hound",
+		 22,
+		 "In the small town of Suiten, three boys discover they can transfer their souls to a parallel world. Each had traumatic childhood experiences… Taro Komori – haunted by the death of his sister. Makoto Ogami – traumatised by his father’s suicide. Masayuki Nakajima - tormented by the suicide of a classmate he once bullied. Together they attempt to unravel the mysteries of their outer-body experiences and gain new perspectives on their unusual lives as they grow towards adulthood and attempt to reconcile with the darkness of their collective past. When ‘ghosts’ from their unseen world manifest in their apparent ‘reality’, their lives reveal further mystery... Ghost Hound is the story of seemingly mismatched children struggling to find the truth that has been absent from their lives - from the remnants of their damaged past, to overcoming rural isolation, the ennui of adolescence and the mysteries of their seemingly paranormal childhood. A unique and strangely immersive piece of anime carrying an eerie, dream-like atmosphere with ethereal psychedelic animation reminiscent of similar work on last year’s Genius Party compilations. The experimental soundtrack lifts the intent and tone of the series and firmly establishes Ghost Hound as a work of the avant-garde.",
+		 "In the small town of Suiten, three boys discover they can transfer their souls to a parallel world. Each had traumatic childhood experiences…",
+		 "Siren",
+		 "Ryūtarō Nakamura"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Ghost Hound",
+		 1,
+		 1,
+		 "M - Medium level violence",
+		 22,
+		 "http://sirenvisual.com.au/index.php/shop/horror/ghost-hound-complete-series.html"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Ghost Hound",
+		 1,
+		 "Lucid Dream",
+		 "Tarō Komori tries to find the connection between his dreams and the traumatic event involving him and his older sister, Mizuka Komori, eleven years ago. He receives a new therapist, and the transfer student Masayuki Nakajima begins to move in on him and Makoto Ōgami."
+		)
+	,	("Ghost Hound",
+		 2,
+		 "E.M.D.R.: Eye Movement Desensitization and Reprocessing",
+		 "Masayuki reveals the timeline of the kidnapping incident and theorises that there is a connection between the case and Makoto's father's death. Tarō begins E.M.D.R. therapy, which dredges up memories previously hidden."
+		 )
+	,	("Ghost Hound",
+		 3,
+		 "Phobia Exposure",
+		 "Masayuki invites Tarō and Makoto to travel to the old hospital, where Tarō and Mizuka were hidden when they were kidnapped. The journey reveals many things about the three boys' pasts."
+		 )
+	,	("Ghost Hound",
+		 4,
+		 "Altered States of Consciousness",
+		 "The three boys continue to explore the hospital, and more history regarding Masayuki and Makoto is revealed. Eventually, the three discover that there is something very unnatural about the hospital."
+		 )
+	,	("Ghost Hound",
+		 5,
+		 "O.B.E.: Out of Body Experience",
+		 "The three learn more about astral projection and the hidden realm from Makoto, due to his knowledge from the religious group his family owns. Tarō's parents, Ryōya and Miki Komori, talk with Atsushi Hirata, his psychologist, and the three boys later meet each other in the hidden realm again."
+		 )
+	,	("Ghost Hound",
+		 6,
+		 "Brain Homunculus",
+		 "Makoto looks through his father's desk and remembers the past, and Masayuki attempts his own version of phobia exposure. After meeting the old traveler Genma Saruta in his O.B.E, Tarō tries to find him the next day, and suffers a sudden narcoleptic attack on his way back. "
+		 )
+	,	("Ghost Hound",
+		 7,
+		 "L.T.P.: Long Term Potentiation",
+		 "Tarō is in hospital after hitting his head on the steps near the shrine. He is visited by Masayuki and the two receive an extensive information session on the brain from Hirata and Reika Ōtori. Makoto confronts Motoi Yazaki about his parents."
+		 )
+	,	("Ghost Hound",
+		 8,
+		 "Revolution of th e Limbic System",
+		 "Hirata discusses the potential reasons for Tarō's memory loss. Tarō encounters the ghost of an extinct animal and enters a dimensional rift. Hirata goes through a supernatural experience."
+		)
+	,	("Ghost Hound",
+		 9,
+		 "Existential Ghosts",
+		 "Four teenagers are attacked by a black humanoid ghost near the old abandoned building where the kidnapper was run over and killed. Later, the three protagonists investigate the area in their state of O.B.E., and the spirit turns its sights on them."
+		)
+	,	("Ghost Hound",
+		 10,
+		 "Affordance/T.F.T.:Thought Field Therapy",
+		 "Masayuki helps Michio Hoshino who is bullied. Later on he mentions the concept of O.B.E. to Michio. Tarō and Masayuki start asking questions about the mountain. Meanwhile, Makoto figures out that he can transform in his state of O.B.E., after witnessing Tarō and Masayuki doing the same during their previous investigation. The shinto priest Takahito Komagusu meets Saruta who hints that there are two other people besides him on the mountain."		 
+		 )
+	,	("Ghost Hound",
+		 11,
+		 "Syntax Error",
+		 "A body was found floating in the dam. The so-called curse was brought up and the three protagonists learn about the story of the first four high schoolers who went to the abandoned hospital."
+		 )
+	,	("Ghost Hound",
+		12,
+		 "Homeostasis Synchronization",
+		 "Takahito is called to Miyako Komagusu's school. Later, he meets and starts consulting with Hirata about Miyako. Hirata is starting to suspect that the area has something to do with the supernatural occurrences. Meanwhile Tarō sees Miyako being possessed firsthand."
+		)
+	,	("Ghost Hound",
+		13,
+		"For the Snark was a Boojum, you see.",
+		"Tarō had a long O.B.E. sequence where he sees Miyako in bed with fever and meets Masato Kaibara as the Snark in the hidden realm. He goes with Masayuki, Makoto, and Michio to her house. When he mentions what Miyako said in her possessed state, Takahito becomes afraid and tells them to leave. At the bottom of the shrine steps is Noriko Kabata, the handmaiden of Himeko Ōgami, Makoto's grandmother. "
+		)
+	,	("Ghost Hound",
+		14,
+		"Emergence Matrix",
+		"Takahito takes Miyako to Hirata for therapy, and Miyako later goes into her possessed state. On the way back to the shrine, Tarō, Masayuki, Makoto, Michio, Miyako, and Takahito all meet Kabata. She grabs Miyako and says that Miyako is the next miko. Miyako then goes into a trance again, and Makoto furiously curses Himeko. He runs back to his house and finds Himeko dead."
+		)
+	,	("Ghost Hound",
+		15,
+		"Toward an Abandoned City",
+		"Makoto and Tarō go to Kurata for various reasons. They visit Kei Yakushi's house, and Tarō apologizes to Kei for messing up the yeast brewery process. Masayuki and Michio catch the reporter Seiichi Suzuki whose been snooping around. He was sent to investigate the biotech research facility for industry leaks. While listening to Tarō's recorded dreams, Hirata goes through Tarō's experience in the hospital."		
+		)
+	,	("Ghost Hound",
+		16,
+		"Hopeful Monster",
+		"At Kurata, Tarō and Makoto meet Sanae Ōgami, Makoto's mother, and Makoto makes a failed attempt at killing her. Tarō recognizes Sanae's lover, Masato, as the Snark. Meanwhile, Masayuki discovers spirits in the biotech research facility in an O.B.E. He sees his dad speaking with Reika about his research but then he is suddenly attacked by some spirit monsters, known as hopeful monsters, by Reika's biotech laboratory assistant."
+		)
+	,	("Ghost Hound",
+		17,
+		"Implicate Order",
+		"Saruta notices that the spirits are afraid of something. He warns Takahito that there people out for Miyako's powers. Tarō tells Miyako that he thinks that she is the reincarnation of Mizuka, to which really upsets Miyako. Makoto still has not returned. Suzuki notices there is a suspicious group of men around the Ōgami household."
+		)
+	,	("Ghost Hound",
+		18,
+		"Holographic Paradigm",
+		"Suzuki talks with his superior about the links with the Ōgami religious group, child kidnappings, and illegal organ donations with the biotech research facility. Miyako meets Kabata, and Takahito was found bleeding on the shrine steps. The truth about the death of Makoto's father and the kidnapping of Tarō comes to light."
+		)
+	,	("Ghost Hound",
+		19,
+		"Negentropy",
+		"Makoto rescues Sanae from a house fire, however Masato dies in the process. She had just woken up from a coma but her memory has regressed. Takahito is in an ICU, but Miyako does not recognize Masayuki and Tarō. Kei reminisces about Masato and how she loved him from afar. Makoto reconciles with his mother."
+		)
+	,	("Ghost Hound",
+		20,
+		"Shaman's District",
+		"The Ōgami religious group is allowed to have care of Miyako. Biotech research has been published ahead in other countries ahead of the research of Yasuhiro Nakajima, Masayuki's father. Makoto talks with Suzuki and finds links with the Ōgami religious group with an underground group. Tarō goes to the hidden realm to find Yasuhiro. Reika's assistant releases mutants, used from Yasuhiro's research, into the dam. People are coming down from the mountain to the Ōgami house."
+		)
+	,	("Ghost Hound",
+		21,
+		"Stochastic Resonance",
+		"Makoto is staying at Tarō's house and Ryōya gives Makoto the guitar that was originally owned by Makoto's father. Takahito wakes up, but he was threatened. Hirata and Reika meet up with Tarō, Masayuki, Makoto, Michio, Suzuki, and Saruta at the shrine. Tarō vows to save Miyako."
+		)
+	,	("Ghost Hound",
+		22,
+		"Passage",
+		"Makoto and Masayuki help devise a plan to allow Tarō to enter the shrine where Miyako is being held as the leader of the Ōgami religious group. Only women and girls are allowed to enter, so the boys plan on dressing Tarō up as a young female so that he may enter and rescue Miyako. Hirata and Reika also assist in carrying out the plan."
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Ghost Hound", 0, 1, 8)
+	,	("Ghost Hound", 0, 2, 8)
+	,	("Ghost Hound", 0, 3, 6)
+;
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Mawaru Penguindrum",
+		 24,
+		 "Takakura Kanba and his twin brother Shoma live together with their younger sister Himari. Their parents are missing and Himari is critically ill. Kanba and Shoma will do anything to make her last days memorable. On a visit to the aquarium, they buy her a cute, yet silly penguin hat. The trip abruptly ends when Himari collapses and dies, but the mysterious spirit that resides in the penguin hat brings her back to life... temporarily, on the condition that they find the &quot;penguindrum.&quot; To help them on their quest, each sibling is accompanied by a penguin that only they can see. Unfortunately, these cute penguins are anything but helpful, in their quest to find the Penguindrum, and change Himari's fate.",
+		 "Takakura Kanba and his twin brother Shoma live together with their younger sister Himari. Their parents are missing and Himari is critically ill. Kanba and Shoma will do anything to make her last days memorable. On a visit to the aquarium, they buy her a cute, yet silly penguin hat...",
+		 "Siren",
+		 ""
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Mawaru Penguindrum",
+		 3,
+		 1,
+		 "M - Sexual references and animated nudity",
+		 24,
+		 "http://sirenvisual.com.au/index.php/mawaru-penguindrum-complete-series-box-dvd.html"
+		)
+	,	("Mawaru Penguindrum",
+		 4,
+		 1,
+		 "M - Sexual references and animated nudity",
+		 24,
+		 "http://sirenvisual.com.au/index.php/mawaru-penguindrum-complete-series-box-blu-ray.html"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Mawaru Penguindrum",
+		 1,
+		 "The Bell of Fate Tolls",
+		 "Three siblings, Shōma, Kanba and Himari Takakura are living together, despite the fact Himari was given only a few months to live by the doctor. The three visit an aquarium to see the penguins, where Shōma buys her a queen penguin hat. However, Himari collapses and later dies in the hospital. As the brothers mourn, they are surprised to see Himari suddenly spring back to life and cured of her condition, possessed by a spirit which has decided to extend her life, though she returns to normal when her penguin hat falls off. The next day, the siblings receive a shipment of frozen things, which are later revealed to be a trio of strange penguins that no one besides them can see. Just then, the hat possesses Himari again, explaining that she has extended her life but in exchange wants the brothers to obtain something known as the Penguin Drum. As Shōma sleeps that night, it appears that Kanba ends up kissing Himari as she sleeps but it can't be certain since the scene cuts before their lips make contact."
+		)
+	,	("Mawaru Penguindrum",
+		 2,
+		 "Risky Survival Strategy",
+		 "The Penguin Spirit appears again and tells Shōma and Kanba to board a train and find a girl named Ringo Oginome who may possess the Penguindrum. With Ringo attending a girls' school, Shōma and Kanba send in their penguins to follow her. The brothers end up following her to a lingerie store, where they spot her maneuvering round the outside of a building in order to take a photo of something, which she shows to the brother's teacher, Keiju Tabuki. She then follows him home and hides out under his house, where the brothers conclude that she is a stalker, and pulls out a diary which allegedly foretells destined events."
+		)
+	,	("Mawaru Penguindrum",
+		 3,
+		 "Then Devour Me Courageously",
+		 "As Ringo contemplates making a special curry for Tabuki, Shōma and Kanba, having been reminded about Himari's fate if they don't cooperate, break into Ringo's house to search for the Penguindrum. After just managing to hide from her when she comes back home to prepare her curry, the brothers follow Ringo to Tabuki's house, where she finds another woman living with him. Ringo swaps the curry she was preparing with her own and runs off, where she runs into Himari who invites her to her house, much to the brothers' surprise. After eating together, Ringo returns home and confirms the events laid out in her diary."
+		)
+	,	("Mawaru Penguindrum",
+		 4,
+		 "That's Why I Do That",
+		 "Episode_SynopsysAsami Kubo, the girl who was pushed down the escalator, is questioned by a woman named Masako Natsume, who then fires a red ball at her head, causing her to remember nothing about the incident. Kanba hears that his uncle is planning to sell their house and goes to see a strange person to obtain the money to buy it. Meanwhile, Shōma and Himari find Ringo, who had a bad day, and invite her back to their place. There, Shōma asks Ringo about her diary, which she claims is a Diary of Fate which describes her future. Both she and Shōma are summoned by the Penguin Hat, who orders Shōma to retrieve the diary, but Ringo breaks free and throws away the hat which lands on a truck, causing Himari to fall dead again. As Kanba goes to retrieve the hat, he recalls what happened 9 years ago when he went with his father into a typhoon when Himari was ill with a fever. After a tough struggle, Kanba manages to retrieve the hat and return it to Himari."
+		)
+	,	("Mawaru Penguindrum",
+		 5,
+		 "You & I Are Connected by M",
+		 "Kanba goes to see Asami only to find she has forgotten all about him. He tries getting some information out of two other girls, but they are attacked by Natsume's red balls, causing them to lose their memories. Meanwhile, Shoma reluctantly follows Ringo's orders in order to let her have her diary, having him move a lot of stuff over to Tabuki's apartment, but she ends up coming down with a fever. It is revealed that Ringo's late sister, Momoka, used to date Tabuki and Ringo felt that, in order to be accepted by her family, she would have to become Momoka by fulfilling what was written in her diary. Despite her fever, Ringo sneaks off to under Tabuki's house to spend her 'first night' with him, while Natsume is shown to have her own penguin, discussing 'Project M' with someone."
+		)
+	,	("Mawaru Penguindrum",
+		 6,
+		 "You & I Are Connected by M",
+		 "Kanba goes to see Asami only to find she has forgotten all about him. He tries getting some information out of two other girls, but they are attacked by Natsume's red balls, causing them to lose their memories. Meanwhile, Shoma reluctantly follows Ringo's orders in order to let her have her diary, having him move a lot of stuff over to Tabuki's apartment, but she ends up coming down with a fever. It is revealed that Ringo's late sister, Momoka, used to date Tabuki and Ringo felt that, in order to be accepted by her family, she would have to become Momoka by fulfilling what was written in her diary. Despite her fever, Ringo sneaks off to under Tabuki's house to spend her 'first night' with him, while Natsume is shown to have her own penguin, discussing 'Project M' with someone."
+		)
+	,	("Mawaru Penguindrum",
+		 7,
+		 "Tamahomare Girl",
+		 "Tabuki invites Ringo to see one of Yuri's plays with him, followed by dinner, where Yuri invites her and Shoma to a party. At the party, Yuri announces that she and Tabuki are engaged, but Ringo remains determined, dragging Shoma to her school to help her make a love potion, which is foiled by Shoma's penguin. Determined to complete her mission, Ringo sneaks into Tabuki's room one night with the intention of getting impregnated by him."
+		)
+	,	("Mawaru Penguindrum",
+		 8,
+		 "Even If Your Love is a Lie...",
+		 "Ringo attempts to make a move on Tabuki only to find he is not there as his roof had a leak. The next day, Tabuki tells Shoma that he is moving in with Yuri, which does not settle well with Ringo, who later discovers her father consorting with another family. Undeterred, she visits Tabuki's new apartment while Yuri is on tour, using a special cake to drug Tabuki while she pretends to be Yuri in order to have sex with him. However, Shoma manages to regain his consciousness and delay Ringo enough before Yuri returns home. As Shoma tries to stop Ringo from taking things any further, her diary is knocked off and is later ripped in half by a passing motorcyclist when she tries to retrieve it. As the shock leads Ringo to walk into the path of an oncoming car, Shoma manages to push her out of the way but is hit himself."
+		)
+	,	("Mawaru Penguindrum",
+		 9,
+		 "The World of Ice",
+		 "Himari has a strange dream in which she meets a man named Sanetoshi, who shows her various books containing her memories. In elementary school, she formed a group called Triple-H with her best friends, Hibari and Hikari. When she argued with her mother over buying a wrong ribbon, her mother became scarred from a falling mirror, she and her friends tried to kill a koi for its blood to heal her mother. She left elementary school due to her illness while her friends went on to become idols. Upon waking up after vaguely recollecting a soulmate she once had, Himari hears from Ringo about Shoma's accident."
+		)
+	,	("Mawaru Penguindrum",
+		 10,
+		 "Because I Love Him",
+		 "Shoma wakes up in hospital with supposedly minor injuries, keeping quiet about what happened between him and Ringo from his siblings. As Ringo explains what happened to her diary to him, Natsume disguises herself as a nurse and kidnaps Shoma, demanding the other half of the diary from Kanba and Ringo in exchange for his life. Deciding to leave the diary half with Ringo, Kanba goes to find Shoma, while Ringo is told to surrender the diary herself. After luring Kanba into a trap and kissing him, Natsume escapes but is confronted by another person in a penguin hat, whom Natsume identifies as Mario."
+		)
+	,	("Mawaru Penguindrum",
+		 11,
+		 "You Have Finally Realized It",
+		 "Kanba goes to confront Natsume about the memory-erasing balls and why she desires the diary, unaware that she only has half of it. Meanwhile, Ringo is still determined to complete Project M with or without the diary, making a love potion to give to Tabuki, which actually seems to work. As Ringo decides she can not go through with it, Yuri helps her come to the realisation that she is actually in love with Shoma. As Penguin Himari brings Shoma and Ringo into a Survival Strategy meeting, Ringo tells them about the day 16 years ago when Momoka died and she was born, which turns out to be the day Shoma and Kanba were also born."
+		)
+	,	("Mawaru Penguindrum",
+		 12,
+		 "The Wheel That Spins Us Round",
+		 "Kanba goes home and is called by Sanetoshi claiming that Himari will die once more. Shoma goes into detail of what happened 16 years ago, as Shoma and Kanba's parents were high-ranking members of a religious cult and were responsible for a terrible incident which killed Momoka. Himari still possessed loses her strength and tells Shoma and Ringo to acquire the Penguin Drum and to stop &quot;them&quot;. Himari is then transferred to a hospital and Kanba is called by Shoma. He arrives to find Himari lying dead and tries to once more make a pact to give her his life, but it does not work as she says she must leave to &quot;The Destination of Fate&quot;. Just as Himari seems to be truly dead, Sanetoshi appears. "
+		)
+	,	("Mawaru Penguindrum",
+		 13,
+		 "Our Crime & Punishment",
+		 "Sanetoshi offers Kanba a special medicine to revive Himari, though mentions there will be a steep price in return. Kanba recalls three years ago when he and Shoma learned about their parents being criminals. Later, Sanetoshi contacts Natsume, who had also made a contract with him to save Mario, telling her who has the other half of Ringo's Diary. Meanwhile, Ringo talks to Tabuki, who helps put her worries to rest."
+		)
+	,	("Mawaru Penguindrum",
+		 14,
+		 "Princess of Lies",
+		 "Yuri, after breaking off an affair with one of her co-stars, feels a longing for a certain someone. Meanwhile, Shoma is ignoring Ringo, feeling she will never be able to forgive him for what his parents did, and tells her they shouldn't see each other again. As Kanba tries to raise more money to pay for Himari's medicine, he is confronted by Natsume, who questions his feelings for Himari. As Ringo becomes depressed over what happened with Shoma, she is picked up by Yuri, who takes her to a hot spring inn. It is revealed that Yuri was close to Momoka, and even attracted to her, because she was the only person who would call her beautiful, leading to her drugging and raping Ringo in an attempt to make her into Momoka. It is also revealed that Yuri was the motorcyclist who stole half of Ringo's diary some time ago."
+		)
+	,	("Mawaru Penguindrum",
+		 15,
+		 "Saving the World",
+		 "Yuri holds Ringo into her room that coincidentally is next to a room Shoma is staying with a classmate on a field trip. Shoma rushes to rescue her after figuring this but he trips and falls unconscious after bumping his head. Meanwhile, Yuri reminisces about her father, a famous artist who used to tell her she was ugly and convinced her to let him use his chisel on her as he claimed that by only making her &quot;beautiful&quot; he would be able to love her. Yuri started getting seriously injured by her father and she makes friends with her classmate Momoka who claims that her diary has the power of transferring fates in exchange for a price. Back to the present, Natsume appears before Yuri to steal the half of the diary in her possession and despite seemingly successful, it is revealed that she was tricked by Yuri and left with a forgery. After Shoma awakes, Yuri reveals to him that she has half of the diary and just like Momoka saved her from her abusing father with the power of the diary, Yuri is determined to use it to bring her back to life."
+		)
+	,	("Mawaru Penguindrum",
+		 16,
+		 "Immortal Man",
+		 "After realizing that she was tricked by Yuri, Masako reminisces about her grandfather, a powerful business tycoon who expelled her father claiming that he was not strong enough to be allowed a place in the Natsume family. After dreaming countless times about having him killed, Masako rejoiced when her grandfather inadvertedly poisoned himself to death by eating ill prepared Fugu. Masako since then assumed control of her family's corporation but was sad that her father had never returned home, until somehow her grandfather's spirit possessed Mario's body and forced her to eat the same poison that killed him to protect her brother, but Sanetoshi appears to save her life. Later, Masako sees Kanba hanging out with the same elusive men who took her father away and Sanetoshi asks Masako to join them in his plan to &quot;put the world back on track&quot; but she promptly refuses."
+		)
+	,	("Mawaru Penguindrum",
+		 17,
+		 "Those Who Cannot Be Forgiven",
+		 "The Takakura siblings are enjoying Takoyaki together and happy with the news that Himari will soon be released from hospital when the magic hat possesses Himari again for another Survival Strategy meeting with her brothers and insists that their ordeal will not be over until the Penguin-Drum is retrieved. Meanwhile, Yuri and Tabuki reminisces about their childhood days with Momoka and while Yuri is unable to forgive the siblings for their parents' crime, Tabuki tries to dissuade her. In the next day, Himari leaves by herself with Ringo for shopping much to Kanba and Shouma's despair as they are informed that she must take another dose of her medicine before sunset. While the brothers look for Himari, Ringo receives a call from Yuri who invites her and Himari for a meeting. Yuri waits for Himari, but is intercepted by Masako instead, and the two start fighting for the two halves of the diary, while Himari and Ringo are approached by Tabuki, who invites them to a construction site where he claims he will finally bring punishment to the Takakura family."
+		)
+	,	("Mawaru Penguindrum",
+		 18,
+		 "So, I Want You to Be Here for My Sake",
+		 "Tabuki reminisces about how he injured his own hands in despair of being relinquished by his mother as she only cared about his younger brother who was a much better pianist than him. After Tabuki traps Ringo at an elevator and holds Himari hostage, he phones Kanba demanding to bring his father to him. Kanba arrives alone to meet them, claiming he has no idea where his father is and finds Himari hung over into a construction bucket. Tabuki does not believe him and Ringo decides to call the police, but Kanba asks her to not do it and she calls Shouma instead. Tabuki reveals that Himari's brother is receiving money from his father's organization to pay for her treatment, and remembering about how Momoka had her hand severely injured to save him, Tabuki starts severing the wires holding the bucket one by one, claiming that the only way for Kanba to prevent Himari from falling to her death is by sacrificing his own hand to hold the final wire together when it snaps. Kanba does so and despite his pain, he claims he would never have his sister die. Himari than decides to jump by herself to spare Kanba's life, but Tabuki saves her from the fall after seeing in Kanba the same determination to protect his sister he saw in Momoka when she saved him. Shoma arrives soon later and the siblings reunite in tears while Tabuki makes his leave, meeting Yuri on the way who reprimands him. It is also shown that Yuri's showdown with Masako ended in a draw, as each one still holds a half of the diary."
+		)
+	,	("Mawaru Penguindrum",
+		 19,
+		 "My Fated Person",
+		 "After the incident at the construction site, Tabuki quit his job and leaves Yuri, while Kanba is praised by his parents for protecting Himari, claiming that once their true objective is reached, they will become together again. Kanba makes use of some money he got from them to throw a party for Himari with Shouma and Ringo to celebrate her return home, while Himari wonders about her conversation with Sanetoshi as she doubts that she will eventually be cured. He also has a conversation with Masako, who reaffirms her intentions to stop his plans. Masako then pays a visit to Himari and demands her to remember about her true past, as she claims Himari is not Kanba's real sister. She approaches her with a modified slingshot designed to restore forgotten memories, but is stopped by Kanba and Shouma who had just returned home. However, Himari manages to remember her past and realize that she indeed is not Kanba and Shouma's sister and it was her soulmate, who is actually Shouma that saved her."
+		)
+	,	("Mawaru Penguindrum",
+		 20,
+		 "Thank You for Choosing Me",
+		 "Masako decides to leave the Takakuras alone, still not accepting the 'family' they have. As Himari has another conversation with Sanetoshi, Shouma confesses to Ringo that Himari is not actually his blood sister. Years ago, whilst his parents were organising to change the world with their organization, Shouma met the orphaned Himari whilst exploring his condo. Whilst she is initially passive of him, the two grew a friendship over an abandoned kitten they find, up until it ended up being taken away. When Shouma discovered that Himari had headed over to the 'Child Broiler', where unneeded children go to disappear from the world, he rushed over there to rescue her and chose her to become a part of her family (making him believe everything that has happened to Himari up until the present is all his fault). Back in the present, Kanba continues to converse with his parents about what needs to be done to change the world."
+		)
+	,	("Mawaru Penguindrum",
+		 21,
+		 "The Door of Fate We Choose",
+		 "Ringo is approached by a journalist asking about the Takakura siblings, but she avoids him and warns Himari about him. Later that night, Himari, who was told by the same journalist about how Kanba have been collecting money for her treatment, trails him to the shop where he supposedly meet his parents just to find the place torn down and have a shocking revelation. Shouma is informed by the journalist about Kanba's involvement with the Kiga Group and tries to stop him by force with no success. Meanwhile, Tabuki and Yuri also reach the shop and just like Himari, find the skeletons of the Takakura couple before being attacked by an unknown assailant. Shouma, who finds that Kanba ordered the journalist to be killed in a car accident, and was informed by Sanetoshi that the medicine will not prolong Himari's life for long, informs her that they can't live as a family anymore and sends her to live with his uncle. Later the Kiga group, whose true leader is actually Kanba prepares themselves to make a large scale operation, and Himari, seen standing next to him, claims that she is determined to stop him at the cost of her life."
+		)
+	,	("Mawaru Penguindrum",
+		 22,
+		 "Beautiful Casket",
+		 "Ringo stumbles on two girls dressed suspiciously standing before the Takakuras' house and finds that they are actually Himari's childhood friends Hibari and Hikari from the Double-H idol duo. They ask her to give Himari a present in return for the scarves she knit for them before leaving. Kanba learned from Sanetoshi that his medicine will not work on Himari anymore (she has built a resistance to it), and that according to him, she can only be saved after he fulfills his group's objective. Himari tries to dissuade him with no success and discovers that his hideout is situated under the aquarium where she first died. She prays for God to have Kanba saved in exchange for her life and falls lifeless on the ground. Yuri calls Ringo and returns her the half of the diary in her possession and stays beside an unconscious Tabuki at the hospital, who was stabbed by the attacker who was revealed to be Yuri's former lover and co-worker. Masako tries to convince Kanba to give up as the police are already aware of his plans and have a warrant on him, but he moves forward ignoring her pleas until they are surrounded, and he puts himself in harm's way to protect her. Injured and unconscious, Kanba is carried away by his comrades while Masako decides to confront the police by herself to cover his escape."
+		)
+	,	("Mawaru Penguindrum",
+		 23,
+		 "Fate's Destination",
+		 "On the day of the terrorist attack, 16 years before, Sanetoshi is confronted by Momoka who was determined to stop him. Her spirit ends up splitting in two with each half being the penguin hats used by Himari and Mario, and Sanetoshi is divided into the two black rabbits that are always accompanying him. Back to the present, Shouma is informed that Himari's life is at its end and Ringo comforts him while Kanba is taken by Sanetoshi to a gravely injured Masako and brings her from the dead before his eyes. Despite Masako's pleas, Kanba leaves with Sanetoshi to continue his plan, carrying her half of the diary with himself. Shouma sees a vision of Himari asking him to stop Kanba. It seems that Himari kisses Shouma, but their faces are off screen. When Kanba comes to fetch her, Shouma is shot unconscious by him with a penguin bullet. Ringo is called by Kanba to the aquarium and a bomb explodes knocking her out. Sanetoshi watches her struggling to stop her half of the diary from being burned out and after she fails, he has Kanba burn the other half. Shouma wakes up and manages to reach Kanba determined to stop his plans."
+		)
+	,	("Mawaru Penguindrum",
+		 24,
+		 "I Love You",
+		 "Shouma tries to dissuade Kanba with no success while Ringo also boards the train, claiming she had learned from the present she got from Himari's friends the secret spell contained into the now lost diary. She activates the spell determined to sacrifice herself to save Himari and the others, but Shouma takes the burden to himself, telling her this is a punishment for him and Kanba to bear, and that he loves her. Kanba sacrifices himself to resurrect Masako and Himari for good. The terrorist attack is stopped and both Himari and Ringo are found unconscious with no memories about the brothers or everything that happened. The same occurs for Masako whose brother Mario also fully recovers. While hanging out with Ringo at her house, Himari finds a message left by Kanba and Shouma that tells her they will always love her. She starts crying without knowing the reason why while Shouma and Kanba (in children form) pass the front of her house accompanied by the four penguins talking about fate."
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Mawaru Penguindrum", 0, 1, 8)
+	,	("Mawaru Penguindrum", 0, 2, 8)
+	,	("Mawaru Penguindrum", 0, 3, 8)
+;
+
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Nadia: The Secret of Blue Water",
+		 39,
+		 "The World's Fair, Paris, 1889: a young inventor crosses paths with an enigmatic girl and her pet lion. Suddenly they find themselves pursued by villainous trio intent upon stealing the magical Blue Water... Thus begins an epic adventure inspired by Jules Verne's masterpiece 20,000 Leagues Under the Sea. Join Nadia and Jean as they travel the high seas in search of Nadia's homeland and her past, their only clue the mysterious jewel Nadia wears. Can they unravel the Secret of the Blue Water before it is too late? Discover Nadia, Secret of Blue Water and find out for yourself!",
+		 "Remember when anime was painted with ink and blood/sweat/tears? We do. It ruled. This is a sterling example...",
+		 "Siren",
+		 "Hideki Anno"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Nadia: The Secret of Blue Water",
+		 1,
+		 1,
+		 "M - Mature themes, mild violence",
+		 39,
+		 "http://sirenvisual.com.au/index.php/nadia-secret-of-blue-water.html"
+		)
+	,	("Nadia: The Secret of Blue Water",
+		 2,
+		 1,
+		 "M - Mature themes, mild violence",
+		 39,
+		 "http://sirenvisual.com.au/index.php/nadia-secret-of-blue-water-complete-series-blu-ray.html"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Nadia: The Secret of Blue Water",
+		 1,
+		 "The Girl at the Eiffel Tower",
+		 "It is the first day of the Paris World Exposition in 1889. 14-year-old Jean Rocque Raltique, a brilliant young inventor, arrives at the fair to participate in a flying contest with his uncle. He is distracted, however, when he notices a 14-year-old mysterious dark-skinned girl pass by on a bicycle. Jean follows the girl, known as Nadia, to the Eiffel Tower and tries to make friends with her, but she acts cold and aloof. Just then, three bandits -- 28-year-old Grandis Granva, a fiery-tempered woman and her two 27-year-old sidekicks, vain, arrogant Sanson, and pudgy, nerdy Hanson -- appear and attempt to kidnap Nadia, but she escapes. Jean later finds Nadia performing at a circus across town and is instantly smitten with her performance. At the end of the show, the Grandis gang appear and take Nadia from her (unsympathetic) ringmaster through bribery and pretending to be her sister. After a wild chase, Jean rescues Nadia and earns her trust. Learning she has no place to go, he decides to take his new friend to his home in Le Havre."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 2,
+		 "The Little Fugitives",
+		 "Using one of his inventions -- a boat that can shift into an automatic hydrofoil ship -- Jean successfully makes another escape from the Grandis gang, who are pursuing the pair in their multi-purpose tank, the Gratan. He takes Nadia to his aunt's house in Le Havre, but his grumpy, dour Auntie refuses to take Nadia in. Jean decides to take Nadia to his workshop in Le Havre, and she spends the night there. All the while, Jean learns from Nadia that she wishes to return to the country where she was born. Unfortunately, she has no idea where it is, but her pet lion King suspects it might be in Africa. Jean decides to take Nadia there himself using his all-new aircraft, and they make yet another escape from the Grandis gang. They do not get far, however, when the plane engine falters and the crafts plummets into the ocean."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 3,
+		 "The Riddle of the Giant Sea Monsters",
+		 "Jean, Nadia, and King are rescued from the ocean by a passing American battleship called the Abraham. Its captain, Melville, and his first mate Holland, are on the trail of a supposed &quot;sea monster&quot; responsible for sinking countless ships in the Pacific Ocean. Jean is intrigued to be aboard the vessel, but Nadia is gravely suspicious. While on the ship, they also meet Ayerton Grenavan, a flamboyant &quot;scientist&quot; who claims to be funding the pursuit. That night, the Abraham is attacked by a mysterious and dangerous presence. A torpedo finally strikes the Abraham, causing Jean, Nadia, King, and their aircraft to be thrown overboard into the ocean again."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 4,
+		 "Natutilus, The Fantastic Submarine",
+		 "Adrift on the ocean, Jean, Nadia, and King are once again rescued by another vessel — a mysterious submarine commanded by Captain Nemo and his first officer, Electra. The children are kept aboard the submarine for three days while Nemo and his command crew pursue an enemy submarine (the same &quot;sea monster&quot; that wrecked the Abraham). Eventually, Jean, Nadia, and King are released from the submarine and they set off into the sky on Jean's newly revamped aircraft. Before leaving, the children learn that the submarine is known as the Nautilus."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 5,
+		 "Marie's Island",
+		 "While airborne, Jean, Nadia, and King are shot down from the skies and crash-land onto an unfamiliar island. There, they rescue a 4-year-old lonely little girl named Marie, who tells them that her parents have been shot down by a murderous army of masked soldiers. Soon the children are forced to flee from the same soldiers. Marie takes her new &quot;guardians&quot; to a secluded cave containing blankets and supplies. That night, Jean and Nadia bury Marie's fallen parents and tearfully confess to the latter that her parents are dead. Meanwhile, the Grandis gang, having washed up on the island themselves, are taken captive by the soldiers and taken to a shadowy base where they are questioned by the soldiers' commander about the Blue Water, Nadia's pendant."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 6,
+		 "Infiltration of the Secret Base",
+		 "Investigating the island, Jean discovers a trail of power lines leading to a power plant situated in a deep crater at the center of the island. He also witnesses an escaping villager brutally killed by the pursuing soldiers. The next day, Marie and King wander outside the cave to collect flowers (Jean and Nadia debating about their next move -- should they rescue the people on the island or not?) and are captured by the soldiers. Jean and Nadia follow them to the crater and find themselves in a complex of factories, where the villagers are forced to work as slaves. They also recognize the &quot;sea monster&quot; as another submarine, known as the Garfish, operated by the soldiers' ruthless ringleader, Gargoyle. While Gargoyle investigates a powerful artifact needed to complete his secret weapon, Nadia's Blue Water is accidentally set off, forcing the children to escape from the factories. To save Jean from being killed, Nadia gives him the Blue Water and turns herself in. Jean promises to rescue her."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 7,
+		 "The Tower of Babel",
+		 "Captured by the soldiers (also known as the Neo Atlanteans), Nadia is taken before Gargoyle, who implies that he has known Nadia since she was a baby. He demands his captive to reveal the whereabouts of the Blue Water. When Nadia refuses to obey, Gargoyle threatens to kill both Marie and King. With no choice, Nadia reluctantly admits that Jean has it. The soldiers begin to search the complex for Jean, while the Grandis gang decides to escape. Both sides inadvertently come across each other when they board a freight train bound for Gargoyle's castle. Gargoyle tours Nadia around the compound and introduces its center — a spiral tower known as Babel, which can obliterate anything in its path. That evening he forces Nadia to witness the tower's awesome powers as it demolishes an island in the distance. Out at sea, Captain Nemo sees the same explosion and declares that Gargoyle has &quot;finally released the great abomination.&quot;"
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 8,
+		 "Mission to Rescue Nadia",
+		 "In an unexpected turn of events, Jean joins forces with the Grandis gang to infiltrate the compound and rescue Nadia. They almost succeed… until Gargoyle's submarine, Garfish corners them at the intake point. Just when it all looks hopeless, the Nautilus rises from the ocean and attacks the Garfish, allowing the companions to make their escape. In the end, Gargoyle attempts to fight back using the Tower of Babel… but it demolishes his compound instead. The islanders are freed, but Gargoyle makes his getaway on a dirigible."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 9,
+		 "Nemo's Secret",
+		 "The companions are taken aboard the Nautilus by Captain Nemo in gratitude for their bravery against Gargoyle, and to repair the damage the Gratan has taken. Jean and Hanson are thrilled to be aboard the Nautilus because they are intrigued by its technology and wonders, but nobody shares their enthusiasm. Grandis catches a cold and is treated by the doctor. When Captain Nemo and Electra stop by medical bay to check on the sick patient, Grandis falls hopelessly in love with Nemo… much to the dismay of Sanson and Hanson. Later, Nemo crosses paths with Nadia for the first time and acts quite surprised when he sees her… and her Blue Water. It turns out that Nemo happens to have a Blue Water of his own -- a larger one with a missing indent."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 10,
+		 "A Crowning Performance by the Gratan",
+		 "The Nautilus pursues Gargoyle through the LeMar Straits until it runs into a dangerous trap. The submarine is surrounded on all sides by a field of mines, which can be triggered should the underwater current shifts or if the submarine dares to move. In a race against time, Grandis, Sanson, and Hanson propose to use their Gratan to take out three of the mines so that the Nautilus can safely escape from Gargoyle's trap. However, Sanson knocks Grandis out, fearing for her safety. He and Hanson set aboard the Gratan and begin their mission, but the tank begins to malfunction. Jean, who has sneaked aboard the tank, helps the pair as best as he can, but soon the Gratan's underwater camera shatters, leaving the Gratan blind. With Grandis communicating from the Nautilus bridge, the trio barely manages to succeed and save the submarine from a deadly fate."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 11,
+		 "New Recruits for the Nautilus",
+		 "Jean, Nadia, and the others are appointed as apprentice crew members aboard the Nautilus, each assigned to a different position. Jean, Sanson, and Hanson are given lessons by Sonar Officer Eiko Villan about the Nautilus, Marie and King are schooled by Electra (much to the little girl's infuriation), while Grandis and Nadia work in the rather extraordinary kitchen. Grandis tries to impress Nemo by cooking a (rather ugly) platter of fish, but things don't go as she expects. Later, King snatches Grandis' own dinner and there is a wild chase which results with King ending up in the Nautilus's forbidden engine room. When Jean retrieves him, Nemo explains that the Nautilus is powered by a particle annihilation engine that could potentially take them up to the stars… but also destroy the world if used improperly."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 12,
+		 "Grandis and Her First Love",
+		 "The Nautilus stops by an island for shore leave to take on new supplies. Humorous complications ensue as Jean accidentally stumbles into Nadia changing into her swimsuit (but they later go on a walk on the beach), Grandis and Electra get into a jealous rivalry for Nemo's love, while Nemo remains oblivious. While Jean goes off on a hunting expedition with Sanson and the others, Nadia bonds with Grandis as the latter explains about a tragic past. As a child, Grandis had grown into a wealthy family and was courted by a handsome man who turned out to be a swindler. She subsequently became obsessed with jewels, which explains why she was chasing after Nadia's Blue Water. But now that she has met Captain Nemo, she no longer sees Nadia's jewel as valuable. That night, the hunting party returns and Sanson throws down the main catch -- a murdered baby deer. Nadia is quite upset about this and leaves the camp."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 13,
+		 "Run, Marie, Run!",
+		 "Nadia is still angry with everyone over eating the deer, turning a deaf ear to Jean's attempts to reason with her. When Marie innocently states that she &quot;made a grave for the baby deer&quot;, Nadia gives the little girl a nasty stare. Marie backs off. Together with King, Marie frolics around the island until she gets hopelessly lost -- and far away from camp. They soon discover that Neo-Atlanteans are also at the island and are chased. Marie and King become separated during this adventure. Pursued by a monstrous robotic giant with a mechanical claw, Marie is rescued by Sanson and they struggle to outrun the giant. After a thrilling chase on a mine cart, the pair barely returns to camp unscathed. The walker crashes after them and its pilot emerges from the cockpit, threatening to kill everyone. When the soldier almost shoots Nadia, Nemo takes his revolver and takes him down. Nadia is furious with Nemo for doing so, despite the latter insisting that a soldier was aiming at her."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 14,
+		 "The Valley of Dynicthus",
+		 "As the Nautilus resumes its pursuit of Gargoyle, both Marie and Nadia become seriously ill from a tropical fever that will claim their lives in two days time if they are not cured. The only hope for a cure is in the depths of Reef 64. Alarmed to learn that Nadia is in danger, Nemo decides to change course, much to Electra's infuriation. Accompanied by Nemo, Jean, Sanson, Hanson, and King set off into a dangerous trek through the underwater domain of Reef 64. They find the herb in a cave situation on the opposite side of a cliff face. On their way back, however, they are attacked by a monstrous eel called a &quot;Dinicthys.&quot; Jean and King bravely attempt to draw the Dinicthys away from their position by throwing their diving suits' lights into a void. Thanks to help from Nemo, they succeed, and the girls are cured."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 15,
+		 "The Nautilus Faces Its Biggest Crisis",
+		 "Several days later, the Nautilus falls into an even deadlier trap. First, mines drift into the submarine's intakes and disrupt its engines. Then torpedoes narrowly miss the submarine. A Garfish rams into its side, only to have its nose crippled, and the submarine drifts away, exploding. When the Nautilus attempts to surface, it is surrounded by the American fleet, commanded by vengeful Captain Melville, who has received an anonymous tip that the submarine is responsible for sinking the ships. (Naturally, the &quot;source&quot; of this information is Gargoyle.) The subsequent damage causes the Nautilus to drift to the bottom of the ocean. Because the American fleet wants to see them destroyed, the Nautilus is forced to stay underwater until the fleet departs. Prior to this, a genial sailor named Ensign Fait gives Jean a bouquet of manmade flowers to offer as a present to Nadia, but she rudely turns it down (it reminds her of the flowers from Gargoyle's garden). In the aftermath of the attack, Fait is trapped inside an engine room poisoned by leaking gas, but Nemo orders the room sealed off so as to prevent further damage. Jean is crushed beyond grief as he painfully listens to his new friend die."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 16,
+		 "The Mystery of the Lost Continent",
+		 "To honor their fallen comrades, the Nautilus sets course for the underwater graveyard of Atlantis. On the way, Nadia begins to question everything that has happened and wonders why she was chosen to wield the Blue Water. Jean learns from Sonar Officer Eiko that the latter was a survivor on a French ship which was sunk by the Garfish. The boy is traumatically shocked when he adds that its captain is none other than his missing father. As the coffins are prepared for burial, Jean wanders off alone and throws away his wrench, deciding that he no longer wishes to invent if technology is so dangerous. Nadia is sad to see him so gloomy and tries to cheer him up. She succeeds by reminding him of the promise he made to her when they were in France. The episode ends when Fait and his comrades are laid to rest in the soil, with Nadia crying on Jean's shoulder."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 17,
+		 "Jean's New Invention",
+		 "Jean feels like the Nautilus crew is treating him like a kid and becomes eager to grow up. However, Nemo refuses to make him a crew member, while Electra, and the Grandis gang discourage him even further. Jean is at a loss, until Nadia offers that she has interest in flying again… &quot;only in a craft built by Jean.&quot; Inspired, Jean decides to build another aircraft. He aspires to do so all by himself without the help of any grown-ups… a task that he finds more difficult than he anticipated when he can't get an engine to work. Even so, he refuses help from Hanson, straining his friendship with the latter. Later, however, Jean has a change of heart and decides to ask Hanson for help on making the finest aircraft he can. The aircraft is completed, and Jean takes Nadia on a joyous flight above the clouds. In doing so, he manages to impress Nadia and reassure her that he will get her to Africa someday."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 18,
+		 "Nautilus vs. Nautilus",
+		 "To repair the damage caused by the last attack from Gargoyle, Captain Nemo orders the Nautilus to set sail for Antarctica. The passengers are mortified by the thought, especially Sanson, who goes into an exaggerated tirade on what an unstably icy place Antarctica really is. Jean, however, is quite excited by the idea of traveling to a new place. When the submarine arrives at Antarctica, an ancient &quot;shellfish&quot; squid latches onto the Nautilus and threatens to destroy it. The Nautilus attempts to get rid of it by ramming into an iceberg, to no avail. They finally succeed in losing their menace by steering toward an explosive underwater volcano. Unable to endure the excruciating heat, the shellfish lets go and drifts away. The Nautilus then travels through a tunnel to its subterranean base. "
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 19,
+		 "Nemo's Best Friend",
+		 "While repairs are made to the Nautilus, Nemo takes Jean and Nadia on a tour of his base. They discover wondrous sights -- a massive world tree, frozen dinosaurs, &quot;moving&quot; walkways, and a chamber filled with penguins. But the most spectacular sight of all is a massive (and ancient) whale named Irion, who happens to be close friends with Nemo. When Nadia speaks to the whale, he reveals that the latter will soon find her father… as well as her own brother. The children then witness a breathtaking aurora on the surface of Antarctica with Captain Nemo. The episode ends with Jean sharing his newest invention with Nadia and Marie -- a machine that creates ice cream, using the ice from Antarctica."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 20,
+		 "Jean Makes a Mistake",
+		 "Jean constructs another invention -- a miniature glider powered by a rocket for take off from the Nautilus's deck. Unfortunately, during the test flight, the engine backfires and the glider spirals out of control, finally exploding in the sky. The crew panics, fearing that Gargoyle will probably discover them because of this incident. Sure enough, they are proven right, because Nemo and the others are forced to take down more Garfish submarines. Afterwards, Nemo warns Jean to be more careful with his inventions. Nadia is infuriated to see Jean take Nemo's reprimand without the slightest impulse to stand up for himself, but she goes too far in trying to stand up for him and is slapped by Nemo, especially when she insults him and his crew. Furthermore, Nadia's burgeoning jealousy over Jean's friendship with Electra intensifies… until she finally learns from the latter that she is in no danger of losing Jean. Electra only considers Jean like a little brother she once lost years ago to an attack by an evil man. Nadia recognizes the murderer as Gargoyle, and begins to realize the error of her misjudgment."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 21,
+		 "Farewell Nautilus",
+		 "Trapped in the Kermodec Trench by Gargoyle, the Nautilus barely survives a torpedo assault by six Garfish. Nemo retaliates with a torpedo attack that demolishes the fleet. But Gargoyle springs his newest ace: a super-charged, magnetic weapon called &quot;SeaNet Beam Gun.&quot; With excruciating power it literally drags the Nautilus out of the ocean and draws it inexorably toward Gargoyle's Neo-Atlantean battleship in the sky. Then the Nautilus takes devastating damage from the battleship's &quot;atomic vibrator&quot;, which all but compromises the submarine's power. Electra suggests self-destructing the Nautilus so as to take them all down with Gargoyle, but Grandis objects, stating that the &quot;real&quot; reason she's doing so is because she &quot;wants to die with Captain Nemo because you know he will never love you!&quot; The Grandis gang pretends to make a getaway in the Gratan but actually perform another heroic rescue by compromising the battleship's missile tube by blasting one of its annihilation bombs just before it hits the Nautilus. Furthermore, Jean rescues Nadia (again) when the latter unwisely tries to surrender herself to Gargoyle (in order to stop the fighting) by using his spare glider. Then the Nautilus engineers manually launch their last missile, which destroys Gargoyle's deadly weapon. The compromised submarine splashes into the ocean and disappears underwater into a whirlpool. Gargoyle, knowing Nemo is doomed, orders another Garfish fleet to finish them off for good."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 22,
+		 "Electra the Traitor",
+		 "To save themselves from being totally destroyed by the remaining Garfish fleet, the Nautilus severs its combat block from the main unit, which self-destructs, taking the enemy submarines with it. To save the children, Nemo relocates them to his personal cabin, warning that they will be jettisoned from the doomed Nautilus. Returning to the bridge, Nemo is confronted at gunpoint by Electra, who shoots his arm. Trapped in the cabin, Jean and Nadia listen in shock as Electra describes her tragic past. Thirteen years ago in the kingdom of Tartessos, Nemo's wife, the Queen, was killed in an attack by ruthless rebels led by Gargoyle and his puppet liege, Emperor Neo. Gargoyle attempted to unlock the Tower of Babel's ancient power, but Nemo put a stop to it by removing the Blue Water from its control device. The tower self-destructed and washed away all of Tartessos in seven days. Electra also lost her parents and little brother. Two nights later she was rescued by Nemo. She gradually fell in love with him… until she learned that the latter was responsible for the destruction of Tartessos and the deaths of the innocent people who lived there. Despite her grudge, however, Electra remained loyal to Nemo in mutual understanding of his goal to take down Neo-Atlantis. However, she admits that she was also jealous of Nadia, fearing that the latter would &quot;steal Nemo's heart&quot; away. It is at this point that Nadia realizes that Nemo is actually her father, much to her shock, and she begins to regret the way she treated him. Angry that Nemo has supposedly &quot;gone back to being an ordinary father&quot; and not sacrificing himself to stop Gargoyle, Electra has lost control and attempts to shoot Nemo again. But Nemo admits that he is merely fighting to atone for his sins and that he couldn't self-destruct the Nautilus because he cares about Electra and doesn't want to her to suffer the same fate. Ashamed and humiliated, Electra attempts to shoot herself, but Nemo stops her. He then releases the children from the crippled Nautilus, saying &quot;Live, Nadia! Live!&quot; "
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 23,
+		 "Young Drifters",
+		 "Jean, Nadia, Marie, and King are shipwrecked and washed ashore on a beach that turns out to be a deserted island. After much discussion, they decide to stay and make it their home. "
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 24,
+		 "Lincoln Island",
+		 "Nadia rudely awakens Jean and Marie and takes charge, naming their new home &quot;Lincoln Island&quot; after the president of the same name. Then she abandons them and declares to “live with nature in the forest.” Unfortunately, surviving against nature without the benefits of Jean’s technology proves to be much more difficult than she expects. Indeed, her only method of finding food is to steal rations the children have taken from Nemo's cabin. Nadia almost drowns when she attempts to reclaim a hologram from Nemo's cabin, but Jean and Marie rescue her. Nadia is furious at both of them, however, because they have caught fish (she would rather have been saved by them). Marie calls Nadia out for her stubbornness, declaring they all would have starved to death otherwise."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 25,
+		 "The First Kiss",
+		 "Because Nadia has stolen food from their camp, all they have left to eat is meat. Nadia refuses to cooperate and declares instead to starve. Later she becomes desperate and finds a can of spinach. Unfortunately the spinach is rotten and Nadia falls ill. Searching for a cure, Jean ends up in a cave where he becomes stoned by hallucinogenic mushrooms, causing him to fall into a trance. Later, Nadia gives Jean his first real kiss — not realizing that he is too delirious (as a result of the aforementioned mushrooms) to know about it."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 26,
+		 "King, the Lonely Lion",
+		 "Nadia spends a whole day being romantic with Jean, culminating with another kiss under the stars -- until Jean thinks it's their first time, much to her infuriation. Jealous of the attention Nadia is giving Jean, King runs away (especially after Marie abuses him). When Jean sets off to find him, he steps off a cliff and falls to the ground, and has an extensive dream sequence in which he is unveiling invention after invention before an adoring Nadia and Marie. Among his inventions are a gravity bomb and another highly advanced flying machine (straight out of Thunderbirds). "
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 27,
+		 "The Island of the Witch",
+		 "A typhoon strikes Lincoln Island, and King is blown away into the night. In the aftermath of the storm, the children are surprised to discover a floating island drifting to their shore. When they explore the island -- which turns out to be a rather bizarre tropical paradise of trees of every sort, desert dunes, and shifting weathers, the children spot both King as well as Ayerton, who tells them crazy stories about the island and reveals he ended up ashore when the American Navy sunk the Nautilus. He warns them that there is a deep mystery at the heart of the island."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 28,
+		 "The Floating Island",
+		 "A giant appears out of nowhere and terrorizes the companions… which turns out to be the Gratan disguised in cloth, and sure enough, Grandis, Sanson, and Hanson are there. The children decide to stay with their friends and are soon living together like a family. Nadia even tries to cook for Jean (perhaps to make amends for all the trouble she caused him)."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 29,
+		 "King vs. King",
+		 "Sanson and Hanson get into an argument that turns into a race between two mechanical lions resembling King. In between this, Nadia finally reveals why she dislikes eating meat so much: years ago when she was in the circus, her friend Smoky, a goat, was taken away because he was too old to do anymore labor. The subsequent incident caused Nadia to understand what animals say. She adds that seeing people eat meat is like watching a friend being murdered."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 30,
+		 "Labyrinth in the Earth",
+		 "Four months later, the Gratan has finally been repaired and the companions will soon set off for Africa. But first the balloon must be repaired. While Ayerton tries to seduce Grandis, Jean and Nadia make a remarkable discovery about their island home: there is an underground factory which resembles their former subaquatic home. While exploring, Nadia falls into a trance and mysteriously disappears behind a wall, leaving her clothes in Jean's hands."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 31,
+		 "Farewell Red Noah",
+		 "Trapped in a strange void, Nadia comes into contact with a mysterious voice who tells her that she is actually aboard Red Noah, a satellite city that descended to the depths of the ocean 2,400,000 years ago. Communicating with the mysterious identity, Nadia learns that she is, in fact, an heir to the throne of the Atlantis… and that she is not a human being. Furthermore, her real birthplace turns out to be Old Tartessos, the ancient kingdom Atlantis that was destroyed thirteen years ago. After learning about the history of her people, Nadia is told that she will be taken to the underwater kingdom of Atlantis to &quot;guide the lost souls toward its restoration.&quot; The island begins to collapse and crumble, and the companions are forced to flee. But Jean stays behind and bravely returns to the same place where Nadia disappeared moments earlier, calling her name. Nadia realizes that Jean is more important to her than the Blue Water and is forced to admit it to the mysterious voice. Nadia is released, but warned that she cannot escape from her destiny, which is to rule over Atlantis, or use the power of the Blue Water to become a &quot;god&quot; or &quot;devil.&quot; Nadia is overjoyed to see Jean and tearfully embraces him. The pair flee the cave and are almost swallowed up by the sinking island, but the Gratan comes to their rescue. Reunited, the companions watch as the island disappears into the ocean for good."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 32,
+		 "Nadia's Love...?",
+		 "The Gratan crash-lands into a tribal village, and the companions are captured… until one of its citizens recognizes both Nadia and her Blue Water. Nadia seems intrigued… that is, until she discovers that the warrior (who knows about Tartessos) is engaged to a bulky, strong warrior woman."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 33,
+		 "King's Rescue",
+		 "King is captured by Grandis' ex-fiance, and the companions form a rescue operation to free him."
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 34,
+		 "My Darling Nadia",
+		 "Most of this episode is a &quot;clip show&quot; featuring &quot;image songs&quot; accompanied by clips from the previous thirty-three episodes while Sanson suggests Jean to write a love song for Nadia. "
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 35,
+		"The Secret of Blue Water",
+		"Finally, the companions arrive at Tartessos, the ancient kingdom of Atlantis submerged to the bottom of a crater lake thirteen years ago. Exploring its ruins, Nadia reveals to the companions that they are, in truth, aboard Blue Noah, one of three &quot;Noah's Arc&quot; vessels that descended to the ocean thousands of years ago. The other two are Red Noah and Atlantis, respectively. During their exploration, Nadia reveals her identity as a princess of Atlantis and the dangers of the Blue Water. Whoever wields the pendant, it turns out, can either become god or devil… and destroy the world in a fit of rage. She also reveals that she doesn't want to have anything to do with her destiny and feels like she is a horrible person who brings nothing but misery to everyone. Impulsively, Nadia attempts suicide by stepping off the top of a tall tower. A few moments later she awakens to find herself on solid ground. Jean reveals that the Blue Water lit up during Nadia's fall and slowed her descent. Nadia laments that she cannot escape her fate after all. Everyone is shocked and traumatized by Nadia's latest actions, but Jean pacifies the situation by telling Nadia he loves her regardless of who she is, and forgives her past mistakes. Nadia is deeply touched by Jean's honesty, and learns that they have, in fact, arrived on her 15th birthday. "
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 36,
+		 "The New Nautilus",
+		 "Gargoyle's Neo Atlantean battleships have trailed the companions to Tartessos. Nadia surrenders herself and the Blue Water to Gargoyle… but not before making the latter promise to spare her friends. Gargoyle goes back on his word anyway and orders his battleships to attack the companions. Jean and the others try to flee in the Gratan until they find themselves falling inexorably into a bottomless shaft. Just then, a mysterious force field snags the tank in mid-air and lands them safely on the ground. Their rescuer turns out to be none other than Electra, who informs them that Captain Nemo is still alive and well. She takes the companions aboard New Nautilus, a super-charged massive battleship with powerful electromagnetic turrets. However, the confrontation between Nemo and Gargoyle does not go well, and results with the captain reluctantly surrendering his own Blue Water to his enemy. Gargoyle then destroys Tartessos with a powerful blast and takes Nadia into the skies. "
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 37,
+		 "Emperor Neo",
+		 "Nadia is brought aboard Red Noah again, this time as it hovers in the sky, dwarfing even Gargoyle's battleships. There Gargoyle shows Nadia the ancient history of Atlantis, including an experimental massive &quot;human&quot; called Adam, and failed creations hovering in jars. She also meets Emperor Neo, who turns out to be none other than her long-lost brother -- a mechanical puppet under Gargoyle's control. Meanwhile, the New Nautilus has survived the destruction of Tartessos and sets off to fight back. Neo threatens the people around the world to surrender England, but just as the weapon fires, the New Nautilus intervenes, and the two crafts are face to face. "
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 38,
+		 "...To the Sky",
+		 "Both Red Noah and New Nautilus exchange laser fire and turret blasts in the sky. The subsequent battle causes much damage to the streets of Paris, destroying the Eiffel Tower. Eventually both crafts elevate to outer space. However, New Nautilus cannot take down Red Noah because the latter's powerful force field is still intact. Breaching a hole in Red Noah 's defenses, the Nautilus sends the Gratan into Red Noah. Grandis, Sanson, and Hanson traverse through the spaceship's corridors, cutting holes in the bulkheads with the tank's newly installed laser turrets. After a long chase they discover Red Noah 's power plant and sacrifice the Gratan to take down Red Noah 's barrier. New Nautilus breaches Red Noah, and Nemo, Electra, and Jean confront Gargoyle in a massive, observatory like chamber. Standing on pedestals more than two meters wide and a hundred meters above the floor, the trio is horrified to discover that Nadia is now under Gargoyle's control. "
+		 )
+	,	("Nadia: The Secret of Blue Water",
+		 39,
+		 "Successor to the Stars",
+		 "Both Neo and Nadia shoot Nemo, wounding him. Electra radios the New Nautilus to blast through the throne room. The subsequent explosion compromises Gargoyle's hold on Neo, who recognizes his father. Using his powers, Neo returns the Blue Waters to their rightful owners and approaches Nadia in order to break the crown that is controlling her mind. Just when he reaches the throne, however, he freezes -- Gargoyle has unplugged his source of energy. Using all his will, Neo breaks through and succeeds in freeing his sister. In doing so, he sacrifices himself. Then Gargoyle tortures Electra with deadly volts and causes Jean to fall to his death. The New Nautilus breaches the throne room and blasts at Gargoyle. Nemo gives Nadia his own Blue Water and explains that she can revive Jean if she prays to the Blue Water. With encouragement from Grandis and Electra, Nadia combines both Blue Waters, and its powers form a sphere of light. Ignoring Nemo's warning that only an Atlantean can withstand the power of the Blue Water, Gargoyle staggers toward the sphere and touches it… and his own being literally turns into salt and disintegrates -- he was a human being all along. Nadia successfully brings Jean back to life. Nemo then sacrifices himself to destroy Red Noah as the companions return to Earth aboard an all new submarine spaceship. 12 years later in 1902, a 17-year-old Marie talks about how the companions have gone their separate ways: Grandis is single, Hanson a wealthy businessman, Electra a mother, and Jean and Nadia are happily married. Meanwhile, Marie has married Sanson and is expecting her firstborn child."
+		 )
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Nadia: The Secret of Blue Water", 1, 1, 8)
+	,	("Nadia: The Secret of Blue Water", 1, 2, 8)
+	,	("Nadia: The Secret of Blue Water", 1, 3, 8)
+	,	("Nadia: The Secret of Blue Water", 1, 4, 15)
+;
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Queens Blade 2 The Evil Eye",
+		 12,
+		 "All of the female warriors intent on participating in the Queen's Blade tournament have now assembled in Gynos, the capital of reigning Queen Aldra.There they are joined by Nyx, a normally-timid woman who possesses both a demonic staff and a serious grudge against Elina, and Nanael, who has been assigned by Heaven to participate in the Queen's Blade herself so that Heaven can ferret out what, exactly, Queen Aldra is really up to.",
+		 "All of the female warriors intent on participating in the Queen's Blade tournament have now assembled in Gynos, the capital of reigning Queen Aldra...",
+		 "Siren",
+		 "Kinji Yoshimoto"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Queens Blade 2 The Evil Eye",
+		 3,
+		 1,
+		 "M - Violence, Sexual references and Nudity",
+		 12,
+		 "http://sirenvisual.com.au/index.php/shop/queen-s-blade-2-the-evil-eye.html"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Queens Blade 2 The Evil Eye",
+		 1,
+		 "Assemble! Queen's Blade",
+		 "Nanael is reassigned by the Head Angel to compete in the Queen's Blade as punishment for failing her prior assignment. Heaven suspects something is wrong with Queen Aldra. Everyone is looking for residences in Gainos: Tomoe with Shizuka, Ymir with Cattleya, Alleyne with Nowa, Nanael with Melpha, and Elina with Claudette. Echidna is there as well, and confronts the rogue assassin Irma. Melona tries to take things into her own hands and assassinate Aldra, but is turned to stone by Aldra's power. Nyx, a new contender, is revealed."
+		)
+	,	("Queens Blade 2 The Evil Eye",
+		 2,
+		 "Crush the Evil! The Unexpected Battle",
+		 "Leina is having trouble finding accommodations until she mentions she is in the Queen's Blade, and the greedy hotel manager rushes to fill her order and ends up rooming her with Echidna. Tomoe and Shizuka meet Melpha, and Tomoe admires her for dressing more appropriately than other competitors. It is revealed that Nyx used to be a maid for the Vance Family, and was treated cruelly by Elina. Aldra wants a new servant to lead the Assassins, and sends a fake letter to lure Risty to her palace. Once there, she awakens the hate in Risty's soul, making Risty her servant. The first match is fought: Tomoe vs Melpha, where Tomoe finds that Melpha uses the lewd &quot;Holy Poses&quot; to fight, giving Tomoe the resolve to defeat her perversion. Another match begins: Elina vs Nyx."
+		 )
+	,	("Queens Blade 2 The Evil Eye",
+		 3,
+		 "Flame Burst! Blazing Destinies",
+		 "It is revealed that Nyx is enslaved to a tentacle demon lord named Funikura, who has given her magical fire power, yet often molests her with its tentacles. Elina realizes that Nyx is a coward without Funikura, and tricks her into relinquishing it, upon which Nyx surrenders. Risty is revealed as the new leader of the Assassins of the Fang. Aldra turns Funikura to stone, saying that old demons should not wander free. Nowa gets lost in the Gainos marketplace and is almost raped by a gang of street punks who were swiftly beaten by Echidna. Nowa and Alleyne are summoned to fight in a swamp, as are Echidna and Irma. It is then revealed to be a team match: Alleyne and Nowa vs Echidna and Irma."
+		 )
+	,	("Queens Blade 2 The Evil Eye",
+		 4,
+		 "Confrontation! The Ties that Call Us Together",
+		 "Irma refuses to help Echidna, so Alleyne and Nowa resolve to pick them off one by one. Echidna's past is revealed. Echidna manages to trap Alleyne in a pitcher plant, then to pin Nowa. Alleyne breaks free and takes the initiative against Echidna, but Irma appears, threatening to kill the trapped Nowa and forcing Alleyne to surrender. Leina brings her sword to Cattleya for repair again, while Ymir's attempts to sell weapons go unnoticed in the market. Cattleya states her resolve to reunite her family. The next set of matches begins: Leina vs Ymir and Cattleya vs Airi, the latter being fought in the room where Aldra keeps all of those she has turned to stone."
+		 )
+	,	("Queens Blade 2 The Evil Eye",
+		 5,
+		 "Intrigue! Grief in the Royal Palace",
+		 "Ymir uses the fact that her bout is being broadcast to advertise the effectiveness of her weapons, especially since Leina is using a Cattleya weapon. Leina emerges victorious, however. Lana is hanging on to Cattleya during her fight with Airi, but actually proves to be helpful as Airi cannot bring herself to kill him. Cattleya is winning when she sees that Owen is frozen inside one of the stones in Aldra's &quot;Palace of Grief&quot; and breaks down crying, conceding defeat. Aldra promises to reunite Cattleya with her husband, and does so by turning her to stone as well. Filled with grief, Lana grabs Cattleya's spear and tries to attack Aldra. Aldra is about to turn him to stone too when Airi rescues him and they escape. They are confronted by Risty and the Assassins of the Fang, but when Risty is about to strike Lana down, she remembers the orphans she used to care for and hesitates, allowing them to escape. Lana keeps following Airi around, and she resolves to care for him in Cattleya's stead. When Cattleya does not return, Ymir asks Leina to allow her to care for her sword from now on. The next match is set: Claudette vs Menace."
+		 )
+	,	("Queens Blade 2 The Evil Eye",
+		 6,
+		 "Complications! Changing Premonitions",
+		 "Claudette and Menace are fighting in a desert, giving Menace the upper hand. Her sand attacks confuse Claudette, and she uses cursed attacks to drain Claudette's strength. It begins to rain, however, which weakens her sand attacks, and Claudette emerges victorious. Menace is later turned to stone by Aldra, who says that ancient things should stay in the past. The first round is over, with Risty advancing by some unexplained method, and Nanael advancing because her foe (presumably Melona) did not appear. Nanael is dismayed that no one is placing bets on her, and uses all of Melpha's money to place a large bet on herself while in disguise, so as Melpha's roommate, she must subsist on vegetables from her garden. Meanwhile, Risty is pursuing Irma throughout the city. She corners her and is about to kill her when Echidna intervenes and shelters Irma for a while, but Aldra sets the next match so that Irma must fight Risty anyway. Tomoe is also summoned to fight Elina."
+		 )
+	,	("Queens Blade 2 The Evil Eye",
+		 7,
+		 "Freeze! Unexpected Situations",
+		 "Irma looks for an opening to strike in her fight with Risty, and finds one when Risty starts having flashbacks to her old, righteous self. However, Irma misses in her killing blow, and is defeated instead. Echidna retrieves her afterwards, and the two depart together. Elina shakes Tomoe's resolve by calling her a hypocrite in regards to how she can call herself righteous while killing people. Tomoe tells Elina she has formed a bond with Leina, since they shared food and shelter on their journey, which Elina misinterprets, thinking that Tomoe has slept with Reina. Elina attacks in a frenzy, but Tomoe pulls through victorious. Ymir is pondering how best to augment Leina's sword. The next match is set: Nanael vs Airi in the Palace of Grief. Tomoe returns from her victorious battle to find a note from Shizuka, leading her to a graveyard. Shizuka reveals that she never actually left the Kouma Ninja, and has been posing as Tomoe's friend to lower her guard so she could kill her. Tomoe finally gains the will to fight her friend, and kills her. In dying, Shizuka says that being able to kill her best friend has made Tomoe stronger since these emotional bonds would only hinder her resolve as a warrior."
+		 )
+	,	("Queens Blade 2 The Evil Eye",
+		 8,
+		 "Disgrace! The Fighting Angel",
+		"Airi and Nanael are both desperate to finish the match quickly, as both are starving, and begin to fight in earnest. Airi weakens Nanael by causing her to spill more of the sacred milk, which spills onto some of the petrified people in the palace. Airi runs out of time because it has been too long since she has consumed vital force and due to her desire not to do so in front of Lana, and Airi disappears. Aldra is visibly disturbed by the spilling of the sacred milk. Lana has lost another guardian, and this time goes to Ymir, deciding to help her fix Leina's sword. Lana reveals Cattleya's fate to Ymir and Leina, and Leina says she will save Cattleya. The sacred milk causes the stone Melona was encased in to crack, and she manages to escape. Nanael is then set against Leina, but Nanael is now weak from having spilled the sacred milk, and with her new sword Leina easily defeats her. Count Vance puts a plot in motion to seize the throne for himself. Melona appears before the defeated Nanael with a proposal to defeat Aldra. The next match is set: Claudette vs. Risty."
+		)
+	,	("Queens Blade 2 The Evil Eye",
+		 9,
+		 "True Feelings! The Duel at Castle Vance",
+		"Claudette and Risty are fighting in the courtyard of Vance Castle just as Vance's army is leaving in his bid to overthrow Aldra by conventional military force. Claudette is initially victorious, knocking out Risty with a lightning bolt. She tries to dissuade the Count from his attempted overthrow, saying that it will only breed war across the continent, and reveals that Lady Maria, Vance's wife and her adoptive mother, told her to heal Vance's pain if she did not return from the Queen's Blade, and she has been serving loyally to soothe Vance's emotional scars. Vance tries to convince her to serve him again in his bid to overthrow Aldra, but she refuses, and he tells her to leave. Risty then awakens, however, and it is now apparent that she was sent to kill the Count. Claudette manages to stop her, but is eventually defeated herself when Risty collapses a roof on her. As Claudette is teleported back to Gynos, she reconciles with the Count, who then withdraws his army. Aldra calls it a success: though the Count still lives, his coup was thwarted. Claudette warns Leina that Risty has changed. Meanwhile, it is seen that Nyx has found a job as a barmaid, and that Tomoe is training fiercely, now wearing Shizuka's old horned headband. Melona, Nanael, and Melpha discuss the mysterious Aldra, and Melona steals Nanael's sacred milk."
+		)
+	,	("Queens Blade 2 The Evil Eye",
+		 10,
+		 "Long-Cherished Desire! A Reason to Fight",
+		"Nanael is drinking milk to drown her sorrows at the bar where Nyx works, and Nyx tells her of the rumor about the horned monster seen in the woods. Nanael thinks it might be Melona, and goes to seek her with Melpha. She instead finds Tomoe in a dangerous mood. Elina returns home after Claudette tells her that she is the only one of the three sisters capable of serving Count Vance any more, as neither Claudette nor Leina have the will to. Nanael tries to get Leina to ambush Tomoe in the forest, but then decides to tell her what they know about Aldra so far. Between them, Nanael, Leina, and Ymir determine that Aldra has to be allied with some sort of heavenly creature because the sacred milk actually has a negative impact on the divine (and conversely a positive one on the demonic, which is how it was able to revive Melona). Melona spies on the conversation, posing as Lana. Leina is summoned at last to fight Tomoe, and they battle in the ruins of Tomoe's old shrine in Hinomoto. Tomoe's hair has turned white, and Aldra says that she is driven by the ghosts of her friends and the suffering in her heart. Tomoe says that, for Shizuka's sake, she has become a demon who will win at any cost. A desperate fight begins with Tomoe having the upper hand, utilizing a lot of powerful techniques. Leina eventually recovers and says that she cannot lose either, and that she accepts everything that has happened, including Tomoe's feelings. Tomoe rejects that, replying that one needs to be heartless to be strong. Leina triumphs, and Tomoe claims she finally understands her. Ymir uses the fight as advertising for the sword she re-forged, and sells many cheap knockoffs of it. Tomoe awakens in the Palace of Grief."
+		 )
+	,	("Queens Blade 2 The Evil Eye",
+		 11,
+		 "Fierce Duel! The Ultimate Showdown",
+		"Tomoe demands to know why Aldra had the Kouma Ninja attack Hinomoto. Aldra says that she has been searching for her sister, and Hinomoto is the only area outside of her rule. She says burning the country to the ground would be worth it to find her sister. Aldra's past is revealed: she and her sister were outcasts for being of mixed demonic descent, and were forced to wander. Her sister mysteriously disappeared one day at the edge of a forest, and Aldra, in desperation, found a spirit without a body. The spirit inhabited Aldra's body in return for giving her great power and eternal youth. Aldra offers Tomoe rule over Hinomoto in exchange for her servitude, promising peace for Hinomoto if her sister is found, but Tomoe rejects her offer, remaining loyal to her Empress. Nanael has mysteriously returned to Heaven, and Leina and Risty finally fight. Leina fends off Risty's aggressive style, and eventually causes her to hesitate when she shows her the lucky coin she gave her. Leina scores a hit and Risty falls. Leina rushes to tend to her, and Risty temporarily breaks free from Aldra's control. Aldra's evil spirit then possesses Risty directly, however, and Risty begins strangling Leina. Leina is about to pass out when Melona appears in Aldra's throne room and coils up her body, shaking her control over Risty. Leina uses the opening to break free and eventually defeats Risty, shattering Aldra's control over her for good. Melona and Aldra fight, with Melona managing to dump what remains of the sacred milk on Aldra, weakening her, but Aldra manages to drive Melona off anyway. The final battle is set to begin: Leina vs Aldra."
+		 )
+	,	("Queens Blade 2 The Evil Eye",
+		 12,
+		 "Ambition! The Successor to the Throne",
+		"Nanael makes her report to Heaven, where the Head Angel determines that Aldra has made a pact with Delmora, a fallen angel. The final battle begins, with Aldra proving to have overwhelming power. She eventually kicks Leina in the neck, making her collapse. Risty appears at the arena and cheers Leina on, causing her to get back up. Leina shows that she has adopted many of her old foes' techniques as she hits Aldra with Claudette's Thunderclap Strike and Tomoe's Warrior Kick. Just as Leina has the advantage, however, Aldra petrifies her. The crowd jeers, calling her a demon. Meanwhile, Lana has invaded the palace, trying to rescue his parents by himself. He is confronted by a Fang Assassin, but finds Airi's Scythe which still contains some of Airi's spirit. He hurls the scythe at the Assassin, and Airi snags enough of the Assassin's vital force to reconstitute herself. Nanael overhears the struggle and arrives with more sacred milk, freeing Cattleya and Owen. Melona has been hiding in the palace, though now she is tiny, and Menace is also freed. Aldra flies into a rage at the crowd's jeers and petrifies them all except Claudette, Tomoe, and Risty. Even though Leina is petrified, her spirit causes everyone's weapons to glow: even those far away like Nowa and Echidna, showing the bonds she has formed with all of them. Nanael frees Leina with more sacred milk, and she counterattacks. Delmora convinces Aldra to remove the seals on his power, but even with his unsealed power, Leina defeats Aldra, causing Delmora to emerge. It is revealed that Delmora separated Aldra from her sister so that she would despair and seek to use his power for revenge so that he could get her body in return. Nyx sees that some of those petrified have been freed, and finally shows resolve of her own by freeing Funikura herself. Nanael pours more sacred milk on Delmora, then Claudette, Tomoe, and finally Leina attack, defeating him as Leina emerges victorious. Aldra matures to adulthood in an instant since Delmora had given her eternal youth, and Tomoe tells her that she can seek her sister in Hinomoto herself. Soon after, Leina is crowned the new Queen."
+		 )
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Queens Blade 2 The Evil Eye", 0, 1, 4)
+	,	("Queens Blade 2 The Evil Eye", 0, 2, 4)
+	,	("Queens Blade 2 The Evil Eye", 0, 3, 4)
+;
+
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Queen's Blade 3: Rebellion",
+		 12,
+		 "Power corrupts, and it when it appears that the once noble Queen Claudette's ways have turned to oppression and heretical persecution, it's up to a new generation of warriors to step up to the plate armor to bear arms and bare their naked fury in open rebellion! The odds may seem unfairly stacked in favor of the Amazonian ranks of the queen, doubly supported by her power of writ and assassins. But the incredible wits and assets of the dazzling array of daring damsels willing to risk their gorgeous skins and put their lithesome bodies on line against her, might just expose a few unexpected weaknesses in the queen's support! It's the wildest fantasy ever as an unprecedented force of fabulous female fighters. from elven alchemist to half-demon berserker, from an undead pirate captain to a dragon maid, they all come together with the goal of stripping the Queen from her throne in QUEEN'S BLADE: REBELLION! &quot;Quality fan-service!&quot; - Anime News Network",
+		 "FIVE OUT OF FIVE REBELS AGREE: It's time for this Queen to go DOWN!",
+		 "Siren",
+		 "Kinji Yoshimoto"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Queen's Blade 3: Rebellion",
+		 1,
+		 1,
+		 "M - Violence, Sexual references and Nudity",
+		 12,
+		 "http://sirenvisual.com.au/index.php/shop/queen-s-blade-3-rebellion.html"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Queen's Blade 3: Rebellion",
+		 1,
+		 "Warrior of the Resistance",
+		 "After Alchemy Strategist Yuit saves her friend Mirim from harassment by the queen's soldiers with the help of her elfen automaton Vante, Ymir shows up at her village the next day trying to procure Vante for the queen's military. Yuit finds an opportunity to escape but is later ambushed by Elina. Just when she almost falls off a cliff, Annelotte appears to rescue her and defeat Elina. However, when she returns home she finds that Mirim has been coerced into joining the queen's army with false promises of money to treat her mother's illness by Ymir. "
+		)
+	,	("Queen's Blade 3: Rebellion",
+		 2,
+		 "The Sacred War",
+		 "Seeking guidance from the church, Annelotte unwittingly angers the overzealous Inquisitor Sigui and is challenged to a duel. Annelotte must fight for her life as being declared a heretic by Sigui automatically comes with a sentence to be burned alive by holy fire. Fortunately, just when all hope is lost an octopus comes to the rescue. Elsewhere, Iron Strategist Ymir sets her evil plan into motion."
+		 )
+	,	("Queen's Blade 3: Rebellion",
+		 3,
+		 "The Moonlight from the Jungle and the Sun",
+		"On a mission to clear the mysterious fog that's preventing transportation of life-saving medicine, Annelotte travels to the Calibara forest where she meets Moon Shadow Dancer Luna Luna and fights a giant slimy monster. And yes, there will be tentacles."
+		 )
+	,	("Queen's Blade 3: Rebellion",
+		 4,
+		 "The Unstopping Hyper Vibration",
+		 "Mirim has been equipped with the Hyper Vibration Armor and armed with the Hyper Vibration Sword &quot;Infinite Slasher&quot; by Ymir, who sends her to fight Annelotte under the queen's order."
+		 )
+	,	("Queen's Blade 3: Rebellion",
+		 5,
+		 "The Secret of the Castle at Gainos",
+		 "Annelotte sneaks into Gainos Castle with Yuit and Vante to rescue Mirim, but she must get past Dragon Warrior Branwen first."
+		 )
+	,	("Queen's Blade 3: Rebellion",
+		 6,
+		 "A Crown of Flowers and the Hidden Power",
+		 "Annelotte finally confronts Mirim and her nearly invincible Hyper Vibration Armor, and in the middle of the fierce showdown, Captain Liliana's flying pirate ship suddenly appears in the sky above."
+		 )
+	,	("Queen's Blade 3: Rebellion",
+		 7,
+		 "The Flying Pirate Ship",
+		 "Vante is captured by Liliana, and Annelotte and Yuit must sneak onboard her flying pirate ship to retrieve Vante. But they are not the only stowaways there."
+		 )
+	,	("Queen's Blade 3: Rebellion",
+		 8,
+		 "The Tempted Young Wife",
+		 "Ymir recruits Summoner Aldra to join the queen's army. Aldra summons two underworld demons, Belphe and Dogor, to aid in her fight, but they are more interested in finding some tasty humans to feed on. "
+		)
+	,	("Queen's Blade 3: Rebellion",
+		 9,
+		 "A Samurai Arrives",
+		 "Annelotte accidentally travels to a small village of orphaned children, where she meets the self-proclaimed &quot;Samurai God&quot; Izumi. Realizing that Annelotte is a stronger and more skilled fighter, Izumi asks Annelotte to teach her better swordsmanship. And not a moment too soon, for the underworld demons Belphe and Dogor just appeared in their village to eat the children."		 
+		)
+	,	("Queen's Blade 3: Rebellion",
+		 10,
+		 "An Angel, a Trap and the Queen's True Motive",
+		 "Annelotte and her band of rebels return to Gainos Castle with the intention of confronting the queen head-on, but Ymir has anticipated their arrival and set a dangerous trap for them."
+		 )
+	,	("Queen's Blade 3: Rebellion",
+		 11,
+		 "Wavering Spirit",
+		 "Fierce battles rage across the castle as the forces of good clash with the forces of evil. Amidst the climatic showdown, a sinister secret is revealed."
+		 )
+	,	("Queen's Blade 3: Rebellion",
+		 12,
+		 "Bonds of the Resistance",
+		 "Annelotte finally comes face-to-face with Thundercloud Queen Claudette, and the fate of the continent will be decided by the one who emerges victorious."
+		 )
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Queen's Blade 3: Rebellion", 0, 1, 4)
+	,	("Queen's Blade 3: Rebellion", 0, 2, 4)
+	,	("Queen's Blade 3: Rebellion", 0, 3, 4)
+;
+
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Welcome to Irabu's Office",
+		 11,
+		 "A pro baseball player with the yips, a man with a permanent erection, a hopeless yakuza underboss, an obsessive compulsive university lecturer, a mobile phone addict and an anxious circus performer...Welcome to Irabu's office!",
+		 "A pro baseball player with the yips, a man with a permanent erection, a hopeless yakuza underboss, an obsessive compulsive university lecturer, a mobile phone addict and an anxious circus performer...Welcome to Irabu's office!",
+		 "Siren",
+		 "Kenji Nakamura"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Welcome to Irabu's Office",
+		 1,
+		 1,
+		 "M - Mature Themes, Sexual References and Coarse Language",
+		 11,
+		 "http://sirenvisual.com.au/index.php/shop/welcome-to-irabu-s-office.html"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Welcome to Irabu's Office",
+		 1,
+		 "Flying Trapeze",
+		 "Kohei Yamashita is an aerialist who repeatedly misses his partners in his trapeze act. He blames the newly recruited foreign circus artists and grows distant and distrusting of them. Due to the stress of getting his act together for an upcoming performance, he has developed a sleep disorder and anxiety problems. He is a third-generation circus performer after his father and grandfather. As a child, he learned to distance himself from other children because he had to constantly move with the circus. Because of this, he couldn't develop trust in strangers. He realizes that he was the one messing up the stunt after watching a video of his practice. He is represented by a penguin."
+		)
+	,	("Welcome to Irabu's Office",
+		 2,
+		 "Keep on Erecting",
+		 "Tetsuya Taguchi, public servant at the ward office, has developed an erectile dysfunction (a constantly erect penis) due to emotional issues at work and with his ex-wife. He is represented by a rhino with a dotted horn."		 
+		 )
+	,	("Welcome to Irabu's Office",
+		 3,
+		 "Romance Novelist",
+		 "Romance novelist Junichi Hoshiyama suffering from OCD and psychogenic induced vomiting. He believes that he has already done the ideas that come to his head for new books. His animal form is a rooster and the scenes of vomiting are overlaid by pink feathers flying through the air."
+		 )
+	,	("Welcome to Irabu's Office",
+		 4,
+		 "The Third Base",
+		 "Shinichi Bando, a superstar pro-baseball player and third baseman for the Tokyo Yakult Swallows, is troubled by yips as he suddenly can not throw the ball anymore. This problem is brought on by a younger and more popular contender for his position on the team. He appears as a red horse with blue hair after the vitamin shot."
+		 )
+	,	("Welcome to Irabu's Office",
+		 5,
+		 "My Father In-Law's..",
+		 "Tatsuro Ikeyama is a neurology lecturer with obsessive–compulsive disorder and a compulsion for inappropriate behavior. For example, he fantasizes about dumping the load of a dump truck stopped at a traffic light and swinging on a chandelier at his school reunion. His father-in-law is Dr. Nomura, the faculty head at his university and the head of the university hospital's surgical department. The treatment that Irabu prescribes for Ikeyama includes farting in a crowded elevator, changing the television channel to a baseball game while his extended family is watching opera, and finally, removing his father-in-law's wig in public. The cause of his compulsions is his controlled lifestyle; before he was married, he enjoyed playing pranks and watched baseball instead of opera. After his vitamin shot, Tatsuro appears as a multi-colored chameleon who often turns invisible."
+		 )
+	,	("Welcome to Irabu's Office",
+		 6,
+		 "Friends",
+		 "Yuta Tsuda is a high school student who suffers from a mobile phone addiction. He panics and suffers withdrawal when he is not on his phone. When he gets his phone confiscated in class, he goes home instantly and asks his mom to get a new one. Irabu starts to text him on his phone after getting one himself. Yuta asks Mayumi for her phone number, but she doesn't have one because she has no friends. After turning up to a Christmas party, Yuta starts to realize that his friends take advantage of him and make fun of him for his mobile addiction. Yuta subsequently starts removing all his contacts out of his SIM card, when Irabu and Mayumi call from the hospital and invite him to a Christmas party at Irabu's office. In this episode, Irabu mostly appears as his &quot;big&quot; form and shortly changes to his &quot;little&quot; form. This is the only episode so far where Irabu doesn't appear in his feminine &quot;middle&quot; form. After the vitamin shot, Yuta turns into a pale blue woodpecker with different colored spots."
+		 )
+	,	("Welcome to Irabu's Office",
+		 7,
+		 "Hedgehog",
+		 "Seiji Ino is a Yakuza (more specifically: Designated Crime Syndicate - Koi Group Underground) who has an obsessive compulsive fear of edges (belonephobia), which includes knives, forks, needles, some fish, and even table edges. Seiji is known in the criminal world as &quot;the wise seiji&quot;; he shows this by saving a fellow member (his brother) from a rival group through challenging Yoshiyasu's (rival group leader) to Russian Roulette. He almost loses his mind when Irabu gets Mayumi to give him a vitamin shot. His Wife who runs a bar with Seiji puts a deposit on another bar that's owned by Yoshiyasu's syndicate, this causes more friction between the two factions. Irabu suggests that Seiji try sunglasses, as his fear is mainly getting sharp objects in the eye, he tries on some Sunglasses, but eventually purchases Ski Goggles. Seiji and his brother then negotiate the protection arrangements with Kohei from the first episode, with Irabu in tow. Seiji satisfyingly pokes his ski goggles with a pen, until he notices the table's edges. He then has a panic attack and saws off each edge of the table, then has another attack from the saw he used to neutralize the table. At home, Seiji's wife tells him that she's put down the deposit on the bar, in a panic and then logical moment, he decides to meet up with Yoshiyasu at the Restorante Pero's to retrieve the Deposit. Before meeting with his rival, he stops by Irabu General Hospital where Irabu is taking a photo of his Christmas pudding to send to Yuta. Seiji asks Irabu desperately for some medication, but instead Irabu ends up coming to Pero's with Seiji, being introduced as Irabu the Quack from Hiroshima. There, Irabu observes Yoshiyasu's own Obsessive Compulsion, that he uses his knife as a security blanket. Irabu then takes the knife away and holds onto it, allowing for Seiji to open up to Yoshiyasu and retrieve the Deposit. Christmas eve, Seiji shows signs of starting to overcome his Compulsive fear of sharp edges. Seiji appears as a small dog after the vitamin injection."
+		 )
+	,	("Welcome to Irabu's Office",
+		 8,
+		 "I Couldn't Sit",
+		 "Yoshio Iwamura is a newspaper-magazine journalist, who has a classic case of check obsessive compulsive disorder, commonly fearing he forgot to put out a cigarette or a kettle, or turn the water off. He ends up rushing back to his house to make sure he hasn't flooded or burned down his building. As a treatment, Irabu takes him to a rival hospital (they stole one of his patients, and are corrupt), where Irabu encourages Yoshio to throw rocks at the hospital. Irabu points out the Hospital Director's car and suggests they loosen the tire bolts. After Irabu throws a rock, and after hesitating, Yoshio throws a rock only to break a window, they both then flee. Because of his disorder, Yoshio is moved to another magazine, this time a teen mag, popular with Girls. He is sent to investigate into a man called the &quot;Homeless Poet&quot; who turns out to be a fraud, and uses the article on him to lure girls. Upon finding out Yoshio gets infuriated and tracks him down, the final chase takes Yoshio running with the Homeless Poet's bag, and trying to get the hospital director to stop after worrying that Irabu has loosened the tires. He jumps in front of the car, where the homeless poet tackles him, spreading papers onto the cars windscreen, the director then crashes the car, and medical waste pours out, and upon looking at the papers that came out of the homeless poet's bag, finds out he's using his dead family records to help Illegal immigrants into Japan. Yoshio then does an article on the two Thugs and immediately becomes a famous reporter again. Irabu thanks Yoshio for exposing the corruptness of the rival hospital, and offers to let him meet Bando, Irabu tells Yoshio that his disorder did good, made him famous, and that he'd be ok if someone was home. On his way home, Yoshio finds an add for a share house. After the injection, Yoshio is represented as a raccoon."
+		)
+	,	("Welcome to Irabu's Office",
+		 9,
+		 "Gifted Child Actor",
+		 "Hiromi Yasukawa is an actor (ex-child actor) who suffers from narcissistic personality disorder. He now only gets roles as extras, but gets kicked out of a role as a student in a drama for smiling constantly during a tense scene. In the past, he was a popular child actor who had his own television show. His agent (who Irabu is hitting on) offers him an audition to a movie that he refuses, because there's a sex scene. He's then a guest on a Japanese live TV show, where they make fun of him for his role in the School Drama where he's smiling during a serious scene, and that his role had the name &quot;Student-A&quot;. Hiromi gets very upset and not knowing what else to do, starts smiling, this brings an awkward silence to the audience. Afterwards, Hiromi's agent tells him that he's going to lose his contract, and her because of his behavior. Hiromi starts to smile, and has a breakdown. Back at his apartment, Hiromi is under his covers crying. Irabu tries to cheer him up, giving him a list of other things he could do instead of acting. After Hiromi refuses, Irabu gives him the sheet for the audition for the movie. Three days later, Hiromi turns up for the Audition wearing causal clothes rather than his usual child actor attire, surprising his agent. The calendar then flashes back to the day after Irabu gives him the audition sheet. Hiromi appears at Irabu's office and the two discuss the movie role. After Irabu gives him another shot, he notices that he doesn't smile when in pain, he rushes off home where he attaches pegs to his nipples. He turns up to the audition with the pain treatment, where he meets Irabu, who plans on auditioning for the part himself. During his audition, Hiromi has a moment of panic when he's reminded about his role on the school drama as Student-A. He rips his shirt off to remove the pegs that are causing him much pain. This turns out good for him, as he realizes he can make fun of himself, and not need to worry about his image. Irabu and Hiromi both don't get the part, although Hiromi is now a successful variety show host, where he uses some of his old Hiro-chan act."
+		)
+	,	("Welcome to Irabu's Office",
+		 10,
+		 "Owner",
+		 "Mitsuo Tanabe is a successful businessman who owns the Great Japan Newspaper Company, and the Mighty Japan Great Powers Baseball team (the opponent of Tokyo Yakult Swallows in the fourth episode) who suffers from a panic disorder where he gets flashbacks. When he turns up to Irabu's office after the events of the last episode, he is given an injection. Both Irabu and Mayumi are shocked that he hasn't turned into an animal. The calendar goes back to December 17, where Bando has his first problems with his Yips, after the game Mitsuo is confronted by media that ask him questions on an apparent scandal that he has influence over the leader of a political party, and that he's made him postpone tax changes. The flashes from the journalist cameras start to disturb him, and he has flashbacks to the post war Tokyo, and moments afterwards including the construction of the Tokyo Tower, and the first Bullet Train service, as well as moments in the 1960s and 70s, he then faints. His doctor (Dr. Ikeyama from another episode) refers him over to Dr. Irabu. In Irabu's office after giving him an injection, Mayumi notices that a faltering fluorescent light is starting to upset Mitsuo, and she turns it off before he has an attack. Irabu then takes this chance to diagnose him with panic disorder and orders Mayumi to turn off all the lights. Mitsuo starts to have an attack, when a scared Irabu suddenly pounces him and Mayumi turns the lights back on. Irabu comments how he's afraid of the dark and still has a night light. Mitsuo then explains how he has visions of the past, suggesting he has PTSD, and that his Panic Disorder is brought on through his stressful role of Power. Irabu tells Mitsuo that he can wear sunglasses to soften the flashes, but that the best medicine is to retire. Mitsuo strongly disagrees, stating that he still has things to do. Later on, Irabu and Mitsuo go shopping, and he explains to Irabu that Japan is still an immature country as it depends on the US, and that he wants to change that. In the sunglasses shop, Seiji from a past episode has a panic attack while also purchasing glasses. A couple of days later, there is another baseball game, where Bando throws and injures another player; after the game the media confront Mitsuo, and he is outraged that they call Bando a &quot;terrorist&quot;. Again the media start to harass him, and he has another attack. In Mitsuo's office, after suffering an attack with the setting sun, and reading the newspapers reporting on Mitsuo's outburst, Irabu warns him that this continued problem can lead to depression. Mitsuo's aid tells him that he needs to leave for an appointment, Irabu carries him out to his limo where the media hound him again, and again he has a delusion that a dark mass is enveloping his limo. Irabu then offers to drive him in his Porsche Boxster Convertible. Irabu and Mitsuo speed off, outrunning the tabloids on their motorcycles, escaping them. Irabu drives past Shinbashi Station, where Mitsuo has a flashback to World War II when he was a young Soldier of the recovery operation of Tokyo at the end of the war, as well as watching baseball on an old television set in the 1950s. Then while driving past the Tokyo Tower, he flashes back to being a journalist, having a discussion with the workers on a lunch break. Then a N700 Series Shinkansen goes by above them, much to Irabu's inner train-spotter's joy. Then Mitsuo flashing back to watching the first Shinkansen service with his son. Irabu and Mitsuo stop to watch a baseball game, where he has a flashback to meeting his wife at a baseball game in the past. During this moment of peace, he realizes that he's been living in the past and that things have changed greatly already. His flashbacks start to diminish, and he starts to appear in his modern form, instead of him in the past. He has gray hair and glasses. Just as Mitsuo tries to catch the ball Bando has hit after curing his Yips, Irabu abruptly intercepts, and catches it himself. The next day, Mitsuo calls a press conference where he announces his retirement. On his way home, a couple of journalists, including Yoshio Iwamura (who has appeared several times throughout this episode) ask him for advice to become good journalists. Mitsuo accepts and invites the journalists in for a drink. "
+		 )
+	,	("Welcome to Irabu's Office",
+		 11,
+		 "Canary",
+		 "After the chairman of a newspaper publishing company visits Dr. Irabu complaining of mysterious illnesses, Dr. Irabu does what he does best: injects him with a big dose of vitamins, hoping to see what kind of animal he’ll become. Excep this time, it doesn’t work!"
+		 );
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Welcome to Irabu's Office", 0, 1, 4)
+	,	("Welcome to Irabu's Office", 0, 2, 4)
+	,	("Welcome to Irabu's Office", 0, 3, 3)
+;
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Tokyo Magnitude 8.0",
+		 11,
+		 "Imagine if an earthquake as powerful as magnitude 8.0 struck Tokyo, the capital city of Japan, today... Who would we think about and what should we do at that moment? This is a tremendous human drama that portrays the connections and human bonds in the most extreme situations.",
+		 "Imagine if an earthquake as powerful as magnitude 8.0 struck Tokyo, the capital city of Japan, today... Who would we think about and what should we do at that moment? This is a tremendous human drama that portrays the connections and human bonds in the most extreme situations.",
+		 "Siren",
+		 "Masaki Tachibana"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Tokyo Magnitude 8.0",
+		 1,
+		 1,
+		 "PG - Mild Themes and infrequent coarse language",
+		 11,
+		 "http://sirenvisual.com.au/index.php/shop/tokyo-magnitude-8-0-dvd.html"
+		),
+		("Tokyo Magnitude 8.0",
+		 2,
+		 1,
+		 "PG - Mild Themes and infrequent coarse language",
+		 11,
+		 "http://sirenvisual.com.au/index.php/shop/tokyo-magnitude-8-0-blu-ray.html"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Tokyo Magnitude 8.0",
+		 1,
+		 "Odaiba Stinks",
+		 "Mirai Onozawa and her younger brother Yūki are visiting a robot exposition at Odaiba, Tokyo, when a massive earthquake strikes the city."
+		)
+	,	("Tokyo Magnitude 8.0",
+		 2,
+		 "The World is Broken",
+		 "After the earthquake Mirai looks desperately for Yūki inside a collapsing building along with Mari Kusakabe, a female motorcycle courier who offered to help her."
+		 )
+	,	("Tokyo Magnitude 8.0",
+		 3,
+		 "Burning Bridge",
+		 "Mirai, Yūki and Mari decide to reach their homes together, but just after starting their journey, they find that there are far more dangers in the collapsing city than they imagined."
+		 )
+	,	("Tokyo Magnitude 8.0",
+		 4,
+		 "The Promise Between the Three",
+		 "Having finally left Odaiba, the trio finds a place to gather supplies and prepare themselves for their long walk, but after having a discussion, Mirai and Yūki stray away from Mari and end up in serious trouble."
+		 )
+	,	("Tokyo Magnitude 8.0",
+		 5,
+		 "The School is Wailing",
+		 "The group takes shelter at her school's premises during the night, but their stay there becomes far from peaceful as they are constantly plagued by aftershocks and depressed by the sight of those who lost their relatives to the earthquake."
+		 )
+	,	("Tokyo Magnitude 8.0",
+		 6,
+		 "Choice to Abandon",
+		 "The group reaches Mari's workplace, where she loses consciousness because of anemia. During that time the kids are suddenly frightened by Aya, a colleague of Mari, who noisily enters the building carrying a baseball bat."
+		 )
+	,	("Tokyo Magnitude 8.0",
+		 7,
+		 "Summer's Dusk",
+		 "Rescue robots fill the scene, fascinating Yūki and leading him to meet a new friend, who shares his interest and is the same age as Mirai. However the journey so far seems to have taken its toll on Yūki." 
+		 )
+	,	("Tokyo Magnitude 8.0",
+		 8,
+		 "Pure White Morning",
+		 "Yūki collapses suddenly and is taken to the hospital."
+		)
+	,	("Tokyo Magnitude 8.0",
+		 9,
+		 "Farewell Today",
+		 "Mari finally reaches her home to find it was destroyed. Mirai and Yūki learn that residents are being cared for at a nearby elementary school. There, they find two unknown bodies that Mari believes are her mother and daughter, and mourns their deaths. However, Yūki believes they are still alive and with his sister, helps finds Mari's daughter at another school. After reuniting with her daughter, Mari finds her mother at a local hospital. Mirai and Yūki leave to continue their search for their parents. Mirai leaves Mari a note to thank her for all she did for them, stating that she hopes they will meet again. Confused and surprised, Mari says &quot;Yūki and I?&quot;"
+		)
+	,	("Tokyo Magnitude 8.0",
+		 10,
+		 "Mirai, You Know...",
+		 "While on a truck going towards their hometown, Yūki tries to talk to Mirai about his death, but she tells him to quit talking nonsense as it would make her furious, very worried and very upset within shame of sadness if he died. In their home town, Mirai runs into a friend some school who tells her that her parents are staying at one of the school shelters, and that her father was hospitalized from an injury. Yūki runs off when Mirai runs into his best friend Itsuki. Itsuki takes her to her parents, but finds that her mom has gone back to the house to get clothes for her father. Outside, they see the marronier Yūki and Itsuki had planted before the earthquake. Itsuki and Mirai return to his house to get a journal he wanted to give Yūki, while Yūki continues to avoid being seen by Itsuki. Half the house collapses while they are there. At the end of the episode, Yūki finally is able to tell Mirai that he died at the hospital earlier."
+		 )
+	,	("Tokyo Magnitude 8.0",
+		 11,
+		 "Dear Yūki...",
+		 "Mirai and Yūki return home where Mirai is reunited with her parents and Yūki's spirit leaves. One month later, Tokyo is continuing to recover from the earthquake. Mari visits Mirai who returns her cell phone and Yūki's backpack. Mirai finds an email from Yūki that he sent before his death from Mari's phone saying that he hoped he could get a phone too so they could talk even when they were apart. Mirai gives her mother the present Yūki had purchased for her for the birthday. While watering the tree Yūki planted, Mirai resolves to move on with her life, knowing that Yūki will always be in her heart."
+		 );
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Tokyo Magnitude 8.0", 0, 1, 4)
+	,	("Tokyo Magnitude 8.0", 0, 2, 4)
+	,	("Tokyo Magnitude 8.0", 0, 3, 3)
+;
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Un-Go",
+		 11,
+		 "He pursues his job as the &quot;Last Great Detective&quot;. Others call him the &quot;Defeated Detective&quot;. What's certain is that he's Shinjurou Yuuki, a young man with a passion for mysteries and a talent for solving them which has made him the target of dark forces now stirrin within the sinister underworld of a near future Tokyo. That could prove lethal, given that not even the other &quot;good guys&quot;, including the police, are exactly on Shinjouro's side. Fortunately Yuuki's not completely on his own, and with the aid of his uniquely talented associate Inga, he's ready to cut a swath through the veils of secrecy that have been laid before him. Get ready for mind against matter and a lot of cloak and dagger as the ultimate battle of clue and deduction begins in UN-GO!",
+		 "He pursues his job as the &quot;Last Great Detective&quot;. Others call him the &quot;Defeated Detective&quot;. What's certain is that he's Shinjurou Yuuki, a young man with a passion for mysteries and a talent for solving them which has made him the target of dark forces now stirrin within the sinister underworld of a near future Tokyo.",
+		 "Siren",
+		 "Seiji Mizushima"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Un-Go",
+		 1,
+		 1,
+		 "M - Animated violence and sexual references",
+		 11,
+		 "http://sirenvisual.com.au/index.php/shop/un-go.html"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Un-Go",
+		 1,
+		 "Murder at the Ball",
+		 "Kaoru Kanou, a corporate president who is under suspicion for arrest, holds a ballroom event. Among the invitees are detective Shinjuurou Yuuki; his strange partner, Inga; and Rie, the daughter of JJ Systems Chairman Rinroku Kaishou. During the event, Kanou walks onto the podium to profess his innocence, and falls dead just as he walks into the spotlight. Koyama finds that Kanou was murdered by a knife in his back. Kanou's wife blames the government for killing him, blaming a female SP officer, who was found shot dead in an elevator, for the assassination. However, Shinjuurou debunks this, questioning why the SP officer had her jacket next to her and a bullet in her chest. After deducing that Kanou's wife was the killer, Inga asks her, &quot;What was your husband to you?&quot; Compelled to answer, Kanou's wife states that Kanou was a hero for supporting Japan during the war. Not wanting to let the government arrest him, Kanou's wife killed the SP officer, impersonated her, and killed Kanou to ensure that he would die as a hero."
+		)
+	,	("Un-Go",
+		 2,
+		 "Pitiless Song",
+		 "A wealthy woman named Hisako Osada is found murdered in a briefcase that was delivered to her home. While the police suspect Hisako's lover to be the culprit, her daughter, An, believes someone else is behind the murder and calls on Shinjuurou to investigate. Their investigation leads them to look into an idol group Hisako managed named Yonagahime 3+1, one of its members of which, Eri, was allegedly killed in a terrorist attack. Inga uses her powers on one of Yonagahime's members, who reveals that Eri never existed and was just used by Hisako to skyrocket the band's popularity during the war. After analyzing Eri's vocal data, Shinjuurou deduces the culprit to be An, who wasn't allowed to publicly sing due to her vocal data being used for Eri."
+		 )
+	,	("Un-Go",
+		 3,
+		 "Masked Mansion",
+		 "Rie calls on Shinjuurou and Inga to accept a request from Mitsuko Sasa, whose adopted brother Kazamori caught on fire and died, allegedly related to a curse from her father, Komamori, who died in a similar manner seven years ago. As Izumi's group conducts their own investigations on the cause of Kazamori's death, Inga uses her powers to reveal that Kazamori not human. Shinjuurou prompts Kazamori to show &quot;himself&quot;, revealing that &quot;he&quot; is actually a computer program."
+		 )
+	,	("Un-Go",
+		 4,
+		 "House, Unmasked",
+		 "Kazamori is revealed to be an R.A.I., one of the last created by Komamori before they were outlawed. As Kazamori is accused of killing the corpse that was assumed to be him, Shinjuurou and Inga download Kazamori into a panda toy before he is taken into custody. After discovering that the corpse was Dr. Taku, and that the Dr. Taku who was injured was a robot puppet, Shinjuurou and others soon discover the culprit is Komamori. He'd faked his death using the body of the real Dr. Taku so that his R.A.I. wouldn't be used by the JSDF. After Komamori is arrested by Izumi, Kazamori moves her consciousness to her main body."
+		 )
+	,	("Un-Go",
+		 5,
+		 "The Phantom Statue",
+		 "At the unveiling of a statue created in memory of three youths who sacrificed themselves to dispose of a bomb in a press conference, two people who were snuck in to try and unveil a purported scam behind the story are found murdered inside the statue. Shinjuurou initially suspects the statue's commissioner, Hakuro Shimada, as the murderer, but Inga's question proves his innocence. After a brief depression and a pep talk from Kazamori, Shinjuurou deduces the culprit to be the statue's creator, Youko, who killed the men before they were transported, before later revealing the location of gold bricks that Hakuro had hidden."
+		 )
+	,	("Un-Go",
+		 6,
+		 "The Code Too Simple",
+		 "Shinjuurou is approached by Yajima, an old friend of Rinroku, who found a piece of manuscript in a book given to him by an inmate while he was in prison. After discovering Yajima's wife Takiko's fingerprints on the paper, Shinjuurou informs Rie, who investigates how the book relates to Rinroku. Shinjuurou later hears from Yajima about how his children disappeared and his wife went blind, allegedly having an affair with Rinroku. Shinjuurou looks at all the books Rinroku bought from the Yajima family, finding more hidden codes which are revealed to be from Yajima's children. As it turns out, Rinroku had helped the children and placed them in child care to avoid Takiko's neglect, and they are soon reunited with Yajima. Afterward, Shinjuurou confronts the prisoner who gave Yajima the book, learning something shocking."
+		 )
+	,	("Un-Go",
+		 7,
+		 "Daydream",
+		 "As the prisoner explains how he is 'a novelist who writes in reality', a strange being accompanying him traps Shinjuurou in a vision where he is a cameraman shooting a film about a war that never happened. As Shinjuurou becomes curious about whether the director is involved with one of the actresses, he gets the nagging feeling that there's a mystery to be solved. As Shinjuurou loses grip on this reality, he discovers the director has been killed and believes himself to be the culprit."
+		 )
+	,	("Un-Go",
+		 8,
+		 "The King of Paradise",
+		 "After determining that Shinjuurou had been imprisoned, Rie accompanies Izumi to the prison, where they are both put under the novelist's spell and become characters in his 'novel' alongside Shinjuurou. As Inga determines this is the work of a deity known as Bettenou, Kazamori manages to make use of a pair of taser handcuffs to snap Shinjuurou back to reality. Shinjuurou investigates into the real murder, determining the culprit to be one of the 'actresses', who killed the 'director', who was actually a security guard trying to help her escape, because she believed she was being cut from the movie. Meanwhile, Inga gets the truth out of the novelist while Bettenou disappears."
+		)
+	,	("Un-Go",
+		 9,
+		 "Rinroku Kaishou's Crime",
+		 "As Shinjuurou wonders where Bettenou has disappeared to, a hacking group known as Full Circle is spreading leaks of Rinroku's company and lifestyle. As Rinroku makes an appearance on television show along with various people from rival companies, an explosion occurs when he exits the room, hospitalizing everyone including Rinroku, while another Rinroku appears at Rie's house. As Rie asks Shinjuurou to prove Rinroku's innocence the next day, Inga comes face to face with Bettenou. After Shinjuurou hears about the second Rinroku from Rie, he deduces that this is the work of Bettenou and believes Rinroku to be the one using her. He gets help from a rookie Diet member to have the hospitalized Rinroku provide a testimony on the leaks."
+		)
+	,	("Un-Go",
+		 10,
+		 "Rinroku Kaisho's Funeral",
+		 "As Rinroku is interviewed via a live video feed, Shinjuurou has Rie tell everyone about the Rinroku that appeared in her home at the time of the explosion. To Shinjuurou's surprise, Inga is called in as a witness to question Izumi, forcing her to reveal secrets about Rinroku's involvement in illegal software used prior to the war. As the hospitalized Rinroku is discharged, he is killed in a car explosion. After speaking with Rie, Shinjuurou suspects something is amiss and manages to learn more about Bettenou from the novelist, further founding his theory that Rinroku used Bettenou's power to fake his death."
+		 )
+	,	("Un-Go",
+		 11,
+		 "I'm Just Searching",
+		 "Shinjuurou, along with Rie, Izumi and some others, receive strange invitations supposedly sent by Rinroku. They are brought together at a table where they are presented with weapons, Shinjuurou believes that the imposter Rinroku was the one who appeared at Rie's home, deducing that the Diet member and Rinroku's bodyguard caused the explosion. It is at this point that Rinroku himself seemingly appears with Inga, only for Shinjuurou to deduce that he is actually Izumi's assistant, Hayami Seigen, using Bettenou's power, with the real Rinroku having disguised himself amongst the attendees, having previously faked his death. After a fierce battle, Inga defeats Bettenou and devours her. After the incident, Shinjuurou begins telling his story to Rie, including the origin of Inga's current body."
+		 )
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Un-Go", 0, 1, 4)
+	,	("Un-Go", 0, 2, 4)
+	,	("Un-Go", 0, 3, 3)
+;
+-- Summer A
+INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
+		("2018-01-05 11-30-00", 0, "Summer Sessions", 404, 1782517088487445, "0")
+	,	("2018-01-12 11-30-00", 0, "Summer Sessions", 404, 0, "0")
+	,	("2018-01-19 11-30-00", 0, "Summer Sessions", 404, 0, "0")
+	
+	,	("2018-01-05 16-30-00", 0, "Summer Sessions", 404, 171260956940198, "0")
+	,	("2018-01-12 16-30-00", 0, "Summer Sessions", 404, 0, "0")
+	,	("2018-01-19 16-30-00", 0, "Summer Sessions", 404, 0, "0")
+	
+	,	("2018-01-05 19-30-00", 0, "Summer After Dark", 404, 565658880444133, "0")
+	,	("2018-01-12 19-30-00", 0, "Summer After Dark", 404, 0, "0")
+	,	("2018-01-19 19-30-00", 0, "Summer After Dark", 404, 0, "0")
+;
+
+INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
+		("2018-01-05 11-30-00", "Mawaru Penguindrum", 0, 1)
+	,	("2018-01-12 11-30-00", "Mawaru Penguindrum", 0, 2)
+	,	("2018-01-19 11-30-00", "Mawaru Penguindrum", 0, 3)
+	
+	,	("2018-01-05 16-30-00", "Yurikuma Arashi", 0, 1)
+	,	("2018-01-12 16-30-00", "Yurikuma Arashi", 0, 2)
+	,	("2018-01-19 16-30-00", "Yurikuma Arashi", 0, 3)
+	
+	,	("2018-01-05 19-30-00", "Plastic Memories", 0, 1)
+	,	("2018-01-12 19-30-00", "Plastic Memories", 0, 2)
+	,	("2018-01-19 19-30-00", "Plastic Memories", 0, 3)
+;
+
+-- Summer Showcase A
+INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
+		("2018-01-08 14-30-00", 0, "Summer Showcase", 404, 0, "0")
+	,	("2018-01-08 15-30-00", 0, "Summer Showcase", 404, 0, "0")
+	
+	,	("2018-01-15 14-30-00", 0, "Summer Showcase", 404, 0, "0")
+	,	("2018-01-15 15-30-00", 0, "Summer Showcase", 404, 0, "0")
+;
+
+INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES	
+		("2018-01-08 14-30-00", "Vividred Operation", 3, 1)
+	,	("2018-01-08 15-30-00", "Magical Warfare", 3, 1)
+	
+	,	("2018-01-15 14-30-00", "Cowboy Bebop", 3, 1)
+	,	("2018-01-15 15-30-00", "Deadman Wonderland", 3, 1)
+;
+
+-- Summer B
+INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
+		("2018-01-26 11-30-00", 0, "Summer Sessions", 404, 0, "0")
+	,	("2018-02-02 11-30-00", 0, "Summer Sessions", 404, 0, "0")
+	,	("2018-02-09 11-30-00", 0, "Summer Sessions", 404, 0, "0")
+	
+	,	("2018-01-26 16-30-00", 0, "Summer Sessions", 404, 0, "0")
+	,	("2018-02-02 16-30-00", 0, "Summer Sessions", 404, 0, "0")
+	,	("2018-02-09 16-30-00", 0, "Summer Sessions", 404, 0, "0")
+	
+	,	("2018-01-26 19-30-00", 0, "Summer After Dark", 404, 0, "0")
+	,	("2018-02-02 19-30-00", 0, "Summer After Dark", 404, 0, "0")
+	,	("2018-02-09 19-30-00", 0, "Summer After Dark", 404, 0, "0")
+;
+
+INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
+		("2018-01-26 11-30-00", "Assassination Classroom Season 2", 0, 1)
+	,	("2018-02-02 11-30-00", "Assassination Classroom Season 2", 0, 2)
+	,	("2018-02-09 11-30-00", "Assassination Classroom Season 2", 0, 3)
+	
+	,	("2018-01-26 16-30-00", "Little Busters Refrain", 0, 1)
+	,	("2018-02-02 16-30-00", "Little Busters Refrain", 0, 2)
+	,	("2018-02-09 16-30-00", "Little Busters Refrain", 0, 3)
+	
+	,	("2018-01-26 19-30-00", "Queens Blade 2 The Evil Eye", 0, 1)
+	,	("2018-02-02 19-30-00", "Queens Blade 2 The Evil Eye", 0, 2)
+	,	("2018-02-09 19-30-00", "Queens Blade 2 The Evil Eye", 0, 3)
+;
+
+-- Summer Showcase B
+INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
+		("2018-01-22 14-30-00", 0, "Summer Showcase", 404, 0, "0")
+	,	("2018-01-22 15-30-00", 0, "Summer Showcase", 404, 0, "0")
+	
+	,	("2018-01-29 14-30-00", 0, "Summer Showcase", 404, 0, "0")
+	,	("2018-01-29 15-30-00", 0, "Summer Showcase", 404, 0, "0")
+	
+	,	("2018-02-05 14-30-00", 0, "Summer Showcase", 404, 0, "0")
+	,	("2018-02-05 15-30-00", 0, "Summer Showcase", 404, 0, "0")
+;
+	
+INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
+		("2018-01-22 14-30-00", "Shimoneta: A Boring World Where the Concept of Dirty Jokes Doesn't Exist", 3, 1)
+	,	("2018-01-22 15-30-00", "Battle Girls: Time Paradox", 3, 1)
+
+	,	("2018-01-29 14-30-00", "Bikini Warriors", 3, 1)
+	,	("2018-01-29 15-30-00", "Samurai Warriors", 3, 1)
+
+-- 	,	("2018-02-05 14-30-00", "", 3, 1)
+-- 	,	("2018-02-05 15-30-00", "", 3, 1)
+;
+	
+-- Summer Episodes
+INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
+		("2018-01-10 10-00-00", 1, "Beach Episode", 2, 0, "0")
+	,	("2018-01-17 10-00-00", 1, "Arcade Episode", 1, 0, "0")
+	,	("2018-01-31 10-00-00", 1, "Pool Episode", 3, 0, "0")
+;
+
+-- A
+INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
+		("2018-03-02 11-30-00", 0, "Screening Sessions", 0, 0, "0")
+	,	("2018-03-09 11-30-00", 0, "Screening Sessions", 0, 0, "0")
+	,	("2018-03-16 11-30-00", 0, "Screening Sessions", 0, 0, "0")
+	
+	,	("2018-03-02 16-30-00", 0, "Screening Sessions", 0, 0, "0")
+	,	("2018-03-09 16-30-00", 0, "Screening Sessions", 0, 0, "0")
+	,	("2018-03-16 16-30-00", 0, "Screening Sessions", 0, 0, "0")
+	
+	,	("2018-03-02 19-30-00", 0, "Screening Sessions", 0, 0, "0")
+	,	("2018-03-09 19-30-00", 0, "Screening Sessions", 0, 0, "0")
+	,	("2018-03-16 19-30-00", 0, "Screening Sessions", 0, 0, "0")
+;
+
+INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
+		("2018-03-02 11-30-00", "Muv-Luv Alternative Total Eclipse", 0, 1)
+	,	("2018-03-09 11-30-00", "Muv-Luv Alternative Total Eclipse", 0, 2)
+	,	("2018-03-16 11-30-00", "Muv-Luv Alternative Total Eclipse", 0, 3)
+	
+	,	("2018-03-02 16-30-00", "Canaan", 0, 1)
+	,	("2018-03-09 16-30-00", "Canaan", 0, 2)
+	,	("2018-03-16 16-30-00", "Canaan", 0, 3)
+	
+	,	("2018-03-02 19-30-00", "Danganronpa", 0, 1)
+	,	("2018-03-09 19-30-00", "Danganronpa", 0, 2)
+	,	("2018-03-16 19-30-00", "Danganronpa", 0, 3)
+;
+
+-- A Showcase

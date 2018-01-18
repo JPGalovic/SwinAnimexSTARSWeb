@@ -35,6 +35,7 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 		("M - Adult themes")
 	,	("M - Animated nudity and sexualised imagery")
 	,	("M - Animated science fiction violence")
+	,	("M - Animated violence and coarse language")
 	,	("M - Animated violence and infrequent coarse language")
 	,	("M - Animated violence and sexual references")
 	,	("M - Animated violence and supernatural themes")
