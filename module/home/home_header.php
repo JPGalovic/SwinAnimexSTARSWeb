@@ -6,10 +6,12 @@
 		echo('</section>');
 
 		echo('<section class="half">');
-			echo('<p>The Swinburne Anime Club is a great place to come and meet like minded individuals, watch anime together, play Japanese games (and those inspired by Japan), all within a friendly and social environment.</p>');
-			echo('<p>We hold weekly screening sessions, showcases, workshopts and social event at and arround Swinburne&#39;s Hawthorn campus, each year bringing plenty of surprises, great events and over 50 smash hit anime series and movies throughout the year, come along any time there&#39;s something for everyone.</p>');
-			echo('<p>Keep an eye on this website, our facebook page and member emails for details on events.</p>');
-			echo('<p><a href="http://unione.swin.edu.au/clubs/SwinAnime">Click Here to join us today!</a></p>');
+			echo('<p>SwinAnime x STARS is the amalgamation of the Swinburne Anime Club and the Swinburne Tabletop and Roleplaying Society.</p>');
+			echo('<p>Together we stand to proliferate the sub-cultures of Animation, Manga, Tabletop Games, Video Games, Roleplaying and Cosplay stemming from worldwide influences.</p>');
+			echo('<p>Together we introduce our members to those associated aspects of the industry offering both an insight to what the industry is doing as well as how the industry produces its wares.</p>');
+			echo('<p>Details about events we hold can be found below, we invite everyone to come along to our Screening Sessions & Rolplay Nights.');
+			echo('<p>Keep an eye on this website, our facebook page and member emails for details on our exiciting events.</p>');
+			echo('<p><a href="http://unione.swin.edu.au/clubs/swinanimestars">Join us today!</a></p>');
 		echo('</section>');
 
 	echo('</article>');
