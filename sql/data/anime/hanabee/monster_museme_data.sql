@@ -1,51 +1,96 @@
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
-		("Title",
-		 n,
-		 "Synopsys",
-		 "Description",
-		 "Company",
-		 "Copyright"
+		("Monster musume - Everyday life with monster girls",
+		 12,
+		 "No one expected the government to suddenly acknowledge the existence of demi-human species like harpies and centaurs, but when a careless Integration Agent shows up on Kimihito Kurusu's doorstep with an attractive Lamia in tow, he suddenly finds himself designated as a &quot;Host Family&quot;. This might not be so bad, except that while Miia's top half is all girl and quickly develops a crush on her new human host, her snakelike bottom half makes that crush literal with a tendency to squeeze the life out of him! Plus, there's also the little problem that it's illegal for humans and non-humans to have THOSE kinds of relationships.",
+		 "No one expected the government to suddenly acknowledge the existence of demi-human species like harpies and centaurs, but when a careless Integration Agent shows up on Kimihito Kurusu's doorstep with an attractive Lamia in tow, he suddenly finds himself designated as a &quot;Host Family&quot;.",
+		 "Hanabee",
+		 "&copy;Lerche"
 		)
 ;
 
 INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
-		("Title",
-		 n,
-		 m,
-		 "Classification",
-		 x,
-		 "URL"
+		("Monster musume - Everyday life with monster girls",
+		 4,
+		 1,
+		 "MA15+ - Strong sexual themes, sexual innuendo and animated nudity",
+		 12,
+		 "https://hanabee.com.au/products/monster-musume-everyday-life-with-monster-girls-blu-ray"
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 3,
+		 1,
+		 "MA15+ - Strong sexual themes, sexual innuendo and animated nudity",
+		 12,
+		 "https://hanabee.com.au/products/monster-musume-everyday-life-with-monster-girls"
 		)
 ;
 
 INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
-		("Title",
-		 n,
-		 "Episode_Title",
-		 "Episode_Synopsys"
+		("Monster musume - Everyday life with monster girls",
+		 1,
+		 "Everyday Life with a Lamia",
+		 "Kimihito Kurusu wakes up to find Miia crushing him in her sleep. After escaping, he draws a bath for her to warm up and goes to make breakfast. In the kitchen he is surprised by Smith, who has come to make sure he isn't engaging in any prohibited activities with Miia, such as sex. After Smith leaves, Miia tries to seduce him, only to accidentally dislocate his shoulder. The two go on a field trip, including a visit to an all-species lingerie shop. Afterwards, they run into a racist couple who harass Miia, and Kimihito has to jump in the way when she tries to strike them with her tail, to keep her from breaking the law. Trying to escape from a curious crowd, they hide in a love hotel, where they are ambushed by the Interspecies Exchange Security Squad. However, Smith recognizes them and fixes the situation. Leaving the hotel, they encounter the couple, and when they begin harassing Miia again Kimihito punches them. At home, Miia resumes her advances on Kimihito, only for them to be interrupted by Smith. "
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 2,
+		 "Everyday Life with a Harpy and Centaur",
+		 "Kimihito is kidnapped by Papi, who brings him to a park, where he buys her ice cream. Papi then takes a bath in a public fountain, where Miia finds them. With various mishaps, the three work together to save a girl who was stuck in a tree. When a policeman arrives, Kimihito claims to be Papi's host family to keep her from being deported. The officer is skeptical, but Smith arrives with Papi's papers just in time, and tells Kimihito that she was on her way to make the harpy live with him, and Papi (much to her delight) joins the household. While out grocery shopping, Kimihito collides with Centorea. She becomes convinced that Kimihito is her destined master. Encountering a motorcycle-riding purse-snatcher, the two pursue him. They eventually catch him, despite various embarrassing accidents. When the thief tries to attack Centorea with her dropped sword, Kimihito leaps in front of her and takes the blow, but survives due to the sword being a replica. Later, Smith explains that Kimihito riding Centorea could be viewed as akin to rape, since only a centaur's chosen master may ride them. Centorea chooses him as her master, resulting in her joining his household. "
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 3,
+		 "Everyday Life Under Dangerous Circumstances",
+		 "When Papi tries to seduce Kimihito during their bath, Centorea rescues him and they flee to the park where they share a tender moment. They are soon followed and interrupted by Miia and Papi, and the three begin fighting for Kimihito's affection. Smith arrives with a tranquilizer gun to stop them, but accidentally shoots Kimihito instead. When he wakes up at home, the three are apologetic for the harm they have caused him, but he dismisses their worries. Smith then announces that there have been proposed changes to the Interspecies Exchange Bill, and she wants him to marry one of the girls as a test case. That night, Miia arrives in Kimihito's room and tries to seduce him, only to be interrupted by Papi, who crashes through the window. Centorea arrives to rescue Kimihito from Papi and explains that the full moon is to blame their abnormal behavior since it heightens liminal emotions; however, it soon becomes clear that she is also affected. Kimihito realizes that they are not in control of themselves and he is in serious danger of being injured or killed through their amorous advances. Waking up the next morning, none of the three girls remember the events of the previous night. An injured Kimihito announces his plans to begin dating all three of them before collapsing unconscious on the floor. "
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 4,
+		 "Everyday Life with a Slime",
+		 "While waiting for dinner, Miia opens a pot on the stove and is attacked by a slime. Centorea explains that slimes are one of many species as yet unrecognized by human society; the slime then attacks again, and when Centorea's sword has no effect, both she and Kimihito end up covered in slime. When he goes to take a bath, she joins him after being unable to get clean. She conjectures that the slime was attacking them to get water; it then attacks them again in the bath. When Centorea slips and is knocked unconscious, the slime takes the form of a woman and begins imitating Kimihito's washing of Cerea by washing him; due to her body being liquid, however, she absorbs and almost drowns him before he escapes by diluting her in the tub. They debate what to do with her, and Papi (who seems to have immediately taken to the newcomer) reveals that she has named her Suu. The girls point out that she is likely an illegal immigrant; Papi overhears this and, thinking they mean to turn Suu in, flees with her. When Kimihito catches up with them, they meet up with a group of children who often play with Papi (who at such times has sneaked out without Kimihito's knowledge). When one of the children is almost hit by a truck driven by the racist couple from the first episode, Suu saves her but falls off a bridge. Luckily, Kimihito gets under her with the crashed truck before she falls in the water. After that, he decides to let her stay at his house. They go home, only to find Smith there. "
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 5,
+		 "Everyday Life with a Mermaid",
+		 "A construction crew from the Interspecies Exchange Security Squad arrives while the girls are making a plan to hide Suu from Smith. The girls sneak out with Suu, only to realize that they have left Kimihito behind. They are forced to hide when security forces appear, seemingly pursuing them. Each of the three girls somehow get wet, causing them all to be assaulted by a dehydrated Suu. Meanwhile, Kimihito is searching for them when he is hit by a girl in a runaway wheelchair, who introduces herself as Mero. When they arrive at the park, Mero is almost assaulted by Suu, but Kimihito catches her in a plastic bag. Arriving home, they thank Smith for building a room for Suu; however, she reveals that the room is not for Suu but for Mero, who is revealed to be a mermaid. Miia becomes jealous when her accidentally breaking Mero's wheelchair results in Kimihito having to carry the mermaid around the house. She unsuccessfully attempts to enlist Centorea and Papi's help in foiling the mermaid. When Kimihito knocks Mero into the pool to save her from a once-again dehydrated Suu, Miia thinks Mero is making a romantic advance and dives in after them, almost drowning when the cold water makes her sluggish. Later, as Miia and Mero take a bath together, the mermaid reveals that she has no intention of attempting to woo Kimihito away from Miia; all mermaids want to experience a tragic love similar to &quot;The Little Mermaid&quot;. Centorea and Papi overhear this and believe that the two are plotting. "
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 6,
+		 "Everyday Life with Shedding and Egg Laying",
+		 "While trying to learn to cook, Miia accidentally burns her hands on a hot pot. Attempting to console her, Kimihito learns that she is shedding and can't do so properly with her hands bandaged. He agrees to help her shed; however, while attempting to shed the belly of her snake body, he accidentally touches a sensitive spot and she reflexively knocks him unconscious. To apologize, she makes him dinner (which turns out to be inedible due to her not using a cookbook). Later, when Kimihito comes home from shopping, Papi announces that she is going to lay an egg, causing the other girls to leap to conclusions before being told that it is unfertilized. Kasegi then arrives at the house, claiming to be shooting a documentary on interspecies exchange. While touring the house, he causes various incidents, such as filming Mero when her swimsuit slips, groping Centorea when she says she doesn't wear a bra and taking Miia's shed skin. Mero then arrives to announce that Papi is about to lay her egg. While Kasegi is filming Kimihito helping Papi, Suu reads his mind, revealing his true intent of selling the egg and the footage. Kimihito distracts him with a store egg that he pretends is Papi's and uses the opportunity to punch him unconscious. Papi then lays her egg; later, Miia accidentally cooks it after Papi stores it in the refrigerator. At the end of the episode, Kasegi is seen berating an Arachne (whom he is exploiting) for building webs everywhere. She then wraps him up in thread and states that she is interested in his story about Kimihito. "
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 7,
+		 "Everyday Life with MON and an Arachne",
+		 "The Orc Pioneer Foundation performs an armed takeover of a dōjinshi store. After taking human hostages, they demand an increase in the amount of orc-related content appearing in erotic manga titles. Because of gaps in the provisions of the Interspecies Exchange Bill, the police are unable to act. Smith claims that she can resolve the situation. Using their sense of smell, the orcs detect a female agent attempting to infiltrate the building and shoot her. The chief of police admits that he needs Smith's help. Meanwhile, the orcs find another girl hiding inside the store. While they struggle with her, the blinds are ripped from the store windows, allowing long-range sniper Manako to shoot the orcs' guns from a distant rooftop. Tionishia then breaks in to release the hostages. The agent who was shot earlier then reveals herself to be a zombie, Zombina, while the other hostage turns out to be Doppel, a shape-shifter. They subdue and arrest the orcs. Later, MON responds to an emergency call from the wrapped-up Kasegi, but the Arachne escapes. Smith and the girls soon realize that Kimihito has been kidnapped by her. In a deserted warehouse, Kimihito wakes up bound and hanging upside-down. The Arachne introduces herself as Rachnera Arachnera and begins to torment him. She is surprised when he shows no signs of being repelled by her spider lower-half. When Smith, the MON Squad, and the police arrive to arrest her, Kimihito mistakenly thinks they are there to arrest him for assaulting Kasegi, and Rachnera realizes that she likes him. With the situation resolved, Smith (with some subtle prodding from Rachnera) decides to transfer Rachnera into Kimihito's household. "
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 8,
+		 "Everyday Life in Poor Health",
+		 "Rachnera settles in as a member of the Kurusu household; Miia and Cerea however, who don't trust her, are not so enthusiastic as Papi, Suu and Mero. Cerea begins to stick very close to Kimihito, protecting him from potentially embarrassing situations created by Rachnera. When Rachnera tries to seduce Kimihito in his bedroom, Cerea rescues him and flees with him into the city streets. The male from The Couple and his gang begin harassing Kimihito and Cerea but Rachnera makes a timely appearance and rescues the two. She then comes to an understanding with Cerea, and Cerea realizes that Rachnera can be trusted. Later, Kimihito comes down with a bad cold; Ms. Smith immediately puts him in quarantine in his bedroom and orders the other girls to keep away from him, fearing a possible pandemic. She states that she will care for Kimihito (an obvious ploy to ditch her mountain of paperwork), but almost immediately conks out. The girls decide to take matters into their own hands; realizing that Suu (as a Slime) is the only one who can come into contact with Kimihito without becoming sick, Miia, Papi, Cerea and Mero coach her in different ways of taking care of him (each proving more disastrously lewd than the one before). With her telepathic ability, Suu learns that Kimihito caught his cold in a rain storm while out looking for her and then proceeds to use her own lewd method of treatment, which ultimately proves successful. Kimihito recovers completely, but Ms. Smith winds up catching his cold."
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 9,
+		 "Everyday Life with Threatening Letters",
+		 "The girls are shocked when it appears that Kimihito is going on a date with Ms. Smith. Miia, Papi, Cerea, Mero and Suu immediately begin following them, first to a maid cafe (where Mero disguises herself as one of the maids, using Suu as a uniform), then to an arcade (where Papi is disguised as a cosplayer), then to an ice cream truck (where Miia and Cerea impersonate servers), but they fail each time. Finally, Miia follows Kimihito and Ms. Smith to a love hotel, where she meets up with Rachnera (who has been trailing them all along). Rachnera tries to sneak into Ms. Smith and Kimihito's room but is hindered by Miia, causing them to be grabbed by the MON Squad. Ms. Smith explains that Kimihito had received a threatening letter from someone named &quot;D,&quot; and their &quot;date&quot; was actually a ploy to lure the culprit out. Since they failed to do so, Ms. Smith asks all the girls to go on dates with Kimihito. Kimihito's first date is with Miia (with Mero in tow, much to Miia's annoyance); they go to an aquarium where Mero is treated like royalty. Upset that Kimihito seems to be paying more attention to Mero, Miia storms off, only to bump into a reptilian liminal, a Dragonewt named Draco, who takes her out on a boat where he attempts to sexually assault her. Kimihito (with some help from Mero) rescues Miia and inadvertently exposes Draco as actually being a female. While Draco did not write the letter, she is arrested by Ms. Smith for being out without her host family. "
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 10,
+		 "Everyday Life with D",
+		 "Kimihito's second &quot;date&quot; involves an outdoor barbecue (in a wooded area where industrial nutrient waste was once dumped) with Papi and Suu (with Zombina, who is supposed to be shadowing them, freeloading on the cooking meat!). However, the barbecue is interrupted by a giant tree kaiju that seems to know Papi and grabs both her and Kimihito. Papi recognizes her as Kii, a dryad she had once rescued (but completely forgotten about), but Kii (who has been poisoned by the illegally dumped waste) is on a rampage with a grudge against all humans and stomps Zombina into the ground. Suu (who fell into the industrial waste) grows to Godzilla-size and battles Kii to save Kimihito and Papi; she tells them that the only way to stop Kii may be to extract the waste from her body ... which they are forced to do using a very lewd/embarrassing (but for Kii enjoyable!) method. With Kii calmed and restored to her normal size (and cleared from being the mysterious &quot;D&quot; because she can't write), Ms. Smith offers her a new host family, but she decides to remain in the forest, as long as Papi and Suu can visit her. The third &quot;date&quot; is with Cerea, who is going all out to protect Kimihito (including wearing full armor!). Manako, the MON member shadowing this &quot;date&quot; and already completely flustered by Cerea's intensity, is completely blindsided by Lilith, a devil, who looks like a child but is actually an adult and who enjoys pulling pranks on people; Lilith then turns her hypnotic tricks on Cerea, who because of earlier incidents is feeling inadequate as Kimihito's &quot;servant&quot;, but the prank is interrupted by a very large and angry wild boar that attacks her. Kimihito manages to distract it and Cerea subdues it, and Kimihito reassures Cerea that he trusts her and has done so from the beginning. Cerea's confidence is restored and she is put in charge of salad-making, but Lilith, who tried her tricks on Rachnera (who had been secretly keeping an eye on Kimihito and Cerea), is caught and severely &quot;punished&quot; by the Arachne, who learns that Lilith is not &quot;D&quot; either"
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 11,
+		 "Everyday Life with Dullahan",
+		 "Frustrated because of their repeated failure to uncover the mysterious &quot;D&quot;, who has sent a second and more threatening letter, the MON members (minus Doppel, who isn't interested) decide to take matters into their own hands and have Kimihito date each and ALL of them in one day! First, Tionishia nearly kills Kimihito by dragging him (literally!) off to different shops, including a dress shop where even the largest size proves too small for her, but Kimihito's revealing that he can expertly alter normal clothing to fit liminals wins her over. Next, Zombina drags Kimihito off to a zombie film; later, when her hand comes off and he uses his sewing skills to reattach it, she is impressed (as well as by his seeing her as a girl and a person rather than a &quot;monster&quot;) but in order to tease him deliberately detaches a breast and gets him to sew it back on as well! The last &quot;date&quot; is with a very self-conscious Manako, who becomes flustered by his being able to look her straight in the eye. The &quot;date&quot; is interrupted by Manako spotting a shadowy figure following them, and all three MON girls team up to apprehend the stalker, who is indeed &quot;D&quot; but revealed to be Doppel, who sent the first letter as a joke ... but not the second, as Kimihito finds out when a scythe is pressed against his throat by a mysterious girl with purple skin and dressed in black! Later that evening, the girls are shocked when Kimihito brings home a headless girl, totally freaking Miia out! Kimihito, Cerea, Papi, Mero and a very reluctant Miia search the nearby park where the head rolled into; the head is eventually located and actually talks to Kimihito, admitting that she sent the second letter and asking him to restore her to her body! The conversation is interrupted by the jumpy police officer, who totally freaks out upon seeing Kimihito holding the head! Thanks to some unexpected and unintentional help from Papi, the gang gets away and returns home with the head. Once she and her head are restored to each other, the girl reveals herself as a dullahan, a reaper of souls, and that she has come to claim a member of the household who &quot;is on the verge of death&quot; ... Kimihito! "
+		)
+	,	("Monster musume - Everyday life with monster girls",
+		 12,
+		 "Everyday Life with Monster Girls",
+		 "To prevent the dullahan from collecting Kimihito's soul, the girls decide to take him away from her as far as possible, but (as usual) their attempts only cause him more injures. Rachnera appears with the dullahan, claiming that if she is really a reaper of souls, then there is nothing they can do to prevent Kimihito's death. When Miia decides to die along with Kimihito, claiming that she cannot bear losing him, Kimihito decides to stop running away and face his imminent death, but to everybody's surprise nothing happens. Back at home, Kimihito and the girls discover from Ms. Smith that the dullahan's name is Lala and she isn't a real reaper of souls at all, having run away from several host families where she previously lived (because no one there was dying). Ms. Smith lets Lala live with Kimihito and the others by her request. When questioned about how he saw through Lala's lies, Kimihito answers that he simply realized that she has a late case of eighth grade syndrome (a quick flashback shows that he had the same thing when he was younger). Some time later, Kimihito realizes that due to the massive food bill caused by his liminal guests he is in major financial trouble and, after Miia's latest attempt at cooking ends up a total disaster, there is no more food in the house. He then sets out grocery-shopping with Cerea, Papi, Mero and Suu, and the monster girls' sympathy with the local vendors earn them plenty of merchandise with special discounts. To obtain some extra vegetables, Kimihito and Suu visit Kii, who guides them to an area with edible plants, and Kimihito learns that Suu has the ability to differentiate between fit-for-consumption ones and poisonous ones by tasting them. On the way back home, Kimihito is attacked by Draco, but Suu defends him with the poison she absorbed from the plant tasting. Once home, Kimihito prepares dinner for the girls, but Ms. Smith and the girls from MON suddenly appear to dine with them as well, completely wiping out the house's food supply once again. Kimihito is in despair, but Smith explains that the Interspecies Program will reimburse him for all the girls' food expenses ... something she hadn't told him before, to his chagrin."
 		)
 ;
 
 INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
-		("Title", x, y, z)
+		("Monster musume - Everyday life with monster girls", 0, 1, 4)
+	,	("Monster musume - Everyday life with monster girls", 0, 2, 4)
+	,	("Monster musume - Everyday life with monster girls", 0, 3, 4)
 ;
-		
--- General Anime Volume Data
-	,	("Title",
-		 n,
-		 m,
-		 "Classification",
-		 x,
-		 "URL"
-		)
-		
--- General Anime Episode Data
-	,	("Title",
-		 n,
-		 "Episode_Title",
-		 "Episode_Synopsys"
-		)
-		
--- General Anime Session Data
-	,	("Title", x, y, z)
