@@ -9,4 +9,9 @@
 		include('module/anime/episode_grid.php'); // Article showing all episodes for anime.
 		include('module/anime/list_titles.php'); // Article showing all anime titles in database.
 	}
+	else
+	{
+		$anime_title = '';
+		include('module/anime/list_titles.php');
+	}
 ?>
