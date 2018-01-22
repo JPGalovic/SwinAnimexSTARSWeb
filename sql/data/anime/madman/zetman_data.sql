@@ -58,7 +58,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Zetman",
 		 8,
 		 "A Normal Family",
-		 "Kouga learns that Jin has been fighting by himself as ZET. Thrilled over meeting a true hero, Kouga calls him “ZETMAN” and declares he will fight alongside him. Jin and Kouga head for the lab to find out why Red ZET turned white."
+		 "Kouga learns that Jin has been fighting by himself as ZET. Thrilled over meeting a true hero, Kouga calls him &quot;ZETMAN&quot; and declares he will fight alongside him. Jin and Kouga head for the lab to find out why Red ZET turned white."
 		)
 	,	("Zetman",
 		 9,
