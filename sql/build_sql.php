@@ -113,7 +113,7 @@
 		,	'data/anime/madman/vividred_operation_data.sql'
 		,	'data/anime/madman/yurikuma_arashi_data.sql'
 	//	,	'data/anime/madman/yuru_yuri_data.sql'
-	//	,	'data/anime/madman/zetman_data.sql'
+		,	'data/anime/madman/zetman_data.sql'
 	);
 
 	$hanabee_anime_data_array = array(
