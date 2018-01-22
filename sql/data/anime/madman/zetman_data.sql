@@ -33,7 +33,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Zetman",
 		 3,
 		 "Tears",
-		 "When Jin wakes up, he sees a monster holding the lifeless body of his foster mother, Akemi. An old man named Mitsugai is attempting to awaken ZET within Jin by using her. Mitsugai succeeds and ZET awakens…but he’s still incomplete."
+		 "When Jin wakes up, he sees a monster holding the lifeless body of his foster mother, Akemi. An old man named Mitsugai is attempting to awaken ZET within Jin by using her. Mitsugai succeeds and ZET awakens...but he's still incomplete."
 		)
 	,	("Zetman",
 		 4,
