@@ -12,7 +12,7 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		("Queen's Blade 3: Rebellion",
 		 1,
 		 1,
-		 "M - Violence, Sexual references and Nudity",
+		 "M - Violence, sexual references and nudity",
 		 12,
 		 "http://sirenvisual.com.au/index.php/shop/queen-s-blade-3-rebellion.html"
 		)
