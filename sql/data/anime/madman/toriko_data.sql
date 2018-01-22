@@ -2,8 +2,8 @@
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Toriko",
 		 50,
-		 "Welcome to the Gourmet Age, a time when the world is full of deliciously deadly ingredients that the wealthiest appetites in existence can’t wait to devour. But only a mighty masticating mercenary like Toriko can track down the rarest animals on the planet and put them on a plate! This gluttonous gourmet hunter is one of the four Legendary Kings, superhuman warriors born to battle the likes of Troll Kongs, Gararagators, and Devil Pythons! Accompanied by his loyal Battle Wolf and the promising young chef Komatsu, Toriko will circle the globe in search of the mouth-wateringly lethal ingredients that will one day make up his Full Course Menu of Life! The more ferocious the beast – the bigger the feast, but never forget the code of a true gourmet hunter: You gotta eat what you defeat!",
-		 "Welcome to the Gourmet Age, a time when the world is full of deliciously deadly ingredients that the wealthiest appetites in existence can’t wait to devour.",
+		 "Welcome to the Gourmet Age, a time when the world is full of deliciously deadly ingredients that the wealthiest appetites in existence can't wait to devour. But only a mighty masticating mercenary like Toriko can track down the rarest animals on the planet and put them on a plate! This gluttonous gourmet hunter is one of the four Legendary Kings, superhuman warriors born to battle the likes of Troll Kongs, Gararagators, and Devil Pythons! Accompanied by his loyal Battle Wolf and the promising young chef Komatsu, Toriko will circle the globe in search of the mouth-wateringly lethal ingredients that will one day make up his Full Course Menu of Life! The more ferocious the beast – the bigger the feast, but never forget the code of a true gourmet hunter: You gotta eat what you defeat!",
+		 "Welcome to the Gourmet Age, a time when the world is full of deliciously deadly ingredients that the wealthiest appetites in existence can't wait to devour.",
 		 "Madman",
 		 "&copy;2011 Toei Animation Co., Ltd. &copy; Mitsutoshi Shimabukuro/Shueisha, Toei Animation"
 		)
@@ -133,7 +133,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 		)
 	,	("Toriko",
 		 19,
-		 "For Terry’s Sake! Burst By Broiling Heat, BB Corn!",
+		 "For Terry's Sake! Burst By Broiling Heat, BB Corn!",
 		 "Toriko and Terry finally find the deliciously elusive BB Corn, and Komatsu must depend on a special blend of spices to survive an encounter with a giant lizard!"
 		)
 	,	("Toriko",

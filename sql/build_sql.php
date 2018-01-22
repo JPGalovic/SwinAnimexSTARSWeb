@@ -107,7 +107,7 @@
 	//	,	'data/anime/madman/sword_oratoria_data.sql'
 	//	,	'data/anime/madman/terror_in_resonance_data.sql'
 		,	'data/anime/madman/three_leaves_three_colors_data.sql'
-	//	,	'data/anime/madman/toriko_data.sql'
+		,	'data/anime/madman/toriko_data.sql'
 	//	,	'data/anime/madman/undefeted_bahamut_cronical_data.sql'
 	//	,	'data/anime/madman/velkyrie_drive_mermaid_data.sql'
 		,	'data/anime/madman/vividred_operation_data.sql'
