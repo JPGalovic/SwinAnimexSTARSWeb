@@ -43,12 +43,12 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Zetman",
 		 5,
 		 "Alphas",
-		 "Kouga tries to become a superhero by creating a real-life Alphas. A mysterious man approaches him with a test to see if he’s qualified to become one."
+		 "Kouga tries to become a superhero by creating a real-life Alphas. A mysterious man approaches him with a test to see if he's qualified to become one."
 		)
 	,	("Zetman",
 		 6,
 		 "Hostage",
-		 "Konoha is taken hostage and Jin is unable to do anything. Unlike before, he cannot become ZET by hurting himself and doesn’t have his Activation Gum."
+		 "Konoha is taken hostage and Jin is unable to do anything. Unlike before, he cannot become ZET by hurting himself and doesn't have his Activation Gum."
 		)
 	,	("Zetman",
 		 7,
@@ -63,12 +63,12 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Zetman",
 		 9,
 		 "Whereabouts of the Pendant",
-		 "The key to completing ZET is the pendant that Konoha has in her possession. Haitani and his men easily infiltrate the Amagi residence. Konoha wakes up and finds Jin standing in front of her. She hands him the pendant, not knowing he’s actually a clone."
+		 "The key to completing ZET is the pendant that Konoha has in her possession. Haitani and his men easily infiltrate the Amagi residence. Konoha wakes up and finds Jin standing in front of her. She hands him the pendant, not knowing he's actually a clone."
 		)
 	,	("Zetman",
 		 10,
 		 "Party",
-		 "Konoha goes missing. Kouga receives a phone call from the man who gave him the first test where he had to choose between the lives of his sister or three high school girls he didn’t know. Kouga chose Konoha and the girls were killed."
+		 "Konoha goes missing. Kouga receives a phone call from the man who gave him the first test where he had to choose between the lives of his sister or three high school girls he didn't know. Kouga chose Konoha and the girls were killed."
 		)
 	,	("Zetman",
 		 11,
@@ -83,7 +83,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Zetman",
 		 13,
 		 "Funeral Procession",
-		 "Jin walks down a bloody path in solitude as ZET… Alphas has fulfilled his dream of becoming a hero and fights according to his idea of justice… After so much bloodshed and tears, what is it that they wished to attain at the end?"
+		 "Jin walks down a bloody path in solitude as ZET.. Alphas has fulfilled his dream of becoming a hero and fights according to his idea of justice... After so much bloodshed and tears, what is it that they wished to attain at the end?"
 		)
 ;
 
