@@ -148,6 +148,11 @@
 		,	'data/anime/siren/un-go_data.sql'
 	);
 
+	$game_data_array = array(
+			'data/game/game_company/game_company.sql'
+		,	'data/game/jamestown_data.sql'
+	);
+
 	$event_data_array = array(
 			'data/events/2018_summer.sql'
 	//	,	'data/events/2018_semester_1.sql'
@@ -180,6 +185,14 @@
 	}
 
 	foreach ($siren_anime_data_array as $data_file)
+	{
+		$read_handle = fopen($data_file, 'r') or die("Cannot open file: ".$data_file);
+		$data = fread($read_handle, filesize($data_file));
+		fwrite($write_handle, $data);
+		fclose($read_handle);
+	}
+
+	foreach ($game_data_array as $data_file)
 	{
 		$read_handle = fopen($data_file, 'r') or die("Cannot open file: ".$data_file);
 		$data = fread($read_handle, filesize($data_file));
