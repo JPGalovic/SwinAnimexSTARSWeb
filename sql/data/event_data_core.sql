@@ -1,3 +1,4 @@
+-- Event Data Core, Version 1.1, JAN18, JPGalovic
 -- Table for Event Type
 CREATE TABLE IF NOT EXISTS EVENT_TYPE (
 		EVENT_TYPE_ID					INT(11)
@@ -9,8 +10,11 @@ CREATE TABLE IF NOT EXISTS EVENT_TYPE (
 INSERT INTO EVENT_TYPE (EVENT_TYPE_ID, EVENT_TYPE_DESCRIPTION) VALUES
 		(0, "Screening Session Event")
 	,	(1, "Social Episode Event")
-	,	(2, "Workshop Event")
+	,	(2, "Anime Workshop Event")
 	,	(3, "General Meeting")
+	,	(4, "Roleplay Event")
+	,	(5, "Tabletop Event")
+	,	(6, "Other Event")
 ;
 
 -- Table for Event Locations
@@ -110,6 +114,73 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 "Our annual trip to the pool, swiming, swiming, swiming...",
 		 "Meet at Glenferrie Station, walk across road to pool.",
 		 "Event is free to attend, entry to pool is free for current swinburne students."
+		)
+;
+
+-- Tabletop Event Details
+INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, TICKETS) VALUES
+		("Tabletop Tonight",
+		 "Every week! Our exclusive Tabletop Experiance! Join us for new games and exciting classics.",
+		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
+		 NULL
+		)
+	,	("The Dice Must Flow",
+		 "Evey month join us for our Marathon Extravigansa! Play Longer, Play Harder!",
+		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
+		 NULL
+		)
+;
+
+
+-- Roleplay Event Details
+INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, TICKETS) VALUES
+		("GM Skill's Workshop",
+		 "Do you want to learn to run your own adventure? Are you keen to become a Game Master? Then join us in these Exclusive Skill's Workshops! Running Each Month!",
+		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
+		 NULL
+		)
+	,	("Adventurers Anonymous",
+		 "Are you tied of adventuring alone, with no one arround to have your back? Are you tired not having team mates to give you support? Come along to our Adventurers Anonymous meeting where our supportive groups we will help you find your way, and you can help other Adventerurs find their's",
+		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
+		 NULL
+		)
+;
+
+-- General Meeting Details
+INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, TICKETS) VALUES
+		("Annual General Meeting",
+		 "This is the big one, All members are asked to attend and help elect our Committee for Next Year!",
+		 "Open to all current students, please come along to the advertised clubroom and take a seat.",
+		 NULL
+		)
+	,	("Semester General Meeting",
+		 "This meeting is for us to introduce ourselves, and inform you of what the club will be doing this semester!",
+		 "Open to all members, please come along to the advertised clubroom and take a seat.",
+		 NULL
+		)
+	,	("Member News and Plannig Meeting",
+		 "This is where you can have your say, let us know what you want to see from your club, and we'll let you know whats coming up over the next couple of weeks",
+		 "",
+		 NULL
+		)
+;
+
+-- Other Event Details
+INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, TICKETS) VALUES
+		("Conquest: Easter Games Convention",
+		 "Conquest is Melbourne's Easter Games Convention",
+		 "Held at Swinburne's ATC building, Come along and play some games with us!",
+		 "Tickets can be brought from Conquest's website, https://www.conquest.asn.au/"
+		)
+	,	("May the 4th be with you",
+		 "May the 4th be with you, always. Every year May the 4th marks International Geek Day, celebrating everything geek and nerd!",
+		 "Come and find us, and join in the festivities",
+		 NULL
+		)
+	,	("Animaga Expo",
+		 "Animaga Expo celebrates eveything, Anime Manga and Games! come and join us in the fun!",
+		 "Held at the Royal Exhibition Building.",
+		 "Tickets can be brought from Animaga's webiste, http://www.animaga.com.au/"
 		)
 ;
 
