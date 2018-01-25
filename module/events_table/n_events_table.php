@@ -40,10 +40,18 @@
 					case 'Social Episode Event':
 						include('module/event_card/social_event_card.php');
 						break;
-					case 'Workshop Event':
+					case 'Anime Workshop Event':
 						break;
 					case 'General Meeting':
 						break;
+					case 'Roleplay Event':
+						break;
+					case 'Tabletop Event':
+						break;
+					case 'Video Game Event':
+						include('module/event_card/video_game_event_card.php');
+						break;
+					case 'Other Event':
 				}
 			}
 			else // No more events
