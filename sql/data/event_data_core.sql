@@ -14,8 +14,13 @@ INSERT INTO EVENT_TYPE (EVENT_TYPE_ID, EVENT_TYPE_DESCRIPTION) VALUES
 	,	(3, "General Meeting")
 	,	(4, "Roleplay Event")
 	,	(5, "Tabletop Event")
-	,	(6, "Other Event")
+	,	(6, "Video Game Event")
+	,	(7, "Other Event")
 ;
+
+-- Event Type Refences:
+-- Has Anime Event Data: 0
+-- May Have Game Event Data: 4, 5, 6
 
 -- Table for Event Locations
 CREATE TABLE IF NOT EXISTS EVENT_LOCATION (

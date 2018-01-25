@@ -262,6 +262,7 @@ CREATE TABLE IF NOT EXISTS ANIME_SESSION (
 	,	FOREIGN KEY					(SESSION_TYPE_ID) REFERENCES ANIME_SESSION_TYPE (SESSION_TYPE_ID)
 );
 
+-- Game Data Core, Version 1.1, JAN18, JPGalovic
 -- Table for Game Platform
 CREATE TABLE IF NOT EXISTS PLATFORM (
 		PLATFORM_ID						INT(11)
@@ -274,11 +275,40 @@ CREATE TABLE IF NOT EXISTS PLATFORM (
 INSERT INTO PLATFORM (PLATFORM_ID, PLATFORM_NAME, PLATFORM_DESCRIPTION) VALUES
 		(0, "Windows Game", "This game runs on Microsoft Windows.")
 	,	(1, "MAC Game", "This game runs on Apple Macontosh.")
-	,	(3, "Linux Game", "This game runs on Linux.")
-	,	(4, "Board Game", "This game is a phisical board game.")
-	,	(5, "Card Game", "This game is a phisical card game.")
-	,	(6, "Role Playing Game", "This game is a phisical role playing game.")
-	,	(7, "Live Action Role Playing Game", "This game is a LARP.")
+	,	(2, "Linux Game", "This game runs on Linux.")
+	
+	,	(10, "Board Game", "This game is a phisical board game.")
+	,	(11, "Card Game", "This game is a phisical card game.")
+	,	(12, "Role Playing Game", "This game is a phisical role playing game.")
+	,	(13, "Live Action Role Playing Game", "This game is a LARP.")
+	
+	,	(23, "Play Station 4", "Sony Play Station 4")
+	,	(22, "Play Station 3", "Sony Play Station 3")
+	,	(21, "Play Station 2", "Sony Play Station 2")
+	,	(20, "Play Station", "Sony Play Station")
+	
+	,	(31, "Play Station Vita", "Sony Play Station Vita")
+	,	(30, "Play Station Portable", "Sony Play Station Portable")
+	
+	,	(42, "Xbox One", "Microsoft Xbox One")
+	,	(41, "Xbox 360", "Microsoft Xbox 360")
+	,	(40, "Xbox", "Microsoft Xbox")
+	
+	,	(66, "Nintindo Switch", "Nintendo Switch")
+	,	(65, "Wii U", "Nintendo Wii U")
+	,	(64, "Wii", "Nintendo Wii")
+	,	(63, "GameCube", "Nintendo GameCube")
+	,	(62, "Nintendo 64", "Nintendo 64")
+	,	(61, "Super Nintendo", "Super Nintendo, Super Famicom")
+	,	(60, "Nintendo Entertainment System", "Nintendo Entertainment System, Family Computer, Famicom")
+	
+	,	(76, "New 3DS", "Nintendo New 3DS, New 2DS")
+	,	(75, "3DS", "Nintendo 3DS, 2DS")
+	,	(74, "DSi", "Nintendo DSi")
+	,	(73, "DS", "Nintendo DS")
+	,	(72, "Gameboy Advance", "Nintendo Gameboy Advance, Advance SP, Nintendo Micro")
+	,	(71, "Gameboy Color", "Nintendo Gamboy Color")
+	,	(70, "Gameboy", "Nintendo Gameboy, Gameboy Pocket, Gameboy Light")
 ;
 
 -- Table for Game Data
@@ -288,8 +318,11 @@ CREATE TABLE IF NOT EXISTS GAME (
 	,	MIN_NUMBER_OF_PLAYERS			INT(11)
 	,	MAX_NUMBER_OF_PLAYERS			INT(11)
 	,	RECOMMENDED_NUMBER_OF_PLAYERS	INT(11)
-	,	GAME_CLASSIFICATION				VARCHAR(100)
+	,	COMPANY_NAME					VARCHAR(50)		
+	,	CLASSIFICATION					VARCHAR(100)
 	,	PRIMARY KEY						(GAME_TITLE)
+	,	FOREIGN KEY						(COMPANY_NAME) REFERENCES COMPANY (COMPANY_NAME)
+	,	FOREIGN KEY						(CLASSIFICATION) REFERENCES CLASSIFICATION (CLASSIFICATION)
 );
 
 -- Table for Game Platform Definitions
@@ -312,7 +345,10 @@ CREATE TABLE IF NOT EXISTS GAME_EVENT_TYPE (
 INSERT INTO GAME_EVENT_TYPE (TYPE_ID, DESCRIPTION) VALUES
 		(0, "Game Tourniment")
 	,	(1, "Game Session")
-;-- Table for Event Type
+	,	(2, "Marathon")
+	,	(3, "LAN")
+;-- Event Data Core, Version 1.1, JAN18, JPGalovic
+-- Table for Event Type
 CREATE TABLE IF NOT EXISTS EVENT_TYPE (
 		EVENT_TYPE_ID					INT(11)
 	,	EVENT_TYPE_DESCRIPTION			VARCHAR(100)
@@ -323,9 +359,17 @@ CREATE TABLE IF NOT EXISTS EVENT_TYPE (
 INSERT INTO EVENT_TYPE (EVENT_TYPE_ID, EVENT_TYPE_DESCRIPTION) VALUES
 		(0, "Screening Session Event")
 	,	(1, "Social Episode Event")
-	,	(2, "Workshop Event")
+	,	(2, "Anime Workshop Event")
 	,	(3, "General Meeting")
+	,	(4, "Roleplay Event")
+	,	(5, "Tabletop Event")
+	,	(6, "Video Game Event")
+	,	(7, "Other Event")
 ;
+
+-- Event Type Refences:
+-- Has Anime Event Data: 0
+-- May Have Game Event Data: 4, 5, 6
 
 -- Table for Event Locations
 CREATE TABLE IF NOT EXISTS EVENT_LOCATION (
@@ -424,6 +468,73 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 "Our annual trip to the pool, swiming, swiming, swiming...",
 		 "Meet at Glenferrie Station, walk across road to pool.",
 		 "Event is free to attend, entry to pool is free for current swinburne students."
+		)
+;
+
+-- Tabletop Event Details
+INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, TICKETS) VALUES
+		("Tabletop Tonight",
+		 "Every week! Our exclusive Tabletop Experiance! Join us for new games and exciting classics.",
+		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
+		 NULL
+		)
+	,	("The Dice Must Flow",
+		 "Evey month join us for our Marathon Extravigansa! Play Longer, Play Harder!",
+		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
+		 NULL
+		)
+;
+
+
+-- Roleplay Event Details
+INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, TICKETS) VALUES
+		("GM Skill's Workshop",
+		 "Do you want to learn to run your own adventure? Are you keen to become a Game Master? Then join us in these Exclusive Skill's Workshops! Running Each Month!",
+		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
+		 NULL
+		)
+	,	("Adventurers Anonymous",
+		 "Are you tied of adventuring alone, with no one arround to have your back? Are you tired not having team mates to give you support? Come along to our Adventurers Anonymous meeting where our supportive groups we will help you find your way, and you can help other Adventerurs find their's",
+		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
+		 NULL
+		)
+;
+
+-- General Meeting Details
+INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, TICKETS) VALUES
+		("Annual General Meeting",
+		 "This is the big one, All members are asked to attend and help elect our Committee for Next Year!",
+		 "Open to all current students, please come along to the advertised clubroom and take a seat.",
+		 NULL
+		)
+	,	("Semester General Meeting",
+		 "This meeting is for us to introduce ourselves, and inform you of what the club will be doing this semester!",
+		 "Open to all members, please come along to the advertised clubroom and take a seat.",
+		 NULL
+		)
+	,	("Member News and Plannig Meeting",
+		 "This is where you can have your say, let us know what you want to see from your club, and we'll let you know whats coming up over the next couple of weeks",
+		 "",
+		 NULL
+		)
+;
+
+-- Other Event Details
+INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, TICKETS) VALUES
+		("Conquest: Easter Games Convention",
+		 "Conquest is Melbourne's Easter Games Convention",
+		 "Held at Swinburne's ATC building, Come along and play some games with us!",
+		 "Tickets can be brought from Conquest's website, https://www.conquest.asn.au/"
+		)
+	,	("May the 4th be with you",
+		 "May the 4th be with you, always. Every year May the 4th marks International Geek Day, celebrating everything geek and nerd!",
+		 "Come and find us, and join in the festivities",
+		 NULL
+		)
+	,	("Animaga Expo",
+		 "Animaga Expo celebrates eveything, Anime Manga and Games! come and join us in the fun!",
+		 "Held at the Royal Exhibition Building.",
+		 "Tickets can be brought from Animaga's webiste, http://www.animaga.com.au/"
 		)
 ;
 
@@ -5928,7 +6039,27 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("Un-Go", 0, 2, 4)
 	,	("Un-Go", 0, 3, 3)
 ;
--- Summer A
+-- Game Company Data, Version 1.0, JAN18, JPGalovic
+INSERT INTO COMPANY (COMPANY_NAME, COMPANY_URL, IS_SPONSOR) VALUES
+		("Final Form Games", "http://www.finalformgames.com", FALSE)
+;-- Jamestown Data, Version 1.0, JAN18, JPGalovic
+INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBER_OF_PLAYERS, RECOMMENDED_NUMBER_OF_PLAYERS, COMPANY_NAME, CLASSIFICATION) VALUES
+		("Jamestown&#58; Legend of the Lost Colony",
+		 "<p>Jamestown is an old-school shooter with a new-school heart. It features all the intensity, depth, and lovingly handcrafted pixels of a classic arcade shooter, with a modern twist: deeply-integrated cooperative gameplay.</p><p>Classically, top-down shooters give multiple players a shared pool of lives or continues; this inevitably results in one of the players “failing out” and being left to watch their more skilled (or lucky) friend continue to have fun. In Jamestown, so long as any player survives, the entire team can be brought back to life. By giving even novice players the power to rescue their team from the jaws of death, Jamestown creates an exhilarating cooperative thrill-ride where everyone’s contribution truly matters. Win or lose, your team will do it together.</p><p>This innovative take on co-op enhances an already rock-solid arcade shooter experience. With its addictive “Vaunt” shield mechanic, richly rewarding scoring system, and 5 difficulty levels ranging from “first-time player” to “masochistic bullet junkie,” Jamestown delivers an engaging core experience no matter how you want to play it.</p><p>The game features 4 playable ships, each with a unique set of abilities. Over the course of the game’s campaign mode, players will experience 5 screen-filling boss battles, over 40 different enemies, 20 rule-bending bonus levels, lush hand-pixeled visuals, and an original orchestral score by classically-trained Chilean composer Francisco Cerda.</p>",
+		 1,
+		 4,
+		 2,
+		 "Final Form Games",
+		 "CHECK THE CLASSIFICATION"
+		)
+;
+
+INSERT INTO GAME_PLATFORM (GAME_TITLE, PLATFORM_ID) VALUES
+		("Jamestown&#58; Legend of the Lost Colony", 0)
+	,	("Jamestown&#58; Legend of the Lost Colony", 1)
+	,	("Jamestown&#58; Legend of the Lost Colony", 2)
+	,	("Jamestown&#58; Legend of the Lost Colony", 23)
+;-- Summer A
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
 		("2018-01-05 11-30-00", 0, "Summer Sessions", 404, 1782517088487445, "0")
 	,	("2018-01-12 11-30-00", 0, "Summer Sessions", 404, 0, "0")
