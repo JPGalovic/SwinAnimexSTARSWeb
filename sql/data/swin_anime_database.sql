@@ -453,6 +453,11 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 "Event is open to all, just come along and scan your membership card as you enter.",
 		 NULL
 		)
+	,	("LANime Overnight Marathon",
+		 "Overnight Marathon and LAN gaming, only for our most didcated members!",
+		 "Come along from Friday Night, Present your Priemium Membership Card and chip in for Snaks and Drinks",
+		 "As part of event eveyone in attendace chips in $5 that goes directly towards the purchace of Snaks and Drinks for the event."
+		)
 ;
 
 -- Social Event Details
@@ -533,8 +538,8 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 "Held at Swinburne's ATC building, Come along and play some games with us!",
 		 "Tickets can be brought from Conquest's website, https://www.conquest.asn.au/"
 		)
-	,	("May the 4th be with you",
-		 "May the 4th be with you, always. Every year May the 4th marks International Geek Day, celebrating everything geek and nerd!",
+	,	("May the forth be with you",
+		 "May the forth be with you, always. Every year May the 4th marks International Geek Day, celebrating everything geek and nerd!",
 		 "Come and find us, and join in the festivities",
 		 NULL
 		)
@@ -6280,6 +6285,7 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 		("2018-04-20 11-30-00", 0, "Screening Sessions", 0, 0, "0")
 	,	("2018-04-27 11-30-00", 0, "Screening Sessions", 0, 0, "0")
 	,	("2018-05-04 11-30-00", 0, "Screening Sessions", 0, 0, "0")
+	,	("2018-05-04 21-30-00", 0, "LANime Overnight Marathon", 0, 0, "0")
 	
 	,	("2018-04-20 16-30-00", 0, "Screening Sessions", 0, 0, "0")
 	,	("2018-04-27 16-30-00", 0, "Screening Sessions", 0, 0, "0")
@@ -6294,6 +6300,7 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 		("2018-04-20 11-30-00", "Death Note", 1, 1)
 	,	("2018-04-27 11-30-00", "Death Note", 1, 2)
 	,	("2018-05-04 11-30-00", "Death Note", 1, 3)
+	,	("2018-05-04 21-30-00", "Death Note", 1, 4)
 	
 	,	("2018-04-20 16-30-00", "Monster musume - Everyday life with monster girls", 0, 1)
 	,	("2018-04-27 16-30-00", "Monster musume - Everyday life with monster girls", 0, 2)
@@ -6444,6 +6451,6 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 -- Other Events
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
 		("2018-03-30 10-30-00", 7, "Conquest: Easter Games Convention", 10, 0, "0")
-	,	("2018-05-04 10-30-00", 7, "May the 4th be with you", 0, 0, "0")
+	,	("2018-05-04 10-30-00", 7, "May the forth be with you", 0, 0, "0")
 ;
 

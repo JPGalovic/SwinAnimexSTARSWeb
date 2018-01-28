@@ -273,6 +273,6 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 -- Other Events
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
 		("2018-03-30 10-30-00", 7, "Conquest: Easter Games Convention", 10, 0, "0")
-	,	("2018-05-04 10-30-00", 7, "May the 4th be with you", 0, 0, "0")
+	,	("2018-05-04 10-30-00", 7, "May the forth be with you", 0, 0, "0")
 ;
 

@@ -189,8 +189,8 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 "Held at Swinburne's ATC building, Come along and play some games with us!",
 		 "Tickets can be brought from Conquest's website, https://www.conquest.asn.au/"
 		)
-	,	("May the 4th be with you",
-		 "May the 4th be with you, always. Every year May the 4th marks International Geek Day, celebrating everything geek and nerd!",
+	,	("May the forth be with you",
+		 "May the forth be with you, always. Every year May the 4th marks International Geek Day, celebrating everything geek and nerd!",
 		 "Come and find us, and join in the festivities",
 		 NULL
 		)
