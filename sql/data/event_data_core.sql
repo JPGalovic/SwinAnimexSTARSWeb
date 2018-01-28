@@ -104,6 +104,11 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 "Event is open to all, just come along and scan your membership card as you enter.",
 		 NULL
 		)
+	,	("LANime Overnight Marathon",
+		 "Overnight Marathon and LAN gaming, only for our most didcated members!",
+		 "Come along from Friday Night, Present your Priemium Membership Card and chip in for Snaks and Drinks",
+		 "As part of event eveyone in attendace chips in $5 that goes directly towards the purchace of Snaks and Drinks for the event."
+		)
 ;
 
 -- Social Event Details

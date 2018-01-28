@@ -107,6 +107,7 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 		("2018-04-20 11-30-00", 0, "Screening Sessions", 0, 0, "0")
 	,	("2018-04-27 11-30-00", 0, "Screening Sessions", 0, 0, "0")
 	,	("2018-05-04 11-30-00", 0, "Screening Sessions", 0, 0, "0")
+	,	("2018-05-04 21-30-00", 0, "LANime Overnight Marathon", 0, 0, "0")
 	
 	,	("2018-04-20 16-30-00", 0, "Screening Sessions", 0, 0, "0")
 	,	("2018-04-27 16-30-00", 0, "Screening Sessions", 0, 0, "0")
@@ -121,6 +122,7 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 		("2018-04-20 11-30-00", "Death Note", 1, 1)
 	,	("2018-04-27 11-30-00", "Death Note", 1, 2)
 	,	("2018-05-04 11-30-00", "Death Note", 1, 3)
+	,	("2018-05-04 21-30-00", "Death Note", 1, 4)
 	
 	,	("2018-04-20 16-30-00", "Monster musume - Everyday life with monster girls", 0, 1)
 	,	("2018-04-27 16-30-00", "Monster musume - Everyday life with monster girls", 0, 2)
