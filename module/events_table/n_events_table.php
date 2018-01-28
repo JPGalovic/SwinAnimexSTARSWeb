@@ -23,6 +23,7 @@
 	}
 	else
 	{
+		$ignor_title_repeat = $page == "all_events";
 		while(!$n_events == 0)
 		{
 			$is_ok = true; // Set OK flag
@@ -40,18 +41,24 @@
 					case 'Social Episode Event':
 						include('module/event_card/social_event_card.php');
 						break;
-					case 'Anime Workshop Event':
+					case 'Workshop Event':
+						include('module/event_card/workshop_event_card.php');
 						break;
 					case 'General Meeting':
+						include('module/event_card/general_meeting_card.php');
 						break;
 					case 'Roleplay Event':
+						include('module/event_card/roleplay_event_card.php');
 						break;
 					case 'Tabletop Event':
+						include('module/event_card/tabletop_event_card.php');
 						break;
 					case 'Video Game Event':
 						include('module/event_card/video_game_event_card.php');
 						break;
 					case 'Other Event':
+						include('module/event_card/other_event_card.php');
+						break;
 				}
 			}
 			else // No more events
