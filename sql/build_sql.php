@@ -57,7 +57,7 @@
 		,	'data/anime/madman/death_note_data.sql'
 	//	,	'data/anime/madman/death_note_data.sql'
 	//	,	'data/anime/madman/dog_and_sizors_data.sql'
-	//	,	'data/anime/madman/dot_hack_sign_data.sql'
+		,	'data/anime/madman/dot_hack_sign_data.sql'
 	//	,	'data/anime/madman/dragonar_academy_data.sql'
 	//	,	'data/anime/madman/dragonball_z_data.sql'
 	//	,	'data/anime/madman/eurika_seven_ao_data.sql'
