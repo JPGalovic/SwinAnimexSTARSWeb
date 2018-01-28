@@ -42,7 +42,7 @@ INSERT INTO EVENT_LOCATION (LOCATION_ID, CAMPUS, ROOM, ADDRESS, LAT, LNG, ZOOM) 
 	,	(2, NULL, NULL, "Sorrento Oceach Beach, Ocean Beach Road, Sorrento VIC 3943", -38.345876, 144.727014, 17)
 	,	(3, NULL, NULL, "Hawthorn Aquatic &amp; Leasure Center, 1 Grace St, Hawthorn VIC 3122", -37.820791, 145.034434, 17)
 	
-	,	(10, "Swinburne Hawthor", "ATC Building", "Burwood Rd, Hawthorn VIC 3122", -37.822622, 145.038361)
+	,	(10, "Swinburne Hawthorn", "ATC Building", "Burwood Rd, Hawthorn VIC 3122", -37.822622, 145.038361, 17)
 	
 	
 	,	(404, "Swinburne Hawthorn", "AS404", "Applied Sciences Building, Burwood Road, Hawthorn Victoria 3122", -37.822571, 145.037619, 17)
