@@ -76,12 +76,12 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 "Event is open to all, just come along and scan your membership card as you enter.",
 		 NULL
 		)
-	,	("SwinAnime After Dark",
+	,	("SwinAnime x STARS After Dark",
 		 "Extra Screening Sessions, only for our most dedicated members",
 		 "Come along, pay your fee and scan your membership card.",
 		 "After Dark Sessions are run as an extra event for members, condition of entry is that a gold coin donation is made."
 		)
-	,	("SwinAnime Showcase",
+	,	("SwinAnime x STARS Showcase",
 		 "Showcase Screenings, each week showing the first episode of anime avalible to watch now!",
 	 	 "Event is open to all, just come along and scan your membership card as you enter.",
 	 	 NULL
