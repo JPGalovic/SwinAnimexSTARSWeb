@@ -66,17 +66,17 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 ;
 
 INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
-		("2018-03-23 11-30-00", "Canaan", 0, 1)
-	,	("2018-04-06 11-30-00", "Canaan", 0, 2)
-	,	("2018-04-13 11-30-00", "Canaan", 0, 3)
+		("2018-03-23 11-30-00", "Blassreiter", 0, 1)
+	,	("2018-04-06 11-30-00", "Blassreiter", 0, 2)
+	,	("2018-04-13 11-30-00", "Blassreiter", 0, 3)
 	
-	,	("2018-03-23 16-30-00", "Canaan", 0, 1)
-	,	("2018-04-06 16-30-00", "Canaan", 0, 2)
-	,	("2018-04-13 16-30-00", "Canaan", 0, 3)
+	,	("2018-03-23 16-30-00", "One Punch Man", 0, 1)
+	,	("2018-04-06 16-30-00", "One Punch Man", 0, 2)
+	,	("2018-04-13 16-30-00", "One Punch Man", 0, 3)
 	
-	,	("2018-03-23 19-30-00", "Canaan", 0, 1)
-	,	("2018-04-06 19-30-00", "Canaan", 0, 2)
-	,	("2018-04-13 19-30-00", "Canaan", 0, 3)
+	,	("2018-03-23 19-30-00", "Is it wrong to try to pick up girls in a dungeon", 0, 1)
+	,	("2018-04-06 19-30-00", "Is it wrong to try to pick up girls in a dungeon", 0, 2)
+	,	("2018-04-13 19-30-00", "Is it wrong to try to pick up girls in a dungeon", 0, 3)
 ;
 
 -- B Showcase
@@ -118,17 +118,17 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 ;
 
 INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
-		("2018-04-20 11-30-00", "Canaan", 0, 1)
-	,	("2018-04-27 11-30-00", "Canaan", 0, 2)
-	,	("2018-05-04 11-30-00", "Canaan", 0, 3)
+		("2018-04-20 11-30-00", "Death Note", 1, 1)
+	,	("2018-04-27 11-30-00", "Death Note", 1, 2)
+	,	("2018-05-04 11-30-00", "Death Note", 1, 3)
 	
-	,	("2018-04-20 16-30-00", "Canaan", 0, 1)
-	,	("2018-04-27 16-30-00", "Canaan", 0, 2)
-	,	("2018-05-04 16-30-00", "Canaan", 0, 3)
+	,	("2018-04-20 16-30-00", "Monster musume - Everyday life with monster girls", 0, 1)
+	,	("2018-04-27 16-30-00", "Monster musume - Everyday life with monster girls", 0, 2)
+	,	("2018-05-04 16-30-00", "Monster musume - Everyday life with monster girls", 0, 3)
 	
-	,	("2018-04-20 19-30-00", "Canaan", 0, 1)
-	,	("2018-04-27 19-30-00", "Canaan", 0, 2)
-	,	("2018-05-04 19-30-00", "Canaan", 0, 3)
+	,	("2018-04-20 19-30-00", "Welcome to Irabu's Office", 0, 1)
+	,	("2018-04-27 19-30-00", "Welcome to Irabu's Office", 0, 2)
+	,	("2018-05-04 19-30-00", "Welcome to Irabu's Office", 0, 3)
 ;
 
 -- C Showcase
@@ -170,17 +170,17 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 ;
 
 INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
-		("2018-05-11 11-30-00", "Canaan", 0, 1)
-	,	("2018-05-18 11-30-00", "Canaan", 0, 2)
-	,	("2018-05-25 11-30-00", "Canaan", 0, 3)
+		("2018-05-11 11-30-00", "The irregular at magic high school", 0, 1)
+	,	("2018-05-18 11-30-00", "The irregular at magic high school", 0, 2)
+	,	("2018-05-25 11-30-00", "The irregular at magic high school", 0, 3)
 	
-	,	("2018-05-11 16-30-00", "Canaan", 0, 1)
-	,	("2018-05-18 16-30-00", "Canaan", 0, 2)
-	,	("2018-05-25 16-30-00", "Canaan", 0, 3)
+	,	("2018-05-11 16-30-00", "Tokyo Magnitude 8.0", 0, 1)
+	,	("2018-05-18 16-30-00", "Tokyo Magnitude 8.0", 0, 2)
+	,	("2018-05-25 16-30-00", "Tokyo Magnitude 8.0", 0, 3)
 	
-	,	("2018-05-11 19-30-00", "Canaan", 0, 1)
-	,	("2018-05-18 19-30-00", "Canaan", 0, 2)
-	,	("2018-05-25 19-30-00", "Canaan", 0, 3)
+	,	("2018-05-11 19-30-00", "Samurai Jack", 0, 1)
+	,	("2018-05-18 19-30-00", "Samurai Jack", 0, 2)
+	,	("2018-05-25 19-30-00", "Samurai Jack", 0, 3)
 ;
 
 -- D Showcase
