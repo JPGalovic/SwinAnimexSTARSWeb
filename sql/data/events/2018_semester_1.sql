@@ -29,25 +29,25 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 
 -- A Showcase
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
-		("2018-02-27 14-30-00", 0, "SwinAnime x STARS Showcase", 0, 0, "0")
-	,	("2018-02-27 15-30-00", 0, "SwinAnime x STARS Showcase", 0, 0, "0")
+		("2018-02-26 14-30-00", 0, "SwinAnime x STARS Showcase", 0, 0, "0")
+	,	("2018-02-26 15-30-00", 0, "SwinAnime x STARS Showcase", 0, 0, "0")
 	
-	,	("2018-03-06 14-30-00", 0, "SwinAnime x STARS Showcase", 0, 0, "0")
-	,	("2018-03-06 15-30-00", 0, "SwinAnime x STARS Showcase", 0, 0, "0")
+	,	("2018-03-05 14-30-00", 0, "SwinAnime x STARS Showcase", 0, 0, "0")
+	,	("2018-03-05 15-30-00", 0, "SwinAnime x STARS Showcase", 0, 0, "0")
 	
-	,	("2018-03-13 14-30-00", 0, "SwinAnime x STARS Showcase", 0, 0, "0")
-	,	("2018-03-13 15-30-00", 0, "SwinAnime x STARS Showcase", 0, 0, "0")
+	,	("2018-03-12 14-30-00", 0, "SwinAnime x STARS Showcase", 0, 0, "0")
+	,	("2018-03-12 15-30-00", 0, "SwinAnime x STARS Showcase", 0, 0, "0")
 ;
 
 -- INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
--- 		("2018-02-27 14-30-00", "", 0, 1)
--- 	,	("2018-02-27 15-30-00", "", 0, 1)
+-- 		("2018-02-26 14-30-00", "", 0, 1)
+-- 	,	("2018-02-26 15-30-00", "", 0, 1)
 
--- 	,	("2018-03-06 14-30-00", "", 0, 1)
--- 	,	("2018-03-06 15-30-00", "", 0, 1)
+-- 	,	("2018-03-05 14-30-00", "", 0, 1)
+-- 	,	("2018-03-05 15-30-00", "", 0, 1)
 
--- 	,	("2018-03-13 14-30-00", "", 0, 1)
--- 	,	("2018-03-13 15-30-00", "", 0, 1)
+-- 	,	("2018-03-12 14-30-00", "", 0, 1)
+-- 	,	("2018-03-12 15-30-00", "", 0, 1)
 -- ;
 
 -- B
