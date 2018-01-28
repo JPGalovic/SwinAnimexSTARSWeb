@@ -207,10 +207,70 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 -- ;
 
 
+-- Tabletop Events
+INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
+		("2018-02-27 10-30-00", 5, "Tabletop Tonight", 0, 0, "0")
+	,	("2018-03-06 10-30-00", 5, "Tabletop Tonight", 0, 0, "0")
+	,	("2018-03-13 10-30-00", 5, "Tabletop Tonight", 0, 0, "0")
+	,	("2018-03-20 10-30-00", 5, "Tabletop Tonight", 0, 0, "0")
+	,	("2018-03-27 10-30-00", 5, "Tabletop Tonight", 0, 0, "0")
+	,	("2018-04-03 10-30-00", 5, "Tabletop Tonight", 0, 0, "0")
+	,	("2018-04-10 10-30-00", 5, "Tabletop Tonight", 0, 0, "0")
+	,	("2018-04-17 10-30-00", 5, "Tabletop Tonight", 0, 0, "0")
+	,	("2018-04-24 10-30-00", 5, "Tabletop Tonight", 0, 0, "0")
+	,	("2018-05-01 10-30-00", 5, "Tabletop Tonight", 0, 0, "0")
+	,	("2018-05-08 10-30-00", 5, "Tabletop Tonight", 0, 0, "0")
+	,	("2018-05-15 10-30-00", 5, "Tabletop Tonight", 0, 0, "0")
+	,	("2018-05-22 10-30-00", 5, "Tabletop Tonight", 0, 0, "0")
+	
+	,	("2018-03-03 08-30-00", 5, "The Dice Must Flow", 0, 0, "0")
+	,	("2018-03-31 08-30-00", 5, "The Dice Must Flow", 0, 0, "0")
+	,	("2018-04-28 08-30-00", 5, "The Dice Must Flow", 0, 0, "0")
+	,	("2018-05-26 08-30-00", 5, "The Dice Must Flow", 0, 0, "0")
+;
 
+-- Roleplay Events
+INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
+		("2018-03-01 16-30-00", 4, "Adventurers Anonymous", 0, 0, "0")
+	,	("2018-03-08 16-30-00", 4, "Adventurers Anonymous", 0, 0, "0")
+	,	("2018-03-15 16-30-00", 4, "Adventurers Anonymous", 0, 0, "0")
+	,	("2018-03-22 16-30-00", 4, "Adventurers Anonymous", 0, 0, "0")
+	,	("2018-03-29 16-30-00", 4, "Adventurers Anonymous", 0, 0, "0")
+	,	("2018-04-05 16-30-00", 4, "Adventurers Anonymous", 0, 0, "0")
+	,	("2018-04-12 16-30-00", 4, "Adventurers Anonymous", 0, 0, "0")
+	,	("2018-04-19 16-30-00", 4, "Adventurers Anonymous", 0, 0, "0")
+	,	("2018-04-26 16-30-00", 4, "Adventurers Anonymous", 0, 0, "0")
+	,	("2018-05-03 16-30-00", 4, "Adventurers Anonymous", 0, 0, "0")
+	,	("2018-05-10 16-30-00", 4, "Adventurers Anonymous", 0, 0, "0")
+	,	("2018-05-17 16-30-00", 4, "Adventurers Anonymous", 0, 0, "0")
+	,	("2018-05-24 16-30-00", 4, "Adventurers Anonymous", 0, 0, "0")
+;
 
+-- Workshop Events
+INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
+		("2018-03-14 16-30-00", 2, "GM Skill's Workshop", 0, 0, "0")
+	,	("2018-04-11 16-30-00", 2, "GM Skill's Workshop", 0, 0, "0")
+	,	("2018-05-09 16-30-00", 2, "GM Skill's Workshop", 0, 0, "0")
 
+-- 	,	("2018-03-07 16-30-00", 2, "Workshop", 0, 0, "0")
+-- 	,	("2018-03-21 16-30-00", 2, "Workshop", 0, 0, "0")
+-- 	,	("2018-04-04 16-30-00", 2, "Workshop", 0, 0, "0")
+-- 	,	("2018-04-18 16-30-00", 2, "Workshop", 0, 0, "0")
+-- 	,	("2018-05-02 16-30-00", 2, "Workshop", 0, 0, "0")
+-- 	,	("2018-05-16 16-30-00", 2, "Workshop", 0, 0, "0")
+;
 
+-- General Meetings
+INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
+		("2018-02-28 16-30-00", 3, "Semester General Meeting", 0, 0, "0")
+	,	("2018-03-28 16-30-00", 3, "Member News and Plannig Meeting", 0, 0, "0")
+	,	("2018-04-25 16-30-00", 3, "Member News and Plannig Meeting", 0, 0, "0")
+	,	("2018-05-23 16-30-00", 3, "Member News and Plannig Meeting", 0, 0, "0")
+;
 
-
+-- Other Events
+INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
+		("2018-03-30 10-30-00", 7, "Conquest: Easter Games Convention", 10, 0, "0")
+	,	("2018-05-04 10-30-00", 7, "May the 4th be with you", 0, 0, "0")
+;
 

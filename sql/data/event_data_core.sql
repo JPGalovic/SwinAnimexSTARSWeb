@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS EVENT_TYPE (
 INSERT INTO EVENT_TYPE (EVENT_TYPE_ID, EVENT_TYPE_DESCRIPTION) VALUES
 		(0, "Screening Session Event")
 	,	(1, "Social Episode Event")
-	,	(2, "Anime Workshop Event")
+	,	(2, "Workshop Event")
 	,	(3, "General Meeting")
 	,	(4, "Roleplay Event")
 	,	(5, "Tabletop Event")
@@ -37,9 +37,12 @@ CREATE TABLE IF NOT EXISTS EVENT_LOCATION (
 -- Data for Event Locations
 INSERT INTO EVENT_LOCATION (LOCATION_ID, CAMPUS, ROOM, ADDRESS, LAT, LNG, ZOOM) VALUES
 		(0, "Swinburne Hawthorn", NULL, "John St, Hawthorn VIC 3122", -37.822097, 145.038946, 17)
+		
 	,	(1, NULL, NULL, "Crown Entertainment Complex, 8 Whiteman St, Southbank VIC 3006", -37.824871, 144.958181, 17)
 	,	(2, NULL, NULL, "Sorrento Oceach Beach, Ocean Beach Road, Sorrento VIC 3943", -38.345876, 144.727014, 17)
 	,	(3, NULL, NULL, "Hawthorn Aquatic &amp; Leasure Center, 1 Grace St, Hawthorn VIC 3122", -37.820791, 145.034434, 17)
+	
+	,	(10, "Swinburne Hawthor", "ATC Building", "Burwood Rd, Hawthorn VIC 3122", -37.822622, 145.038361)
 	
 	
 	,	(404, "Swinburne Hawthorn", "AS404", "Applied Sciences Building, Burwood Road, Hawthorn Victoria 3122", -37.822571, 145.037619, 17)
@@ -139,13 +142,17 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 
 -- Roleplay Event Details
 INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, TICKETS) VALUES
-		("GM Skill's Workshop",
-		 "Do you want to learn to run your own adventure? Are you keen to become a Game Master? Then join us in these Exclusive Skill's Workshops! Running Each Month!",
+		("Adventurers Anonymous",
+		 "Are you tied of adventuring alone, with no one arround to have your back? Are you tired not having team mates to give you support? Come along to our Adventurers Anonymous meeting where our supportive groups we will help you find your way, and you can help other Adventerurs find their's",
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
 		 NULL
 		)
-	,	("Adventurers Anonymous",
-		 "Are you tied of adventuring alone, with no one arround to have your back? Are you tired not having team mates to give you support? Come along to our Adventurers Anonymous meeting where our supportive groups we will help you find your way, and you can help other Adventerurs find their's",
+;
+
+-- Workshop Event Details
+INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, TICKETS) VALUES
+		("GM Skill's Workshop",
+		 "Do you want to learn to run your own adventure? Are you keen to become a Game Master? Then join us in these Exclusive Skill's Workshops! Running Each Month!",
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
 		 NULL
 		)
