@@ -1,6 +1,4 @@
 <?php
-	// Card for display of Anime Screening Events, Version 1.1, JAN18, JPGalovic
-	// Flags: ignor_title_repeat, all titles are of evan if repeating
 	include('sql/events/get_anime_event_data.php');
 
 	if($get_anime_event_ok)
@@ -16,21 +14,14 @@
 			}
 			else
 			{
-				if(!$ignor_title_repeat)
+				if(in_array($anime_title, $used_titles))
 				{
-					if(in_array($anime_title, $used_titles))
-					{
-						$is_ok = false; // Title alredy shown, goto next;
-					}
-					else
-					{
-						$is_ok = true;
-						array_push($used_titles, $anime_title);
-					}
+					$is_ok = false; // Title alredy shown, goto next;
 				}
 				else
 				{
 					$is_ok = true;
+					array_push($used_titles, $anime_title);
 				}
 			}
 			
