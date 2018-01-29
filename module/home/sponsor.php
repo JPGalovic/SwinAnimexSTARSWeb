@@ -9,10 +9,7 @@
 
 		while($company_row = $get_company_data->fetch_assoc())
 		{
-			if($company_row['IS_SPONSOR'] == true)
-			{
-				echo('<a href="'.$company_row['COMPANY_URL'].'"><img src="image/sponsor/'.remove_illegal_char(strtolower($company_row['COMPANY_NAME'])).'.png" alt="'.$company_row['COMPANY_NAME'].'"/></a>');
-			}
+			echo('<a href="'.$company_row['COMPANY_URL'].'"><img src="image/sponsor/'.remove_illegal_char(strtolower($company_row['COMPANY_NAME'])).'.png" alt="'.$company_row['COMPANY_NAME'].'"/></a>');
 		}
 
 		echo('</span></article>');

@@ -10,6 +10,7 @@
 				echo('<p>');
 					echo('<h4>General Contact:</h4>');
 					echo('<br>Email: <a href="mailto:info@swinanime.net">info@swinanime.net</a>');
+					echo('<br>Phone: President - 0400 805 284 , Vice President - 0410 279 719');
 				echo('</p>');
 
 				echo('<p>');
