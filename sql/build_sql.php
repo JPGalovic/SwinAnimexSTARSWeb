@@ -57,7 +57,7 @@
 		,	'data/anime/madman/death_note_data.sql'
 	//	,	'data/anime/madman/death_note_data.sql'
 	//	,	'data/anime/madman/dog_and_sizors_data.sql'
-	//	,	'data/anime/madman/dot_hack_sign_data.sql'
+		,	'data/anime/madman/dot_hack_sign_data.sql'
 	//	,	'data/anime/madman/dragonar_academy_data.sql'
 	//	,	'data/anime/madman/dragonball_z_data.sql'
 	//	,	'data/anime/madman/eurika_seven_ao_data.sql'
@@ -148,9 +148,16 @@
 		,	'data/anime/siren/un-go_data.sql'
 	);
 
+	$game_data_array = array(
+			'data/game/game_company/game_company.sql'
+		,	'data/game/jamestown_data.sql'
+	);
+
 	$event_data_array = array(
 			'data/events/2018_summer.sql'
-	//	,	'data/events/2018_semester_1.sql'
+		,	'data/events/2018_semester_1.sql'
+	//	,	'data/events/2018_winter.sql'
+	//	,	'data/events/2018_semester_2.sql'
 	);
 
 	// Write Data to File
@@ -180,6 +187,14 @@
 	}
 
 	foreach ($siren_anime_data_array as $data_file)
+	{
+		$read_handle = fopen($data_file, 'r') or die("Cannot open file: ".$data_file);
+		$data = fread($read_handle, filesize($data_file));
+		fwrite($write_handle, $data);
+		fclose($read_handle);
+	}
+
+	foreach ($game_data_array as $data_file)
 	{
 		$read_handle = fopen($data_file, 'r') or die("Cannot open file: ".$data_file);
 		$data = fread($read_handle, filesize($data_file));
