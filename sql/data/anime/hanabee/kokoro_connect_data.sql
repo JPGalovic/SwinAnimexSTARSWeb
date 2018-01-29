@@ -115,7 +115,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 ;
 
 INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
-		("Kokoro Connect", 0, 1, 4)
-	,	("Kokoro Connect", 0, 2, 4)
-	,	("Kokoro Connect", 0, 3, 5)
+		("Kokoro Connect", 0, 1, 8)
+	,	("Kokoro Connect", 0, 2, 5)
+	,	("Kokoro Connect", 0, 3, 4)
 ;
