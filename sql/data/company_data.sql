@@ -59,5 +59,12 @@ INSERT INTO COMPANY (COMPANY_NAME, COMPANY_URL, IS_SPONSOR, FREE_MEMBER_BENIFIT,
 		 "All members are eleagble to recive a discount on purchaces.",
 		 NULL,
 		 "Show your membership card at time of purchace to claim your benifit")
+	,	("Pumpt Gym",
+		 "http://pumptgym.net/",
+		 TRUE,
+		 "All members are elevable to recive a special deal on Foundation Membership for just $16.95 per week.",
+		 NULL,
+		 "Simply visit Pumpt Gym and show your membership card when you sign up to their package!"
+		)
 ;
 
