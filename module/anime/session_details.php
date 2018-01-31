@@ -7,14 +7,24 @@
 			echo('<article class="flex_container" id="anime_details">');
 				echo('<header class="full">Sessions Details:</header>');
 			
+				if(!isset($session_id_type))
+					$session_id_type = 0;
+			
 				while($session_row = $get_session_data->fetch_assoc())
 				{
-					if(!isset($start_episode))
+					if(!isset($start_episode)) // Update Episode Counts
 						$start_episode = 1;
 					if(!isset($end_episode))
 						$end_episode = $session_row['NUMBER_OF_EPISODES'];
 					else
 						$end_episode += $session_row['NUMBER_OF_EPISODES'];
+					
+					if(!$session_id_type == $session_row['SESSION_TYPE_ID']) // Reset Episode Counts
+					{
+						$session_id_type == $session_row['SESSION_TYPE_ID'];
+						$start_episode = 1;
+						$end_episode = $session_row['NUMBER_OF_EPISODES'];
+					}
 						
 					// Session Card
 					echo('<section class="quater">');
