@@ -282,7 +282,7 @@ CREATE TABLE IF NOT EXISTS PLATFORM (
 INSERT INTO PLATFORM (PLATFORM_ID, PLATFORM_NAME, PLATFORM_DESCRIPTION) VALUES
 		(0, "Windows Game", "This game runs on Microsoft Windows.")
 	,	(1, "MAC Game", "This game runs on Apple Macontosh.")
-	,	(3, "Linux Game", "This game runs on Linux.")
+	,	(2, "Linux Game", "This game runs on Linux.")
 	
 	,	(10, "Board Game", "This game is a phisical board game.")
 	,	(11, "Card Game", "This game is a phisical card game.")
@@ -5986,9 +5986,9 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 ;
 
 INSERT INTO GAME_PLATFORM (GAME_TITLE, PLATFORM_ID) VALUES
-		("Jamestown: Legend of the Lost Colony", 1)
+		("Jamestown: Legend of the Lost Colony", 0)
+	,	("Jamestown: Legend of the Lost Colony", 1)
 	,	("Jamestown: Legend of the Lost Colony", 2)
-	,	("Jamestown: Legend of the Lost Colony", 3)
 	,	("Jamestown: Legend of the Lost Colony", 23)
 ;-- Summer A
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
