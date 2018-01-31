@@ -57,7 +57,7 @@
 		,	'data/anime/madman/death_note_data.sql'
 	//	,	'data/anime/madman/death_note_data.sql'
 	//	,	'data/anime/madman/dog_and_sizors_data.sql'
-	//	,	'data/anime/madman/dot_hack_sign_data.sql'
+		,	'data/anime/madman/dot_hack_sign_data.sql'
 	//	,	'data/anime/madman/dragonar_academy_data.sql'
 	//	,	'data/anime/madman/dragonball_z_data.sql'
 	//	,	'data/anime/madman/eurika_seven_ao_data.sql'
@@ -155,7 +155,9 @@
 
 	$event_data_array = array(
 			'data/events/2018_summer.sql'
-	//	,	'data/events/2018_semester_1.sql'
+		,	'data/events/2018_semester_1.sql'
+	//	,	'data/events/2018_winter.sql'
+	//	,	'data/events/2018_semester_2.sql'
 	);
 
 	// Write Data to File
