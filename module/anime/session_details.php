@@ -9,6 +9,13 @@
 			
 				while($session_row = $get_session_data->fetch_assoc())
 				{
+					if(!isset($start_episode))
+						$start_episode = 1;
+					if(!isset($end_episode))
+						$end_episode = $session_row['NUMBER_OF_EPISODES'];
+					else
+						$end_episode += $session_row['NUMBER_OF_EPISODES'];
+						
 					// Session Card
 					echo('<section class="quater">');
 					
@@ -16,8 +23,14 @@
 					
 						echo('<p>Session Number: '.$session_row['SESSION_NUMBER'].'</p>');
 						echo('<p>Session Type: '.$session_row['SESSION_TYPE_DESCRIPTION'].'</p>');
+						echo('<p>Number of Episodes: '.$session_row['NUMBER_OF_EPISODES'].'</p>');
+						echo('<p>Start Episode Number: '.$start_episode.'</p>');
+						echo('<p>End Episode Number: '.$end_episode.'</p>');
+						
 					
 					echo('</section>');
+					
+					$start_episode += $session_row['NUMBER_OF_EPISODES'];
 				}
 			
 			echo('</article>');
