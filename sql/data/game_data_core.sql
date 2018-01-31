@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS PLATFORM (
 INSERT INTO PLATFORM (PLATFORM_ID, PLATFORM_NAME, PLATFORM_DESCRIPTION) VALUES
 		(0, "Windows Game", "This game runs on Microsoft Windows.")
 	,	(1, "MAC Game", "This game runs on Apple Macontosh.")
-	,	(3, "Linux Game", "This game runs on Linux.")
+	,	(2, "Linux Game", "This game runs on Linux.")
 	
 	,	(10, "Board Game", "This game is a phisical board game.")
 	,	(11, "Card Game", "This game is a phisical card game.")

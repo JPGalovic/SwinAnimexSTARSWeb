@@ -11,8 +11,8 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 ;
 
 INSERT INTO GAME_PLATFORM (GAME_TITLE, PLATFORM_ID) VALUES
-		("Jamestown: Legend of the Lost Colony", 1)
+		("Jamestown: Legend of the Lost Colony", 0)
+	,	("Jamestown: Legend of the Lost Colony", 1)
 	,	("Jamestown: Legend of the Lost Colony", 2)
-	,	("Jamestown: Legend of the Lost Colony", 3)
 	,	("Jamestown: Legend of the Lost Colony", 23)
 ;
