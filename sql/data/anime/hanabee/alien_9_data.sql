@@ -2,7 +2,7 @@
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("ALIEN 9",
 		 4,
-		 "In sixth grade Yuri just wants to end her last year in elementary school on a quiet note...not as a member of the 'Alien Party'. The objective of the 'Alien Party' is to capture any rogue aliens that wonder on to the school premises. However to capture these aliens you need the help of one, called a "Borg". A symbiotic life-form that offers the ability to protect, incapacitate and ultimately capture other aliens in compensation for being able to feed off their wastes by licking their back.",
+		 "In sixth grade Yuri just wants to end her last year in elementary school on a quiet note...not as a member of the 'Alien Party'. The objective of the 'Alien Party' is to capture any rogue aliens that wonder on to the school premises. However to capture these aliens you need the help of one, called a &quot;Borg&quot;. A symbiotic life-form that offers the ability to protect, incapacitate and ultimately capture other aliens in compensation for being able to feed off their wastes by licking their back.",
 		 "In sixth grade Yuri just wants to end her last year in elementary school on a quiet note...not as a member of the 'Alien Party'.",
 		 "hanabee",
 		 "&copy; J.C. STAFF"
