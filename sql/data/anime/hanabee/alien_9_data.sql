@@ -11,8 +11,8 @@ INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIP
 
 INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
 		("ALIEN 9",
-		 n,
-		 m,
+		 3,
+		 4,
 		 "M - fantasy themes and violence",
 		 4,
 		 "https://hanabee.com.au/products/alien-9-dvd"
@@ -23,22 +23,22 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 		("ALIEN 9",
 		 1,
 		 "9th Elementary Anti-Alien Squad",
-		 ""
+		 NULL
 		)
 	,	("ALIEN 9",
 		 2,
 		 "Boredom, Spaceship and Overgrowth",
-		 ""
+		 NULL
 		)
 	,	("ALIEN 9",
 		 3,
 		 "Summer Vacation, Borg and Death",
-		 ""
+		 NULL
 		)
 	,	("ALIEN 9",
 		 4,
 		 "The End of the Beginning",
-		 ""
+		 NULL
 		)
 ;
 
