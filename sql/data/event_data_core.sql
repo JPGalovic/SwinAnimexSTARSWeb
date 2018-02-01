@@ -26,6 +26,8 @@ INSERT INTO EVENT_TYPE (EVENT_TYPE_ID, EVENT_TYPE_DESCRIPTION) VALUES
 CREATE TABLE IF NOT EXISTS EVENT_LOCATION (
 		LOCATION_ID						INT(11)
 	,	CAMPUS							VARCHAR(30)
+	,	BUILDING						VARCHAR(50)
+	,	BLDG							VARCHAR(50)
 	,	ROOM							VARCHAR(10)
 	,	ADDRESS							VARCHAR(150)
 	,	LAT								FLOAT(53)
@@ -35,17 +37,62 @@ CREATE TABLE IF NOT EXISTS EVENT_LOCATION (
 );
 
 -- Data for Event Locations
-INSERT INTO EVENT_LOCATION (LOCATION_ID, CAMPUS, ROOM, ADDRESS, LAT, LNG, ZOOM) VALUES
-		(0, "Swinburne Hawthorn", NULL, "John St, Hawthorn VIC 3122", -37.822097, 145.038946, 17)
+INSERT INTO EVENT_LOCATION (LOCATION_ID, CAMPUS, BUILDING, BLDG, ROOM, ADDRESS, LAT, LNG, ZOOM) VALUES
+-- Default Location
+		(0, "Swinburne Hawthorn", NULL, NULL, NULL, "John St, Hawthorn VIC 3122", -37.822097, 145.038946, 17)
 		
-	,	(1, NULL, NULL, "Crown Entertainment Complex, 8 Whiteman St, Southbank VIC 3006", -37.824871, 144.958181, 17)
-	,	(2, NULL, NULL, "Sorrento Oceach Beach, Ocean Beach Road, Sorrento VIC 3943", -38.345876, 144.727014, 17)
-	,	(3, NULL, NULL, "Hawthorn Aquatic &amp; Leasure Center, 1 Grace St, Hawthorn VIC 3122", -37.820791, 145.034434, 17)
+-- Social Event Locations
+	,	(1, NULL, NULL, NULL, NULL, "Crown Entertainment Complex, 8 Whiteman St, Southbank VIC 3006", -37.824871, 144.958181, 17)
+	,	(2, NULL, NULL, NULL, NULL, "Sorrento Oceach Beach, Ocean Beach Road, Sorrento VIC 3943", -38.345876, 144.727014, 17)
+	,	(3, NULL, NULL, NULL, NULL, "Hawthorn Aquatic &amp; Leasure Center, 1 Grace St, Hawthorn VIC 3122", -37.820791, 145.034434, 17)
+
+-- Swinburne Buildings
+	,	(10, "Swinburne Hawthorn", "1 Alfred St", "1A", NULL, NULL, -37.821312, 145.036710, 17)
+	,	(11, "Swinburne Hawthorn", "6 Luton Lane", "6L", NULL, NULL, -37.823123, 145.034180, 17)
+	,	(12, "Swinburne Hawthorn", "10 George St", "10G", NULL, NULL, -37.822398, 145.041155, 17)
+	,	(13, "Swinburne Hawthorn", "21 Wakefield St", "21W", NULL, NULL, -37.820553, 145.037500, 17)
+	,	(14, "Swinburne Hawthorn", "24 George St", "24G", NULL, NULL, -37.822523, 145.041615, 17)
+	,	(15, "Swinburne Hawthorn", "32 Park St", "32P", NULL, NULL, -37.820231, 145.037879, 17)
+	,	(16, "Swinburne Hawthorn", "400 Burwood Rd", "400B", NULL, NULL, -0, 0, 17)
+	,	(17, "Swinburne Hawthorn", "60 William St", "60W", NULL, NULL, -37.822484, 145.039690, 17)
+	,	(18, "Swinburne Hawthorn", "Old Administation Building", "AD", NULL, NULL, -37.822108, 145.038748, 17)
+	,	(19, "Swinburne Hawthorn", "Advanced Manufactoring &amp; Design Center", "ADMC", NULL, NULL, -37.822836, 145.039238, 17)
+	,	(20, "Swinburne Hawthorn", "Advanced Tachnologies Center", "ATC", NULL, NULL, -37.822650, 145.038374, 17)
+	,	(21, "Swinburne Hawthorn", "Applied Sciences Building", "AS", NULL, NULL, -37.822569, 145.037458, 17)
+	,	(22, "Swinburne Hawthorn", "Arts Building", "AR", NULL, NULL, -37.821895, 145.038257, 17)
+	,	(23, "Swinburne Hawthorn", "Australian Gradurate School of Entrepreneurship", "AGSE", NULL, NULL, -37.821347, 145.039471, 17)
+	,	(24, "Swinburne Hawthorn", "Aviation Building", "AV", NULL, NULL, -37.823183, 145.041905, 17)
+	,	(25, "Swinburne Hawthorn", "Business &amp; Arts Building", "BA", NULL, NULL, -37.822084, 145.039406, 17)
+	,	(26, "Swinburne Hawthorn", "Chemistry Building", "CH", NULL, NULL, -37.822656, 145.037855, 17)
+	,	(27, "Swinburne Hawthorn", "Engineering Building", "EN", NULL, NULL, -37.822232, 145.037801, 17)
+	,	(28, "Swinburne Hawthorn", "Engineering - West Building", "EW", NULL, NULL, -37.821982, 145.037454, 17)
+	,	(29, "Swinburne Hawthorn", "IS Building", "IS", NULL, NULL, -37.822889, 145.041926, 17)
+	,	(30, "Swinburne Hawthorn", "Library", "LB", NULL, NULL, -37.822454, 145.039211, 17)
+	,	(31, "Swinburne Hawthorn", "Multi-Deck Car Park", "19W", NULL, NULL, -37.820274, 145.037089, 17)
+	,	(32, "Swinburne Hawthorn", "Science Annexe", "SA", NULL, NULL, -37.822234, 145.037370, 17)
+	,	(33, "Swinburne Hawthorn", "SR Building", "SR", NULL, NULL, -37.821547, 145.038823, 17)
+	,	(34, "Swinburne Hawthorn", "Swinburne Place - South Building", "SPS", NULL, NULL, -37.821287, 145.037873, 17)
+	,	(35, "Swinburne Hawthorn", "Swinburne Place - West Building", "SPW", NULL, NULL, -37.820983, 145.037167, 17)
+	,	(36, "Swinburne Hawthorn", "TA Building", "TA", NULL, NULL, -37.820942, 145.038965, 17)
+	,	(37, "Swinburne Hawthorn", "TB Building", "TB", NULL, NULL, -37.821019, 145.039434, 17)
+	,	(38, "Swinburne Hawthorn", "TC Building", "TC", NULL, NULL, -37.820580, 145.039464, 17)
+	,	(39, "Swinburne Hawthorn", "TD Building", "TD", NULL, NULL, -37.820500, 145.039075, 17)
+	,	(40, "Swinburne Hawthorn", "The George Swinburne Building", "GS", NULL, NULL, -37.821353, 145.038488, 17)
+	,	(41, "Swinburne Hawthorn", "UN Building", "UN", NULL, NULL, -37.822524, 145.038599, 17)
 	
-	,	(10, "Swinburne Hawthorn", "ATC Building", "Burwood Rd, Hawthorn VIC 3122", -37.822622, 145.038361, 17)
+-- Specific Rooms
+	,	(18108, "Swinburne Hawthorn", "Old Administation Building", "AD", "AD108", NULL, -37.822108, 145.038748, 17)
 	
+	,	(21404, "Swinburne Hawthorn", "Applied Sciences Building", "AS", "AS404", NULL, -37.822569, 145.037458, 17)
 	
-	,	(404, "Swinburne Hawthorn", "AS404", "Applied Sciences Building, Burwood Road, Hawthorn Victoria 3122", -37.822571, 145.037619, 17)
+	,	(36212, "Swinburne Hawthorn", "TA Building", "TA", "TA212", NULL, -37.820942, 145.038965, 17)
+	
+	,	(37220, "Swinburne Hawthorn", "TB Building", "TB", :"TB220", NULL, -37.821019, 145.039434, 17)
+	
+	,	(39317, "Swinburne Hawthorn", "TD Building", "TD", "TD317", NULL, -37.820500, 145.039075, 17)
+	
+	,	(40217, "Swinburne Hawthorn", "The George Swinburne Building", "GS", "GS217", NULL, -37.821353, 145.038488, 17)
+	
 ;
 
 -- Table for Event Details (MISC)
