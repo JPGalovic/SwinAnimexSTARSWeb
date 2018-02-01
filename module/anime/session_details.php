@@ -19,9 +19,9 @@
 					else
 						$end_episode += $session_row['NUMBER_OF_EPISODES'];
 					
-					if(!$session_id_type == $session_row['SESSION_TYPE_ID']) // Reset Episode Counts
+					if($session_id_type != $session_row['SESSION_TYPE_ID']) // Reset Episode Counts
 					{
-						$session_id_type == $session_row['SESSION_TYPE_ID'];
+						$session_id_type = $session_row['SESSION_TYPE_ID'];
 						$start_episode = 1;
 						$end_episode = $session_row['NUMBER_OF_EPISODES'];
 					}
