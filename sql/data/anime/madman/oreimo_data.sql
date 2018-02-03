@@ -19,13 +19,12 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		)
 ;
 
-INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_Oreimo, EPISODE_SYNOPSYS) VALUES
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
 		("Oreimo",
 		 1,
 		 "There's No Way I Could Love My Sister",
 		 "After bumping into his little sister, Kirino, in the hall, Kyosuke Kosaka finds a magical girl anime DVD which contains a little-sister themed eroge &#40;erotic game&#41; inside. Kyosuke soon learns the game belongs to Kirino and confronts her about it, though says she would not be weird for having such a hobby and would offer his advice any time. Later that night, Kirino brings Kyosuke into her room, where she reveals her secret stash of erotic games and anime, explaining that she loves little sister types, though is unable to explain how she got into it. Having not had anyone to share her hobby with, Kirino gets Kyosuke, who promises to keep her obsession a secret from their parents, to play through one of her eroge for an unbiased opinion. "
 		)
-;
 	,	("Oreimo",
 		 2,
 		 "There's No Way I'd Go to an IRL Meetup with My Sister",
