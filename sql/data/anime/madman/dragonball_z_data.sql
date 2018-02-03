@@ -11,11 +11,18 @@ INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIP
 
 INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
 		("Dragon Ball Z Remastered Uncut Season 1",
-		 1,
+		 3,
 		 1,
 		 "PG-Mild animated violence",
 		 39,
 		 "https://www.madman.com.au/catalogue/view/7965"
+	,	("Dragon Ball Z Remastered Uncut Season 1",
+		 4,
+		 1,
+		 "PG-Mild animated violence",
+		 39,
+		 "https://www.madman.com.au/catalogue/view/21995/dragon-ball-z-season-1-bluray"
+		)
 ;
 
 INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
