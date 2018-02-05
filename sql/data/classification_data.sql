@@ -55,6 +55,7 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("M - Mature themes, drug references, sexual references and animated violence")
 	,	("M - Mature themes, mild violence")
 	,	("M - Mature themes, sexual references and coarse language")
+	,	("M - Mature themes and supernatural violence")
 	,	("M - Medium level violence")
 	,	("M - Moderate violence, drug use")
 	,	("M - Nudity")
