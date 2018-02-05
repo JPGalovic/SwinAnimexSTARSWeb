@@ -5,15 +5,15 @@
 ├───────┬──────┬─────────────────────────────────────────┬────────────────┤
 │ Time  │ Ep # │ Episode Title                           │ Staff          │
 ├───────┼──────┼─────────────────────────────────────────┼────────────────┤
-│ 11:30 │ 8    │ Even If Your Love is a Lie...           │                │
-│ 11:30 │ 9    │ The World of Ice                        │                │
-│ 11:30 │ 10   │ Because I Love Him                      │                │
-│ 11:30 │ 11   │ You Have Finally Realized It            │                │
+│ 11:30 │ 1    │ The Bell of Fate Tolls                  │                │
+│ 12:00 │ 2    │ Risky Survival Strategy                 │                │
+│ 12:30 │ 3    │ Then Devour Me Courageously             │                │
+│ 13:00 │ 4    │ That's Why I Do That                    │                │
 ├───────┼──────┼─────────────────────────────────────────┼────────────────┤
-│ 11:30 │      │ Meal Break                              │                │
+│ 13:30 │      │ Meal Break                              │                │
 ├───────┼──────┼─────────────────────────────────────────┼────────────────┤
-│ 11:30 │ 12   │ The Wheel That Spins Us Round           │                │
-│ 11:30 │ 13   │ Our Crime & Punishment                  │                │
-│ 11:30 │ 14   │ Princess of Lies                        │                │
-│ 11:30 │ 15   │ Saving the World                        │                │
+│ 14:30 │ 5    │ You & I Are Connected by M              │                │
+│ 15:00 │ 6    │ You & I Are Connected by M              │                │
+│ 15:30 │ 7    │ Tamahomare Girl                         │                │
+│ 16:00 │ 8    │ Even If Your Love is a Lie...           │                │
 └───────┴──────┴─────────────────────────────────────────┴────────────────┘

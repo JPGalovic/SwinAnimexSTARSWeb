@@ -70,6 +70,8 @@
 			
 			include('../../sql/anime/episode/get_runsheet_episode_data.php');
 			
+			$clock = strtotime($event_time);
+			
 			if($get_runsheet_episode_data->num_rows > 0)
 			{
 				$repeat = 0;
@@ -98,9 +100,10 @@
 						for($i= 39 - strlen($episode_title); $i > 0; $i--)
 							$episode_title_whitespace = $episode_title_whitespace.' ';
 						
-						fwrite($output_handle, '│ '.date('H:i', strtotime($event_time)).' │ '.$episode_number.$episode_number_whitespace.' │ '.$episode_title.$episode_title_whitespace.' │                │'.$newln);
+						fwrite($output_handle, '│ '.date('H:i', $clock).' │ '.$episode_number.$episode_number_whitespace.' │ '.$episode_title.$episode_title_whitespace.' │                │'.$newln);
 						
-						//TODO Add 30min to time.
+						// Add 30min to time.
+						$clock = strtotime("+30 minutes",$clock);
 						
 						$number_of_episodes--;
 					}
@@ -112,16 +115,18 @@
 						
 						
 						fwrite($output_handle, '├───────┼──────┼─────────────────────────────────────────┼────────────────┤'.$newln);
-						fwrite($output_handle, '│ '.date('H:i', strtotime($event_time)).' │      │ Meal Break                              │                │'.$newln);
+						fwrite($output_handle, '│ '.date('H:i', $clock).' │      │ Meal Break                              │                │'.$newln);
 						fwrite($output_handle, '├───────┼──────┼─────────────────────────────────────────┼────────────────┤'.$newln);
 						
 						if($shortened)
 						{
-							//TODO Add 30min to time.
+							// Add 30min to time.
+							$clock = strtotime("+30 minutes",$clock);
 						}
 						else
 						{
-							//TODO Add 60min to time.
+							// Add 60min to time.
+							$clock = strtotime("+60 minutes",$clock);
 						}
 					}
 					else
