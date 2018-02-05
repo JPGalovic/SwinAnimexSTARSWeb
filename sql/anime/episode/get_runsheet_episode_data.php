@@ -10,7 +10,7 @@
 	}
 	else
 	{
-		$get_runsheet_episode_query = 'SELECT EPISODE_NUMBER, EPISODE_TITLE FROM ANIME_EPISODE WHERE ANIME_TITLE = "'.$anime_title.'" AND EPISODE_NUMBER >= "'.$number_of_episodes.'" LIMIT '.$number_of_episodes;
+		$get_runsheet_episode_query = 'SELECT EPISODE_NUMBER, EPISODE_TITLE FROM ANIME_EPISODE WHERE ANIME_TITLE = "'.$anime_title.'" AND EPISODE_NUMBER >= "'.$first_episode.'" LIMIT '.$number_of_episodes;
 		
 		if(!$get_runsheet_episode_data = $DB->query($get_runsheet_episode_query))
 		{
