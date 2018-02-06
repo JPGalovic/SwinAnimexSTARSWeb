@@ -558,6 +558,32 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
 		 NULL
 		)
+		
+	,	("Scene Planning and Blocking Workshop",
+		 "The first step in producing aniation is to plan and block out the scenes, in this workshop we go over both classic and modern methods.",
+		 NULL,
+		 NULL
+		)
+	,	("Drawing Workshop",
+		 "Now that our project is planned out, its time to start with designing our characters, sets and drawing key-frames for our Anamation! This workshop will help to develop your hand drawing skills as well as indtroduce you to methods for vectoring and digital software.",
+		 NULL,
+		 NULL
+		)
+	,	("Anamation Workshop",
+		 "The next step is to actully create the slides for the anamation, using both traditional and modern techniques, by hand and digital, ",
+		 NULL,
+		 NULL
+		)
+	,	("Voice Acting Workshop",
+		 "Next, give the anamation a voice, in this workshop we explore techniques used by clasic animation to give your characters a voice.",
+		 NULL,
+		 NULL
+		)
+	,	("Music and Sound Effects Workshop",
+		 "Finally, the adtion of Music and procution of sound effects in both the modern and traditional manner, this completing our project!",
+		 NULL,
+		 NULL
+		)
 ;
 
 -- General Meeting Details
@@ -6641,12 +6667,13 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 	,	("2018-04-11 16-30-00", 2, "GM Skill's Workshop", 36212, 0, "0")
 	,	("2018-05-09 16-30-00", 2, "GM Skill's Workshop", 18108, 0, "0")
 
--- 	,	("2018-03-07 16-30-00", 2, "Workshop", 18108, 0, "0")
--- 	,	("2018-03-21 16-30-00", 2, "Workshop", 18108, 0, "0")
--- 	,	("2018-04-04 16-30-00", 2, "Workshop", 36212, 0, "0")
--- 	,	("2018-04-18 16-30-00", 2, "Workshop", 18108, 0, "0")
--- 	,	("2018-05-02 16-30-00", 2, "Workshop", 18108, 0, "0")
--- 	,	("2018-05-16 16-30-00", 2, "Workshop", 18108, 0, "0")
+ 	,	("2018-03-07 16-30-00", 2, "Scene Planning and Blocking Workshop", 18108, 0, "0")
+ 	,	("2018-03-21 16-30-00", 2, "Drawing Workshop", 18108, 0, "0")
+ 	,	("2018-04-04 16-30-00", 2, "Anamation Workshop", 36212, 0, "0")
+ 	,	("2018-04-18 16-30-00", 2, "Voice Acting Workshop", 18108, 0, "0")
+ 	,	("2018-05-02 16-30-00", 2, "Music and Sound Effects Workshop", 18108, 0, "0")
+
+-- 	,	("2018-05-16 16-30-00", 2, "Trivia", 18108, 0, "0")
 ;
 
 -- General Meetings
