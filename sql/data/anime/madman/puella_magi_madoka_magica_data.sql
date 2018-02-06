@@ -45,6 +45,13 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		 4,
 		 "https://www.madman.com.au/catalogue/view/17326/puella-magi-madoka-magica-vol-02-bluray"
 		)
+	,	("Puella Magi Madoka Magica",
+		 0,
+		 1,
+		 "M - Mature themes and supernatural violence",
+		 12,
+		 "https://www.animelab.com/shows/puella-magi-madoka-magica"
+		)
 ;
 
 INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
