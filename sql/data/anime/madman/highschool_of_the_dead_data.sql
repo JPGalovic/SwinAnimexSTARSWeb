@@ -24,6 +24,13 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		 12,
 		 "https://www.madman.com.au/catalogue/view/14227/high-school-of-the-dead-collection"
 		)
+	,	("Highschool of the dead",
+		 0,
+		 1,
+		 "MA15+ - Strong animated violence and sexual references",
+		 12,
+		 "https://www.animelab.com/shows/high-school-of-the-dead"
+		)
 	
 ;
 
