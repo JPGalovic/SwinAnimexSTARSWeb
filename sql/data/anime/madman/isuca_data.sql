@@ -17,6 +17,13 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		 10,
 		 "https://www.madman.com.au/catalogue/view/31734"
 		)
+	,   ("Isuca",
+		 0,
+		 1,
+		 "MA15+ - Strong themes, animated violence, sexual references and frequent animated nudity",
+		 10,
+		 "https://www.animelab.com/shows/isuca"
+		)
 ;
 
 INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
