@@ -17,6 +17,13 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		 12,
 		 "https://www.madman.com.au/catalogue/view/31732/kancolle-kantai-collection-complete-series#"
 		)
+	    ("Kancolle",
+		 0,
+		 1,
+		 "PG - Mild fantasy themes, animated violence and nudity, sexual references and coarse language",
+		 12,
+		 "https://www.animelab.com/shows/kancolle"
+		)
 ;
 
 INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
