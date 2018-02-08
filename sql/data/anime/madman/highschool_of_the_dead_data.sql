@@ -4,7 +4,7 @@ INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIP
 		 12,
 		 "A deadly new disease is ravaging the world, turning the populace into mindless zombies, and the number of infected is skyrocketing by the second. As their fellow classmates and teachers succumb to the infection around them, a small group of students at Fujimi High School are fighting for their lives after surviving the initial outbreak. It is up to Takashi Komuro to unite the group of weary survivors and try to escape the horrors that surround them. In this new world of the living dead…will they escape? ",
 		 "A deadly new disease is ravaging the world, turning the populace into mindless zombies, and the number of infected is skyrocketing by the second.",
-		 "madman",
+		 "Madman",
 		 "&copy;SATO DAISUKE - SATO SHOJI &#47; FUJIMI SHOBO &#47; H.O.T.D Project"
 		)
 ;
