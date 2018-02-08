@@ -13,21 +13,21 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		("Berserk",
 		 4,
 		 1,
-		 "MA15+ - Strong animated violence and adult theme",
+		 "MA15+ - Strong animated violence and adult themes",
 		 25,
 		 "https://www.madman.com.au/catalogue/view/37380/berserk-complete-series-bluray-limited-edition"
 		)
 	,	("Berserk",
 		 3,
 		 1,
-		 "MA15+ - Strong animated violence and adult theme",
+		 "MA15+ - Strong animated violence and adult themes",
 		 25,
 		 "https://www.madman.com.au/catalogue/view/3213/berserk-collection"
 		)
 	,	("Berserk",
 		 0,
 		 1,
-		 "MA15+ - Strong animated violence and adult theme",
+		 "MA15+ - Strong animated violence and adult themes",
 		 25,
 		 "https://www.animelab.com/shows/berserk"
 		)
