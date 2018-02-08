@@ -13,21 +13,21 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		("Gangsta",
 		 4,
 		 1,
-		 "MA15 - Strong animated violence",
+		 "MA15+ - Strong animated violence",
 		 12,
 		 "https://www.madman.com.au/catalogue/view/39078"
 		)
 	,	("Gangsta",
 		 3,
 		 1,
-		 "MA15 - Strong animated violence",
+		 "MA15+ - Strong animated violence",
 		 12,
 		 "https://www.madman.com.au/catalogue/view/34331/gangsta-complete-season-1"
 		)
 	,	("Gangsta",
 		 0,
 		 1,
-		 "MA15 - Strong animated violence",
+		 "MA15+ - Strong animated violence",
 		 12,
 		 "https://www.animelab.com/shows/gangsta"
 		)
