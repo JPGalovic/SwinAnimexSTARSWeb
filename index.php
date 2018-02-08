@@ -1,8 +1,10 @@
 <?php
+	// Main Index Page Builder, Version 1.4.2, FEB18, JPGalovic
 	// Include Required Code-Gen
 	include('code_gen/sql_login.php'); // Login and open connection to database
 	include('code_gen/misc_var.php'); // Include Global Variables
 	include('code_gen/process/remove_illegal_char.php'); // Include Fuctions for removal of illegal characters
+	include('code_gen/program/auto_version_control.php'); // Include Funtions for Auto Version Updateing & Cashe Bursting.
 
 	// Get page from url
 	$page = 'home';
@@ -18,7 +20,7 @@
 		echo('<meta charset="utf-8">');
 		echo('<meta name="viewport" content="width=device-width, initial-scale=1">');
 		echo('<title>SwinAnime</title>');
-		echo('<link href="css/main.css" rel="stylesheet" type="text/css">');
+		echo('<link href="'.auto_version('css/main.css').'" rel="stylesheet" type="text/css">');
 		echo('<link href="image/icon.png" rel="icon">');
 	echo('</head>');
 
