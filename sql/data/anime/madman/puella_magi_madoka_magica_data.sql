@@ -131,22 +131,3 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("Puella Magi Madoka Magica", 0, 3, 4)
 	,	("Puella Magi Madoka Magica", 3, 1, 2)
 ;
-		
--- General Anime Volume Data
-	,	("Puella Magi Madoka Magica",
-		 n,
-		 m,
-		 "Classification",
-		 x,
-		 "URL"
-		)
-		
--- General Anime Episode Data
-	,	("Puella Magi Madoka Magica",
-		 n,
-		 "Episode_Title",
-		 "Episode_Synopsys"
-		)
-		
--- General Anime Session Data
-	,	("Puella Magi Madoka Magica", x, y, z)
