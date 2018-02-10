@@ -1,16 +1,16 @@
 -- Summer A
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
-		("2018-01-05 11-30-00", 0, "Summer Sessions", 404, 1782517088487445, "0")
-	,	("2018-01-12 11-30-00", 0, "Summer Sessions", 404, 0, "0")
-	,	("2018-01-19 11-30-00", 0, "Summer Sessions", 404, 0, "0")
+		("2018-01-05 11-30-00", 0, "Summer Sessions", 21404, 1782517088487445, "0")
+	,	("2018-01-12 11-30-00", 0, "Summer Sessions", 21404, 0, "0")
+	,	("2018-01-19 11-30-00", 0, "Summer Sessions", 21404, 0, "0")
 	
-	,	("2018-01-05 16-30-00", 0, "Summer Sessions", 404, 171260956940198, "0")
-	,	("2018-01-12 16-30-00", 0, "Summer Sessions", 404, 0, "0")
-	,	("2018-01-19 16-30-00", 0, "Summer Sessions", 404, 0, "0")
+	,	("2018-01-05 16-30-00", 0, "Summer Sessions", 21404, 171260956940198, "0")
+	,	("2018-01-12 16-30-00", 0, "Summer Sessions", 21404, 0, "0")
+	,	("2018-01-19 16-30-00", 0, "Summer Sessions", 21404, 0, "0")
 	
-	,	("2018-01-05 19-30-00", 0, "Summer After Dark", 404, 565658880444133, "0")
-	,	("2018-01-12 19-30-00", 0, "Summer After Dark", 404, 0, "0")
-	,	("2018-01-19 19-30-00", 0, "Summer After Dark", 404, 0, "0")
+	,	("2018-01-05 19-30-00", 0, "Summer After Dark", 21404, 565658880444133, "0")
+	,	("2018-01-12 19-30-00", 0, "Summer After Dark", 21404, 0, "0")
+	,	("2018-01-19 19-30-00", 0, "Summer After Dark", 21404, 0, "0")
 ;
 
 INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
@@ -29,11 +29,11 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 
 -- Summer Showcase A
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
-		("2018-01-08 14-30-00", 0, "Summer Showcase", 404, 0, "0")
-	,	("2018-01-08 15-30-00", 0, "Summer Showcase", 404, 0, "0")
+		("2018-01-08 14-30-00", 0, "Summer Showcase", 21404, 0, "0")
+	,	("2018-01-08 15-30-00", 0, "Summer Showcase", 21404, 0, "0")
 	
-	,	("2018-01-15 14-30-00", 0, "Summer Showcase", 404, 0, "0")
-	,	("2018-01-15 15-30-00", 0, "Summer Showcase", 404, 0, "0")
+	,	("2018-01-15 14-30-00", 0, "Summer Showcase", 21404, 0, "0")
+	,	("2018-01-15 15-30-00", 0, "Summer Showcase", 21404, 0, "0")
 ;
 
 INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES	
@@ -46,17 +46,17 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 
 -- Summer B
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
-		("2018-01-26 11-30-00", 0, "Summer Sessions", 404, 0, "0")
-	,	("2018-02-02 11-30-00", 0, "Summer Sessions", 404, 0, "0")
-	,	("2018-02-09 11-30-00", 0, "Summer Sessions", 404, 0, "0")
+		("2018-01-26 11-30-00", 0, "Summer Sessions", 21404, 0, "0")
+	,	("2018-02-02 11-30-00", 0, "Summer Sessions", 21404, 0, "0")
+	,	("2018-02-09 11-30-00", 0, "Summer Sessions", 21404, 0, "0")
 	
-	,	("2018-01-26 16-30-00", 0, "Summer Sessions", 404, 0, "0")
-	,	("2018-02-02 16-30-00", 0, "Summer Sessions", 404, 0, "0")
-	,	("2018-02-09 16-30-00", 0, "Summer Sessions", 404, 0, "0")
+	,	("2018-01-26 16-30-00", 0, "Summer Sessions", 21404, 0, "0")
+	,	("2018-02-02 16-30-00", 0, "Summer Sessions", 21404, 0, "0")
+	,	("2018-02-09 16-30-00", 0, "Summer Sessions", 21404, 0, "0")
 	
-	,	("2018-01-26 19-30-00", 0, "Summer After Dark", 404, 0, "0")
-	,	("2018-02-02 19-30-00", 0, "Summer After Dark", 404, 0, "0")
-	,	("2018-02-09 19-30-00", 0, "Summer After Dark", 404, 0, "0")
+	,	("2018-01-26 19-30-00", 0, "Summer After Dark", 21404, 0, "0")
+	,	("2018-02-02 19-30-00", 0, "Summer After Dark", 21404, 0, "0")
+	,	("2018-02-09 19-30-00", 0, "Summer After Dark", 21404, 0, "0")
 ;
 
 INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
@@ -75,14 +75,14 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 
 -- Summer Showcase B
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
-		("2018-01-22 14-30-00", 0, "Summer Showcase", 404, 0, "0")
-	,	("2018-01-22 15-30-00", 0, "Summer Showcase", 404, 0, "0")
+		("2018-01-22 14-30-00", 0, "Summer Showcase", 21404, 0, "0")
+	,	("2018-01-22 15-30-00", 0, "Summer Showcase", 21404, 0, "0")
 	
-	,	("2018-01-29 14-30-00", 0, "Summer Showcase", 404, 0, "0")
-	,	("2018-01-29 15-30-00", 0, "Summer Showcase", 404, 0, "0")
+	,	("2018-01-29 14-30-00", 0, "Summer Showcase", 21404, 0, "0")
+	,	("2018-01-29 15-30-00", 0, "Summer Showcase", 21404, 0, "0")
 	
-	,	("2018-02-05 14-30-00", 0, "Summer Showcase", 404, 0, "0")
-	,	("2018-02-05 15-30-00", 0, "Summer Showcase", 404, 0, "0")
+	,	("2018-02-05 14-30-00", 0, "Summer Showcase", 21404, 0, "0")
+	,	("2018-02-05 15-30-00", 0, "Summer Showcase", 21404, 0, "0")
 ;
 	
 INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES

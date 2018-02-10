@@ -1,16 +1,16 @@
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
-		("Title",
-		 n,
+		("Absoulte Duo",
+		 12,
 		 "Synopsys",
 		 "Description",
-		 "Company",
+		 "Madman",
 		 "Copyright"
 		)
 ;
 
 INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
-		("Title",
+		("Absoulte Duo",
 		 n,
 		 m,
 		 "Classification",
@@ -20,7 +20,7 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 ;
 
 INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
-		("Title",
+		("Absoulte Duo",
 		 n,
 		 "Episode_Title",
 		 "Episode_Synopsys"
@@ -28,11 +28,11 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 ;
 
 INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
-		("Title", x, y, z)
+		("Absoulte Duo", x, y, z)
 ;
 		
 -- General Anime Volume Data
-	,	("Title",
+	,	("Absoulte Duo",
 		 n,
 		 m,
 		 "Classification",
@@ -41,11 +41,11 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 		)
 		
 -- General Anime Episode Data
-	,	("Title",
+	,	("Absoulte Duo",
 		 n,
 		 "Episode_Title",
 		 "Episode_Synopsys"
 		)
 		
 -- General Anime Session Data
-	,	("Title", x, y, z)
+	,	("Absoulte Duo", x, y, z)

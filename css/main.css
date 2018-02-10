@@ -1,6 +1,6 @@
 /* CSS Document */
 /* Inital Design by James P. Galovic */
-/* Version 3.3, December 2017 */
+/* Version 3.3.0, December 2017 */
 
 /* Palet */
 :root {
@@ -109,11 +109,11 @@ a:hover {
 }
 
 .site_header img {
-	height: 40px;
+	height: 20px;
 }
 
 .buffer_top {
-	height: 65px;
+	height: 45px;
 }
 
 /* Site Footer */
