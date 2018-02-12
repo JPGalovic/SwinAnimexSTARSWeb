@@ -635,7 +635,8 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 CREATE TABLE IF NOT EXISTS EVENT_DATA (
 		EVENT_TIME						DATETIME
 	,	EVENT_TYPE_ID					INT(11)
-	,	EVENT_TITLE						VARCHAR(100)
+	,	EVENT_TITLE						VARCHAR(250)
+	,	EVENT_SUBTITLE					VARCHAR(250)
 	,	EVENT_LOCATION					INT(11)
 	,	EVENT_FACEBOOK_ID				VARCHAR(20)
 	,	EVENT_UNIONE_URL				VARCHAR(250)
@@ -7537,6 +7538,7 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 -- Game Company Data, Version 1.0, JAN18, JPGalovic
 INSERT INTO COMPANY (COMPANY_NAME, COMPANY_URL, IS_SPONSOR) VALUES
 		("Final Form Games", "http://www.finalformgames.com", FALSE)
+	,	("Wizards of the Coast", "http://company.wizards.com", FALSE)
 ;-- Jamestown Data, Version 1.0, JAN18, JPGalovic
 INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBER_OF_PLAYERS, RECOMMENDED_NUMBER_OF_PLAYERS, COMPANY_NAME, CLASSIFICATION) VALUES
 		("Jamestown: Legend of the Lost Colony",
@@ -7871,25 +7873,25 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 
 
 -- Tabletop Events
-INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
--- 		("2018-02-27 10-30-00", 5, "Tabletop Tonight", 0, 0, "0")
--- 	,	("2018-03-06 10-30-00", 5, "Tabletop Tonight", 0, 0, "0")
-		("2018-03-13 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-03-20 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-03-27 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-04-03 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-04-10 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-04-17 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-04-24 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-05-01 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-05-08 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-05-15 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-05-22 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
+INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_SUBTITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
+		("2018-02-27 10-30-00", 5, "Tabletop Tonight", "Decks Out", 0, 0, "0")
+	,	("2018-03-06 10-30-00", 5, "Tabletop Tonight", "Political Games", 0, 0, "0")
+	,	("2018-03-13 10-30-00", 5, "Tabletop Tonight", "High Fantasy", 40217, 0, "0")
+	,	("2018-03-20 10-30-00", 5, "Tabletop Tonight", "Horror Games", 40217, 0, "0")
+	,	("2018-03-27 10-30-00", 5, "Tabletop Tonight", "Intregue and Betrayal", 40217, 0, "0")
+	,	("2018-04-03 10-30-00", 5, "Tabletop Tonight", "Big Box Games", 40217, 0, "0")
+	,	("2018-04-10 10-30-00", 5, "Tabletop Tonight", "Big Games Small Packages", 40217, 0, "0")
+	,	("2018-04-17 10-30-00", 5, "Tabletop Tonight", "Fight for the Crown", 40217, 0, "0")
+	,	("2018-04-24 10-30-00", 5, "Tabletop Tonight", "Thematic Games", 40217, 0, "0")
+	,	("2018-05-01 10-30-00", 5, "Tabletop Tonight", "To the Stars", 40217, 0, "0")
+	,	("2018-05-08 10-30-00", 5, "Tabletop Tonight", "Eurogames", 40217, 0, "0")
+	,	("2018-05-15 10-30-00", 5, "Tabletop Tonight", "Apocalypse!", 40217, 0, "0")
+	,	("2018-05-22 10-30-00", 5, "Tabletop Tonight", "Party Games", 40217, 0, "0")
 	
-	,	("2018-03-03 08-30-00", 5, "The Dice Must Flow", 40217, 0, "0")
-	,	("2018-03-31 08-30-00", 5, "The Dice Must Flow", 40217, 0, "0")
-	,	("2018-04-28 08-30-00", 5, "The Dice Must Flow", 40217, 0, "0")
-	,	("2018-05-26 08-30-00", 5, "The Dice Must Flow", 40217, 0, "0")
+	,	("2018-03-03 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
+	,	("2018-03-31 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
+	,	("2018-04-28 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
+	,	("2018-05-26 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
 ;
 
 -- Roleplay Events

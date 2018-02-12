@@ -211,9 +211,9 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 
 -- Tabletop Events
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_SUBTITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
--- 		("2018-02-27 10-30-00", 5, "Tabletop Tonight", "Decks Out", 0, 0, "0")
--- 	,	("2018-03-06 10-30-00", 5, "Tabletop Tonight", "Political Games", 0, 0, "0")
-		("2018-03-13 10-30-00", 5, "Tabletop Tonight", "High Fantasy", 40217, 0, "0")
+		("2018-02-27 10-30-00", 5, "Tabletop Tonight", "Decks Out", 0, 0, "0")
+	,	("2018-03-06 10-30-00", 5, "Tabletop Tonight", "Political Games", 0, 0, "0")
+	,	("2018-03-13 10-30-00", 5, "Tabletop Tonight", "High Fantasy", 40217, 0, "0")
 	,	("2018-03-20 10-30-00", 5, "Tabletop Tonight", "Horror Games", 40217, 0, "0")
 	,	("2018-03-27 10-30-00", 5, "Tabletop Tonight", "Intregue and Betrayal", 40217, 0, "0")
 	,	("2018-04-03 10-30-00", 5, "Tabletop Tonight", "Big Box Games", 40217, 0, "0")
