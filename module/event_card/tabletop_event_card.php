@@ -33,12 +33,7 @@
 
 		echo('<p>'.date('l jS F Y - g:ia', strtotime($event_row['EVENT_TIME'])).'</p>');
 		
-		// Event Location
-		echo('<p>'.$event_row['CAMPUS']);
-		if($event_row['ROOM'] != NULL)
-			echo(' - '.$event_row['ROOM'].'</p>');
-		else
-			echo('</p>');
+		event_card_location($event_row['CAMPUS'], $event_row['ROOM'], $event_row['ADDRESS'], $event_row['LAT'], $event_row['LNG']);
 
 		if(isset($game_data_row))
 				echo('<p>'.$game_data_row['GAME_DESCIRPTION'].'</p>');
