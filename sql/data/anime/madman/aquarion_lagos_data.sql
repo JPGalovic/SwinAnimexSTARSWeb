@@ -13,7 +13,7 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		("Aquarion Logos",
 		 3,
 		 1,
-		 "Animated violence and sexual references",
+		 "M - Animated violence and sexual references",
 		 26,
 		 "https://www.madman.com.au/catalogue/view/34310"
 		)
