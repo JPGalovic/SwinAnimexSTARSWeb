@@ -23,17 +23,17 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 		("Aquarion Logos",
 		 1,
 		 "Shout! Sousei Gattai!",
-		 "Aquarion Logos is ready to serve up more high-flying robotic battles animated by Satelight"
+         NULL
 		)
 	,	("Aquarion Logos",
 		 2,
 		 "Shine! Light of Thought",
-		 "Feeling guilty for risking the lives of her young squadron, Sakurako moves to infiltrate Nesta herself, only to find herself face to face with Subete. She soon learns that her past ties to the shadowy organization may not be fully severed. "
+         NULL
 		)
 	,	("Aquarion Logos",
 		 3,
 		 "Resound! A Dream for Me Alone",
-		 "A young, new member joins the Verbalism Club with high hopes, but something is amiss! "
+         NULL
 		)
 	,	("Aquarion Logos",
 		 4,
@@ -42,109 +42,115 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 		)
 	,	("Aquarion Logos",
 		 5,
-		 "Episode_Title",
+		 "Take It Back! Our Summer",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 6,
-		 "Episode_Title",
+		 "Light Up! Your Strength",
+		 NULL
+		)
+	,	("Aquarion Logos",
+		 7,
+		 "Burn It! the Savior's Flames!",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 8,
-		 "Episode_Title",
+		 "Pierce It! the Insect Part",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 9,
-		 "Episode_Title",
+		 "Clear Them! the Inviting Shadows",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 10,
-		 "Episode_Title",
+		 "Reach Them! My True Voice",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 11,
-		 "Episode_Title",
+		 "Flap! Bound Wings",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 12,
-		 "Episode_Title",
+		 "Bring Them Together! Heart and Heart",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 13,
-		 "Episode_Title",
+		 "A Great Victory! We Are the Saviors",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 14,
-		 "Episode_Title",
+		 "Show It! You at Your Worst",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 15,
-		 "Episode_Title",
+		 "Ah! Days of Our Youth",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 16,
-		 "Episode_Title",
+		 "Carve Them In! the Scars of Destiny",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 17,
-		 "Episode_Title",
+		 "Shatter! the One I Must Strike Down",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 18,
-		 "Episode_Title",
+		 "Howl! an Honest Beaten Dog",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 19,
-		 "Episode_Title",
+		 "Fall in Love! Asagaya",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 20,
-		 "Episode_Title",
+		 "Know It! the Reason You Were Born",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 21,
-		 "Episode_Title",
+		 "Tragic! an Immoral Gattai",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 22,
-		 "Episode_Title",
+		 "Listen! the Voice Calling Out to You",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 23,
-		 "Episode_Title",
+		 "Revive! the Vow Beneath the Moonlight",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 24,
-		 "Episode_Title",
+		 "To Battle! With My Existence on the Line",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 25,
-		 "Episode_Title",
+		 "Gather! Voices for Tomorrow",
 		 NULL
 		)
 	,	("Aquarion Logos",
 		 26,
-		 "Episode_Title",
+		 "It Will Not End! Aquarion Logos",
 		 NULL
 		)
+
 ;
 
 INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
