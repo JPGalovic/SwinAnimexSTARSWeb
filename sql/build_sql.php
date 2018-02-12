@@ -1,4 +1,5 @@
 <?php
+	// SQL Database Builder Scipt, Version 1.4, FEB18, JPGalovic
 	// Clear and Prepare file for writing.
 	$full_sql = "data/swin_anime_database.sql";
 	unlink($full_sql);
@@ -151,6 +152,18 @@
 	$game_data_array = array(
 			'data/game/game_company/game_company.sql'
 		,	'data/game/jamestown_data.sql'
+		,	'data/game/magic_the_gathering_data.sql'
+		,	'data/game/coup_data.sql'
+		,	'data/game/talisman_data.sql'
+		,	'data/game/dead_of_winter_data.sql'
+		,	'data/game/scythe_data.sql'
+		,	'data/game/sushi_go_data.sql'
+		,	'data/game/warhammer_40k_data.sql'
+		,	'data/game/red_dragon_inn_data.sql'
+		,	'data/game/battlestar_galactica_data.sql'
+		,	'data/game/7_wonders_data.sql'
+		,	'data/game/pandemic_data.sql'
+		,	'data/game/ultimate_warewolf_data.sql'
 	);
 
 	$event_data_array = array(
