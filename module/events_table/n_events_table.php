@@ -24,7 +24,7 @@
 	else
 	{
 		$ignor_title_repeat = $page == "all_events";
-		while($n_events >= 0)
+		while($n_events != 0)
 		{
 			$is_ok = true; // Set OK flag
 
