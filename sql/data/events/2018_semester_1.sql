@@ -231,6 +231,22 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_SUBTITLE, 
 	,	("2018-05-26 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
 ;
 
+INSERT INTO EVENT_GAME_DATA (EVENT_TIME, GAME_TITLE, GAME_EVENT_TYPE) VALUES
+		("2018-02-27 10-30-00", "Magic: The Gathering", 1)
+	,	("2018-03-06 10-30-00", "Coup", 1)
+	,	("2018-03-13 10-30-00", "Talisman", 1)
+-- 	,	("2018-03-20 10-30-00", "Game_Title", 1)
+	,	("2018-03-27 10-30-00", "Dead of Winter", 1)
+	,	("2018-04-03 10-30-00", "Scythe", 1)
+	,	("2018-04-10 10-30-00", "Sushi Go", 1)
+	,	("2018-04-17 10-30-00", "Warhammer 40k", 1)
+	,	("2018-04-24 10-30-00", "Red Dragon Inn", 1)
+	,	("2018-05-01 10-30-00", "Battlestar Galactica", 1)
+	,	("2018-05-08 10-30-00", "7 Wonders", 1)
+	,	("2018-05-15 10-30-00", "Pandemic", 1)
+	,	("2018-05-22 10-30-00", "Ultimate Warewolf", 1)
+;
+
 -- Roleplay Events
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
 		("2018-03-01 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
