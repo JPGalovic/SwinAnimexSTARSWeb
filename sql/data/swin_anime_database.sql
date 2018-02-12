@@ -99,7 +99,8 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 
 -- Data for PG Classifications
 INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
-		("PG - Mild animated violence and coarse language")
+		("PG - Animated violence and coarse language")
+	,	("PG - Mild animated violence and coarse language")
 	,	("PG - Mild animated violence")
 	,	("PG - Mild sexual references and animated violence")
 	,	("PG - Mild sexual references and coarse language")
@@ -112,11 +113,13 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("PG - Mild themes, sexual references and infrequent coarse language")
 	,	("PG - Mild violence, themes, drug references and coarse language")
 	,	("PG - Mild animated violence, sexual references, coarse language and nudity")
+	,   ("PG - Mild fantasy themes, animated violence and nudity, sexual references and coarse language")
 ;
 
 -- Data for M Classifications
 INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 		("M - Adult themes")
+	,	("M - Animated action violence")
 	,	("M - Animated nudity and sexualised imagery")
 	,	("M - Animated science fiction violence")
 	,	("M - Animated violence and coarse language")
@@ -138,8 +141,10 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("M - Mature themes, drug references, sexual references and animated violence")
 	,	("M - Mature themes, mild violence")
 	,	("M - Mature themes, sexual references and coarse language")
+	,	("M - Mature themes and supernatural violence")
 	,	("M - Medium level violence")
 	,	("M - Moderate violence, drug use")
+	,	("M - Moderate animated violence")
 	,	("M - Nudity")
 	,	("M - Sexual references and animated nudity")
 	,	("M - Sexual references and sexualised imagery")
@@ -159,6 +164,7 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("MA15+ - Strong animated violence and nudity")
 	,	("MA15+ - Strong animated violence and sex scenes")
 	,	("MA15+ - Strong animated violence and sexual references")
+	,	("MA15+ - Strong animated violence and adult themes")
 	,	("MA15+ - Strong animated violence")
 	,	("MA15+ - Strong coarse language and animated violence")
 	,	("MA15+ - Strong sexual innuendo")
@@ -176,6 +182,7 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("MA15+ - Strong themes and animated violence")
 	,	("MA15+ - Strong themes and bloody violence")
 	,	("MA15+ - Strong themes, animated violence, sex scenes and nudity")
+	,	("MA15+ - Strong themes, animated violence, sexual references and frequent animated nudity")
 	,	("MA15+ - Strong violence")
 	,	("MA15+ - Strong violence, drug use")
 ;
@@ -1308,6 +1315,175 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Berserk",
+		 25,
+		 "Experience all twenty-five episodes of the Berserk Series in a collector’s box set! In the castle town of Midland, a new king has come to power through treachery and violence. His agents victimize the citizens, until one night when a soldier known as the Black Swordsman destroys them. Yet, between the strength of a young mercenary named Guts and the charismatic Captain Griffith, their country will never be the same.",
+		 "Experience all twenty-five episodes of the Berserk Series in a collector’s box set! In the castle town of Midland, a new king has come to power through treachery and violence.",
+		 "Madman",
+		 "&copy;NTV / VAP"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Berserk",
+		 4,
+		 1,
+		 "MA15+ - Strong animated violence and adult themes",
+		 25,
+		 "https://www.madman.com.au/catalogue/view/37380/berserk-complete-series-bluray-limited-edition"
+		)
+	,	("Berserk",
+		 3,
+		 1,
+		 "MA15+ - Strong animated violence and adult themes",
+		 25,
+		 "https://www.madman.com.au/catalogue/view/3213/berserk-collection"
+		)
+	,	("Berserk",
+		 0,
+		 1,
+		 "MA15+ - Strong animated violence and adult themes",
+		 25,
+		 "https://www.animelab.com/shows/berserk"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Berserk",
+		 1,
+		 "The Black Swordsman",
+		 "A girl is being assaulted in a bar when Guts walks in. He kills all the assailants but one and orders him to tell his master, the Baron, that the Black Swordsman is coming. Guts later finds and kills the Baron, and removes a demonic relic called a Behelit from around his neck. Soon after, Guts remembers the events in his past of when he fought the knight Bazuso. "
+		)
+	,	("Berserk",
+		 2,
+		 "Band of the Hawk",
+		 "In a flashback, Guts remembers when as a mercenary he killed the knight Bazuso. Later he encounters the group who would change his destiny: the Band of the Hawk. Corkus attempts to rob Guts and Griffith sends Casca to help him, but Guts defeats her. Guts then challenges Griffith, who grievously wounds him. Griffith orders Casca to lie with Guts during his convalescence. When Guts recovers days later, Griffith asks the swordsman to join his group but again he challenges Griffith to a sword fight. "
+		)
+	,	("Berserk",
+		 3,
+		 "First Battle",
+		 "Griffith defeats Guts, and makes him a member of the Band of the Hawk – an alliance between the philosopher and the berserker. The Hawks go on a midnight raid and Griffith chooses Guts for the most important position of rear guard; Guts succeeds and the band hails him as a hero. "
+		)
+	,	("Berserk",
+		 4,
+		 "The Hand of God",
+		 "Guts settles in with the Band of the Hawk, and Griffith shows him his Behelit. Guts remembers his childhood, being raised by his adoptive father and mentor Gambino. The young Guts was forced to kill Gambino when he tried to kill the boy he blamed for his wife's death. Three years pass and the Band of the Hawk grow in power and numbers. "
+		)
+	,	("Berserk",
+		 5,
+		 "A Wind of Swords",
+		 "Guts is now a commander in Griffith's army. Guts is taking risks in battle, and although he succeeds, Casca takes him to task for it. Eventually, Griffith is knighted as a viscount in the Midland court to the nobles' dismay. Guts saves the Hawks in battle, to Casca's chagrin. "
+		)
+	,	("Berserk",
+		 6,
+		 "Zodd the Immortal",
+		 "Guts leads his men to raid a castle under Chuder occupation, but his men are wiped out by Nosferatu Zodd the Immortal, a fearsome giant warrior. Guts enters the castle keep and engages Zodd in battle. When Guts manages to stab him, Zodd transforms into his 300-year-old demon form. Zodd nearly kills Guts before Griffith and a group of Hawks comes to his aid, but they are ineffective. When Zodd is about to kill Griffith he sees the Behelit and ceases his attack. He then sprouts wings and flies off, telling Guts that should Griffith's dream die, it will be his doom."
+		)
+	,	("Berserk",
+		 7,
+		 "The Sword's Owner",
+		 "Though he and Guts are still injured from their encounter with Nosferatu Zodd, Griffith uses it to get closer to the King and his daughter Charlotte. Guts and some of the Hawks feel that Griffith is pulling away from them."
+		)
+	,	("Berserk",
+		 8,
+		 "Conspiracy",
+		 "Griffith and Guts continue to have success in battle and Griffith is made a count. The king's brother, General Julius, is furious about this as he and Minister Foss plot Griffith's murder with a poison arrow during an upcoming hunt. "
+		)
+	,	("Berserk",
+		 9,
+		 "Assassination",
+		 "During the hunt, Griffith and Charlotte grow close before the former is shot in the chest with a poisoned arrow. Luckily, Griffith's Behelit takes the arrow and he survives unscathed. Griffith deduces Julius to be the culprit and recruits Guts to secretly kill the noble. "
+		)
+	,	("Berserk",
+		 10,
+		 "Noble Man",
+		 "Guts assassinates Julius, but is emotionally scarred when forced to kill Julius' son Adonis to conceal the deed. Later, he hears Griffith tell Charlotte that he would consider a true friend to be his equal, someone with his own dreams and who follows his own path. Guts realises that although he is close to Griffith, he is not his friend. "
+		)
+	,	("Berserk",
+		 11,
+		 "The Battle",
+		 "Griffith and the Hawks lead the march into battle against the Blue Whale Knights. Casca has a fever, and after fighting with Adon Coborlwitz she falls unconscious off a cliff, Guts goes after her. They are washed downriver, and Guts finds a cave where he must keep Casca warm with his body. "
+		)
+	,	("Berserk",
+		 12,
+		 "Together",
+		 "Guts tends to Casca but she still resents him. She tells her story of how Griffith helped her save herself from being raped, and give her a choice in life so she followed him. She watched him pragmatically go with a pederast lord to earn money to create his army and fulfill his dream. When Guts came, she knew that she would not be Griffith's chosen friend."
+		)
+	,	("Berserk",
+		 13,
+		 "Prepared for Death",
+		 "Adon Coborlwitz and his Blue Whale Knights find Guts and Casca. Though completely outnumbered, Guts tells Casca to run and stays to fight. Some men go after Casca, catching her and holding her down in order to rape her. Guts continues fighting. "
+		)
+	,	("Berserk",
+		 14,
+		 "Bonfire of Dreams",
+		 "Casca defeats her attackers, and she and Guts end up back at the camp. Guts and Casca share a tender moment, where Guts explains that everyone in the camp has a dream but all he has is his sword, causing Casca to think he's leaving. "
+		)
+	,	("Berserk",
+		 15,
+		 "The Decisive Battle",
+		 "Griffith volunteers the Hawks to reclaim the impregnable Fortress of Doldrey from a Chuder governor named Gennon and the Purple Rhino Knights in his service. Guts learns that Griffith's unsavory history was with Gennon when he was a noble. The Hawks begin their assault before pulling back. Their boats are burned and there is nowhere to retreat to as the Chuder army leaves the fortress in pursuit. "
+		)
+	,	("Berserk",
+		 16,
+		 "The Conqueror",
+		 "The retreat was a ruse and Casca takes the fortress, defeating Adon and the few remaining guards. Guts fights with the Rhino Knights' command Boscogn before his sword breaks, only to gain a sword that was provided by Zodd from a great distance. Guts uses the sword to kill Boscogn while Griffith kills a wounded Gennon to assure the Hawks' victory. "
+		)
+	,	("Berserk",
+		 17,
+		 "Moment of Glory",
+		 "The Hawks' reclaiming of Doldrey marks the end of the Hundred-Year War between Midland and Chuder. The King holds a ball for the mercenaries in their honor. The Queen, Charlotte's stepmother and Julius's secret lover, hatches a scheme with Foss to poison Griffith during the banquet. However, before the event, Foss receives a disturbing letter. During the toast, Griffith falls to the floor. "
+		)
+	,	("Berserk",
+		 18,
+		 "Tombstone of Flames",
+		 "The Queen and the conspirators believe they succeeded in poisoning Griffith and that he is dead. However, while they are celebrating, their room is locked and the tower is engulfed in flames. Griffith is still alive and watches them burn, having forced Foss to aid him by kidnapping his daughter. Griffith has again used Guts to remove his competition. Guts decides to leave and tells a pleading Casca that he does not want to be caught up in Griffith's dream anymore. "
+		)
+	,	("Berserk",
+		 19,
+		 "Separation",
+		 "As Guts leaves, he is challenged by Griffith and manages to defeat him and earn his freedom. However, Guts' departure affects Griffith psychologically and he spends a night of passion with Charlotte in a lapse of judgement. When Griffith leaves the next morning, he is apprehended and arrested by the guards. "
+		)
+	,	("Berserk",
+		 20,
+		 "Sparks",
+		 "A year has passed and Guts is living with Godo, a swordsmith, and his granddaughter Erica. Guts learns that the Band of the Hawk are now wanted outlaws and Casca is their captain. Guts goes to them and finds them battling foreign mercenaries. "
+		)
+	,	("Berserk",
+		 21,
+		 "Confession",
+		 "Guts helps the Hawks drive off the mercenaries. Casca has a plan to rescue Griffith from the Tower of Rebirth where he is being held. Casca blames Guts for Griffith's problems, but realizes it is not his fault. They make love and Guts asks her to go away with him after the rescue. "
+		)
+	,	("Berserk",
+		 22,
+		 "Infiltration",
+		 "Casca and Guts go into the dungeon under the Tower of Rebirth to rescue Griffith, finding him mute, crippled and horribly disfigured from a year of seemingly endless torture. Meanwhile, the members of the Hawk are slaughtered at their camp by monsters led by a green fairy. "
+		)
+	,	("Berserk",
+		 23,
+		 "Eve of the Feast",
+		 "Back at the camp, everyone is forlorn because of Griffith's terrible condition. The Raiders ask Guts to take them along with him. Casca feels she must take care of Griffith, and tells Guts to leave. Delirious and horrified at what he has been reduced to, Griffith takes off in a wagon and crashes into the river. He finds his Behelit and unintentionally activates it, taking everyone present to the Astral Realm. "
+		)
+	,	("Berserk",
+		 24,
+		 "The Eclipse",
+		 "The four archdemons of the God Hand awake and inform Griffith that he has been chosen to be their final member. For his baptism, Griffith must offer his friends as a sacrifice to the God Hand's Apostles. Griffith is shown visions of his past to convince him that the lives of his men are trivial in regard to the fulfillment of his dream. Guts climbs a mountain of flesh to try and stop Griffith from becoming a demon, but Griffith accepts the God Hand's offer. The entire Band of Hawk are branded as sacrificial offerings for the unborn child of darkness, Griffith. "
+		)
+	,	("Berserk",
+		 25,
+		 "Time of Eternity",
+		 "The Apostles assume their true forms and commence the Eclipse feasting by devouring those branded as offerings. Griffith is reborn as the fifth God Hand, Femto, and sexually violates Casca in front of Guts. Guts is forced to cut off his left forearm to stop his former friend while his right eye is gouged out. A post-credits scene shows Guts in the physical world with his wounds healed as he leaves Godo's house to exact his revenge on Griffith and the Apostles ending the series on a cliffhanger. "
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Berserk", 0, 1, 8)
+	,	("Berserk", 0, 2, 8)
+	,	("Berserk", 0, 3, 9)
+	,	("Berserk", 3, 1, 2)
+;
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Bikini Warriors",
 		 12,
 		 "Prepare yourself for an adventure of epic proportions. With warriors so skilled at battling questionable slimes and taming tumescent tentacles, there's no need for all that bulky armor. Brought to you by some of the masters of the female form, Bikini Warriors features character designs by Rei Hiroe (Black Lagoon), Tony Taka, Odanon (Queen's Blade), and Hisasi. 
@@ -2175,6 +2351,182 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Dragon Ball Z",
+		 291,
+		 "After winning the World Martial Arts tournament, Goku is now fully grown with a family, and his mightiest adventures are due to begin. Goku learns of his true heritage as an alien Saiyan sent destroy Earth! Finding rivalry then friendship with the Saiyan Prince Vegeta, the threats become much more powerful and the journey more epic, but Goku rises to the challenge as a Super Saiyan!",
+		 "The last survivors of a cruel, warrior race, these ruthless villains have carved a path of destruction across the galaxy, an now they have set their sights on Earth! They will stop at nothing until they have the wish-granting powers of the seven magic Dragon Balls for their very own.",
+		 "madman",
+		 "&copy;Bird Studio/Shueisha, Toei Animation Film &copy;1989Toei Animation Co., Ltd."
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+-- Anime Lab
+		("Dragon Ball Z",
+		 0,
+		 1,
+		 "PG",
+         291,
+		 "https://www.animelab.com/shows/dragon-ball-z"
+		)
+
+-- Season 1
+	,	("Dragon Ball Z",
+		 1,
+		 1,
+		 "PG - Mild animated violence",
+		 39,
+		 "https://www.madman.com.au/catalogue/view/7965"
+        )
+	,	("Dragon Ball Z",
+		 2,
+		 1,
+		 "PG - Mild animated violence",
+		 39,
+		 "https://www.madman.com.au/catalogue/view/21995"
+		)
+
+-- Season 2
+	,	("Dragon Ball Z",
+		 1,
+		 2,
+		 "PG - Mild animated violence",
+		 31,
+		 "https://www.madman.com.au/catalogue/view/7966"
+		)
+	,	("Dragon Ball Z",
+		 2,
+		 2,
+		 "PG - Mild animated violence",
+		 31,
+		 "https://www.madman.com.au/catalogue/view/22308"
+		)
+
+-- Season 3
+	,	("Dragon Ball Z",
+		 1,
+		 3,
+		 "M - Moderate animated violence",
+		 33,
+		 "https://www.madman.com.au/catalogue/view/7967"
+		)
+	,	("Dragon Ball Z",
+		 2,
+		 3,
+		 "M - Moderate animated violence",
+		 33,
+		 "https://www.madman.com.au/catalogue/view/22813"
+		)
+
+-- Season 4
+	,	("Dragon Ball Z",
+		 1,
+		 4,
+		 "PG - Mild animated violence",
+		 32,
+		 "https://www.madman.com.au/catalogue/view/7968"
+		)
+	,	("Dragon Ball Z",
+		 2,
+		 4,
+		 "PG - Mild animated violence",
+		 32,
+		 "https://www.madman.com.au/catalogue/view/22814"
+		)
+-- Season 5
+	,	("Dragon Ball Z",
+		 1,
+		 5,
+		 "M - Animated action violence",
+		 26,
+		 "https://www.madman.com.au/catalogue/view/7969"
+		)
+	,	("Dragon Ball Z",
+		 2,
+		 5,
+		 "M - Animated action violence",
+		 26,
+		 "https://www.madman.com.au/catalogue/view/22815"
+		)
+-- Season 6
+	,	("Dragon Ball Z",
+		 1,
+		 6,
+		 "PG - Mild animated violence",
+		 29,
+		 "https://www.madman.com.au/catalogue/view/7970"
+		)
+	,	("Dragon Ball Z",
+		 2,
+		 6,
+		 "PG - Mild animated violence",
+		 29,
+		 "https://www.madman.com.au/catalogue/view/22816"
+		)
+-- Season 7
+	,	("Dragon Ball Z",
+		 1,
+		 7,
+		 "PG - Animated violence and coarse language",
+		 37,
+		 "https://www.madman.com.au/catalogue/view/7971"
+		)
+	,	("Dragon Ball Z",
+		 2,
+		 7,
+		 "PG - Animated violence and coarse language",
+		 37,
+		 "https://www.madman.com.au/catalogue/view/22817"
+		)
+-- Season 8
+	,	("Dragon Ball Z",
+		 1,
+		 8,
+		 "PG - Mild animated violence",
+		 23,
+		 "https://www.madman.com.au/catalogue/view/7972"
+		)
+	,	("Dragon Ball Z",
+		 2,
+		 8,
+		 "PG - Mild animated violence",
+		 23,
+		 "https://www.madman.com.au/catalogue/view/22818"
+		)
+-- Season 9
+	,	("Dragon Ball Z",
+		 1,
+		 9,
+		 "PG - Mild animated violence",
+		 47,
+		 "https://www.madman.com.au/catalogue/view/7973"
+		)
+	,	("Dragon Ball Z",
+		 2,
+		 9,
+		 "PG - Mild animated violence",
+		 47,
+		 "https://www.madman.com.au/catalogue/view/22819"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Dragon Ball Z",
+		 1,
+		 "Mini-Goku is an Overprotected Boy! I Am Gohan.&quot; 	&#47; &quot;The Arrival of Raditz",
+		 "Five years have passed since Goku's victory at the 23rd World Martial Arts Tournament. Goku's son, Gohan, is wandering around the woods outside of his house when a tiger steals his hat. While he's looking for the tiger, he accidentally falls into a river. Goku, searching for his son, finds his hat. He suddenly sees Gohan floating down a river, but he can't reach him in time before he goes over a waterfall. Goku looks up and sees Gohan clinging to a branch, having somehow jumped out of the river. With Gohan safe, they head to Master Roshi's house. Meanwhile, a mysterious alien has arrived on Earth looking for a man named Kakarrot. With a special device: the Scouter he wears on his head, he searches for high power levels on Earth. He finds Piccolo, whose attack is completely ineffective. The alien is about to devastate Piccolo when he finds a higher power level and flies off. "
+		)
+	,	("Dragon Ball Z",
+		 2,
+		 "The Mightiest Warrior in All of History is Goku's Older Brother!&quot; &#47 &quot;The Arrival of Raditz&quot;",
+		 "Goku and Gohan arrive at Master Roshi's island to meet Bulma, Krillin, Master Roshi, and Turtle. Quickly the others notice the difference between Gohan's behavior and that of Goku as a child. Goku informs his friends that Chi Chi refuses to allow Gohan to fight, instead he studies constantly. The same mysterious alien arrives at the island and reveals himself: he is a Saiyan warrior named Raditz, and he is Goku's older brother. He also reveals that Goku's real Saiyan name is Kakarrot. Goku learns that he was sent to destroy all life on Earth, but his memory loss from a terrible fall as a child prevented this outcome. Raditz came to Earth to get Goku to join him and the other two remaining Saiyans, and he won't accept a refusal. "
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Dragon Ball Z", 3, 1, 2)
+;-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Food Wars",
 		 24,
 		 "Souma is a teenage chef who is always looking for the perfect flavours and combinations in his art -- the art of cooking. So when his father suddenly closes down the family diner, his hopes of someday owning a diner fade away. But Souma's dad has bigger plans for him and enrols him in a cut throat culinary school to prove his worth. Will he make the cut, or will his pot boil over? Find out in Food Wars!",
@@ -2331,6 +2683,110 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("Food Wars", 0, 4, 4)
 	,	("Food Wars", 0, 5, 4)
 	,	("Food Wars", 0, 6, 4)
+;
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Gangsta",
+		 12,
+		 "In the city of Ergastulum, a shady ville filled with made men and petty thieves, whores on the make and cops on the take, there are some deeds too dirty for even its jaded inhabitants to touch. Enter the &quot;Handymen,&quot; Nic and Worick, who take care of the jobs no one else will handle. Until the day when a cop they know on the force requests their help in taking down a new gang muscling in on the territory of a top Mafia family. It seems like business &#40;and mayhem&#41 as usual, but the Handymen are about to find that this job is a lot more than they bargained for.",
+		 "In the city of Ergastulum, a shady ville filled with made men and petty thieves, whores on the make and cops on the take, there are some deeds too dirty for even its jaded inhabitants to touch.",
+		 "madman",
+		 "&copy;Kohske/SHINCHOSHA, GANGSTA. COMMITTEE"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Gangsta",
+		 4,
+		 1,
+		 "MA15+ - Strong animated violence",
+		 12,
+		 "https://www.madman.com.au/catalogue/view/39078"
+		)
+	,	("Gangsta",
+		 3,
+		 1,
+		 "MA15+ - Strong animated violence",
+		 12,
+		 "https://www.madman.com.au/catalogue/view/34331/gangsta-complete-season-1"
+		)
+	,	("Gangsta",
+		 0,
+		 1,
+		 "MA15+ - Strong animated violence",
+		 12,
+		 "https://www.animelab.com/shows/gangsta"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Gangsta",
+		 1,
+		 "Naughty Boys",
+		 "The episode opens with Nic watching as Alex is berated by Barry, her boss, for not earning enough money. Later, while Nic and Worick are dealing with some thugs, they see her being abused by an irate customer. As she walks away, one of them &#40later revealed to be Nic&#41; tosses her a handkerchief to wipe blood off her face. The two Handymen then meet up with the police officer Chad, who hires them to eliminate Barry's gang, which has been encroaching on mafia turf. Before they leave, Nic asks if they can take a trophy. Worick then meets up with Alex, who asks him to thank Nic for the handkerchief, and Worick tells her that they have been hired to kill her boss. Nic is then seen attacking the gang, and Worick shows up in time to finish off Barry. Alex shows up and takes Worick's gun, firing several shots into Barry's body in a fit of despair as she's relieved to no longer be under his control but is now rudderless. Speaking with Chad afterward, Worick reveals that they have chosen Alex as their trophy. Chad protests, but Nic cows him into acceptance with a display of his superhuman strength. At the end of the episode, Worick asks Alex if she can answer their phone for them while he is out. "
+		)
+	,	("Gangsta",
+		 2,
+		 "Hundemarken",
+		 "Nina arrives at the Handymen's office to deliver Nic's medicine. She tells them that Dr. Theo is being harassed by a &quot;Tag&quot;, one of the people like Nic. He and Nina leave for the clinic, but Worick spots some suspicious characters and stays behind. Using Alex as a distraction, he manages to dispose of them. Meanwhile, the Tag and some other men are pressuring Dr. Theo to join their organization. They begin to threaten Nina, and are surprised when she arrives unharmed with Nic. Nic and the Tag then begin to fight, with Nic claiming that he can take him down in three minutes. Worick begins to explain the concept of Tags to Alex, but they are interrupted by Nic's fight as he defeats his rival. Afterward, Chad arrives, and berates them for the problems they have caused. Alex asks Nina if she is afraid of Nic, and Nina says she is not: She says Alex is because she doesn't know about Twilights. Elsewhere, the wounded Twilight that Nic fought is killed by an unknown person for failing to complete his job. "
+		)
+	,	("Gangsta",
+		 3,
+		 "Ergastulum",
+		 "Worick wakes up from a dream of Nic killing his father. Since Worick has to work his other job, Alex and Nic leave to make deliveries for Dr. Theo. Nic explains to Alex that Worick is a gigolo. While making a delivery to Joel, Alex sees a newspaper featuring an article about the killing of the Arcangelo family twenty-two years ago and the kidnapping of their youngest son. Worick then joins them after finishing with his customer. They make a delivery to Monroe, who asks Nic to come back to the mafia, but Nic refuses. Next they deliver a batch of Twilight drugs to the madam of the brothel where Worick used to work. Before they leave, Alex sees Nic in a room with a mysterious woman. The next day, Worick and Alex talk about his past and his job as a gigolo. The episode ends with both Nic and Worick having a flashback to their childhood. "
+		)
+	,	("Gangsta",
+		 4,
+		 "Nonconformist",
+		 "Chad summons Nic and Worick to the police station to help identify a pile of mangled bodies found in District 6. Worick identifies them using his photographic memory. Chad then receives a call from Monroe, who asks him to send the Handymen over to help in a gang war he is involved in. Monroe and his men are then attacked by a knife-wielding Twilight of the same rank as Nic, who kills many of them. Nic arrives to fight the Twilight, and Monroe asks his men if they want to place bets on who will win. Worick and Nic's backstory is interspersed with the events of the episode, showing Nic being hired as a mercenary bodyguard for Worick, who is at first outraged that his bodyguard is disabled while the rest of his family's bodyguards are not. However, he soon comes to empathize with Nic. Meanwhile, Alex hallucinates Barry's bloody and animate corpse when faced with the dilemma of staying with the Handymen or living on her own. "
+		)
+	,	("Gangsta",
+		 5,
+		 "Sanctions",
+		 "The episode begins with a flashback to young Worick with a client, juxtaposed with a newscaster talking about the state of affairs in Ergastulum and the Three Laws which are about to take effect. Worick runs back to Nic to share his earnings and to tell him about a café that serves Twilights where they can eat, but is stunned to find Nic crouched and bleeding in an alley. Chad tends to Nic's wounds. In the present, Ginger, assistant to Gina Paulklee of the Paulklee Guild, reports to her boss that Doug has taken a job outside of the Guild's jurisdiction. Worick interrogates a mercenary behind the attack on Monroe. Doug meets his match in Nic, who has overdosed on Celebrer to dull pain. Monroe recalls an attack by a C/3 Twilight (possibly a young Nic) who destroyed his estate and decimated his staff. Worick reports that the Corsicans are making a move. Delico, Monroe's D/0 Twilight, saves Monroe from Doug. Worick tries to stop Nic to keep him from overextending himself, but before he can, Ginger and Gina show up. Gina explains to Nic that the Three Laws have to be observed or Ergastulum will fall apart. She shoots Nic and Doug with Celebrer &quot;downers&quot;. Alex, who was studying the sign language book and watching the rain, sees a shadowy figure, which is revealed to be Barry. The sound of heavy footsteps on the stairs has her cowering on the floor wondering how it could be that he survived being shot. Worick drags Nic and Doug to Dr. Theo's clinic and calls Alex, but she fails to answer. "
+		)
+	,	("Gangsta",
+		 6,
+		 "Thorn",
+		 "While interrogating a henchman, Worick learns that Uranos Corsica doesn't want to kill Monroe; he only wants access to the Celebrer-supplying Cristiano Family that he protects. Monroe holds a funeral for the men killed by Doug. Meanwhile, Nina and Worick discuss Nic's injuries as he lies unconscious at the clinic. When Nic awakens, Worick tells him that the body dump discovered in episode four were all Twilights; one of them was the Tag that Nic had fought in episode two. When Worick returns to the office, he finds Dr. Theo there; Theo tells him that Alex is likely suffering from withdrawal from drugs given to her by Barry, which have caused her hallucinations. Searching for Alex, Worick finds her in the alley, where she fails to recognize him and mistakes him for a customer. When she continues to hallucinate Barry, Worick head-butts her to bring her to her senses. In a flashback to their childhood, Worick begins to teach Nic to write. When he asks how Nic got a bruise on his arm, Nic replies that he fell down. Later, Nic and the other mercenaries are dispensed to put down anti-Twilight riots outside Ergastulum. While retrieving the sign language book that Worick gave him, Nic is almost hit by a hand grenade. He returns the damaged book to Worick. Noticing an injury that Worick's father gave him, Nic asks what happened, and Worick says that he fell down. "
+		)
+	,	("Gangsta",
+		 7,
+		 "Birth",
+		 "Worick wakes up from a dream about the time that he learned that Nic is a Twilight, and Alex comforts him. Meanwhile, Chad arrives at Theo's clinic and informs Doug that he is in trouble with the Guild. Theo tells Chad that the Twilight bodies found in District 6 were likely killed by other Twilights. The Four Fathers gather to discuss the recent string of Twilight killings, including another batch of bodies that has recently been discovered. Loretta is suspicious of Uranos Corsica, but he vehemently denies his involvement, despite expressing pleasure at the outcome. In a flashback, Worick reveals to Nic that he has purchased Nic's contract from Gaston Brown. Worick's father finds him smoking, and presses a lit cigarette into his left eye. Nic sees this and, outraged, kills Worick's father and the rest of the family. Nic is about to kill himself too, but Worick forcibly stops him, telling him that he will have to suffer for what he did before he lets him die. In the present, Worick and Delico meet, both being excluded from the Four Fathers meeting, and Worick contemplates that being killed in the Twilight hunt wouldn't be a bad way for Nic to die. In the end of the episode, Nic and Alex pass the two Twilight killers in an alleyway, and Nic, seemingly recognizing them, grins. "
+		)
+	,	("Gangsta",
+		 8,
+		 "Evening Dress",
+		 "The episode begins with the handymen performing repairs on Constance Raveau's shop after a shoot-out, and Worick invites Alex to a soiree hosted by the Cristianos. While talking with Constance, Alex suddenly remembers that she has a younger brother who she had forgotten, and wonders how that could be. She then begins to hallucinate Barry, before being calmed by Nic. Meanwhile, an unknown man arrives at the East Gate of Ergastulum. The Handymen arrive at the Cristiano nightclub, where they are greeted by Loretta and her two bodyguards, Marco Adriano and Galahad Woeher. As the party gets under way, Nic and Worick leave to help Twilights who are being chased by anti-Twilight rioters. The party is revealed to be an attempt to gather the Twilights together in order to protect them. Meanwhile, Galahad and Loretta coerce Alex into singing for the gathered Twilights. The mysterious man hears her singing, but is turned away at the door. As the song ends, Nic and Worick successfully escort the last of the Twilights to safety. Meanwhile, the two Twilight killers from the previous episode prepare to take action. "
+		)
+	,	("Gangsta",
+		 9,
+		 "Siblings",
+		 "Ivan Glaziev, one of Monroe's henchmen and secretly an anti-Twilight sympathizer, blackmails one of the Twilights at the party into attacking Loretta by holding his child hostage. When she attempts to question the Twilight, he is killed by Mikhail, one of the two Twilight killers, who arrive and begin slaughtering the guests. Galahad and Marco engage Mikhail, and manage to defeat him before the other Twilight killer, Erica, arrives and turns the tables. Meanwhile, Worick fires a signal flare to summon help. Erica threatens Loretta, but Nic arrives just in time. While fighting her, he realizes that she is Delico's sister. While talking with Alex, Galahad reveals that Nic is what is known as a &quot;faker&quot;, a Twilight who overdoses on Celebrer to attain a level higher than they would naturally have. As Erica is about to kill Nic, she is stopped by Ginger from the Paulklee Guild, who was brought by Worick's signal. Erica and Mikhail, realizing they are outclassed, decide to retreat. They meet up with Ivan and Uranos Corsica, who is revealed to be part of the group behind the Twilight killings, Esminets. As the episode ends, Corsica welcomes the mysterious man from the East Gate into their ranks, and he is revealed to be Alex's younger brother, Emilio. "
+		)
+	,	("Gangsta",
+		 10,
+		 "Land of Confusion",
+		 NULL
+		)
+	,	("Gangsta",
+		 11,
+		 "Absence",
+		 NULL
+		)
+	,	("Gangsta",
+		 12,
+		 "Odds and Ends",
+		 NULL
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Gangsta", 0, 1, 4)
+	,	("Gangsta", 0, 2, 4)
+	,	("Gangsta", 0, 3, 4)
+	,	("Gangsta", 3, 1, 2)
 ;
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
@@ -2529,6 +2985,294 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Highschool of the dead",
+		 12,
+		 "A deadly new disease is ravaging the world, turning the populace into mindless zombies, and the number of infected is skyrocketing by the second. As their fellow classmates and teachers succumb to the infection around them, a small group of students at Fujimi High School are fighting for their lives after surviving the initial outbreak. It is up to Takashi Komuro to unite the group of weary survivors and try to escape the horrors that surround them. In this new world of the living dead…will they escape? ",
+		 "A deadly new disease is ravaging the world, turning the populace into mindless zombies, and the number of infected is skyrocketing by the second.",
+		 "Madman",
+		 "&copy;SATO DAISUKE - SATO SHOJI &#47; FUJIMI SHOBO &#47; H.O.T.D Project"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Highschool of the dead",
+		 4,
+		 1,
+		 "MA15+ - Strong animated violence and sexual references",
+		 12,
+		 "https://www.madman.com.au/catalogue/view/15152"
+		)
+	,	("Highschool of the dead",
+		 3,
+		 1,
+		 "MA15+ - Strong animated violence and sexual references",
+		 12,
+		 "https://www.madman.com.au/catalogue/view/14227/high-school-of-the-dead-collection"
+		)
+	,	("Highschool of the dead",
+		 0,
+		 1,
+		 "MA15+ - Strong animated violence and sexual references",
+		 12,
+		 "https://www.animelab.com/shows/high-school-of-the-dead"
+		)
+	
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Highschool of the dead",
+		 1,
+		 "Spring of the Dead",
+		 "At the beginning of the semester, Takashi Komuro has a social separation with his childhood friend Rei Miyamoto. When he goes outside to mope, he witnesses a zombie, known as &quot;them&quot;, attack at the front of the school. Takashi goes to warn Rei and his best friend Hisashi Igo, who is dating Rei, and escapes with them just before news of the attack spreads across the school, causing panic. The three run into Mr. Wakisaka, a teacher turned zombie, that bites Hisashi in the arm before Takashi kills it by smashing its head. They barricade themselves on the rooftop to witness Self-Defense Force helicopters flying in to combat the zombie outbreak in the city, oblivious to the carnage in the school. Hisashi begins succumbing to his injury and Takashi is forced to kill him, despite Rei's objections. Rei insults Takashi, and he almost leaves to face them alone. After she apologizes, Rei and Takashi embrace briefly. "
+		)
+	,	("Highschool of the dead",
+		 2,
+		 "Escape from the Dead",
+		 "As two other survivors, Saya Takagi and Kohta Hirano, try to avoid the zombies, Rei tries to contact her father, who tells her the city is in complete chaos before being cut off. Meanwhile, kendo club president Saeko Busujima saves the school nurse, Shizuka Marikawa, from more zombies. Kohta manages to piece together a nail gun, while Takashi and Rei manage to stop the zombies on their end. As Kohta runs out of ammunition and Saya starts to buckle under the pressure, the other survivors join them to take out the zombies. As they make plans to journey to Takashi's house to check on the safety of their families, they learn that the outbreak is much worse than they thought. "
+		)
+	,	("Highschool of the dead",
+		 3,
+		 "Democracy under the Dead",
+		 "The survivors are shocked to learn that the zombie pandemic has spread worldwide. After encountering another group of survivors, Takashi tests a theory on avoiding the zombies based on how they can only react to sound. However, when one of the survivors accidentally makes a sound, they have to fight through a horde on the way to the bus, losing some survivors in the process. When they spot another group of survivors approaching, Rei recognizes one of the teachers, Koichi Shido, and is hesitant about letting him on board. After breaking out of the school, Rei becomes defiant about Shido appointing himself as the leader and runs off the bus. As Takashi goes after her, a bus filled with zombies crashes and traps them in a tunnel, forcing them to meet up with the other survivors later. After defeating a zombie motorcyclist, Takashi and Rei find its motorcycle and head towards the city. "
+		)
+	,	("Highschool of the dead",
+		 4,
+		 "Running in the Dead",
+		 "A recapitulation of the past events are shown from Takashi's perspective. Takashi and Rei continue moving through the city, until they encounter a police car. With the occupants dead, Rei searches the vehicle and gathers an expandable baton, a revolver, and some bullets. They later stop at a gas station to refill the gas fuel tank. As Takashi goes to a cash register nearby to operate the gas pump, Rei is attacked by an insane survivor, who holds her hostage and sexually gropes her. Takashi quickly shoots him point-blank, allowing Rei to break free. With their motorcycle refueled, Takashi and Rei begin moving again as they leave the survivor to die in the hands of the incoming zombies. "
+		)
+	,	("Highschool of the dead",
+		 5,
+		 "Streets of the Dead",
+		 "At Kansai International Airport, Rika Minami and her squad from the Special Assault Team helps in the evacuation of civilians by clearing zombies at the runway. Meanwhile, after escaping from a warzone between mad survivors and zombies, Takashi and Rei learn that all of the bridges have been blocked by the police and military to prevent infected civilians from coming in. Realizing nothing good is gained by staying with Shido, it is then that Saya, Kohta, Saeko and Shizuka leaves the bus after Kohta forcefully persuades him and heads to Onbetsu Bridge, where they encounter more zombies and are rescued by the timely arrival of Takashi and Rei. Needing a place to stay for the night, Shizuka suggests they stay at the apartment where her friend Rika lives, seeing a Humvee parked outside. With zombies infesting around the building, the group heads inside and fights them. "
+		)
+	,	("Highschool of the dead",
+		 6,
+		 "In the Dead of the Night",
+		 "With the apartment cleared, the girls refresh themselves in the bath while the boys check the weapons and ammunition in the household. Meanwhile, the police at the blockade are coming under pressure from both the zombies and the civilians trying to escape them, including a group of protesters led by a conspiracy theorist who believes the epidemic is a biological weapon of the US and Japanese governments. With no help coming from headquarters, the police are ordered to use deadly force to maintain order at the blockade. Back at the apartment, Takashi has to deal with Rei and Shizuka, who are both drunk. After an argument between them, Rei starts to come onto Takashi, but he holds her back. Just then, a dog, later recognized as Zero, starts barking outside, which starts to attract the zombies. "
+		)
+	,	("Highschool of the dead",
+		 7,
+		 "Dead Night and the Dead Ruck",
+		 "While Takashi and others keep their lights low while surveying the situation, a man tries to find shelter for his daughter, Alice Maresato, but is killed by paranoid survivors. When Alice's screams attract the zombies, Takashi decides to go to rescue her while Kohta provides sniper support. Meanwhile, the girls, deciding they can no longer stay at the apartment, prepare to load up to move on. With the streets filled with zombies, Takashi, along with Alice and Zero, carefully crosses the top of the fence until the others arrive to help him. Once reunited, they all decide to head towards the other side of the river. "
+		)
+	,	("Highschool of the dead",
+		 8,
+		 "The Dead Way Home",
+		 "The zombies manage to infiltrate Air Force One. With the Chairman and the President being infected, The Chairman begs the President to launch their ICBMs in his belief that the other countries will launch theirs at the US, as he is finished off before turning into a zombie. Meanwhile, Takashi's group reaches the other side of the river, void of any civilians or zombies. After changing and getting familiar with new weapons, they decide to head towards Saya's house first since it is nearby. They start to find more zombies as they approach their destination, and an unexpected wire barrier causes Rei to fall off the Humvee. The others have to deal with unfamiliar weapons and their own courage in order to fend off the zombies. Outnumbered, Takashi and Saeko try to lead them away, but they are still drawn towards the direction of the others. As things look bad, they are assisted by a group of firefighters led by Saya's mother, Yuriko Takagi, while Takashi and Saeko take a different route. "
+		)
+	,	("Highschool of the dead",
+		 9,
+		 "The Sword and Dead",
+		 "Takashi and Saeko acquire an amphibious vehicle to help evade the zombies and set up on a sand bank in the middle of the river. Later, they ditch their vehicle in a park fountain to lure the zombies while Saeko attacks them. However, Saeko freezes when she comes across some zombie children, forcing Takashi to help her. They decide to camp out at a shrine, where Saeko reveals that she almost killed a rapist four years ago yet enjoyed it, saying she has not changed since that day and does not deserve love. Takashi responds by kissing her however. The next morning, as zombies start to surround them, Saeko, hating the sadistic side of herself, gives in and refuses to fight back. Takashi tells her that he has always admired her, giving her the motivation to defeat the zombies with a real sword. Accepting their dark sides, Takashi and Saeko safely arrive at Saya's house. "
+		)
+	,	("Highschool of the dead",
+		 10,
+		 "The Dead's House Rules",
+		 "Having spent a day at Saya's mansion which has been heavily fortified, the group needs to decide if they should stick with her family and staff and be treated as kids or go off on their own and retain their independence. Saya is mad at her father for presuming she was dead during the outbreak while taking action to safe guard the neighborhood, but Takashi snaps at her since her parents are proven to be alive, which calms her down. Saya's father, Soichiro Takagi, a Japanese right-wing nationalist politician, arrives and executes his zombie friend in front of the survivors at the mansion to show them their current situation. Kohta, not wanting to lose his guns and become useless, refuses to give up his guns to Soichiro's men. When Soichiro arrives to question Kohta, the others come to his defense. Meanwhile, one of the students who stayed with Shido reports the situation at the mansion to Shido himself, who is presiding over an orgy between the students. "
+		)
+	,	("Highschool of the dead",
+		 11,
+		 "Dead Storm Rising",
+		 "Saya tries to calm down a group of survivors who refuse to accept their current situation. Takashi is appointed the leader by the others, much to his surprise. Soichiro later gives Saeko a prized katana as thanks for protecting his daughter and gratitude to Saeko's father for teaching him. As the group makes plans to go and rescue their remaining families, Shido and his followers arrive at the mansion, to which an angry Rei charges up to him with her bayonet. Rei reveals she hates Shido because his father, a corrupt politician, asked him to force Rei to repeat a year as revenge against her father, who was investigating him for corruption. Soichiro arrives and tells Rei that Shido's fate is in her hands, but Rei decides he is not worth killing which Soichiro has Shido and his followers leave as they have become corrupt. Elsewhere, a US submarine has been given orders by the succeeding President to launch a controversial preemptive nuclear strike at China, North Korea, and Russia, while the crew at the International Space Station watches in horror as both the US and Russia launch their ICBMs at each other. "
+		)
+	,	("Highschool of the dead",
+		 12,
+		 "All Dead's Attack",
+		 "The US and Japanese naval forces team up to shoot down some of the retaliatory missiles. However, one missile manages to penetrate through the joined US and Japanese air defenses, exploding somewhere near Japan. Due to the EMP burst from the nuclear explosion, machines and electronics near the blast break down which causes Shido's bus to crash and destroy one of the barricades. With a giant horde of zombies coming to the mansion, Soichiro orders the main gate to be closed but the overwhelming zombies breach the gate, causing panic among the survivors. With the mansion no longer safe, the Takagis order their followers and the remaining survivors to fight and head to another safe area that has yet to be breached. The Takagis leave Saya's safety to Takashi and the group as they fight to their Humvee which was not affected by the EMP. With their ride fixed, the group leaves the mansion while the survivors fight off the horde. Despite the situation, the group remain optimistic as they finally arrive at a mall by foot. "
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Highschool of the dead", 0, 1, 4)
+	,	("Highschool of the dead", 0, 2, 4)
+	,	("Highschool of the dead", 0, 3, 4)
+	,	("Highschool of the dead", 3, 1, 2)
+;
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Isuca",
+		 10,
+		 "Asano begins work as the housekeeper for the old family of Shimazu, where he meets the ill-mannered, selfish, beautiful Sakuya. She is actually the 37th head of the Shimazu family in charge of sealing away specters with Spirit Archery. Discovering that he has the powers of &quot;true names&quot; and &quot;true eyes,&quot;Asano becomes wrapped up in Sakuya's battle with the monsters as her assistant. A story of comedic creature hunting begins!",
+		 "Asano begins work as the housekeeper for the old family of Shimazu, where he meets the ill-mannered, selfish, beautiful Sakuya. She is actually the 37th head of the Shimazu family in charge of sealing away specters with Spirit Archery.",
+		 "madman",
+		 "&copy;2014 Osamu Takahashi&#47;PUBLISHED BY KADOKAWA KADOKAWASYOTEN&#47;ISUCA Partners"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Isuca",
+		 3,
+		 1,
+		 "MA15+ - Strong themes, animated violence, sexual references and frequent animated nudity",
+		 10,
+		 "https://www.madman.com.au/catalogue/view/31734"
+		)
+	,   ("Isuca",
+		 0,
+		 1,
+		 "MA15+ - Strong themes, animated violence, sexual references and frequent animated nudity",
+		 10,
+		 "https://www.animelab.com/shows/isuca"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Isuca",
+		 1,
+		 "Chance Meeting",
+		 "Shinichiro Asano, living by himself and jobless, finds himself thrust into a strange and dangerous world of magic and specters after he is first saved from a centipede specter by Sakuya Shimazu, then must help her face a lightning beast. "
+		)
+	,	("Isuca",
+		 2,
+		 "True Name",
+		 "When Shinichiro learns and speaks her True Name, cat-girl Tama becomes his servant, much to Sakuya's displeasure; then he and Sakuya must then deal with an infestation of rat specters in their school. Shinichiro becomes Sakuya's housekeeper and gives Tama the name &quot;Tamako&quot;."
+		)
+	,	("Isuca",
+		 3,
+		 "Confrontation",
+		 "Shinichiro is moved into Sakuya's house. Sakuya's cousin Suseri shows up with her assistant Matsuri and shows an interest in Shinichiro in more ways than one, leaving Shinichiro in the middle of Sakuya and Suseri's battle to be head of the Shimazu Family. Suseri's abducting Shinichiro becomes secondary when they all become trapped in another dimension and must face specter cars. "
+		)
+	,	("Isuca",
+		 4,
+		 "Shadow Play",
+		 "Murderous specters may seem like small potatoes compared to Suseri's transferring into Shinichiro and Sakuya's school. However, there may be more to Suseri's presence than at first glance, including the fact that a samurai golem is on the loose with a sword containing a murderous specter and that the opening of so many magical gates is for some reason putting Sakuya under suspicion. "
+		)
+	,	("Isuca",
+		 5,
+		 "Eye of Truth",
+		 "Sakuya is upset by the fact that special investigative teams have been sent by the Shimazu Family to infiltrate the school and who are being picked off one by one by a wall specter summoned by the Western Mage, and even more because Shinichiro can access True Names through kissing, which means he can learn her True Name! "
+		)
+	,	("Isuca",
+		 6,
+		 "Promise",
+		 "Shinichiro's life has become more complicated now that he knows Sakuya's True Name because his knowledge may cause Sakuya to be exiled from her Family. While the Shimazu clan debates Sakuya's future, Shinichiro tries to rebuild his relationship with her. Sakuya finally opens up to him and tells him about her parents &#40especially her father, who was a Western Mage&#41 and about the situation within the Shimazu Family that caused her to leave. A mysterious mirror arrives but turns out to be a magical trap, and Shinichiro and Sakuya must defeat the specter inside the mirror in order to return, but it's using Sakuya's negative feelings against her."
+		)
+	,	("Isuca",
+		 7,
+		 "Light and Dark",
+		 "Life in the Shimazu house is back to its usual ridiculous routine, but the new closeness between Shinichiro and Sakuya causes some complications. Shinichiro takes possession of the sword whose True Name he learned earlier, and just in time to help Sakuya and the team face a smoke specter in a subway tunnel. While Sakuya and the other fight to revive a fallen Shinichiro, Suseri battles the Western Mage, but is defeated. Enraged, Sakuya uses her ultimate technique to bring down the Western Mage &#40;who calls herself &quot;Isuca&quot;&#41;, but at a terrible cost to herself. "
+		)
+	,	("Isuca",
+		 8,
+		 "Trials",
+		 "Sakuya is in a coma, due to her terrific expenditure of spiritual energy, and Shinichiro is the only one who can bring her out of it. Over the objections of Suseri's mother Sagiri &#40who is extremely ambitious to have her daughter declared Family Head&#41, Sakuya's grandmother decrees that Sakuya will not be punished. Suseri accompanies Shinichiro on a shopping expedition and gets a taste of ordinary life...something she's never experienced before and which everyone else mistakes for a date! Later, Suseri attempts a rite of exorcism against a lightning specter on her own to heighten her powers, but when it goes wrong Shinichiro demands to be allowed to assist her; it is allowed, but on the condition that Shinichiro and Suseri must do it alone. With Shinichiro's help, Suseri both tames the lightning specter and discovers her own path. "
+		)
+	,	("Isuca",
+		 9,
+		 "Attack",
+		 "Isuca is healing from her battle with Sakuya, but her anger and hatred are even fiercer than before. Various shrines, temples and churches are being destroyed by an unknown male Mage to weaken the area's spiritual energy, and Sakuya's reaction worries Shinichiro. A plan to protect the last spiritual energy stronghold fails. Shinichiro meets Nami, Sakuya's grandmother, who is both not quite as and much more than she appears to be, and learns about both the Asahina Family, the Shimazu Family's greatest rival and Sakuya's father's family, and Isuca's origins. Shinichiro is given a choice about his future and Isuca makes her boldest and most vicious attack yet. "
+		)
+	,	("Isuca",
+		 10,
+		 "Resolution",
+		 "Sakuya barely escapes Isuca's killing move with some last-second help from Shinichiro. The others battles the giant snake specter and by combining their powers destroy it, while Shinichiro and Sakuya battle Isuca, whose hatred is spiraling out of control and causes the mansion to burn. When Shinichiro and Sakuya reveal their true feelings for each other, Shinichiro gives Sakuya enough spiritual power to smash through Isuca's defensses and eventually defeat her. "
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Isuca", 0, 1, 3)
+	,	("Isuca", 0, 2, 3)
+	,	("Isuca", 0, 3, 4)
+	,	("Isuca", 3, 1, 2)
+;-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Kancolle",
+		 12,
+		 "Fubuki is a Special Type Destroyer who has just been assigned to the Naval District. With a grand total of zero battles under her belt, she's sure to sink fast under the pressure of expectation. Luckily, she's grouped with Torpedo Squadron Three, and they're ready to support their new comrade. Together, they'll prove they have what it takes to defend the ocean and win it all for humanity!",
+		 "Fubuki is a Special Type Destroyer who has just been assigned to the Naval District. With a grand total of zero battles under her belt, she's sure to sink fast under the pressure of expectation.",
+		 "madman",
+		 NULL
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Kancolle",
+		 3,
+		 1,
+		 "PG - Mild fantasy themes, animated violence and nudity, sexual references and coarse language",
+		 12,
+		 "https://www.madman.com.au/catalogue/view/31732/kancolle-kantai-collection-complete-series#"
+		)
+	,	("Kancolle",
+		 0,
+		 1,
+		 "PG - Mild fantasy themes, animated violence and nudity, sexual references and coarse language",
+		 12,
+		 "https://www.animelab.com/shows/kancolle"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Kancolle",
+		 1,
+		 "Hello! Commander!",
+		 "Fubuki arrives at the naval base as a newcomer to the Third Torpedo Squadron, where she is introduced by Mutsuki to the rest of her squadron. After an abrupt meeting and exchange of greetings with Akagi of the First Carrier Division during her flight drills, Fubuki spends recreational time with her new squad-mates. Meanwhile, the Fourth Fleet locates the base of the enemy abyssal fleet, and the admiral orders a fleet assembled to commence an assault as the Fourth Fleet retreats. The First Carrier Task Force, Second Support Fleet and Third Torpedo Squadron are summarily sortied, however to the dismay of Fubuki's squadron, they learn that Fubuki has never engaged in battle before. The squadron encounters and engages a group of enemy destroyers, and just as Fubuki is close to being annihilated by one, the enemy group is destroyed by aircraft of the First Carrier Division. "
+		)
+	,	("Kancolle",
+		 2,
+		 "Without Dissent, Without Shame, Without Resentment!",
+		 "Fubuki has decided to become as strong as Akagi, so she can fight in the same fleet as her. Fubuki is then given a series of training sessions from other kanmusu; including but not limited to; balancing, target practice, and confidence boosting. Meanwhile, Akagi is having a target practice training session with Kaga supervising. During the school session, Ashigara punishes Yudachi for not doing her homework by giving her more homework. Ashigara then gives the destroyer a question about Type 93 Torpedoes only for Fubuki to whisper the answer in order to cheat, but Ashigara accepts the answer anyway. Ashigara then gives Fubuki a question about oxygen torpedoes, as the destroyer answers it correctly. Not long after school, after many attempts of balancing training from Sendai, Fubuki decided to talk to Akagi at the hot springs only to run into the recently-repaired Atago instead. Fubuki would later attempt to smile with Naka as her trainer, much to her embarrassment, as she would later be sleepless and get sleepy the next day. Fubuki would later continue her balancing training with Sendai as night falls. "
+		)
+	,	("Kancolle",
+		 3,
+		 "The Operation to Capture W Island!",
+		 "Fubuki's squadron, the Third Torpedo Squadron, and the Fourth Torpedo Squadron consisting of Yūbari, Kuma, Tama, Mochizuki, Yayoi, and Kisaragi are sent to an operation to defeat an enemy torpedo squadron residing in the W island by luring them out during night. Fubuki becomes nervous about the operation as she is still not confident in her abilities. However her friends cheer her up and wishes her good luck in the operation, and in the morning, Fubuki meets Akagi during morning practice. Akagi gives Fubuki some inspiring advice as a Kanmusu, letting Fubuki gain more confidence in herself. The Third and Fourth Torpedo Squadron are sent to the operation during daytime in order to do reconnaissance over the enemy fleet until night time to initiate their mission. However their operation is put on halt when two enemy Nu-class Light Aircraft Carriers discover the location of Fubuki's squadron, forcing them to retreat and run away from the enemy torpedo squadron who starts chasing after them, while facing several numbers of Abyssal enemy aircraft. Through the efforts of Fubuki's squadron, the Fourth Torpedo Squadron, and thanks to the reinforcements by the Second Fleet consisting of Kongo, Hiei, Haruna, and Kirishima, who had arrived after an expedition, the enemy torpedo squadron is forced to retreat and the enemy Nu-class Light Aircraft Carriers are defeated. However, Kisaragi is sunk by a bomber while patrolling alone. "
+		)
+	,	("Kancolle",
+		 4,
+		 "Now It's Our Turn! Follow me!",
+		 "Mutsuki, who had grown fond of Kisaragi, remains in denial about her death, continuing to wait at the docks for her return. Whilst wondering how to go about helping her, Fubuki, along with destroyer Shimakaze, are assigned on a mission with the four Kongo sisters; Kongo, Hiei, Haruna, and Kirishima, to battle against the abyssal fleet in rainy conditions. On the day of the mission, Fubuki and the others have to find a way to bring out Shimakaze, who is eventually lured in by a tea party. During the mission, Fubuki's concerns over Mutsuki starts to overwhelm her, but Kongo saves her and calms her down before finishing off the enemy fleet. Upon returning home, Fubuki embraces Mutsuki, holding her tightly until she lets out all of her emotions over Kisaragi and finally accepts the loss. "
+		)
+	,	("Kancolle",
+		 5,
+		 "Don't Compare Me to the Girls in Carrier Group Five!",
+		 "The admiral announces a reorganization of the fleets, so Fubuki and the rest of the Third Torpedo Squardron spend their last night together to continue their spirit in whatever fleet they end up in. Fubuki ends up in the Fifth Mobile Fleet along with Kongo, Kitakami, Oi, Kaga, and Zuikaku, quickly discovering that the latter two don't get along with each other since they are from different Carrier Groups. As Fubuki laments her experience, she learns from Akagi that the splits were made to prepare the girls for a counterattack mission against the Abyssal. With the unit arguing over who should be the flagship, the girls take turns being the flagship, each one turning out to be a failure due to their own selfishness. Just as Zuikaku contemplates asking the admiral to reassign the groups, the unit is launched an attack on the Abyssal, with Fubuki calmly giving out orders before acting as a decoy, allowing the unit to defeat the enemy. Impressed by her ability to take command, the unit unanimously nominate Fubuki to be the flagship and start to get along with each other better. "
+		)
+	,	("Kancolle",
+		 6,
+		 "Destroyer Division Six and the Battle of Curry Seas!",
+		 "The annual curry contest is announced, with the winning curry recipe to be used on the official menu. The Sixth Destroyer Division, consisting of Akatsuki, Hibiki, Ikazuchi and Inazuma, hope to win the contest in order to become proper ladies, but none of them have made curry before. Despite running into various mishaps in their attempts to successfully make curry, the group nonetheless remain determined. On the day of the contest, most of the competing teams end up knocking themselves out, leaving just Division Six against Ashigara and Haguro, who prove to be intimidating opponents. After judging both entries, Nagato judges Division Six's mild curry as the winner, for the reason that she cannot handle spicy foods. "
+		)
+	,	("Kancolle",
+		 7,
+		 "I Hate Carrier Group One!",
+		 "During a skirmish against the Abyssal by Mobile Unit Five, Kaga gets damaged while protecting Zuikaku, who failed to notice a torpedo whilst trying to show Kaga up. With an important mission taking place the next day and no instant repairs available, Nagato assigns Shokaku to take Kaga's place while she undergoes repairs, also sharing with Fubuki some concerns the Admiral has had concerning the Abyssal. During the mission, Fubuki, having learned that the Abyssal may be aware of their codes, has Shokaku and Zuikaku send out recon planes to her suspicions after the main fleet is attacked and one girl is adrift due to hidden dive bombers. As Fubuki and the others engage and destroy one carrier fleet, Shokaku and Zuikaku find themselves caught in an ambush by another carrier group lying in wait, unable to send out additional planes or contact the others with Shokaku being badly damaged. Remembering Kaga's words, Zuikaku bets on the slim chance of hope by hiding in a nearby squall and manages to hold out until Fubuki and the others come to their aid and fend off the enemy, damaging the carrier and sinking the rest of its fleet, forcing it to retreat into the squall. "
+		)
+	,	("Kancolle",
+		 8,
+		 "I'm Not a Hotel!",
+		 "Following their battle, Fubuki's group arrive at Truk Island where the base for Operation FS is located, where they meet a battleship named Yamato, who has never actually been out to sea. Recalling how she herself wasn't allowed into battle when she started out, Fubuki tries to get Yamato to go swimming with her, but is immediately shut down by Nagato. Later that night, Fubuki takes Yamato out in secret, but as soon as Yamato sets foot on the water, she becomes incredibly hungry. Nagato later explains that the reason Yamato isn't sent out is because of how much fuel and resources she consumes. After getting some inspiration from Mutsuki and Yudachi, Fubuki builds a raft so that they can take Yamato out onto the sea without using any of her resources. Along the way, they come across some airborne Abyssal, which Yamato manages to destroy with her weapons, earning some slight praise from Nagato. "
+		)
+	,	("Kancolle",
+		 9,
+		 "Second Remodel-poi?!",
+		 "Yudachi suddenly starts emitting a weird glow and is taken into the factory. When Fubuki and Mutsuki go to visit her, they discover Yudachi has been 'remodeled' into a completely different person with new equipment as a result of her experience. Later that night, Yudachi learns she is being transferred to Carrier Group One, while Fubuki is informed that Mobile Unit Five is being disbanded and she is being sent back to the Naval District. She is distraught, until she watches Yudachi training with her new gear and learns that the other destroyer girls have been looking up to Fubuki as a role-model and giving them the drive to work harder. While Fubuki and her escorts sail to the Naval District, a familiar Wo-class carrier sends out an attack wing of fighter/bombers to attack the base. While no ships are lost in the attack, the commander ends up missing as he stays behind to ensure everyone else is safe. After the fleet girls work together to rebuild the facility, Nagato announces that, per the Admiral's final orders before his disappearance, that Fubuki is to be remodeled. "
+		)
+	,	("Kancolle",
+		 10,
+		 "Let's Do Our Best!",
+		 "As Nagato and the other command girls try to determine from the Admiral's orders where the Abyssal base is, Fubuki ups her training in the hopes of gaining the necessary requirements to be remodeled, leaving Mutsuki downhearted as she gets to spend less time with her. When Fubuki and the reformed Third Torpedo Squadron encounter the Abyssal during a scouting mission, Fubuki rushes in hoping to increase her experience while taking heavy damage in the process, barely making it out alive. When she wakes up in the docks, she is scolded by Mutstuki, who does not want to lose her like Kisaragi. Later that night Fubuki finds her and apologizes, telling her about when she first met the commander and the words he told her shortly after she arrived which inspired her to pursue her own dream of helping everyone which is witnessed by Akagi and Kaga. The next day, as Akagi requests Fubuki to escort her during her next mission, but Kaga decides to test Fubuki to see if she is worthy by pitting her against their planes. Despite struggling a lot and taking severe damage, Fubuki receives encouragement from both Akagi and Mutsuki and passes the test earning the right to become remodeled, though her remodel isn't too different from her previous one &#40compared to Yudachi&#41. Afterwards Nagato declares MI base the next target for the fleets counterattack. "
+		)
+	,	("Kancolle",
+		 11,
+		 "Operation MI Begins!",
+		 "After Akagi has a nightmare in which her fleet is totally defeated during the operation, she asks Nagato to change the operation protocol, hoping to prevent the disaster she feels will be waiting for them. Shortly afterwards Nagato announces the battle fleet, including Carrier Group One and Two, Kongo and Hiei, Fubuki, Yudachi, and Kitakami, is to meet Yamato and other ships to attack MI with a second fleet doing a feint on a smaller base. Fubuki, Yudachi and Mutsuki meet and promise to come back safely, while Mutsu tries to comfort Nagato, who is doubting the mission. As the mission begins, Akagi decides to leave Kongo and Fubuki to wait for the others while the carriers begin the attack. They discover an Airfield Princess and launch a surprise attack, severely damaging her, but as they get ready for the second wave, the one eyed Wo-class carrier launches its own surprise attack with two Nu-class carriers, several destroyers and a torpedo and light cruiser. With her bow destroyed and her teammates taking heavy damage, Akagi, feeling that she had failed to change fate, remains motionless as a bomber heads towards her. "
+		)
+	,	("Kancolle",
+		 12,
+		 "Enemy Planes Dive-Bombing From Above!",
+		 "Fubuki arrives in time to save Akagi, shortly thereafter joined by Kongou, Yamato's Fleet, and a large number of reinforcements, helping the fleet get back on the offensive. After Akagi and Kaga receive extra ammunition from Zuikaku and Shokaku and disable the Airfield Princess' runway, Yamato uses her firepower to defeat her and destroy the base. As another Abyssal fleet appears, Yamato explains there is some strange power making events of the past repeat itself, which is made evident as the Airfield Princess regenerates herself and grows stronger. The group are assisted by the arrival of Nagato, who arrives with the entire fleet after having determined the true meaning behind the Admiral's plans, but still find themselves unable to prevent the Airfield Princess, now the Midway Princess, from regenerating. However, they are joined by the armored carrier Taihou, who was sent out by the safely returned Admiral, while Fubuki defeats the remaining Wo-class carrier, putting an end to the Airfield Princess' regeneration and leading to her defeat. With all the ships returning safely to the Naval District, Fubuki is once again greeted by the Admiral. "
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Kancolle", 0, 1, 4)
+	,	("Kancolle", 0, 2, 4)
+	,	("Kancolle", 0, 3, 4)
+	,	("Kancolle", 3, 1, 2)
+;
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Magical Warfare",
 		 12,
 		 "In this modern magic action story, Takeshi Nanase is an ordinary high school boy who has a somewhat dark past. However, one day, he comes across a girl named Mui Aiba, in a uniform he has never seen before, collapsed on the school campus. This encounters changes Takeshi's destiny completely. Mui tells Takeshi that she is a magician, and she apologizes, for she turned Takeshi into a magician, too. What Takeshi once knew as one world is actually two - the world where magicians live and the world where humans live.",
@@ -2724,6 +3468,113 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Oreimo",
+		 15,
+		 "Living in the shadow of his talented younger sister, Kyousuke Kosaka conducts a normal lifestyle until he accidentally finds out that she hides a secret. In addition to being smart, pretty, and popular; Kirino Kosaka is also an obsessive consumer of anime and eroge (adult computer games). What will Kyousuke do? Will this tear their already rocky relationship apart or bring them closer together?",
+		 "Living in the shadow of his talented younger sister, Kyousuke Kosaka conducts a normal lifestyle until he accidentally finds out that she hides a secret.",
+		 "madman",
+		 "&copy;Tsukasa Fushimi"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Oreimo",
+		 3,
+		 1,
+		 "MA15+ - Strong sexual themes",
+		 15,
+		 "https://www.madman.com.au/catalogue/view/18215/oreimo-my-sister-can-t-be-this-cute-season-1-collection-subtitled-edition"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Oreimo",
+		 1,
+		 "There's No Way I Could Love My Sister",
+		 "After bumping into his little sister, Kirino, in the hall, Kyosuke Kosaka finds a magical girl anime DVD which contains a little-sister themed eroge &#40;erotic game&#41; inside. Kyosuke soon learns the game belongs to Kirino and confronts her about it, though says she would not be weird for having such a hobby and would offer his advice any time. Later that night, Kirino brings Kyosuke into her room, where she reveals her secret stash of erotic games and anime, explaining that she loves little sister types, though is unable to explain how she got into it. Having not had anyone to share her hobby with, Kirino gets Kyosuke, who promises to keep her obsession a secret from their parents, to play through one of her eroge for an unbiased opinion. "
+		)
+	,	("Oreimo",
+		 2,
+		 "There's No Way I'd Go to an IRL Meetup with My Sister",
+		 "Noticing Kirino has no one to share her hobbies with, Kyosuke asks for advice from his friend, Manami Tamura, who suggests that she make some otaku friends. Kirino joins an online community and is invited to an otaku tea party at a maid cafe in Akihabara, but has trouble talking to any of the other members. However, she is later asked to join members Saori Vageena and Kuroneko, the latter of which gets into a heated debate with her about their favorite anime. After a day of shopping around Akihabara, they decide to keep sharing messages while Kyosuke finishes the game Kirino asked him to complete. "
+		)
+	,	("Oreimo",
+		 3,
+		 "There's No Way My Little Sister Can Be This Cute",
+		 "Kirino hangs out with Saori and Kuroneko again and is surprised to find that they do not have to worry about hiding their hobbies. Later that day, Kirino's father learns of her hobby and becomes angry at her. Kirino becomes upset that her hobby has been called &quot;worthless&quot; and runs off, prompting Kyosuke to catch up with her. After seeing Kirino show no desire to give up a part of her life, Kyosuke stands up to his father for her. Though he allows Kirino to keep her hobby, he still shows concern for the eroge Kirino had been seen with, so Kyosuke claims they are his, earning him a punch in the face. Kirino later gives her thanks to Kyosuke, who is taken aback by her unexpected cuteness. s"
+		)
+	,	("Oreimo",
+		 4,
+		 "There's No Way My Little Sister Would Go To Summer Comiket",
+		 "When Kirino forces Kyosuke to play a beat-em-up eroge, he asks Saori for some playing advice. While Kirino has her school friends over, she receives a package from Saori, unaware it is a collection of erotic dojinshi, forcing Kyosuke to stop her from opening it in front of her regular friends, but his attempts to protect it from her land them in an even more awkward situation. Afterwards, one of Kirino's friends, Ayase Aragaki, apologizes to Kyosuke on Kirino's behalf and exchanges phone numbers with him. As way of apology for the incident, Kirino forces Kyosuke to take her to Summer Comiket, along with Saori and Kuroneko. When a special data disc Kirino wants is sold out, Kuroneko wins it for her in a beat-em-up contest. Just as they leave the Comiket, they are spotted by Ayase. "
+		)
+	,	("Oreimo",
+		 5,
+		 "There's No Way My Little Sister's Friend Can Be This XX",
+		 "When Ayase suspects Kirino is hiding something, she puts pressure on her and eventually discovers her hobby, telling her they can no longer be friends. Noticing Kirino falling into despair, Kyosuke resumes his life counseling duties and tries talking to Ayase, who says she wants to make up with her, but cannot accept her hobby having seen reports of crimes relating to eroge. Kyosuke asks for advice from his father, who helps him by giving the full story on those reports. Although Ayase still refuses to make up with Kirino after Kyosuke reveals the truth behind the news story, Kirino gains the courage to stand up to her and expresses her love for both her friends and eroge. When Ayase still has doubts about her hobby, Kyosuke puts on a bold act, which causes Ayase to hate him. However, Ayase realizes that her fight with Kirino is pointless in comparison and apologizes to Kirino for her harsh words. Shortly after, Kyosuke receives a text from Ayase thanking him for helping her and Kirino make up, though warns him not to do anything indecent to Kirino. s"
+		)
+	,	("Oreimo",
+		 6,
+		 "There's No Way My Childhood Friend Can Be This Cute",
+		 "At school, Manami invites Kyosuke over to her house to try out some sweets made by her family's shop for a Halloween event. One of Kyosuke's friends points out that he and Manami are pretty close, but Kyosuke denies there is anything romantic; however, he admits he would not allow any guy to go out with her. Later at Manami's house, Kyosuke tries out the sweets made by Manami and ends up helping her family prepare for the event; he agrees to spend the night. Manami's grandpa tricks them into sharing the same room that night, which prompts them to talk. Kyosuke reveals to Manami that if he was confessed to, he would reject the confession in order to maintain his peaceful lifestyle. Meanwhile, back at the Kosaka house, Kirino is noticeably frustrated that Kyosuke is staying over at Manami's house. "
+		)
+	,	("Oreimo",
+		 7,
+		 "There's No Way My Little Sister Can Write a Novel",
+		 "Having read Kuroneko's fanfiction online, Kirino decides to write some of her own. The two of them get into a fight concerning their literature tastes. After Kirino posts her novel online, she receives a tentative publishing offer. In order to get inspiration for her next novel, Kirino drags Kyosuke around the city on Christmas Eve. She manages to get Kyosuke to buy her some earrings, claiming that they were for emotional support. When Kyosuke claims that Kirino is doing this simply for her own self-gratification, she pours a bucket of cold water over her head to prove otherwise. They stop by a hotel so Kirino can shower and change her clothes. Out on the streets again, Kyosuke feels closer to Kirino as he notices her warm smile while wearing the earrings that he bought her. "
+		)
+	,	("Oreimo",
+		 8,
+		 "There's No Way My Little Sister Could Get an Anime",
+		 "While Kirino's novel becomes increasingly popular, her editor reveals that it may be adapted into an anime. Overjoyed, she invites Saori and Kuroneko with her to the anime staff meeting. However, she is shocked at the number of changes the anime staff requested, most notably changing the lead protagonist from female to male. Kirino collapses from exhaustion after returning home, so Kyosuke takes Kirino's place at the next meeting in order to plead her case. During the meeting, Kyosuke begs the anime staff to reconsider Kirino's decisions, with Kuroneko also providing her opinions, both for and against. After some back and forth, the anime staff finally agree to some of their requests. On the train ride home, Kyosuke tells Kuroneko and Saori to keep his involvement a secret from Kirino. Kuroneko questions Kyosuke's dedication to his sister and then expresses envy at having older siblings. Later, Kirino tells Kyosuke that the next life counseling will be the last. "
+		)
+	,	("Oreimo",
+		 9,
+		 "There's No Way My Little Sister Can Play Eroge Like This",
+		 "Kirino gets a long awaited eroge in the post and spends the entire day playing it, despite some frustration in the beginning when one character is cold towards her. Unfortunately for Kyosuke, who is trying to study in the next room, Kirino gets really interactive with the eroge. Meanwhile, Kuroneko stays at home and tends to her little sister, who is a Meruru fan. Elsewhere, Saori plans for a maid-themed party for Kirino and Kuroneko. "
+		)
+	,	("Oreimo",
+		 10,
+		 "There's No Way My Little Sister Can Cosplay Like This",
+		 "After Kirino gets annoyed with her for not understanding certain aspects of her hobby, Ayase asks Kyosuke to give her advice on a present she can give her to make up with her. After shopping around with Kuroneko and Saori for ideas, Kyosuke learns of a cosplay contest offering a rare Meruru figurine for the winner. With Ayase objecting to cosplaying, they manage to trick her model friend, Kanako Kurusu, into cosplaying as Meruru for the contest. However, when they spot Kirino in the audience, Kyosuke has to make sure Kanako does not spot her. Kanako manages to put on a winning performance and win the prize and, despite the disgust she felt towards the otaku fans, admits that she had fun while doing it. "
+		)
+	,	("Oreimo",
+		 11,
+		 "There's No Way My Little Sister Can Be a Maid",
+		 "After running into her at the supermarket, Kyosuke invites Manami over to his house to help him make lunch. However, Kirino is not too pleased with having Manami around and makes various plans to hamper her visit, ranging from giving her arduous tasks to laying embarrassing pornographic traps in Kyosuke's room. Later, Saori holds a &quot;personal harem party&quot; for Kyosuke with Kirino, Kuroneko and herself dressed as maids. There, Kuroneko shows off a perverted manga with characters based on Kirino and Kyosuke, and later even starts calling him &quot;ii-san&quot; much to the ire of Kirino. Kyosuke has a small outburst at Kirino for her behavior, until she gives him a present, saying she is grateful for all his help. "
+		)
+	,	("Oreimo",
+		 12,
+		 "There's No Way My Little Sister's Life Advice Can End Like This &#40;True Route&#41;",
+		 "One morning, Kyosuke is surprised to find Kirino behaving politely to him. That evening, while Kyosuke worries about whether she is forcing an act in front of everyone, Kirino uses her final life counseling session to ask Kyosuke to buy her an eroge that is launching at midnight in Akihabara. As Kyosuke gets in line, he runs into his classmate, Kouhei Akagi, who is buying a yaoi eroge for his own sister. Meanwhile, Kuroneko calls Kirino about the cat ears she is making for her and also tells Kirino that she might be going to change &quot;her way of calling&quot; Kyosuke. After Kyosuke gets back home with the game, Kirino asks him to play with her. Later that night, Kyosuke learns that Kirino plans to leave home for America in the morning for track and field training, which disappoints him since she never told him about it before. Kirino becomes enraged when Kyosuke does not show the behavior she expected of him and beats him up. The next morning, Kirino decides not to go, and later also announces to Kyosuke her life counseling is not over yet, which makes Kyosuke happy. "
+		)
+	,	("Oreimo",
+		 13,
+		 "There's No Way My Junior Can Be This Rotten",
+		 "As Kuroneko, whose real name is revealed to be Ruri Goko, enrolls in Kyosuke's school, Saori feels a bit downhearted that she has not heard from Kirino. Kyosuke notices that Ruri is having trouble making friends due to her personality. Kyosuke and Ruri decide to take a look at the Games Research club, which is run by Gennosuke Miura, the guy Kyosuke had borrowed the bike from, and they eventually decide to join. As Kyosuke and Manami try their best to help Ruri, Ruri accuses Kyosuke of treating her like a replacement for Kirino. A welcoming party is held at the club, where Kyosuke meets Kohei's younger sister, Sena Akagi, who goes a little crazy when her obsession with yaoi is revealed and she accidentally reveals her perverted fantasies to the rest of the club, forcing Kyosuke to call up Kōhei to calm her down. At the end of the day, Kyosuke admits that, despite feeling lonely without Kirino, he will not stop helping out Ruri, which makes her feel a bit happier. "
+		)
+	,	("Oreimo",
+		 14,
+		 "Theres No Way My Junior Can Be This Cute",
+		 "Ruri and Sena are asked to work together to create a game for an online contest, with Kyosuke supervising them. After thinking about his options, Kyosuke suggests that they make an eroge. As the girls pitch their concepts, Ruri comes up with an expansive novel-based game, mentioning how she wants to do it in order to show Kirino up. Sena then gets upset when her concept is rejected due to its explicit hardcore yaoi themes and stops coming to the club, leaving Kyosuke and Ruri to work on their game alone. Just as Kyosuke and Ruri start to warm up to each other, several bugs show up in the game's code which the club cannot get fixed in time for the contest's deadline, so Ruri begs Sena to help her out, realising it's okay to lean on others sometimes. Working together, they manage to finish the game, which ends up winning the &quot;Worst Game Award&quot;"
+		)
+	,	("Oreimo",
+		 15,
+		 "Theres No Way This Is My Little Sister's Last Episode",
+		 "As Ruri and Sena's game is bashed on the internet, they decide to work harder towards making a better game. As Kyosuke prepares to go home, he receives a text from Kirino telling him to throw away her collection of eroge and anime goods. Kyosuke contacts Ayase, who reveals Kirino has not been in contact with her since she left either. Kyosuke then meets up with Ruri, who reveals her heartfelt thanks for helping her fit into school and encourages Kyosuke to fly to America to find the root of Kirino's problem, giving him a kiss on the cheek as he goes. Arriving in Los Angeles, Kyosuke meets up with Kirino at her track camp and plays eroge with her, cheering her up as she has not had time to play her collection. Kirino reveals that she had wanted to challenge herself and be more independent, saying she would not contact anyone until she managed to beat someone in a time trial, which she has not been able to do. Kyosuke tells Kirino that he is lonely without her and asks her to come back to Japan, which encourages Kirino to beat her elementary school roommate in a race and go home with him, reuniting with her friends and her anime."
+		)
+
+;
+	
+	
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Oreimo", 0, 1, 5)
+	,	("Oreimo", 0, 2, 5)
+	,	("Oreimo", 0, 3, 5)
+	,	("Oreimo", 3, 1, 2)
+;
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Pandora in the Crimson Shell",
 		 12,
 		 "From Shirow Masamune, the creator of Ghost in the Shell, comes a lighthearted story of two cyborg girls who fight to save their home. Nene Nanakorobi is your typical girl next door except for that fact that she's a rare type of full-body cyborg. She's thrilled to finally meet another cyborg named Clarion and hopes they’ll be best friends. This is the beginning of their adventures together.",
@@ -2810,6 +3661,139 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 		("Pandora in the Crimson Shell", 0, 1, 4)
 	,	("Pandora in the Crimson Shell", 0, 2, 4)
 	,	("Pandora in the Crimson Shell", 0, 3, 4)
+;
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Puella Magi Madoka Magica",
+		 12,
+		 "Madoka Kaname is an average 14-year-old girl who loves her family and friends. One fateful day, this all changes when she has a very magical encounter with a strange creature called a Kyubey. Kyubey have the power to grant one wish to chosen girls. However, in exchange, those chosen must become magical girls and use their powers to fight against witches, evil creatures born from darkness and catalysts of despair. Was this encounter by chance or fate? No matter the circumstance, this will surely change her destiny...",
+		 "Madoka Kaname is an average 14-year-old girl who loves her family and friends. One fateful day, this all changes when she has a very magical encounter with a strange creature called a Kyubey. Kyubey have the power to grant one wish to chosen girls. ",
+		 "madman",
+		 "&copy;Magica Quartet/Aniplex, Madoka Partners, MBS"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Puella Magi Madoka Magica",
+		 4,
+		 1,
+		 "M - Mature themes and supernatural violence",
+		 12,
+		 "https://www.madman.com.au/catalogue/view/38319/puella-magi-madoka-magica-complete-series-bluray#"
+		)
+	,	("Puella Magi Madoka Magica",
+		 3,
+		 1,
+		 "M - Mature themes and supernatural violence",
+		 12,
+		 "https://www.madman.com.au/catalogue/view/38318/puella-magi-madoka-magica-complete-series"
+		)
+	,	("Puella Magi Madoka Magica",
+		 1,
+		 1,
+		 "M - Mature themes and supernatural violence",
+		 4,
+		 "https://www.madman.com.au/catalogue/view/17231/puella-magi-madoka-magica-vol-01"
+		)
+	,	("Puella Magi Madoka Magica",
+		 2,
+		 1,
+		 "M - Mature themes and supernatural violence",
+		 4,
+		 "https://www.madman.com.au/catalogue/view/17324/puella-magi-madoka-magica-vol-01-bluray"
+		)
+	,	("Puella Magi Madoka Magica",
+		 2,
+		 2,
+		 "M - Mature themes and supernatural violence",
+		 4,
+		 "https://www.madman.com.au/catalogue/view/17326/puella-magi-madoka-magica-vol-02-bluray"
+		)
+	,	("Puella Magi Madoka Magica",
+		 0,
+		 1,
+		 "M - Mature themes and supernatural violence",
+		 12,
+		 "https://www.animelab.com/shows/puella-magi-madoka-magica"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Puella Magi Madoka Magica",
+		 1,
+		 "As If I Met Her in My Dream...",
+		 "After having a strange dream, Madoka Kaname is surprised to find the girl from her dream, Homura Akemi, enroll into her school the next day. Seemingly knowing her already, Homura warns Madoka to stay the way she is, lest she risk losing everything. Later that day, when Madoka goes shopping with her friend, Sayaka Miki, Madoka hears a strange voice, leading her to a backroom area. There, she encounters a strange creature named Kyubey being attacked by Homura, who is revealed to be a magical girl. As Homura demands Madoka stay away from Kyubey, Sayaka arrives and escapes with Madoka, only for them to be caught in a mystical barrier and approached by strange monsters. They are rescued by another magical girl named Mami Tomoe, who dispels the attackers using her magic abilities. Homura then appears again and is confronted by Mami who tells her that she will overlook the attack on Kyubey as she does not wish to fight in front of the other girls. Homura then promptly leaves. Kyubey is healed by Mami's powers and then explains that he wishes to form a contract with Madoka and Sayaka to make them magical girls. 
+"
+		)
+	,	("Puella Magi Madoka Magica",
+		 2,
+		 "That Would Be Truly Wonderful",
+		 "Mami and Kyubey explain to Madoka and Sayaka that Kyubey has the power to grant wishes, but in exchange, those who make wishes must become magical girls to fight witches, who are born from curses. Mami offers to take Madoka and Sayaka with her on a witch hunt to help each decide if there were a wish they would risk their lives for. The next day, Kyubey, who cannot be seen by normal people, accompanies Madoka and Sayaka to school, where they learn to communicate with each other telepathically. Homura visits Madoka once again to repeat her warning, and refuses to answer when Madoka asks what her wish was. After school, Madoka, Sayaka and Mami follow the aura of the witch from the previous day to an abandoned building, where they manage to save a woman controlled by a witch from committing suicide. They then enter a portal inside the building where Mami finds and defeats the witch responsible, earning a Grief Seed which can be used to recover magical power. 
+"
+		)
+	,	("Puella Magi Madoka Magica",
+		 3,
+		 "I'm Not Afraid of Anything Anymore",
+		 "Sayaka visits an injured boy named Kyosuke Kamijo, who was a violin player she admired when she was little. After defeating a witch's familiar, Mami tells Madoka and Sayaka that she had been involved in a traffic accident and did not have time to think about her wish. She also lets Sayaka know about the precedents for wishing on behalf of other people. Later that night, as Madoka helps her mother and talks with her father, Mami is approached by Homura, who warns her about making Madoka a magical girl. The next day while visiting the hospital, Madoka and Sayaka find a Grief Seed that is close to activating, so Sayaka and Kyubey enter the portal ahead of them while Madoka finds Mami. As Madoka and Mami catch up with them, Homura tries to warn Mami about the witch, but Mami binds her to stop her from following them. As they continue, Madoka mentions her wish is to simply be a magical girl and help others. Mami laments that her job as a magical girl has left her lonely and afraid, but feels happy that Madoka wishes to fight alongside her. As the Grief Seed activates, Mami goes into action and starts to fight against the witch. However, the witch suddenly transforms into a huge caterpillar which decapitates and instantly kills Mami right before Madoka's eyes. Homura, her bonds dissolving with Mami's demise, steps in and defeats the witch, claiming the Grief Seed, leaving behind a mortified Madoka and a heavily resentful Sayaka. 
+"
+		)
+	,	("Puella Magi Madoka Magica",
+		 4,
+		 "Miracles and Magic Are Real",
+		 "As Sayaka continues to be concerned about Kyosuke, Madoka, still in despair over the death of Mami, admits she is too scared to become a magical girl, so Kyubey decides to let her be. Madoka is approached by Homura, who tells her that Mami, along with other magical girls she has seen die during her time, will only be considered missing by normal people. Madoka says she will never forget Mami or the fact that Homura saved her life, though Homura warns her that her kindness may turn against her. As Kyosuke becomes more frustrated and desperate about his condition, which keeps him from being able to use his fingers to play the violin, Sayaka decides to contract with Kyubey. Out in the city, Madoka notices several people, including her classmate Hitomi Shizuki, infected by the witch's kiss and preparing to kill themselves by mixing cleaning agents. When Madoka thwarts their attempted suicide, they chase her to a closet where she is caught by a witch who tortures her with memories of Mami's death. Just then, she is rescued by Sayaka, who had become a magical girl after using her wish to cure Kyosuke's hand, much to the shock of Homura. Elsewhere, Kyubey greets another magical girl named Kyoko Sakura, who just came to the city, unhappy that Sayaka took over the area Mami once looked after. 
+"
+		)
+	,	("Puella Magi Madoka Magica",
+		 5,
+		 "There's No Way I'll Ever Regret It",
+		 "Both Madoka and Homura show concern about Sayaka's decision to become a magical girl. Sayaka visits Kyosuke and feels happy that he is finally able to play his violin once again. Madoka asks Homura to become friends with Sayaka, not wanting her to suffer the same fate as Mami, though Homura's words, that those who become magical girls cannot be saved, do nothing to comfort her. Later that day, Madoka joins Sayaka on patrol, where they find a witch's familiar, but it escapes when Sayaka's attacks are blocked by Kyoko, who only cares about collecting Grief Seeds from mature witches. Kyoko's selfishness angers Sayaka, and the two magical girls clash violently, with Madoka unable to do anything to stop them. As Kyoko gets the upper hand, Madoka considers using her wish to stop the fighting, but Homura steps in before she can do so. 
+"
+		)
+	,	("Puella Magi Madoka Magica",
+		 6,
+		 "This Just Can't Be Right",
+		 "Homura knocks Sayaka unconscious and gets Kyoko to leave, before reiterating to Madoka that she should not get involved, even telling her to give up on Sayaka. Kyubey mentions to Sayaka about the potential Madoka has to become a magical girl, but Sayaka insists that she doesn't want Madoka to get involved. Homura confronts Kyoko, mentioning that something known as Walpurgisnacht is approaching in two weeks, to which Kyoko agrees to form an alliance with her to fight against it. Madoka becomes concerned about Sayaka, who ignores her pleas to try talking with Kyoko, also showing hatred towards Homura, whom she blames for Mami's death. The next evening, Sayaka is once again confronted by Kyoko who goads her into another fight on top of a highway bridge. Before the battle can begin, Madoka arrives and throws Sayaka's Soul Gem, the source of her magic energy, off the bridge in the hope of stopping the fight. However, this causes Sayaka to suddenly become lifeless, shocking both Madoka and Kyoko. Kyubey reveals that as part of the contract, the Soul Gem literally contains a magical girl's soul, while their body is merely a shell that can only be controlled within 100 metres of the Soul Gem. Homura rushes to retrieve the Soul Gem and brings it back to Sayaka, reviving her. 
+"
+		)
+	,	("Puella Magi Madoka Magica",
+		 7,
+		 "Can You Face Your True Feelings?",
+		 "Sayaka gets angry at Kyubey for keeping the truth from her, but he keeps her in check by making her feel the pain she would have otherwise felt while fighting Kyoko. The next day, Madoka asks Homura about the meaning behind Kyubey's actions and why she never told them. Kyoko talks with Sayaka, taking her to a church which belonged to her father before he was excommunicated for his controversial beliefs. She explains how she made a contract with Kyubey so that people would listen to her father's sermons, but when he found out about her wish, he broke down and killed himself and his family, leaving Kyoko alone. Sayaka apologizes to Kyoko but refuses to listen to her advice to live for herself. The next day, Kyosuke returns to school, but Sayaka avoids talking to him. Hitomi confronts her about it and reveals she is also in love with Kyosuke, giving Sayaka one day to confess to him before she does. Sayaka breaks down in front of Madoka, believing that she can never be with Kyosuke as she feels she is no longer human. As Sayaka fights against a witch that night, she ignores Kyoko's help and recklessly attacks the witch without regard to the damage caused to her body, laughing maniacally. 
+"
+		)
+	,	("Puella Magi Madoka Magica",
+		 8,
+		 "I Was Stupid, So Stupid",
+		 "Sayaka defeats the witch, but refuses to take the Grief Seed it produces. Madoka tries to reason with Sayaka, who just berates her, blaming her for her state before running off. As Homura and Kyoko discuss Walpurgisnacht, Kyubey approaches them, mentioning that something bad will happen if Sayaka's Soul Gem is not cleansed. Sayaka does not return home that night and just watches as Hitomi makes her confession to Kyōsuke the next day, sending her further into despair. Homura approaches her in an attempt to offer a Grief Seed, but Sayaka once again rejects it as she does not trust her. To spare Madoka the suffering of watching Sayaka's downfall, Homura prepares to kill her, but Kyoko intervenes, helping Sayaka escape. Kyubey coerces Madoka into making a wish to save Sayaka, but Homura shoots him before she can do so, breaking down before Madoka and telling her not to be so self-sacrificing. Madoka gets the feeling she has met Homura somewhere before, but leaves to search for Sayaka, while a replacement Kyubey appears, identifying Homura, who knows his true identity, as a being from a different timeline. Kyoko finds Sayaka, who is implied to have just killed two men on the train. Sayaka admits her stupidity before her Soul Gem, having turned completely dark, shatters and transforms into a Grief Seed. Elsewhere, Kyubey muses that as a 'woman' who has yet to mature is called a 'girl', the term 'magical girl' only makes sense for it to be a prelude to whomever has yet to become a 'witch'. 
+"
+		)
+	,	("Puella Magi Madoka Magica",
+		 9,
+		 "I'd Never Allow That to Happen",
+		 "As a witch appears before Kyoko, Homura arrives and uses her time manipulation to help Kyoko escape, bringing Sayaka's body to Madoka. Homura reveals that the witch was actually Sayaka, whose Soul Gem had transformed into a Grief Seed as a result of becoming too tainted with despair. Later that night, Kyubey appears before Madoka again, explaining that his race, known as Incubators, choose girls in their teens and raise them to become witches in order to obtain powerful energy from the transition from hope to despair in an effort to prevent the heat death of the universe. Incubators are coldly logical, with emotion considered an illness. Thus the process is only feasible with humans, especially adolescent girls. Desperately clinging to the hope that there may still be a way to save Sayaka, Kyoko asks Madoka to help her in an attempt to reach Sayaka's human feelings and try to obtain her Soul Gem from the witch. As the two enter the portal to confront the witch, Kyoko takes the majority of its attacks while Madoka tries to reach Sayaka with words. However, when Sayaka ends up attacking Madoka as well, Kyoko has Homura get Madoka to safety while she sacrifices herself to destroy Sayaka. Kyubey, who had clearly known there was no way of saving Sayaka, taunts Homura, saying that with Kyoko gone, she will not be able to stop Walpurgisnacht without Madoka becoming a magical girl."
+		)
+	,	("Puella Magi Madoka Magica",
+		 10,
+		 "I Won't Rely on Anyone Anymore",
+		 "The episode looks at an alternate timeline in which Homura is a shy transfer student who makes friends with the cheerful Madoka. Lacking confidence in herself, having been in hospital for the past six months, Homura is attacked by a witch but is rescued by Madoka and Mami, both of whom are magical girls. When both Madoka and Mami are killed in the battle against Walpurgisnacht, Homura makes a contract with Kyubey to send her back in time so that she can protect Madoka. She joins Madoka and Mami and learns how to use her magical powers for combat, stopping time whilst using stolen firearms and explosives. However, following the battle against Walpurgisnacht, Homura witnesses Madoka transforming into a witch and realizes Kyubey had been deceiving everyone. She attempts to tell the others during the next time loop, but they do not believe her, until Sayaka becomes a witch and the remaining magical girls are forced to kill her. After the battle, Mami kills Kyoko and turns her gun on Homura in an attempt to prevent them from becoming witches. Madoka stops Mami with deadly force, leaving just her and Homura to face Walpurgisnacht. With their Soul Gems depleted, Madoka uses her last Grief Seed on Homura, begging her to return to the past to keep her from being fooled by Kyubey. She then asks Homura to kill her before she turns into a witch. Returning to the past again, now with a colder personality, Homura attempts to keep Kyubey from making contact with Madoka in the first place and decides to fight against the witches herself. However, this ultimately fails, and she continues to travel through many timelines in the hope of saving Madoka."
+		)
+	,	("Puella Magi Madoka Magica",
+		 11,
+		 "The Only Thing I Have Left to Guide Me",
+		 "Kyubey reveals to Homura that the reason Madoka has the potential to become such a powerful witch is because Homura's constant trips through time to try and save Madoka has resulted in her becoming the centerpoint of countless timelines, as the potential of a magical girl is determined by the relative effect of their role on fate. After Sayaka's funeral, Kyubey shows Madoka the history of magical girls and how it has shaped civilization, causing extreme distress to Madoka. Madoka's mother, Junko, grows concerned about her, feeling she is hiding something from her. Madoka goes to see Homura, who unconvincingly reassures her that she can handle Walpurgisnacht, and finally reveals the truth about herself, begging Madoka to allow Homura to protect her. As a storm hits the city, and the citizens take shelter, Homura stands alone to face Walpurgisnacht, throwing everything she has at it, but even so she is still overwhelmed and eventually is all but defeated. When Madoka hears from Kyubey that Homura may turn into a witch if the latter loses hope of saving her, Madoka prepares to go and find her. Although Junko tries to stop her, Madoka convinces her that she is doing what she believes is the right thing. As Homura begins to lose hope and is on the verge of becoming a witch, Madoka arrives with Kyubey, announcing that she plans to make her wish."
+		)
+	,	("Puella Magi Madoka Magica",
+		 12,
+		 "My Very Best Friend",
+		 "Madoka makes the decision to become a magical girl, wishing to prevent all witches from the past, present and future from coming into existence in the first place, a wish made possible by the massive power inside her. As she makes the transformation, her consciousness is greeted by Mami and Kyoko. Becoming a god-like entity and defeating Walpurgisnacht, Madoka spreads herself across space and time, preventing fallen magical girls from becoming witches by absorbing their despair and having them disappear peacefully. Homura is taken to a place outside of time where she witnesses Madoka exterminating the witch born from her own comet-sized Soul Gem. In doing this, Madoka starts to fade into a higher plane of existence, present at all points in all spacetimes but absent from human memory and perception. Madoka leaves Homura with a ribbon so that she will not forget her. Madoka then leaves and joins Sayaka, who ultimately had to succumb to a magical girl's fate as Madoka had chosen to respect the wish she made to heal Kyosuke. Homura returns to a world where Madoka does not exist, Mami and Kyoko are still alive, but only Homura retains memories of Madoka. She and other magical girls continue to fight against wraiths formed from the negative emotions of humanity, but thanks to Madoka's efforts, magical girls disappear instead of becoming witches after exhausting their hope. Despite being alone and facing these new enemies, Homura remains firm in protecting the city that Madoka loved."
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Puella Magi Madoka Magica", 0, 1, 4)
+	,	("Puella Magi Madoka Magica", 0, 2, 4)
+	,	("Puella Magi Madoka Magica", 0, 3, 4)
+	,	("Puella Magi Madoka Magica", 3, 1, 2)
 ;
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
@@ -3939,6 +4923,150 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 ;
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("AKB0048",
+		 13,
+		 "There's nothing like music and art to disturb the heat and so it was banned in this dystopian society controlled by the anti-music DES. The year is 0048 and one group of brave young women are out to rebel against this law by resurrecting a long forgotten J-Pop band called AKB48. The newly dubbed AKB0048 are out to bring music back in the world and they'll do everything in their power to make it happen. Armed with not only their voice and dance moves but also weapons and battle gear, these girls are a force to be reckoned with.",
+		 "There's nothing like music and art to disturb the heat and so it was banned in this dystopian society controlled by the anti-music DES. The year is 0048 and one group of brave young women are out to rebel against this law by resurrecting a long forgotten J-Pop band called AKB48.",
+		 "Hanabee",
+		 "&copy; SATELIGHT"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("AKB0048",
+		 3,
+		 1,
+		 "PG - Mild animated violence, sexual references, coarse language and nudity",
+		 13,
+		 "https://hanabee.com.au/products/akb0048-pt1-dvd"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("AKB0048",
+		 1,
+		 "The Indelible Dream",
+		 "In a dystopian future where music is deemed illegal, AKB0048, successors to the idol group AKB48, rebel against the government to bring music to people's hearts. In the year 0048, three thirteen-year-old girls, Nagisa Motomiya, Orine Aida and Yūka Ichijō, decide to audition to become members of AKB, although Nagisa has trouble singing due to the restrictions placed upon her by her father. As the girls hear they have passed the first round of auditions, Nagisa becomes downhearted as she would not be allowed to go. However, after hearing about Yūka's and Orine's reasons for wanting to join AKB, Nagisa decides to join Yūka and Orine and head off to the auditions."
+		)
+	,	("AKB0048",
+		 2,
+		 "The Chosen Lights",
+		 "As Nagisa, Orine and Yūka travel on the ship headed for the auditions, they meet fellow auditioners Suzuko Kanzaki and Makoto Yokomizo, along with a stowaway named Sonata Shinonome. They soon learn that Chieri Sono, the daughter of a corporate CEO who had introduced them to AKB in their childhood, had apparently run away from home and boarded the ship to the auditions. While searching for her, Nagisa encounters a strange kid who tells her she should turn Chieri in if she wants to survive the auditions. Just then, the ship comes under attack from the anti-entertainment force DES who come to capture the auditioners. Just as the girls are about to be captured, AKB0048 arrive to take on the forces. As Nagisa gets caught while retrieving a ribbon her mother gave her, the kid from before rescues her, revealing herself to be none other than Chieri. Chieri gets trapped under a chandelier, but Nagisa refuses to leave her behind. This causes a creature known as a Kirara to glow brightly, which AKB0048 member Yūko Ōshima points out is the symbol of an idol before helping to free Chieri and bringing both her and Nagisa to the escape shuttle, where they blast off into a warp gate."
+		)
+	,	("AKB0048",
+		 3,
+		 "Stardust Selection",
+		 "As all the applicants are gathered, they begin intense idol training which, to their surprise, involves combat skills and self defense. The manager, Tsubasa Katagiri, reveals that, in order to be selected, the applicants must protect AKB during a guerrilla concert. As Nagisa and Yūka argue about Chieri's change in attitude, they stumble across AKB0048 practicing and learn how hard they practice and how their occasional squabbles help improve each other. The day of the concert come and the applicants find themselves up against the DES, with many of the girls failing under pressure. As Nagisa and Chieri fight together, Chieri gets shot while protecting Nagisa. Thankfully, it is revealed the DES attack was simply a simulation using paint balls. Having taken note of their friendship and teamwork, Tsubasa announces that Nagisa, Chieri, Yūka, Orine, Suzuko, Makoto and Sonata have all successfully passed and will become the 77th generation understudies."
+		)
+	,	("AKB0048",
+		 4,
+		 "Your Efforts Aren't in Vain",
+		 "As the 77th gen trainees arrive on Akibastar, they are brought to see an AKB concert, which is opened by the two remaining 75th gen trainees, Mimori Kishida and Sonata's older sister Kanata. However, Kanata is not too pleased that Sonata had joined up and ends up arguing with her. Speaking with Mimori, Kanata reveals she joined AKB so she could get revenge on the DES for killing her father and did not want Sonata to face such danger. As dance lessons begin the next day, Kanata becomes frustrated when the instructor,Ushiyama, criticizes her lack of motivation and runs off. However, Mimori reminds her that it is okay to enjoy singing and she soon makes up with Sonata."
+		)
+	,	("AKB0048",
+		 5,
+		 "Their Day Off",
+		 "As the trainees are given a day off from their lessons, the girls split off into various groups doing various activities with their seniors. Nagisa decides to follow Chieri as she goes shopping, where they meet up with Yūko, who tells them about the last successor of Atsuko Maeda who disappeared during a concert. Meanwhile, Suzuko and Sonata becomes curious about AKB0048's producer, Sensei-Sensei, while Yūka and Orine meet with Tomomi Itano and her ancestors. As all of the current members teach the trainees about what gives them inspiration, Nagisa and Chieri decide to follow in Yūko's footsteps."
+		)
+	,	("AKB0048",
+		 6,
+		 "The First Handshake Event",
+		 "The trainees are to make their public debut at a handshake event in order to make a strong impression on their fans. As the girls have trouble deciding what to wear for the event, Orine, who wants to succeed Sashiko receives a hateful video mail, threatening to bomb the event if Orine doesn't quit, which leaves her shaken up. After some advice from Minami Takahashi that there will always be haters, Orine decides to attend the event. Despite still being a little shaken, she cheers up when she meets her first fan. Just then, as the kid from the video threat shows up, an explosion goes off, though it turns out to not be because of him, but instead a DES attack. As the others fight off the DES, Orine vows to protect her hater so she can learn how to improve herself, before they are backed up by the OTA, fans who fight alongside AKB in times of need. Afterwards, Orine receives another letter from her hater offering compliment and constructive criticism."
+		)
+	,	("AKB0048",
+		 7,
+		 "Kirara of Succession",
+		 "With some of the AKB successors attending a peace ceremony, Kanata, Mimori, Chieri and 76th gen understudy Megumi are chosen to be stand-ins for the next concert. As Chieri's standing in for Yūko invokes jealousy from the 76th gen understudies, they dig up dirt on how her father is a manufacturer of DES weapons. Chieri explains to Nagisa about how she ran away from home when she heard her father's machines were being used by DES. As Kanata chases after Chieri, reminding her that her father should not affect her dream, Minami, Yūko and some other successors who believe Kanata should be made into a successor follow Tsubasa to where she meets Sensei-Sensei. There, they discover a cave full of Kirara, which shows a mirror of who succeeds the original AKB48 member, predicting Kanata will succeed Minami, who does not take it well."
+		)
+	,	("AKB0048",
+		 8,
+		 "To Whom Does That Name Belong",
+		 "Following the stand-ins concert, Kanata, Mimori and the 77th gen understudies are asked to stand in for a guerilla concert on a planet where the entertainment ban is in full effect, prompting some jealousy from the 76th gen understudies. Meanwhile, Minami is still concerned about what she saw the other day, and acts weird around Kanata. As they make over there, Sae Miyazawa, a former 76th gen understudy, grows concerned about Megumi. As the increased security evokes debate about whether the concert should be canceled, the ship comes under attack by the DES. Noticing Minami is struggling to stay focused, Yūko and Kanata set off to rescue her as she is overwhelmed by the enemy. As she recovers from her injuries, Minami laments that she does not want to graduate, but she does not want to hold Kanata back either. As Yūko tells Minami that she should focus on her dream above others, Kanata resolves to become stronger."
+		)
+	,	("AKB0048",
+		 9,
+		 "Emotion Relation",
+		 "Due to Minami's injuries, Kanata is asked to fill in for her in an upcoming concert on the snowy planet Thundristar, much to Minami's dismay. As the understudies explore the planet and see how people under the entertainment ban are like, they meet a group of young fans who are looking forward to the concert. As Nagisa sings to cheer them up, Tsubasa decides to hold a multiple co-ordinated concert with the understudies in order to distract the DES while the main concert takes place. Before the concert begins, Minami demands to participate despite her injuries, much to Kanata's disappointment. As Kanata escorts Minami after she comes down with a fever at the end of the concert, Minami understands a bit more about Kanata's passion and once again feels she deserves to be Minami more than herself."
+		)
+	,	("AKB0048",
+		 10,
+		 "Miracle of the Waves",
+		 "Following a meeting with Sensei-Sensei, Tsubasa announces a gravure shoot for all the members, including the understudies. As they arrive on the ocean planet Atamistar, Makoto grows concerned about her appearance, so Suzuko uses a technique to push all the fat up to her breasts. Meanwhile, Yūko confronts Tsubasa, who was a former AKB successor, about the reason why Atsuko disappeared and the center position was abolished, but gets no answers. As Makoto's plan ultimately fails after being stun by a jellyfish, the Kirara glows brightly when Nagisa and Chieri are shot together. As Suzuko explains to Makoto about how she'd rather be an administration member than a successor, Chieri tells Nagisa that she thinks Kirara has chosen her. Meanwhile, Tsubasa meets up with the camerawoman, Mikako Minamino, who is the former successor of Minami Minegishi and a former Center Nova, who shows Tsubasa the picture of Kirara glowing for Chieri and Nagisa. Tsubasa is satisfied for this, but Minami declares she is against the idea of the Center Nova position being resurrected."
+		)
+	,	("AKB0048",
+		 11,
+		 "Return to Lancastar",
+		 "Following one of AKB's concerts, it's suddenly announced that the understudies will make their debut performance on Lancastar, Nagisa, Orine,and Yūka's home planet. As the setlist is announced, it is revealed Nagisa will performing a solo song generally sung by those who receive promotions. Meanwhile, Yūka grows concerned when she learns the boy she fell out with back home, Mamoru, doesn't want her to come back. It is soon announced that a new song has been composed by Sensei-Sensei for the understudies, the first since Atsuko's disappearance, irritating Yūko who becomes determined to learn this song herself. As they approach Lancastar, they learn DES have learnt of the concert. As the understudies explore the town and find the school has been abandoned, they encounter Mamoru and his comrade Aoi, who are members of the Entertainment Liberation. They explain what had happened during the past few months, including the arrest of Nagisa's father. As the base comes under attack from the DES and the understudies are forced to run, Orine is cornered by a tank which came from the factory she worked at."
+		)
+	,	("AKB0048",
+		 12,
+		 "The Idol Who Sings of Love",
+		 "Nagisa, Chieri and Orine manage to evade capture until they are rescued by the WOTA, who offer to help Nagisa rescue her father. Arriving at the detention center, Kanata and Yūka join the WOTA forces in diversionary tactics while the rest of the understudies sneak in underground. However, Nagisa's father refuses to be rescued and they are forced to retreat empty handed. While recouping at Yūka's family restaurant, Nagisa hears from Yūka's parents how her father was arrested because he didn't want Nagisa to be forced to quit AKB0048. Due to all the stress she has been feeling, Nagisa ends up losing her voice, so Chieri decides to fill in for her song. Meanwhile, Minami confesses to Yūko that she intends to graduate after the concert, while Chieri tells Nagisa not to think about quitting until after their performance. As the day of the concert comes, the understudies start their performance while the successors and WOTA defend against the DES, although the concert is cut short due to the overwhelming DES forces. As Yūka says goodbye to Mamoru, who confessed his love for her before the concert, a new Kirara appears."
+		)
+	,	("AKB0048",
+		 13,
+		 "For Their Smiles",
+		 "As Tsubasa recalls some things Atsuko taught her, the understudies, along with the successors, request that they resume the concert. Just then, everyone hears the voice of Atsuko, whose light brings the concert to the detention center. As Chieri offers Nagisa the chance to sing, she gets her voice back upon seeing her family support her and Chieri's Kirara splits in two. The understudies' group performance soon begins, with everyone bathed in a radiant glow as they perform. As Minami fights to protect the understudies from the DES, the Kirara in the holy grounds choose her as Takamina's successor once more, while Sensei-Sensei prophesies that one of the understudies will become the next Center Nova. The camerawoman, who was the former successor of Minami Minegishi, predicted that if they glowed brighter, they would disappear. But didn't at the last minute, she falls on her feet, wondering about the Center Nova. She discovers that the substance called 'Dualium' is the reason why the Center Nova phenomena occurred. After a brief reunion with their family, friends and fans, AKB0048 set off to their next stage."
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("AKB0048", 0, 1, 4)
+	,	("AKB0048", 0, 2, 4)
+	,	("AKB0048", 0, 3, 5)
+	,	("AKB0048", 2, 1, 13)
+;-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("ALIEN 9",
+		 4,
+		 "In sixth grade Yuri just wants to end her last year in elementary school on a quiet note...not as a member of the 'Alien Party'. The objective of the 'Alien Party' is to capture any rogue aliens that wonder on to the school premises. However to capture these aliens you need the help of one, called a &quot;Borg&quot;. A symbiotic life-form that offers the ability to protect, incapacitate and ultimately capture other aliens in compensation for being able to feed off their wastes by licking their back.",
+		 "In sixth grade Yuri just wants to end her last year in elementary school on a quiet note...not as a member of the 'Alien Party'.",
+		 "hanabee",
+		 "&copy; J.C. STAFF"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("ALIEN 9",
+		 3,
+		 4,
+		 "M - fantasy themes and violence",
+		 4,
+		 "https://hanabee.com.au/products/alien-9-dvd"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("ALIEN 9",
+		 1,
+		 "9th Elementary Anti-Alien Squad",
+		 NULL
+		)
+	,	("ALIEN 9",
+		 2,
+		 "Boredom, Spaceship and Overgrowth",
+		 NULL
+		)
+	,	("ALIEN 9",
+		 3,
+		 "Summer Vacation, Borg and Death",
+		 NULL
+		)
+	,	("ALIEN 9",
+		 4,
+		 "The End of the Beginning",
+		 NULL
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("ALIEN 9", 0, 1, 1)
+	,	("ALIEN 9", 0, 2, 1)
+	,	("ALIEN 9", 0, 3, 2)
+	,	("ALIEN 9", 2, 1, 4)
+;
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Beautiful bones",
 		 12,
 		 "Sakurako Kujo has a rather unique obsession much to, reluctant assistant, Shotaro Tatewaki's chagrin. Solely focused in the pursuit of studying bones Sakurako does not have the time or tolerance for dealing with much else. But as luck would have it Shotaro is a magnet for the dead and so long as he keeps unearthing these remains the more mysteries are solved.",
@@ -4228,6 +5356,126 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 		("Is it wrong to try to pick up girls in a dungeon", 0, 1, 4)
 	,	("Is it wrong to try to pick up girls in a dungeon", 0, 2, 4)
 	,	("Is it wrong to try to pick up girls in a dungeon", 0, 3, 5)
+;-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Kokoro Connect",
+		 17,
+		 "The members of the Student Cultural Society are about to experience a new side of life or more specifically each other's. As they find themselves the test subject of a mysterious being, the stories of body swapping and de-aging are about to become a reality. Can these five friends overcome their demons to get their bodies back or will they be forever stuck as each other?",
+		 "The members of the Student Cultural Society are about to experience a new side of life or more specifically each other's. As they find themselves the test subject of a mysterious being.",
+		 "Hanabee",
+		 "&copy; Silver Link"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Kokoro Connect",
+		 4,
+		 1,
+		 "M - Mature themes, sexual references and coarse language",
+		 17,
+		 "https://hanabee.com.au/products/boxset-kokoro-connect-blu-ray"
+		)
+	,	("Kokoro Connect",
+		 3,
+		 1,
+		 "M - Mature themes, sexual references and coarse language",
+		 17,
+		 "https://hanabee.com.au/products/boxset-kokoro-connect"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Kokoro Connect",
+		 1,
+		 "A Story That Had Already Begun Before Anyone Realized It",
+		 "Taichi Yaegashi, Iori Nagase, Himeko Inaba, Yui Kiriyama and Yoshifumi Aoki are first-year high school classmates and members of the Student Cultural Society. As Taichi, Iori and Himeko try to brainstorm about a new topic for a news article, Yoshifumi and Yui later arrive in the clubroom and claim to have temporarily switched bodies the previous night. Taichi, Iori and Himeko are pretty skeptical of this, but when Iori goes to a classroom to retrieve a notebook, it is soon proven to be real when Taichi suddenly switches bodies with Iori and briefly gets hit on by the class president, Maiko Fujishima. After spending the rest of the afternoon convincing Himeko what had happened is real, Taichi and Iori eventually switch back to their original bodies, before the five of them leave school to return to their homes."
+		)
+	,	("Kokoro Connect",
+		 2,
+		 "Some Fascinating Humans",
+		 "The next morning, Himeko, Yoshifumi and Yui all switch bodies together, though soon revert to normal. After the gang are excused from absence in class, Taichi briefly ends up switching places with Yui before getting grilled by Iori over what happened the previous day while he was in her body. Just then, the gang is approached by someone who had swapped bodies with their homeroom teacher Ryuzen Goto, calling himself Heartseed, who is revealed to be responsible for the body swapping, vaguely explaining the situation before leaving. A week later, the group discuss how best to handle the situation without making anyone else suspicious. As Iori later swaps bodies with Yoshifumi, she talks with Taichi about how the switching may affect their individuality before she switches back. The next day, as Taichi and Himeko switch and end up volunteering for off-campus cleaning duty with Maiko, Himeko decides to get revenge against Taichi and declare to Maiko that Iori is hers while in Taichi's body. "
+		)
+	,	("Kokoro Connect",
+		 3,
+		 "Jobber and Low Blow",
+		 "As Taichi questions Himeko about what she said in front of Maiko, she implies to Taichi that he has feelings for Iori while also worrying about how the body swapping could eventually break them. Later, Taichi and Yoshifumi learn that Yui has androphobia, the fear of men. That night, as Taichi switches with Yui, they meet up in a park, where she reveals she gained that fear after almost being raped in middle school, believing there was no way she could beat a man in a fight. Wanting to help her get over her fear, Taichi teaches Yui that the crotch is the one weakness that all men possess. The next day, as Yui becomes a bit more confident and decides to take up martial arts again, Himeko suddenly collapses before Taichi. "
+		)
+	,	("Kokoro Connect",
+		 4,
+		 "Twin Feelings",
+		 "As Taichi and Iori escort Himeko home, Taichi is forced to spill the beans about what happened last night with Yui, leaving Iori a bit shocked as she was unaware of Yui's androphobia. After dropping Himeko off, Iori tells Taichi about the troubles she faced due to her mother Reika Nagase constantly getting remarried, having to keep changing her persona to fit the tastes of others while eventually forgetting who she originally was, and she feels that the body swapping would cause her to just fade away. The next day, Taichi confronts Himeko, who eventually reveals that she cannot trust them to use another's body for evil deeds, hating herself for feeling that way. As Taichi tells Himeko she does not need to change who she is to be accepted by others, he tells her a secret that he has lustfully thought of her and the other girls in the past. Moved by his confession, Himeko decides to share her issues with the others and finds the others accept her."
+		)
+	,	("Kokoro Connect",
+		 5,
+		 "A Confession and a Death",
+		 "Yoshifumi once again confesses to Yui, but she declines since she is not ready to dating anyone just yet. Iori pretends to have swapped places with Himeko to find out how Taichi feels about her. After he says that he likes their current relationship, Himeko walks in on them, causing Iori to run off in embarrassment. Taichi realizes his folly and chases after her, finding her on a bridge over the river. Taichi expresses his admiration for her and confesses to her, but Heartseed suddenly possesses Iori and forces her to jump off into the river, which results for her to be hospitalized for intensive care. Heartseed, who then possesses Goto, tells the others that Iori will soon die, allotting them thirty minutes to decide amongst themselves whose soul will die with her and giving them the ability to switch bodies on verbal request. As Iori swaps with Yoshifumi and learns of the situation, she offers to die with her own body, not willing to sacrifice anyone else. As she spends time talking to everyone individually, she confesses to Taichi and kisses him while in Himeko's body. It turns out that Iori managed to survive and that Heartseed planned out this whole ordeal. As Iori recovers from her injuries and returns to school, the gang assume that the body swapping has stopped, while Himeko gets revenge on Taichi for stealing her first kiss."
+		)
+	,	("Kokoro Connect",
+		 6,
+		 "A Story That Continued Before Anyone Realized It",
+		 "Three weeks following the body swapping incident, Taichi and Iori have yet to have a chance to talk alone since the club has been busy writing a paper. One day, as Taichi and Himeko are alone in the clubroom, Himeko suddenly starts stripping and making advances on Taichi before they are interrupted by Yui, who suddenly smashes the table without realizing it. Later that night, both Taichi and Iori end up doing things unconsciously, though it does give them a chance to finally talk about the confession. The next day, Taichi, Iori and Himeko learn from Maiko that Yui and Yoshifumi had been taken into police custody after Yui had beaten up some guys hitting on some girls, while Yoshifumi was trying to protect her from being taken away. As Taichi, Iori and Himeko discuss the voices they had been hearing in their heads, Heartseed appears again, explaining that they are being put through a new phenomenon in which their bodies will impulsively act on their deepest desires. As Taichi, Iori, Himeko and Yoshifumi discuss how they need to be more careful to try and not get innocent people involved, Himeko hides her doubt from the others. Later, Iori calls Taichi to tell him they should put off dating until the phenomenon is over."
+		)
+	,	("Kokoro Connect",
+		 7,
+		 "Falling Apart",
+		 "As the others grow concerned about Yui, who has not shown up at school since the incident, Himeko tells Taichi he could be in danger if his desire to help others is unleashed. As the others visit Yui the next day, she reveals her worries that she might end up hurting others again, but Himeko ends up unleashing her desire to scold her, stating her belief that they could all be in danger if they do not satisfy Heartseed's desire for entertainment. As Himeko tries to keep herself out of situations, Taichi's desires cause him to argue with her and reprimand her for being a coward."
+		)
+	,	("Kokoro Connect",
+		 8,
+		 "And Then There Were None",
+		 "As Himeko distances herself from the others, concerns over Yui cause Taichi and Yoshifumi to argue with each other. When Iori tries to stop them from fighting, Taichi's desires cause him to inadvertently injure her. The next day, as Maiko makes plans with the class for a field trip, Iori becomes worried as both Himeko and Taichi are becoming more distant from her. As Goto asks Taichi to help him carry some school equipment, Goto suggests that Taichi should turn to his friends for advice, while Maiko later suggests that Taichi should consider what is most important to him. "
+		)
+	,	("Kokoro Connect",
+		 9,
+		 "Can't Stop, Can't Stop, Can't Stop",
+		 "Taichi apologizes to Iori and tells her that he would rather stay with his friends and risk hurting them than distance himself from them. After making up with Iori, Taichi also manages to make up with Yoshifumi, but Himeko is still avoiding them. Recalling how the body swapping allowed Taichi to help Yui with her androphobia, he and Yoshifumi assure Yui that their desires can be controlled with enough will and convince her to attend school again. Meanwhile, Heartseed appears at Himeko's house at night, bringing to light her withheld feelings that she fears could tear apart the group if revealed."
+		)
+	,	("Kokoro Connect",
+		 10,
+		 "Putting Into Words",
+		 "As the school goes on the field trip to the mountains, Himeko remains concerned over what Heartseed had told her. Iori takes notice and learns that Himeko also has romantic feelings for Taichi. Iori confronts Himeko, who reveals that she never acted on her feelings as she did not want the group to fall apart, believing no one would want a weakling such as herself. Iori tells Himeko to stop putting herself down and reassures her their friendship will always remain despite her flaws and their shared love of Taichi. Just as they make up, Heartseed possesses Iori and tells Himeko that Taichi had been in an accident, causing Himeko to panic, believing he had fallen down a cliff. Upon discovering had simply fallen off a tree while rescuing a kitten, remaining relatively unscathed, Himeko breaks down in tears out of relief. With the desire unleashing phenomenon declared over, Himeko decides to confess to Taichi and, despite getting rejected, remains confident in the fact she may one day win against Iori and then gives him a kiss."
+		)
+	,	("Kokoro Connect",
+		 11,
+		 "A Story That Began As We Realized It",
+		 "On the day before winter break, following a brief period of peace after the desire unleashing incident, a new phenomenon takes place in which Iori and Yui temporarily revert to children from noon to five o'clock in the afternoon that day. After returning to normal, they lose memory of what happened, but remember things from when they were that age. Later that night, a second Heartseed appears before Taichi through his younger sister, Rina Yaegashi, tasking him to watch over the others and warning him not to tell the others about his existence. The next day, Taichi stumbles upon Yui, who is argued at by an old karate rival, Chinatsu Mihashi, over breaking a certain promise which she cannot remember. As the gang meets up at an abandoned building, this time Himeko and Yoshifumi shrink, with the now ten-year-old Yoshifumi likening Yui to a girl named Nana Nishino. After reverting to his normal age, Yoshifumi explains that Nana was a girl he went out with once before she moved, leading him to be conflicted over how his feelings stand for both her and Yui. The next day, as Taichi and Himeko watch over a fourteen-year-old Iori, Himeko voices her worries."
+		)
+	,	("Kokoro Connect",
+		 12,
+		 "Into a Snowy City",
+		 "As the gang have to look after Iori who winds up as a baby, Yui is confronted by Chinatsu, who challenges her to a karate match and defeats her. Meanwhile, Yoshifumi ponders if his feelings for Yui are because of her similar appearance to Nana. On the second day of the New Year, Yui reverts to right after she was assaulted and, upon returning to normal, remembers vividly about that age. As Yui refuses to talk things out with Chinatsu, Yoshifumi tells her to stop running away from her problems. Talking with Taichi, Yui reveals her promise with Chinatsu was to meet each other at the national karate tournament, which she was unable to keep after contracting her androphobia, and laments how weak and reliant she has become. After sending Yui home, the others speak with Yoshifumi, who remembers his personal vow to live carefree and decides to go visit Nana to tell her about his love for Yui. Afterwards, Yoshifumi reconfirms to Yui that he loves her for who she is. This encourages Yui to face her own problems, embracing Yoshifumi and overcoming her androphobia. Afterwards, Himeko becomes suspicious of Taichi hiding something from everyone."
+		)
+	,	("Kokoro Connect",
+		 13,
+		 "As Long as the Five of Us Are Together",
+		 "As Taichi is forced to tell the others what he had been hiding, the second Heartseed reminds them of the consequences, making the age revert phenomenon happen at random times and including Taichi in the phenomenon, which forces them to stay at the building to avoid others discovering themselves. Iori becomes stressed from believing that Reika is in danger from her violent second husband, who wants to get back together with her. Iori, briefly turning younger for a short period and regaining memories of that age, is stopped by the others when she tries to head off on her own. As Taichi, Iori and Himeko reach the house and hear violent noises, they are forced to retreat after Iori turns into a baby. Just then, the first Heartseed approaches them, ending the age revert phenomenon and offering Iori the opportunity to go back in time and rectify some of the bad decisions she made in her youth. After some encouragement by Taichi and Himeko, Iori declines his offer, saying that her past mistakes have allowed her to become the person she is now. Afterwards, everyone goes with Iori to see Reika, where they both realize they had both made mistakes trying to make the other happy. After Reika gains the encouragement to turn her second husband away, Iori gives thanks to everyone who made her who she is. Yui apologizes to Chinatsu, promising to meet her at the next karate tournament. As winter break comes to an end, Iori starts to question if she truly loves Taichi. "
+		)
+	,	("Kokoro Connect",
+		 14,
+		 "The Days Fall Apart",
+		 "Heartseed puts the gang through another phenomenon, in which their true emotions will be randomly transmitted to each other, shown when Iori turns Taichi down when he asks to start dating her three days later. As Valentine's Day comes and Maiko suggests Taichi turn his attention towards Himeko, the gang grows concerned when they learn Goto will only be able to be an advisor for one club, meaning they will have to outdo the Jazz Band Club in a presentation in order to keep him. While the discussion turns to Valentine's Day, both Himeko's feelings for Taichi and Taichi's rejection by Iori gets transmitted to the others. As Himeko tries to get Iori to speak her reasons, Iori's selfish thoughts end up getting transmitted to everyone, which in turn leads Iori to hear everyone's concerned thoughts about her, including a harsh one from Himeko. When Himeko asks Iori about it privately, Iori responds that the experiences with Heartseed has affected her decision making, which makes her uncertain about if she actually loves Taichi or not. Afterwards, Taichi and Himeko have a talk, listing the things he likes about Himeko, although still pointing out he is in love with Iori. As the gang decides what to do for their presentation, Yoshifumi hears Iori's thoughts about how everyone has their own idea of her personality. Later, Heartseed approaches Yoshifumi and notices how useless he is, which urges Yoshifumi to strengthen his resolve with thoughts of Yui, who also hears his thoughts. "
+		)
+	,	("Kokoro Connect",
+		 15,
+		 "You Don't See It, You Don't Get It",
+		 "As Iori struggles with her identity, she ends up being cold and distancing herself from everyone around her, first shown when she turns down Shoto Shiroyama, a boy from the Jazz Band Club. When Taichi hears Himeko thinking about disbanding the Student Cultural Society, she explains it as a possible method to stop Heartseed from interfering with them, though Taichi easily tells that she does not want it to come to that. Concerned about Iori, Yui later tries to reason with her, but Iori just responds that her changing personality means that she can no longer be friends with Yui. As Yui is approached by Heartseed that evening, she resolves to stop relying on others so much, later giving Taichi some encouragement to help save Iori. The next day, Himeko tries to get Iori to say what she truly feels, in which Iori responds by saying that it is Himeko's selfishness concerning Taichi that is to blame. "
+		)
+	,	("Kokoro Connect",
+		 16,
+		 "Determination and Resolution",
+		 "As the gang continues on their presentation without Iori, Taichi makes a bold statement in class in order to quell the rumors surrounding Iori. However, Kaoru Setouchi, a girl who Iori infuriated the other day, is not fooled by this and plots to scheme something as payback. Later, the gang returns to the clubroom to find their presentation has been torn to shreds. Despite the others putting it aside and deciding to remake the project from scratch, Iori becomes infuriated at Kaoru for supposedly getting others involved, forcing Taichi and Himeko to stop Iori in her tracks. After calming her down, Himeko tries to talk to Iori again by sharing an embarrassing dream about Taichi. Iori eventually breaks down, and due to all the stress and suffering the Heartseed incidents have caused her, she reveals how she cannot stand to keep up her fake, cheerful personality anymore. Himeko responds that she should just live the way she wants to, whilst Taichi mentions that he still loves her even if it was not her true personality. As Iori asks to think about it, Himeko encounters the group of boys who were responsible for messing up the clubroom, and when she tries to confront them, she ends up being kidnapped."
+		)
+	,	("Kokoro Connect",
+		 17,
+		 "Connecting Hearts",
+		 "As Taichi, Yui and Yoshifumi learn of Himeko's kidnapping via the emotion transmission and rush to save her, Iori remains conflicted over what she should do, but inevitably decides to follow Taichi and Himeko's advice and live for herself. As the others start fighting against the boys who kidnapped Himeko, one of them puts a knife towards her. Just then, Iori arrives and manages to use the emotion transmission to get Himeko to safety. Kaoru, who showed resentment towards Iori for turning down Shōto in the past, apologizes for taking her actions too far. Noticing that Kaoru also changed personalities to be accepted by others, Iori gives Kaoru the same advice that she was once given before and soon befriends Kaoru. As the gang makes their way home, one of the kidnappers comes at them with a metal pipe, hitting Taichi as he protects Himeko. After Taichi and Iori have a mental discussion via the emotion transmission, where they decide to start their relationship from scratch, Taichi awakens and decides to ask Himeko out, to which she agrees. As the phenomenon comes to its conclusion, Goto is impressed by the gang's presentation and decides to continue moderating both clubs. With Taichi and Himeko now dating and Iori making friends again, the gang enter the new school year with their paths ahead of them."
+		)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Kokoro Connect", 0, 1, 8)
+	,	("Kokoro Connect", 0, 2, 5)
+	,	("Kokoro Connect", 0, 3, 4)
 ;-- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Little Busters Refrain",
@@ -6454,13 +7702,13 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 
 INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
 		("2018-02-26 14-30-00", ".hack//SIGN", 3, 1)
--- 	,	("2018-02-26 15-30-00", "", 3, 1)
+ 	,	("2018-02-26 15-30-00", "Dragon Ball Z", 3, 1)
 
--- 	,	("2018-03-05 14-30-00", "", 3, 1)
--- 	,	("2018-03-05 15-30-00", "", 3, 1)
+-- 	,	("2018-03-05 14-30-00", "Naruto", 3, 1)
+-- 	,	("2018-03-05 15-30-00", "No-Rin", 3, 1)
 
--- 	,	("2018-03-12 14-30-00", "", 3, 1)
--- 	,	("2018-03-12 15-30-00", "", 3, 1)
+ 	,	("2018-03-12 14-30-00", "Oreimo", 3, 1)
+-- 	,	("2018-03-12 15-30-00", "Seiu's Life", 3, 1)
 ;
 
 -- B
@@ -6505,14 +7753,14 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 ;
 
 -- INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
--- 		("2018-03-19 14-30-00", "", 3, 1)
--- 	,	("2018-03-19 15-30-00", "", 3, 1)
+-- 		("2018-03-19 14-30-00", "Aquarion Logos", 3, 1)
+-- 	,	("2018-03-19 15-30-00", "Tengen Toppa Gurren Legan", 3, 1)
 
--- 	,	("2018-03-26 14-30-00", "", 3, 1)
--- 	,	("2018-03-26 15-30-00", "", 3, 1)
+-- 	,	("2018-03-26 14-30-00", "Mobile Suit Gundam: Iron  Blooded Orphans", 3, 1)
+-- 	,	("2018-03-26 15-30-00", "Azumanga Daioh", 3, 1)
 
--- 	,	("2018-04-09 14-30-00", "", 3, 1)
--- 	,	("2018-03-13 15-30-00", "", 3, 1)
+-- 	,	("2018-04-09 14-30-00", "Cardcaptor Sakura", 3, 1)
+-- 	,	("2018-03-13 15-30-00", "Sailor Moon", 3, 1)
 -- ;
 
 -- C
@@ -6559,14 +7807,14 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 ;
 
 -- INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
--- 		("2018-04-16 14-30-00", "", 3, 1)
--- 	,	("2018-04-16 15-30-00", "", 3, 1)
+-- 		("2018-04-16 14-30-00", "Angelic Layer", 3, 1)
+-- 	,	("2018-04-16 15-30-00", "Astro Boy", 3, 1)
 
--- 	,	("2018-04-23 14-30-00", "", 3, 1)
--- 	,	("2018-04-23 15-30-00", "", 3, 1)
+-- 	,	("2018-04-23 14-30-00", "Blood Blockaid Battlefront", 3, 1)
+-- 	,	("2018-04-23 15-30-00", "Guilty Crown", 3, 1)
 
--- 	,	("2018-04-30 14-30-00", "", 3, 1)
--- 	,	("2018-04-30 15-30-00", "", 3, 1)
+-- 	,	("2018-04-30 14-30-00", "Inuyasha", 3, 1)
+-- 	,	("2018-04-30 15-30-00", "Kamisama Kiss", 3, 1)
 -- ;
 
 -- D
@@ -6610,16 +7858,16 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 	,	("2018-05-21 15-30-00", 0, "SwinAnime x STARS Showcase", 39317, 0, "0")
 ;
 
--- INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
--- 		("2018-05-07 14-30-00", "", 3, 1)
--- 	,	("2018-05-07 15-30-00", "", 3, 1)
+INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
+ 		("2018-05-07 14-30-00", "Berserk", 3, 1)
+ 	,	("2018-05-07 15-30-00", "Gangsta", 3, 1)
 
--- 	,	("2018-05-14 14-30-00", "", 3, 1)
--- 	,	("2018-05-14 15-30-00", "", 3, 1)
+ 	,	("2018-05-14 14-30-00", "Highschool of the dead", 3, 1)
+ 	,	("2018-05-14 15-30-00", "Isuca", 3, 1)
 
--- 	,	("2018-05-21 14-30-00", "", 3, 1)
--- 	,	("2018-05-21 15-30-00", "", 3, 1)
--- ;
+ 	,	("2018-05-21 14-30-00", "Kancolle", 3, 1)
+ 	,	("2018-05-21 15-30-00", "Puella Magi Madoka Magica", 3, 1)
+;
 
 
 -- Tabletop Events
