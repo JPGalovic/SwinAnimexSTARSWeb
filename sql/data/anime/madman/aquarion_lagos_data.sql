@@ -22,28 +22,6 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
 		("Aquarion Logos",
 		 1,
-		 "Episode_Title",
-		 "Episode_Synopsys"
-		)
-;
-
-INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
-		("Aquarion Logos ", x, y, z)
-;
-		
--- General Anime Volume Data
-	,	("Aquarion Logos",
-		 3,
-		 1,
-		 "Classification",
-		 26,
-		 "https://www.madman.com.au/catalogue/view/34310"
-		)
-
-		
--- General Anime Episode Data
-	,	("Aquarion Logos",
-		 1,
 		 "Shout! Sousei Gattai!",
 		 "Aquarion Logos is ready to serve up more high-flying robotic battles animated by Satelight"
 		)
@@ -60,113 +38,120 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("Aquarion Logos",
 		 4,
 		 "Let Fly! an Arrow That Pierces the Heart",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 5,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 6,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 8,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 9,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 10,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 11,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 12,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 13,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 14,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 15,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 16,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 17,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 18,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 19,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 20,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 21,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 22,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 23,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 24,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 25,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
 	,	("Aquarion Logos",
 		 26,
 		 "Episode_Title",
-		 "Episode_Synopsys"
+		 NULL
 		)
-		
--- General Anime Session Data
-	,	("Title", x, y, z)
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Aquarion Logos ", 0, 1, 8)
+	,	("Aquarion Logos ", 0, 2, 9)
+	,	("Aquarion Logos ", 0, 3, 9)
+	,	("Aquarion Logos ", 2, 1, 26)
+	,	("Aquarion Logos ", 3, 1, 2)
+;
+
