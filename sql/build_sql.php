@@ -19,7 +19,8 @@
 
 	// Data Collation
 	$core_data_array = array(
-			'data/drop_data.sql'
+			'data/prepare_switch_database.sql'
+		,	'data/drop_data.sql'
 		,	'data/company_data.sql'
 		,	'data/classification_data.sql'
 		,	'data/anime_data_core.sql'
