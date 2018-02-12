@@ -66,7 +66,7 @@
 	//	,	'data/anime/madman/framatical_murder_data.sql'
 	//	,	'data/anime/madman/freezing_data.sql'
 	//	,	'data/anime/madman/full_metal_alchemest_brotherhood_data.sql'
-		,	'data/anime/madman/gansta_data.sql'
+		,	'data/anime/madman/gangsta_data.sql'
 	//	,	'data/anime/madman/gate_data.sql'
 	//	,	'data/anime/madman/goldern_time_data.sql'
 	//	,	'data/anime/madman/guilty_crown_data.sql'

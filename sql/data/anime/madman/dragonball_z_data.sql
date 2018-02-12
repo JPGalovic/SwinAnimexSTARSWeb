@@ -21,14 +21,14 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 
 -- Season 1
 	,	("Dragon Ball Z",
-		 3,
+		 1,
 		 1,
 		 "PG - Mild animated violence",
 		 39,
 		 "https://www.madman.com.au/catalogue/view/7965"
         )
 	,	("Dragon Ball Z",
-		 4,
+		 2,
 		 1,
 		 "PG - Mild animated violence",
 		 39,
@@ -37,14 +37,14 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 
 -- Season 2
 	,	("Dragon Ball Z",
-		 3,
+		 1,
 		 2,
 		 "PG - Mild animated violence",
 		 31,
 		 "https://www.madman.com.au/catalogue/view/7966"
 		)
 	,	("Dragon Ball Z",
-		 4,
+		 2,
 		 2,
 		 "PG - Mild animated violence",
 		 31,
@@ -53,14 +53,14 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 
 -- Season 3
 	,	("Dragon Ball Z",
-		 3,
+		 1,
 		 3,
 		 "M - Moderate animated violence",
 		 33,
 		 "https://www.madman.com.au/catalogue/view/7967"
 		)
 	,	("Dragon Ball Z",
-		 4,
+		 2,
 		 3,
 		 "M - Moderate animated violence",
 		 33,
@@ -69,14 +69,14 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 
 -- Season 4
 	,	("Dragon Ball Z",
-		 3,
+		 1,
 		 4,
 		 "PG - Mild animated violence",
 		 32,
 		 "https://www.madman.com.au/catalogue/view/7968"
 		)
 	,	("Dragon Ball Z",
-		 4,
+		 2,
 		 4,
 		 "PG - Mild animated violence",
 		 32,
@@ -84,14 +84,14 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		)
 -- Season 5
 	,	("Dragon Ball Z",
-		 3,
+		 1,
 		 5,
 		 "M - Animated action violence",
 		 26,
 		 "https://www.madman.com.au/catalogue/view/7969"
 		)
 	,	("Dragon Ball Z",
-		 4,
+		 2,
 		 5,
 		 "M - Animated action violence",
 		 26,
@@ -99,14 +99,14 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		)
 -- Season 6
 	,	("Dragon Ball Z",
-		 3,
+		 1,
 		 6,
 		 "PG - Mild animated violence",
 		 29,
 		 "https://www.madman.com.au/catalogue/view/7970"
 		)
 	,	("Dragon Ball Z",
-		 4,
+		 2,
 		 6,
 		 "PG - Mild animated violence",
 		 29,
@@ -114,14 +114,14 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		)
 -- Season 7
 	,	("Dragon Ball Z",
-		 3,
+		 1,
 		 7,
 		 "PG - Animated violence and coarse language",
 		 37,
 		 "https://www.madman.com.au/catalogue/view/7971"
 		)
 	,	("Dragon Ball Z",
-		 4,
+		 2,
 		 7,
 		 "PG - Animated violence and coarse language",
 		 37,
@@ -129,14 +129,14 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		)
 -- Season 8
 	,	("Dragon Ball Z",
-		 3,
+		 1,
 		 8,
 		 "PG - Mild animated violence",
 		 23,
 		 "https://www.madman.com.au/catalogue/view/7972"
 		)
 	,	("Dragon Ball Z",
-		 4,
+		 2,
 		 8,
 		 "PG - Mild animated violence",
 		 23,
@@ -144,14 +144,14 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		)
 -- Season 9
 	,	("Dragon Ball Z",
-		 3,
+		 1,
 		 9,
 		 "PG - Mild animated violence",
 		 47,
 		 "https://www.madman.com.au/catalogue/view/7973"
 		)
 	,	("Dragon Ball Z",
-		 4,
+		 2,
 		 9,
 		 "PG - Mild animated violence",
 		 47,
