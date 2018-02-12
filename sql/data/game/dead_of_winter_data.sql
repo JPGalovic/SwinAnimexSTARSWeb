@@ -5,8 +5,8 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 2,
 		 5,
 		 4,
-		 "Plaid Hat Games ",
-		 "CLASSIFICATION"
+		 "Plaid Hat Games",
+		 NULL
 		)
 ;
 
