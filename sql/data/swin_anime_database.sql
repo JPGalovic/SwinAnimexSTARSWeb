@@ -6584,7 +6584,6 @@ INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIP
 		 "Siren",
 		 "Ryūtarō Nakamura"
 		)
-
 ;
 
 INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
@@ -7703,13 +7702,13 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 
 INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
 		("2018-02-26 14-30-00", ".hack//SIGN", 3, 1)
--- 	,	("2018-02-26 15-30-00", "", 3, 1)
+ 	,	("2018-02-26 15-30-00", "Dragon Ball Z", 3, 1)
 
--- 	,	("2018-03-05 14-30-00", "", 3, 1)
--- 	,	("2018-03-05 15-30-00", "", 3, 1)
+-- 	,	("2018-03-05 14-30-00", "Naruto", 3, 1)
+-- 	,	("2018-03-05 15-30-00", "No-Rin", 3, 1)
 
--- 	,	("2018-03-12 14-30-00", "", 3, 1)
--- 	,	("2018-03-12 15-30-00", "", 3, 1)
+ 	,	("2018-03-12 14-30-00", "Oreimo", 3, 1)
+-- 	,	("2018-03-12 15-30-00", "Seiu's Life", 3, 1)
 ;
 
 -- B
@@ -7754,14 +7753,14 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 ;
 
 -- INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
--- 		("2018-03-19 14-30-00", "", 3, 1)
--- 	,	("2018-03-19 15-30-00", "", 3, 1)
+-- 		("2018-03-19 14-30-00", "Aquarion Logos", 3, 1)
+-- 	,	("2018-03-19 15-30-00", "Tengen Toppa Gurren Legan", 3, 1)
 
--- 	,	("2018-03-26 14-30-00", "", 3, 1)
--- 	,	("2018-03-26 15-30-00", "", 3, 1)
+-- 	,	("2018-03-26 14-30-00", "Mobile Suit Gundam: Iron  Blooded Orphans", 3, 1)
+-- 	,	("2018-03-26 15-30-00", "Azumanga Daioh", 3, 1)
 
--- 	,	("2018-04-09 14-30-00", "", 3, 1)
--- 	,	("2018-03-13 15-30-00", "", 3, 1)
+-- 	,	("2018-04-09 14-30-00", "Cardcaptor Sakura", 3, 1)
+-- 	,	("2018-03-13 15-30-00", "Sailor Moon", 3, 1)
 -- ;
 
 -- C
@@ -7808,14 +7807,14 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 ;
 
 -- INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
--- 		("2018-04-16 14-30-00", "", 3, 1)
--- 	,	("2018-04-16 15-30-00", "", 3, 1)
+-- 		("2018-04-16 14-30-00", "Angelic Layer", 3, 1)
+-- 	,	("2018-04-16 15-30-00", "Astro Boy", 3, 1)
 
--- 	,	("2018-04-23 14-30-00", "", 3, 1)
--- 	,	("2018-04-23 15-30-00", "", 3, 1)
+-- 	,	("2018-04-23 14-30-00", "Blood Blockaid Battlefront", 3, 1)
+-- 	,	("2018-04-23 15-30-00", "Guilty Crown", 3, 1)
 
--- 	,	("2018-04-30 14-30-00", "", 3, 1)
--- 	,	("2018-04-30 15-30-00", "", 3, 1)
+-- 	,	("2018-04-30 14-30-00", "Inuyasha", 3, 1)
+-- 	,	("2018-04-30 15-30-00", "Kamisama Kiss", 3, 1)
 -- ;
 
 -- D
@@ -7859,16 +7858,16 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 	,	("2018-05-21 15-30-00", 0, "SwinAnime x STARS Showcase", 39317, 0, "0")
 ;
 
--- INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
--- 		("2018-05-07 14-30-00", "", 3, 1)
--- 	,	("2018-05-07 15-30-00", "", 3, 1)
+INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
+ 		("2018-05-07 14-30-00", "Berserk", 3, 1)
+ 	,	("2018-05-07 15-30-00", "Gansta", 3, 1)
 
--- 	,	("2018-05-14 14-30-00", "", 3, 1)
--- 	,	("2018-05-14 15-30-00", "", 3, 1)
+ 	,	("2018-05-14 14-30-00", "Highschool of the Dead", 3, 1)
+ 	,	("2018-05-14 15-30-00", "Isuca", 3, 1)
 
--- 	,	("2018-05-21 14-30-00", "", 3, 1)
--- 	,	("2018-05-21 15-30-00", "", 3, 1)
--- ;
+ 	,	("2018-05-21 14-30-00", "Kancolle", 3, 1)
+ 	,	("2018-05-21 15-30-00", "Puella Magi Madoka Magica", 3, 1)
+;
 
 
 -- Tabletop Events
