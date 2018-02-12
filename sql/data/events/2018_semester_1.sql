@@ -210,25 +210,25 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 
 
 -- Tabletop Events
-INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
--- 		("2018-02-27 10-30-00", 5, "Tabletop Tonight", 0, 0, "0")
--- 	,	("2018-03-06 10-30-00", 5, "Tabletop Tonight", 0, 0, "0")
-		("2018-03-13 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-03-20 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-03-27 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-04-03 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-04-10 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-04-17 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-04-24 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-05-01 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-05-08 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-05-15 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-05-22 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
+INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_SUBTITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
+-- 		("2018-02-27 10-30-00", 5, "Tabletop Tonight", "Decks Out", 0, 0, "0")
+-- 	,	("2018-03-06 10-30-00", 5, "Tabletop Tonight", "Political Games", 0, 0, "0")
+		("2018-03-13 10-30-00", 5, "Tabletop Tonight", "High Fantasy", 40217, 0, "0")
+	,	("2018-03-20 10-30-00", 5, "Tabletop Tonight", "Horror Games", 40217, 0, "0")
+	,	("2018-03-27 10-30-00", 5, "Tabletop Tonight", "Intregue and Betrayal", 40217, 0, "0")
+	,	("2018-04-03 10-30-00", 5, "Tabletop Tonight", "Big Box Games", 40217, 0, "0")
+	,	("2018-04-10 10-30-00", 5, "Tabletop Tonight", "Big Games Small Packages", 40217, 0, "0")
+	,	("2018-04-17 10-30-00", 5, "Tabletop Tonight", "Fight for the Crown", 40217, 0, "0")
+	,	("2018-04-24 10-30-00", 5, "Tabletop Tonight", "Thematic Games", 40217, 0, "0")
+	,	("2018-05-01 10-30-00", 5, "Tabletop Tonight", "To the Stars", 40217, 0, "0")
+	,	("2018-05-08 10-30-00", 5, "Tabletop Tonight", "Eurogames", 40217, 0, "0")
+	,	("2018-05-15 10-30-00", 5, "Tabletop Tonight", "Apocalypse!", 40217, 0, "0")
+	,	("2018-05-22 10-30-00", 5, "Tabletop Tonight", "Party Games", 40217, 0, "0")
 	
-	,	("2018-03-03 08-30-00", 5, "The Dice Must Flow", 40217, 0, "0")
-	,	("2018-03-31 08-30-00", 5, "The Dice Must Flow", 40217, 0, "0")
-	,	("2018-04-28 08-30-00", 5, "The Dice Must Flow", 40217, 0, "0")
-	,	("2018-05-26 08-30-00", 5, "The Dice Must Flow", 40217, 0, "0")
+	,	("2018-03-03 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
+	,	("2018-03-31 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
+	,	("2018-04-28 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
+	,	("2018-05-26 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
 ;
 
 -- Roleplay Events
