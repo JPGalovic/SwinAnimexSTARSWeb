@@ -17,6 +17,13 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		 26,
 		 "https://www.madman.com.au/catalogue/view/34310"
 		)
+	,	("Aquarion Logos",
+		 0,
+		 1,
+		 "M",
+		 26,
+		 "https://www.animelab.com/shows/aquarion-logos"
+		)
 ;
 
 INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
