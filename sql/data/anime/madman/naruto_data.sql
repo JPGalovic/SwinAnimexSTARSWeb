@@ -170,7 +170,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 		)
 		("Naruto",
 		 8,
-		 "The Oath of Pain"",
+		 "The Oath of Pain",
 		 "Kakashi is eventually caught off-guard and is captured in the Water Prison Technique. With Kakashi immobilised, Zabuza creates a water clone to go after the rest of Team 7 and Tazuna. Though Kakashi tells his students to run, Naruto remembers the promise he made to himself and decides to fight to save Kakashi and keep Tazuna alive. With Naruto using his transformation skills with Sasuke's expertise with a Fuma Shuriken, the two youths succeed in forcing Zabuza to release Kakashi in order to avoid Naruto's kunai. s"
 		)
 		("Naruto",
@@ -197,26 +197,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 ;
 
 INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
-		("Naruto", 3, 1, 5)
-		("Naruto", 3, 2, 5)
-		("Naruto", 3, 3, 2)
+		("Naruto", 3, 1, 2)
+
 		;
-		
--- General Anime Volume Data
-	,	("Title",
-		 n,
-		 m,
-		 "Classification",
-		 x,
-		 "URL"
-		)
-		
--- General Anime Episode Data
-	,	("Title",
-		 n,
-		 "Episode_Title",
-		 "Episode_Synopsys"
-		)
-		
--- General Anime Session Data
-	,	("Title", x, y, z)
+	
