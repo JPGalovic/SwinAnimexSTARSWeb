@@ -4,13 +4,13 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 	,	("2018-03-09 11-30-00", 0, "Screening Sessions", 0, 0, "0")
 	,	("2018-03-16 11-30-00", 0, "Screening Sessions", 0, 0, "0")
 	
-	,	("2018-03-02 16-30-00", 0, "Screening Sessions", 0, 0, "0")
-	,	("2018-03-09 16-30-00", 0, "Screening Sessions", 0, 0, "0")
-	,	("2018-03-16 16-30-00", 0, "Screening Sessions", 0, 0, "0")
+	,	("2018-03-02 16-30-00", 0, "Screening Sessions", 27213, 0, "0")
+	,	("2018-03-09 16-30-00", 0, "Screening Sessions", 27213, 0, "0")
+	,	("2018-03-16 16-30-00", 0, "Screening Sessions", 27213, 0, "0")
 	
-	,	("2018-03-02 19-30-00", 0, "SwinAnime x STARS After Dark", 0, 0, "0")
-	,	("2018-03-09 19-30-00", 0, "SwinAnime x STARS After Dark", 0, 0, "0")
-	,	("2018-03-16 19-30-00", 0, "SwinAnime x STARS After Dark", 0, 0, "0")
+	,	("2018-03-02 19-30-00", 0, "SwinAnime x STARS After Dark", 27213, 0, "0")
+	,	("2018-03-09 19-30-00", 0, "SwinAnime x STARS After Dark", 27213, 0, "0")
+	,	("2018-03-16 19-30-00", 0, "SwinAnime x STARS After Dark", 27213, 0, "0")
 ;
 
 INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
@@ -56,11 +56,11 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 	,	("2018-04-06 11-30-00", 0, "Screening Sessions", 0, 0, "0")
 	,	("2018-04-13 11-30-00", 0, "Screening Sessions", 0, 0, "0")
 	
-	,	("2018-03-23 16-30-00", 0, "Screening Sessions", 0, 0, "0")
+	,	("2018-03-23 16-30-00", 0, "Screening Sessions", 27213, 0, "0")
 	,	("2018-04-06 16-30-00", 0, "Screening Sessions", 0, 0, "0")
 	,	("2018-04-13 16-30-00", 0, "Screening Sessions", 0, 0, "0")
 	
-	,	("2018-03-23 19-30-00", 0, "SwinAnime x STARS After Dark", 0, 0, "0")
+	,	("2018-03-23 19-30-00", 0, "SwinAnime x STARS After Dark", 27213, 0, "0")
 	,	("2018-04-06 19-30-00", 0, "SwinAnime x STARS After Dark", 0, 0, "0")
 	,	("2018-04-13 19-30-00", 0, "SwinAnime x STARS After Dark", 0, 0, "0")
 ;
@@ -107,15 +107,15 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 		("2018-04-20 11-30-00", 0, "Screening Sessions", 0, 0, "0")
 	,	("2018-04-27 11-30-00", 0, "Screening Sessions", 0, 0, "0")
 	,	("2018-05-04 11-30-00", 0, "Screening Sessions", 0, 0, "0")
-	,	("2018-05-04 21-30-00", 0, "LANime Overnight Marathon", 0, 0, "0")
+	,	("2018-05-04 21-30-00", 0, "LANime Overnight Marathon", 25702, 0, "0")
 	
 	,	("2018-04-20 16-30-00", 0, "Screening Sessions", 0, 0, "0")
-	,	("2018-04-27 16-30-00", 0, "Screening Sessions", 0, 0, "0")
-	,	("2018-05-04 16-30-00", 0, "Screening Sessions", 0, 0, "0")
+	,	("2018-04-27 16-30-00", 0, "Screening Sessions", 27213, 0, "0")
+	,	("2018-05-04 16-30-00", 0, "Screening Sessions", 27213, 0, "0")
 	
 	,	("2018-04-20 19-30-00", 0, "SwinAnime x STARS After Dark", 0, 0, "0")
-	,	("2018-04-27 19-30-00", 0, "SwinAnime x STARS After Dark", 0, 0, "0")
-	,	("2018-05-04 19-30-00", 0, "SwinAnime x STARS After Dark", 0, 0, "0")
+	,	("2018-04-27 19-30-00", 0, "SwinAnime x STARS After Dark", 27213, 0, "0")
+	,	("2018-05-04 19-30-00", 0, "SwinAnime x STARS After Dark", 27213, 0, "0")
 ;
 
 INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
@@ -163,11 +163,11 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 	,	("2018-05-25 11-30-00", 0, "Screening Sessions", 0, 0, "0")
 	
 	,	("2018-05-11 16-30-00", 0, "Screening Sessions", 0, 0, "0")
-	,	("2018-05-18 16-30-00", 0, "Screening Sessions", 0, 0, "0")
+	,	("2018-05-18 16-30-00", 0, "Screening Sessions", 27213, 0, "0")
 	,	("2018-05-25 16-30-00", 0, "Screening Sessions", 0, 0, "0")
 	
 	,	("2018-05-11 19-30-00", 0, "SwinAnime x STARS After Dark", 0, 0, "0")
-	,	("2018-05-18 19-30-00", 0, "SwinAnime x STARS After Dark", 0, 0, "0")
+	,	("2018-05-18 19-30-00", 0, "SwinAnime x STARS After Dark", 27213, 0, "0")
 	,	("2018-05-25 19-30-00", 0, "SwinAnime x STARS After Dark", 0, 0, "0")
 ;
 
