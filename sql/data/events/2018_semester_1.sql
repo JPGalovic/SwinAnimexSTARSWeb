@@ -245,7 +245,7 @@ INSERT INTO EVENT_GAME_DATA (EVENT_TIME, GAME_TITLE, GAME_EVENT_TYPE) VALUES
 	,	("2018-05-01 10-30-00", "Battlestar Galactica", 1)
 	,	("2018-05-08 10-30-00", "7 Wonders", 1)
 	,	("2018-05-15 10-30-00", "Pandemic", 1)
-	,	("2018-05-22 10-30-00", "Ultimate Warewolf", 1)
+	,	("2018-05-22 10-30-00", "Ultimate Werewolf", 1)
 ;
 
 -- Roleplay Events
