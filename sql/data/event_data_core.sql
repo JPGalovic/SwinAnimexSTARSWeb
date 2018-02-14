@@ -85,6 +85,10 @@ INSERT INTO EVENT_LOCATION (LOCATION_ID, CAMPUS, BUILDING, BLDG, ROOM, ADDRESS, 
 	
 	,	(21404, "Swinburne Hawthorn", "Applied Sciences Building", "AS", "AS404", NULL, -37.822569, 145.037458, 17)
 	
+	,	(25702, "Swinburne Hawthorn", "Business &amp; Arts Building", "BA", "BA702", NULL, -37.822084, 145.039406, 17)
+	
+	,	(27213, "Swinburne Hawthorn", "Engineering Building", "EN", "EN213", NULL, -37.822232, 145.037801, 17)
+	
 	,	(36212, "Swinburne Hawthorn", "TA Building", "TA", "TA212", NULL, -37.820942, 145.038965, 17)
 	
 	,	(37220, "Swinburne Hawthorn", "TB Building", "TB", "TB220", NULL, -37.821019, 145.039434, 17)
