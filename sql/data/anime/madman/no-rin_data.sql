@@ -5,7 +5,7 @@ INSERT INTO ANIME(ANIME_title, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIP
 		 "The mood is right for falling in love with a superstar in the new series from the director of the Negima OVAs! Teenager Hata Kousaku is crushed when his favorite singing idol, Kusakabe Yuka, stuns the world by retiring from show business. Kousaku’s friends try to cheer him up, but nothing can chase away his gloomy mood until Yuka herself transfers into his class at Tamo Agriculture School&#33;",
 		 "Teenager Hata Kousaku is crushed when his favorite singing idol, Kusakabe Yuka, stuns the world by retiring from show business. Kousaku’s friends try to cheer him up, but nothing can chase away his gloomy mood until Yuka herself transfers into his class at Tamo Agriculture School&#33;",
 		 "Madman",
-		 "&#64; 2014 Shirow Shiratori-SB Creative/NO-RIN Project"
+		 "&copy; 2014 Shirow Shiratori-SB Creative/NO-RIN Project"
 		)
 ;
 

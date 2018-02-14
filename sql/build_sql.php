@@ -91,7 +91,7 @@
 	//	,	'data/anime/madman/mr_osomatsu_data.sql'
 		,	'data/anime/madman/naruto_data.sql'
 	//	,	'data/anime/madman/nobunaga_the_fool_data.sql'
-	//	,	'data/anime/madman/no-rin_data.sql'
+		,	'data/anime/madman/no-rin_data.sql'
 		,	'data/anime/madman/one_punch_man_data.sql'
 		,	'data/anime/madman/oreimo_data.sql'
 		,	'data/anime/madman/pandora_in_the_crimson_shell_data.sql'
