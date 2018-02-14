@@ -5,7 +5,7 @@ INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIP
 		 "Deep within the Hidden Leaf Village, sharp and cunning Ninja possess an ultimate power while Naruto Uzumaki carries inside the ultimate secret. Twelve years ago, the fourth Hokage sacrificed himself and saved the village by sealing the Nine-tailed Fox Spirit an orphaned baby boy. Now, this plucky prankster must do what it takes achieve this life-long goal and become the next Hokage!",
 		 "Deep within the Hidden Leaf Village, sharp and cunning Ninja possess an ultimate power while Naruto Uzumaki carries inside the ultimate secret. ",
 		 "Madman",
-		 "Copyright"
+		 "&copy; 2002 MASASHI KISHIMOTO"
 		)
 ;
 
@@ -22,112 +22,112 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		 1,
 		 "M - Moderate animated violence",
 		 13,
-		 "https://www.madman.com.au/catalogue/view/8637/naruto-uncut-collection-01-eps-113-slimpack"
+		 "https://www.madman.com.au/catalogue/view/8637"
 		)
 	,	("Naruto",
 		 1,
 		 2,
 		 "M - Moderate animated violence",
-		 11,
-		 "https://www.madman.com.au/catalogue/view/9919/naruto-uncut-collection-02-eps-1425-slimpack"
+		 12,
+		 "https://www.madman.com.au/catalogue/view/9919"
 		)
 	,	("Naruto",
 		 1,
 		 3,
-		 "M - Moderate animated violence, Moderate horror themes",
-		 12,
-		 "https://www.madman.com.au/catalogue/view/8637/naruto-uncut-collection-01-eps-113-slimpack"
+		 "M - Moderate animated violence",
+		 13,
+		 "https://www.madman.com.au/catalogue/view/9920"
 		)
 	,	("Naruto",
 		 1,
 		 4,
 		 "M - Moderate animated violence",
-		 13,
-		 "https://www.madman.com.au/catalogue/view/10143/naruto-uncut-collection-04-eps-3952-slimpack"
+		 14,
+		 "https://www.madman.com.au/catalogue/view/10143"
 		)
 	,	("Naruto",
 		 1,
 		 5,
 		 "PG - Mild animated violence",
-		 12,
-		"https://www.madman.com.au/catalogue/view/10144/naruto-uncut-collection-05-eps-5365-slimpack"
+		 13,
+		"https://www.madman.com.au/catalogue/view/10144"
 		)
 	,	("Naruto",
 		 1,
 		 6,
-		 "M - animated violence",
-		 12,
-		 "https://www.madman.com.au/catalogue/view/10145/naruto-uncut-collection-06-eps-6678-slimpac"
+		 "M - Animated violence",
+		 13,
+		 "https://www.madman.com.au/catalogue/view/10145"
 		)
 	,	("Naruto",
 		 1,
 		 7,
-		 "M - animated violence",
-		 1,
-		 "https://www.madman.com.au/catalogue/view/10146/naruto-uncut-collection-07-eps-7992-slimpac"
+		 "M - Animated violence",
+		 13,
+		 "https://www.madman.com.au/catalogue/view/10146"
 		)
 	,	("Naruto",
 		 1,
 		 8,
-		 "M - animated violence",
+		 "M - Animated violence",
 		 13,
-		 "https://www.madman.com.au/catalogue/view/10147/naruto-uncut-collection-08-eps-93106-slimpack"
+		 "https://www.madman.com.au/catalogue/view/10147"
 		)
 	,	("Naruto",
 		 1,
 		 9,
-		 "M - animated violence",
+		 "M - Animated violence",
 		 13,
-		 "https://www.madman.com.au/catalogue/view/10148/naruto-uncut-collection-09-eps-107120-slimpack"
+		 "https://www.madman.com.au/catalogue/view/10148"
 		)
 	,	("Naruto",
 		 1,
 		 10,
-		 "M - animated violence",
+		 "M - Animated violence",
 		 13,
-		 "https://www.madman.com.au/catalogue/view/10149/naruto-uncut-collection-10-eps-121135-slimpack"
+		 "https://www.madman.com.au/catalogue/view/10149"
 		)
 	,	("Naruto",
 		 1,
 		 11,
-		 "M - animated violence",
+		 "M - Animated violence",
 		 13,
-		 "https://www.madman.com.au/catalogue/view/10150/naruto-uncut-collection-11-eps-136149-slimpack"
+		 "https://www.madman.com.au/catalogue/view/10150"
 		)
 	,	("Naruto",
 		 1,
 		 12,
-		 "M - animated violence",
+		 "M - Animated violence",
 		 13,
-		 "https://www.madman.com.au/catalogue/view/10156/naruto-uncut-collection-12-eps-150163-slimpack"
+		 "https://www.madman.com.au/catalogue/view/10156"
 		)
 	,	("Naruto",
 		 1,
 		 13,
-		 "M - Moderate animated violence",
+		 "M - Animated violence",
 		 13,
-		 "https://www.madman.com.au/catalogue/view/10151/naruto-uncut-collection-13-eps-164177-slimpack"
+		 "https://www.madman.com.au/catalogue/view/10151/"
 		)
 	,	("Naruto",
 		 1,
 		 14,
 		 "M - Mild themes and animated violence",
 		 13,
-		 "https://www.madman.com.au/catalogue/view/10152/naruto-uncut-collection-14-eps-178191-slimpack"
+		 "https://www.madman.com.au/catalogue/view/10152"
 		)
 	,	("Naruto",
 		 1,
 		 15,
-		 "M -  animated violence",
+		 "M - Animated violence",
 		 13,
-		 "https://www.madman.com.au/catalogue/view/10153/naruto-uncut-collection-15-eps-192205-slimpack"
+		 "https://www.madman.com.au/catalogue/view/10153"
 		)
 	,	("Naruto",
 		 1,
 		 16,
-		 "M - Moderate animated violence",
+		 "M - Animated violence",
 		 13,
-		 "https://www.madman.com.au/catalogue/view/10154/naruto-uncut-collection-16-eps-206220-slimpack"
+		 "https://www.madman.com.au/catalogue/view/10154"
 		)	
 ;
 
@@ -149,7 +149,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 		)
 	,	("Naruto",
 		 4,
-		 "Pass or Fail: Survival Test"",
+		 "Pass or Fail: Survival Test",
 		 "As their classmates gradually all meet up with their Jonin instructors who will decide whether they are fit to become Genin, Team 7 are forced to wait for theirs. Eventually, after Naruto sets up a juvenile trap, he and his group meet their instructor &#58; Kakashi Hatake. Appearing to be a slacker, Kakashi takes the day to let his students each introduce themselves and tell each other their desires and aims &#58; Naruto states that his dream is to become Hokage, Sakura seems to embarrassed by hers to say them publicly, and Sasuke declares his intent to restore his clan by killing an unnamed person. With the introductions over, Kakashi tells Team 7 that their test will begin tomorrow and that they are not to eat before then. The next day, after forcing Team 7 to wait for him again, Kakashi explains that the test entails the seizure of one of two bells from his person, the catch being that only two of the prospective Genin will be able to pass, while the remaining child will be sent back to the Academy. While Sasuke and Sakura hide themselves away as the test begins, Naruto attempts to face Kakashi head-on with his Shadow Clone Technique, which is easily countered, and then falls for a snare trap. Taking advantage of Kakashi lecturing Naruto about falling for obvious traps, Sasuke seemingly takes out the instructor with shuriken and kunai knives."
 		)
 	,	("Naruto",
