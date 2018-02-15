@@ -31,6 +31,7 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("PG - Mild violence, themes, drug references and coarse language")
 	,	("PG - Mild animated violence, sexual references, coarse language and nudity")
 	,   ("PG - Mild fantasy themes, animated violence and nudity, sexual references and coarse language")
+	,	("PG - Mild fantasy violence and coarse language")
 ;
 
 -- Data for M Classifications
