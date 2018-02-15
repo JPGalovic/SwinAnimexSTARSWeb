@@ -5,6 +5,7 @@
 	include('code_gen/misc_var.php'); // Include Global Variables
 	include('code_gen/process/remove_illegal_char.php'); // Include Fuctions for removal of illegal characters
 	include('code_gen/program/auto_version_control.php'); // Include Funtions for Auto Version Updateing & Cashe Bursting.
+	include('code_gen/module_elements/event_cards.php'); // Include Functions for Event Card common commands
 
 	// Get page from url
 	$page = 'home';

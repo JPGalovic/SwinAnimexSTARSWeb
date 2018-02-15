@@ -1,3 +1,7 @@
+-- Switches to correct database, Version 1.0, FEB18, JPGalovic
+-- Use the swinan01_smart_web database
+USE swinan01_smart_web;
+
 -- Clear out Database
 DROP TABLE IF EXISTS EVENT_ANIME_DATA;
 DROP TABLE IF EXISTS EVENT_GAME_DATA;
@@ -641,7 +645,8 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 CREATE TABLE IF NOT EXISTS EVENT_DATA (
 		EVENT_TIME						DATETIME
 	,	EVENT_TYPE_ID					INT(11)
-	,	EVENT_TITLE						VARCHAR(100)
+	,	EVENT_TITLE						VARCHAR(250)
+	,	EVENT_SUBTITLE					VARCHAR(250)
 	,	EVENT_LOCATION					INT(11)
 	,	EVENT_FACEBOOK_ID				VARCHAR(20)
 	,	EVENT_UNIONE_URL				VARCHAR(250)
@@ -3583,7 +3588,7 @@ INSERT INTO ANIME(ANIME_title, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIP
 		 "The mood is right for falling in love with a superstar in the new series from the director of the Negima OVAs! Teenager Hata Kousaku is crushed when his favorite singing idol, Kusakabe Yuka, stuns the world by retiring from show business. Kousaku’s friends try to cheer him up, but nothing can chase away his gloomy mood until Yuka herself transfers into his class at Tamo Agriculture School&#33;",
 		 "Teenager Hata Kousaku is crushed when his favorite singing idol, Kusakabe Yuka, stuns the world by retiring from show business. Kousaku’s friends try to cheer him up, but nothing can chase away his gloomy mood until Yuka herself transfers into his class at Tamo Agriculture School&#33;",
 		 "Madman",
-		 "&#64; 2014 Shirow Shiratori-SB Creative/NO-RIN Project"
+		 "&copy; 2014 Shirow Shiratori-SB Creative/NO-RIN Project"
 		)
 ;
 
@@ -7839,9 +7844,20 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("Un-Go", 0, 2, 4)
 	,	("Un-Go", 0, 3, 3)
 ;
--- Game Company Data, Version 1.0, JAN18, JPGalovic
+-- Game Company Data, Version 1.1, FEB18, JPGalovic
 INSERT INTO COMPANY (COMPANY_NAME, COMPANY_URL, IS_SPONSOR) VALUES
 		("Final Form Games", "http://www.finalformgames.com", FALSE)
+	,	("Wizards of the Coast", "http://company.wizards.com", FALSE)
+	,	("Indie Boards & Cards, La Mame Games", NULL, FALSE)
+	,	("Fantasy Flight Games", "https://www.fantasyflightgames.com/", FALSE)
+	,	("Games Workshop", "https://www.games-workshop.com/", FALSE)
+	,	("Plaid Hat Games", "https://www.plaidhatgames.com/", FALSE)
+	,	("Stonemaier Games", "https://stonemaiergames.com/", FALSE)
+	,	("Adventureland Games", "http://adventurelandgames.com/", FALSE)
+	,	("Slugfest Games", "http://slugfestgames.com/", FALSE)
+	,	("Repos Production", "http://www.rprod.com/", FALSE)
+	,	("Bezier Games", "https://beziergames.com/", FALSE)
+	,	("Z-Man Games", "https://www.zmangames.com/", FALSE)
 ;-- Jamestown Data, Version 1.0, JAN18, JPGalovic
 INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBER_OF_PLAYERS, RECOMMENDED_NUMBER_OF_PLAYERS, COMPANY_NAME, CLASSIFICATION) VALUES
 		("Jamestown: Legend of the Lost Colony",
@@ -7859,7 +7875,217 @@ INSERT INTO GAME_PLATFORM (GAME_TITLE, PLATFORM_ID) VALUES
 	,	("Jamestown: Legend of the Lost Colony", 1)
 	,	("Jamestown: Legend of the Lost Colony", 2)
 	,	("Jamestown: Legend of the Lost Colony", 23)
-;-- Summer A
+;-- 7 Wonders Data, Version 1.0, FEB18, JPGalovic
+INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBER_OF_PLAYERS, RECOMMENDED_NUMBER_OF_PLAYERS, COMPANY_NAME, CLASSIFICATION) VALUES
+		("7 Wonders",
+		 "You are the leader of one of the 7 great cities of the Ancient World. Gather resources, develop commercial routes, and affirm your military supremacy. Build your city and erect an architectural wonder which will transcend future times.",
+		 3,
+		 7,
+		 5,
+		 "Repos Production",
+		 NULL
+		)
+;
+
+INSERT INTO GAME_PLATFORM (GAME_TITLE, PLATFORM_ID) VALUES
+		("7 Wonders",
+		 10
+		)
+;
+
+-- Battlestar Galactica Data, Version 1.0, JAN18, JPGalovic
+INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBER_OF_PLAYERS, RECOMMENDED_NUMBER_OF_PLAYERS, COMPANY_NAME, CLASSIFICATION) VALUES
+		("Battlestar Galactica",
+		 "GAME_DESCRIPTION",
+		 3,
+		 6,
+		 5,
+		 "Fantasy Flight Games",
+		 NULL
+		)
+;
+
+INSERT INTO GAME_PLATFORM (GAME_TITLE, PLATFORM_ID) VALUES
+		("Battlestar Galactica",
+		 10
+		)
+;
+
+-- Coup Data, Version 1.0, FEB18, JPGalovic
+INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBER_OF_PLAYERS, RECOMMENDED_NUMBER_OF_PLAYERS, COMPANY_NAME, CLASSIFICATION) VALUES
+		("Coup",
+		 "In the far flung future, the megacorporate CEOs have formed a new aristocracy, possessing immeasurable wealth and the power of life and death over every day citizens and workers. Bribe, bluff and manipulate your way through the courts of power to destroy the influence of your rivals.",
+		 2,
+		 6,
+		 5,
+		 "Indie Boards & Cards, La Mame Games",
+		 NULL
+		)
+;
+
+INSERT INTO GAME_PLATFORM (GAME_TITLE, PLATFORM_ID) VALUES
+		("Coup",
+		 10
+		)
+;
+
+-- Dead of Winter Data, Version 1.0, FEB18, JPGalovic
+INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBER_OF_PLAYERS, RECOMMENDED_NUMBER_OF_PLAYERS, COMPANY_NAME, CLASSIFICATION) VALUES
+		("Dead of Winter",
+		 "The zombies aren’t coming! They’re already here! Zombies walk the streets of your home down and along with other survivors you’ve bunkered down in the colony for survival. But winter’s coming in fast, and supplies and moral are low. Lead your faction of unique survivors and work to fulfil your own objectives, and avoid the traitor, who secretly plots the downfall of the colony.",
+		 2,
+		 5,
+		 4,
+		 "Plaid Hat Games",
+		 NULL
+		)
+;
+
+INSERT INTO GAME_PLATFORM (GAME_TITLE, PLATFORM_ID) VALUES
+		("Dead of Winter",
+		 10
+		)
+;-- Magic: The Gathering Data, Version 1.0, FEB18, JPGalovic
+INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBER_OF_PLAYERS, RECOMMENDED_NUMBER_OF_PLAYERS, COMPANY_NAME, CLASSIFICATION) VALUES
+		("Magic: The Gathering",
+		 "Expansive worlds, explosive spells and extraordinary creatures await you. Magic is driven by riveting stories, populated with Planeswalkers - powerful mages with the ability to travel between worlds. Discover the many tales of Magic.",
+		 2,
+		 4,
+		 2,
+		 "Wizards of the Coast",
+		 NULL
+		)
+;
+
+INSERT INTO GAME_PLATFORM (GAME_TITLE, PLATFORM_ID) VALUES
+		("Magic: The Gathering",
+		 11
+		)
+;
+
+-- Pandemic Data, Version 1.0, JAN18, JPGalovic
+INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBER_OF_PLAYERS, RECOMMENDED_NUMBER_OF_PLAYERS, COMPANY_NAME, CLASSIFICATION) VALUES
+		("Pandemic",
+		 "The world is in peril! Disease is running rampant around the globe, endangering everyone! But there is hope in the form of the Centre of Disease Control! As one of the brave staff of doctors and engineers, you must work together, roaming the globe treating disease and working on a cure. But time is short, and as the outbreaks stack up, only you can save humanity from extinction.",
+		 2,
+		 4,
+		 4,
+		 "Z-Man Games",
+		 NULL
+		)
+;
+
+INSERT INTO GAME_PLATFORM (GAME_TITLE, PLATFORM_ID) VALUES
+		("Pandemic",
+		 10
+		)
+;
+
+-- Red Dragon Inn Data, Version 1.0, FEB18, JPGalovic
+INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBER_OF_PLAYERS, RECOMMENDED_NUMBER_OF_PLAYERS, COMPANY_NAME, CLASSIFICATION) VALUES
+		("Red Dragon Inn",
+		 "Adventuring is a hard life, with many trials and dangers. So let’s skip it and get to the good part, drinking away your hard earned loot in the tavern afterwards! Choose your adventurer, put up a chair and prepare to participate in the rowdiest celebration! Gamble and drink, but keep a wary eye open. Your ‘comrades’ will happily help themselves to your gold should your pass out from liquor and blunt force trauma, and the Wench will boot out anyone who can’t pay their tab. Good thing everyone has a few tricks up their sleave.",
+		 2,
+		 8,
+		 4,
+		 "Slugfest Games",
+		 NULL
+		)
+;
+
+INSERT INTO GAME_PLATFORM (GAME_TITLE, PLATFORM_ID) VALUES
+		("Red Dragon Inn",
+		 10
+		)
+;-- Scythe Data, Version 1.0, FEB18, JPGalovic
+INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBER_OF_PLAYERS, RECOMMENDED_NUMBER_OF_PLAYERS, COMPANY_NAME, CLASSIFICATION) VALUES
+		("Scythe",
+		 "It is a time of unrest in 1920s Europa. The ashes from the first Great War still darken the snow. The capitalistic city-state known simply as “The Factory”, which fuelled the war with heavily armoured mechs, has closed its doors, drawing the attention of several nearby countries. The lands that surround it and the people who live there maybe open to accepting new rule, if you can prove yourself the greatest nation.",
+		 1,
+		 5,
+		 4,
+		 "Stonemaier Games",
+		 NULL
+		)
+;
+
+INSERT INTO GAME_PLATFORM (GAME_TITLE, PLATFORM_ID) VALUES
+		("Scythe",
+		 10
+		)
+;
+
+-- Sushi Go Data, Version 1.0, FEB18, JPGalovic
+INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBER_OF_PLAYERS, RECOMMENDED_NUMBER_OF_PLAYERS, COMPANY_NAME, CLASSIFICATION) VALUES
+		("Sushi Go",
+		 "GAME_DESCRIPTION",
+		 2,
+		 5,
+		 4,
+		 "Adventureland Games",
+		 NULL
+		)
+;
+
+INSERT INTO GAME_PLATFORM (GAME_TITLE, PLATFORM_ID) VALUES
+		("Sushi Go",
+		 10
+		)
+;-- Talisman Data, Version 1.0, FEB18, JPGalovic
+INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBER_OF_PLAYERS, RECOMMENDED_NUMBER_OF_PLAYERS, COMPANY_NAME, CLASSIFICATION) VALUES
+		("Talisman",
+		 "Welcome adventurer! I can see by your eyes that you’re here to locate the Portal of Power and claim the Crown of Command. Well you’d best know these lands are dangerous, filled with evil monsters, ancient relics and strange magics. You’ll need to find some of those yourself if you want to win. How do I know? You’re not the only one here seeking it, other adventurers will try to thwart you. Find the Crown and hold onto it, lest one of them seize it from your dead hands.",
+		 2,
+		 6,
+		 4,
+		 "Fantasy Flight Games",
+		 NULL
+		)
+;
+
+INSERT INTO GAME_PLATFORM (GAME_TITLE, PLATFORM_ID) VALUES
+		("Talisman",
+		 10
+		)
+;
+
+-- Ultimate Werewolf Data, Version 1.0, JAN18, JPGalovic
+INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBER_OF_PLAYERS, RECOMMENDED_NUMBER_OF_PLAYERS, COMPANY_NAME, CLASSIFICATION) VALUES
+		("Ultimate Werewolf",
+		 "Villages are sweet places, calm and quiet, nestled amongst farmlands and forests. And villagers are simple folk, full of hope and vigour. Of course that morning when they wake up and find that someone has been brutally murdered by werewolves, these wise folk know that the only way to stop them is to lynch them in human form. So get the ropes and figure out who’s the most suspicious person. Keep going and maybe one day, you’ll live free from the terror of werewolves once more.",
+		 5,
+		 75,
+		 20,
+		 "Bezier Games",
+		 NULL
+		)
+;
+
+INSERT INTO GAME_PLATFORM (GAME_TITLE, PLATFORM_ID) VALUES
+		("Ultimate Werewolf",
+		 10
+		)
+;
+
+-- Warhammer 40k Data, Version 1.0, FEB18, JPGalovic
+INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBER_OF_PLAYERS, RECOMMENDED_NUMBER_OF_PLAYERS, COMPANY_NAME, CLASSIFICATION) VALUES
+		("Warhammer 40k",
+		 "In the 41st Millennium, there is only war. Will you fight for the Imperium of Man as one of the many servants of the Eternal God Emperor? Will you draw upon the Gods of Chaos and the Immaterium to augment your forces? Or will you stand as one of the Xenos races seeking to claim the galaxy. Warhammer 40,000 is the long running tabletop wargame about the grimmest future imaginable, billions fall and trillions more stand ready to replace them in a galaxy spanning war of conquest. Forget peace and prosperity, such notions are the currency of the dead.",
+		 2,
+		 6,
+		 4,
+		 "Games Workshop",
+		 NULL
+		)
+;
+
+INSERT INTO GAME_PLATFORM (GAME_TITLE, PLATFORM_ID) VALUES
+		("Warhammer 40k",
+		 10
+		)
+;
+
+-- Summer A
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
 		("2018-01-05 11-30-00", 0, "Summer Sessions", 21404, 1782517088487445, "0")
 	,	("2018-01-12 11-30-00", 0, "Summer Sessions", 21404, 0, "0")
@@ -8135,6 +8361,7 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 	,	("2018-05-11 19-30-00", 0, "SwinAnime x STARS After Dark", 0, 0, "0")
 	,	("2018-05-18 19-30-00", 0, "SwinAnime x STARS After Dark", 27213, 0, "0")
 	,	("2018-05-25 19-30-00", 0, "SwinAnime x STARS After Dark", 0, 0, "0")
+
 ;
 
 INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
@@ -8176,25 +8403,41 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 
 
 -- Tabletop Events
-INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
--- 		("2018-02-27 10-30-00", 5, "Tabletop Tonight", 0, 0, "0")
--- 	,	("2018-03-06 10-30-00", 5, "Tabletop Tonight", 0, 0, "0")
-		("2018-03-13 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-03-20 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-03-27 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-04-03 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-04-10 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-04-17 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-04-24 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-05-01 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-05-08 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-05-15 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
-	,	("2018-05-22 10-30-00", 5, "Tabletop Tonight", 40217, 0, "0")
+INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_SUBTITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
+		("2018-02-27 10-30-00", 5, "Tabletop Tonight", "Decks Out", 0, 0, "0")
+	,	("2018-03-06 10-30-00", 5, "Tabletop Tonight", "Political Games", 0, 0, "0")
+	,	("2018-03-13 10-30-00", 5, "Tabletop Tonight", "High Fantasy", 40217, 0, "0")
+	,	("2018-03-20 10-30-00", 5, "Tabletop Tonight", "Horror Games", 40217, 0, "0")
+	,	("2018-03-27 10-30-00", 5, "Tabletop Tonight", "Intregue and Betrayal", 40217, 0, "0")
+	,	("2018-04-03 10-30-00", 5, "Tabletop Tonight", "Big Box Games", 40217, 0, "0")
+	,	("2018-04-10 10-30-00", 5, "Tabletop Tonight", "Big Games Small Packages", 40217, 0, "0")
+	,	("2018-04-17 10-30-00", 5, "Tabletop Tonight", "Fight for the Crown", 40217, 0, "0")
+	,	("2018-04-24 10-30-00", 5, "Tabletop Tonight", "Thematic Games", 40217, 0, "0")
+	,	("2018-05-01 10-30-00", 5, "Tabletop Tonight", "To the Stars", 40217, 0, "0")
+	,	("2018-05-08 10-30-00", 5, "Tabletop Tonight", "Eurogames", 40217, 0, "0")
+	,	("2018-05-15 10-30-00", 5, "Tabletop Tonight", "Apocalypse!", 40217, 0, "0")
+	,	("2018-05-22 10-30-00", 5, "Tabletop Tonight", "Party Games", 40217, 0, "0")
 	
-	,	("2018-03-03 08-30-00", 5, "The Dice Must Flow", 40217, 0, "0")
-	,	("2018-03-31 08-30-00", 5, "The Dice Must Flow", 40217, 0, "0")
-	,	("2018-04-28 08-30-00", 5, "The Dice Must Flow", 40217, 0, "0")
-	,	("2018-05-26 08-30-00", 5, "The Dice Must Flow", 40217, 0, "0")
+	,	("2018-03-03 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
+	,	("2018-03-31 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
+	,	("2018-04-28 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
+	,	("2018-05-26 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
+;
+
+INSERT INTO EVENT_GAME_DATA (EVENT_TIME, GAME_TITLE, GAME_EVENT_TYPE) VALUES
+		("2018-02-27 10-30-00", "Magic: The Gathering", 1)
+	,	("2018-03-06 10-30-00", "Coup", 1)
+	,	("2018-03-13 10-30-00", "Talisman", 1)
+-- 	,	("2018-03-20 10-30-00", "Game_Title", 1)
+	,	("2018-03-27 10-30-00", "Dead of Winter", 1)
+	,	("2018-04-03 10-30-00", "Scythe", 1)
+	,	("2018-04-10 10-30-00", "Sushi Go", 1)
+	,	("2018-04-17 10-30-00", "Warhammer 40k", 1)
+	,	("2018-04-24 10-30-00", "Red Dragon Inn", 1)
+	,	("2018-05-01 10-30-00", "Battlestar Galactica", 1)
+	,	("2018-05-08 10-30-00", "7 Wonders", 1)
+	,	("2018-05-15 10-30-00", "Pandemic", 1)
+	,	("2018-05-22 10-30-00", "Ultimate Werewolf", 1)
 ;
 
 -- Roleplay Events
