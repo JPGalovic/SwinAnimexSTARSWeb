@@ -30,11 +30,10 @@
 		
 	$madman_anime_data_array = array(
 			'data/anime/madman/a_boring_world_where_the_concept_of_dirty_jokes_dont_exsist_data.sql'
-	// 	,	'data/anime/madman/assassination_classroom_data.sql'
 	//	,	'data/anime/madman/absolute_duo_data.sql'
 	//	,	'data/anime/madman/amagi_brilliant_park_data.sql'
 	//	,	'data/anime/madman/angelic_layer_data.sql'
-	//	,	'data/anime/madman/aquarion_lagos_data.sql'
+		,	'data/anime/madman/aquarion_lagos_data.sql'
 		,	'data/anime/madman/assassination_classroom_data.sql'
 		,	'data/anime/madman/assassination_classroom_season_2_data.sql'
 	//	,	'data/anime/madman/astro_boy_data.sql'
