@@ -381,7 +381,7 @@ INSERT INTO EVENT_TYPE (EVENT_TYPE_ID, EVENT_TYPE_DESCRIPTION) VALUES
 	,	(7, "Other Event")
 ;
 
--- Event Type Refences:
+-- Event Type References:
 -- Has Anime Event Data: 0
 -- May Have Game Event Data: 4, 5, 6
 
@@ -407,7 +407,7 @@ INSERT INTO EVENT_LOCATION (LOCATION_ID, CAMPUS, BUILDING, BLDG, ROOM, ADDRESS, 
 -- Social Event Locations
 	,	(1, NULL, NULL, NULL, NULL, "Crown Entertainment Complex, 8 Whiteman St, Southbank VIC 3006", -37.824871, 144.958181, 17)
 	,	(2, NULL, NULL, NULL, NULL, "Sorrento Oceach Beach, Ocean Beach Road, Sorrento VIC 3943", -38.345876, 144.727014, 17)
-	,	(3, NULL, NULL, NULL, NULL, "Hawthorn Aquatic &amp; Leasure Center, 1 Grace St, Hawthorn VIC 3122", -37.820791, 145.034434, 17)
+	,	(3, NULL, NULL, NULL, NULL, "Hawthorn Aquatic &amp; Leisure Center, 1 Grace St, Hawthorn VIC 3122", -37.820791, 145.034434, 17)
 
 -- Swinburne Buildings
 	,	(10, "Swinburne Hawthorn", "1 Alfred St", "1A", NULL, NULL, -37.821312, 145.036710, 17)
@@ -418,12 +418,12 @@ INSERT INTO EVENT_LOCATION (LOCATION_ID, CAMPUS, BUILDING, BLDG, ROOM, ADDRESS, 
 	,	(15, "Swinburne Hawthorn", "32 Park St", "32P", NULL, NULL, -37.820231, 145.037879, 17)
 	,	(16, "Swinburne Hawthorn", "400 Burwood Rd", "400B", NULL, NULL, -0, 0, 17)
 	,	(17, "Swinburne Hawthorn", "60 William St", "60W", NULL, NULL, -37.822484, 145.039690, 17)
-	,	(18, "Swinburne Hawthorn", "Old Administation Building", "AD", NULL, NULL, -37.822108, 145.038748, 17)
-	,	(19, "Swinburne Hawthorn", "Advanced Manufactoring &amp; Design Center", "ADMC", NULL, NULL, -37.822836, 145.039238, 17)
-	,	(20, "Swinburne Hawthorn", "Advanced Tachnologies Center", "ATC", NULL, NULL, -37.822650, 145.038374, 17)
+	,	(18, "Swinburne Hawthorn", "Old Administration Building", "AD", NULL, NULL, -37.822108, 145.038748, 17)
+	,	(19, "Swinburne Hawthorn", "Advanced Manufacturing &amp; Design Center", "ADMC", NULL, NULL, -37.822836, 145.039238, 17)
+	,	(20, "Swinburne Hawthorn", "Advanced Technologies Center", "ATC", NULL, NULL, -37.822650, 145.038374, 17)
 	,	(21, "Swinburne Hawthorn", "Applied Sciences Building", "AS", NULL, NULL, -37.822569, 145.037458, 17)
 	,	(22, "Swinburne Hawthorn", "Arts Building", "AR", NULL, NULL, -37.821895, 145.038257, 17)
-	,	(23, "Swinburne Hawthorn", "Australian Gradurate School of Entrepreneurship", "AGSE", NULL, NULL, -37.821347, 145.039471, 17)
+	,	(23, "Swinburne Hawthorn", "Australian Graduate School of Entrepreneurship", "AGSE", NULL, NULL, -37.821347, 145.039471, 17)
 	,	(24, "Swinburne Hawthorn", "Aviation Building", "AV", NULL, NULL, -37.823183, 145.041905, 17)
 	,	(25, "Swinburne Hawthorn", "Business &amp; Arts Building", "BA", NULL, NULL, -37.822084, 145.039406, 17)
 	,	(26, "Swinburne Hawthorn", "Chemistry Building", "CH", NULL, NULL, -37.822656, 145.037855, 17)
@@ -444,7 +444,7 @@ INSERT INTO EVENT_LOCATION (LOCATION_ID, CAMPUS, BUILDING, BLDG, ROOM, ADDRESS, 
 	,	(41, "Swinburne Hawthorn", "UN Building", "UN", NULL, NULL, -37.822524, 145.038599, 17)
 	
 -- Specific Rooms
-	,	(18108, "Swinburne Hawthorn", "Old Administation Building", "AD", "AD108", NULL, -37.822108, 145.038748, 17)
+	,	(18108, "Swinburne Hawthorn", "Old Administration Building", "AD", "AD108", NULL, -37.822108, 145.038748, 17)
 	
 	,	(21404, "Swinburne Hawthorn", "Applied Sciences Building", "AS", "AS404", NULL, -37.822569, 145.037458, 17)
 	
@@ -484,7 +484,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 "After Dark Sessions are run as an extra event for members, condition of entry is that a gold coin donation is made."
 		)
 	,	("Summer Showcase",
-		 "Summer Edition of our Showcase Screenings, each week showing the first episode of anime avalible to watch now!",
+		 "Summer Edition of our Showcase Screenings, each week showing the first episode of anime available to watch now!",
 		 "Event is open to all, just come along and scan your membership card as you enter.",
 		 NULL
 		)
@@ -499,7 +499,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 "After Dark Sessions are run as an extra event for members, condition of entry is that a gold coin donation is made."
 		)
 	,	("SwinAnime x STARS Showcase",
-		 "Showcase Screenings, each week showing the first episode of anime avalible to watch now!",
+		 "Showcase Screenings, each week showing the first episode of anime available to watch now!",
 	 	 "Event is open to all, just come along and scan your membership card as you enter.",
 	 	 NULL
 		)
@@ -514,31 +514,31 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 "After Dark Sessions are run as an extra event for members, condition of entry is that a gold coin donation is made."
 		)
 	,	("Winter Showcase",
-		 "Winter Edition of our Showcase Screenings, each week showing the first episode of anime avalible to watch now!",
+		 "Winter Edition of our Showcase Screenings, each week showing the first episode of anime available to watch now!",
 		 "Event is open to all, just come along and scan your membership card as you enter.",
 		 NULL
 		)
 	,	("LANime Overnight Marathon",
-		 "Overnight Marathon and LAN gaming, only for our most didcated members!",
-		 "Come along from Friday Night, Present your Priemium Membership Card and chip in for Snaks and Drinks",
-		 "As part of event eveyone in attendace chips in $5 that goes directly towards the purchace of Snaks and Drinks for the event."
+		 "Overnight Marathon and LAN gaming, only for our most dedicated members!",
+		 "Come along from Friday Night, Present your Premium Membership Card and chip in for Snacks and Drinks",
+		 "As part of event everyone in attendance chips in $5 that goes directly towards the purchase of Snacks and Drinks for the event."
 		)
 ;
 
 -- Social Event Details
 INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, TICKETS) VALUES	
 		("Beach Episode",
-		 "Our Annual trip to the beach, fun with friends, building sand castles, have a swim or a surf, maby evan smash a melon or two.",
+		 "Our Annual trip to the beach, fun with friends, building sand castles, have a swim or a surf, maybe even smash a melon or two.",
 		 "Meet at Frankston Train Station for start of event, catching 788 bus to Sorrento. <br>Note: Sorrento is in zone 4, so miki fares are $3.36 concession or $6.72 full fare.",
 		 "Event is free to attend, however generally we all pitch in on getting snacks and drinks for the group."
 		)
 	,	("Arcade Episode",
 		 "Play some arcade games, have some fun.",
 		 "Meet at Southern Cross Station (Spenser Street), Catching tram 12, 96 or 109 to Crown Casino.",
-		 "Event is free to attend, paying what you can afford to play, reocmmended buget is $20-$40"
+		 "Event is free to attend, paying what you can afford to play, recommended budget is $20-$40"
 		)
 	,	("Pool Episode",
-		 "Our annual trip to the pool, swiming, swiming, swiming...",
+		 "Our annual trip to the pool, swimming, swimming, swimming...",
 		 "Meet at Glenferrie Station, walk across road to pool.",
 		 "Event is free to attend, entry to pool is free for current swinburne students."
 		)
@@ -547,12 +547,12 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 -- Tabletop Event Details
 INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, TICKETS) VALUES
 		("Tabletop Tonight",
-		 "Every week! Our exclusive Tabletop Experiance! Join us for new games and exciting classics.",
+		 "Every week! Our exclusive Tabletop Experience! Join us for new games and exciting classics.",
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
 		 NULL
 		)
 	,	("The Dice Must Flow",
-		 "Evey month join us for our Marathon Extravigansa! Play Longer, Play Harder!",
+		 "Evey month join us for our Marathon Extravaganza! Play Longer, Play Harder!",
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
 		 NULL
 		)
@@ -562,7 +562,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 -- Roleplay Event Details
 INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, TICKETS) VALUES
 		("Adventurers Anonymous",
-		 "Are you tied of adventuring alone, with no one arround to have your back? Are you tired not having team mates to give you support? Come along to our Adventurers Anonymous meeting where our supportive groups we will help you find your way, and you can help other Adventerurs find their's",
+		 "Are you tied of adventuring alone, with no one around to have your back? Are you tired not having team mates to give you support? Come along to our Adventurers Anonymous meeting where our supportive groups we will help you find your way, and you can help other Adventurers find their's",
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
 		 NULL
 		)
@@ -582,22 +582,22 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 NULL
 		)
 	,	("Drawing Workshop",
-		 "Now that our project is planned out, its time to start with designing our characters, sets and drawing key-frames for our animation! This workshop will help to develop your hand drawing skills as well as indtroduce you to methods for vectoring and digital software.",
+		 "Now that our project is planned out, its time to start with designing our characters, sets and drawing key-frames for our animation! This workshop will help to develop your hand drawing skills as well as introduce you to methods for vectoring and digital software.",
 		 NULL,
 		 NULL
 		)
 	,	("Animation Workshop",
-		 "The next step is to actully create the slides for the anamation, using both traditional and modern techniques, by hand and digital!",
+		 "The next step is to actually create the slides for the animation, using both traditional and modern techniques, by hand and digital!",
 		 NULL,
 		 NULL
 		)
 	,	("Voice Acting Workshop",
-		 "Next, give the animation a voice, in this workshop we explore techniques used by clasic animation to give your characters a voice.",
+		 "Next, give the animation a voice, in this workshop we explore techniques used by classic animation to give your characters a voice.",
 		 NULL,
 		 NULL
 		)
 	,	("Music and Sound Effects Workshop",
-		 "Finally, the addtion of music and production of sound effects in both the modern and traditional manner, thus completing our project!",
+		 "Finally, the addition of music and production of sound effects in both the modern and traditional manner, thus completing our project!",
 		 NULL,
 		 NULL
 		)
@@ -615,7 +615,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 "Open to all members, please come along to the advertised clubroom and take a seat.",
 		 NULL
 		)
-	,	("Member News and Plannig Meeting",
+	,	("Member News and Planing Meeting",
 		 "This is where you can have your say, let us know what you want to see from your club, and we'll let you know whats coming up over the next couple of weeks",
 		 "",
 		 NULL
@@ -635,9 +635,9 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 NULL
 		)
 	,	("Animaga Expo",
-		 "Animaga Expo celebrates eveything, Anime Manga and Games! come and join us in the fun!",
+		 "Animaga Expo celebrates everything, Anime Manga and Games! come and join us in the fun!",
 		 "Held at the Royal Exhibition Building.",
-		 "Tickets can be brought from Animaga's webiste, http://www.animaga.com.au/"
+		 "Tickets can be brought from Animaga's website, http://www.animaga.com.au/"
 		)
 ;
 
@@ -818,132 +818,132 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 		("Aquarion Logos",
 		 1,
 		 "Shout! Sousei Gattai!",
-         NULL
+         "Sougon uses the written word on Tokyo; the Verbalism Club and Akira Kaibuki unite to save the city."
 		)
 	,	("Aquarion Logos",
 		 2,
 		 "Shine! Light of Thought",
-         NULL
+         "As Maia attempts to escape Deava's underground facility, Sougon's power menaces her with an illness."
 		)
 	,	("Aquarion Logos",
 		 3,
 		 "Resound! A Dream for Me Alone",
-         NULL
+         "An ambitious, young newcomer joins the Verbalism Club, but something is not right."
 		)
 	,	("Aquarion Logos",
 		 4,
 		 "Let Fly! an Arrow That Pierces the Heart",
-		 NULL
+		 "While the Verbalism Club prepares for the Tanabata Festival, Tokyo is torn apart by a twisted love."
 		)
 	,	("Aquarion Logos",
 		 5,
 		 "Take It Back! Our Summer",
-		 NULL
+		 "Akira, Tsutomu and Hayato decide to go to the beach, but a new M.J.B.K. rises, ruining their plans."
 		)
 	,	("Aquarion Logos",
 		 6,
 		 "Light Up! Your Strength",
-		 NULL
+		 "Sakurako infiltrates Nesta herself and meets Subete; she learns that she still has ties to Nesta."
 		)
 	,	("Aquarion Logos",
 		 7,
 		 "Burn It! the Savior's Flames!",
-		 NULL
+		 "Sougon harnesses society's online hostility and creates a literal flame war from a digital one."
 		)
 	,	("Aquarion Logos",
 		 8,
 		 "Pierce It! the Insect Part",
-		 NULL
+		 "Hard working Tsutomu's comedy may be the only cure when the world is bitten by the bug of ambition."
 		)
 	,	("Aquarion Logos",
 		 9,
 		 "Clear Them! the Inviting Shadows",
-		 NULL
+		 "Maia is lost in a strange and empty copy of her world; she is beckoned by voices from her past."
 		)
 	,	("Aquarion Logos",
 		 10,
 		 "Reach Them! My True Voice",
-		 NULL
+		 "Kokone gets to act in the Verbalism Club's play, but can barely say her lines on opening day."
 		)
 	,	("Aquarion Logos",
 		 11,
 		 "Flap! Bound Wings",
-		 NULL
+		 "Hayato drafts a strategy for fighting M.J.B.K.; his stoic demeanor hides resentment and jealousy."
 		)
 	,	("Aquarion Logos",
 		 12,
 		 "Bring Them Together! Heart and Heart",
-		 NULL
+		 "Subete and a new M.J.B.K. attack Deava and the pilots are forced to flee; Akira becomes distant."
 		)
 	,	("Aquarion Logos",
 		 13,
 		 "A Great Victory! We Are the Saviors",
-		 NULL
+		 "The Verbalism Club battles an M.J.B.K. head on; Akira meets Sougon in person."
 		)
 	,	("Aquarion Logos",
 		 14,
 		 "Show It! You at Your Worst",
-		 NULL
+		 "After the Logos World battle, the M.J.B.K. vanish; an odd creature appears in the Shirobaco office."
 		)
 	,	("Aquarion Logos",
 		 15,
 		 "Ah! Days of Our Youth",
-		 NULL
+		 "Outdated words and phrases are coming back in Asagaya; Sakurako thinks that M.J.B.K.s are to blame."
 		)
 	,	("Aquarion Logos",
 		 16,
 		 "Carve Them In! the Scars of Destiny",
-		 NULL
+		 "When the internet was new, Sougon and Mao Hayashi created Nesta; they also adopted a young boy."
 		)
 	,	("Aquarion Logos",
 		 17,
 		 "Shatter! the One I Must Strike Down",
-		 NULL
+		 "An M.J.B.K. turns friends against each other; Akira, obsessed with heroism, will fight the word."
 		)
 	,	("Aquarion Logos",
 		 18,
 		 "Howl! an Honest Beaten Dog",
-		 NULL
+		 "An M.J.B.K. tries to destroy truth and Hayayo Kujyo's brutal honestly is the world's only defense."
 		)
 	,	("Aquarion Logos",
 		 19,
 		 "Fall in Love! Asagaya",
-		 NULL
+		 "Verbalism Club members pair off for a couples challenge; Akira and Maia don't know how couples act."
 		)
 	,	("Aquarion Logos",
 		 20,
 		 "Know It! the Reason You Were Born",
-		 NULL
+		 "As her friends prepare Shirobaco's anniversary party, Maia looks into Deava's history to save Akira."
 		)
 	,	("Aquarion Logos",
 		 21,
 		 "Tragic! an Immoral Gattai",
-		 NULL
+		 "Maia does everything she can to save Akira; a member of the Verbalism Club tries to restore order."
 		)
 	,	("Aquarion Logos",
 		 22,
 		 "Listen! the Voice Calling Out to You",
-		 NULL
+		 "Due to recent events, the government turns on Deava; the Shirobaco office is under attack."
 		)
 	,	("Aquarion Logos",
 		 23,
 		 "Revive! the Vow Beneath the Moonlight",
-		 NULL
+		 "Hayato tries to recruit members for Deava from the public; Subete probes deeper into Maia's memories."
 		)
 	,	("Aquarion Logos",
 		 24,
 		 "To Battle! With My Existence on the Line",
-		 NULL
+		 "Akira and Subete prepare to end the struggle between the worlds of truth and the written word."
 		)
 	,	("Aquarion Logos",
 		 25,
 		 "Gather! Voices for Tomorrow",
-		 NULL
+		 "To save Maia, Akira flings himself into the void; Nesta's will ends the world of the written word."
 		)
 	,	("Aquarion Logos",
 		 26,
 		 "It Will Not End! Aquarion Logos",
-		 NULL
+		 "Akira and Subete fight to save the world; a new legend is born before everyone's eyes."
 		)
 
 ;
@@ -2949,17 +2949,17 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Gangsta",
 		 10,
 		 "Land of Confusion",
-		 NULL
+		 "While Nicolas is again treated for his injuries, Alex discovers how important Dr. Theo is to the city's Twilights. Cody learns why the Handymen are independent. A lone woman is seen entering the Abandoned District, leading to the Paulklee Colony."
 		)
 	,	("Gangsta",
 		 11,
 		 "Absence",
-		 NULL
+		 "Delico and Yang go out looking for Erica. Sig, Colt, and Emilio attack the Paulklee Guild, setting off bombs whose smoke robs the Twilights of their sensory advantages. Loretta leaves her hiding place at the Handymen's office."
 		)
 	,	("Gangsta",
 		 12,
 		 "Odds and Ends",
-		 NULL
+		 "With Galahad at the Paulklee Colony, the Cristiano Family looks to Nicolas to protect Loretta. Joel confronts Marco about Constance's disappearance. Worick has suspicions about Ivan."
 		)
 ;
 
@@ -3489,27 +3489,27 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Magical Warfare",
 		 2,
 		 "Another World",
-		 ""
+		 "Takeshi and the others are offered a chance to enroll in the magic academy. With a war on the way, the decision becomes life changing for all involved. "
 		)
 	,	("Magical Warfare",
 		 3,
 		 "The Magic Academy and Love Fortunes",
-		 ""
+		 "Takeshi and the others continue training their abilities. Isoshima becomes jealous of Mui and suspects that she is trying to take Takeshi away form her. "
 		)
 	,	("Magical Warfare",
 		 4,
 		 "Mui and Tsuganashi of the Ruined World",
-		 ""
+		 "Mui escapes to the Ruined World in search of her brother. Takeshi and the rest follow her into the wasteland only to realize that outside of the school, every fight is life and death. "
 		)
 	,	("Magical Warfare",
 		 5,
 		 "Magic Tests and Winter Vacation",
-		 ""
+		 "After narrowly escaping the Ancestral Magic Exam, Mui falls ill and Isoshima creates even more tension between the group. "
 		)
 	,	("Magical Warfare",
 		 6,
 		 "Battle and Recovery",
-		 ""
+		 "Takeshi and his friends are allowed to participate in the rescue mission to bring back Mui's older brother from the Trailers' grip. Things go awry when both Tsuganashi and Washizu strike while everyone's guard is down. "
 		)
 	,	("Magical Warfare",
 		 7,
@@ -3716,7 +3716,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 		)
 	,	("Naruto",
 		 7,
-		 "Episode_Title",
+		 "The Assassin of the Mist!",
 		 "After Team 7 completes a few miscellaneous D-ranked missions, Naruto relentlessly asks Hiruzen for a higher level mission, and they are eventually assigned to escort a bridge builder named Tazuna back to the Land of Waves. However, on their way there, Team 7 is ambushed by the Demon Brothers, two Chunin from the Hidden Mist Village in the Land of Water. Though it appeared they killed him as they go after Team 7 and Tazuna, the Demon Brothers learned that Kakashi was aware of their presence and faked his death to catch them off-guard and see his students in action. While applauding Sasuke for holding off the Demon Brothers and Sakura for guarding Tazuna, Kakashi expresses disappointment in how poorly Naruto handled the situation and got himself poisoned. However, Naruto refuses to quit the mission, and with Sasuke's taunting getting to him, uses a kunai to stab his hand to bleed out the poison while making a promise to never back down again. Though Kakashi decides to have Naruto's self-inflicted wound dealt with, he is amazed by the boy's rapid healing and wonders if it is the Nine-Tails's doing. Elsewhere, a man named Gato confronts the Demon Brothers' boss for his subordinates' failure to assassinate Tazuna. Threatening Gato with his large sword, the figure decides to handle the job personally."
 		)
 	,	("Naruto",

@@ -283,9 +283,9 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 -- General Meetings
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
 		("2018-02-28 16-30-00", 3, "Semester General Meeting", 18108, 0, "0")
-	,	("2018-03-28 16-30-00", 3, "Member News and Plannig Meeting", 18108, 0, "0")
-	,	("2018-04-25 16-30-00", 3, "Member News and Plannig Meeting", 18108, 0, "0")
-	,	("2018-05-23 16-30-00", 3, "Member News and Plannig Meeting", 18108, 0, "0")
+	,	("2018-03-28 16-30-00", 3, "Member News and Planing Meeting", 18108, 0, "0")
+	,	("2018-04-25 16-30-00", 3, "Member News and Planing Meeting", 18108, 0, "0")
+	,	("2018-05-23 16-30-00", 3, "Member News and Planing Meeting", 18108, 0, "0")
 ;
 
 -- Other Events
