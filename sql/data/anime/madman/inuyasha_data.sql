@@ -20,7 +20,7 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 	,	("Inuyasha",
 		 1,
 		 1,
-		 "M - Moderate animated violence, Mild sexual references",
+		 "M - Moderate animated violence, mild sexual references",
 		 27,
 		 "https://www.madman.com.au/catalogue/view/6035/inuyasha-season-1-collection-eps-127"
 		)
@@ -34,7 +34,7 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 	,	("Inuyasha",
 		 1,
 		 4,
-		 "M - Moderate animated violence, Infrequent sexual references",
+		 "M - Moderate animated violence, infrequent sexual references",
 		 17,
 		 "https://www.madman.com.au/catalogue/view/6332/inuyasha-season-4-collection-eps-8299"
 		)
@@ -48,7 +48,7 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 	,	("Inuyasha",
 		 1,
 		 6,
-		 "M - Mild animated violence, Mild coarse language",
+		 "M - Mild animated violence, mild coarse language",
 		 24,
 		 "https://www.madman.com.au/catalogue/view/11838/inuyasha-season-6-part-1-collection-eps-127146fatpack"
 		)
