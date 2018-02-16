@@ -30,7 +30,8 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("PG - Mild themes, sexual references and infrequent coarse language")
 	,	("PG - Mild violence, themes, drug references and coarse language")
 	,	("PG - Mild animated violence, sexual references, coarse language and nudity")
-	,   	("PG - Mild fantasy themes, animated violence and nudity, sexual references and coarse language")
+	,   ("PG - Mild fantasy themes, animated violence and nudity, sexual references and coarse language")
+	,	("PG - Mild fantasy violence and coarse language")
 ;
 
 -- Data for M Classifications
@@ -76,7 +77,7 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("M - Violence, sexual references and nudity")
 	,	("M - War themes and animated violence")
  	,	("M - Fantasy themes, animated violence and sexual references")
-	,   	("M - Moderate animated violence, infrequent sexual references")
+	,	("M - Moderate animated violence, infrequent sexual references")
 ; 
 
 -- Data for MA15+ Classifications
