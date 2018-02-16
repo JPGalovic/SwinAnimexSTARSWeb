@@ -1,5 +1,5 @@
 <?php
-	// Card for display of Anime Screening Events, Version 1.1, JAN18, JPGalovic
+	// Card for display of Anime Screening Events, Version 1.1.4, FEB18, JPGalovic
 	// Flags: ignor_title_repeat, all titles are of evan if repeating
 	include('sql/events/get_anime_event_data.php');
 
@@ -66,40 +66,8 @@
 							//Volume Links
 							include('sql/events/get_anime_volume_data.php');
 							$first_link = true;
-							if($get_anime_volume_ok)
-							{
-								if(!$get_anime_volume_data->num_rows == 0) //Has Volume Info
-								{
-									while($volume_row = $get_anime_volume_data->fetch_assoc())
-									{
-										if(!$first_link)
-										{
-											echo(' | ');
-										}
-										echo('<a href="'.$volume_row['PURCHACE_URL'].'">');
-										switch($volume_row['VOLUME_TYPE_ID'])
-										{
-											case 0:
-												echo('Stream Now!');
-												break;
-											case 1:
-												echo('Buy '.$volume_row['VOLUME_TYPE_DESCRIPTION'].' Volume '.$volume_row['VOLUME_NUMBER']);
-												break;
-											case 2:
-												echo('Buy '.$volume_row['VOLUME_TYPE_DESCRIPTION'].' Volume '.$volume_row['VOLUME_NUMBER']);
-												break;
-											case 3:
-												echo('Buy '.$volume_row['VOLUME_TYPE_DESCRIPTION']);
-												break;
-											case 4:
-												echo('Buy '.$volume_row['VOLUME_TYPE_DESCRIPTION']);
-												break;
-										}
-										echo('</a>');
-										$first_link = false;
-									}
-								}
-							}
+							
+							$first_link = anime_event_card_volume_links($anime_title, $first_link);
 
 							//RSVP Links
 							if(!$event_row['EVENT_FACEBOOK_ID'] == '0')
