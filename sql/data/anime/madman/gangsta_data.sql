@@ -82,17 +82,17 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Gangsta",
 		 10,
 		 "Land of Confusion",
-		 NULL
+		 "While Nicolas is again treated for his injuries, Alex discovers how important Dr. Theo is to the city's Twilights. Cody learns why the Handymen are independent. A lone woman is seen entering the Abandoned District, leading to the Paulklee Colony."
 		)
 	,	("Gangsta",
 		 11,
 		 "Absence",
-		 NULL
+		 "Delico and Yang go out looking for Erica. Sig, Colt, and Emilio attack the Paulklee Guild, setting off bombs whose smoke robs the Twilights of their sensory advantages. Loretta leaves her hiding place at the Handymen's office."
 		)
 	,	("Gangsta",
 		 12,
 		 "Odds and Ends",
-		 NULL
+		 "With Galahad at the Paulklee Colony, the Cristiano Family looks to Nicolas to protect Loretta. Joel confronts Marco about Constance's disappearance. Worick has suspicions about Ivan."
 		)
 ;
 
