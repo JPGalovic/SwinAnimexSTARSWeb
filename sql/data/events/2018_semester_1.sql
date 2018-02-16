@@ -273,7 +273,7 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 
  	,	("2018-03-07 16-30-00", 2, "Scene Planning and Blocking Workshop", 18108, 0, "0")
  	,	("2018-03-21 16-30-00", 2, "Drawing Workshop", 18108, 0, "0")
- 	,	("2018-04-04 16-30-00", 2, "Anamation Workshop", 36212, 0, "0")
+ 	,	("2018-04-04 16-30-00", 2, "Animation Workshop", 36212, 0, "0")
  	,	("2018-04-18 16-30-00", 2, "Voice Acting Workshop", 18108, 0, "0")
  	,	("2018-05-02 16-30-00", 2, "Music and Sound Effects Workshop", 18108, 0, "0")
 
