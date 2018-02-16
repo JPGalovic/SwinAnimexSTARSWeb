@@ -62,39 +62,11 @@
 
 							echo('<p>'.$anime_event_card_row['ANIME_DESCRIPTION'].'</p>');
 							echo('<p>'.$anime_event_card_row['COPYRIGHT'].'</p>');
-
-							//Volume Links
-							include('sql/events/get_anime_volume_data.php');
+						
+							// Link
 							$first_link = true;
-							
 							$first_link = anime_event_card_volume_links($anime_title, $first_link);
-
-							//RSVP Links
-							if(!$event_row['EVENT_FACEBOOK_ID'] == '0')
-							{
-								if(!$first_link)
-								{
-									echo(' | ');
-								}
-								echo('<a href="https://www.facebook.com/events/'.$event_row['EVENT_FACEBOOK_ID'].'/">RSVP on Facebook</a>');
-								$first_link = false;
-							}
-							if(!$event_row['EVENT_UNIONE_URL'] == '0')
-							{
-								if(!$first_link)
-								{
-									echo(' | ');
-								}
-								echo('<a href="'.$event_row['EVENT_UNIONE_URL'].'">Unione Event</a>');
-								$first_link = false;
-							}
-
-							//More Info Link
-							if(!$first_link)
-							{
-								echo(' | ');
-							}
-							echo('<a href="index.php?page=anime_event&session=' . $event_row['EVENT_TIME'] . '">Event Info.</a>');
+							$first_link = event_card_end_links($event_row['EVENT_TIME'], $event_row['EVENT_TYPE_DESCRIPTION'], $event_row['EVENT_FACEBOOK_ID'], $event_row['EVENT_UNIONE_URL'], $first_link);
 
 						echo('</section>');
 					}

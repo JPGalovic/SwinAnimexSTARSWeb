@@ -38,6 +38,10 @@
 		if(isset($game_data_row))
 				echo('<p>'.$game_data_row['GAME_DESCIRPTION'].'</p>');
 
+		// Links
+		$first_link = true;
+		$first_link = event_card_end_links($event_row['EVENT_TIME'], $event_row['EVENT_TYPE_DESCRIPTION'], $event_row['EVENT_FACEBOOK_ID'], $event_row['EVENT_UNIONE_URL'], $first_link);
+
 	echo('</section>');
 	
 
@@ -45,15 +49,3 @@
 	unset($game_data_row);
 ?>
 
-
-	
-	
-	
-	
-	
-
-
-	
-	
-	
-	

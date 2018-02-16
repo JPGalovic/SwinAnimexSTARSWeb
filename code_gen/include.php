@@ -10,4 +10,5 @@
 		
 	// Includes SQL Getters
 	include('sql/anime/get_volume_data.php');
+	include('sql/events/get_event_data_functions.php');
 ?>
