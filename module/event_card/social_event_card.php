@@ -6,7 +6,7 @@
 		// Event Title & Info
 		echo('<h4>'.$event_row['EVENT_TITLE'].'</h4>');
 		echo('<p>'.date('l jS F Y - g:ia', strtotime($event_row['EVENT_TIME'])).'</p>');
-		echo('<P>'.$event_row['ADDRESS'].'</P>');
+		event_card_location($event_row['CAMPUS'], $event_row['ROOM'], $event_row['ADDRESS'], $event_row['LAT'], $event_row['LNG']);
 		
 		//RSVP Links
 		$first_link = true;

@@ -52,7 +52,7 @@
 							//Core Event Info
 							echo('<h4>'.$event_row['EVENT_TITLE'].' - '.$anime_event_row['ANIME_TITLE'].'</h4>');
 							echo('<p>'.date('l jS F Y - g:ia', strtotime($event_row['EVENT_TIME'])).'</p>');
-							echo('<P>'.$event_row['CAMPUS'].' - '.$event_row['ROOM'].'</P>');
+							event_card_location($event_row['CAMPUS'], $event_row['ROOM'], $event_row['ADDRESS'], $event_row['LAT'], $event_row['LNG']);
 
 							//Anime Specific Details
 							$session_number = $anime_event_row['SESSION_NUMBER'];
