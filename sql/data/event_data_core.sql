@@ -18,7 +18,7 @@ INSERT INTO EVENT_TYPE (EVENT_TYPE_ID, EVENT_TYPE_DESCRIPTION) VALUES
 	,	(7, "Other Event")
 ;
 
--- Event Type Refences:
+-- Event Type References:
 -- Has Anime Event Data: 0
 -- May Have Game Event Data: 4, 5, 6
 
@@ -44,7 +44,7 @@ INSERT INTO EVENT_LOCATION (LOCATION_ID, CAMPUS, BUILDING, BLDG, ROOM, ADDRESS, 
 -- Social Event Locations
 	,	(1, NULL, NULL, NULL, NULL, "Crown Entertainment Complex, 8 Whiteman St, Southbank VIC 3006", -37.824871, 144.958181, 17)
 	,	(2, NULL, NULL, NULL, NULL, "Sorrento Oceach Beach, Ocean Beach Road, Sorrento VIC 3943", -38.345876, 144.727014, 17)
-	,	(3, NULL, NULL, NULL, NULL, "Hawthorn Aquatic &amp; Leasure Center, 1 Grace St, Hawthorn VIC 3122", -37.820791, 145.034434, 17)
+	,	(3, NULL, NULL, NULL, NULL, "Hawthorn Aquatic &amp; Leisure Center, 1 Grace St, Hawthorn VIC 3122", -37.820791, 145.034434, 17)
 
 -- Swinburne Buildings
 	,	(10, "Swinburne Hawthorn", "1 Alfred St", "1A", NULL, NULL, -37.821312, 145.036710, 17)
@@ -55,12 +55,12 @@ INSERT INTO EVENT_LOCATION (LOCATION_ID, CAMPUS, BUILDING, BLDG, ROOM, ADDRESS, 
 	,	(15, "Swinburne Hawthorn", "32 Park St", "32P", NULL, NULL, -37.820231, 145.037879, 17)
 	,	(16, "Swinburne Hawthorn", "400 Burwood Rd", "400B", NULL, NULL, -0, 0, 17)
 	,	(17, "Swinburne Hawthorn", "60 William St", "60W", NULL, NULL, -37.822484, 145.039690, 17)
-	,	(18, "Swinburne Hawthorn", "Old Administation Building", "AD", NULL, NULL, -37.822108, 145.038748, 17)
-	,	(19, "Swinburne Hawthorn", "Advanced Manufactoring &amp; Design Center", "ADMC", NULL, NULL, -37.822836, 145.039238, 17)
-	,	(20, "Swinburne Hawthorn", "Advanced Tachnologies Center", "ATC", NULL, NULL, -37.822650, 145.038374, 17)
+	,	(18, "Swinburne Hawthorn", "Old Administration Building", "AD", NULL, NULL, -37.822108, 145.038748, 17)
+	,	(19, "Swinburne Hawthorn", "Advanced Manufacturing &amp; Design Center", "ADMC", NULL, NULL, -37.822836, 145.039238, 17)
+	,	(20, "Swinburne Hawthorn", "Advanced Technologies Center", "ATC", NULL, NULL, -37.822650, 145.038374, 17)
 	,	(21, "Swinburne Hawthorn", "Applied Sciences Building", "AS", NULL, NULL, -37.822569, 145.037458, 17)
 	,	(22, "Swinburne Hawthorn", "Arts Building", "AR", NULL, NULL, -37.821895, 145.038257, 17)
-	,	(23, "Swinburne Hawthorn", "Australian Gradurate School of Entrepreneurship", "AGSE", NULL, NULL, -37.821347, 145.039471, 17)
+	,	(23, "Swinburne Hawthorn", "Australian Graduate School of Entrepreneurship", "AGSE", NULL, NULL, -37.821347, 145.039471, 17)
 	,	(24, "Swinburne Hawthorn", "Aviation Building", "AV", NULL, NULL, -37.823183, 145.041905, 17)
 	,	(25, "Swinburne Hawthorn", "Business &amp; Arts Building", "BA", NULL, NULL, -37.822084, 145.039406, 17)
 	,	(26, "Swinburne Hawthorn", "Chemistry Building", "CH", NULL, NULL, -37.822656, 145.037855, 17)
@@ -81,7 +81,7 @@ INSERT INTO EVENT_LOCATION (LOCATION_ID, CAMPUS, BUILDING, BLDG, ROOM, ADDRESS, 
 	,	(41, "Swinburne Hawthorn", "UN Building", "UN", NULL, NULL, -37.822524, 145.038599, 17)
 	
 -- Specific Rooms
-	,	(18108, "Swinburne Hawthorn", "Old Administation Building", "AD", "AD108", NULL, -37.822108, 145.038748, 17)
+	,	(18108, "Swinburne Hawthorn", "Old Administration Building", "AD", "AD108", NULL, -37.822108, 145.038748, 17)
 	
 	,	(21404, "Swinburne Hawthorn", "Applied Sciences Building", "AS", "AS404", NULL, -37.822569, 145.037458, 17)
 	
@@ -121,7 +121,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 "After Dark Sessions are run as an extra event for members, condition of entry is that a gold coin donation is made."
 		)
 	,	("Summer Showcase",
-		 "Summer Edition of our Showcase Screenings, each week showing the first episode of anime avalible to watch now!",
+		 "Summer Edition of our Showcase Screenings, each week showing the first episode of anime available to watch now!",
 		 "Event is open to all, just come along and scan your membership card as you enter.",
 		 NULL
 		)
@@ -136,7 +136,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 "After Dark Sessions are run as an extra event for members, condition of entry is that a gold coin donation is made."
 		)
 	,	("SwinAnime x STARS Showcase",
-		 "Showcase Screenings, each week showing the first episode of anime avalible to watch now!",
+		 "Showcase Screenings, each week showing the first episode of anime available to watch now!",
 	 	 "Event is open to all, just come along and scan your membership card as you enter.",
 	 	 NULL
 		)
@@ -151,31 +151,31 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 "After Dark Sessions are run as an extra event for members, condition of entry is that a gold coin donation is made."
 		)
 	,	("Winter Showcase",
-		 "Winter Edition of our Showcase Screenings, each week showing the first episode of anime avalible to watch now!",
+		 "Winter Edition of our Showcase Screenings, each week showing the first episode of anime available to watch now!",
 		 "Event is open to all, just come along and scan your membership card as you enter.",
 		 NULL
 		)
 	,	("LANime Overnight Marathon",
-		 "Overnight Marathon and LAN gaming, only for our most didcated members!",
-		 "Come along from Friday Night, Present your Priemium Membership Card and chip in for Snaks and Drinks",
-		 "As part of event eveyone in attendace chips in $5 that goes directly towards the purchace of Snaks and Drinks for the event."
+		 "Overnight Marathon and LAN gaming, only for our most dedicated members!",
+		 "Come along from Friday Night, Present your Premium Membership Card and chip in for Snacks and Drinks",
+		 "As part of event everyone in attendance chips in $5 that goes directly towards the purchase of Snacks and Drinks for the event."
 		)
 ;
 
 -- Social Event Details
 INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, TICKETS) VALUES	
 		("Beach Episode",
-		 "Our Annual trip to the beach, fun with friends, building sand castles, have a swim or a surf, maby evan smash a melon or two.",
+		 "Our Annual trip to the beach, fun with friends, building sand castles, have a swim or a surf, maybe even smash a melon or two.",
 		 "Meet at Frankston Train Station for start of event, catching 788 bus to Sorrento. <br>Note: Sorrento is in zone 4, so miki fares are $3.36 concession or $6.72 full fare.",
 		 "Event is free to attend, however generally we all pitch in on getting snacks and drinks for the group."
 		)
 	,	("Arcade Episode",
 		 "Play some arcade games, have some fun.",
 		 "Meet at Southern Cross Station (Spenser Street), Catching tram 12, 96 or 109 to Crown Casino.",
-		 "Event is free to attend, paying what you can afford to play, reocmmended buget is $20-$40"
+		 "Event is free to attend, paying what you can afford to play, recommended budget is $20-$40"
 		)
 	,	("Pool Episode",
-		 "Our annual trip to the pool, swiming, swiming, swiming...",
+		 "Our annual trip to the pool, swimming, swimming, swimming...",
 		 "Meet at Glenferrie Station, walk across road to pool.",
 		 "Event is free to attend, entry to pool is free for current swinburne students."
 		)
@@ -184,12 +184,12 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 -- Tabletop Event Details
 INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, TICKETS) VALUES
 		("Tabletop Tonight",
-		 "Every week! Our exclusive Tabletop Experiance! Join us for new games and exciting classics.",
+		 "Every week! Our exclusive Tabletop Experience! Join us for new games and exciting classics.",
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
 		 NULL
 		)
 	,	("The Dice Must Flow",
-		 "Evey month join us for our Marathon Extravigansa! Play Longer, Play Harder!",
+		 "Evey month join us for our Marathon Extravaganza! Play Longer, Play Harder!",
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
 		 NULL
 		)
@@ -199,7 +199,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 -- Roleplay Event Details
 INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, TICKETS) VALUES
 		("Adventurers Anonymous",
-		 "Are you tied of adventuring alone, with no one arround to have your back? Are you tired not having team mates to give you support? Come along to our Adventurers Anonymous meeting where our supportive groups we will help you find your way, and you can help other Adventerurs find their's",
+		 "Are you tied of adventuring alone, with no one around to have your back? Are you tired not having team mates to give you support? Come along to our Adventurers Anonymous meeting where our supportive groups we will help you find your way, and you can help other Adventurers find their's",
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
 		 NULL
 		)
@@ -219,22 +219,22 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 NULL
 		)
 	,	("Drawing Workshop",
-		 "Now that our project is planned out, its time to start with designing our characters, sets and drawing key-frames for our animation! This workshop will help to develop your hand drawing skills as well as indtroduce you to methods for vectoring and digital software.",
+		 "Now that our project is planned out, its time to start with designing our characters, sets and drawing key-frames for our animation! This workshop will help to develop your hand drawing skills as well as introduce you to methods for vectoring and digital software.",
 		 NULL,
 		 NULL
 		)
 	,	("Animation Workshop",
-		 "The next step is to actully create the slides for the anamation, using both traditional and modern techniques, by hand and digital!",
+		 "The next step is to actually create the slides for the animation, using both traditional and modern techniques, by hand and digital!",
 		 NULL,
 		 NULL
 		)
 	,	("Voice Acting Workshop",
-		 "Next, give the animation a voice, in this workshop we explore techniques used by clasic animation to give your characters a voice.",
+		 "Next, give the animation a voice, in this workshop we explore techniques used by classic animation to give your characters a voice.",
 		 NULL,
 		 NULL
 		)
 	,	("Music and Sound Effects Workshop",
-		 "Finally, the addtion of music and production of sound effects in both the modern and traditional manner, thus completing our project!",
+		 "Finally, the addition of music and production of sound effects in both the modern and traditional manner, thus completing our project!",
 		 NULL,
 		 NULL
 		)
@@ -252,7 +252,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 "Open to all members, please come along to the advertised clubroom and take a seat.",
 		 NULL
 		)
-	,	("Member News and Plannig Meeting",
+	,	("Member News and Planing Meeting",
 		 "This is where you can have your say, let us know what you want to see from your club, and we'll let you know whats coming up over the next couple of weeks",
 		 "",
 		 NULL
@@ -272,9 +272,9 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		 NULL
 		)
 	,	("Animaga Expo",
-		 "Animaga Expo celebrates eveything, Anime Manga and Games! come and join us in the fun!",
+		 "Animaga Expo celebrates everything, Anime Manga and Games! come and join us in the fun!",
 		 "Held at the Royal Exhibition Building.",
-		 "Tickets can be brought from Animaga's webiste, http://www.animaga.com.au/"
+		 "Tickets can be brought from Animaga's website, http://www.animaga.com.au/"
 		)
 ;
 

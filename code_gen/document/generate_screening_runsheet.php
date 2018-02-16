@@ -1,5 +1,5 @@
 <?php
-	// Generation Script for the Generation of Runsheets, Version 1.0, FEB18, JPGalovic
+	// Generation Script for the Generation of Runsheets, Version 1.0.1, FEB18, JPGalovic XBoyle
 	if(isset($_POST['event_datetime']))
 	{
 		// Generate runsheet for download.
@@ -150,8 +150,8 @@
 				fclose($output_handle);
 				include('../sql_close.php');
 
-				echo('<p>Error retreiving anime episodes</p>');
-				echo('<p>Please spesify the datetime of the event you want to generate runsheet for. yyyy-mm-dd hh:mm:ss</p><p><form action="generate_screening_runsheet.php" method="post">Event Date/Time to Generate: <input type="datetime" name="event_datetime"><br><input type="submit"></form></p>');
+				echo('<p>Error retrieving anime episodes</p>');
+				echo('<p>Please specify the datetime of the event you want to generate runsheet for. yyyy-mm-dd hh:mm:ss</p><p><form action="generate_screening_runsheet.php" method="post">Event Date/Time to Generate: <input type="datetime" name="event_datetime"><br><input type="submit"></form></p>');
 			}
 		}
 		else // Error state.
@@ -161,12 +161,12 @@
 			include('../sql_close.php');
 			
 			echo('<p>Entered date does not have any data that can be put into a runsheet</p>');
-			echo('<p>Please spesify the datetime of the event you want to generate runsheet for. yyyy-mm-dd hh:mm:ss</p><p><form action="generate_screening_runsheet.php" method="post">Event Date/Time to Generate: <input type="datetime" name="event_datetime"><br><input type="submit"></form></p>');
+			echo('<p>Please specify the datetime of the event you want to generate runsheet for. yyyy-mm-dd hh:mm:ss</p><p><form action="generate_screening_runsheet.php" method="post">Event Date/Time to Generate: <input type="datetime" name="event_datetime"><br><input type="submit"></form></p>');
 		}
 	}
 	else
 	{
 		// No settings, show form.
-		echo('<p>Please spesify the datetime of the event you want to generate runsheet for. yyyy-mm-dd hh:mm:ss</p><p><form action="generate_screening_runsheet.php" method="post">Event Date/Time to Generate: <input type="datetime" name="event_datetime"><br><input type="submit"></form></p>');
+		echo('<p>Please specify the datetime of the event you want to generate runsheet for. yyyy-mm-dd hh:mm:ss</p><p><form action="generate_screening_runsheet.php" method="post">Event Date/Time to Generate: <input type="datetime" name="event_datetime"><br><input type="submit"></form></p>');
 	}
 ?>
