@@ -164,7 +164,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 		)
 	,	("Naruto",
 		 7,
-		 "Episode_Title",
+		 "The Assassin of the Mist!",
 		 "After Team 7 completes a few miscellaneous D-ranked missions, Naruto relentlessly asks Hiruzen for a higher level mission, and they are eventually assigned to escort a bridge builder named Tazuna back to the Land of Waves. However, on their way there, Team 7 is ambushed by the Demon Brothers, two Chunin from the Hidden Mist Village in the Land of Water. Though it appeared they killed him as they go after Team 7 and Tazuna, the Demon Brothers learned that Kakashi was aware of their presence and faked his death to catch them off-guard and see his students in action. While applauding Sasuke for holding off the Demon Brothers and Sakura for guarding Tazuna, Kakashi expresses disappointment in how poorly Naruto handled the situation and got himself poisoned. However, Naruto refuses to quit the mission, and with Sasuke's taunting getting to him, uses a kunai to stab his hand to bleed out the poison while making a promise to never back down again. Though Kakashi decides to have Naruto's self-inflicted wound dealt with, he is amazed by the boy's rapid healing and wonders if it is the Nine-Tails's doing. Elsewhere, a man named Gato confronts the Demon Brothers' boss for his subordinates' failure to assassinate Tazuna. Threatening Gato with his large sword, the figure decides to handle the job personally."
 		)
 	,	("Naruto",

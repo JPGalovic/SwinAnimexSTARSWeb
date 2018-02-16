@@ -35,27 +35,27 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Magical Warfare",
 		 2,
 		 "Another World",
-		 ""
+		 "Takeshi and the others are offered a chance to enroll in the magic academy. With a war on the way, the decision becomes life changing for all involved. "
 		)
 	,	("Magical Warfare",
 		 3,
 		 "The Magic Academy and Love Fortunes",
-		 ""
+		 "Takeshi and the others continue training their abilities. Isoshima becomes jealous of Mui and suspects that she is trying to take Takeshi away form her. "
 		)
 	,	("Magical Warfare",
 		 4,
 		 "Mui and Tsuganashi of the Ruined World",
-		 ""
+		 "Mui escapes to the Ruined World in search of her brother. Takeshi and the rest follow her into the wasteland only to realize that outside of the school, every fight is life and death. "
 		)
 	,	("Magical Warfare",
 		 5,
 		 "Magic Tests and Winter Vacation",
-		 ""
+		 "After narrowly escaping the Ancestral Magic Exam, Mui falls ill and Isoshima creates even more tension between the group. "
 		)
 	,	("Magical Warfare",
 		 6,
 		 "Battle and Recovery",
-		 ""
+		 "Takeshi and his friends are allowed to participate in the rescue mission to bring back Mui's older brother from the Trailers' grip. Things go awry when both Tsuganashi and Washizu strike while everyone's guard is down. "
 		)
 	,	("Magical Warfare",
 		 7,

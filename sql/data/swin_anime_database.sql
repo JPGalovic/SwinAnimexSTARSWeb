@@ -1,9 +1,3 @@
--- Initalise Database & User Permissions, Version 1.2, FEB18, JPGalovic
--- Creates Database and User for webpage if database is not found
-CREATE DATABASE IF NOT EXISTS swinan01_smart_web;
-CREATE USER IF NOT EXISTS 'swinan01'@'localhost' IDENTIFIED BY 'qdVbzdb498';
-GRANT ALL PRIVILEGES ON swinan01_smart_web.* TO 'swinan01'@'localhost';
-
 -- Switches to correct database, Version 1.0, FEB18, JPGalovic
 -- Use the swinan01_smart_web database
 USE swinan01_smart_web;
@@ -8641,7 +8635,7 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 
  	,	("2018-03-07 16-30-00", 2, "Scene Planning and Blocking Workshop", 18108, 0, "0")
  	,	("2018-03-21 16-30-00", 2, "Drawing Workshop", 18108, 0, "0")
- 	,	("2018-04-04 16-30-00", 2, "Anamation Workshop", 36212, 0, "0")
+ 	,	("2018-04-04 16-30-00", 2, "Animation Workshop", 36212, 0, "0")
  	,	("2018-04-18 16-30-00", 2, "Voice Acting Workshop", 18108, 0, "0")
  	,	("2018-05-02 16-30-00", 2, "Music and Sound Effects Workshop", 18108, 0, "0")
 
