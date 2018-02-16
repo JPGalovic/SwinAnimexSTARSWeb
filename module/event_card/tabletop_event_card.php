@@ -35,6 +35,11 @@
 		
 		event_card_location($event_row['CAMPUS'], $event_row['ROOM'], $event_row['ADDRESS'], $event_row['LAT'], $event_row['LNG']);
 
+		// Event Details Display
+		$event_details_data = get_event_details($event_row['EVENT_TITLE']);
+		$event_details_row = $event_details_data->fetch_assoc();
+		echo('<p>'.$event_details_row['EVENT_DESCRIPTION'].'</p>');
+
 		if(isset($game_data_row))
 				echo('<p>'.$game_data_row['GAME_DESCIRPTION'].'</p>');
 
