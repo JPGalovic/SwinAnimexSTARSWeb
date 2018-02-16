@@ -1,5 +1,5 @@
 <?php
-	// Card for display of Anime Screening Events, Version 1.1, JAN18, JPGalovic
+	// Card for display of Anime Screening Events, Version 1.1.4, FEB18, JPGalovic
 	// Flags: ignor_title_repeat, all titles are of evan if repeating
 	include('sql/events/get_anime_event_data.php');
 
@@ -52,7 +52,7 @@
 							//Core Event Info
 							echo('<h4>'.$event_row['EVENT_TITLE'].' - '.$anime_event_row['ANIME_TITLE'].'</h4>');
 							echo('<p>'.date('l jS F Y - g:ia', strtotime($event_row['EVENT_TIME'])).'</p>');
-							echo('<P>'.$event_row['CAMPUS'].' - '.$event_row['ROOM'].'</P>');
+							event_card_location($event_row['CAMPUS'], $event_row['ROOM'], $event_row['ADDRESS'], $event_row['LAT'], $event_row['LNG']);
 
 							//Anime Specific Details
 							$session_number = $anime_event_row['SESSION_NUMBER'];
@@ -62,71 +62,11 @@
 
 							echo('<p>'.$anime_event_card_row['ANIME_DESCRIPTION'].'</p>');
 							echo('<p>'.$anime_event_card_row['COPYRIGHT'].'</p>');
-
-							//Volume Links
-							include('sql/events/get_anime_volume_data.php');
+						
+							// Link
 							$first_link = true;
-							if($get_anime_volume_ok)
-							{
-								if(!$get_anime_volume_data->num_rows == 0) //Has Volume Info
-								{
-									while($volume_row = $get_anime_volume_data->fetch_assoc())
-									{
-										if(!$first_link)
-										{
-											echo(' | ');
-										}
-										echo('<a href="'.$volume_row['PURCHACE_URL'].'">');
-										switch($volume_row['VOLUME_TYPE_ID'])
-										{
-											case 0:
-												echo('Stream Now!');
-												break;
-											case 1:
-												echo('Buy '.$volume_row['VOLUME_TYPE_DESCRIPTION'].' Volume '.$volume_row['VOLUME_NUMBER']);
-												break;
-											case 2:
-												echo('Buy '.$volume_row['VOLUME_TYPE_DESCRIPTION'].' Volume '.$volume_row['VOLUME_NUMBER']);
-												break;
-											case 3:
-												echo('Buy '.$volume_row['VOLUME_TYPE_DESCRIPTION']);
-												break;
-											case 4:
-												echo('Buy '.$volume_row['VOLUME_TYPE_DESCRIPTION']);
-												break;
-										}
-										echo('</a>');
-										$first_link = false;
-									}
-								}
-							}
-
-							//RSVP Links
-							if(!$event_row['EVENT_FACEBOOK_ID'] == '0')
-							{
-								if(!$first_link)
-								{
-									echo(' | ');
-								}
-								echo('<a href="https://www.facebook.com/events/'.$event_row['EVENT_FACEBOOK_ID'].'/">RSVP on Facebook</a>');
-								$first_link = false;
-							}
-							if(!$event_row['EVENT_UNIONE_URL'] == '0')
-							{
-								if(!$first_link)
-								{
-									echo(' | ');
-								}
-								echo('<a href="'.$event_row['EVENT_UNIONE_URL'].'">Unione Event</a>');
-								$first_link = false;
-							}
-
-							//More Info Link
-							if(!$first_link)
-							{
-								echo(' | ');
-							}
-							echo('<a href="index.php?page=anime_event&session=' . $event_row['EVENT_TIME'] . '">Event Info.</a>');
+							$first_link = anime_event_card_volume_links($anime_title, $first_link);
+							$first_link = event_card_end_links($event_row['EVENT_TIME'], $event_row['EVENT_TYPE_DESCRIPTION'], $event_row['EVENT_FACEBOOK_ID'], $event_row['EVENT_UNIONE_URL'], $first_link);
 
 						echo('</section>');
 					}

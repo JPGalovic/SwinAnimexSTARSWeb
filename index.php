@@ -1,11 +1,9 @@
 <?php
-	// Main Index Page Builder, Version 1.4.2, FEB18, JPGalovic
+	// Main Index Page Builder, Version 1.4.3, FEB18, JPGalovic
 	// Include Required Code-Gen
 	include('code_gen/sql_login.php'); // Login and open connection to database
 	include('code_gen/misc_var.php'); // Include Global Variables
-	include('code_gen/process/remove_illegal_char.php'); // Include Fuctions for removal of illegal characters
-	include('code_gen/program/auto_version_control.php'); // Include Funtions for Auto Version Updateing & Cashe Bursting.
-	include('code_gen/module_elements/event_cards.php'); // Include Functions for Event Card common commands
+	include('code_gen/include.php'); // Include other Fuctions.
 
 	// Get page from url
 	$page = 'home';

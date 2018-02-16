@@ -30,7 +30,7 @@
 			echo('</section>');
 		echo('</article>');
 
-		$location_text = 'Hawthorn Screenings every Friday.<br>Starting, 12:30am, 3:30pm, 5:30pm &amp; 8:30pm.<br>Showcase Screenings every Monday. <br> Starting, 3:30pm &amp; 4:30pm.<br>See the events above for more details.';
+		$location_text = 'With events running Monday to Friday, our members can enjoy, Showcase Sessions each Monday, Tabletop Tonight each Tuesday, Workshops each Wednesday, Advernturers Anonymous each Thursday, Screening Sessions each Friday and much much more!';
 		// Find Us
 		include('module/misc/map.php');
 		
