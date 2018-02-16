@@ -2,7 +2,7 @@
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Muv-Luv Alternative Total Eclipse",
 		 24,
-		 "Having fought with a hostile alien race known as BETA since 1967 humanity is at their last line of defence known as a Tactical Surface Fighter. For two pilots – Yui Takamura of the Imperial Royal Guards of Japan and Yuuya Bridges of the US Army – are about to be apart of Project Prominence, a last ditch effort to overcome these vicious creatures.",
+		 "Having fought with a hostile alien race known as BETA since 1967 humanity is at their last line of defence known as a Tactical Surface Fighter. For two pilots &ndash; Yui Takamura of the Imperial Royal Guards of Japan and Yuuya Bridges of the US Army &ndash; are about to be apart of Project Prominence, a last ditch effort to overcome these vicious creatures.",
 		 "Having fought with a hostile alien race known as BETA since 1967 humanity is at their last line of defence known as a Tactical Surface Fighter.",
 		 "hanabee",
 		 ""
