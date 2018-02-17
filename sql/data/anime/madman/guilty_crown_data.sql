@@ -1,51 +1,169 @@
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
-		("Title",
-		 n,
-		 "Synopsys",
-		 "Description",
-		 "Company",
-		 "Copyright"
+		("Guilty Crown",
+		 22,
+		 "In Guilty Crown, Shu’s entire world was shattered after a meteorite crashed into Japan, unleashing the lethal Apocalypse Virus. The chaos and anarchy born of the outbreak cost Shu his family and reduced him to a timid, fearful shell of the boy he’d once been. His life took another unexpected turn after a chance encounter with the stunning pop star, Inori. This mysterious beauty introduced Shu to the King’s Right Hand: a genetic mutation that allows him to reach into the hearts of mortals and turn them into weapons. The visceral action of this visual masterpiece escalates as Shu finds himself caught in the crossfire between those who desperately seek his newfound strength. On one site lurks a clandestine government agency - and on the other, Inori and the spirited band of rebels known as Funeral Parlor. The choice is Shu’s to make - and the world is his to change. ",
+		 "In Guilty Crown, Shu’s entire world was shattered after a meteorite crashed into Japan, unleashing the lethal Apocalypse Virus. The chaos and anarchy born of the outbreak cost Shu his family and reduced him to a timid, fearful shell of the boy he’d once been.",
+		 "Madman",
+		 "&copy; GUILTY CROWN committee. Licensed by Funimation Productions, Ltd. All Rights Reserved. "
 		)
 ;
 
 INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
-		("Title",
-		 n,
-		 m,
-		 "Classification",
-		 x,
-		 "URL"
+		("Guilty Crown",
+		 4,
+		 1,
+		 "M - Animated violence",
+		 22,
+		 "https://www.madman.com.au/catalogue/view/37226/guilty-crown-complete-series-bluray"
+		)
+	,	("Guilty Crown",
+		 3,
+		 1,
+		 "M - Animated violence",
+		 22,
+		 "https://www.madman.com.au/catalogue/view/37225/guilty-crown-complete-series"
+		)
+	,	("Guilty Crown",
+		 2,
+		 1,
+		 "M - Animated violence",
+		 11,
+		 "https://www.madman.com.au/catalogue/view/17859/guilty-crown-collection-1-bluray"
+		)
+	,	("Guilty Crown",
+		 1,
+		 2,
+		 "M - Animated violence",
+		 11,
+		 "https://www.madman.com.au/catalogue/view/17858/guilty-crown-collection-2"
+		)
+	,	("Guilty Crown",
+		 0,
+		 1,
+		 "M - Animated violence",
+		 22,
+		 "https://www.animelab.com/shows/guilty-crown"
 		)
 ;
 
 INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
-		("Title",
-		 n,
-		 "Episode_Title",
-		 "Episode_Synopsys"
+		("Guilty Crown",
+		 1,
+		 "Outbreak:Genesis",
+		 "In 2039, Shu Ouma is a socially awkward student living in Japan, where it is under the strict rule of the government organization named GHQ following the outbreak of the Apocalypse Virus ten years earlier. While going to his warehouse studio, he encounters Inori Yuzuriha, an internet singer of the band Egoist, who is recovering from her wounds after stealing the Void Genome, a genetic weapon stored in a vial, from GHQ, keeping it safe inside her pet robot Funell. Inori is then captured by the GHQ Anti-Bodies division led by Major Guin. To make amends upon her request, Shu brings the Void Genome to Inori's boss, Gai Tsutsugami, leader of the resistance group called Funeral Parlor (Undertakers). However, Guin orders the Anti-Bodies to exterminate the residents of Roppongi in order to find the Void Genome. As Funeral Parlor and GHQ battle, Shu goes to rescue Inori, protecting her when a GHQ humanoid war machine known as an Endlave tries to attack them. The attack shatters the vial holding the Void Genome, giving Shu the &quot;Power of the King&quot;, which he uses to extract Inori's Void, in the form of a sword, in order to destroy the Endlave. "
+		)
+	,	("Guilty Crown",
+		 2,
+		 "The Fittest:Survival of the Fittest",
+		 "When GHQ Second Lieutenant Daryl Yan, operating the Endlave Steiner, arrives and intervenes, Shu is forced to retreat with Inori and regroup with Funeral Parlor. After commending hacker Tsugumi and paraplegic Endlave pilot Ayase Shinomiya for their hard work, Gai not only lectures Inori for allowing Shu to absorb the Void Genome since the former had intended to use it, but he also states that Shu can no longer stand idly by with the power the latter now possesses. Later, Funeral Parlor proceeds to stop Guin, who took a group of innocent civilians hostage to have Daryl and the Anti-Bodies execute them. Funeral Parlor launches an attack and tricks Daryl to drive his Endlave Steiner away from Guin's command center to hijack it. Gai then reveals himself and has a standoff with Guin, in which Shu heads toward Daryl, cutting through his cockpit and extracts his Void, a weapon that produces myriad of barriers. As the standoff reaches its climax, Guin orders his men to fire at Gai, however Shu uses Daryl's Void to shield Gai and deflect the lasers fired, annihilating Guin and the Anti-Bodies. In the aftermath, despite witnessing the atrocities GHQ are responsible for and what Funeral Parlor stands for, Shu declines Gai's offer to join them. The next day, Shu is surprised to learn that Inori has transferred into his school. "
+		)
+	,	("Guilty Crown",
+		 3,
+		 "Phanerosis:Void-sampling",
+		 "Shu is still shocked that not only has Inori transferred to his school but is living at his home as well. Meanwhile, GHQ Anti-Bodies Director Shuichiro Keido tasks GHQ Major Makoto Waltz Segai to track a series of hotspots where a genetic drug called the Norma Gene is being distributed. After Shu learns that Inori was sent to protect him, the two meet up with Gai, who reveals that a student at Shu's school, who is secretly a drug dealer for the Norma Gene nicknamed &quot;Sugar&quot;, saw him during the Roppongi incident. After Gai confirms that he can see other people's Voids, Inori then teaches the basic principles of drawing out Voids to Shu, who confronts his classmates one by one, checking for a Void in the form of a pair of shears held by &quot;Sugar&quot;. After several failures, Shu soon figures out &quot;Sugar&quot; is actually his friend Yahiro Samukawa, since his calm demeanor does not match his tastes in movies, thereby exposing his identity. Shu subdues an angry Yahiro by extracting his Void, but stops Inori from killing Yahiro. When Yahiro awakens, he and Shu both resolve to keep each other's secrets. However, Yahiro turns on Shu the next day by selling him out to GHQ, and Shu is then approached by Segai. "
+		)
+	,	("Guilty Crown",
+		 4,
+		 "Solution:Flux",
+		 "Shu is apprehended by Segai in front of his classmates and is taken to GHQ Isolation Facility Four, where he remains silent about Funeral Parlor. As Segai is taking Shu to the isolation ward, he reveals that Yahiro's younger brother is receiving treatment at the facility due to being a victim of the Apocalypse Virus, for this is the reason for why Yahiro ratted Shu out. However, Segai dismays Shu when mentioning that Gai plans to rescue a mass murderer named Kenji Kido, giving Shu a transmitter, in the shape of a pen, to use when he comes in contact with Gai. Later that night, Gai, disguised as a lawyer, visits Shu to involve him in recusing Kenji, but Shu rejects assistance. As the facility's alarm suddenly goes off, Tsugumi informs the two that Inori has broken into the facility and plans to rescue Shu herself, ignoring orders. Gai is forced to change his group's plan of action against the GHQ Endlaves when Shu goes to save her. On the way there, after Ayase protects him from harm, Shu encounters Kenji, extracting and using his Void, in the form of a gravity manipulation device, to stop the GHQ Endlaves and rescue Inori. Following the facility's destruction, Shu once again is offered to join Gai and reluctantly accepts, however he keeps Segai's transmitter and does not inform Gai of their exchange. "
+		)
+	,	("Guilty Crown",
+		 5,
+		 "Training:A preparation",
+		 "Shu is brought to Funeral Parlor Headquarters at Roppongi Fort, where Gai plans to hold a trial for Shu before he can officially join this resistant group. While preparing to lead a mission to take over the &quot;Leukocyte&quot;, Gai assigns Ayase to instruct Shu in training him for the trial. Ayase holds onto his pen, unaware that it is a transmitter, using this as motivation. After a day of hard training with members Argo Tsukishima and Oogumo, Shu encounters Inori, realizing that Gai was the one who told her to convince him to join Funeral Parlor. After Inori enter Gai's room, a dejected Shu bumps into Ayase, who consoles and reinvigorates him for his trial. Unknown to them, however, Inori is actually giving Gai a blood transfusion. On the day of trial, Shu has a mock battle with Ayase, where the goal is to get past and into the vehicle placed behind her Endlave Steiner. After going to Argo to extract and use his Void, in the form of a flashlight that temporarily brings out blinding darkness, Shu manages to succeed the task and receives his pen back as his reward for passing the trial. Tsugumi gives the members a troubling report that Gai, who earlier led a team to intercept the arrival of mercenaries at an airport and confiscate their supplies, was attacked by the Leukocyte, an orbital satellite laser. "
+		)
+	,	("Guilty Crown",
+		 6,
+		 "Cage:Leukocytes",
+		 "Although Gai survives the attack, both his team and the mercenaries were killed by the Leukocyte blast. At the outskirts of Tsukigase Dam, Gai briefs Funeral Parlor that their next mission is to attack the dam where the Leukocyte control system is located, but Shu rejects this plan due to the percentage of members who might die. Meanwhile at Tsukigase Dam, Segai informs Keido that his men are prepared for Funeral Parlor's attack. As Gai gets another blood transfusion in a room alone, he feels burdened for the lives sacrificed during the Leukocyte incident. After eavesdropping on this, Shu has a brief exchange with Gai, but eventually agrees with the plan, understanding that Gai knows how much the lives sacrificed are worth to him. During the operation, Funeral Parlor distracts GHQ from guarding the dam, allowing Shu, Inori, Gai and Kenji to infiltrate the Leukocyte control system. As Shu hacks the control system using Kenji's Void, Segai sends Daryl to get Shu, but Gai defeats Daryl. However, Daryl damages the control system, causing Leukocyte I to malfunction and descend into Tokyo. As Segai shows up, Gai makes a deal with him to use the pen, which Gai was aware that it was a transmitter, in order to use Leukocyte III to destroy Leukocyte I, in exchange for Segai to delete all of Shu's data in relation to Funeral Parlor. While Gai prepares to line up the transmitter with the two Leukocyte satellites, Shu's wish to act upon this heeds Inori to fuse her Void with that of Kenji, creating a powerful laser weapon, which he uses to destroy both satellites just as their paths intersect. With the operation over, Shu finally accepts Gai's offer and joins Funeral Parlor. "
+		)
+	,	("Guilty Crown",
+		 7,
+		 "Round Dance:Temptation",
+		 "Shu returns to school, but deals with the rumors that have spread due to his absence. Luckily, the student council president Arisa Kuhouin fabricates a story for his apprehension to stop the rumors, but he has not heard any word about Yahiro since his capture. After school, Shu's stepmother Haruka Ouma returns home and welcomes Inori without much question. Meanwhile, Gai initiates a plan to acquire a new supply route for Funeral Parlor. The following night, Arisa and her grandfather, Okina Kuhouin, the head of a conglomerate called the Kuhouin Group, attend a party on a cruise ship whilst GHQ Colonel Dan Eagleman briefs Daryl, Segai and GHQ Intel Officer Rowan in using missiles to attack the ship, following intelligence that Okina plans to make a business deal with an international party outside Japan. As the operation begins, Shu and Gai sneak on board the ship dressed as guests. When Shu runs into Arisa, Gai distracts her while Shu receives information from Tsugumi regarding Eagleman's plan. To save the ship and its passengers, Gai tricks Arisa into coming to the upper deck, where Shu extracts her Void, in the form of a ball that projects a huge disc shield, and uses it to defend from the onslaught of missiles. Okina, after witnessing this operation, agrees to have the Kuhouin Group form a partnership with Funeral Parlor for their new supply route when contacting Shibungi, one of the members. Before leaving the ship, Gai tells Arisa that despite her toughened exterior, she is shy to the doting of others. As Shu and Inori leave for school the next day, Shu admits that for the first time he is glad for the power he possesses. "
+		)
+	,	("Guilty Crown",
+		 8,
+		 "Summer Day:Courtship Behavior",
+		 "Shu and Inori is requested by Gai to bring Souta Tamadate, Hare Menjou and Kanon Kusama, classmates of the motion picture research club, to visit a beach resort at Oshima, though in a guise as a mission in which will require drawing out Souta's Void. After having some fun on the beach with the others, Shu pays a visit to the grave of his late father, Kurosu Ouma, the leading expert on the Apocalypse Virus before his untimely death amid the Lost Christmas incident. Gai explains to Shu that the mission is to break into a covert GHQ base disguised as a shrine, but Shu has to make use of Souta having feelings for Inori in order to draw out his Void. Later that night at a sidewalk, as Souta attempts to confess his love to Inori, Shu rushes in and draws out Souta's Void, embarrassing himself in front of the Funeral Parlor members hidden around the area. As Shu, Inori and Gai enter the vault of the base using Souta's Void, in the form of a camera that unlocks anything, they discover that the item they were looking for has gone missing. Keido, who previous infiltrated the vault using Kurosu's access card, stands before Kurosu's grave holding the item, a canister containing a meteorite which was the cause of the Apocalypse Virus. The next morning, Shu and Souta make amends to their friendship due to their inability of understanding each other. Finally, as everyone leaves Oshima, Inori explains to Shu how people's Voids change based on his relationship with them. "
+		)
+	,	("Guilty Crown",
+		 9,
+		 "Predation:Prey",
+		 "Before being tracked by Segai, Yahiro manages to escape with his younger brother Jun Samukawa after taking refuge at an orphanage. After school, Kanon makes an excuse to leave the classroom to give Hare the opportunity to go shopping alone with Shu when he arrives in the classroom. However, Hare's moment to confess to Shu on the train is inadvertently interrupted when Yahiro bursts in carrying drugs. After Shu parts with Hare, Yahiro takes him to see Jun, explaining that they went into hiding after the incident at the isolation ward, so Shu calls Ayase to arrange a transport in resolve to help Yahiro escape with Jun. However, GHQ tracked down Yahiro, and Segai and Daryl commence an operation to eliminate Jun, prompting Shu to forcibly extract Yahiro's Void. Daryl uses his Endlave to attack Shu, equipped a new weapon designed to target Voids, but Jun is targeted instead when he stands up, causing the virus to migrate into the Endlave. As it malfunctions, the Endlave proceeds to attack Yahiro, and as Shu stabs it with Yahiro's Void, he enters Jun's memories of the events before and during the Lost Christmas incident with Yahiro. Jun, saying that the virus enabled him to see Voids and the darkness of people's hearts including that of Yahiro, begs Shu to use Yahiro's Void to sever his life thread while he still has fond memories of Yahiro, which Shu reluctantly does so in order to save Yahiro's life. As Yahiro awakens, he is horrified when Shu admits to having killed Jun. "
+		)
+	,	("Guilty Crown",
+		 10,
+		 "Degeneracy:Retraction",
+		 "Shu's recurring traumatic hallucinations cost Funeral Parlor a mission to stop a convoy. Due to these panic attacks, Gai and Ayase tell Shu not to be involved with Funeral Parlor anymore. Meanwhile, Major General Yan, after putting Keido under house arrest for stealing the Apocalypse Virus meteorite, plans to have it transported overseas, but Funeral Parlor stages an operation to attack the transport plane and retrieve it. However, the transport plane is found to be unmanned, and Funeral Parlor falls into a trap set by Segai. After school, Hare slaps a depressed Shu when he attempts to seduce her, because she can tell that that he is just using her as a replacement for Inori. Hare also admits to witnessing him draw out Yahiro's Void to destroy the infected Endlave. Segai, who previously had the Anti-Bodies vaccinate themselves, activates a genetic resonance broadcast at Tokyo Tower, causing the meteorite to spread the Apocalypse Virus all over Tokyo. With both GHQ and Funeral Parlor in disarray due to the virus, the Anti-Bodies attack both of them, in which Rowan rescues Keido from his confinement and takes Haruka prisoner. Finally, Keido watches the chaos from GHQ Headquarters, declaring he will finish what he started ten years ago. "
+		)
+	,	("Guilty Crown",
+		 11,
+		 "Resonance:Resonance",
+		 "As the Apocalypse Virus continues spreading over Tokyo, Daryl kills his father General Yan and subordinates upon learning about General Yan's affair with his secretary Emily. Keido announces taking over command of GHQ, in which the cause of the virus outbreak is falsely reported on the news to be started by Funeral Parlor. Shu, learning about this from Tsugumi, contacts Yahiro, Souta, Hare, Kanon and Arisa to ask them for their assistance to save Funeral Parlor after revealing to them his power of drawing out their Voids. Meanwhile at the airport, Haruka manages to escape from the Anti-Bodies thanks to Eagleman's sacrifice, and encounters Inori and Gai, the latter infected with the Apocalypse Virus, and works with them to stop the outbreak. Keido and Segai head to Roppongi Fort with the meteorite to a hidden facility inside the base to start the next stage of their plans. Haruka manages to program a resonance broadcaster out of a radio tower, allowing Inori to sing her Egoist song through it to stop the outbreak and cure the infected. At the same time, Shu and his friends breakthrough the airport barricade and defeat the GHQ forces by using his friends' Voids, much to the relief of the other Funeral Parlor members. As Shu finally reaches Inori, a mysterious blond boy, later recognized as Yu, suddenly teleports behind Inori and extracts her Void to kill Shu, only for Gai to protect Shu from injury. As the outbreak resumes, virus crystals throughout Tokyo spiral into the air and form a crystal tower. "
+		)
+	,	("Guilty Crown",
+		 12,
+		 "Resurrection:The Lost Christmas",
+		 "Keido releases Segai from his services, giving him data containing information on Voids as promised, before going to the crystal tower. Meanwhile, Gai tells Shu to follow Yu, who helps Shu regain his memories. When he was younger, Shu and his older sister Mana Ouma, living on an island at Oshima, spotted Gai washed up on the beach. Gai spent the summer with them at their beach house, becoming best friends with Shu while falling in love with Mana. After experiencing the flashback, Shu finds himself in the crystal tower, where Keido has Inori bound. Keido explains that Inori was created to resurrect Mana, whose soul lies preserved thanks to the virus, in order to spread the virus to annihilate the human race, and he intends to create new race by marrying Mana Ouma. As Yu prepares a ceremony, another flashback reveals that Mana told Shu that she wanted to marry him. However, Gai later learned that she was infected with the Apocalypse Virus, which induced her insanity, but Mana threatened him not to tell Shu. Back in the present, Shu tries to stop the ceremony, only to be bound by crystal-like plants controlled by Mana. Gai and Ayase arrive in the tower to fight back, but Ayase's Endlave Steiner is destroyed in the process. The last flashback reveals that Gai asked Shu to meet him at a church to tell him the truth about Mana, but Mana came instead and tricked Gai into shooting himself with a defective gun. Shu was disturbed by this upon his arrival then rejected to marry her, which caused her to go berserk and spread the Apocalypse Virus all over Tokyo, ending up destroying herself from her own power out of fear. As a result, Gai vowed to become stronger, seeing as he was responsible for this, while Shu repressed his memories about Mana and Gai due to trauma. Shu, who finally remembers his past, extracts Gai's Void, a gun that forces out other people's Voids, and goes to rescue Inori while Gai heads to the pod to free Mana's soul. Keido tries to stop them, but Yu knocks him out for failing to marry. Gai reaches for the pod, but is pierced by the crystals protecting it. Shu has no choice but to stab Gai through his body with Inori's Void to destroy the pod. As the tower crumbles, Gai finally holds Mana in his arms and they disappear together, while Shu and Inori float to safety and mourn for his death. "
+		)
+	,	("Guilty Crown",
+		 13,
+		 "Academy:Isolation",
+		 "Two weeks since the outbreak, GHQ has initiated a quarantine in the infected region called Loop 7, cutting off all forms of telecommunication within the area. Tennouzu High School is now being used as a shelter for young refugees. Tsugumi and Ayase decide to stay at the school with Shu and Inori, assuming Funeral Parlor is disbanded. Souta suggests to Shu, Yahiro, Souta, Hare, Kanon and Arisa to hold a school festival to create a relaxing environment for the refugees. Shu later shows Yahiro that his power has evolved, which enables him to extract Voids from people without rendering them unconscious. Meanwhile, Segai, now taking over the Anti-Bodies, sends Daryl undercover to spy at the school. As the students prepare and run the festival, a group of disgruntled refugees prepare to attack the school with a Humvee and an Endlave provided by Segai. As the disgruntled refugees attack, Shu tries to bring Ayase to safety, but she scolds him for treating her with pity due to her inability to walk. Shu helps Ayase by extracting her Void, a pair of leg braces that allow her to rapidly skate over ground, jump with incredible power and even fly, allowing the both of them to defeat the disgruntled refugees. Soon after, a television signal broadcasts Keido, revealed to still be alive and now in command of the Japanese provincial government, announcing that Loop 7 will be sealed off for the next ten years. "
+		)
+	,	("Guilty Crown",
+		 14,
+		 "Disturbance:Election",
+		 "During a student assembly concerning the lockdown, two male students named Takaomi Sudou and Hirohide Nanba are distrusting of Arisa being the student council president, suggesting to elect a new student council president in her place. Tsugumi, insensitive at the student council's opinion against this suggestion, later talks with Inori and reveals that she has been orphaned since childhood. As the student council discovers a Genome Resonance Gauge that allows them to measure the power of a person's Void, Segai enacts Keido’s plan to exterminate the civilians inside Loop 7 by Endlaves operated by a &quot;Ghost Unit&quot;. Segai allows the news of the slaughters to spread, causing distress and panic as part of his demagogy strategy. The next day, trouble arises on campus as the result of an internet rumor saying that they will be granted freedom once they turn in a member of Funeral Parlor to GHQ. When Arisa attempts to restore order to the panicking student body, Hirohide and Takaomi accuse Tsugumi and Ayase of being members of Funeral Parlor. However, Shu arrives and reveals his affiliation with Funeral Parlor to stop them from harming Tsugumi and Ayase and prove that the rumor is false, using Tsugumi's Void, a wand that can create holographic projections of people. The doubles of Shu, Tsugumi, Ayase and Takaomi are created and sent to the barricade, only to be shot down by Daryl and the Anti-Bodies. As Funell sends a live feed of the scene to the crowd, Shu advises them not to trust GHQ to survive together. Yahiro convinces the students to elect Shu as their new student council president. Yahiro then gives Shu a list containing the power of each student’s Void as ascertained by the Genome Resonance Gauge suggests they prioritize those with powerful Voids. "
+		)
+	,	("Guilty Crown",
+		 15,
+		 "Confession:Sacrifice",
+		 "Shu is not too fond of the Void ranking system since that means categorizing the students by usefulness. To make matters worse, the blockade gradually draws closer and the supply of vaccines starts running low. Yahiro and Arisa give Shu a list of the students in prioritization of vaccination, though Shu is opposed to this idea. Later, Shu is approached by Souta and other weaker students, who are afraid of being left behind after finding out about this list, asking him to draw out their Voids to use for training purposes, to which he complies. Hare is encouraged by Tsugumi to confess her feelings to Shu, but she refrains herself and comforts Shu instead, seeing that he feels troubled questioning his leadership. Shu later learns that Souta and other the weaker students left the school to look for the supply of vaccines instead of training, and he rushes to help them with his friends. The group is attacked by Daryl and the Anti-Bodies, and both Shu and Hare end up seriously injured. Hare uses her Void to heal Shu first, but it is broken by a helicopter shot before she is able to heal her own wounds. Shu wakes up just to find her lying dead beside him, horrified when the virus crystallizes and destroys her body when he takes her into his arms. An enraged Shu draws Inori's Void by force and destroys the Anti-Bodies with ease. Blaming Souta for Hare's death, Shu vents his rage by beating him and declares that he will implement the ranking system and become a ruthless king, something Hare did not want him to become. "
+		)
+	,	("Guilty Crown",
+		 16,
+		 "Kingdom:The Tyrant",
+		 "Argo is airdropped into Loop 7 as part of his mission to rescue Arisa for Okina, who plans to negotiate a peace treaty with the head of a conglomerate called the Ming Hua Group in exchange for arranging a marriage with Arisa. As Argo explores the area, he witnesses Hirohide and Takaomi attacking two other students for vaccines. However, two female students named Ritsu Takarada and Miyabi Herikawa recognize Argo as a member of Funeral Parlor and take him to see Shu, but Argo is shocked to see how much Shu has changed. While the high ranked students are a part of his Secret Service to enforce his rule and maintain order, the low ranked students are forced to repair an abandoned battleship in exchange for being vaccinated. Argo, refusing to swear loyalty to Shu, is locked up in a jail cell, where Tsugumi explains to Argo that the students accept Shu as their leader without challenge in desperate need of survival. Argo later escapes from his jail cell to find Arisa, who is also locating him as well. Shu sends Inori, Yahiro and the Secret Service to search for Argo, eventually finding him in the school stadium to confront him. This is interrupted when steel beams fall overhead and Shu tries to push a female student of the Secret Service to safety, but her Void is destroy, causing her to be infected with and killed by the virus. Shu, now learning that a Void user will die if their Void is destroyed, realizes that Yahiro lied to him of how Hare died, but Yahiro justifies this to assure that Shu would implement the ranking system. Argo tries to bring Shu back to his senses, but Shu forcefully pulls out Argo's Void, pondering on whether he should destroy it. Arisa, who witnessed everything, tries to warn everyone of the truth about Voids using the broadcast room, but she is stopped by Inori, who gives a maniacal glee before attacking her. With the rescue mission a failure, the head of the Ming Hua Group cancels his help, but advises Okina to leave Japan as a large naval fleet is on its way. Meanwhile at GHQ Headquarters, Keido and Haruka resurrect Gai. "
+		)
+	,	("Guilty Crown",
+		 17,
+		 "Revolution:Exodus",
+		 "Shu continues his ruthless behavior, which brings concern to Yahiro, but Shu chooses to act this way to avenge Hare's death. Arisa, traumatized after being attacked by Inori, is contacted by an unknown individual, who convinces her to turn the students against Shu. Arisa seduces Hirohide and convinces him to have Takaomi secretly spread the resentful rumor to the students regarding their impending deaths from the potential destruction of their Voids, something Shu neglected to mention. Yahiro, after speaking with Arisa, goes to tell Shu that Inori should be punished for being the one who attacked Arisa. However, Shu views Yahiro as a hypocrite and exiles him from the Secret Service. Later, the students later commence Operation Exodus, attacking the Ghost Unit Endlaves guarding Tokyo Tower, while Shu manages to reach Tokyo Tower and blow up its supercomputer, deactivating the Endlaves and causing the tower to fall into the barricade. As the students escape through the barricade, Arisa and the students turn on Shu. However, a GHQ Endlave unit led by Gai attacks them, in which Gai cuts off Shu's arm and takes the Void Genome onto himself, leaving Shu in agonizing pain. At the United Nations Headquarters, the world leaders learn that Keido has covered up the true events taking place in Japan. With GHQ unable to be trusted, the majority of the United Nations vote to destroy Japan to stop the virus. "
+		)
+	,	("Guilty Crown",
+		 18,
+		 "Wandering:Dear...",
+		 "A United Nations stealth bomber attempts to bomb the students, but Gai extracts Voids from Hirohide, Takaomi and Ritsu as sacrifices to destroy the plane. After Gai kills a maddened Miyabi by destroying her Void, Gai orders Ayase, Tsugumi and Argo to join him or die, but Daryl intervenes and blames Gai for making him kill his father. In the confusion of Daryl's insubordination, Inori escapes with Shu, while Ayase, Tsugumi and Argo escape on their own and Arisa defends Gai before escaping as well to join the Anti-Bodies. The United Nations naval fleet sent to destroy Japan are obliterated by a Leukocyte blast operated by Kenji, where Gai tells the United Nations to not interfere in their operations or he will activate the 256 Leukocyte satellites orbiting Earth. Three days after this announcement went worldwide, Okina and his secretary Kurachi believe that GHQ is now being controlled by the secret organization named Da'ath, whose former goal was to get Shu's Void Genome, but is now trying to capture Inori. When the Anti-Bodies locate Shu and Inori, Okina and the Kuhouin Group ambush the Anti-Bodies. When Arisa is attacked by Okina, who is disappointed in her for dishonoring their family name, she shoots him down in self-defense. Inori is slowly losing herself to Mana, who is trying to take over her body and mockingly calls Inori a monster, but Inori pushes this aside. Inori comforts a depressed Shu that he should stop blaming himself as she will always be there for him no matter what. In order to protect him from the Anti-Bodies, Inori plans to be a distraction for him against Gai. However, when Shu objects to this, she knocks him out and kisses him goodbye. She faces off Arisa's Endlave battalion while she admitting that she is a monster, but she views herself as unique since Shu loves her for who she is. Despite destroying the Endlaves, Inori is captured by Gai. Shu wakes up learning of Inori's capture and is in resolve to save her. "
+		)
+	,	("Guilty Crown",
+		 19,
+		 "Atonement:Rebirth",
+		 "Haruka opens a safe guarding the third and final Void Genome, but Keido, who is revealed to be her older brother, stops her and shoots her after confessing that he was the one who killed Kurosu. Although she manages to escape with the Void regardless, an arrest warrant is issued on her, and Segai offers to lead the search for her. Meanwhile, Arisa is approached by Shu who convinces her to help him rescue Inori, as she wants to learn more about Gai's true intentions. Haruka heads to the Kuhouin estate for shelter and chances upon Kurachi, who takes her to see Oogumo at Funeral Parlor Headquarters, since the Kuhouin estate is unsafe to hide now that Okina has died. However, Segai tracks Haruka down and raids the place, forcing Oogumo to stay behind to ensure his companions escape at the cost of his life. Reunited with Ayase and Tsugumi at another Funeral Parlor hideout, Argo informs them about Oogumo's death. Meanwhile, Shibungi is brought before Gai and expresses anger towards the ruthless individual he has become. As Haruka explains to Ayase that the Void Genone might reject one's body if injected, Segai attacks their hideout. Shu finds out his friends are in danger and leaves Arisa to help them. Ayase convinces Haruka to inject the Void Genome into her, but Segai prevents that from happening. Both Segai and Ayase fight for the vial until it rolls over to Shu. Haruka urges him to not use the vial, but he thanks her for her concern and injects the Void Genome into his body. Shu reveals his own Void, a crystallized arm that replaces his lost one and has the power to gather the strengths and weaknesses of other people's Voids. By using the power of his friends' Voids, Shu defeats Segai's Endlaves and kills Segai himself. However, everyone finds out that Shu not only absorbed Souta's Void, but also his viral infection as well. "
+		)
+	,	("Guilty Crown",
+		 20,
+		 "Remembrance:A Diary",
+		 "At GHQ Headquarters, Gai makes a worldwide announcement that the Leukocyte will destroy the world on December 25th. The remnants of Funeral Parlor, the Kuhouin Group and Tennouzu High School students escape Japan on a ship, where Shibungi, released by Gai, gives Shu a journal written by Kurosu detailing the history the Apocalypse Virus. In 2013, Keido, a college professor researching on Genomic Resonance, befriended his student Kurosu, who was interested in his research. In 2017, Kurosu married his colleague named Saeko Shijou, moving in with her after she became pregnant with Mana. In 2022, a meteorite crashed on Earth, first discovered by Mana and Saeko. In 2023, Keido and Kurosu discovered a virus inside the meteorite, which reacted when the Genomic Resonance was used, meaning Mana and Saeko were infected. Yu, the representative of Da'ath, offered to help them with their research, believing that the virus will start the Apocalypse. Yu ordered Kurosu to disallow Saeko to have an abortion during her pregnancy with Shu, since Mana chose Shu as her mate to start a new race after the Apocalypse, but after Saeko died by the virus after childbirth, a grieving Kurosu refused to work with Da'ath anymore. Keido later joined Da'ath by helping them find a more suitable mate for Mana by experimenting on children with the Apocalypse Virus. In 2028, Kurosu, who have since kept busy on finding a cure for the virus, fell in love with his new assistant Haruka, who also took care of Kurosu and his children, eventually marrying him. At the same time, Keido adopted Gai, who was a victim of child trafficking, but subjected him in the experiments, eventually leading Gai to run away and encounter Shu and Mana on the beach. In 2029, on the day of the Lost Christmas incident, Keido became bitter and jealous after learning that Kurosu managed to find a cure for the virus by creating the Void Genome, but wanted to keep the burden creating it on himself. When Kurosu caught Keido in his office, Keido killed Kurosu and stole his research before Haruka found her husband's body. In the present, Haruka reveals that Mana was able to enter Inori's body during the second outbreak and slowly taking control of her because the Voids that Shu have been extracting are pieces of Mana herself. When Shu tries to return the Voids back to his friends, they all refuse already knowing that he is risking their lives, and Shu forgives Souta for betraying him. Shu, Tsugumi, Ayase, Argo, Shibungi, Haruka and Kurachi set off with allies from the United Nations to attack GHQ Headquarters. "
+		)
+	,	("Guilty Crown",
+		 21,
+		 "Eclosion:Emergence",
+		 "As it is realized the 256 Leukocyte satellites was a bluff, Shu promises his friends and allies that they will stop Gai and rescue Inori. Ayase allows Shu to help her into her new Endlave Steiner. Gai uses the Voids of Arisa, Kenji and Yu to decimate some of the United Nations fleet. Thanks to Tsugumi's void, Shu and Funeral Parlor manage to sneak inside and hack into the base system, allowing the United Nation fleet the chance to counterattack. As Tsugumi part ways with Shu and the others, Gai prepares to get rid of Inori's memories before Mana can take over her body. Gai questions Inori why she loves Shu, to which she responds that Shu showed her the value of life, both its pain and beauty. As crystals take over her body, Inori sings a song only audible to Shu, who leads Funeral Parlor to the center of GHQ Headquarters. Shu is separated from his allies and is confronted by Yu, while Funeral Parlor faces against Endlave led by Daryl, who now operates the new model Endlave Gespenst. Yu, revealing that he is actually an embodiment of the will of Da'ath, is impressed on how far Shu has done and offers him to become Mana's mate, but Shu refuses. Yuu uses the Voids of his followers to attack Shu, lamenting on how Shu squandered his chance to restart the human race all because of Inori, described as a &quot;doll&quot. However, Shu tells Yu that Inori is a human being, who was always there when he was down, vowing to rescue her. Defeated, Yuu allows Shu to meet Inori before disappearing. Shu confronts Gai, who reveals Inori has finally transformed into Mana. "
+		)
+	,	("Guilty Crown",
+		 22,
+		 "Prayer:Convergence",
+		 "Mana, now completely resurrected, greets Shu, but he shuns her after she speaks ill of Inori, much to her anger. Gai draws out Mana's Void to fight Shu while she triggers the Fourth Apocalypse, spreading the Apocalypse Virus throughout the entire world. Haruka confronts Keido, who commits suicide by injecting the virus into himself while admitting defeat. Meanwhile, Funeral Parlor continue their fight with the group of Endlaves led by Daryl, who believes he changed because of them and wants to go back to his old self. Tsugumi finds that her attempts to hack the based system are being repelled by another hacker as skilled as her, in which Shibungi figures out that Kenji is responsible for this. Shibungi tracks down where Kenji is located and kills him, allowing Tsugumi to operate freely and help Ayase defeat Daryl. Just when Shu is about to be killed by Gai, Shu sees a flower within the crystallization while hearing Inori's voice. He pulls out Inori's Void within the flower with his last strength, using it to defeat Gai with a finishing blow. Before dying, Gai reveals that his actions were needed, so that Mana can start the Fourth Apocalypse so she would finally be able to rest, otherwise she would always be resurrected by Da'ath. Shu recovers the Void Genome that Gai stole from him, using its power to stop the Fourth Apocalypse from happening. Shu uses his Void to draw in all of his friends' Voids to cure them of the virus, slowly being consumed by the virus, but Inori sacrifices herself to save Shu's life. Ayase, Tsugumi, Argo, Shibungi, Arisa, Daryl, Haruka and Kurachi manage to escape GHQ Headquarters before it collapses. Some years later, Tokyo is finally rebuilt and Shu, now visually impaired with a mechanical prosthetic right arm, celebrates Hare's birthday with Ayase, Tsugumi, Yahiro, Souta and Kanon. Shu later sits on a bench beside a lake to hear one of Inori's songs while reminiscing about his days with her."
 		)
 ;
 
 INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
-		("Title", x, y, z)
+		("Guilty Crown", 0, 1, 8)
+	,	("Guilty Crown", 0, 2, 7)
+	,	("Guilty Crown", 0, 3, 7)
+	,	("Guilty Crown", 3, 1, 2)
+	
 ;
-		
--- General Anime Volume Data
-	,	("Title",
-		 n,
-		 m,
-		 "Classification",
-		 x,
-		 "URL"
-		)
-		
--- General Anime Episode Data
-	,	("Title",
-		 n,
-		 "Episode_Title",
-		 "Episode_Synopsys"
-		)
-		
--- General Anime Session Data
-	,	("Title", x, y, z)
