@@ -76,7 +76,11 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("M - Supernatural themes and animated violence")
 	,	("M - Violence, sexual references and nudity")
 	,	("M - War themes and animated violence")
-;
+ 	,	("M - Fantasy themes, animated violence and sexual references")
+	,	("M - Moderate animated violence, infrequent sexual references")
+	,	("M - Moderate animated violence, mild sexual references")
+	,	("M - Mild animated violence, mild coarse language")
+; 
 
 -- Data for MA15+ Classifications
 INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
