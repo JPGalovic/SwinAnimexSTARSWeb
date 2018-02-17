@@ -70,7 +70,7 @@
 		,	'data/anime/madman/gangsta_data.sql'
 	//	,	'data/anime/madman/gate_data.sql'
 	//	,	'data/anime/madman/goldern_time_data.sql'
-	//	,	'data/anime/madman/guilty_crown_data.sql'
+		,	'data/anime/madman/guilty_crown_data.sql'
 	//	,	'data/anime/madman/guromet_girl_graffiti_data.sql'
 	//	,	'data/anime/madman/gurren_legan_data.sql'
 	//	,	'data/anime/madman/hanayamata_data.sql'

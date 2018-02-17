@@ -150,10 +150,10 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 -- 	,	("2018-04-16 15-30-00", "Astro Boy", 3, 1)
 
 -- 	,	("2018-04-23 14-30-00", "Blood Blockaid Battlefront", 3, 1)
--- 	,	("2018-04-23 15-30-00", "Guilty Crown", 3, 1)
+ 	,	("2018-04-23 15-30-00", "Guilty Crown", 3, 1)
 
--- 	,	("2018-04-30 14-30-00", "Inuyasha", 3, 1)
--- 	,	("2018-04-30 15-30-00", "Kamisama Kiss", 3, 1)
+ 	,	("2018-04-30 14-30-00", "Inuyasha", 3, 1)
+ 	,	("2018-04-30 15-30-00", "Kamisama Kiss", 3, 1)
 -- ;
 
 -- D
