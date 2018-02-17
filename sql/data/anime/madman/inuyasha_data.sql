@@ -80,7 +80,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Inuyasha",
 		 4,
 		 "Yura of the Demon-Hair",
-		 "Inuyasha travels through the Bone Eater's Well to bring Kagome back to Feudal Japan to locate Yura's whereabouts. Inuyasha is soon caught in a web of hair and skulls, as Yura endlessly attacks him trying to claim his shard of the Shikon Jewel for herself. Kagome figures out that a red skull found on the tower of hair is the source of Yura's strength. She destroys the red skull, which turns Yura into a comb. "
+		 "Inuyasha travels through the Bone Eater's Well to bring Kagome back to Feudal Japan to locate Yura's whereabouts. Inuyasha is soon caught in a web of hair and skulls, as Yura endlessly attacks him trying to claim his shard of the Shikon Jewel for herself. Kagome figures out that a red skull found on the tower of hair is the source of Yura's strength. She destroys the red skull, which turns Yura into a comb. " )
 	,	("Inuyasha",
 		 5,
 		 "Aristocratic Assassin, Sesshomaru",
