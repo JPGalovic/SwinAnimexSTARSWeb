@@ -1,10 +1,9 @@
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Seiyu's Life",
-		 n,
+		 13,
 		 "Based on the doujinshi by accomplished voice actress, Masumi Asano, comes a fun but revealing look into the world of voice actors. And fun cameos from famous voice actors&#33; Being a professional voice actor is more than having a great voice. Rookie seiyu Futaba Ichinose must learn about the hard work, determination, and heart that goes into being the voice behind beloved characters. The work is far from easy and nothing hurts more than the dreaded rejection call, but Futaba works through it to achieve her dream of becoming a big-time seiyu-except she only has two years to prove to her agency that she's good enough to be one. Luckily, she's not alone&#33; Ichigo Moesaki, a self-claimed princess from Planet Strawberry, and Rin Kohana, a seasoned professional since the age of five, will be at her side when they form the seiyu unit, Earphones. But even being in a unit won't be enough to guarantee Futaba's success if she can't land more roles. Follow these three girls and learn just what it takes to be a professional voice actor.",
-		 "Based on the doujinshi by accomplished voice actress, Masumi Asano, comes a fun but revealing look into the world of voice actors. And fun cameos from famous voice actors! Being a professional voice actor is more than having a great voice. Rookie seiyu Futaba Ichinose must learn about the hard work, determination, and heart that goes into being the voice behind beloved characters.
-",
+		 "Based on the doujinshi by accomplished voice actress, Masumi Asano, comes a fun but revealing look into the world of voice actors. And fun cameos from famous voice actors! Being a professional voice actor is more than having a great voice. Rookie seiyu Futaba Ichinose must learn about the hard work, determination, and heart that goes into being the voice behind beloved characters.",
 		 "Madman",
 		 "&copy;Masumi Asano・Kenjiro Hata&#47;EARPHONES FAN CLUB"
 		)
@@ -14,14 +13,14 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		("Seiyu's Life",
 		 1,
 		 1,
-		 "PG Mild horror themes, animated violence and coarse language",
+		 "PG - Mild horror themes, animated violence and coarse language",
 		 13,
 		 "https://www.madman.com.au/catalogue/view/34329/seiyu-s-life-complete-series-subtitled-edition"
 		)
 	,	("Seiyu's Life",
 		 0,
 		 1,
-		 "PG Mild horror themes, animated violence and coarse language",
+		 "PG - Mild horror themes, animated violence and coarse language",
 		 13,
 		 "https://www.animelab.com/shows/seiyus-life"
 		)
