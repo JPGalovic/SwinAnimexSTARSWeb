@@ -1,0 +1,8 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^discorduser\.swinanime\.net$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.discorduser\.swinanime\.net$
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^/?$ "https\:\/\/goo\.gl\/forms\/UNI14G3mDXzbHmZP2" [R=301,L]
+
