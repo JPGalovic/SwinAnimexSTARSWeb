@@ -1,5 +1,5 @@
 <?php
-	// Functions for Common elements of Event Cards, Version 1.0.2, FEB18, JPGalovic
+	// Functions for Common elements of Event Cards, Version 1.0.3, FEB18, JPGalovic
 
 	// Prints out location based on values of received data.
 	// event_card_location($event_row['CAMPUS'], $event_row['ROOM'], $event_row['ADDRESS'], $event_row['LAT'], $event_row['LNG']);
@@ -81,5 +81,20 @@
 		$previous = false;
 		
 		return $previous;
+	}
+	
+	// prints image from given settings for event card
+	// 
+	function event_card_image($event_title, $anime_title, $game_title, $session_type, $session_number, $full_url)
+	{
+		echo('<img src="');
+			if($full_url)
+				echo('http://swinanime.net/');
+		if($anime_title != NULL && $session_type != NULL && $session_number != NULL)
+			echo('image/anime/'.remove_illegal_char(strtolower($anime_title)).'/session/'.$session_type.$session_number.'.jpg" alt="'.$anime_title.'">');
+		else if ($game_title != NULL)
+			echo('image/anime/'.remove_illegal_char(strtolower($game_title)).'.jpg" alt="'.$game_title.'">');
+		else
+			echo('image/anime/'.remove_illegal_char(strtolower($event_title)).'.jpg" alt="'.$event_title.'">');
 	}
 ?>
