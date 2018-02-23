@@ -115,9 +115,10 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("PG - Mild themes, animated violence and coarse language")
 	,	("PG - Mild themes, sexual references and coarse language")
 	,	("PG - Mild themes, sexual references and infrequent coarse language")
+	,	("PG - Mild horror themes, animated violence and coarse language")
 	,	("PG - Mild violence, themes, drug references and coarse language")
 	,	("PG - Mild animated violence, sexual references, coarse language and nudity")
-	,   ("PG - Mild fantasy themes, animated violence and nudity, sexual references and coarse language")
+	,	("PG - Mild fantasy themes, animated violence and nudity, sexual references and coarse language")
 	,	("PG - Mild fantasy violence and coarse language")
 ;
 
@@ -7455,7 +7456,7 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		("Canaan",
 		 3,
 		 1,
-		 "MA15+ - Strong Animated Violence",
+		 "MA15+ - Strong animated violence",
 		 13,
 		 "http://sirenvisual.com.au/index.php/shop/canaan.html"
 		)
