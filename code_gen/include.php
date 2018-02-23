@@ -1,5 +1,5 @@
 <?php
-	// includes requiered codegen files, version 1.0.1, FEB18, JPGalovic
+	// includes requiered codegen files, version 1.0.2, FEB18, JPGalovic
 	include('code_gen/module_elements/event_cards.php');
 	include('code_gen/module_elements/anime_details.php');
 
@@ -7,6 +7,8 @@
 	include('code_gen/process/auto_version_control.php');
 	
 	include('code_gen/error_report.php');
+
+	include('code_gen/misc_var.php');
 		
 	// Includes SQL Getters
 	include('code_gen/sql/base.php');

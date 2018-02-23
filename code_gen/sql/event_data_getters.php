@@ -7,7 +7,7 @@
 	// next_event: bool, flag to get next event. true by default
 	function get_event_data($this_event_time = null, $current_event_time = null, $next_event = true)
 	{
-		if($current_event_time = null) // Check if current event time is set, if not sets it to current time.
+		if($current_event_time == null) // Check if current event time is set, if not sets it to current time.
 			$current_event_time = current_time();
 		
 		if($this_event_time != null) // This event time is not null means page using has set event time
@@ -17,6 +17,7 @@
 				$query = 'SELECT EVENT_DATA.EVENT_TIME, EVENT_TYPE.EVENT_TYPE_DESCRIPTION, EVENT_DATA.EVENT_TITLE, EVENT_DATA.EVENT_SUBTITLE, EVENT_LOCATION.CAMPUS, EVENT_LOCATION.ROOM, EVENT_LOCATION.ADDRESS, EVENT_LOCATION.LAT, EVENT_LOCATION.LNG, EVENT_LOCATION.ZOOM, EVENT_DATA.EVENT_FACEBOOK_ID, EVENT_DATA.EVENT_UNIONE_URL FROM EVENT_DATA LEFT JOIN EVENT_TYPE ON EVENT_DATA.EVENT_TYPE_ID = EVENT_TYPE.EVENT_TYPE_ID LEFT JOIN EVENT_LOCATION ON EVENT_DATA.EVENT_LOCATION = EVENT_LOCATION.LOCATION_ID WHERE EVENT_DATA.EVENT_TIME = "'.$this_event_time.'" LIMIT 1';
 		else // Else, call to get next event.
 			$query = 'SELECT EVENT_DATA.EVENT_TIME, EVENT_TYPE.EVENT_TYPE_DESCRIPTION, EVENT_DATA.EVENT_TITLE, EVENT_DATA.EVENT_SUBTITLE, EVENT_LOCATION.CAMPUS, EVENT_LOCATION.ROOM, EVENT_LOCATION.ADDRESS, EVENT_LOCATION.LAT, EVENT_LOCATION.LNG, EVENT_LOCATION.ZOOM, EVENT_DATA.EVENT_FACEBOOK_ID, EVENT_DATA.EVENT_UNIONE_URL FROM EVENT_DATA LEFT JOIN EVENT_TYPE ON EVENT_DATA.EVENT_TYPE_ID = EVENT_TYPE.EVENT_TYPE_ID LEFT JOIN EVENT_LOCATION ON EVENT_DATA.EVENT_LOCATION = EVENT_LOCATION.LOCATION_ID WHERE EVENT_DATA.EVENT_TIME > "'.$current_event_time.'" LIMIT 1';
-				
+		
+		return run_query($query);
 	}
 ?>
