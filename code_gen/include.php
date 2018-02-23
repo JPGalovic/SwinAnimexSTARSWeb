@@ -9,6 +9,9 @@
 	include('code_gen/error_report.php');
 		
 	// Includes SQL Getters
+	include('code_gen/sql/base.php');
+	include('code_gen/sql/event_data_getters.php');
+
 	include('sql/anime/get_volume_data.php');
 	include('sql/events/get_event_data_functions.php');
 ?>
