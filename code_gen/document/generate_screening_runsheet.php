@@ -1,33 +1,56 @@
 <?php
-	// Generation Script for the Generation of Runsheets, Version 1.0.1, FEB18, JPGalovic XBoyle
+	// Generation Script for the Generation of Runsheets, Version 1.1.0, FEB18, JPGalovic XBoyle
 	if(isset($_POST['event_datetime']))
 	{
 		// Generate runsheet for download.
 		$event_time = $_POST['event_datetime'];
-		echo('<h1>Runsheet for event due to start at '.date('g:ia', strtotime($event_time)).' on '.date('l jS F Y', strtotime($event_time)).'</h1>');
-		echo('<h2>EVENT_TITLE</h2>');
-		echo('<p>Event Date: DATE<br> Event Location: LOCATION</p>');
 		
-		// Runsheet Header
-		echo('<table width="100%" border="1" bordercolor="black" cellpadding="5px" cellspacing="0"><tbody><tr>');
-			echo('<th>Time</th>');
-			echo('<th>Session</th>');
-			echo('<th>Series Title</th>');
-			echo('<th>Ep. No.</th>');
-			echo('<th>Ep. Title</th>');
-			echo('<th>Classification</th>');
-			echo('<th>Licence</th>');
-			echo('<th width="20%">Managers</th>');
-		echo('</tr>');
+		$event_data = get_event_data($event_time, null, false); // get core event data
+		if($event_data->num_rows != 0)
+		{
+			$event_data_row = $event_data->fetch_assoc();
 		
-		$first_line_flag = true; // flag for indicating first line of rows
-		$session_no_episodes = 0;
-		$session_letter = 'A';
+			echo('<h1>Runsheet for: '.$event_data_row['EVENT_TITLE'].'</h1>');
+			echo('<p>Event Date: '.date('jS F Y', strtotime($event_data_row['EVENT_TIME'])).'<br> Event Location: '.event_card_location($event_data_row['CAMPUS'], $event_data_row['ROOM'], $event_data_row['ADDRESS'], $event_data_row['LAT'], $event_data_row['LNG']).'</p>');
+
+			// Runsheet Header
+			echo('<table width="100%" border="1" bordercolor="black" cellpadding="5px" cellspacing="0"><tbody><tr>');
+				echo('<th>Time</th>');
+				echo('<th>Session</th>');
+				echo('<th>Series Title</th>');
+				echo('<th>Ep. No.</th>');
+				echo('<th>Ep. Title</th>');
+				echo('<th>Classification</th>');
+				echo('<th>Licence</th>');
+				echo('<th width="20%">Managers</th>');
+			echo('</tr>');
+			
+			// Get First Anime Event Data
+			$anime_event_data = get_anime_event_data($event_time);
+			if($anime_event_data->num_rows !=0)
+			{
+				// Flags & Keys
+				$first_line_flag = true; // flag for indicating first line of rows
+				$session_no_episodes = 0;
+				$session_letter = 'A';
+			}
+			else
+			{
+				echo('<p>Event selcected does not have an anime title associated with it!');
+				echo('<p>Please specify the datetime of the event you want to generate runsheet for. yyyy-mm-dd hh:mm:ss</p><p><form action="generate_runsheet.php" method="post">Event Date/Time to Generate: <input type="datetime" name="event_datetime"><br><input type="submit"></form></p>');
+			}
+		}
+		else
+		{
+			// No event at specified datetime
+			echo('<p>Entered date does not have any data that can be put into a runsheet</p>');
+			echo('<p>Please specify the datetime of the event you want to generate runsheet for. yyyy-mm-dd hh:mm:ss</p><p><form action="generate_runsheet.php" method="post">Event Date/Time to Generate: <input type="datetime" name="event_datetime"><br><input type="submit"></form></p>');
+		}
 		
 		
 	
 
-		// Set Anime & Session Data
+		/*// Set Anime & Session Data
 		include('../sql_login.php');
 		include('../../sql/anime/get_anime_event_data.php');
 		if($anime_row = $get_anime_event_data->fetch_assoc())
@@ -158,20 +181,11 @@
 				echo('<p>Error retrieving anime episodes</p>');
 				echo('<p>Please specify the datetime of the event you want to generate runsheet for. yyyy-mm-dd hh:mm:ss</p><p><form action="generate_screening_runsheet.php" method="post">Event Date/Time to Generate: <input type="datetime" name="event_datetime"><br><input type="submit"></form></p>');
 			}
-		}
-		else // Error state.
-		{
-			// Finalise file.
-			fclose($output_handle);
-			include('../sql_close.php');
-			
-			echo('<p>Entered date does not have any data that can be put into a runsheet</p>');
-			echo('<p>Please specify the datetime of the event you want to generate runsheet for. yyyy-mm-dd hh:mm:ss</p><p><form action="generate_screening_runsheet.php" method="post">Event Date/Time to Generate: <input type="datetime" name="event_datetime"><br><input type="submit"></form></p>');
-		}
+		}*/
 	}
 	else
 	{
 		// No settings, show form.
-		echo('<p>Please specify the datetime of the event you want to generate runsheet for. yyyy-mm-dd hh:mm:ss</p><p><form action="generate_screening_runsheet.php" method="post">Event Date/Time to Generate: <input type="datetime" name="event_datetime"><br><input type="submit"></form></p>');
+		echo('<p>Please specify the datetime of the event you want to generate runsheet for. yyyy-mm-dd hh:mm:ss</p><p><form action="generate_runsheet.php" method="post">Event Date/Time to Generate: <input type="datetime" name="event_datetime"><br><input type="submit"></form></p>');
 	}
 ?>
