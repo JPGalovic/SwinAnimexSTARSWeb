@@ -24,7 +24,7 @@
 		open_db($db);
 		
 		if(!($result= $db->query($query)))// if query fails to run, report error.
-			send_error($db->error_no+1000, $db->error.' '.$query);
+			send_error($db->errno+1000, $db->error.' '.$query);
 		else
 		{
 			close_db($db);
