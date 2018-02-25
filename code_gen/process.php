@@ -6,6 +6,7 @@
 	define('CSS_MAIN', '3.3.0');
 	
 	// Changes URL provided to include current CSS Version in the form or URL?v=[CSS_VERSION]
+	// $url: url to update
 	function auto_version($url) // Autoversion control for CSS sheets
 	{
 		return $url.'?v='.CSS_MAIN;
