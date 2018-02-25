@@ -4,24 +4,29 @@
 	{
 		// Generate runsheet for download.
 		$event_time = $_POST['event_datetime'];
-		echo('<p>Generating runsheet for event running at '.date('g:ia', strtotime($event_time)).' on '.date('l jS F Y', strtotime($event_time)));
+		echo('<h1>Runsheet for event due to start at '.date('g:ia', strtotime($event_time)).' on '.date('l jS F Y', strtotime($event_time)).'</h1>');
+		echo('<h2>EVENT_TITLE</h2>');
+		echo('<p>Event Date: DATE<br> Event Location: LOCATION</p>');
 		
-		// Define constants
-		$newln = "\r\n";
+		// Runsheet Header
+		echo('<table width="100%" border="1" bordercolor="black" cellpadding="5px" cellspacing="0"><tbody><tr>');
+			echo('<th>Time</th>');
+			echo('<th>Session</th>');
+			echo('<th>Series Title</th>');
+			echo('<th>Ep. No.</th>');
+			echo('<th>Ep. Title</th>');
+			echo('<th>Classification</th>');
+			echo('<th>Licence</th>');
+			echo('<th width="20%">Managers</th>');
+		echo('</tr>');
 		
-		// Create output runsheet file.
-		$output_file_name = 'generated_runsheet\runsheet_'.date('Y-m-d_H-i-s', strtotime($event_time)).'.txt';
-		$output_handle = fopen($output_file_name, 'w') or die('Cannot open file: '.$output_file_name);
+		$first_line_flag = true; // flag for indicating first line of rows
+		$session_no_episodes = 0;
+		$session_letter = 'A';
 		
-		// Runsheet Header Generation
-		// ┌─────────────────────────────────────────────────────────────────────────┐
-		// │ SwinAnime x STARS Runsheet: HH:MM DD-MM-YYYY                            │
-		// │ Title: ANIME_TITLE                                                      │
-		// │ Session: SESSION_NUMBER - SESSION_TYPE_DESCRIPTION                      │
-		// ├───────┬──────┬─────────────────────────────────────────┬────────────────┤
-		// │ Time  │ Ep # │ Episode Title                           │ Staff          │
-		// ├───────┼──────┼─────────────────────────────────────────┼────────────────┤
 		
+	
+
 		// Set Anime & Session Data
 		include('../sql_login.php');
 		include('../../sql/anime/get_anime_event_data.php');
