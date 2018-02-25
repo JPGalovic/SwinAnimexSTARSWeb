@@ -17,6 +17,8 @@
 				echo('<img src="'.$data_row['ARTICLE_IMAGE_URL'].'" alt="Showcase" width="100%">');
 			echo('<h2 style="color: #555555; font-size: 18px;">'.$data_row['ARTICLE_HEADLINE'].'</h2>');
 			echo('<p>'.$data_row['ARTICLE_TEXT'].'</p>');
+			if($data_row['ARTICLE_LINK'] != null)
+				echo('<a href="'.$data_row['ARTICLE_LINK'].'" style="color: #FF6767; text-decoration: none;">'.$data_row['ARTICLE_LINK_TEXT'].'</a>');
 			echo('<p style="font-size: 12px; color: #A6A6A6;">Article written by: '.$data_row['ARTICLE_AUTHOR'].'</p>');
 		echo('</td></tr>');
 	}

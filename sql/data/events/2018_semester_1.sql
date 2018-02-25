@@ -150,7 +150,7 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 -- 	,	("2018-04-16 15-30-00", "Astro Boy", 3, 1)
 
 -- 	,	("2018-04-23 14-30-00", "Blood Blockaid Battlefront", 3, 1)
- 	,	("2018-04-23 15-30-00", "Guilty Crown", 3, 1)
+ 		("2018-04-23 15-30-00", "Guilty Crown", 3, 1)
 
  	,	("2018-04-30 14-30-00", "Inuyasha", 3, 1)
  	,	("2018-04-30 15-30-00", "Kamisama Kiss", 3, 1)
