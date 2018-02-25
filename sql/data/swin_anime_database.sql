@@ -2,6 +2,7 @@
 -- Use the swinan01_smart_web database
 USE swinan01_smart_web;
 
+-- Database Clearer, Version 1.1.0, FEB18, JPGalovic
 -- Clear out Database
 DROP TABLE IF EXISTS EVENT_ANIME_DATA;
 DROP TABLE IF EXISTS EVENT_GAME_DATA;
@@ -21,6 +22,11 @@ DROP TABLE IF EXISTS ANIME_VOLUME_TYPE;
 DROP TABLE IF EXISTS ANIME;
 DROP TABLE IF EXISTS CLASSIFICATION;
 DROP TABLE IF EXISTS COMPANY;
+
+DROP TABLE IF EXISTS ARTICLE_LINKER;
+DROP TABLE IF EXISTS NEWS_ARTICLE;
+DROP TABLE IF EXISTS ARTICLE_TYPE;
+DROP TABLE IF EXISTS NEWSLETTER;
 
 -- Table for Sponsors
 CREATE TABLE IF NOT EXISTS COMPANY (
@@ -115,9 +121,10 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("PG - Mild themes, animated violence and coarse language")
 	,	("PG - Mild themes, sexual references and coarse language")
 	,	("PG - Mild themes, sexual references and infrequent coarse language")
+	,	("PG - Mild horror themes, animated violence and coarse language")
 	,	("PG - Mild violence, themes, drug references and coarse language")
 	,	("PG - Mild animated violence, sexual references, coarse language and nudity")
-	,   ("PG - Mild fantasy themes, animated violence and nudity, sexual references and coarse language")
+	,	("PG - Mild fantasy themes, animated violence and nudity, sexual references and coarse language")
 	,	("PG - Mild fantasy violence and coarse language")
 ;
 
@@ -7455,7 +7462,7 @@ INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICAT
 		("Canaan",
 		 3,
 		 1,
-		 "MA15+ - Strong Animated Violence",
+		 "MA15+ - Strong animated violence",
 		 13,
 		 "http://sirenvisual.com.au/index.php/shop/canaan.html"
 		)
@@ -8989,7 +8996,7 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 -- 	,	("2018-04-16 15-30-00", "Astro Boy", 3, 1)
 
 -- 	,	("2018-04-23 14-30-00", "Blood Blockaid Battlefront", 3, 1)
- 	,	("2018-04-23 15-30-00", "Guilty Crown", 3, 1)
+ 		("2018-04-23 15-30-00", "Guilty Crown", 3, 1)
 
  	,	("2018-04-30 14-30-00", "Inuyasha", 3, 1)
  	,	("2018-04-30 15-30-00", "Kamisama Kiss", 3, 1)
@@ -9133,3 +9140,106 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 	,	("2018-05-04 10-30-00", 7, "May the forth be with you", 0, 0, "0")
 ;
 
+-- Newsletter Data Core, Version 1.0.0, FEB18, JPGalovic
+-- Newsletter Table, contains data for newsletter releases
+CREATE TABLE IF NOT EXISTS NEWSLETTER (
+		PUBLICATION_DATE		DATETIME
+	,	PUBLICATION_TITLE		VARCHAR(100)
+	,	PUBLICATION_VOLUME		INT(11)
+	,	PRIMARY KEY				(PUBLICATION_DATE)
+);
+
+-- Newsletter Secions Table, contains definitions for article types
+CREATE TABLE IF NOT EXISTS ARTICLE_TYPE (
+		ARTICLE_TYPE_ID			INT(11)
+	,	ARTICLE_DESCRIPTION		VARCHAR(100)
+	,	PRIMARY KEY				(ARTICLE_TYPE_ID)
+);
+
+INSERT INTO ARTICLE_TYPE (ARTICLE_TYPE_ID, ARTICLE_DESCRIPTION) VALUES
+		(0, "Headline")
+	,	(1, "This week in news")
+	,	(2, "In other news")
+;
+
+-- News Article Table, contains indervidual news articles to be displayed.
+CREATE TABLE IF NOT EXISTS NEWS_ARTICLE (
+		ARTICLE_DATE			DATETIME
+	,	ARTICLE_HEADLINE		VARCHAR(100)
+	,	ARTICLE_IMAGE_URL		VARCHAR(300)
+	,	ARTICLE_TEXT			VARCHAR(1000)
+	,	ARTICLE_LINK			VARCHAR(300)
+	,	ARTICLE_LINK_TEXT		VARCHAR(300)
+	,	ARTICLE_AUTHOR			VARCHAR(100)
+	,	PRIMARY KEY				(ARTICLE_DATE, ARTICLE_HEADLINE)
+);
+
+-- News Article Linker, links news articles to news letters
+CREATE TABLE IF NOT EXISTS ARTICLE_LINKER (
+		PUBLICATION_DATE		DATETIME
+	,	ARTICLE_DATE			DATETIME
+	,	ARTICLE_HEADLINE		VARCHAR(100)
+	,	ARTICLE_TYPE_ID			INT(11)
+	,	PRIMARY KEY				(PUBLICATION_DATE, ARTICLE_DATE, ARTICLE_HEADLINE)
+	,	FOREIGN KEY				(PUBLICATION_DATE) REFERENCES NEWSLETTER (PUBLICATION_DATE)
+	,	FOREIGN KEY				(ARTICLE_DATE, ARTICLE_HEADLINE) REFERENCES NEWS_ARTICLE (ARTICLE_DATE, ARTICLE_HEADLINE)
+	,	FOREIGN KEY				(ARTICLE_TYPE_ID) REFERENCES ARTICLE_TYPE (ARTICLE_TYPE_ID)
+);-- Friday Fill Newletter Definitions, Version 1.0.0, FEB18, JPGalovic
+
+-- Semester 1, 2018
+INSERT INTO NEWSLETTER(PUBLICATION_DATE, PUBLICATION_TITLE, PUBLICATION_VOLUME) VALUES
+		("2018-02-23 12-00-00", "Friday Fill", 1)
+	,	("2018-03-02 12-00-00", "Friday Fill", 2)
+	,	("2018-03-09 12-00-00", "Friday Fill", 3)
+	,	("2018-03-16 12-00-00", "Friday Fill", 4)
+	,	("2018-03-23 12-00-00", "Friday Fill", 5)
+	,	("2018-03-30 12-00-00", "Friday Fill", 6)
+	,	("2018-04-06 12-00-00", "Friday Fill", 7)
+	,	("2018-04-13 12-00-00", "Friday Fill", 8)
+	,	("2018-04-20 12-00-00", "Friday Fill", 9)
+	,	("2018-04-27 12-00-00", "Friday Fill", 10)
+	,	("2018-05-04 12-00-00", "Friday Fill", 11)
+	,	("2018-05-11 12-00-00", "Friday Fill", 12)
+	,	("2018-05-18 12-00-00", "Friday Fill", 13)
+	,	("2018-05-25 12-00-00", "Friday Fill", 14)
+;
+
+-- Winter Semester, 2018
+INSERT INTO NEWSLETTER(PUBLICATION_DATE, PUBLICATION_TITLE, PUBLICATION_VOLUME) VALUES
+		("2018-06-22 12-00-00", "Friday Fill", 15)
+	,	("2018-06-29 12-00-00", "Friday Fill", 16)
+	,	("2018-07-06 12-00-00", "Friday Fill", 17)
+	,	("2018-07-13 12-00-00", "Friday Fill", 18)
+	,	("2018-07-20 12-00-00", "Friday Fill", 19)
+	,	("2018-07-27 12-00-00", "Friday Fill", 20)
+;
+
+-- Semester 2, 2018
+INSERT INTO NEWSLETTER(PUBLICATION_DATE, PUBLICATION_TITLE, PUBLICATION_VOLUME) VALUES
+		("2018-08-03 12-00-00", "Friday Fill", 21)
+	,	("2018-08-10 12-00-00", "Friday Fill", 22)
+	,	("2018-08-17 12-00-00", "Friday Fill", 23)
+	,	("2018-08-24 12-00-00", "Friday Fill", 24)
+	,	("2018-08-31 12-00-00", "Friday Fill", 25)
+	,	("2018-09-07 12-00-00", "Friday Fill", 26)
+	,	("2018-09-14 12-00-00", "Friday Fill", 27)
+	,	("2018-09-21 12-00-00", "Friday Fill", 28)
+	,	("2018-09-28 12-00-00", "Friday Fill", 29)
+	,	("2018-10-05 12-00-00", "Friday Fill", 30)
+	,	("2018-10-12 12-00-00", "Friday Fill", 31)
+	,	("2018-10-18 12-00-00", "Friday Fill", 32)
+	,	("2018-10-26 12-00-00", "Friday Fill", 33)
+;-- Misc Articles (commonly used or plugged), Verson 1.0.0, FEB18, JPGalovic
+INSERT INTO NEWS_ARTICLE (ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_IMAGE_URL, ARTICLE_TEXT, ARTICLE_LINK, ARTICLE_LINK_TEXT, ARTICLE_AUTHOR) VALUES
+		("2018-02-22 12-00-00",
+		 "SwinAnime x S.T.A.R.S. Wants You",
+		 "http://swinanime.net/image/news/volunteer_poster.png",
+		 "We are always looking for volunteers to help us run and plan our events, as such if you would like to help us to run or plan our events, simply visit volunteer.swinanime.net and submit your interest today!",
+		 "http://volunteer.swinanime.net/",
+		 "Volunteer to help SwinAnime x S.T.A.R.S",
+		 "J.P. Galovic"
+		)
+;-- Misc Article Linker, Links Misc Articles to Newsletters, Version 1.0.0, FEB18, JPGalovic
+INSERT INTO ARTICLE_LINKER(PUBLICATION_DATE, ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_TYPE_ID) VALUES
+		("2018-02-23 12-00-00", "2018-02-22 12-00-00", "SwinAnime x S.T.A.R.S. Wants You", 2)
+;

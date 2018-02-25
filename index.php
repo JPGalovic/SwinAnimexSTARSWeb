@@ -1,9 +1,8 @@
 <?php
 	// Main Index Page Builder, Version 1.4.3, FEB18, JPGalovic
 	// Include Required Code-Gen
-	include('code_gen/sql_login.php'); // Login and open connection to database
-	include('code_gen/misc_var.php'); // Include Global Variables
 	include('code_gen/include.php'); // Include other Fuctions.
+	open_db($DB);
 
 	// Get page from url
 	$page = 'home';

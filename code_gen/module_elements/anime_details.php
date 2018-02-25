@@ -1,4 +1,4 @@
-<?php // Codegen Module Elements for Anime Details, Version 1.1.0, FEB18, JPGalovic
+<?php // Codegen Module Elements for Anime Details, Version 1.1.1, FEB18, JPGalovic
 	
 	// Anime Event Card Volume Generation
 	// Paramiters, $anime, title of the anime, $previous, bool indicating previous links displayed
