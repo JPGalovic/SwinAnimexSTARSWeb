@@ -60,22 +60,23 @@
 						$break_count++;
 						$session_no_episodes -= 4;
 					}
+					
+					$event_session_time += 1800; //Add 30min to clock for each new episode
 
 					for($i = 0; $i < $session_no_episodes; $i++)
 					{
-						$event_session_time = strtotime($event_data_row['EVENT_TIME']) + 1800; //Add 30min to clock for each new episode
 						$episode_row = $anime_episode_data->fetch_assoc();
 						if($first_line_flag)
 						{
 							echo('<tr>');
-								echo('<td align="center">14:30</td>');
-								echo('<td rowspan="2" align="center">Session 1</td>');
-								echo('<td rowspan="2" align="center">.HACK//Sign</td>');
-								echo('<td align="center">1</td>');
-								echo('<td>Role Play</td>');
-								echo('<td rowspan="2">PG</td>');
-								echo('<td rowspan="2" align="center">Madman</td>');
-								echo('<td rowspan="2">&nbsp;</td>');
+								echo('<td align="center">'.date('H:i', $event_session_time).'</td>');
+								echo('<td rowspan="'.$session_no_episodes.'" align="center">Session '.$runsheet_session_number.'</td>');
+								echo('<td rowspan="'.$session_no_episodes.'" align="center">'.$anime_title.'</td>');
+								echo('<td align="center">'.$episode_row['EPISODE_NUMBER'].'</td>');
+								echo('<td>'.$episode_row['EPISODE_TITLE'].'</td>');
+								echo('<td rowspan="'.$session_no_episodes.'">PG</td>');
+								echo('<td rowspan="'.$session_no_episodes.'" align="center">Madman</td>');
+								echo('<td rowspan="'.$session_no_episodes.'">&nbsp;</td>');
 							echo('</tr>');
 							
 							$first_line_flag = false;
@@ -83,12 +84,77 @@
 						else
 						{
 							echo('<tr>');
-								echo('<td align="center">15:00</td>');
-								echo('<td align="center">2</td>');
-								echo('<td>Guardian</td>');
+								echo('<td align="center">'.date('H:i', $event_session_time).'</td>');
+								echo('<td align="center">'.$episode_row['EPISODE_NUMBER'].'</td>');
+								echo('<td>'.$episode_row['EPISODE_TITLE'].'</td>');
 							echo('</tr>');
 						}
+						$event_session_time += 1800;
 					}
+					
+					switch($session_no_episodes)
+					{
+						case 6:
+							$lenght_of_break = 0; //  Max Episodes this session, no break allocated
+							break;
+						case 5:
+							$lenght_of_break = 1800; // Half break eaten by extra episode
+							break;
+						default:
+							$lenght_of_break = 3600; // Default Break is 60min
+							break;
+					}
+					
+					while($break_count > 0) // for each break add break
+					{
+						echo('<tr>');
+							echo('<td align="center">'.date('H:i', $event_session_time).'</td>');
+							echo('<td align="center">Break</td>');
+							echo('<td colspan="5"></td>');
+							echo('<td>&nbsp;</td>'); // TODO: Change Manager Section to pull data from database
+						echo('</tr>');
+						$event_session_time += $lenght_of_break; // end of break time of break
+						
+						$session_no_episodes = 4;
+						$first_line_flag = true;
+						$break_count--;
+						$lenght_of_break = 3600;
+						
+						for($i = 0; $i < $session_no_episodes; $i++)
+						{
+							$episode_row = $anime_episode_data->fetch_assoc();
+							if($first_line_flag)
+							{
+								echo('<tr>');
+									echo('<td align="center">'.date('H:i', $event_session_time).'</td>');
+									echo('<td rowspan="'.$session_no_episodes.'" align="center">Session '.$runsheet_session_number.'</td>');
+									echo('<td rowspan="'.$session_no_episodes.'" align="center">'.$anime_title.'</td>');
+									echo('<td align="center">'.$episode_row['EPISODE_NUMBER'].'</td>');
+									echo('<td>'.$episode_row['EPISODE_TITLE'].'</td>');
+									echo('<td rowspan="'.$session_no_episodes.'">PG</td>');
+									echo('<td rowspan="'.$session_no_episodes.'" align="center">Madman</td>');
+									echo('<td rowspan="'.$session_no_episodes.'">&nbsp;</td>');
+								echo('</tr>');
+
+								$first_line_flag = false;
+							}
+							else
+							{
+								echo('<tr>');
+									echo('<td align="center">'.date('H:i', $event_session_time).'</td>');
+									echo('<td align="center">'.$episode_row['EPISODE_NUMBER'].'</td>');
+									echo('<td>'.$episode_row['EPISODE_TITLE'].'</td>');
+								echo('</tr>');
+							}
+							$event_session_time += 1800;
+						}
+					}
+					echo('<tr>');
+						echo('<td align="center">'.date('H:i', $event_session_time).'</td>');
+						echo('<td align="center">Packup</td>');
+						echo('<td colspan="5"></td>');
+						echo('<td>&nbsp;</td>'); // TODO: Change Manager Section to pull data from database
+					echo('</tr>');
 				}
 			}
 			else
