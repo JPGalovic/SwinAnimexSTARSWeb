@@ -1,5 +1,5 @@
 <?php
-	// Functions for Common elements of Event Cards, Version 1.0.3, FEB18, JPGalovic
+	// Functions for Common elements of Event Cards, Version 1.0.4, FEB18, JPGalovic
 
 	// Prints out location based on values of received data.
 	// event_card_location($event_row['CAMPUS'], $event_row['ROOM'], $event_row['ADDRESS'], $event_row['LAT'], $event_row['LNG']);
@@ -10,18 +10,16 @@
 		// [CAMPUS] - [ROOM]
 		if($campus != NULL)
 		{
-			echo('<p>'.$campus);
+			$return = $campus;
 			if($room != NULL)
-				echo(' - '.$room.'</p>');
-			else
-				echo('</p>');
+				$return .= ' - '.$room;
 		}
 		// 2. Off Campus Event
 		// [ADDRESS]
 		else
-		{
-			echo($address);
-		}
+			$return = $address;
+		
+		return($return);
 	}
 
 	// Common Links

@@ -11,7 +11,7 @@
 			$event_data_row = $event_data->fetch_assoc();
 		
 			echo('<h1>Runsheet for: '.$event_data_row['EVENT_TITLE'].'</h1>');
-			echo('<p>Event Date: '.date('jS F Y', strtotime($event_data_row['EVENT_TIME'])).'<br> Event Location: '.event_card_location($event_data_row['CAMPUS'], $event_data_row['ROOM'], $event_data_row['ADDRESS'], $event_data_row['LAT'], $event_data_row['LNG']).'</p>');
+			echo('<p>Event Date: '.date('jS F Y h:i:s', strtotime($event_data_row['EVENT_TIME'])).'<br> Event Location: '.event_card_location($event_data_row['CAMPUS'], $event_data_row['ROOM'], $event_data_row['ADDRESS'], $event_data_row['LAT'], $event_data_row['LNG']).'</p>');
 
 			// Runsheet Header
 			echo('<table width="100%" border="1" bordercolor="black" cellpadding="5px" cellspacing="0"><tbody><tr>');
@@ -25,14 +25,71 @@
 				echo('<th width="20%">Managers</th>');
 			echo('</tr>');
 			
+			$event_session_time = strtotime($event_data_row['EVENT_TIME']) - 1800; //1800 = 30 min x 60 sec
+			
+			// Event Setup Row
+			echo('<tr>');
+				echo('<td align="center">'.date('H:i', $event_session_time).'</td>');
+				echo('<td align="center">Setup</td>');
+				echo('<td colspan="5"></td>');
+				echo('<td>&nbsp;</td>'); // TODO: Change Manager Section to pull data from database
+			echo('</tr>');
+			
 			// Get First Anime Event Data
 			$anime_event_data = get_anime_event_data($event_time);
 			if($anime_event_data->num_rows !=0)
 			{
-				// Flags & Keys
-				$first_line_flag = true; // flag for indicating first line of rows
-				$session_no_episodes = 0;
-				$session_letter = 'A';
+				$anime_event_data_row = $anime_event_data->fetch_assoc();
+				
+				$anime_title = $anime_event_data_row['ANIME_TITLE'];
+				$session_number = $anime_event_data_row['SESSION_NUMBER'];
+				$session_type = $anime_event_data_row['SESSION_TYPE_ID'];
+				
+				$anime_episode_data = get_anime_session_episode_data($anime_title, $session_number, $session_type);
+				if($anime_episode_data->num_rows !=0)
+				{
+					// Flags & Keys
+					$first_line_flag = true; // flag for indicating first line of rows
+					$session_no_episodes = $anime_episode_data->num_rows;
+					$runsheet_session_letter = 'A';
+					$runsheet_session_number = 1;
+					$break_count = 0;
+
+					while($session_no_episodes > 6) // count out to correct number of sessions
+					{
+						$break_count++;
+						$session_no_episodes -= 4;
+					}
+
+					for($i = 0; $i < $session_no_episodes; $i++)
+					{
+						$event_session_time = strtotime($event_data_row['EVENT_TIME']) + 1800; //Add 30min to clock for each new episode
+						$episode_row = $anime_episode_data->fetch_assoc();
+						if($first_line_flag)
+						{
+							echo('<tr>');
+								echo('<td align="center">14:30</td>');
+								echo('<td rowspan="2" align="center">Session 1</td>');
+								echo('<td rowspan="2" align="center">.HACK//Sign</td>');
+								echo('<td align="center">1</td>');
+								echo('<td>Role Play</td>');
+								echo('<td rowspan="2">PG</td>');
+								echo('<td rowspan="2" align="center">Madman</td>');
+								echo('<td rowspan="2">&nbsp;</td>');
+							echo('</tr>');
+							
+							$first_line_flag = false;
+						}
+						else
+						{
+							echo('<tr>');
+								echo('<td align="center">15:00</td>');
+								echo('<td align="center">2</td>');
+								echo('<td>Guardian</td>');
+							echo('</tr>');
+						}
+					}
+				}
 			}
 			else
 			{
@@ -46,142 +103,6 @@
 			echo('<p>Entered date does not have any data that can be put into a runsheet</p>');
 			echo('<p>Please specify the datetime of the event you want to generate runsheet for. yyyy-mm-dd hh:mm:ss</p><p><form action="generate_runsheet.php" method="post">Event Date/Time to Generate: <input type="datetime" name="event_datetime"><br><input type="submit"></form></p>');
 		}
-		
-		
-	
-
-		/*// Set Anime & Session Data
-		include('../sql_login.php');
-		include('../../sql/anime/get_anime_event_data.php');
-		if($anime_row = $get_anime_event_data->fetch_assoc())
-		{
-			$anime_title = $anime_row['ANIME_TITLE'];
-			$session_type_id = $anime_row['SESSION_TYPE_ID'];
-			$session_number = $anime_row['SESSION_NUMBER'];
-			
-			$anime_title_whitespace = '';
-			for($i= 64 - strlen($anime_title); $i > 0; $i--)
-				$anime_title_whitespace = $anime_title_whitespace.' ';
-			
-			switch($session_type_id)
-			{
-				case 0:
-					$session_type = 'Screening Session - '.$session_number.'                                          │';
-					break;
-				case 1:
-					$session_type = 'Special Session - '.$session_number.'                                            │';
-					break;
-				case 2:
-					$session_type = 'Marathon                                                       │';
-					break;
-				case 3:
-					$session_type = 'Showcase Session                                               │';
-					break;
-			}
-			
-			fwrite($output_handle, '┌─────────────────────────────────────────────────────────────────────────┐'.$newln);
-			fwrite($output_handle, '│ SwinAnime x STARS Runsheet: '.date('Y-m-d H:i.s', strtotime($event_time)).'                         │'.$newln);
-			fwrite($output_handle, '│ Title: '.$anime_title.$anime_title_whitespace.' │'.$newln);
-			fwrite($output_handle, '│ Session: '.$session_type.$newln);
-			fwrite($output_handle, '├───────┬──────┬─────────────────────────────────────────┬────────────────┤'.$newln);
-			fwrite($output_handle, '│ Time  │ Ep # │ Episode Title                           │ Staff          │'.$newln);
-			fwrite($output_handle, '├───────┼──────┼─────────────────────────────────────────┼────────────────┤'.$newln);
-			
-			// Write first 4 or 5 episodes
-			// ├───────┼──────┼─────────────────────────────────────────┼────────────────┤
-			// │ HH:MM │ NNNN │ EPISODE_TITLE                           │                │ x4 or x5
-			// ├───────┼──────┼─────────────────────────────────────────┼────────────────┤
-			
-			include('../../sql/anime/get_anime_session_data.php');
-			$first_episode = $get_anime_session_data_first_episode;
-			$number_of_episodes = $get_anime_session_data_number_of_episodes;
-			
-			include('../../sql/anime/episode/get_runsheet_episode_data.php');
-			
-			$clock = strtotime($event_time);
-			
-			if($get_runsheet_episode_data->num_rows > 0)
-			{
-				$repeat = 0;
-				while($number_of_episodes > 5) // Reduce number of episodes by 4 (used for inclusion of breaks)
-				{
-					$repeat++;
-					$number_of_episodes -= 4;
-				}
-					
-				do
-				{
-					$shortened = $number_of_episodes > 4; // when more than 4 episodes listed, shortened break
-					while($number_of_episodes > 0)
-					{
-						$episode_row = $get_runsheet_episode_data->fetch_assoc();
-						
-						$episode_number = $episode_row['EPISODE_NUMBER'];
-						$episode_number_whitespace = '';
-						for($i= 4 - strlen($episode_number); $i > 0; $i--)
-							$episode_number_whitespace = $episode_number_whitespace.' ';
-						
-						$episode_title = $episode_row['EPISODE_TITLE'];
-						$episode_title_whitespace = '';
-						if(39 - strlen($episode_number) < 0)
-							$episode_title = substr($episode_title, 0, 39); // fix max length of episode title (honestly cbf wrap)
-						for($i= 39 - strlen($episode_title); $i > 0; $i--)
-							$episode_title_whitespace = $episode_title_whitespace.' ';
-						
-						fwrite($output_handle, '│ '.date('H:i', $clock).' │ '.$episode_number.$episode_number_whitespace.' │ '.$episode_title.$episode_title_whitespace.' │                │'.$newln);
-						
-						// Add 30min to time.
-						$clock = strtotime("+30 minutes",$clock);
-						
-						$number_of_episodes--;
-					}
-					
-					if($repeat > 0)
-					{
-						$number_of_episodes = 4;
-						$repeat--;
-						
-						
-						fwrite($output_handle, '├───────┼──────┼─────────────────────────────────────────┼────────────────┤'.$newln);
-						fwrite($output_handle, '│ '.date('H:i', $clock).' │      │ Meal Break                              │                │'.$newln);
-						fwrite($output_handle, '├───────┼──────┼─────────────────────────────────────────┼────────────────┤'.$newln);
-						
-						if($shortened)
-						{
-							// Add 30min to time.
-							$clock = strtotime("+30 minutes",$clock);
-						}
-						else
-						{
-							// Add 60min to time.
-							$clock = strtotime("+60 minutes",$clock);
-						}
-					}
-					else
-					{
-						fwrite($output_handle, '└───────┴──────┴─────────────────────────────────────────┴────────────────┘');
-						$repeat--;
-					}
-				} while ($repeat >= 0);	
-				
-				// Finalise file.
-				fclose($output_handle);
-				include('../sql_close.php');
-
-				// Sucsessful write, display output.
-				echo('<p>Runsheet Written.</p>');
-				echo('<a href="generated_runsheet\">View all runsheets</a>');
-			}
-			else // Error state.
-			{
-				// Finalise file.
-				fclose($output_handle);
-				include('../sql_close.php');
-
-				echo('<p>Error retrieving anime episodes</p>');
-				echo('<p>Please specify the datetime of the event you want to generate runsheet for. yyyy-mm-dd hh:mm:ss</p><p><form action="generate_screening_runsheet.php" method="post">Event Date/Time to Generate: <input type="datetime" name="event_datetime"><br><input type="submit"></form></p>');
-			}
-		}*/
 	}
 	else
 	{
