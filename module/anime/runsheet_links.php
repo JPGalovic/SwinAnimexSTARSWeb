@@ -9,9 +9,9 @@
 		
 		while($session_row = $get_anime_sessions->fetch_assoc())
 		{
-			echo('<form action="generate_screening_runsheet.php" method="post">');
+			echo('<form action="generate_runsheet.php" method="post" style="padding: 5px;">');
 				echo('<input type="hidden" name="event_datetime" value="'.$session_row['EVENT_TIME'].'">');
-				echo('<input type="submit" value="'.$session_row['EVENT_TIME'].'">');
+				echo('<input type="submit" value="'.date('d-m-y', strtotime($session_row['EVENT_TIME'])).'">');
 			echo('</form>');
 		}
 		

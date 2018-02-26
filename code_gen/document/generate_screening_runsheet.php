@@ -1,6 +1,6 @@
 <?php
 	// Anime Session Fucntion
-	function anime_session($event_time, &$event_session_time)
+	function anime_session($event_time, &$event_session_time, &$runsheet_session_number)
 	{
 		// Get First Anime Event Data
 		$anime_event_data = get_anime_event_data($event_time);
@@ -11,6 +11,9 @@
 			$anime_title = $anime_event_data_row['ANIME_TITLE'];
 			$session_number = $anime_event_data_row['SESSION_NUMBER'];
 			$session_type = $anime_event_data_row['SESSION_TYPE_ID'];
+			
+			$anime_data = get_anime_data($anime_title);
+			$anime_data_row = $anime_data->fetch_assoc();
 
 			$anime_episode_data = get_anime_session_episode_data($anime_title, $session_number, $session_type);
 			if($anime_episode_data->num_rows !=0)
@@ -19,7 +22,6 @@
 				$first_line_flag = true; // flag for indicating first line of rows
 				$session_no_episodes = $anime_episode_data->num_rows;
 				$runsheet_session_letter = 'A';
-				$runsheet_session_number = 1;
 				$break_count = 0;
 
 				while($session_no_episodes > 6) // count out to correct number of sessions
@@ -40,7 +42,7 @@
 							echo('<td align="center">'.$episode_row['EPISODE_NUMBER'].'</td>');
 							echo('<td>'.$episode_row['EPISODE_TITLE'].'</td>');
 							echo('<td rowspan="'.$session_no_episodes.'">'.get_anime_session_classification($anime_title, $session_number, $session_type).'</td>');
-							echo('<td rowspan="'.$session_no_episodes.'" align="center">Madman</td>');
+							echo('<td rowspan="'.$session_no_episodes.'" align="center">'.$anime_data_row['COMPANY_NAME'].'</td>');
 							echo('<td rowspan="'.$session_no_episodes.'">&nbsp;</td>');
 						echo('</tr>');
 
@@ -97,7 +99,7 @@
 								echo('<td align="center">'.$episode_row['EPISODE_NUMBER'].'</td>');
 								echo('<td>'.$episode_row['EPISODE_TITLE'].'</td>');
 								echo('<td rowspan="'.$session_no_episodes.'">'.get_anime_session_classification($anime_title, $session_number, $session_type).'</td>');
-								echo('<td rowspan="'.$session_no_episodes.'" align="center">Madman</td>');
+								echo('<td rowspan="'.$session_no_episodes.'" align="center">'.$anime_data_row['COMPANY_NAME'].'</td>');
 								echo('<td rowspan="'.$session_no_episodes.'">&nbsp;</td>');
 							echo('</tr>');
 
@@ -159,13 +161,15 @@
 			echo('</tr>');
 			
 			$event_session_time += 1800; //Add 30min to clock for each new episode
+			$runsheet_session_number = 1;
 			
-			if(anime_session($event_time, $event_session_time))
+			if(anime_session($event_time, $event_session_time, $runsheet_session_number))
 			{
 				$continue = true;
 				// get remainder of todays events.
 				while($continue)
 				{
+					$runsheet_session_number++;
 					$event_data = get_event_data(null, $event_time, true);
 					if($event_data->num_rows != 0)
 					{
@@ -184,12 +188,12 @@
 								
 								$event_session_time = strtotime($event_data_row['EVENT_TIME']);
 								
-								anime_session($event_time, $event_session_time);
+								anime_session($event_time, $event_session_time, $runsheet_session_number);
 							}
 							else if($event_session_time > strtotime($event_data_row['EVENT_TIME'])) // overlapping event ??? need to work out handle
 								$continue = false;
 							else // no break from event_time
-								anime_session($event_time, $event_session_time);
+								anime_session($event_time, $event_session_time, $runsheet_session_number);
 						}
 						else
 							$continue = false;
