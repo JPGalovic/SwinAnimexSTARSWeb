@@ -6,7 +6,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 4,
 		 4,
 		 "Z-Man Games",
-		 NULL
+		 null
 		)
 ;
 

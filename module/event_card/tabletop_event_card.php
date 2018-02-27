@@ -18,7 +18,7 @@
 		echo('<h4>');
 		echo($event_row['EVENT_TITLE']);
 
-		if($event_row['EVENT_SUBTITLE'] != NULL)
+		if($event_row['EVENT_SUBTITLE'] != null)
 		{
 			echo(' - '.$event_row['EVENT_SUBTITLE']);
 			if(isset($game_row))

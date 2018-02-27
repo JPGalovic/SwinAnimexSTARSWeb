@@ -2,7 +2,7 @@
 CREATE TABLE IF NOT EXISTS COMPANY (
 		COMPANY_NAME			VARCHAR(50)
 	,	COMPANY_URL				VARCHAR(250)
-	,	IS_SPONSOR				BOOLEAN 			NOT NULL
+	,	IS_SPONSOR				BOOLEAN 			NOT null
 	,	FREE_MEMBER_BENIFIT		VARCHAR(1000)
 	,	PREMIUM_MEMBER_BENIFIT	VARCHAR(1000)
 	,	REDEMPTION_INSTRUCTIONS	VARCHAR(1000)
@@ -38,26 +38,26 @@ INSERT INTO COMPANY (COMPANY_NAME, COMPANY_URL, IS_SPONSOR, FREE_MEMBER_BENIFIT,
 	,	("Rewardle",
 		 "https://patrons.rewardle.com/",
 		 TRUE,
-		 NULL,
-		 NULL,
-		 NULL)
+		 null,
+		 null,
+		 null)
 	,	("Grain and Nori",
 		 "http://www.grainandnori.com.au/",
 		 TRUE,
 		 "All Club members are eleigable to recive a free drink with any purchace over $10.",
-		 NULL,
+		 null,
 		 "Show your membership card at time of purchace to claim your benifit")
 	,	("Resistance Bar and Cafe",
 		 "https://www.facebook.com/TheResistanceBarandCafe/",
 		 TRUE,
 		 "All members are eleagble to recive a 5% discount on purchaces.",
-		 NULL,
+		 null,
 		 "Show your membership card at time of purchace to claim your benifit")
 	,	("Glenferrie Crepe Cafe",
 		 "http://www.glenferriecrepecafe.com.au/",
 		 TRUE,
 		 "All members are eleagble to recive a discount on purchaces.",
-		 NULL,
+		 null,
 		 "Show your membership card at time of purchace to claim your benifit")
 ;
 

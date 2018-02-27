@@ -39,63 +39,63 @@ CREATE TABLE IF NOT EXISTS EVENT_LOCATION (
 -- Data for Event Locations
 INSERT INTO EVENT_LOCATION (LOCATION_ID, CAMPUS, BUILDING, BLDG, ROOM, ADDRESS, LAT, LNG, ZOOM) VALUES
 -- Default Location
-		(0, "Swinburne Hawthorn", NULL, NULL, NULL, "John St, Hawthorn VIC 3122", -37.822097, 145.038946, 17)
+		(0, "Swinburne Hawthorn", null, null, null, "John St, Hawthorn VIC 3122", -37.822097, 145.038946, 17)
 		
 -- Social Event Locations
-	,	(1, NULL, NULL, NULL, NULL, "Crown Entertainment Complex, 8 Whiteman St, Southbank VIC 3006", -37.824871, 144.958181, 17)
-	,	(2, NULL, NULL, NULL, NULL, "Sorrento Oceach Beach, Ocean Beach Road, Sorrento VIC 3943", -38.345876, 144.727014, 17)
-	,	(3, NULL, NULL, NULL, NULL, "Hawthorn Aquatic &amp; Leisure Center, 1 Grace St, Hawthorn VIC 3122", -37.820791, 145.034434, 17)
+	,	(1, null, null, null, null, "Crown Entertainment Complex, 8 Whiteman St, Southbank VIC 3006", -37.824871, 144.958181, 17)
+	,	(2, null, null, null, null, "Sorrento Oceach Beach, Ocean Beach Road, Sorrento VIC 3943", -38.345876, 144.727014, 17)
+	,	(3, null, null, null, null, "Hawthorn Aquatic &amp; Leisure Center, 1 Grace St, Hawthorn VIC 3122", -37.820791, 145.034434, 17)
 
 -- Swinburne Buildings
-	,	(10, "Swinburne Hawthorn", "1 Alfred St", "1A", NULL, NULL, -37.821312, 145.036710, 17)
-	,	(11, "Swinburne Hawthorn", "6 Luton Lane", "6L", NULL, NULL, -37.823123, 145.034180, 17)
-	,	(12, "Swinburne Hawthorn", "10 George St", "10G", NULL, NULL, -37.822398, 145.041155, 17)
-	,	(13, "Swinburne Hawthorn", "21 Wakefield St", "21W", NULL, NULL, -37.820553, 145.037500, 17)
-	,	(14, "Swinburne Hawthorn", "24 George St", "24G", NULL, NULL, -37.822523, 145.041615, 17)
-	,	(15, "Swinburne Hawthorn", "32 Park St", "32P", NULL, NULL, -37.820231, 145.037879, 17)
-	,	(16, "Swinburne Hawthorn", "400 Burwood Rd", "400B", NULL, NULL, -0, 0, 17)
-	,	(17, "Swinburne Hawthorn", "60 William St", "60W", NULL, NULL, -37.822484, 145.039690, 17)
-	,	(18, "Swinburne Hawthorn", "Old Administration Building", "AD", NULL, NULL, -37.822108, 145.038748, 17)
-	,	(19, "Swinburne Hawthorn", "Advanced Manufacturing &amp; Design Center", "ADMC", NULL, NULL, -37.822836, 145.039238, 17)
-	,	(20, "Swinburne Hawthorn", "Advanced Technologies Center", "ATC", NULL, NULL, -37.822650, 145.038374, 17)
-	,	(21, "Swinburne Hawthorn", "Applied Sciences Building", "AS", NULL, NULL, -37.822569, 145.037458, 17)
-	,	(22, "Swinburne Hawthorn", "Arts Building", "AR", NULL, NULL, -37.821895, 145.038257, 17)
-	,	(23, "Swinburne Hawthorn", "Australian Graduate School of Entrepreneurship", "AGSE", NULL, NULL, -37.821347, 145.039471, 17)
-	,	(24, "Swinburne Hawthorn", "Aviation Building", "AV", NULL, NULL, -37.823183, 145.041905, 17)
-	,	(25, "Swinburne Hawthorn", "Business &amp; Arts Building", "BA", NULL, NULL, -37.822084, 145.039406, 17)
-	,	(26, "Swinburne Hawthorn", "Chemistry Building", "CH", NULL, NULL, -37.822656, 145.037855, 17)
-	,	(27, "Swinburne Hawthorn", "Engineering Building", "EN", NULL, NULL, -37.822232, 145.037801, 17)
-	,	(28, "Swinburne Hawthorn", "Engineering - West Building", "EW", NULL, NULL, -37.821982, 145.037454, 17)
-	,	(29, "Swinburne Hawthorn", "IS Building", "IS", NULL, NULL, -37.822889, 145.041926, 17)
-	,	(30, "Swinburne Hawthorn", "Library", "LB", NULL, NULL, -37.822454, 145.039211, 17)
-	,	(31, "Swinburne Hawthorn", "Multi-Deck Car Park", "19W", NULL, NULL, -37.820274, 145.037089, 17)
-	,	(32, "Swinburne Hawthorn", "Science Annexe", "SA", NULL, NULL, -37.822234, 145.037370, 17)
-	,	(33, "Swinburne Hawthorn", "SR Building", "SR", NULL, NULL, -37.821547, 145.038823, 17)
-	,	(34, "Swinburne Hawthorn", "Swinburne Place - South Building", "SPS", NULL, NULL, -37.821287, 145.037873, 17)
-	,	(35, "Swinburne Hawthorn", "Swinburne Place - West Building", "SPW", NULL, NULL, -37.820983, 145.037167, 17)
-	,	(36, "Swinburne Hawthorn", "TA Building", "TA", NULL, NULL, -37.820942, 145.038965, 17)
-	,	(37, "Swinburne Hawthorn", "TB Building", "TB", NULL, NULL, -37.821019, 145.039434, 17)
-	,	(38, "Swinburne Hawthorn", "TC Building", "TC", NULL, NULL, -37.820580, 145.039464, 17)
-	,	(39, "Swinburne Hawthorn", "TD Building", "TD", NULL, NULL, -37.820500, 145.039075, 17)
-	,	(40, "Swinburne Hawthorn", "The George Swinburne Building", "GS", NULL, NULL, -37.821353, 145.038488, 17)
-	,	(41, "Swinburne Hawthorn", "UN Building", "UN", NULL, NULL, -37.822524, 145.038599, 17)
+	,	(10, "Swinburne Hawthorn", "1 Alfred St", "1A", null, null, -37.821312, 145.036710, 17)
+	,	(11, "Swinburne Hawthorn", "6 Luton Lane", "6L", null, null, -37.823123, 145.034180, 17)
+	,	(12, "Swinburne Hawthorn", "10 George St", "10G", null, null, -37.822398, 145.041155, 17)
+	,	(13, "Swinburne Hawthorn", "21 Wakefield St", "21W", null, null, -37.820553, 145.037500, 17)
+	,	(14, "Swinburne Hawthorn", "24 George St", "24G", null, null, -37.822523, 145.041615, 17)
+	,	(15, "Swinburne Hawthorn", "32 Park St", "32P", null, null, -37.820231, 145.037879, 17)
+	,	(16, "Swinburne Hawthorn", "400 Burwood Rd", "400B", null, null, -0, 0, 17)
+	,	(17, "Swinburne Hawthorn", "60 William St", "60W", null, null, -37.822484, 145.039690, 17)
+	,	(18, "Swinburne Hawthorn", "Old Administration Building", "AD", null, null, -37.822108, 145.038748, 17)
+	,	(19, "Swinburne Hawthorn", "Advanced Manufacturing &amp; Design Center", "ADMC", null, null, -37.822836, 145.039238, 17)
+	,	(20, "Swinburne Hawthorn", "Advanced Technologies Center", "ATC", null, null, -37.822650, 145.038374, 17)
+	,	(21, "Swinburne Hawthorn", "Applied Sciences Building", "AS", null, null, -37.822569, 145.037458, 17)
+	,	(22, "Swinburne Hawthorn", "Arts Building", "AR", null, null, -37.821895, 145.038257, 17)
+	,	(23, "Swinburne Hawthorn", "Australian Graduate School of Entrepreneurship", "AGSE", null, null, -37.821347, 145.039471, 17)
+	,	(24, "Swinburne Hawthorn", "Aviation Building", "AV", null, null, -37.823183, 145.041905, 17)
+	,	(25, "Swinburne Hawthorn", "Business &amp; Arts Building", "BA", null, null, -37.822084, 145.039406, 17)
+	,	(26, "Swinburne Hawthorn", "Chemistry Building", "CH", null, null, -37.822656, 145.037855, 17)
+	,	(27, "Swinburne Hawthorn", "Engineering Building", "EN", null, null, -37.822232, 145.037801, 17)
+	,	(28, "Swinburne Hawthorn", "Engineering - West Building", "EW", null, null, -37.821982, 145.037454, 17)
+	,	(29, "Swinburne Hawthorn", "IS Building", "IS", null, null, -37.822889, 145.041926, 17)
+	,	(30, "Swinburne Hawthorn", "Library", "LB", null, null, -37.822454, 145.039211, 17)
+	,	(31, "Swinburne Hawthorn", "Multi-Deck Car Park", "19W", null, null, -37.820274, 145.037089, 17)
+	,	(32, "Swinburne Hawthorn", "Science Annexe", "SA", null, null, -37.822234, 145.037370, 17)
+	,	(33, "Swinburne Hawthorn", "SR Building", "SR", null, null, -37.821547, 145.038823, 17)
+	,	(34, "Swinburne Hawthorn", "Swinburne Place - South Building", "SPS", null, null, -37.821287, 145.037873, 17)
+	,	(35, "Swinburne Hawthorn", "Swinburne Place - West Building", "SPW", null, null, -37.820983, 145.037167, 17)
+	,	(36, "Swinburne Hawthorn", "TA Building", "TA", null, null, -37.820942, 145.038965, 17)
+	,	(37, "Swinburne Hawthorn", "TB Building", "TB", null, null, -37.821019, 145.039434, 17)
+	,	(38, "Swinburne Hawthorn", "TC Building", "TC", null, null, -37.820580, 145.039464, 17)
+	,	(39, "Swinburne Hawthorn", "TD Building", "TD", null, null, -37.820500, 145.039075, 17)
+	,	(40, "Swinburne Hawthorn", "The George Swinburne Building", "GS", null, null, -37.821353, 145.038488, 17)
+	,	(41, "Swinburne Hawthorn", "UN Building", "UN", null, null, -37.822524, 145.038599, 17)
 	
 -- Specific Rooms
-	,	(18108, "Swinburne Hawthorn", "Old Administration Building", "AD", "AD108", NULL, -37.822108, 145.038748, 17)
+	,	(18108, "Swinburne Hawthorn", "Old Administration Building", "AD", "AD108", null, -37.822108, 145.038748, 17)
 	
-	,	(21404, "Swinburne Hawthorn", "Applied Sciences Building", "AS", "AS404", NULL, -37.822569, 145.037458, 17)
+	,	(21404, "Swinburne Hawthorn", "Applied Sciences Building", "AS", "AS404", null, -37.822569, 145.037458, 17)
 	
-	,	(25702, "Swinburne Hawthorn", "Business &amp; Arts Building", "BA", "BA702", NULL, -37.822084, 145.039406, 17)
+	,	(25702, "Swinburne Hawthorn", "Business &amp; Arts Building", "BA", "BA702", null, -37.822084, 145.039406, 17)
 	
-	,	(27213, "Swinburne Hawthorn", "Engineering Building", "EN", "EN213", NULL, -37.822232, 145.037801, 17)
+	,	(27213, "Swinburne Hawthorn", "Engineering Building", "EN", "EN213", null, -37.822232, 145.037801, 17)
 	
-	,	(36212, "Swinburne Hawthorn", "TA Building", "TA", "TA212", NULL, -37.820942, 145.038965, 17)
+	,	(36212, "Swinburne Hawthorn", "TA Building", "TA", "TA212", null, -37.820942, 145.038965, 17)
 	
-	,	(37220, "Swinburne Hawthorn", "TB Building", "TB", "TB220", NULL, -37.821019, 145.039434, 17)
+	,	(37220, "Swinburne Hawthorn", "TB Building", "TB", "TB220", null, -37.821019, 145.039434, 17)
 	
-	,	(39317, "Swinburne Hawthorn", "TD Building", "TD", "TD317", NULL, -37.820500, 145.039075, 17)
+	,	(39317, "Swinburne Hawthorn", "TD Building", "TD", "TD317", null, -37.820500, 145.039075, 17)
 	
-	,	(40217, "Swinburne Hawthorn", "The George Swinburne Building", "GS", "GS217", NULL, -37.821353, 145.038488, 17)
+	,	(40217, "Swinburne Hawthorn", "The George Swinburne Building", "GS", "GS217", null, -37.821353, 145.038488, 17)
 	
 ;
 
@@ -113,7 +113,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		("Summer Sessions",
 		 "Our Summer Screenings bring unique and special series for our most dedicated members.",
 		 "Event is open to all, just come along and scan your membership card as you enter.",
-		 NULL
+		 null
 		)
 	,	("Summer After Dark",
 		 "Extra Summer Screening Session, only for out most dedicated members.",
@@ -123,12 +123,12 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 	,	("Summer Showcase",
 		 "Summer Edition of our Showcase Screenings, each week showing the first episode of anime available to watch now!",
 		 "Event is open to all, just come along and scan your membership card as you enter.",
-		 NULL
+		 null
 		)
 	,	("Screening Sessions",
 		 "Our regular screening sessions, brining you smash hit series shown in full over a three week period.",
 		 "Event is open to all, just come along and scan your membership card as you enter.",
-		 NULL
+		 null
 		)
 	,	("SwinAnime x STARS After Dark",
 		 "Extra Screening Sessions, only for our most dedicated members",
@@ -138,12 +138,12 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 	,	("SwinAnime x STARS Showcase",
 		 "Showcase Screenings, each week showing the first episode of anime available to watch now!",
 	 	 "Event is open to all, just come along and scan your membership card as you enter.",
-	 	 NULL
+	 	 null
 		)
 	,	("Winter Sessions",
 		 "Our Winter Screenings bring unique and special series for our most dedicated members.",
 		 "Event is open to all, just come along and scan your membership card as you enter.",
-		 NULL
+		 null
 		)
 	,	("Winter After Dark",
 		 "Extra Winter Screening Session, only for out most dedicated members.",
@@ -153,7 +153,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 	,	("Winter Showcase",
 		 "Winter Edition of our Showcase Screenings, each week showing the first episode of anime available to watch now!",
 		 "Event is open to all, just come along and scan your membership card as you enter.",
-		 NULL
+		 null
 		)
 	,	("LANime Overnight Marathon",
 		 "Overnight Marathon and LAN gaming, only for our most dedicated members!",
@@ -186,12 +186,12 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		("Tabletop Tonight",
 		 "Every week! Our exclusive Tabletop Experience! Join us for new games and exciting classics.",
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
-		 NULL
+		 null
 		)
 	,	("The Dice Must Flow",
 		 "Evey month join us for our Marathon Extravaganza! Play Longer, Play Harder!",
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
-		 NULL
+		 null
 		)
 ;
 
@@ -201,7 +201,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		("Adventurers Anonymous",
 		 "Are you tied of adventuring alone, with no one around to have your back? Are you tired not having team mates to give you support? Come along to our Adventurers Anonymous meeting where our supportive groups we will help you find your way, and you can help other Adventurers find their's",
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
-		 NULL
+		 null
 		)
 ;
 
@@ -210,33 +210,33 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		("GM Skill's Workshop",
 		 "Do you want to learn to run your own adventure? Are you keen to become a Game Master? Then join us in these Exclusive Skill's Workshops! Running Each Month!",
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
-		 NULL
+		 null
 		)
 		
 	,	("Scene Planning and Blocking Workshop",
 		 "The first step in producing animation is to plan and block out the scenes, in this workshop we go over both classic and modern methods.",
-		 NULL,
-		 NULL
+		 null,
+		 null
 		)
 	,	("Drawing Workshop",
 		 "Now that our project is planned out, its time to start with designing our characters, sets and drawing key-frames for our animation! This workshop will help to develop your hand drawing skills as well as introduce you to methods for vectoring and digital software.",
-		 NULL,
-		 NULL
+		 null,
+		 null
 		)
 	,	("Animation Workshop",
 		 "The next step is to actually create the slides for the animation, using both traditional and modern techniques, by hand and digital!",
-		 NULL,
-		 NULL
+		 null,
+		 null
 		)
 	,	("Voice Acting Workshop",
 		 "Next, give the animation a voice, in this workshop we explore techniques used by classic animation to give your characters a voice.",
-		 NULL,
-		 NULL
+		 null,
+		 null
 		)
 	,	("Music and Sound Effects Workshop",
 		 "Finally, the addition of music and production of sound effects in both the modern and traditional manner, thus completing our project!",
-		 NULL,
-		 NULL
+		 null,
+		 null
 		)
 ;
 
@@ -245,17 +245,17 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		("Annual General Meeting",
 		 "This is the big one, All members are asked to attend and help elect our Committee for Next Year!",
 		 "Open to all current students, please come along to the advertised clubroom and take a seat.",
-		 NULL
+		 null
 		)
 	,	("Semester General Meeting",
 		 "This meeting is for us to introduce ourselves, and inform you of what the club will be doing this semester!",
 		 "Open to all members, please come along to the advertised clubroom and take a seat.",
-		 NULL
+		 null
 		)
 	,	("Member News and Planing Meeting",
 		 "This is where you can have your say, let us know what you want to see from your club, and we'll let you know whats coming up over the next couple of weeks",
 		 "",
-		 NULL
+		 null
 		)
 ;
 
@@ -269,7 +269,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 	,	("May the forth be with you",
 		 "May the forth be with you, always. Every year May the 4th marks International Geek Day, celebrating everything geek and nerd!",
 		 "Come and find us, and join in the festivities",
-		 NULL
+		 null
 		)
 	,	("Animaga Expo",
 		 "Animaga Expo celebrates everything, Anime Manga and Games! come and join us in the fun!",

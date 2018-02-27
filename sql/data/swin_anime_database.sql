@@ -32,7 +32,7 @@ DROP TABLE IF EXISTS NEWSLETTER;
 CREATE TABLE IF NOT EXISTS COMPANY (
 		COMPANY_NAME			VARCHAR(50)
 	,	COMPANY_URL				VARCHAR(250)
-	,	IS_SPONSOR				BOOLEAN 			NOT NULL
+	,	IS_SPONSOR				BOOLEAN 			NOT null
 	,	FREE_MEMBER_BENIFIT		VARCHAR(1000)
 	,	PREMIUM_MEMBER_BENIFIT	VARCHAR(1000)
 	,	REDEMPTION_INSTRUCTIONS	VARCHAR(1000)
@@ -68,26 +68,26 @@ INSERT INTO COMPANY (COMPANY_NAME, COMPANY_URL, IS_SPONSOR, FREE_MEMBER_BENIFIT,
 	,	("Rewardle",
 		 "https://patrons.rewardle.com/",
 		 TRUE,
-		 NULL,
-		 NULL,
-		 NULL)
+		 null,
+		 null,
+		 null)
 	,	("Grain and Nori",
 		 "http://www.grainandnori.com.au/",
 		 TRUE,
 		 "All Club members are eleigable to recive a free drink with any purchace over $10.",
-		 NULL,
+		 null,
 		 "Show your membership card at time of purchace to claim your benifit")
 	,	("Resistance Bar and Cafe",
 		 "https://www.facebook.com/TheResistanceBarandCafe/",
 		 TRUE,
 		 "All members are eleagble to recive a 5% discount on purchaces.",
-		 NULL,
+		 null,
 		 "Show your membership card at time of purchace to claim your benifit")
 	,	("Glenferrie Crepe Cafe",
 		 "http://www.glenferriecrepecafe.com.au/",
 		 TRUE,
 		 "All members are eleagble to recive a discount on purchaces.",
-		 NULL,
+		 null,
 		 "Show your membership card at time of purchace to claim your benifit")
 ;
 
@@ -414,63 +414,63 @@ CREATE TABLE IF NOT EXISTS EVENT_LOCATION (
 -- Data for Event Locations
 INSERT INTO EVENT_LOCATION (LOCATION_ID, CAMPUS, BUILDING, BLDG, ROOM, ADDRESS, LAT, LNG, ZOOM) VALUES
 -- Default Location
-		(0, "Swinburne Hawthorn", NULL, NULL, NULL, "John St, Hawthorn VIC 3122", -37.822097, 145.038946, 17)
+		(0, "Swinburne Hawthorn", null, null, null, "John St, Hawthorn VIC 3122", -37.822097, 145.038946, 17)
 		
 -- Social Event Locations
-	,	(1, NULL, NULL, NULL, NULL, "Crown Entertainment Complex, 8 Whiteman St, Southbank VIC 3006", -37.824871, 144.958181, 17)
-	,	(2, NULL, NULL, NULL, NULL, "Sorrento Oceach Beach, Ocean Beach Road, Sorrento VIC 3943", -38.345876, 144.727014, 17)
-	,	(3, NULL, NULL, NULL, NULL, "Hawthorn Aquatic &amp; Leisure Center, 1 Grace St, Hawthorn VIC 3122", -37.820791, 145.034434, 17)
+	,	(1, null, null, null, null, "Crown Entertainment Complex, 8 Whiteman St, Southbank VIC 3006", -37.824871, 144.958181, 17)
+	,	(2, null, null, null, null, "Sorrento Oceach Beach, Ocean Beach Road, Sorrento VIC 3943", -38.345876, 144.727014, 17)
+	,	(3, null, null, null, null, "Hawthorn Aquatic &amp; Leisure Center, 1 Grace St, Hawthorn VIC 3122", -37.820791, 145.034434, 17)
 
 -- Swinburne Buildings
-	,	(10, "Swinburne Hawthorn", "1 Alfred St", "1A", NULL, NULL, -37.821312, 145.036710, 17)
-	,	(11, "Swinburne Hawthorn", "6 Luton Lane", "6L", NULL, NULL, -37.823123, 145.034180, 17)
-	,	(12, "Swinburne Hawthorn", "10 George St", "10G", NULL, NULL, -37.822398, 145.041155, 17)
-	,	(13, "Swinburne Hawthorn", "21 Wakefield St", "21W", NULL, NULL, -37.820553, 145.037500, 17)
-	,	(14, "Swinburne Hawthorn", "24 George St", "24G", NULL, NULL, -37.822523, 145.041615, 17)
-	,	(15, "Swinburne Hawthorn", "32 Park St", "32P", NULL, NULL, -37.820231, 145.037879, 17)
-	,	(16, "Swinburne Hawthorn", "400 Burwood Rd", "400B", NULL, NULL, -0, 0, 17)
-	,	(17, "Swinburne Hawthorn", "60 William St", "60W", NULL, NULL, -37.822484, 145.039690, 17)
-	,	(18, "Swinburne Hawthorn", "Old Administration Building", "AD", NULL, NULL, -37.822108, 145.038748, 17)
-	,	(19, "Swinburne Hawthorn", "Advanced Manufacturing &amp; Design Center", "ADMC", NULL, NULL, -37.822836, 145.039238, 17)
-	,	(20, "Swinburne Hawthorn", "Advanced Technologies Center", "ATC", NULL, NULL, -37.822650, 145.038374, 17)
-	,	(21, "Swinburne Hawthorn", "Applied Sciences Building", "AS", NULL, NULL, -37.822569, 145.037458, 17)
-	,	(22, "Swinburne Hawthorn", "Arts Building", "AR", NULL, NULL, -37.821895, 145.038257, 17)
-	,	(23, "Swinburne Hawthorn", "Australian Graduate School of Entrepreneurship", "AGSE", NULL, NULL, -37.821347, 145.039471, 17)
-	,	(24, "Swinburne Hawthorn", "Aviation Building", "AV", NULL, NULL, -37.823183, 145.041905, 17)
-	,	(25, "Swinburne Hawthorn", "Business &amp; Arts Building", "BA", NULL, NULL, -37.822084, 145.039406, 17)
-	,	(26, "Swinburne Hawthorn", "Chemistry Building", "CH", NULL, NULL, -37.822656, 145.037855, 17)
-	,	(27, "Swinburne Hawthorn", "Engineering Building", "EN", NULL, NULL, -37.822232, 145.037801, 17)
-	,	(28, "Swinburne Hawthorn", "Engineering - West Building", "EW", NULL, NULL, -37.821982, 145.037454, 17)
-	,	(29, "Swinburne Hawthorn", "IS Building", "IS", NULL, NULL, -37.822889, 145.041926, 17)
-	,	(30, "Swinburne Hawthorn", "Library", "LB", NULL, NULL, -37.822454, 145.039211, 17)
-	,	(31, "Swinburne Hawthorn", "Multi-Deck Car Park", "19W", NULL, NULL, -37.820274, 145.037089, 17)
-	,	(32, "Swinburne Hawthorn", "Science Annexe", "SA", NULL, NULL, -37.822234, 145.037370, 17)
-	,	(33, "Swinburne Hawthorn", "SR Building", "SR", NULL, NULL, -37.821547, 145.038823, 17)
-	,	(34, "Swinburne Hawthorn", "Swinburne Place - South Building", "SPS", NULL, NULL, -37.821287, 145.037873, 17)
-	,	(35, "Swinburne Hawthorn", "Swinburne Place - West Building", "SPW", NULL, NULL, -37.820983, 145.037167, 17)
-	,	(36, "Swinburne Hawthorn", "TA Building", "TA", NULL, NULL, -37.820942, 145.038965, 17)
-	,	(37, "Swinburne Hawthorn", "TB Building", "TB", NULL, NULL, -37.821019, 145.039434, 17)
-	,	(38, "Swinburne Hawthorn", "TC Building", "TC", NULL, NULL, -37.820580, 145.039464, 17)
-	,	(39, "Swinburne Hawthorn", "TD Building", "TD", NULL, NULL, -37.820500, 145.039075, 17)
-	,	(40, "Swinburne Hawthorn", "The George Swinburne Building", "GS", NULL, NULL, -37.821353, 145.038488, 17)
-	,	(41, "Swinburne Hawthorn", "UN Building", "UN", NULL, NULL, -37.822524, 145.038599, 17)
+	,	(10, "Swinburne Hawthorn", "1 Alfred St", "1A", null, null, -37.821312, 145.036710, 17)
+	,	(11, "Swinburne Hawthorn", "6 Luton Lane", "6L", null, null, -37.823123, 145.034180, 17)
+	,	(12, "Swinburne Hawthorn", "10 George St", "10G", null, null, -37.822398, 145.041155, 17)
+	,	(13, "Swinburne Hawthorn", "21 Wakefield St", "21W", null, null, -37.820553, 145.037500, 17)
+	,	(14, "Swinburne Hawthorn", "24 George St", "24G", null, null, -37.822523, 145.041615, 17)
+	,	(15, "Swinburne Hawthorn", "32 Park St", "32P", null, null, -37.820231, 145.037879, 17)
+	,	(16, "Swinburne Hawthorn", "400 Burwood Rd", "400B", null, null, -0, 0, 17)
+	,	(17, "Swinburne Hawthorn", "60 William St", "60W", null, null, -37.822484, 145.039690, 17)
+	,	(18, "Swinburne Hawthorn", "Old Administration Building", "AD", null, null, -37.822108, 145.038748, 17)
+	,	(19, "Swinburne Hawthorn", "Advanced Manufacturing &amp; Design Center", "ADMC", null, null, -37.822836, 145.039238, 17)
+	,	(20, "Swinburne Hawthorn", "Advanced Technologies Center", "ATC", null, null, -37.822650, 145.038374, 17)
+	,	(21, "Swinburne Hawthorn", "Applied Sciences Building", "AS", null, null, -37.822569, 145.037458, 17)
+	,	(22, "Swinburne Hawthorn", "Arts Building", "AR", null, null, -37.821895, 145.038257, 17)
+	,	(23, "Swinburne Hawthorn", "Australian Graduate School of Entrepreneurship", "AGSE", null, null, -37.821347, 145.039471, 17)
+	,	(24, "Swinburne Hawthorn", "Aviation Building", "AV", null, null, -37.823183, 145.041905, 17)
+	,	(25, "Swinburne Hawthorn", "Business &amp; Arts Building", "BA", null, null, -37.822084, 145.039406, 17)
+	,	(26, "Swinburne Hawthorn", "Chemistry Building", "CH", null, null, -37.822656, 145.037855, 17)
+	,	(27, "Swinburne Hawthorn", "Engineering Building", "EN", null, null, -37.822232, 145.037801, 17)
+	,	(28, "Swinburne Hawthorn", "Engineering - West Building", "EW", null, null, -37.821982, 145.037454, 17)
+	,	(29, "Swinburne Hawthorn", "IS Building", "IS", null, null, -37.822889, 145.041926, 17)
+	,	(30, "Swinburne Hawthorn", "Library", "LB", null, null, -37.822454, 145.039211, 17)
+	,	(31, "Swinburne Hawthorn", "Multi-Deck Car Park", "19W", null, null, -37.820274, 145.037089, 17)
+	,	(32, "Swinburne Hawthorn", "Science Annexe", "SA", null, null, -37.822234, 145.037370, 17)
+	,	(33, "Swinburne Hawthorn", "SR Building", "SR", null, null, -37.821547, 145.038823, 17)
+	,	(34, "Swinburne Hawthorn", "Swinburne Place - South Building", "SPS", null, null, -37.821287, 145.037873, 17)
+	,	(35, "Swinburne Hawthorn", "Swinburne Place - West Building", "SPW", null, null, -37.820983, 145.037167, 17)
+	,	(36, "Swinburne Hawthorn", "TA Building", "TA", null, null, -37.820942, 145.038965, 17)
+	,	(37, "Swinburne Hawthorn", "TB Building", "TB", null, null, -37.821019, 145.039434, 17)
+	,	(38, "Swinburne Hawthorn", "TC Building", "TC", null, null, -37.820580, 145.039464, 17)
+	,	(39, "Swinburne Hawthorn", "TD Building", "TD", null, null, -37.820500, 145.039075, 17)
+	,	(40, "Swinburne Hawthorn", "The George Swinburne Building", "GS", null, null, -37.821353, 145.038488, 17)
+	,	(41, "Swinburne Hawthorn", "UN Building", "UN", null, null, -37.822524, 145.038599, 17)
 	
 -- Specific Rooms
-	,	(18108, "Swinburne Hawthorn", "Old Administration Building", "AD", "AD108", NULL, -37.822108, 145.038748, 17)
+	,	(18108, "Swinburne Hawthorn", "Old Administration Building", "AD", "AD108", null, -37.822108, 145.038748, 17)
 	
-	,	(21404, "Swinburne Hawthorn", "Applied Sciences Building", "AS", "AS404", NULL, -37.822569, 145.037458, 17)
+	,	(21404, "Swinburne Hawthorn", "Applied Sciences Building", "AS", "AS404", null, -37.822569, 145.037458, 17)
 	
-	,	(25702, "Swinburne Hawthorn", "Business &amp; Arts Building", "BA", "BA702", NULL, -37.822084, 145.039406, 17)
+	,	(25702, "Swinburne Hawthorn", "Business &amp; Arts Building", "BA", "BA702", null, -37.822084, 145.039406, 17)
 	
-	,	(27213, "Swinburne Hawthorn", "Engineering Building", "EN", "EN213", NULL, -37.822232, 145.037801, 17)
+	,	(27213, "Swinburne Hawthorn", "Engineering Building", "EN", "EN213", null, -37.822232, 145.037801, 17)
 	
-	,	(36212, "Swinburne Hawthorn", "TA Building", "TA", "TA212", NULL, -37.820942, 145.038965, 17)
+	,	(36212, "Swinburne Hawthorn", "TA Building", "TA", "TA212", null, -37.820942, 145.038965, 17)
 	
-	,	(37220, "Swinburne Hawthorn", "TB Building", "TB", "TB220", NULL, -37.821019, 145.039434, 17)
+	,	(37220, "Swinburne Hawthorn", "TB Building", "TB", "TB220", null, -37.821019, 145.039434, 17)
 	
-	,	(39317, "Swinburne Hawthorn", "TD Building", "TD", "TD317", NULL, -37.820500, 145.039075, 17)
+	,	(39317, "Swinburne Hawthorn", "TD Building", "TD", "TD317", null, -37.820500, 145.039075, 17)
 	
-	,	(40217, "Swinburne Hawthorn", "The George Swinburne Building", "GS", "GS217", NULL, -37.821353, 145.038488, 17)
+	,	(40217, "Swinburne Hawthorn", "The George Swinburne Building", "GS", "GS217", null, -37.821353, 145.038488, 17)
 	
 ;
 
@@ -488,7 +488,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		("Summer Sessions",
 		 "Our Summer Screenings bring unique and special series for our most dedicated members.",
 		 "Event is open to all, just come along and scan your membership card as you enter.",
-		 NULL
+		 null
 		)
 	,	("Summer After Dark",
 		 "Extra Summer Screening Session, only for out most dedicated members.",
@@ -498,12 +498,12 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 	,	("Summer Showcase",
 		 "Summer Edition of our Showcase Screenings, each week showing the first episode of anime available to watch now!",
 		 "Event is open to all, just come along and scan your membership card as you enter.",
-		 NULL
+		 null
 		)
 	,	("Screening Sessions",
 		 "Our regular screening sessions, brining you smash hit series shown in full over a three week period.",
 		 "Event is open to all, just come along and scan your membership card as you enter.",
-		 NULL
+		 null
 		)
 	,	("SwinAnime x STARS After Dark",
 		 "Extra Screening Sessions, only for our most dedicated members",
@@ -513,12 +513,12 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 	,	("SwinAnime x STARS Showcase",
 		 "Showcase Screenings, each week showing the first episode of anime available to watch now!",
 	 	 "Event is open to all, just come along and scan your membership card as you enter.",
-	 	 NULL
+	 	 null
 		)
 	,	("Winter Sessions",
 		 "Our Winter Screenings bring unique and special series for our most dedicated members.",
 		 "Event is open to all, just come along and scan your membership card as you enter.",
-		 NULL
+		 null
 		)
 	,	("Winter After Dark",
 		 "Extra Winter Screening Session, only for out most dedicated members.",
@@ -528,7 +528,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 	,	("Winter Showcase",
 		 "Winter Edition of our Showcase Screenings, each week showing the first episode of anime available to watch now!",
 		 "Event is open to all, just come along and scan your membership card as you enter.",
-		 NULL
+		 null
 		)
 	,	("LANime Overnight Marathon",
 		 "Overnight Marathon and LAN gaming, only for our most dedicated members!",
@@ -561,12 +561,12 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		("Tabletop Tonight",
 		 "Every week! Our exclusive Tabletop Experience! Join us for new games and exciting classics.",
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
-		 NULL
+		 null
 		)
 	,	("The Dice Must Flow",
 		 "Evey month join us for our Marathon Extravaganza! Play Longer, Play Harder!",
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
-		 NULL
+		 null
 		)
 ;
 
@@ -576,7 +576,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		("Adventurers Anonymous",
 		 "Are you tied of adventuring alone, with no one around to have your back? Are you tired not having team mates to give you support? Come along to our Adventurers Anonymous meeting where our supportive groups we will help you find your way, and you can help other Adventurers find their's",
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
-		 NULL
+		 null
 		)
 ;
 
@@ -585,33 +585,33 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		("GM Skill's Workshop",
 		 "Do you want to learn to run your own adventure? Are you keen to become a Game Master? Then join us in these Exclusive Skill's Workshops! Running Each Month!",
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
-		 NULL
+		 null
 		)
 		
 	,	("Scene Planning and Blocking Workshop",
 		 "The first step in producing animation is to plan and block out the scenes, in this workshop we go over both classic and modern methods.",
-		 NULL,
-		 NULL
+		 null,
+		 null
 		)
 	,	("Drawing Workshop",
 		 "Now that our project is planned out, its time to start with designing our characters, sets and drawing key-frames for our animation! This workshop will help to develop your hand drawing skills as well as introduce you to methods for vectoring and digital software.",
-		 NULL,
-		 NULL
+		 null,
+		 null
 		)
 	,	("Animation Workshop",
 		 "The next step is to actually create the slides for the animation, using both traditional and modern techniques, by hand and digital!",
-		 NULL,
-		 NULL
+		 null,
+		 null
 		)
 	,	("Voice Acting Workshop",
 		 "Next, give the animation a voice, in this workshop we explore techniques used by classic animation to give your characters a voice.",
-		 NULL,
-		 NULL
+		 null,
+		 null
 		)
 	,	("Music and Sound Effects Workshop",
 		 "Finally, the addition of music and production of sound effects in both the modern and traditional manner, thus completing our project!",
-		 NULL,
-		 NULL
+		 null,
+		 null
 		)
 ;
 
@@ -620,17 +620,17 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		("Annual General Meeting",
 		 "This is the big one, All members are asked to attend and help elect our Committee for Next Year!",
 		 "Open to all current students, please come along to the advertised clubroom and take a seat.",
-		 NULL
+		 null
 		)
 	,	("Semester General Meeting",
 		 "This meeting is for us to introduce ourselves, and inform you of what the club will be doing this semester!",
 		 "Open to all members, please come along to the advertised clubroom and take a seat.",
-		 NULL
+		 null
 		)
 	,	("Member News and Planing Meeting",
 		 "This is where you can have your say, let us know what you want to see from your club, and we'll let you know whats coming up over the next couple of weeks",
 		 "",
-		 NULL
+		 null
 		)
 ;
 
@@ -644,7 +644,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 	,	("May the forth be with you",
 		 "May the forth be with you, always. Every year May the 4th marks International Geek Day, celebrating everything geek and nerd!",
 		 "Come and find us, and join in the festivities",
-		 NULL
+		 null
 		)
 	,	("Animaga Expo",
 		 "Animaga Expo celebrates everything, Anime Manga and Games! come and join us in the fun!",
@@ -3846,7 +3846,7 @@ INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIP
 		 "Fubuki is a Special Type Destroyer who has just been assigned to the Naval District. With a grand total of zero battles under her belt, she's sure to sink fast under the pressure of expectation. Luckily, she's grouped with Torpedo Squadron Three, and they're ready to support their new comrade. Together, they'll prove they have what it takes to defend the ocean and win it all for humanity!",
 		 "Fubuki is a Special Type Destroyer who has just been assigned to the Naval District. With a grand total of zero battles under her belt, she's sure to sink fast under the pressure of expectation.",
 		 "madman",
-		 NULL
+		 null
 		)
 ;
 
@@ -5729,7 +5729,7 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 		("Zetman", 3, 1, 2)
 ;
 
--- Anime Data
+-- Accel World Data, Version 1.0.0, JAN18, JSimmonds-Browne
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Accel world",
 		 24,
@@ -5885,7 +5885,7 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("Accel world", 0, 2, 8)
 	,	("Accel world", 0, 3, 8)
 ;
--- Anime Data
+-- AKB0048 Data, Version 1.0.0, JAN18, JSimmonds-Browne
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("AKB0048",
 		 13,
@@ -5979,13 +5979,13 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("AKB0048", 0, 2, 4)
 	,	("AKB0048", 0, 3, 5)
 	,	("AKB0048", 2, 1, 13)
-;-- Anime Data
+;-- ALIEN 9 Data, Version 1.0.0, JAN18, JSimmonds-Browne
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("ALIEN 9",
 		 4,
 		 "In sixth grade Yuri just wants to end her last year in elementary school on a quiet note...not as a member of the 'Alien Party'. The objective of the 'Alien Party' is to capture any rogue aliens that wonder on to the school premises. However to capture these aliens you need the help of one, called a &quot;Borg&quot;. A symbiotic life-form that offers the ability to protect, incapacitate and ultimately capture other aliens in compensation for being able to feed off their wastes by licking their back.",
 		 "In sixth grade Yuri just wants to end her last year in elementary school on a quiet note...not as a member of the 'Alien Party'.",
-		 "hanabee",
+		 "Hanabee",
 		 "&copy; J.C. STAFF"
 		)
 ;
@@ -6004,22 +6004,22 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 		("ALIEN 9",
 		 1,
 		 "9th Elementary Anti-Alien Squad",
-		 NULL
+		 null
 		)
 	,	("ALIEN 9",
 		 2,
 		 "Boredom, Spaceship and Overgrowth",
-		 NULL
+		 null
 		)
 	,	("ALIEN 9",
 		 3,
 		 "Summer Vacation, Borg and Death",
-		 NULL
+		 null
 		)
 	,	("ALIEN 9",
 		 4,
 		 "The End of the Beginning",
-		 NULL
+		 null
 		)
 ;
 
@@ -6320,7 +6320,7 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 		("Is it wrong to try to pick up girls in a dungeon", 0, 1, 4)
 	,	("Is it wrong to try to pick up girls in a dungeon", 0, 2, 4)
 	,	("Is it wrong to try to pick up girls in a dungeon", 0, 3, 5)
-;-- Anime Data
+;-- Kokoro Connect Data, Version 1.0.0, JAN18, JSimmonds-Browne
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Kokoro Connect",
 		 17,
@@ -8502,7 +8502,7 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 INSERT INTO COMPANY (COMPANY_NAME, COMPANY_URL, IS_SPONSOR) VALUES
 		("Final Form Games", "http://www.finalformgames.com", FALSE)
 	,	("Wizards of the Coast", "http://company.wizards.com", FALSE)
-	,	("Indie Boards & Cards, La Mame Games", NULL, FALSE)
+	,	("Indie Boards & Cards, La Mame Games", null, FALSE)
 	,	("Fantasy Flight Games", "https://www.fantasyflightgames.com/", FALSE)
 	,	("Games Workshop", "https://www.games-workshop.com/", FALSE)
 	,	("Plaid Hat Games", "https://www.plaidhatgames.com/", FALSE)
@@ -8537,7 +8537,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 7,
 		 5,
 		 "Repos Production",
-		 NULL
+		 null
 		)
 ;
 
@@ -8555,7 +8555,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 6,
 		 5,
 		 "Fantasy Flight Games",
-		 NULL
+		 null
 		)
 ;
 
@@ -8573,7 +8573,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 6,
 		 5,
 		 "Indie Boards & Cards, La Mame Games",
-		 NULL
+		 null
 		)
 ;
 
@@ -8591,7 +8591,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 5,
 		 4,
 		 "Plaid Hat Games",
-		 NULL
+		 null
 		)
 ;
 
@@ -8607,7 +8607,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 4,
 		 2,
 		 "Wizards of the Coast",
-		 NULL
+		 null
 		)
 ;
 
@@ -8625,7 +8625,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 4,
 		 4,
 		 "Z-Man Games",
-		 NULL
+		 null
 		)
 ;
 
@@ -8643,7 +8643,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 8,
 		 4,
 		 "Slugfest Games",
-		 NULL
+		 null
 		)
 ;
 
@@ -8659,7 +8659,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 5,
 		 4,
 		 "Stonemaier Games",
-		 NULL
+		 null
 		)
 ;
 
@@ -8677,7 +8677,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 5,
 		 4,
 		 "Adventureland Games",
-		 NULL
+		 null
 		)
 ;
 
@@ -8693,7 +8693,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 6,
 		 4,
 		 "Fantasy Flight Games",
-		 NULL
+		 null
 		)
 ;
 
@@ -8711,7 +8711,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 75,
 		 20,
 		 "Bezier Games",
-		 NULL
+		 null
 		)
 ;
 
@@ -8729,7 +8729,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 6,
 		 4,
 		 "Games Workshop",
-		 NULL
+		 null
 		)
 ;
 
@@ -9058,72 +9058,72 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 
 -- Tabletop Events
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_SUBTITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
-		("2018-02-27 10-30-00", 5, "Tabletop Tonight", "Decks Out", 0, 0, "0")
-	,	("2018-03-06 10-30-00", 5, "Tabletop Tonight", "Political Games", 0, 0, "0")
-	,	("2018-03-13 10-30-00", 5, "Tabletop Tonight", "High Fantasy", 40217, 0, "0")
-	,	("2018-03-20 10-30-00", 5, "Tabletop Tonight", "Horror Games", 40217, 0, "0")
-	,	("2018-03-27 10-30-00", 5, "Tabletop Tonight", "Intregue and Betrayal", 40217, 0, "0")
-	,	("2018-04-03 10-30-00", 5, "Tabletop Tonight", "Big Box Games", 40217, 0, "0")
-	,	("2018-04-10 10-30-00", 5, "Tabletop Tonight", "Big Games Small Packages", 40217, 0, "0")
-	,	("2018-04-17 10-30-00", 5, "Tabletop Tonight", "Fight for the Crown", 40217, 0, "0")
-	,	("2018-04-24 10-30-00", 5, "Tabletop Tonight", "Thematic Games", 40217, 0, "0")
-	,	("2018-05-01 10-30-00", 5, "Tabletop Tonight", "To the Stars", 40217, 0, "0")
-	,	("2018-05-08 10-30-00", 5, "Tabletop Tonight", "Eurogames", 40217, 0, "0")
-	,	("2018-05-15 10-30-00", 5, "Tabletop Tonight", "Apocalypse!", 40217, 0, "0")
-	,	("2018-05-22 10-30-00", 5, "Tabletop Tonight", "Party Games", 40217, 0, "0")
+		("2018-02-27 14-30-00", 5, "Tabletop Tonight", "Decks Out", 0, 0, "0")
+	,	("2018-03-06 14-30-00", 5, "Tabletop Tonight", "Political Games", 0, 0, "0")
+	,	("2018-03-13 14-30-00", 5, "Tabletop Tonight", "High Fantasy", 40217, 0, "0")
+	,	("2018-03-20 14-30-00", 5, "Tabletop Tonight", "Horror Games", 40217, 0, "0")
+	,	("2018-03-27 14-30-00", 5, "Tabletop Tonight", "Intregue and Betrayal", 40217, 0, "0")
+	,	("2018-04-03 14-30-00", 5, "Tabletop Tonight", "Big Box Games", 40217, 0, "0")
+	,	("2018-04-10 14-30-00", 5, "Tabletop Tonight", "Big Games Small Packages", 40217, 0, "0")
+	,	("2018-04-17 14-30-00", 5, "Tabletop Tonight", "Fight for the Crown", 40217, 0, "0")
+	,	("2018-04-24 14-30-00", 5, "Tabletop Tonight", "Thematic Games", 40217, 0, "0")
+	,	("2018-05-01 14-30-00", 5, "Tabletop Tonight", "To the Stars", 40217, 0, "0")
+	,	("2018-05-08 14-30-00", 5, "Tabletop Tonight", "Eurogames", 40217, 0, "0")
+	,	("2018-05-15 14-30-00", 5, "Tabletop Tonight", "Apocalypse!", 40217, 0, "0")
+	,	("2018-05-22 14-30-00", 5, "Tabletop Tonight", "Party Games", 40217, 0, "0")
 	
-	,	("2018-03-03 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
-	,	("2018-03-31 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
-	,	("2018-04-28 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
-	,	("2018-05-26 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
+	,	("2018-03-03 08-30-00", 5, "The Dice Must Flow", null, 40217, 0, "0")
+	,	("2018-03-31 08-30-00", 5, "The Dice Must Flow", null, 40217, 0, "0")
+	,	("2018-04-28 08-30-00", 5, "The Dice Must Flow", null, 40217, 0, "0")
+	,	("2018-05-26 08-30-00", 5, "The Dice Must Flow", null, 40217, 0, "0")
 ;
 
 INSERT INTO EVENT_GAME_DATA (EVENT_TIME, GAME_TITLE, GAME_EVENT_TYPE) VALUES
-		("2018-02-27 10-30-00", "Magic: The Gathering", 1)
-	,	("2018-03-06 10-30-00", "Coup", 1)
-	,	("2018-03-13 10-30-00", "Talisman", 1)
--- 	,	("2018-03-20 10-30-00", "Game_Title", 1)
-	,	("2018-03-27 10-30-00", "Dead of Winter", 1)
-	,	("2018-04-03 10-30-00", "Scythe", 1)
-	,	("2018-04-10 10-30-00", "Sushi Go", 1)
-	,	("2018-04-17 10-30-00", "Warhammer 40k", 1)
-	,	("2018-04-24 10-30-00", "Red Dragon Inn", 1)
-	,	("2018-05-01 10-30-00", "Battlestar Galactica", 1)
-	,	("2018-05-08 10-30-00", "7 Wonders", 1)
-	,	("2018-05-15 10-30-00", "Pandemic", 1)
-	,	("2018-05-22 10-30-00", "Ultimate Werewolf", 1)
+		("2018-02-27 14-30-00", "Magic: The Gathering", 1)
+	,	("2018-03-06 14-30-00", "Coup", 1)
+	,	("2018-03-13 14-30-00", "Talisman", 1)
+-- 	,	("2018-03-20 14-30-00", "Game_Title", 1)
+	,	("2018-03-27 14-30-00", "Dead of Winter", 1)
+	,	("2018-04-03 14-30-00", "Scythe", 1)
+	,	("2018-04-10 14-30-00", "Sushi Go", 1)
+	,	("2018-04-17 14-30-00", "Warhammer 40k", 1)
+	,	("2018-04-24 14-30-00", "Red Dragon Inn", 1)
+	,	("2018-05-01 14-30-00", "Battlestar Galactica", 1)
+	,	("2018-05-08 14-30-00", "7 Wonders", 1)
+	,	("2018-05-15 14-30-00", "Pandemic", 1)
+	,	("2018-05-22 14-30-00", "Ultimate Werewolf", 1)
 ;
 
 -- Roleplay Events
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
-		("2018-03-01 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
-	,	("2018-03-08 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
-	,	("2018-03-15 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
-	,	("2018-03-22 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
-	,	("2018-03-29 16-30-00", 4, "Adventurers Anonymous", 37220, 0, "0")
-	,	("2018-04-05 16-30-00", 4, "Adventurers Anonymous", 37220, 0, "0")
-	,	("2018-04-12 16-30-00", 4, "Adventurers Anonymous", 37220, 0, "0")
-	,	("2018-04-19 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
-	,	("2018-04-26 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
-	,	("2018-05-03 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
-	,	("2018-05-10 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
-	,	("2018-05-17 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
-	,	("2018-05-24 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+		("2018-03-01 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+	,	("2018-03-08 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+	,	("2018-03-15 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+	,	("2018-03-22 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+	,	("2018-03-29 14-30-00", 4, "Adventurers Anonymous", 37220, 0, "0")
+	,	("2018-04-05 14-30-00", 4, "Adventurers Anonymous", 37220, 0, "0")
+	,	("2018-04-12 14-30-00", 4, "Adventurers Anonymous", 37220, 0, "0")
+	,	("2018-04-19 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+	,	("2018-04-26 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+	,	("2018-05-03 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+	,	("2018-05-10 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+	,	("2018-05-17 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+	,	("2018-05-24 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
 ;
 
 -- Workshop Events
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
-		("2018-03-14 16-30-00", 2, "GM Skill's Workshop", 18108, 0, "0")
-	,	("2018-04-11 16-30-00", 2, "GM Skill's Workshop", 36212, 0, "0")
-	,	("2018-05-09 16-30-00", 2, "GM Skill's Workshop", 18108, 0, "0")
+		("2018-03-14 14-30-00", 2, "GM Skill's Workshop", 18108, 0, "0")
+	,	("2018-04-11 14-30-00", 2, "GM Skill's Workshop", 36212, 0, "0")
+	,	("2018-05-09 14-30-00", 2, "GM Skill's Workshop", 18108, 0, "0")
 
- 	,	("2018-03-07 16-30-00", 2, "Scene Planning and Blocking Workshop", 18108, 0, "0")
- 	,	("2018-03-21 16-30-00", 2, "Drawing Workshop", 18108, 0, "0")
- 	,	("2018-04-04 16-30-00", 2, "Animation Workshop", 36212, 0, "0")
- 	,	("2018-04-18 16-30-00", 2, "Voice Acting Workshop", 18108, 0, "0")
- 	,	("2018-05-02 16-30-00", 2, "Music and Sound Effects Workshop", 18108, 0, "0")
+ 	,	("2018-03-07 14-30-00", 2, "Scene Planning and Blocking Workshop", 18108, 0, "0")
+ 	,	("2018-03-21 14-30-00", 2, "Drawing Workshop", 18108, 0, "0")
+ 	,	("2018-04-04 14-30-00", 2, "Animation Workshop", 36212, 0, "0")
+ 	,	("2018-04-18 14-30-00", 2, "Voice Acting Workshop", 18108, 0, "0")
+ 	,	("2018-05-02 14-30-00", 2, "Music and Sound Effects Workshop", 18108, 0, "0")
 
--- 	,	("2018-05-16 16-30-00", 2, "Trivia", 18108, 0, "0")
+-- 	,	("2018-05-16 14-30-00", 2, "Trivia", 18108, 0, "0")
 ;
 
 -- General Meetings

@@ -14,7 +14,7 @@
 
 	// Removes illegal characters from a string, function both updates $string and returns updated string
 	// $string: refernce to string to remove illegal characters from. 
-	function remove_illegal_char(&$string)
+	function remove_illegal_char($string)
 	{
 		$str_len = strlen($string);
 		$illegal = array(

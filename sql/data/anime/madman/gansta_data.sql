@@ -82,17 +82,17 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Gangsta",
 		 10,
 		 "Land of Confusion",
-		 NULL
+		 null
 		)
 	,	("Gangsta",
 		 11,
 		 "Absence",
-		 NULL
+		 null
 		)
 	,	("Gangsta",
 		 12,
 		 "Odds and Ends",
-		 NULL
+		 null
 		)
 ;
 

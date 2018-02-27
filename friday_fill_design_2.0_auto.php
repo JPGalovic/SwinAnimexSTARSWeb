@@ -58,6 +58,8 @@
 	echo('<tr><td colspan="4" bgcolor="#555555">');
 	echo('<h2 style="color: #A6A6A6; font-size: 18px;">Upcoming Events</h2>');
 	echo('</td></tr>');
+
+	newsletter_event_card($newsletter_date);
 	
 	// In Other News
 	echo('<tr><td colspan="4" bgcolor="#555555">');

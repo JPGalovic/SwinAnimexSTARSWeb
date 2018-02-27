@@ -7,28 +7,28 @@
 			switch($event_row['EVENT_TYPE_DESCRIPTION'])
 			{
 				case 'Screening Session Event':
-					event_card_image($event_row['EVENT_TITLE'], $anime_row['ANIME_TITLE'], NULL, $anime_row['SESSION_TYPE_ID'], $anime_row['SESSION_NUMBER'], TRUE);
+					event_card_image($event_row['EVENT_TITLE'], $anime_row['ANIME_TITLE'], null, $anime_row['SESSION_TYPE_ID'], $anime_row['SESSION_NUMBER'], TRUE);
 					break;
 				case 'Social Episode Event':
-					event_card_image($event_row['EVENT_TITLE'], NULL, NULL, NULL, NULL, TRUE);
+					event_card_image($event_row['EVENT_TITLE'], null, null, null, null, TRUE);
 					break;
 				case 'Workshop Event':
-					event_card_image($event_row['EVENT_TITLE'], NULL, NULL, NULL, NULL, TRUE);
+					event_card_image($event_row['EVENT_TITLE'], null, null, null, null, TRUE);
 					break;
 				case 'General Meeting':
-					event_card_image($event_row['EVENT_TITLE'], NULL, NULL, NULL, NULL, TRUE);
+					event_card_image($event_row['EVENT_TITLE'], null, null, null, null, TRUE);
 					break;
 				case 'Roleplay Event':
-					event_card_image($event_row['EVENT_TITLE'], NULL, NULL, NULL, NULL, TRUE);
+					event_card_image($event_row['EVENT_TITLE'], null, null, null, null, TRUE);
 					break;
 				case 'Tabletop Event':
-					event_card_image($event_row['EVENT_TITLE'], NULL, $game_row['GAME_TITLE'], NULL, NULL, TRUE);
+					event_card_image($event_row['EVENT_TITLE'], null, $game_row['GAME_TITLE'], null, null, TRUE);
 					break;
 				case 'Video Game Event':
-					event_card_image($event_row['EVENT_TITLE'], NULL, $game_row['GAME_TITLE'], NULL, NULL, TRUE);
+					event_card_image($event_row['EVENT_TITLE'], null, $game_row['GAME_TITLE'], null, null, TRUE);
 					break;
 				case 'Other Event':
-					event_card_image($event_row['EVENT_TITLE'], NULL, NULL, NULL, NULL, TRUE);
+					event_card_image($event_row['EVENT_TITLE'], null, null, null, null, TRUE);
 					break;
 			}
 		echo('</td>');

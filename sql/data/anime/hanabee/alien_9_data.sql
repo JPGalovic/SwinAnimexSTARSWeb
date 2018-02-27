@@ -23,22 +23,22 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 		("ALIEN 9",
 		 1,
 		 "9th Elementary Anti-Alien Squad",
-		 NULL
+		 null
 		)
 	,	("ALIEN 9",
 		 2,
 		 "Boredom, Spaceship and Overgrowth",
-		 NULL
+		 null
 		)
 	,	("ALIEN 9",
 		 3,
 		 "Summer Vacation, Borg and Death",
-		 NULL
+		 null
 		)
 	,	("ALIEN 9",
 		 4,
 		 "The End of the Beginning",
-		 NULL
+		 null
 		)
 ;
 
