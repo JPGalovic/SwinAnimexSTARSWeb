@@ -1,5 +1,6 @@
 <?php
 	//Misc Variables and Getters, Verson 1.0.1, FEB18, JPGalovic
+	date_default_timezone_set('Australia/Melbourne');
 
 	//gets current time
 	function current_time()
