@@ -1,15 +1,6 @@
-<style>
-	@font-face {
-		font-family: Nevis;
-		src: url(http://swinanime.net/font/nevis.ttf);
-	}
-	
-	* {
-		font-family: Nevis;
-	}
-</style>
-
 <?php
+	echo('<style>@font-face {font-family: Nevis; src: url(http://swinanime.net/font/nevis.ttf);} * {font-family: Nevis;}</style>');
+
 	// Club Newsletter Auto Designer, Version 1.0.4, FEB18, JPGalovic
 	$newsletter_date = $_GET['date'];
 
@@ -93,15 +84,7 @@
 
 	echo('<tr><td colspan="4" bgcolor="#222222" style="text-align: center;">');
 	echo('<p style="color: #A6A6A6; font-size: 12px;">&copy; Copyright SwinAnime x S.T.A.R.S. 2018</p>');
-	echo('<span>
-				<a href="https://animelab.com"><img src="http://swinanime.net/image/sponsor/animelab.png" alt="AnimeLab" height="35"></a>
-				<a href="http://www.grainandnori.com.au/"><img src="http://swinanime.net/image/sponsor/grain and nori.png" alt="Grain and Nori" height="35"></a>
-				<a href="https://hanabee.com.au/"><img src="http://swinanime.net/image/sponsor/hanabee.png" alt="Hanabee" height="35"></a>
-				<a href="https://madman.com.au/"><img src="http://swinanime.net/image/sponsor/madman.png" alt="Madman" height="35"></a>
-				<a href="https://www.facebook.com/TheResistanceBarandCafe/" ><img src="http://swinanime.net/image/sponsor/resistance bar and cafe.png" alt="Resistance Bar and Cafe" height="35"></a>
-				<a href="https://patrons.rewardle.com/"><img src="http://swinanime.net/image/sponsor/rewardle.png" alt="Rewardle" height="35"></a>
-				<a href="https://sirenvisual.com.au/"><img src="http://swinanime.net/image/sponsor/siren.png" alt="Siren" height="35"></a>
-			</span>');
+	echo('<span><a href="https://animelab.com"><img src="http://swinanime.net/image/sponsor/animelab.png" alt="AnimeLab" height="35"></a><a href="http://www.grainandnori.com.au/"><img src="http://swinanime.net/image/sponsor/grain and nori.png" alt="Grain and Nori" height="35"></a><a href="https://hanabee.com.au/"><img src="http://swinanime.net/image/sponsor/hanabee.png" alt="Hanabee" height="35"></a><a href="https://madman.com.au/"><img src="http://swinanime.net/image/sponsor/madman.png" alt="Madman" height="35"></a><a href="https://www.facebook.com/TheResistanceBarandCafe/" ><img src="http://swinanime.net/image/sponsor/resistance bar and cafe.png" alt="Resistance Bar and Cafe" height="35"></a><a href="https://patrons.rewardle.com/"><img src="http://swinanime.net/image/sponsor/rewardle.png" alt="Rewardle" height="35"></a><a href="https://sirenvisual.com.au/"><img src="http://swinanime.net/image/sponsor/siren.png" alt="Siren" height="35"></a></span>');
 	echo('</td></tr>');
 
 	// Newsletter Footer
