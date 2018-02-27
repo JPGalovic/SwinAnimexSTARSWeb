@@ -44,6 +44,4 @@
 	include('module/site_footer.php');
 
 	echo('</html>');
-
-	include('code_gen/sql_close.php');
 ?>
