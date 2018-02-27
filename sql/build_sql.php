@@ -184,8 +184,18 @@
 		,	'data/newsletter/friday_fill.sql'
 		
 		,	'data/newsletter/article/misc_article.sql'
+		,	'data/newsletter/article/showcase_article.sql'
+		,	'data/newsletter/article/headline_article.sql'
+		//,	'data/newsletter/article/tabletop_article.sql'
+		//,	'data/newsletter/article/workshop_article.sql'
+		//,	'data/newsletter/article/roleplay_article.sql'
 		
 		,	'data/newsletter/linker/misc_linker.sql'
+		,	'data/newsletter/linker/showcase_linker.sql'
+		,	'data/newsletter/linker/headline_linker.sql'
+		//,	'data/newsletter/linker/tabletop_linker.sql'
+		//,	'data/newsletter/linker/workshop_linker.sql'
+		//,	'data/newsletter/linker/roleplay_linker.sql'
 	);
 
 	// Write Data to File

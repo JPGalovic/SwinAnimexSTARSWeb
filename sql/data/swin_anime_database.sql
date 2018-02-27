@@ -9239,7 +9239,33 @@ INSERT INTO NEWS_ARTICLE (ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_IMAGE_URL, ART
 		 "Volunteer to help SwinAnime x S.T.A.R.S",
 		 "J.P. Galovic"
 		)
+;-- Showcase Articles, Verson 1.0.0, FEB18, JPGalovic
+INSERT INTO NEWS_ARTICLE (ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_IMAGE_URL, ARTICLE_TEXT, ARTICLE_LINK, ARTICLE_LINK_TEXT, ARTICLE_AUTHOR) VALUES
+		("2018-02-22 12-00-00",
+		 "SwinAnime x S.T.A.R.S. Showcase",
+		 "http://swinanime.net/image/anime/hacksign/session/01.jpg",
+		 "This Monday starting at 2.30pm SwinAnime X S.T.A.R.S. will be running its first Showcase screening of Semester 1. Showing at 2.30pm is .hack//SIGN a series about a boy name Tsukasa who is trapped in a virtual reality game and begins to discover the secrets of the game. Following that at 3.30pm is the classic anime Dragon Ball Z which shows the adventures of Goku and friends after Goku grows up. Come to TD317 at 2.30pm or 3.30pm on Monday 26th February if you want to see them!",
+		 NULL,
+		 NULL,
+		 "Thomas Tuhan"
+		)
+;-- Headline Articles, Verson 1.0.0, FEB18, JPGalovic
+INSERT INTO NEWS_ARTICLE (ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_IMAGE_URL, ARTICLE_TEXT, ARTICLE_LINK, ARTICLE_LINK_TEXT, ARTICLE_AUTHOR) VALUES
+		("2018-02-22 12-00-00",
+		 "Welcome to all our new Members!",
+		 null,
+		 "First of all I would like to welcome our new members, we have lots in store for you this coming year!<br><br>This is the first of weekly (hopefully) newsletter we will be sending out each Friday, With lots of news and upcoming exciting events!!<br><br>If you have not alredy done so, please join our Discord Server, discord.swinanime.net!",
+		 "http://discord.swinanime.net/",
+		 "Join our Discord Server today!",
+		 "J.P. Galovic"
+		)
 ;-- Misc Article Linker, Links Misc Articles to Newsletters, Version 1.0.0, FEB18, JPGalovic
 INSERT INTO ARTICLE_LINKER(PUBLICATION_DATE, ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_TYPE_ID) VALUES
 		("2018-02-23 12-00-00", "2018-02-22 12-00-00", "SwinAnime x S.T.A.R.S. Wants You", 2)
+;-- Showcase Article Linker, Links Showcase Articles to Newsletters, Version 1.0.0, FEB18, JPGalovic
+INSERT INTO ARTICLE_LINKER(PUBLICATION_DATE, ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_TYPE_ID) VALUES
+		("2018-02-23 12-00-00", "2018-02-22 12-00-00", "SwinAnime x S.T.A.R.S. Showcase", 1)
+;-- Headline Article Linker, Headline Misc Articles to Newsletters, Version 1.0.0, FEB18, JPGalovic
+INSERT INTO ARTICLE_LINKER(PUBLICATION_DATE, ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_TYPE_ID) VALUES
+		("2018-02-23 12-00-00", "2018-02-22 12-00-00", "Welcome to all our new Members!", 0)
 ;

@@ -10,21 +10,32 @@
 </style>
 
 <?php
-	// Club Newsletter Auto Designer, Version 1.0.2, FEB18, JPGalovic
+	// Club Newsletter Auto Designer, Version 1.0.4, FEB18, JPGalovic
 	$newsletter_date = $_GET['date'];
 
 	include('code_gen/include.php');
+
+	$newsletter_data = get_newsletter_data($newsletter_date);
+	if($newsletter_data->num_rows > 0)
+		$newsletter_data_row = $newsletter_data->fetch_assoc();
+	else
+		die('Something Went Wrong!');
 
 	// Club newsletter is built arround a table (confirmed compatable with web-view, gmail, windows 10 mail & android mail)
 	echo('<table width="600px" border="0" cellspacing="0" cellpadding="10" style="border: 1px solid black;"><tbody>');
 
 	echo('<tr><td colspan="4" bgcolor="#222222" style="border-bottom: 1px solid #FFFFFF"><img src="http://swinanime.net/image/logo.png" alt="SwinAnime x S.T.A.R.S." height="20"></td></tr>');
+	
+	// Newsletter Title
+	echo('<tr><td colspan="4" bgcolor="#A6A6A6">');
+		echo('<h1 style="color: #BA0000; font-size: 18px;">'.$newsletter_data_row['PUBLICATION_TITLE'].', Vol. '.$newsletter_data_row['PUBLICATION_VOLUME'].', '.date('jS F Y', strtotime($newsletter_date)).'</h1>');
+	echo('</td></tr>');
 
 	// Headline Article
 	$data = get_newsletter_articles($newsletter_date, "0");
 	while($data_row = $data->fetch_assoc())
 	{
-		echo('<tr><td colspan="4">');
+		echo('<tr><td colspan="4" bgcolor="#A6A6A6">');
 			if($data_row['ARTICLE_IMAGE_URL'] != null)
 				echo('<img src="'.$data_row['ARTICLE_IMAGE_URL'].'" alt="Showcase" width="100%">');
 			echo('<h2 style="color: #555555; font-size: 18px;">'.$data_row['ARTICLE_HEADLINE'].'</h2>');
