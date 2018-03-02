@@ -1,7 +1,7 @@
 <?php
 	echo('<style>@font-face {font-family: Nevis; src: url(http://swinanime.net/font/nevis.ttf);} * {font-family: Nevis;}</style>');
 
-	// Club Newsletter Auto Designer, Version 1.0.4, FEB18, JPGalovic
+	// Club Newsletter Auto Designer, Version 1.0.5, MAR18, JPGalovic
 	$newsletter_date = $_GET['date'];
 
 	include('code_gen/include.php');
@@ -19,6 +19,7 @@
 	
 	// Newsletter Title
 	echo('<tr><td colspan="4" bgcolor="#A6A6A6">');
+	date_default_timezone_set('Australia/ACT');
 		echo('<h1 style="color: #BA0000; font-size: 18px;">'.$newsletter_data_row['PUBLICATION_TITLE'].', Vol. '.$newsletter_data_row['PUBLICATION_VOLUME'].', '.date('jS F Y', strtotime($newsletter_date)).'</h1>');
 	echo('</td></tr>');
 

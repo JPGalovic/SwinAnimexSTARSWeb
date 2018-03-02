@@ -9188,50 +9188,50 @@ CREATE TABLE IF NOT EXISTS ARTICLE_LINKER (
 
 -- Semester 1, 2018
 INSERT INTO NEWSLETTER(PUBLICATION_DATE, PUBLICATION_TITLE, PUBLICATION_VOLUME) VALUES
-		("2018-02-23 12-00-00", "Friday Fill", 1)
-	,	("2018-03-02 12-00-00", "Friday Fill", 2)
-	,	("2018-03-09 12-00-00", "Friday Fill", 3)
-	,	("2018-03-16 12-00-00", "Friday Fill", 4)
-	,	("2018-03-23 12-00-00", "Friday Fill", 5)
-	,	("2018-03-30 12-00-00", "Friday Fill", 6)
-	,	("2018-04-06 12-00-00", "Friday Fill", 7)
-	,	("2018-04-13 12-00-00", "Friday Fill", 8)
-	,	("2018-04-20 12-00-00", "Friday Fill", 9)
-	,	("2018-04-27 12-00-00", "Friday Fill", 10)
-	,	("2018-05-04 12-00-00", "Friday Fill", 11)
-	,	("2018-05-11 12-00-00", "Friday Fill", 12)
-	,	("2018-05-18 12-00-00", "Friday Fill", 13)
-	,	("2018-05-25 12-00-00", "Friday Fill", 14)
+		("2018-02-23 12:00:00", "Friday Fill", 1)
+	,	("2018-03-02 12:00:00", "Friday Fill", 2)
+	,	("2018-03-09 12:00:00", "Friday Fill", 3)
+	,	("2018-03-16 12:00:00", "Friday Fill", 4)
+	,	("2018-03-23 12:00:00", "Friday Fill", 5)
+	,	("2018-03-30 12:00:00", "Friday Fill", 6)
+	,	("2018-04-06 12:00:00", "Friday Fill", 7)
+	,	("2018-04-13 12:00:00", "Friday Fill", 8)
+	,	("2018-04-20 12:00:00", "Friday Fill", 9)
+	,	("2018-04-27 12:00:00", "Friday Fill", 10)
+	,	("2018-05-04 12:00:00", "Friday Fill", 11)
+	,	("2018-05-11 12:00:00", "Friday Fill", 12)
+	,	("2018-05-18 12:00:00", "Friday Fill", 13)
+	,	("2018-05-25 12:00:00", "Friday Fill", 14)
 ;
 
 -- Winter Semester, 2018
 INSERT INTO NEWSLETTER(PUBLICATION_DATE, PUBLICATION_TITLE, PUBLICATION_VOLUME) VALUES
-		("2018-06-22 12-00-00", "Friday Fill", 15)
-	,	("2018-06-29 12-00-00", "Friday Fill", 16)
-	,	("2018-07-06 12-00-00", "Friday Fill", 17)
-	,	("2018-07-13 12-00-00", "Friday Fill", 18)
-	,	("2018-07-20 12-00-00", "Friday Fill", 19)
-	,	("2018-07-27 12-00-00", "Friday Fill", 20)
+		("2018-06-22 12:00:00", "Friday Fill", 15)
+	,	("2018-06-29 12:00:00", "Friday Fill", 16)
+	,	("2018-07-06 12:00:00", "Friday Fill", 17)
+	,	("2018-07-13 12:00:00", "Friday Fill", 18)
+	,	("2018-07-20 12:00:00", "Friday Fill", 19)
+	,	("2018-07-27 12:00:00", "Friday Fill", 20)
 ;
 
 -- Semester 2, 2018
 INSERT INTO NEWSLETTER(PUBLICATION_DATE, PUBLICATION_TITLE, PUBLICATION_VOLUME) VALUES
-		("2018-08-03 12-00-00", "Friday Fill", 21)
-	,	("2018-08-10 12-00-00", "Friday Fill", 22)
-	,	("2018-08-17 12-00-00", "Friday Fill", 23)
-	,	("2018-08-24 12-00-00", "Friday Fill", 24)
-	,	("2018-08-31 12-00-00", "Friday Fill", 25)
-	,	("2018-09-07 12-00-00", "Friday Fill", 26)
-	,	("2018-09-14 12-00-00", "Friday Fill", 27)
-	,	("2018-09-21 12-00-00", "Friday Fill", 28)
-	,	("2018-09-28 12-00-00", "Friday Fill", 29)
-	,	("2018-10-05 12-00-00", "Friday Fill", 30)
-	,	("2018-10-12 12-00-00", "Friday Fill", 31)
-	,	("2018-10-18 12-00-00", "Friday Fill", 32)
-	,	("2018-10-26 12-00-00", "Friday Fill", 33)
+		("2018-08-03 12:00:00", "Friday Fill", 21)
+	,	("2018-08-10 12:00:00", "Friday Fill", 22)
+	,	("2018-08-17 12:00:00", "Friday Fill", 23)
+	,	("2018-08-24 12:00:00", "Friday Fill", 24)
+	,	("2018-08-31 12:00:00", "Friday Fill", 25)
+	,	("2018-09-07 12:00:00", "Friday Fill", 26)
+	,	("2018-09-14 12:00:00", "Friday Fill", 27)
+	,	("2018-09-21 12:00:00", "Friday Fill", 28)
+	,	("2018-09-28 12:00:00", "Friday Fill", 29)
+	,	("2018-10-05 12:00:00", "Friday Fill", 30)
+	,	("2018-10-12 12:00:00", "Friday Fill", 31)
+	,	("2018-10-18 12:00:00", "Friday Fill", 32)
+	,	("2018-10-26 12:00:00", "Friday Fill", 33)
 ;-- Misc Articles (commonly used or plugged), Verson 1.0.0, FEB18, JPGalovic
 INSERT INTO NEWS_ARTICLE (ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_IMAGE_URL, ARTICLE_TEXT, ARTICLE_LINK, ARTICLE_LINK_TEXT, ARTICLE_AUTHOR) VALUES
-		("2018-02-22 12-00-00",
+		("2018-02-22 12:00:00",
 		 "SwinAnime x S.T.A.R.S. Wants You",
 		 "http://swinanime.net/image/news/volunteer_poster.png",
 		 "We are always looking for volunteers to help us run and plan our events, as such if you would like to help us to run or plan our events, simply visit volunteer.swinanime.net and submit your interest today!",
@@ -9241,7 +9241,7 @@ INSERT INTO NEWS_ARTICLE (ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_IMAGE_URL, ART
 		)
 ;-- Showcase Articles, Verson 1.0.0, FEB18, JPGalovic
 INSERT INTO NEWS_ARTICLE (ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_IMAGE_URL, ARTICLE_TEXT, ARTICLE_LINK, ARTICLE_LINK_TEXT, ARTICLE_AUTHOR) VALUES
-		("2018-02-22 12-00-00",
+		("2018-02-22 12:00:00",
 		 "SwinAnime x S.T.A.R.S. Showcase",
 		 "http://swinanime.net/image/anime/hacksign/session/01.jpg",
 		 "This Monday starting at 2.30pm SwinAnime X S.T.A.R.S. will be running its first Showcase screening of Semester 1. Showing at 2.30pm is .hack//SIGN a series about a boy name Tsukasa who is trapped in a virtual reality game and begins to discover the secrets of the game. Following that at 3.30pm is the classic anime Dragon Ball Z which shows the adventures of Goku and friends after Goku grows up. Come to TD317 at 2.30pm or 3.30pm on Monday 26th February if you want to see them!",
@@ -9249,9 +9249,19 @@ INSERT INTO NEWS_ARTICLE (ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_IMAGE_URL, ART
 		 NULL,
 		 "Thomas Tuhan"
 		)
+;-- Showcase Articles, Verson 1.0.0, MAR18, JPGalovic
+INSERT INTO NEWS_ARTICLE (ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_IMAGE_URL, ARTICLE_TEXT, ARTICLE_LINK, ARTICLE_LINK_TEXT, ARTICLE_AUTHOR) VALUES
+		("2018-03-02 12:00:00",
+		 "Screening Sessions Week 2!",
+		 "http://www.swinanime.net/image/anime/muv-luv%20alternative%20total%20eclipse/session/02.jpg",
+		 "This Friday March 9th starting from 11.30am SwinAnime X S.T.A.R.S. will be running its week 2 screening. Starting off the screening at 11.30am and going till 4.30pm will be Muv-Luv Alternative Total Eclipse an anime set on an alternate version of Earth where humanity has been fighting against an alien race known as the BETA since 1967.<br><br>Following that at 4.30pm and going untill 6.30pm will be Canaan which follows the adventures of the mercenary Canaan, her dealings with her friend Maria and her clashes with her rival and enemy Alphard.<br><br>Finishing up the screenings for the day, begining at 7.30pm is Danganronpa an anime which follows the adventures of a group of students at Hope's Peak Academy an elite private school whose graduates are said to have the world at their fingertips. If you wish to watch any of these anime please attend the screenings on Friday March 9th.",
+		 NULL,
+		 NULL,
+		 "Thomas Tuhan"
+		)
 ;-- Headline Articles, Verson 1.0.0, FEB18, JPGalovic
 INSERT INTO NEWS_ARTICLE (ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_IMAGE_URL, ARTICLE_TEXT, ARTICLE_LINK, ARTICLE_LINK_TEXT, ARTICLE_AUTHOR) VALUES
-		("2018-02-22 12-00-00",
+		("2018-02-22 12:00:00",
 		 "Welcome to all our new Members!",
 		 null,
 		 "First of all I would like to welcome our new members, we have lots in store for you this coming year!<br><br>This is the first of weekly (hopefully) newsletter we will be sending out each Friday, With lots of news and upcoming exciting events!!<br><br>If you have not alredy done so, please join our Discord Server, discord.swinanime.net!",
@@ -9259,13 +9269,28 @@ INSERT INTO NEWS_ARTICLE (ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_IMAGE_URL, ART
 		 "Join our Discord Server today!",
 		 "J.P. Galovic"
 		)
-;-- Misc Article Linker, Links Misc Articles to Newsletters, Version 1.0.0, FEB18, JPGalovic
+	,	("2018-03-02 12:00:00",
+		 "What a week we have had!",
+		 null,
+		 "To all our new members welcome, and to those returning, welcome back. we have had a strong start to the year! Our summer program was sucessful, holding screenings, showcases and various social events. Club's day was definitly a highlight of the week.<br><br>If you have not alredy done so, please join our Discord Server, discord.swinanime.net!",
+		 "http://discord.swinanime.net/",
+		 "Join our Discord Server today!",
+		 "J.P. Galovic"
+		)
+;
+
+-- Misc Article Linker, Links Misc Articles to Newsletters, Version 1.0.0, FEB18, JPGalovic
 INSERT INTO ARTICLE_LINKER(PUBLICATION_DATE, ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_TYPE_ID) VALUES
-		("2018-02-23 12-00-00", "2018-02-22 12-00-00", "SwinAnime x S.T.A.R.S. Wants You", 2)
+		("2018-02-23 12:00:00", "2018-02-22 12:00:00", "SwinAnime x S.T.A.R.S. Wants You", 2)
+	,	("2018-03-02 12:00:00", "2018-02-22 12:00:00", "SwinAnime x S.T.A.R.S. Wants You", 2)
 ;-- Showcase Article Linker, Links Showcase Articles to Newsletters, Version 1.0.0, FEB18, JPGalovic
 INSERT INTO ARTICLE_LINKER(PUBLICATION_DATE, ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_TYPE_ID) VALUES
-		("2018-02-23 12-00-00", "2018-02-22 12-00-00", "SwinAnime x S.T.A.R.S. Showcase", 1)
+		("2018-02-23 12:00:00", "2018-02-22 12:00:00", "SwinAnime x S.T.A.R.S. Showcase", 1)
+;-- Screening Article Linker, Links Screening Articles to Newsletters, Version 1.0.0, MAR18, JPGalovic
+INSERT INTO ARTICLE_LINKER(PUBLICATION_DATE, ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_TYPE_ID) VALUES
+		("2018-03-02 12:00:00", "2018-03-02 12:00:00", "Screening Sessions Week 2!", 1)
 ;-- Headline Article Linker, Headline Misc Articles to Newsletters, Version 1.0.0, FEB18, JPGalovic
 INSERT INTO ARTICLE_LINKER(PUBLICATION_DATE, ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_TYPE_ID) VALUES
-		("2018-02-23 12-00-00", "2018-02-22 12-00-00", "Welcome to all our new Members!", 0)
+		("2018-02-23 12:00:00", "2018-02-22 12:00:00", "Welcome to all our new Members!", 0)
+	,	("2018-03-02 12:00:00", "2018-03-02 12:00:00", "What a week we have had!", 0)
 ;
