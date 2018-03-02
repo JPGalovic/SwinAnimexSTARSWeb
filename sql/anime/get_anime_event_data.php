@@ -6,7 +6,6 @@
 	{
 		$error_text = "Event time not set.";
 		$error_no = 2001;
-		include('code_gen/error_report.php');
 	}
 	else
 	{
@@ -15,7 +14,6 @@
 		{
 			$error_text = $DB->error + $get_anime_event_query;
 			$error_no = $DB->error_no;
-			include('code_gen/error_report.php');
 		}
 	}
 ?>

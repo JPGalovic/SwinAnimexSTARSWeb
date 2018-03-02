@@ -1,5 +1,5 @@
 <?php
-	// Functions for Common elements of Event Cards, Version 1.0.6, MAR18, JPGalovic
+	// Functions for Common elements of Event Cards, Version 1.0.7, MAR18, JPGalovic
 
 	// Event Card Commons
 
@@ -84,7 +84,7 @@
 	}
 	
 	// prints image from given settings for event card
-	function event_card_image($event_title, $anime_title, $game_title, $session_type, $session_number, $full_url = false, $width = null)
+	function event_card_image($event_title, $anime_title = null, $game_title = null, $session_type = null, $session_number = null, $full_url = false, $width = null)
 	{
 		echo('<img src="');
 			if($full_url)
@@ -248,6 +248,56 @@
 			$first_link = anime_event_card_volume_links($anime_event_row['ANIME_TITLE'], $first_link);
 			$first_link = event_card_end_links($event_data_row['EVENT_TIME'], $event_data_row['EVENT_TYPE_DESCRIPTION'], $event_data_row['EVENT_FACEBOOK_ID'], $event_data_row['EVENT_UNIONE_URL'], $first_link);
 		
+		echo('</section>');
+	}
+	
+	// Game Event Gard (for all game events)
+	function game_event_card($event_dete, $event_data_row)
+	{
+		$game_event_data = get_game_event_data($event_dete);
+		if($game_event_data->num_rows > 0)
+		{
+			$game_event_row = $game_event_data->fetch_assoc();
+			$game_data = get_game_data($game_event_row['GAME_TITLE']);
+			if($game_data->num_rows > 0)
+				$game_row = $game_data->fetch_assoc();
+		}
+		
+		// Build Event Card
+		echo('<section class="quater" id="event_card">');
+			// Image
+			event_card_image($event_data_row['EVENT_TITLE']);
+		
+			// Core Event Info
+			echo('<h4>'.$event_data_row['EVENT_TITLE']);
+			if($event_data_row['EVENT_SUBTITLE'] != null)
+			{
+				echo(' - '.$event_data_row['EVENT_SUBTITLE']);
+				if(isset($game_event_row))
+					echo(' ft. '.$game_event_row['GAME_TITLE']);	
+			}
+			else
+				if(isset($game_event_row))
+					echo(' ft. '.$game_event_row['GAME_TITLE']);
+			echo('</h4>');
+		
+			date_default_timezone_set('Australia/ACT');
+			echo('<p>'.date('l jS F Y - g:ia', strtotime($event_data_row['EVENT_TIME'])).'</p>');
+			event_card_location($event_data_row['CAMPUS'], $event_data_row['ROOM'], $event_data_row['ADDRESS'], $event_data_row['LAT'], $event_data_row['LNG']);
+		
+			// Descriptions
+			$event_details_data = get_event_details($event_data_row['EVENT_TITLE']);
+			if($event_details_data->num_rows > 0)
+				$event_details_row = $event_details_data->fetch_assoc();
+			if(isset($event_details_row))
+				echo('<p>'.$event_details_row['EVENT_DESCRIPTION'].'</p>');
+
+			if(isset($game_data_row))
+				echo('<p>'.$game_data_row['GAME_DESCIRPTION'].'</p>');	
+		
+			// Links
+			$first_link = true;
+			$first_link = event_card_end_links($event_data_row['EVENT_TIME'], $event_data_row['EVENT_TYPE_DESCRIPTION'], $event_data_row['EVENT_FACEBOOK_ID'], $event_data_row['EVENT_UNIONE_URL'], $first_link);
 		echo('</section>');
 	}
 ?>

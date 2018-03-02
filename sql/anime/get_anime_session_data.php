@@ -6,19 +6,16 @@
 	{
 		$error_text = "Anime Title not set.";
 		$error_no = 2002;
-		include('code_gen/error_report.php');
 	}
 	else if(!isset($session_type_id))
 	{
 		$error_text = "Anime Session Type ID not set.";
 		$error_no = 2003;
-		include('code_gen/error_report.php');
 	}
 	else if(!isset($session_number))
 	{
 		$error_text = "Anime Session Number not set.";
 		$error_no = 2004;
-		include('code_gen/error_report.php');
 	}
 	else
 	{
@@ -31,7 +28,6 @@
 		{
 			$error_text = $DB->error + $get_anime_session_data_previous_query;
 			$error_no = $DB->error_no;
-			include('code_gen/error_report.php');
 		}
 		
 		while($data_row = $get_anime_session_data_previous_data->fetch_assoc())
@@ -44,7 +40,6 @@
 		{
 			$error_text = $DB->error + $get_anime_session_data_query;
 			$error_no = $DB->error_no;
-			include('code_gen/error_report.php');
 		}
 		
 		while($data_row = $get_anime_session_data->fetch_assoc())

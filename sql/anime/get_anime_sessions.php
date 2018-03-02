@@ -9,7 +9,6 @@
 		{
 			$error_text = $DB->error + $get_anime_sessions_query;
 			$error_no = $DB->error_no;
-			include('code_gen/error_report.php');
 		}
 	}
 ?>
