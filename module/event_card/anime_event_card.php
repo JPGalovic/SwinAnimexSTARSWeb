@@ -51,6 +51,7 @@
 
 							//Core Event Info
 							echo('<h4>'.$event_row['EVENT_TITLE'].' - '.$anime_event_row['ANIME_TITLE'].'</h4>');
+							date_default_timezone_set('Australia/ACT');
 							echo('<p>'.date('l jS F Y - g:ia', strtotime($event_row['EVENT_TIME'])).'</p>');
 							event_card_location($event_row['CAMPUS'], $event_row['ROOM'], $event_row['ADDRESS'], $event_row['LAT'], $event_row['LNG']);
 
