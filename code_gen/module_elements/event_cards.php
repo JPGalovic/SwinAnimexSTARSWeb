@@ -1,6 +1,8 @@
 <?php
 	// Functions for Common elements of Event Cards, Version 1.0.6, MAR18, JPGalovic
 
+	// Event Card Commons
+
 	// Prints out location based on values of received data.
 	// event_card_location($event_row['CAMPUS'], $event_row['ROOM'], $event_row['ADDRESS'], $event_row['LAT'], $event_row['LNG']);
 	function event_card_location($campus, $room, $address, $lat, $lng)
@@ -82,7 +84,6 @@
 	}
 	
 	// prints image from given settings for event card
-	// 
 	function event_card_image($event_title, $anime_title, $game_title, $session_type, $session_number, $full_url = false, $width = null)
 	{
 		echo('<img src="');
@@ -95,6 +96,8 @@
 		else
 			echo('image/event/'.remove_illegal_char(strtolower($event_title)).'.png" alt="'.$event_title.'" width="'.$width.'">');
 	}
+
+	// Minimal Event Cards
 
 	// Prints Event Card for Newsletter
 	function newsletter_event_card($newsletter_date)
@@ -193,6 +196,9 @@
 			unset($game_data_row);
 		}
 	}
+
+	
+	// Event Table Event Cards
 
 	// Prints Event Card for Anime Events
 	function anime_event_card($event_date, $event_data_row, &$used_titles, $ignor_title_repeat = false)
