@@ -14,4 +14,6 @@
 		date_default_timezone_set('Australia/ACT');
 		return date('Y-m-d H:i:s', strtotime('-2 hours', time()));
 	}
+
+	$time = current_time();
 ?>

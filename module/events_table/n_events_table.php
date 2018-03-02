@@ -36,7 +36,7 @@
 				switch($event_row['EVENT_TYPE_DESCRIPTION'])
 				{
 					case 'Screening Session Event':
-						include('module/event_card/anime_event_card.php');
+						anime_event_card($event_row['EVENT_TIME'], $event_row, $used_titles);
 						break;
 					case 'Social Episode Event':
 						include('module/event_card/social_event_card.php');

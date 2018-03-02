@@ -1,5 +1,5 @@
 <?php
-	// Functions for Common elements of Event Cards, Version 1.0.5, FEB18, JPGalovic
+	// Functions for Common elements of Event Cards, Version 1.0.6, MAR18, JPGalovic
 
 	// Prints out location based on values of received data.
 	// event_card_location($event_row['CAMPUS'], $event_row['ROOM'], $event_row['ADDRESS'], $event_row['LAT'], $event_row['LNG']);
@@ -192,5 +192,56 @@
 			unset($game_data);
 			unset($game_data_row);
 		}
+	}
+
+	// Prints Event Card for Anime Events
+	function anime_event_card($event_date, $event_data_row, &$used_titles, $ignor_title_repeat = false)
+	{
+		// get anime data
+		$anime_event_data = get_anime_event_data($event_date);
+		if($anime_event_data->num_rows > 0)
+			$anime_event_row = $anime_event_data->fetch_assoc();
+		else
+			return false; // event date does not have anime associated with it.
+		
+		// filter out used titles
+		if(!$ignor_title_repeat)
+		{
+			if(in_array($anime_event_row['ANIME_TITLE'], $used_titles))
+				return false;
+			else
+				array_push($used_titles, $anime_event_row['ANIME_TITLE']); // title not used, add to array of used titles and continue.
+		}
+		
+		$anime_data = get_anime_data($anime_event_row['ANIME_TITLE']);
+		if($anime_data->num_rows > 0)
+			$anime_row = $anime_data->fetch_assoc();
+		
+		// Build Event Card
+		echo('<section class="quater" id="event_card">');
+			// Image
+			event_card_image($event_data_row['EVENT_TITLE'], $anime_event_row['ANIME_TITLE'], null, $anime_event_row['SESSION_TYPE_ID'], $anime_event_row['SESSION_NUMBER']);
+			
+			//Core Event Info
+			echo('<h4>'.$event_data_row['EVENT_TITLE'].' - '.$anime_event_row['ANIME_TITLE'].'</h4>');
+			date_default_timezone_set('Australia/ACT');
+			echo('<p>'.date('l jS F Y - g:ia', strtotime($event_data_row['EVENT_TIME'])).'</p>');
+			event_card_location($event_data_row['CAMPUS'], $event_data_row['ROOM'], $event_data_row['ADDRESS'], $event_data_row['LAT'], $event_data_row['LNG']);
+
+			//Anime Specific Details
+			$session_number = $anime_event_row['SESSION_NUMBER'];
+			$session_type = $anime_event_row['SESSION_TYPE_ID'];
+			$anime_clasification = get_anime_session_classification($anime_event_row['ANIME_TITLE'], $anime_event_row['SESSION_NUMBER'], $anime_event_row['SESSION_TYPE_ID']);
+			echo('<img src="image/classification/'.$anime_clasification.'.png" alt="'.$anime_clasification.'" id="classification"/>');
+
+			echo('<p>'.$anime_row['ANIME_DESCRIPTION'].'</p>');
+			echo('<p>'.$anime_row['COPYRIGHT'].'</p>');
+			
+			// Links
+			$first_link = true;
+			$first_link = anime_event_card_volume_links($anime_event_row['ANIME_TITLE'], $first_link);
+			$first_link = event_card_end_links($event_data_row['EVENT_TIME'], $event_data_row['EVENT_TYPE_DESCRIPTION'], $event_data_row['EVENT_FACEBOOK_ID'], $event_data_row['EVENT_UNIONE_URL'], $first_link);
+		
+		echo('</section>');
 	}
 ?>
