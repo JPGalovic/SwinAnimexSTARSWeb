@@ -8,30 +8,23 @@
 		{
 			$event_row = $get_event_data->fetch_assoc(); // Base Event Data
 			
-			include('sql/events/get_anime_event_data.php');
+			$anime_event_data = get_anime_event_data($event_time);
+			if($anime_event_data->num_rows > 0)
+				$anime_event_row = $anime_event_data->fetch_assoc();
+			
+			$anime_data = get_anime_data($anime_event_row['ANIME_TITLE']);
+			if($anime_data->num_rows > 0)
+				$anime_row = $anime_data->fetch_assoc();
+			
+			$anime_title = $anime_event_row['ANIME_TITLE'];
+					
 
-			if($get_anime_event_ok)
-			{
-				if(!$get_anime_event_data->num_rows == 0) // No Anime Event Data what to do??
-				{
-					$anime_event_row = $get_anime_event_data->fetch_assoc(); // Anime Event Data
-					$anime_title = $anime_event_row['ANIME_TITLE'];
-					
-					include('sql/events/get_anime_event_page_data.php');
-					
-					if($get_anime_event_page_ok)
-					{
-						$anime_row = $get_anime_event_page_data->fetch_assoc(); // Anime Data
-						
-						//Construct Page
-						include('module/anime_event/event_header.php');
-						include('module/anime_event/event_details.php');
-						include('module/anime_event/volume_plug.php');
-						include('module/anime_event/what_you_missed.php');
-						event_dispay_table(4);
-					}
-				}
-			}
+			//Construct Page
+			include('module/anime_event/event_header.php');
+			include('module/anime_event/event_details.php');
+			include('module/anime_event/volume_plug.php');
+			include('module/anime_event/what_you_missed.php');
+			event_dispay_table(4);
 		}
 	}
 ?>
