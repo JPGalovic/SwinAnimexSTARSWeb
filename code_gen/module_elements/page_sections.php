@@ -6,7 +6,11 @@
 
 
 	// Events display table
-	function event_dispay_table($n_events = -1, $anime_title = null, $page_event_time = null)
+	// $n_events, number of events to show, default -1, shows all upcoming events.
+	// $anime_title, anime_title to exclude when showing cards, used on detailed display for anime events
+	// $begining_date, begining date to seartch from
+	// $show_all_events, flag used to disable showing of all events.
+	function event_dispay_table($n_events = -1, $anime_title = null, $begining_date = null, $show_all_events = false)
 	{
 		// Determine weather to show repeating titles.
 		$display_repeat_titles = !($n_events < 0);
@@ -18,8 +22,8 @@
 			$used_titles = array($anime_title);
 		
 		// Get First Event
-		if($page_event_time != null)
-			$event_data = get_event_data(null, $page_event_time);
+		if($begining_date != null)
+			$event_data = get_event_data(null, $begining_date);
 		else
 			$event_data = get_event_data();
 		
@@ -57,7 +61,7 @@
 					switch($event_row['EVENT_TYPE_DESCRIPTION'])
 					{
 						case 'Screening Session Event':
-							anime_event_card($event_row['EVENT_TIME'], $event_row, $used_titles, $display_repeat_titles);
+							anime_event_card($event_row['EVENT_TIME'], $event_row, $used_titles, $show_all_events);
 							break;
 						case 'Social Episode Event':
 						case 'Workshop Event':
@@ -73,9 +77,9 @@
 					}
 					
 					if($past_events)
-						$event_data = get_past_event_data($page_event_time, $current_event_time);
+						$event_data = get_past_event_data($begining_date, $current_event_time);
 					else
-						$event_data = get_event_data($page_event_time, $current_event_time);
+						$event_data = get_event_data($begining_date, $current_event_time);
 					
 					$n_events--;
 					
