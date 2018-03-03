@@ -18,7 +18,11 @@
 			$used_titles = array($anime_title);
 		
 		// Get First Event
-		$event_data = get_event_data();
+		if($page_event_time != null)
+			$event_data = get_event_data(null, $page_event_time);
+		else
+			$event_data = get_event_data();
+		
 		if($event_data->num_rows > 0)
 		{
 			$event_row = $event_data->fetch_assoc();
@@ -56,21 +60,15 @@
 							anime_event_card($event_row['EVENT_TIME'], $event_row, $used_titles, $display_repeat_titles);
 							break;
 						case 'Social Episode Event':
-							include('module/event_card/social_event_card.php');
-							break;
 						case 'Workshop Event':
-							include('module/event_card/workshop_event_card.php');
-							break;
 						case 'General Meeting':
-							include('module/event_card/general_meeting_card.php');
+						case 'Other Event':
+							general_event_card($event_row['EVENT_TIME'], $event_row);
 							break;
 						case 'Roleplay Event':
 						case 'Tabletop Event':
 						case 'Video Game Event':
 							game_event_card($event_row['EVENT_TIME'], $event_row);
-							break;
-						case 'Other Event':
-							include('module/event_card/other_event_card.php');
 							break;
 					}
 					

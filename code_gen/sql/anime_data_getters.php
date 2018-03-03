@@ -1,5 +1,5 @@
 <?php
-	// SQL getters for Anime Data, Version 1.0.5, FEB18, JPGalovic
+	// SQL getters for Anime Data, Version 1.0.6, MAR18, JPGalovic
 	
 	// Gets Anime Data for a given Event
 	// $event_time = datetime of event
@@ -114,5 +114,13 @@
 				return $result_row['CLASSIFICATION'];
 				break;
 		}
+	}
+
+	// Gets volumes for a given anime
+	// Parameters $anime_title, title of the anime, $volume_type_id, volume type of anime
+	function get_anime_volume_data($anime_title, $volume_type_id)
+	{
+		$query = 'SELECT ANIME_VOLUME.VOLUME_TYPE_ID, ANIME_VOLUME.VOLUME_NUMBER, ANIME_VOLUME.NUMBER_OF_EPISODES, ANIME_VOLUME.CLASSIFICATION, ANIME_VOLUME.PURCHACE_URL, ANIME_VOLUME_TYPE.VOLUME_TYPE_DESCRIPTION FROM ANIME_VOLUME LEFT JOIN ANIME_VOLUME_TYPE ON ANIME_VOLUME.VOLUME_TYPE_ID = ANIME_VOLUME_TYPE.VOLUME_TYPE_ID WHERE ANIME_TITLE = "'.$anime_title.'" AND ANIME_VOLUME.VOLUME_TYPE_ID = "'.$volume_type_id.'" ORDER BY ANIME_VOLUME.VOLUME_NUMBER';
+		return run_query($query);
 	}
 ?>

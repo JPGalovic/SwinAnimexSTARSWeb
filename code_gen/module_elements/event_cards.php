@@ -97,6 +97,27 @@
 			echo('image/event/'.remove_illegal_char(strtolower($event_title)).'.png" alt="'.$event_title.'" width="'.$width.'">');
 	}
 
+	// Prints Event Details based on "Event Title"
+	// event_details($event_data_row['EVENT_TITLE']);
+	// event_details($event_data_row['EVENT_TITLE'], false, false);
+	// event_details($event_data_row['EVENT_TITLE'], false);
+	// event_details($event_data_row['EVENT_TITLE'], true, false);
+	function event_details($event_title, $show_meetup = true, $show_tickets = true)
+	{
+		$event_details_data = get_event_details($event_title);
+		if($event_details_data->num_rows > 0)
+			$event_details_row = $event_details_data->fetch_assoc();
+		if(isset($event_details_row))
+		{
+			if($event_details_row['EVENT_DESCRIPTION'] != null)
+				echo('<p>'.$event_details_row['EVENT_DESCRIPTION'].'</p>');
+			if($event_details_row['MEETUP_INSTRUCTIONS'] != null && $show_meetup)
+				echo('<p>'.$event_details_row['MEETUP_INSTRUCTIONS'].'</p>');
+			if($event_details_row['TICKETS'] != null && $show_tickets)
+				echo('<p>'.$event_details_row['TICKETS'].'</p>');
+		}
+	}
+
 	// Minimal Event Cards
 
 	// Prints Event Card for Newsletter
@@ -286,14 +307,33 @@
 			event_card_location($event_data_row['CAMPUS'], $event_data_row['ROOM'], $event_data_row['ADDRESS'], $event_data_row['LAT'], $event_data_row['LNG']);
 		
 			// Descriptions
-			$event_details_data = get_event_details($event_data_row['EVENT_TITLE']);
-			if($event_details_data->num_rows > 0)
-				$event_details_row = $event_details_data->fetch_assoc();
-			if(isset($event_details_row))
-				echo('<p>'.$event_details_row['EVENT_DESCRIPTION'].'</p>');
+			event_details($event_data_row['EVENT_TITLE'], false, false);
 
 			if(isset($game_data_row))
 				echo('<p>'.$game_data_row['GAME_DESCIRPTION'].'</p>');	
+		
+			// Links
+			$first_link = true;
+			$first_link = event_card_end_links($event_data_row['EVENT_TIME'], $event_data_row['EVENT_TYPE_DESCRIPTION'], $event_data_row['EVENT_FACEBOOK_ID'], $event_data_row['EVENT_UNIONE_URL'], $first_link);
+		echo('</section>');
+	}
+
+	// General Event Card
+	function general_event_card($event_dete, $event_data_row)
+	{
+		echo('<section class="quater" id="event_card">');
+			// Image
+			event_card_image($event_data_row['EVENT_TITLE']);
+		
+			// Core Event Info
+			echo('<h4>'.$event_data_row['EVENT_TITLE'].'</h4>');
+		
+			date_default_timezone_set('Australia/ACT');
+			echo('<p>'.date('l jS F Y - g:ia', strtotime($event_data_row['EVENT_TIME'])).'</p>');
+			event_card_location($event_data_row['CAMPUS'], $event_data_row['ROOM'], $event_data_row['ADDRESS'], $event_data_row['LAT'], $event_data_row['LNG']);
+		
+			// Descriptions
+			event_details($event_data_row['EVENT_TITLE']);
 		
 			// Links
 			$first_link = true;

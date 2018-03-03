@@ -1,5 +1,5 @@
 <?php
-	// SQL getters for Event Data, Version 1.0.1, MAR18, JPGalovic
+	// SQL getters for Event Data, Version 1.0.4, MAR18, JPGalovic
 
 	// Gets core event data based on a given date time.
 	// this_event_time: datetime, used when on a page for a specific event. null by default
@@ -38,6 +38,21 @@
 		else // Else, call to get next event.
 			$query = 'SELECT EVENT_DATA.EVENT_TIME, EVENT_TYPE.EVENT_TYPE_DESCRIPTION, EVENT_DATA.EVENT_TITLE, EVENT_DATA.EVENT_SUBTITLE, EVENT_LOCATION.CAMPUS, EVENT_LOCATION.ROOM, EVENT_LOCATION.ADDRESS, EVENT_LOCATION.LAT, EVENT_LOCATION.LNG, EVENT_LOCATION.ZOOM, EVENT_DATA.EVENT_FACEBOOK_ID, EVENT_DATA.EVENT_UNIONE_URL FROM EVENT_DATA LEFT JOIN EVENT_TYPE ON EVENT_DATA.EVENT_TYPE_ID = EVENT_TYPE.EVENT_TYPE_ID LEFT JOIN EVENT_LOCATION ON EVENT_DATA.EVENT_LOCATION = EVENT_LOCATION.LOCATION_ID WHERE EVENT_DATA.EVENT_TIME < "'.$current_event_time.'" LIMIT 1';
 		
+		return run_query($query);
+	}
+
+	// Gets Details of Event based on the event title.
+	// Parameters $event_title, title of the event
+	function get_event_details($event_title)
+	{
+		$query = 'SELECT EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, TICKETS FROM EVENT_DETAILS WHERE EVENT_TITLE = "'.$event_title.'"';
+		return run_query($query);	
+	}
+
+	// Gets Location Data based on Location ID
+	function get_location_data($location_id)
+	{
+		$query = 'SELECT CAMPUS, ROOM, ADDRESS, LAT, LNG, ZOOM FROM EVENT_LOCATION WHERE LOCATION_ID = "'.$location_id.'"';
 		return run_query($query);
 	}
 ?>
