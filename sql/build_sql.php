@@ -100,7 +100,7 @@
 		,	'data/anime/madman/puella_magi_madoka_magica_data.sql'
 	//	,	'data/anime/madman/punchline_data.sql'
 	//	,	'data/anime/madman/riddle_story_of_devil_data.sql'
-	//	,	'data/anime/madman/sailor_moon_data.sql'
+		,	'data/anime/madman/sailor_moon_data.sql'
 		,	'data/anime/madman/samurai_jack_data.sql'
 		,	'data/anime/madman/samurai_warriors_data.sql'
 	//	,	'data/anime/madman/scar-red_riders_xechs_data.sql'
