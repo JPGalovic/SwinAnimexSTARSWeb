@@ -47,7 +47,7 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 	,	("2018-03-05 15-30-00", "No-Rin", 3, 1)
 
  	,	("2018-03-12 14-30-00", "Oreimo", 3, 1)
-	,	("2018-03-12 15-30-00", "Seiu's Life", 3, 1)
+	,	("2018-03-12 15-30-00", "Seiyu's Life", 3, 1)
 ;
 
 -- B
@@ -99,7 +99,7 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 -- 	,	("2018-03-26 15-30-00", "Azumanga Daioh", 3, 1)
 
 -- 	,	("2018-04-09 14-30-00", "Cardcaptor Sakura", 3, 1)
- 		("2018-03-13 15-30-00", "Sailor Moon", 3, 1)
+ 		("2018-04-09 15-30-00", "Sailor Moon", 3, 1)
 ;
 
 -- C

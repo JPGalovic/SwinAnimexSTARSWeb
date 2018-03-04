@@ -253,7 +253,7 @@
 			echo('<h4>'.$event_data_row['EVENT_TITLE'].' - '.$anime_event_row['ANIME_TITLE'].'</h4>');
 			date_default_timezone_set('Australia/ACT');
 			echo('<p>'.date('l jS F Y - g:ia', strtotime($event_data_row['EVENT_TIME'])).'</p>');
-			event_card_location($event_data_row['CAMPUS'], $event_data_row['ROOM'], $event_data_row['ADDRESS'], $event_data_row['LAT'], $event_data_row['LNG']);
+			echo('<p>'.event_card_location($event_data_row['CAMPUS'], $event_data_row['ROOM'], $event_data_row['ADDRESS'], $event_data_row['LAT'], $event_data_row['LNG']).'</p>');
 
 			//Anime Specific Details
 			$session_number = $anime_event_row['SESSION_NUMBER'];
@@ -304,7 +304,7 @@
 		
 			date_default_timezone_set('Australia/ACT');
 			echo('<p>'.date('l jS F Y - g:ia', strtotime($event_data_row['EVENT_TIME'])).'</p>');
-			event_card_location($event_data_row['CAMPUS'], $event_data_row['ROOM'], $event_data_row['ADDRESS'], $event_data_row['LAT'], $event_data_row['LNG']);
+			echo('<p>'.event_card_location($event_data_row['CAMPUS'], $event_data_row['ROOM'], $event_data_row['ADDRESS'], $event_data_row['LAT'], $event_data_row['LNG']).'</p>');
 		
 			// Descriptions
 			event_details($event_data_row['EVENT_TITLE'], false, false);
@@ -330,7 +330,7 @@
 		
 			date_default_timezone_set('Australia/ACT');
 			echo('<p>'.date('l jS F Y - g:ia', strtotime($event_data_row['EVENT_TIME'])).'</p>');
-			event_card_location($event_data_row['CAMPUS'], $event_data_row['ROOM'], $event_data_row['ADDRESS'], $event_data_row['LAT'], $event_data_row['LNG']);
+			echo('<p>'.event_card_location($event_data_row['CAMPUS'], $event_data_row['ROOM'], $event_data_row['ADDRESS'], $event_data_row['LAT'], $event_data_row['LNG']).'</p>');
 		
 			// Descriptions
 			event_details($event_data_row['EVENT_TITLE']);

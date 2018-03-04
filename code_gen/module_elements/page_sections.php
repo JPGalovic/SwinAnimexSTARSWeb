@@ -1,10 +1,6 @@
 <?php
 	// Section Elements, Version 1.0.1, MAR18, JPGalovic
 
-
-
-
-
 	// Events display table
 	// $n_events, number of events to show, default -1, shows all upcoming events.
 	// $anime_title, anime_title to exclude when showing cards, used on detailed display for anime events

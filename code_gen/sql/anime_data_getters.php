@@ -1,5 +1,5 @@
 <?php
-	// SQL getters for Anime Data, Version 1.0.6, MAR18, JPGalovic
+	// SQL getters for Anime Data, Version 1.0.8, MAR18, JPGalovic
 	
 	// Gets Anime Data for a given Event
 	// $event_time = datetime of event
@@ -83,11 +83,13 @@
 			// Failure, get BD Volumes
 			$query = 'SELECT CLASSIFICATION, NUMBER_OF_EPISODES FROM ANIME_VOLUME WHERE ANIME_TITLE = "'.$anime_title.'" AND VOLUME_TYPE_ID = 2';
 			$result = run_query($query);
-			if($result->num_rows == 0) //Check for sucsess
-			{
+			if($result->num_rows > 0) //Check for sucsess
+				$result_row = $result->fetch_assoc();
+			else
 				die('No DB Volumes, What do?');
-			}
 		}
+		else
+			$result_row = $result->fetch_assoc();
 		
 		switch($session_type)
 		{
@@ -121,6 +123,26 @@
 	function get_anime_volume_data($anime_title, $volume_type_id)
 	{
 		$query = 'SELECT ANIME_VOLUME.VOLUME_TYPE_ID, ANIME_VOLUME.VOLUME_NUMBER, ANIME_VOLUME.NUMBER_OF_EPISODES, ANIME_VOLUME.CLASSIFICATION, ANIME_VOLUME.PURCHACE_URL, ANIME_VOLUME_TYPE.VOLUME_TYPE_DESCRIPTION FROM ANIME_VOLUME LEFT JOIN ANIME_VOLUME_TYPE ON ANIME_VOLUME.VOLUME_TYPE_ID = ANIME_VOLUME_TYPE.VOLUME_TYPE_ID WHERE ANIME_TITLE = "'.$anime_title.'" AND ANIME_VOLUME.VOLUME_TYPE_ID = "'.$volume_type_id.'" ORDER BY ANIME_VOLUME.VOLUME_NUMBER';
+		return run_query($query);
+	}
+
+	// Gets anime title data, used for anime_view page
+	// $anime_title, title of currently viewed anime, this is ignored by the sql query
+	function get_anime_titles_data($anime_title = null)
+	{
+		if($anime_title != null)
+			$query = 'SELECT ANIME_TITLE FROM ANIME WHERE ANIME_TITLE != "'.$anime_title.'" ORDER BY ANIME_TITLE';
+		else
+			$query = 'SELECT ANIME_TITLE FROM ANIME ORDER BY ANIME_TITLE';
+		return run_query($query);
+	}
+
+	// Gets sessions for a given anime
+	// $anime_title, title of anime to get Session Data For
+	function get_anime_sessions($anime_title)
+	{
+		$query = 'SELECT ANIME_SESSION.SESSION_TYPE_ID, ANIME_SESSION.SESSION_NUMBER, ANIME_SESSION.NUMBER_OF_EPISODES, ANIME_SESSION_TYPE.SESSION_TYPE_DESCRIPTION FROM ANIME_SESSION LEFT JOIN ANIME_SESSION_TYPE ON ANIME_SESSION.SESSION_TYPE_ID = ANIME_SESSION_TYPE.SESSION_TYPE_ID WHERE ANIME_TITLE = "'.$anime_title.'" ORDER BY ANIME_SESSION.SESSION_TYPE_ID, ANIME_SESSION.SESSION_NUMBER';
+		
 		return run_query($query);
 	}
 ?>
