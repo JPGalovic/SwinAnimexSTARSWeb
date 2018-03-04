@@ -1,50 +1,64 @@
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
-		("Title",
-		 n,
+		("Sailor Moon",
+		 200,
 		 "Usagi Tsukino is a cheerful 14-year-old schoolgirl who often finds herself in unwanted trouble. One day, she saves a talking cat named Luna from some mean kids, and her life is changed forever. Luna gives Usagi a magic brooch that transforms her into Sailor Moon, defender of love and justice! Now Usagi must work with Luna to find the other Sailor Guardians and the Moon Princess, whose Legendary Silver Crystal is Earth's only hope against the dark forces of the evil Queen Beryl!",
 		 "Usagi Tsukino is a cheerful 14-year-old schoolgirl who often finds herself in unwanted trouble. One day, she saves a talking cat named Luna from some mean kids, and her life is changed forever. Luna gives Usagi a magic brooch that transforms her into Sailor Moon, defender of love and justice! Now Usagi must work with Luna to find the other Sailor Guardians and the Moon Princess, whose Legendary Silver Crystal is Earth's only hope against the dark forces of the evil Queen Beryl!",
-		 "Madman Entertainment",
-		 "Copyright"
+		 "Madman",
+		 "&copy;Naoko Takeuchi/PNP, Toei Animation Film&copy;1994 Toei Animation CO., LTD."
 		)
 ;
 
 INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
 		("Sailor Moon",
+		 0,
+		 1,
+		 "PG",
+		 200,
+		 "https://www.animelab.com/shows/sailor-moon"
+		)
+	,	("Sailor Moon",
 		 1,
 		 1,
 		 "PG - Mild supernatural themes and animated violence",
 		 6,
-		 "URL"
+		 "https://www.madman.com.au/catalogue/view/31704"
 		)
-	,	("Title",
+	,	("Sailor Moon",
+		 1,
 		 2,
-		 2,
-		 "Classification",
-		 x,
-		 "URL"
+		 "PG - Mild supernatural themes and animated violence",
+		 6,
+		 "https://www.madman.com.au/catalogue/view/34368"
 		)
-	,	("Title",
+	,	("Sailor Moon",
+		 1,
 		 3,
+		 "PG - Mild supernatural themes and animated violence",
+		 6,
+		 "https://www.madman.com.au/catalogue/view/35721"
+		)
+	,	("Sailor Moon",
+		 1,
+		 4,
+		 "PG - Mild supernatural themes and animated violence",
+		 6,
+		 "https://www.madman.com.au/catalogue/view/35722"
+		)
+	,	("Sailor Moon",
 		 3,
-		 "Classification",
-		 x,
-		 "URL"
+		 1,
+		 "PG - Mild supernatural themes and animated violence",
+		 46,
+		 "https://www.madman.com.au/catalogue/view/41317"
 		)
-	,	("Title",
+	,	("Sailor Moon",
 		 4,
-		 4,
-		 "Classification",
-		 x,
-		 "URL"
+		 1,
+		 "PG - Mild supernatural themes and animated violence",
+		 46,
+		 "https://www.madman.com.au/catalogue/view/41318"
 		)
-	,	("Title",
-		 5,
-		 5,
-		 "Classification",
-		 x,
-		 "URL"
-		)		
 ;
 
 INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
@@ -71,7 +85,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Sailor Moon",
 		 5,
 		 "Scent of a Monster: Chanela Will Steal Your Love",
-		 "Usagi wants her family to accept Luna as a "pet", but Shingo is afraid of cats. At a pet shop, he discovers a hypnotic creature called a Chanela and loses all interest in anything else. "
+		 "Usagi wants her family to accept Luna as a &quot;pet&quot;, but Shingo is afraid of cats. At a pet shop, he discovers a hypnotic creature called a Chanela and loses all interest in anything else. "
 		)
 	,	("Sailor Moon",
 		 6,
@@ -236,7 +250,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 	,	("Sailor Moon",
 		 38,
 		 "The Snow, the Mountains, Friendship and Monsters",
-		 "Yūichirō takes the girls to a ski resort, where they enter a "Moon Princess" contest. Rei and Usagi, targeted by a youma, take the opportunity to reaffirm their friendship. Tuxedo Mask continues to fight against them. "
+		 "Yūichirō takes the girls to a ski resort, where they enter a &quot;Moon Princess&quot; contest. Rei and Usagi, targeted by a youma, take the opportunity to reaffirm their friendship. Tuxedo Mask continues to fight against them. "
 		)
 	,	("Sailor Moon",
 		 39,
@@ -283,22 +297,3 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
 		("Sailor Moon", 0, 1, 2)
 ;
-		
--- General Anime Volume Data
-	,	("Title",
-		 n,
-		 m,
-		 "Classification",
-		 x,
-		 "URL"
-		)
-		
--- General Anime Episode Data
-	,	("Title",
-		 n,
-		 "Episode_Title",
-		 "Episode_Synopsys"
-		)
-		
--- General Anime Session Data
-	,	("Title", x, y, z)

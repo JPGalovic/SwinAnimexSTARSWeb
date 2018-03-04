@@ -21,6 +21,7 @@ INSERT INTO CLASSIFICATION (CLASSIFICATION) VALUES
 	,	("PG - Mild animated violence")
 	,	("PG - Mild sexual references and animated violence")
 	,	("PG - Mild sexual references and coarse language")
+	,	("PG - Mild supernatural themes and animated violence")
 	,	("PG - Mild themes and animated violence")
 	,	("PG - Mild themes and coarse language")
 	,	("PG - Mild Themes and infrequent coarse language")
