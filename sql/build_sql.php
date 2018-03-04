@@ -178,6 +178,16 @@
 	//	,	'data/events/2018_semester_2.sql'
 	);
 
+	$newsletter_data_array = array(
+			'data/newsletter_data_core.sql'
+		
+		,	'data/newsletter/friday_fill.sql'
+		
+		,	'data/newsletter/article/misc_article.sql'
+		
+		,	'data/newsletter/linker/misc_linker.sql'
+	);
+
 	// Write Data to File
 
 	foreach ($core_data_array as $data_file)
@@ -221,6 +231,14 @@
 	}
 
 	foreach ($event_data_array as $data_file)
+	{
+		$read_handle = fopen($data_file, 'r') or die("Cannot open file: ".$data_file);
+		$data = fread($read_handle, filesize($data_file));
+		fwrite($write_handle, $data);
+		fclose($read_handle);
+	}
+
+	foreach ($newsletter_data_array as $data_file)
 	{
 		$read_handle = fopen($data_file, 'r') or die("Cannot open file: ".$data_file);
 		$data = fread($read_handle, filesize($data_file));
