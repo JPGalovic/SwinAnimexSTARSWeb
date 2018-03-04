@@ -22,24 +22,27 @@
 		echo('<link href="image/icon.png" rel="icon">');
 	echo('</head>');
 
-	// site header
+	// Site Header
 	include('module/site_header.php');
 	echo('<div class="buffer_top"></div>');
 
 
-	// site body
+	// Generate Site Body
+	// Debug Pages
 	if($page == 'all_events')
 		include('page/all_events.php');
-	else if($page == 'anime_event')
-		include('page/anime_event.php');
-	else if($page == 'social_event')
-		include('page/social_event.php');
 	else if($page == 'anime_view')
 		include('page/anime_view.php');
+	
+	// Special Pages
+	else if($page == 'event_details')
+		include('page/event_details.php');
+	
+	// Home Page
 	else
 		include('page/home.php');
 
-	// site footer
+	// Site Footer
 	echo('<div class="buffer_bottom"></div>');
 	include('module/site_footer.php');
 

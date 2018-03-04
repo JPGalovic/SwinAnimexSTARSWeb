@@ -309,8 +309,8 @@
 			// Descriptions
 			event_details($event_data_row['EVENT_TITLE'], false, false);
 
-			if(isset($game_data_row))
-				echo('<p>'.$game_data_row['GAME_DESCIRPTION'].'</p>');	
+			if(isset($game_row))
+				echo('<p> Game Description'.$game_row['GAME_DESCIRPTION'].'</p>');
 		
 			// Links
 			$first_link = true;

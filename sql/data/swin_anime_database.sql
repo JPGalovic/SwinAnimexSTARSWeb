@@ -584,33 +584,33 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, TICKETS) VALUES
 		("GM Skill's Workshop",
 		 "Do you want to learn to run your own adventure? Are you keen to become a Game Master? Then join us in these Exclusive Skill's Workshops! Running Each Month!",
-		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
+		 "Workshop Events are open only to Current Premium and Associate Members, come along to the event room and join in the activities, free members are welcome to upgrade to Premium Membership on the spot",
 		 null
 		)
 		
 	,	("Scene Planning and Blocking Workshop",
 		 "The first step in producing animation is to plan and block out the scenes, in this workshop we go over both classic and modern methods.",
-		 null,
+		 "Workshop Events are open only to Current Premium and Associate Members, come along to the event room and join in the activities, free members are welcome to upgrade to Premium Membership on the spot",
 		 null
 		)
 	,	("Drawing Workshop",
 		 "Now that our project is planned out, its time to start with designing our characters, sets and drawing key-frames for our animation! This workshop will help to develop your hand drawing skills as well as introduce you to methods for vectoring and digital software.",
-		 null,
+		 "Workshop Events are open only to Current Premium and Associate Members, come along to the event room and join in the activities, free members are welcome to upgrade to Premium Membership on the spot",
 		 null
 		)
 	,	("Animation Workshop",
 		 "The next step is to actually create the slides for the animation, using both traditional and modern techniques, by hand and digital!",
-		 null,
+		 "Workshop Events are open only to Current Premium and Associate Members, come along to the event room and join in the activities, free members are welcome to upgrade to Premium Membership on the spot",
 		 null
 		)
 	,	("Voice Acting Workshop",
 		 "Next, give the animation a voice, in this workshop we explore techniques used by classic animation to give your characters a voice.",
-		 null,
+		 "Workshop Events are open only to Current Premium and Associate Members, come along to the event room and join in the activities, free members are welcome to upgrade to Premium Membership on the spot",
 		 null
 		)
 	,	("Music and Sound Effects Workshop",
 		 "Finally, the addition of music and production of sound effects in both the modern and traditional manner, thus completing our project!",
-		 null,
+		 "Workshop Events are open only to Current Premium and Associate Members, come along to the event room and join in the activities, free members are welcome to upgrade to Premium Membership on the spot",
 		 null
 		)
 ;
