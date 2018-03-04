@@ -1,5 +1,5 @@
 <?php
-	//Misc Variables and Getters, Verson 1.0.2, MAR18, JPGalovic
+	//Misc Variables and Getters, Verson 1.0.3, MAR18, JPGalovic
 
 	//gets current time
 	function current_time()
