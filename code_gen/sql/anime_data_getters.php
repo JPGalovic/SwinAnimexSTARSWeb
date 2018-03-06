@@ -26,10 +26,10 @@
 			$previous_episode = $episode_range['previous_episode'];
 			$number_of_episodes = $episode_range['number_of_episodes'];
 
-			$query = 'SELECT EPISODE_NUMBER, EPISODE_TITLE FROM ANIME_EPISODE WHERE ANIME_TITLE = "'.$anime_title.'" AND EPISODE_NUMBER > "'.$previous_episode.'" LIMIT '.$number_of_episodes;
+			$query = 'SELECT EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS FROM ANIME_EPISODE WHERE ANIME_TITLE = "'.$anime_title.'" AND EPISODE_NUMBER > "'.$previous_episode.'" LIMIT '.$number_of_episodes;
 		}
 		else // No Session set, get all episodes for series
-			$query = 'SELECT EPISODE_NUMBER, EPISODE_TITLE FROM ANIME_EPISODE WHERE ANIME_TITLE = "'.$anime_title.'"';
+			$query = 'SELECT EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS FROM ANIME_EPISODE WHERE ANIME_TITLE = "'.$anime_title.'"';
 		
 		return run_query($query);
 	}
