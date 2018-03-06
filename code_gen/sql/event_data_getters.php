@@ -1,5 +1,5 @@
 <?php
-	// SQL getters for Event Data, Version 1.0.4, MAR18, JPGalovic
+	// SQL getters for Event Data, Version 1.0.5, MAR18, JPGalovic
 
 	// Gets core event data based on a given date time.
 	// this_event_time: datetime, used when on a page for a specific event. null by default
