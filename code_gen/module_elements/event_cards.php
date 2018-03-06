@@ -1,5 +1,5 @@
 <?php
-	// Functions for Common elements of Event Cards, Version 1.0.7, MAR18, JPGalovic
+	// Functions for Common elements of Event Cards, Version 1.0.8, MAR18, JPGalovic
 
 	// Event Card Commons
 
@@ -46,55 +46,11 @@
 		if(!$previous)
 				echo(' | ');
 		
-		echo('<a href="index.php?page=');
-		
-		switch($event_type)
-		{
-			case 'Screening Session Event':
-				echo('anime_event');
-				break;
-			case 'Social Episode Event':
-				echo('social_event');
-				break;
-			case 'Workshop Event':
-				echo('workshop_event');
-				break;
-			case 'General Meeting':
-				echo('general_meeting_event');
-				break;
-			case 'Roleplay Event':
-				echo('roleplay_event');
-				break;
-			case 'Tabletop Event':
-				echo('tabletop_event');
-				break;
-			case 'Video Game Event':
-				echo('video_game_event');
-				break;
-			case 'Other Event':
-				echo('other_event');
-				break;
-		}
-		
-		echo('&session='.$event_date.'">Event Info.</a>');
+		echo('<a href="index.php?page=event_details&event_date='.$event_date.'">Event Info.</a>');
 		
 		$previous = false;
 		
 		return $previous;
-	}
-	
-	// prints image from given settings for event card
-	function event_card_image($event_title, $anime_title = null, $game_title = null, $session_type = null, $session_number = null, $full_url = false, $width = null)
-	{
-		echo('<img src="');
-			if($full_url)
-				echo('http://swinanime.net/');
-		if($anime_title != null && $session_type != null && $session_number != null)
-			echo('image/anime/'.remove_illegal_char(strtolower($anime_title)).'/session/'.$session_type.$session_number.'.jpg" alt="'.$anime_title.'" width="'.$width.'">');
-		else if ($game_title != null)
-			echo('image/game/'.remove_illegal_char(strtolower($game_title)).'.png" alt="'.$game_title.'" width="'.$width.'">');
-		else
-			echo('image/event/'.remove_illegal_char(strtolower($event_title)).'.png" alt="'.$event_title.'" width="'.$width.'">');
 	}
 
 	// Prints Event Details based on "Event Title"
@@ -193,7 +149,7 @@
 			echo('<tr>');
 		
 				echo('<td>');
-					event_card_image($event_title, $anime_title, $game_title, $session_type, $session_number, true, 120);
+					event_image($event_title, $anime_title, $game_title, $session_type, $session_number, true, 120);
 				echo('</td>');
 
 				echo('<td colspan="3">');
@@ -247,7 +203,7 @@
 		// Build Event Card
 		echo('<section class="quater" id="event_card">');
 			// Image
-			event_card_image($event_data_row['EVENT_TITLE'], $anime_event_row['ANIME_TITLE'], null, $anime_event_row['SESSION_TYPE_ID'], $anime_event_row['SESSION_NUMBER']);
+			event_image($event_data_row['EVENT_TITLE'], $anime_event_row['ANIME_TITLE'], null, $anime_event_row['SESSION_TYPE_ID'], $anime_event_row['SESSION_NUMBER']);
 			
 			//Core Event Info
 			echo('<h4>'.$event_data_row['EVENT_TITLE'].' - '.$anime_event_row['ANIME_TITLE'].'</h4>');
@@ -287,7 +243,10 @@
 		// Build Event Card
 		echo('<section class="quater" id="event_card">');
 			// Image
-			event_card_image($event_data_row['EVENT_TITLE']);
+			if(isset($game_event_row))
+				event_image($event_data_row['EVENT_TITLE'], null, $game_event_row['GAME_TITLE']);
+			else
+				event_image($event_data_row['EVENT_TITLE']);
 		
 			// Core Event Info
 			echo('<h4>'.$event_data_row['EVENT_TITLE']);
@@ -310,7 +269,7 @@
 			event_details($event_data_row['EVENT_TITLE'], false, false);
 
 			if(isset($game_row))
-				echo('<p> Game Description'.$game_row['GAME_DESCIRPTION'].'</p>');
+				echo('<p>'.$game_row['GAME_DESCIRPTION'].'</p>');
 		
 			// Links
 			$first_link = true;
@@ -323,7 +282,7 @@
 	{
 		echo('<section class="quater" id="event_card">');
 			// Image
-			event_card_image($event_data_row['EVENT_TITLE']);
+			event_image($event_data_row['EVENT_TITLE']);
 		
 			// Core Event Info
 			echo('<h4>'.$event_data_row['EVENT_TITLE'].'</h4>');
