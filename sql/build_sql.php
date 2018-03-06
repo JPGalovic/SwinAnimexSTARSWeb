@@ -25,7 +25,9 @@
 		,	'data/classification_data.sql'
 		,	'data/anime_data_core.sql'
 		,	'data/game_data_core.sql'
+		,	'data/staff_data_core.sql'
 		,	'data/event_data_core.sql'
+		,	'data/newsletter_data_core.sql'
 	);
 		
 	$madman_anime_data_array = array(
@@ -179,9 +181,7 @@
 	);
 
 	$newsletter_data_array = array(
-			'data/newsletter_data_core.sql'
-		
-		,	'data/newsletter/friday_fill.sql'
+			'data/newsletter/friday_fill.sql'
 		
 		,	'data/newsletter/article/misc_article.sql'
 		,	'data/newsletter/article/showcase_article.sql'
