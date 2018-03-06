@@ -41,6 +41,14 @@
 		return run_query($query);
 	}
 
+	// Special getter for getting all sessions for a given anime title
+	// anime_title, title of anime to fetch episodes for.
+	function get_anime_events_data($anime_title)
+	{
+		$query = 'SELECT EVENT_TIME FROM EVENT_ANIME_DATA WHERE ANIME_TITLE = "'.$anime_title.'"';
+		return run_query($query);
+	}
+
 	// Gets Details of Event based on the event title.
 	// Parameters $event_title, title of the event
 	function get_event_details($event_title)
