@@ -11,6 +11,9 @@
 		
 		// Event Details
 		event_page_details($event_date, $event_description_shown);
+		
+		// Upcoming Events Table
+		event_dispay_table(4, null, null, false, $event_date);
 	}
 	else
 		include('page/404.php'); // Event Date Specified display 404 page;

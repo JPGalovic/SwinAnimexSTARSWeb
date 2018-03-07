@@ -6,7 +6,7 @@
 	// $anime_title, anime_title to exclude when showing cards, used on detailed display for anime events
 	// $begining_date, begining date to seartch from
 	// $show_all_events, flag used to disable showing of all events.
-	function event_dispay_table($n_events = -1, $anime_title = null, $begining_date = null, $show_all_events = false)
+	function event_dispay_table($n_events = -1, $anime_title = null, $begining_date = null, $show_all_events = false, $exclude_date = null)
 	{
 		// Determine weather to show repeating titles.
 		$display_repeat_titles = !($n_events < 0);
@@ -53,31 +53,36 @@
 				{
 					$current_event_time = $event_row['EVENT_TIME'];
 					
-					// Show Event Card
-					switch($event_row['EVENT_TYPE_DESCRIPTION'])
+					if($event_row['EVENT_TIME'] !== $exclude_date)
 					{
-						case 'Screening Session Event':
-							anime_event_card($event_row['EVENT_TIME'], $event_row, $used_titles, $show_all_events);
-							break;
-						case 'Social Episode Event':
-						case 'Workshop Event':
-						case 'General Meeting':
-						case 'Other Event':
-							general_event_card($event_row['EVENT_TIME'], $event_row);
-							break;
-						case 'Roleplay Event':
-						case 'Tabletop Event':
-						case 'Video Game Event':
-							game_event_card($event_row['EVENT_TIME'], $event_row);
-							break;
+						// Show Event Card
+						switch($event_row['EVENT_TYPE_DESCRIPTION'])
+						{
+							case 'Screening Session Event':
+								anime_event_card($event_row['EVENT_TIME'], $event_row, $used_titles, $show_all_events);
+								break;
+							case 'Social Episode Event':
+							case 'Workshop Event':
+							case 'General Meeting':
+							case 'Other Event':
+								general_event_card($event_row['EVENT_TIME'], $event_row);
+								break;
+							case 'Roleplay Event':
+							case 'Tabletop Event':
+							case 'Video Game Event':
+								game_event_card($event_row['EVENT_TIME'], $event_row);
+								break;
+						}
+
+						
+
+						$n_events--;
 					}
 					
 					if($past_events)
 						$event_data = get_past_event_data($begining_date, $current_event_time);
 					else
 						$event_data = get_event_data($begining_date, $current_event_time);
-					
-					$n_events--;
 					
 					if($event_data->num_rows > 0)
 						$event_row = $event_data->fetch_assoc();
@@ -103,9 +108,9 @@
 			if($full_url)
 				echo('http://swinanime.net/');
 		if($anime_title != null && $session_type != null && $session_number != null)
-			echo('image/anime/'.remove_illegal_char(strtolower($anime_title)).'/session/'.$session_type.$session_number.'.jpg" alt="'.$anime_title.'" width="'.$width.'">');
+			echo('image/anime/'.remove_illegal_char(strtolower($anime_title)).'/session/'.$session_type.$session_number.'.jpg" onerror="this.src='."'".'image/event/'.remove_illegal_char(strtolower($event_title)).'.png'."'".'" alt="'.$anime_title.'" width="'.$width.'">');
 		else if ($game_title != null)
-			echo('image/game/'.remove_illegal_char(strtolower($game_title)).'.png" alt="'.$game_title.'" width="'.$width.'">');
+			echo('image/game/'.remove_illegal_char(strtolower($game_title)).'.png" alt="'.$game_title.'" onerror="this.src='."'".'image/event/'.remove_illegal_char(strtolower($event_title)).'.png'."'".'" width="'.$width.'">');
 		else
 			echo('image/event/'.remove_illegal_char(strtolower($event_title)).'.png" alt="'.$event_title.'" width="'.$width.'">');
 	}
