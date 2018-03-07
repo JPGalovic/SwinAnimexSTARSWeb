@@ -128,6 +128,7 @@
 	}
 	
 	// Prints Event Header (Used on event details page)
+	// Event Header contains Image, Description/Synopsys as well as Event Datetime and RSVP links.
 	// $event_date, date of event
 	function event_header($event_date)
 	{
@@ -185,6 +186,25 @@
 					}
 
 				echo('</section>');
+			
+				//Event Time & RSVP
+				echo('<footer class="full">');
+
+					if(isset($anime_event_row))
+						echo('<p>Showing from ');
+					else if(isset($game_event_row))
+						echo('<p>Playing from ');
+					else
+						echo('<p>Starting at ');
+						 
+					echo(date('g:ia', strtotime($event_date)).' on '.date('l jS F Y', strtotime($event_date)).'</p>');
+						
+					if(!$event_data_row['EVENT_FACEBOOK_ID'] == '0')
+						echo('<a href="https://www.facebook.com/events/'.$event_data_row['EVENT_FACEBOOK_ID'].'/">RSVP on Facebook</a>');
+					if(!$event_data_row['EVENT_UNIONE_URL'] == '0')
+						echo('<a href="'.$event_data_row['EVENT_UNIONE_URL'].'">Unione Event</a>');
+			
+				echo('</footer>');
 
 
 			echo('</article>');
