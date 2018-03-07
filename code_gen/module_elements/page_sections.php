@@ -132,7 +132,7 @@
 	// $event_date, date of event
 	function event_header($event_date)
 	{
-		$return_flag = false;
+		$return_flag = true;
 		$event_data = get_event_data($event_date, null, false);
 		if($event_data->num_rows > 0)
 		{
@@ -182,7 +182,7 @@
 					{
 						echo('<h2>'.event_title($event_data_row['EVENT_TITLE'], $event_data_row['EVENT_SUBTITLE']).'</h2>');
 						event_details($event_data_row['EVENT_TITLE'], false, false);
-						$return_flag = true;
+						$return_flag = false;
 					}
 
 				echo('</section>');
@@ -210,6 +210,69 @@
 			echo('</article>');
 		}
 		return $return_flag;
+	}
+
+	// Prints Event Details section (Used on event details page)
+	// $event_date, date of event
+	// $post_description, flag to determine if description has been used in event header
+	function event_page_details($event_date, $show_description)
+	{
+		$event_data = get_event_data($event_date, null, false);
+		if($event_data->num_rows > 0)
+		{
+			$event_data_row = $event_data->fetch_assoc();
+			
+			$anime_event_data = get_anime_event_data($event_date);
+			if($anime_event_data->num_rows > 0)
+			{
+				$anime_event_row = $anime_event_data->fetch_assoc();
+				$anime_data = get_anime_data($anime_event_row['ANIME_TITLE']);
+				if($anime_data->num_rows > 0)
+					$anime_row = $anime_data->fetch_assoc();
+			}
+				
+			$game_event_data = get_game_event_data($event_date);
+			if($game_event_data->num_rows > 0)
+			{
+				$game_event_row = $game_event_data->fetch_assoc();
+				$game_data = get_game_data($game_event_row['GAME_TITLE']);
+				if($game_data->num_rows > 0)
+					$game_row = $game_data->fetch_assoc();
+			}
+			
+			$event_details_data = get_event_details($event_data_row['EVENT_TITLE']);
+			if($event_details_data->num_rows > 0)
+				$event_details_row = $event_details_data->fetch_assoc();
+			
+			echo('<article class="flex_container" id="event_page_details">');
+				echo('<section class="half" id="event_details">');
+					if(isset($anime_event_row))
+					{
+						$session_number = $anime_event_row['SESSION_NUMBER'];
+						$session_type = $anime_event_row['SESSION_TYPE_ID'];
+						$anime_clasification = get_anime_session_classification($anime_event_row['ANIME_TITLE'], $anime_event_row['SESSION_NUMBER'], $anime_event_row['SESSION_TYPE_ID']);
+						echo('<img src="image/classification/'.$anime_clasification.'.png" alt="'.$anime_clasification.'" id="classification"/>');
+						
+						echo('<p>'.$anime_row['COPYRIGHT'].'</p>');
+					}
+					
+			
+					if(isset($event_details_row))
+					{
+						if($event_details_row['EVENT_DESCRIPTION'] != null && $show_description)
+							echo('<p>'.$event_details_row['EVENT_DESCRIPTION'].'</p>');
+						if($event_details_row['MEETUP_INSTRUCTIONS'] != null)
+							echo('<p>'.$event_details_row['MEETUP_INSTRUCTIONS'].'</p>');
+						if($event_details_row['TICKETS'] != null)
+							echo('<p>'.$event_details_row['TICKETS'].'</p>');
+					}
+				echo('</section>');
+			
+				$location_id = $event_data_row['LOCATION_ID'];
+				include('module/misc/map.php');
+			
+			echo('</article>');
+		}
 	}
 
 ?>	

@@ -7,7 +7,10 @@
 		$event_date = $_GET['event_date'];
 		
 		// Event Header
-		event_header($event_date);
+		$event_description_shown = event_header($event_date);
+		
+		// Event Details
+		event_page_details($event_date, $event_description_shown);
 	}
 	else
 		include('page/404.php'); // Event Date Specified display 404 page;

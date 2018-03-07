@@ -268,11 +268,11 @@ a:hover {
 }
 
 /* Anime Event Details */
-#anime_details {
+#event_page_details {
 	background-color: var(--color_dart_grey_4);
 }
 
-#anime_details section {
+#event_page_details section {
 	padding: 10px;
 }
 
