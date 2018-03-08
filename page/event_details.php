@@ -26,7 +26,11 @@
 			event_page_details($event_date, $event_description_shown);
 			
 			if(isset($anime_event_row))
+			{
 				event_page_anime_volume($anime_event_row['ANIME_TITLE']);
+				event_page_what_you_missed($anime_event_row['ANIME_TITLE'], $anime_event_row['SESSION_NUMBER'], $anime_event_row['SESSION_TYPE_ID']);
+			}
+				
 
 			// Upcoming Events Table
 			event_dispay_table(4, null, null, false, $event_date);

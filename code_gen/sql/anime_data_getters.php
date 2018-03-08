@@ -1,5 +1,5 @@
 <?php
-	// SQL getters for Anime Data, Version 1.0.9, MAR18, JPGalovic
+	// SQL getters for Anime Data, Version 1.0.10, MAR18, JPGalovic
 	
 	// Gets Anime Data for a given Event
 	// $event_time = datetime of event
@@ -30,6 +30,14 @@
 		}
 		else // No Session set, get all episodes for series
 			$query = 'SELECT EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS FROM ANIME_EPISODE WHERE ANIME_TITLE = "'.$anime_title.'"';
+		
+		return run_query($query);
+	}
+	
+	// Gets Anime Episode Data from $first_episode (default 0) to $last_episode
+	function get_anime_episode_range_data($anime_title, $last_episode, $first_episode = 1)
+	{
+		$query = 'SELECT EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS FROM ANIME_EPISODE WHERE ANIME_TITLE = "'.$anime_title.'" AND EPISODE_NUMBER >= '.$first_episode.' AND EPISODE_NUMBER <= '.$last_episode;
 		
 		return run_query($query);
 	}

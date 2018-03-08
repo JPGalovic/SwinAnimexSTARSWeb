@@ -1,5 +1,5 @@
 <?php
-	// Section Elements, Version 1.0.6, MAR18, JPGalovic
+	// Section Elements, Version 1.0.8, MAR18, JPGalovic
 
 	// Events display table
 	// $n_events, number of events to show, default -1, shows all upcoming events.
@@ -281,7 +281,7 @@
 	}
 
 	// Prints links with images for purchacable items.
-	// $event_date, date of event
+	// $anime_title, title of anime
 	function event_page_anime_volume($anime_title)
 	{
 		$volume_data = get_anime_volumes($anime_title);
@@ -370,6 +370,35 @@
 			}
 		}
 		
+	}
+	
+	// Prints what you missed section if applicable to event
+	function event_page_what_you_missed($anime_title, $session_number, $session_type)
+	{
+		$episode_range = get_anime_session_data($anime_title, $session_number, $session_type);
+		if($episode_range['previous_episode'] > 0)
+		{
+			$episode_data = get_anime_episode_range_data($anime_title, $episode_range['previous_episode']);
+			if($episode_data->num_rows > 0)
+			{
+				echo('<article class="flex_container" id="what_you_missed">');
+					echo('<header class="full">');
+						echo('<h1>What you Missed</h1>');
+						echo('<img src="image/what_you_missed.png" id="what_you_missed_image">');
+					echo('</header>');
+				
+					while($episode_row = $episode_data->fetch_assoc())
+					{
+						echo('<section class="quater">');
+							echo('<img src="image/anime/'.remove_illegal_char(strtolower($anime_title)).'/episode/'.$episode_row['EPISODE_NUMBER'].'.jpg" alt="'.$anime_title.' Episode '.$episode_row['EPISODE_NUMBER'].'">');
+							echo('<h4>Episode '.$episode_row['EPISODE_NUMBER'].', '.$episode_row['EPISODE_TITLE'].'</h4>');
+							echo('<p>'.$episode_row['EPISODE_SYNOPSYS'].'</p>');
+						echo('</section>');
+					}
+
+				echo('</article>');
+			}
+		}	
 	}
 
 ?>	
