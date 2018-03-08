@@ -1,5 +1,5 @@
 <?php
-	// Section Elements, Version 1.0.3, MAR18, JPGalovic
+	// Section Elements, Version 1.0.6, MAR18, JPGalovic
 
 	// Events display table
 	// $n_events, number of events to show, default -1, shows all upcoming events.
@@ -278,6 +278,98 @@
 			
 			echo('</article>');
 		}
+	}
+
+	// Prints links with images for purchacable items.
+	// $event_date, date of event
+	function event_page_anime_volume($anime_title)
+	{
+		$volume_data = get_anime_volumes($anime_title);
+		if($volume_data->num_rows > 0)
+		{
+			$anime_data = get_anime_data($anime_title);
+			if($anime_data->num_rows > 0)
+			{
+				$anime_row = $anime_data->fetch_assoc();
+				
+				// Determine if DVD & BD are avalible.
+				$has_stream = false;
+				$has_dvd = false;
+				$has_bd = false;
+
+				while($volume_row = $volume_data->fetch_assoc())
+				{
+					switch($volume_row['VOLUME_TYPE_ID'])
+					{
+						case 0:
+							$has_stream = true;
+						case 1:
+							$has_dvd = true;
+							break;
+						case 2:
+							$has_bd = true;
+							break;
+						case 3:
+							$has_dvd = true;
+							break;
+						case 4:
+							$has_bd = true;
+							break;
+					}
+				}
+
+				$volume_data->data_seek(0);
+
+				// Continue only if DVD or BD volume is avalible
+				if($has_dvd || $has_bd)
+				{
+					echo('<article class="flex_container" id="anime_volume_table">');
+						echo('<header class="full">');
+							if($has_dvd && $has_bd)
+								echo('<h2>Buy the DVD &amp; Bluray&trade; Today!</h2>');
+							else if($has_dvd && !$has_bd)
+								echo('<h2>Buy the DVD Today!</h2>');
+							else if(!$has_dvd && $has_bd)
+								echo('<h2>Buy the Bluray&trade; Today!</h2>');	
+						echo('</header>');
+
+						echo('<aside class="full">');
+							echo('<p>'.$anime_title.' is avalible to be brought from '.$anime_row['COMPANY_NAME'].'&#39;s store!</p>');
+						echo('</aside>');
+
+						while($volume_row = $volume_data->fetch_assoc())
+						{
+							if(!$volume_row['VOLUME_TYPE_ID'] == 0)
+							{
+								echo('<section>');
+									echo('<img src="image/anime/'.remove_illegal_char(strtolower($anime_title)).'/volume/'.$volume_row['VOLUME_TYPE_ID'].$volume_row['VOLUME_NUMBER'].'.png" onerror="this.src='."'image/no_cover_image.png'".'" alt="Volume Image">');
+
+									echo('<a href="'.$volume_row['PURCHACE_URL'].'">');
+										switch($volume_row['VOLUME_TYPE_ID'])
+										{
+											case 1:
+												echo('Buy '.$volume_row['VOLUME_TYPE_DESCRIPTION'].' Volume '.$volume_row['VOLUME_NUMBER'].' Now!');
+												break;
+											case 2:
+												echo('Buy '.$volume_row['VOLUME_TYPE_DESCRIPTION'].' Volume '.$volume_row['VOLUME_NUMBER'].' Now!');
+												break;
+											case 3:
+												echo('Buy '.$volume_row['VOLUME_TYPE_DESCRIPTION'].' Now!');
+												break;
+											case 4:
+												echo('Buy '.$volume_row['VOLUME_TYPE_DESCRIPTION'].' Now!');
+												break;
+										}
+									echo('</a>');
+								echo('</section>');
+							}
+						}
+
+					echo('</article>');
+				}
+			}
+		}
+		
 	}
 
 ?>	
