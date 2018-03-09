@@ -2,8 +2,10 @@
 	// Code Testing Platform, Used to test functionality of codegen.
 	include('code_gen/include.php'); // include base required files.2018-01-05 11:30:00
 
+	$data_service = new data_service(); // Define data service
+
 	$query = 'SELECT * FROM CLASSIFICATION';
-	$classificaiton_data = run_query($query);
+	$classificaiton_data = $data_service->run_query($query);
 
 	while($classification_row = $classificaiton_data->fetch_assoc())
 	{

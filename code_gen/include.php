@@ -18,4 +18,7 @@
 	include('code_gen/sql/news_data_getters.php');
 	include('code_gen/sql/anime_data_getters.php');
 	include('code_gen/sql/game_data_getters.php');
+
+	// Include Required Data Services
+	include('code_gen/sql/data_core.php'); // Include Data Service
 ?>

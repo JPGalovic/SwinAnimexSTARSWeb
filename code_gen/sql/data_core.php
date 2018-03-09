@@ -1,7 +1,7 @@
 <?php
 	// Database Core Object, Allows Data Services on Club Website, Version 1.0.0, MAR18, J.P.Galovic
 
-	class Data_Service
+	class data_service
 	{
 		// Database Connection Settings.
 		protected $host = 'localhost';
@@ -9,25 +9,34 @@
 		protected $pass = 'EgLcxZ8uHT';
 		protected $dtbs = 'swinan01_smart_web';
 		
+		protected $debug = true;
+		
 		// Database Connection Object.
-		private $db;
+		protected $db;
 		
 		// Opens database.
-		private function open_db()
+		protected function open_db()
 		{
+			if($this->debug)
+				echo('<p>Connecting to Database; '.$this->host.', '.$this->user.', '.$this->pass.', '.$this->dtbs.'</p>');
+			
 			$this->db = new MySQLi($this->host, $this->user, $this->pass, $this->dtbs);
 			if($this->db->connect_errno > 0)
 				send_error($this->db->connect_errno+1000,'Unable to connect to Website Database, ['.$this->db->connect_errno.', '.$this->db->connect_error.']');
 		}
 		
 		// Closes database.
-		private function close_db()
+		protected function close_db()
 		{
+			if($this->debug)
+				echo('<p>Closing Database;</p>');
+			
 			$this->db->close();
 		}
 		
 		// Runs a given query on the Database.
 		// $query, query text to run on Database.
+		// return, result of query.
 		public function run_query($query)
 		{
 			$this->open_db();
