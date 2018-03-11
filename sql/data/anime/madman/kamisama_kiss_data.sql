@@ -95,8 +95,8 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 ;
 
 INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
-		("Kamisama Kiss", 0, 1, 3)
-	,	("Kamisama Kiss", 0, 2, 3)
-	,	("Kamisama Kiss", 0, 3, 4)
+		("Kamisama Kiss", 0, 1, 4)
+	,	("Kamisama Kiss", 0, 2, 4)
+	,	("Kamisama Kiss", 0, 3, 5)
 	,	("Kamisama Kiss", 3, 1, 2)
 ;
