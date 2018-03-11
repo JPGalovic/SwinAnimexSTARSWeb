@@ -25,7 +25,9 @@
 		,	'data/classification_data.sql'
 		,	'data/anime_data_core.sql'
 		,	'data/game_data_core.sql'
+		,	'data/staff_data_core.sql'
 		,	'data/event_data_core.sql'
+		,	'data/newsletter_data_core.sql'
 	);
 		
 	$madman_anime_data_array = array(
@@ -105,7 +107,7 @@
 		,	'data/anime/madman/samurai_warriors_data.sql'
 	//	,	'data/anime/madman/scar-red_riders_xechs_data.sql'
 		,	'data/anime/madman/school_live_data.sql'
-	//	,	'data/anime/madman/seiyus_life_data.sql'
+		,	'data/anime/madman/seiyus_life_data.sql'
 	//	,	'data/anime/madman/sword_oratoria_data.sql'
 	//	,	'data/anime/madman/terror_in_resonance_data.sql'
 		,	'data/anime/madman/three_leaves_three_colors_data.sql'
@@ -179,13 +181,23 @@
 	);
 
 	$newsletter_data_array = array(
-			'data/newsletter_data_core.sql'
-		
-		,	'data/newsletter/friday_fill.sql'
+			'data/newsletter/friday_fill.sql'
 		
 		,	'data/newsletter/article/misc_article.sql'
+		,	'data/newsletter/article/showcase_article.sql'
+		,	'data/newsletter/article/screening_article.sql'
+		,	'data/newsletter/article/headline_article.sql'
+		//,	'data/newsletter/article/tabletop_article.sql'
+		//,	'data/newsletter/article/workshop_article.sql'
+		//,	'data/newsletter/article/roleplay_article.sql'
 		
 		,	'data/newsletter/linker/misc_linker.sql'
+		,	'data/newsletter/linker/showcase_linker.sql'
+		,	'data/newsletter/linker/screening_linker.sql'
+		,	'data/newsletter/linker/headline_linker.sql'
+		//,	'data/newsletter/linker/tabletop_linker.sql'
+		//,	'data/newsletter/linker/workshop_linker.sql'
+		//,	'data/newsletter/linker/roleplay_linker.sql'
 	);
 
 	// Write Data to File

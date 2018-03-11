@@ -2,27 +2,42 @@
 -- Use the swinan01_smart_web database
 USE swinan01_smart_web;
 
--- Database Clearer, Version 1.1.0, FEB18, JPGalovic
+-- Database Clearer, Version 1.1.1, MAR18, JPGalovic
 -- Clear out Database
+-- Data Linkers
 DROP TABLE IF EXISTS EVENT_ANIME_DATA;
 DROP TABLE IF EXISTS EVENT_GAME_DATA;
+DROP TABLE IF EXISTS EVENT_STAFF_DATA;
+
+-- Event Data
 DROP TABLE IF EXISTS EVENT_DATA;
 DROP TABLE IF EXISTS EVENT_DETAILS;
 DROP TABLE IF EXISTS EVENT_LOCATION;
 DROP TABLE IF EXISTS EVENT_TYPE;
+
+-- Staff Data
+DROP TABLE IF EXISTS STAFF_EMERGANCY_CONTACTS;
+DROP TABLE IF EXISTS STAFF;
+
+-- Game Data
 DROP TABLE IF EXISTS GAME_EVENT_TYPE;
 DROP TABLE IF EXISTS GAME_PLATFORM;
 DROP TABLE IF EXISTS GAME;
 DROP TABLE IF EXISTS PLATFORM;
+
+-- Anime Data
 DROP TABLE IF EXISTS ANIME_SESSION;
 DROP TABLE IF EXISTS ANIME_SESSION_TYPE;
 DROP TABLE IF EXISTS ANIME_EPISODE;
 DROP TABLE IF EXISTS ANIME_VOLUME;
 DROP TABLE IF EXISTS ANIME_VOLUME_TYPE;
 DROP TABLE IF EXISTS ANIME;
+
+-- Core Data (For both Anime & Game)
 DROP TABLE IF EXISTS CLASSIFICATION;
 DROP TABLE IF EXISTS COMPANY;
 
+-- News Data
 DROP TABLE IF EXISTS ARTICLE_LINKER;
 DROP TABLE IF EXISTS NEWS_ARTICLE;
 DROP TABLE IF EXISTS ARTICLE_TYPE;
@@ -32,7 +47,7 @@ DROP TABLE IF EXISTS NEWSLETTER;
 CREATE TABLE IF NOT EXISTS COMPANY (
 		COMPANY_NAME			VARCHAR(50)
 	,	COMPANY_URL				VARCHAR(250)
-	,	IS_SPONSOR				BOOLEAN 			NOT NULL
+	,	IS_SPONSOR				BOOLEAN 			NOT null
 	,	FREE_MEMBER_BENIFIT		VARCHAR(1000)
 	,	PREMIUM_MEMBER_BENIFIT	VARCHAR(1000)
 	,	REDEMPTION_INSTRUCTIONS	VARCHAR(1000)
@@ -68,26 +83,26 @@ INSERT INTO COMPANY (COMPANY_NAME, COMPANY_URL, IS_SPONSOR, FREE_MEMBER_BENIFIT,
 	,	("Rewardle",
 		 "https://patrons.rewardle.com/",
 		 TRUE,
-		 NULL,
-		 NULL,
-		 NULL)
+		 null,
+		 null,
+		 null)
 	,	("Grain and Nori",
 		 "http://www.grainandnori.com.au/",
 		 TRUE,
 		 "All Club members are eleigable to recive a free drink with any purchace over $10.",
-		 NULL,
+		 null,
 		 "Show your membership card at time of purchace to claim your benifit")
 	,	("Resistance Bar and Cafe",
 		 "https://www.facebook.com/TheResistanceBarandCafe/",
 		 TRUE,
 		 "All members are eleagble to recive a 5% discount on purchaces.",
-		 NULL,
+		 null,
 		 "Show your membership card at time of purchace to claim your benifit")
 	,	("Glenferrie Crepe Cafe",
 		 "http://www.glenferriecrepecafe.com.au/",
 		 TRUE,
 		 "All members are eleagble to recive a discount on purchaces.",
-		 NULL,
+		 null,
 		 "Show your membership card at time of purchace to claim your benifit")
 ;
 
@@ -374,7 +389,31 @@ INSERT INTO GAME_EVENT_TYPE (TYPE_ID, DESCRIPTION) VALUES
 	,	(1, "Game Session")
 	,	(2, "Marathon")
 	,	(3, "LAN")
-;-- Event Data Core, Version 1.1, JAN18, JPGalovic
+;-- Staff Data Core, Verson 1.0.0, MAR18, JPGalovic
+-- Staff Table
+CREATE TABLE IF NOT EXISTS STAFF (
+		STAFF_NAME						VARCHAR(200)
+	,	EMAIL							VARCHAR(200)
+	,	MOBILE_NUMBER					VARCHAR(15)
+	,	STUDENT_ID						VARCHAR(15)
+	,	DISCORD_USER					VARCHAR(100)
+	,	EVENT_SUPER						BOOLEAN
+	,	MARKETING_TEAM					BOOLEAN
+	,	WEBKIT							BOOLEAN
+	,	GAME_MASTER						BOOLEAN
+	,	PRIMARY KEY						(STAFF_NAME)
+);
+
+-- Emergancy Contacts Table
+CREATE TABLE IF NOT EXISTS STAFF_EMERGANCY_CONTACTS (
+		STAFF_NAME						VARCHAR(200)
+	,	CONTACT_NAME					VARCHAR(200)
+	,	CONTACT_RELATION				VARCHAR(200)
+	,	PRIMARY_CONTACT_NUMBER			VARCHAR(15)
+	,	SECONDARY_CONTACT_NUMBER		VARCHAR(15)
+	,	PRIMARY KEY						(STAFF_NAME, CONTACT_NAME)
+	,	FOREIGN KEY						(STAFF_NAME) REFERENCES STAFF (STAFF_NAME)
+);-- Event Data Core, Version 1.2.0, MAR18, JPGalovic
 -- Table for Event Type
 CREATE TABLE IF NOT EXISTS EVENT_TYPE (
 		EVENT_TYPE_ID					INT(11)
@@ -415,63 +454,63 @@ CREATE TABLE IF NOT EXISTS EVENT_LOCATION (
 -- Data for Event Locations
 INSERT INTO EVENT_LOCATION (LOCATION_ID, CAMPUS, BUILDING, BLDG, ROOM, ADDRESS, LAT, LNG, ZOOM) VALUES
 -- Default Location
-		(0, "Swinburne Hawthorn", NULL, NULL, NULL, "John St, Hawthorn VIC 3122", -37.822097, 145.038946, 17)
+		(0, "Swinburne Hawthorn", null, null, null, "John St, Hawthorn VIC 3122", -37.822097, 145.038946, 17)
 		
 -- Social Event Locations
-	,	(1, NULL, NULL, NULL, NULL, "Crown Entertainment Complex, 8 Whiteman St, Southbank VIC 3006", -37.824871, 144.958181, 17)
-	,	(2, NULL, NULL, NULL, NULL, "Sorrento Oceach Beach, Ocean Beach Road, Sorrento VIC 3943", -38.345876, 144.727014, 17)
-	,	(3, NULL, NULL, NULL, NULL, "Hawthorn Aquatic &amp; Leisure Center, 1 Grace St, Hawthorn VIC 3122", -37.820791, 145.034434, 17)
+	,	(1, null, null, null, null, "Crown Entertainment Complex, 8 Whiteman St, Southbank VIC 3006", -37.824871, 144.958181, 17)
+	,	(2, null, null, null, null, "Sorrento Oceach Beach, Ocean Beach Road, Sorrento VIC 3943", -38.345876, 144.727014, 17)
+	,	(3, null, null, null, null, "Hawthorn Aquatic &amp; Leisure Center, 1 Grace St, Hawthorn VIC 3122", -37.820791, 145.034434, 17)
 
 -- Swinburne Buildings
-	,	(10, "Swinburne Hawthorn", "1 Alfred St", "1A", NULL, NULL, -37.821312, 145.036710, 17)
-	,	(11, "Swinburne Hawthorn", "6 Luton Lane", "6L", NULL, NULL, -37.823123, 145.034180, 17)
-	,	(12, "Swinburne Hawthorn", "10 George St", "10G", NULL, NULL, -37.822398, 145.041155, 17)
-	,	(13, "Swinburne Hawthorn", "21 Wakefield St", "21W", NULL, NULL, -37.820553, 145.037500, 17)
-	,	(14, "Swinburne Hawthorn", "24 George St", "24G", NULL, NULL, -37.822523, 145.041615, 17)
-	,	(15, "Swinburne Hawthorn", "32 Park St", "32P", NULL, NULL, -37.820231, 145.037879, 17)
-	,	(16, "Swinburne Hawthorn", "400 Burwood Rd", "400B", NULL, NULL, -0, 0, 17)
-	,	(17, "Swinburne Hawthorn", "60 William St", "60W", NULL, NULL, -37.822484, 145.039690, 17)
-	,	(18, "Swinburne Hawthorn", "Old Administration Building", "AD", NULL, NULL, -37.822108, 145.038748, 17)
-	,	(19, "Swinburne Hawthorn", "Advanced Manufacturing &amp; Design Center", "ADMC", NULL, NULL, -37.822836, 145.039238, 17)
-	,	(20, "Swinburne Hawthorn", "Advanced Technologies Center", "ATC", NULL, NULL, -37.822650, 145.038374, 17)
-	,	(21, "Swinburne Hawthorn", "Applied Sciences Building", "AS", NULL, NULL, -37.822569, 145.037458, 17)
-	,	(22, "Swinburne Hawthorn", "Arts Building", "AR", NULL, NULL, -37.821895, 145.038257, 17)
-	,	(23, "Swinburne Hawthorn", "Australian Graduate School of Entrepreneurship", "AGSE", NULL, NULL, -37.821347, 145.039471, 17)
-	,	(24, "Swinburne Hawthorn", "Aviation Building", "AV", NULL, NULL, -37.823183, 145.041905, 17)
-	,	(25, "Swinburne Hawthorn", "Business &amp; Arts Building", "BA", NULL, NULL, -37.822084, 145.039406, 17)
-	,	(26, "Swinburne Hawthorn", "Chemistry Building", "CH", NULL, NULL, -37.822656, 145.037855, 17)
-	,	(27, "Swinburne Hawthorn", "Engineering Building", "EN", NULL, NULL, -37.822232, 145.037801, 17)
-	,	(28, "Swinburne Hawthorn", "Engineering - West Building", "EW", NULL, NULL, -37.821982, 145.037454, 17)
-	,	(29, "Swinburne Hawthorn", "IS Building", "IS", NULL, NULL, -37.822889, 145.041926, 17)
-	,	(30, "Swinburne Hawthorn", "Library", "LB", NULL, NULL, -37.822454, 145.039211, 17)
-	,	(31, "Swinburne Hawthorn", "Multi-Deck Car Park", "19W", NULL, NULL, -37.820274, 145.037089, 17)
-	,	(32, "Swinburne Hawthorn", "Science Annexe", "SA", NULL, NULL, -37.822234, 145.037370, 17)
-	,	(33, "Swinburne Hawthorn", "SR Building", "SR", NULL, NULL, -37.821547, 145.038823, 17)
-	,	(34, "Swinburne Hawthorn", "Swinburne Place - South Building", "SPS", NULL, NULL, -37.821287, 145.037873, 17)
-	,	(35, "Swinburne Hawthorn", "Swinburne Place - West Building", "SPW", NULL, NULL, -37.820983, 145.037167, 17)
-	,	(36, "Swinburne Hawthorn", "TA Building", "TA", NULL, NULL, -37.820942, 145.038965, 17)
-	,	(37, "Swinburne Hawthorn", "TB Building", "TB", NULL, NULL, -37.821019, 145.039434, 17)
-	,	(38, "Swinburne Hawthorn", "TC Building", "TC", NULL, NULL, -37.820580, 145.039464, 17)
-	,	(39, "Swinburne Hawthorn", "TD Building", "TD", NULL, NULL, -37.820500, 145.039075, 17)
-	,	(40, "Swinburne Hawthorn", "The George Swinburne Building", "GS", NULL, NULL, -37.821353, 145.038488, 17)
-	,	(41, "Swinburne Hawthorn", "UN Building", "UN", NULL, NULL, -37.822524, 145.038599, 17)
+	,	(10, "Swinburne Hawthorn", "1 Alfred St", "1A", null, null, -37.821312, 145.036710, 17)
+	,	(11, "Swinburne Hawthorn", "6 Luton Lane", "6L", null, null, -37.823123, 145.034180, 17)
+	,	(12, "Swinburne Hawthorn", "10 George St", "10G", null, null, -37.822398, 145.041155, 17)
+	,	(13, "Swinburne Hawthorn", "21 Wakefield St", "21W", null, null, -37.820553, 145.037500, 17)
+	,	(14, "Swinburne Hawthorn", "24 George St", "24G", null, null, -37.822523, 145.041615, 17)
+	,	(15, "Swinburne Hawthorn", "32 Park St", "32P", null, null, -37.820231, 145.037879, 17)
+	,	(16, "Swinburne Hawthorn", "400 Burwood Rd", "400B", null, null, -0, 0, 17)
+	,	(17, "Swinburne Hawthorn", "60 William St", "60W", null, null, -37.822484, 145.039690, 17)
+	,	(18, "Swinburne Hawthorn", "Old Administration Building", "AD", null, null, -37.822108, 145.038748, 17)
+	,	(19, "Swinburne Hawthorn", "Advanced Manufacturing &amp; Design Center", "ADMC", null, null, -37.822836, 145.039238, 17)
+	,	(20, "Swinburne Hawthorn", "Advanced Technologies Center", "ATC", null, null, -37.822650, 145.038374, 17)
+	,	(21, "Swinburne Hawthorn", "Applied Sciences Building", "AS", null, null, -37.822569, 145.037458, 17)
+	,	(22, "Swinburne Hawthorn", "Arts Building", "AR", null, null, -37.821895, 145.038257, 17)
+	,	(23, "Swinburne Hawthorn", "Australian Graduate School of Entrepreneurship", "AGSE", null, null, -37.821347, 145.039471, 17)
+	,	(24, "Swinburne Hawthorn", "Aviation Building", "AV", null, null, -37.823183, 145.041905, 17)
+	,	(25, "Swinburne Hawthorn", "Business &amp; Arts Building", "BA", null, null, -37.822084, 145.039406, 17)
+	,	(26, "Swinburne Hawthorn", "Chemistry Building", "CH", null, null, -37.822656, 145.037855, 17)
+	,	(27, "Swinburne Hawthorn", "Engineering Building", "EN", null, null, -37.822232, 145.037801, 17)
+	,	(28, "Swinburne Hawthorn", "Engineering - West Building", "EW", null, null, -37.821982, 145.037454, 17)
+	,	(29, "Swinburne Hawthorn", "IS Building", "IS", null, null, -37.822889, 145.041926, 17)
+	,	(30, "Swinburne Hawthorn", "Library", "LB", null, null, -37.822454, 145.039211, 17)
+	,	(31, "Swinburne Hawthorn", "Multi-Deck Car Park", "19W", null, null, -37.820274, 145.037089, 17)
+	,	(32, "Swinburne Hawthorn", "Science Annexe", "SA", null, null, -37.822234, 145.037370, 17)
+	,	(33, "Swinburne Hawthorn", "SR Building", "SR", null, null, -37.821547, 145.038823, 17)
+	,	(34, "Swinburne Hawthorn", "Swinburne Place - South Building", "SPS", null, null, -37.821287, 145.037873, 17)
+	,	(35, "Swinburne Hawthorn", "Swinburne Place - West Building", "SPW", null, null, -37.820983, 145.037167, 17)
+	,	(36, "Swinburne Hawthorn", "TA Building", "TA", null, null, -37.820942, 145.038965, 17)
+	,	(37, "Swinburne Hawthorn", "TB Building", "TB", null, null, -37.821019, 145.039434, 17)
+	,	(38, "Swinburne Hawthorn", "TC Building", "TC", null, null, -37.820580, 145.039464, 17)
+	,	(39, "Swinburne Hawthorn", "TD Building", "TD", null, null, -37.820500, 145.039075, 17)
+	,	(40, "Swinburne Hawthorn", "The George Swinburne Building", "GS", null, null, -37.821353, 145.038488, 17)
+	,	(41, "Swinburne Hawthorn", "UN Building", "UN", null, null, -37.822524, 145.038599, 17)
 	
 -- Specific Rooms
-	,	(18108, "Swinburne Hawthorn", "Old Administration Building", "AD", "AD108", NULL, -37.822108, 145.038748, 17)
+	,	(18108, "Swinburne Hawthorn", "Old Administration Building", "AD", "AD108", null, -37.822108, 145.038748, 17)
 	
-	,	(21404, "Swinburne Hawthorn", "Applied Sciences Building", "AS", "AS404", NULL, -37.822569, 145.037458, 17)
+	,	(21404, "Swinburne Hawthorn", "Applied Sciences Building", "AS", "AS404", null, -37.822569, 145.037458, 17)
 	
-	,	(25702, "Swinburne Hawthorn", "Business &amp; Arts Building", "BA", "BA702", NULL, -37.822084, 145.039406, 17)
+	,	(25702, "Swinburne Hawthorn", "Business &amp; Arts Building", "BA", "BA702", null, -37.822084, 145.039406, 17)
 	
-	,	(27213, "Swinburne Hawthorn", "Engineering Building", "EN", "EN213", NULL, -37.822232, 145.037801, 17)
+	,	(27213, "Swinburne Hawthorn", "Engineering Building", "EN", "EN213", null, -37.822232, 145.037801, 17)
 	
-	,	(36212, "Swinburne Hawthorn", "TA Building", "TA", "TA212", NULL, -37.820942, 145.038965, 17)
+	,	(36212, "Swinburne Hawthorn", "TA Building", "TA", "TA212", null, -37.820942, 145.038965, 17)
 	
-	,	(37220, "Swinburne Hawthorn", "TB Building", "TB", "TB220", NULL, -37.821019, 145.039434, 17)
+	,	(37220, "Swinburne Hawthorn", "TB Building", "TB", "TB220", null, -37.821019, 145.039434, 17)
 	
-	,	(39317, "Swinburne Hawthorn", "TD Building", "TD", "TD317", NULL, -37.820500, 145.039075, 17)
+	,	(39317, "Swinburne Hawthorn", "TD Building", "TD", "TD317", null, -37.820500, 145.039075, 17)
 	
-	,	(40217, "Swinburne Hawthorn", "The George Swinburne Building", "GS", "GS217", NULL, -37.821353, 145.038488, 17)
+	,	(40217, "Swinburne Hawthorn", "The George Swinburne Building", "GS", "GS217", null, -37.821353, 145.038488, 17)
 	
 ;
 
@@ -489,7 +528,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		("Summer Sessions",
 		 "Our Summer Screenings bring unique and special series for our most dedicated members.",
 		 "Event is open to all, just come along and scan your membership card as you enter.",
-		 NULL
+		 null
 		)
 	,	("Summer After Dark",
 		 "Extra Summer Screening Session, only for out most dedicated members.",
@@ -499,12 +538,12 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 	,	("Summer Showcase",
 		 "Summer Edition of our Showcase Screenings, each week showing the first episode of anime available to watch now!",
 		 "Event is open to all, just come along and scan your membership card as you enter.",
-		 NULL
+		 null
 		)
 	,	("Screening Sessions",
 		 "Our regular screening sessions, brining you smash hit series shown in full over a three week period.",
 		 "Event is open to all, just come along and scan your membership card as you enter.",
-		 NULL
+		 null
 		)
 	,	("SwinAnime x STARS After Dark",
 		 "Extra Screening Sessions, only for our most dedicated members",
@@ -514,12 +553,12 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 	,	("SwinAnime x STARS Showcase",
 		 "Showcase Screenings, each week showing the first episode of anime available to watch now!",
 	 	 "Event is open to all, just come along and scan your membership card as you enter.",
-	 	 NULL
+	 	 null
 		)
 	,	("Winter Sessions",
 		 "Our Winter Screenings bring unique and special series for our most dedicated members.",
 		 "Event is open to all, just come along and scan your membership card as you enter.",
-		 NULL
+		 null
 		)
 	,	("Winter After Dark",
 		 "Extra Winter Screening Session, only for out most dedicated members.",
@@ -529,7 +568,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 	,	("Winter Showcase",
 		 "Winter Edition of our Showcase Screenings, each week showing the first episode of anime available to watch now!",
 		 "Event is open to all, just come along and scan your membership card as you enter.",
-		 NULL
+		 null
 		)
 	,	("LANime Overnight Marathon",
 		 "Overnight Marathon and LAN gaming, only for our most dedicated members!",
@@ -562,12 +601,12 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		("Tabletop Tonight",
 		 "Every week! Our exclusive Tabletop Experience! Join us for new games and exciting classics.",
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
-		 NULL
+		 null
 		)
 	,	("The Dice Must Flow",
 		 "Evey month join us for our Marathon Extravaganza! Play Longer, Play Harder!",
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
-		 NULL
+		 null
 		)
 ;
 
@@ -577,7 +616,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		("Adventurers Anonymous",
 		 "Are you tied of adventuring alone, with no one around to have your back? Are you tired not having team mates to give you support? Come along to our Adventurers Anonymous meeting where our supportive groups we will help you find your way, and you can help other Adventurers find their's",
 		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
-		 NULL
+		 null
 		)
 ;
 
@@ -585,34 +624,34 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, TICKETS) VALUES
 		("GM Skill's Workshop",
 		 "Do you want to learn to run your own adventure? Are you keen to become a Game Master? Then join us in these Exclusive Skill's Workshops! Running Each Month!",
-		 "Simply come along to the Clubroom, as advertised, present your membership card and pick a game to play!",
-		 NULL
+		 "Workshop Events are open only to Current Premium and Associate Members, come along to the event room and join in the activities, free members are welcome to upgrade to Premium Membership on the spot",
+		 null
 		)
 		
 	,	("Scene Planning and Blocking Workshop",
 		 "The first step in producing animation is to plan and block out the scenes, in this workshop we go over both classic and modern methods.",
-		 NULL,
-		 NULL
+		 "Workshop Events are open only to Current Premium and Associate Members, come along to the event room and join in the activities, free members are welcome to upgrade to Premium Membership on the spot",
+		 null
 		)
 	,	("Drawing Workshop",
 		 "Now that our project is planned out, its time to start with designing our characters, sets and drawing key-frames for our animation! This workshop will help to develop your hand drawing skills as well as introduce you to methods for vectoring and digital software.",
-		 NULL,
-		 NULL
+		 "Workshop Events are open only to Current Premium and Associate Members, come along to the event room and join in the activities, free members are welcome to upgrade to Premium Membership on the spot",
+		 null
 		)
 	,	("Animation Workshop",
 		 "The next step is to actually create the slides for the animation, using both traditional and modern techniques, by hand and digital!",
-		 NULL,
-		 NULL
+		 "Workshop Events are open only to Current Premium and Associate Members, come along to the event room and join in the activities, free members are welcome to upgrade to Premium Membership on the spot",
+		 null
 		)
 	,	("Voice Acting Workshop",
 		 "Next, give the animation a voice, in this workshop we explore techniques used by classic animation to give your characters a voice.",
-		 NULL,
-		 NULL
+		 "Workshop Events are open only to Current Premium and Associate Members, come along to the event room and join in the activities, free members are welcome to upgrade to Premium Membership on the spot",
+		 null
 		)
 	,	("Music and Sound Effects Workshop",
 		 "Finally, the addition of music and production of sound effects in both the modern and traditional manner, thus completing our project!",
-		 NULL,
-		 NULL
+		 "Workshop Events are open only to Current Premium and Associate Members, come along to the event room and join in the activities, free members are welcome to upgrade to Premium Membership on the spot",
+		 null
 		)
 ;
 
@@ -621,17 +660,17 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 		("Annual General Meeting",
 		 "This is the big one, All members are asked to attend and help elect our Committee for Next Year!",
 		 "Open to all current students, please come along to the advertised clubroom and take a seat.",
-		 NULL
+		 null
 		)
 	,	("Semester General Meeting",
 		 "This meeting is for us to introduce ourselves, and inform you of what the club will be doing this semester!",
 		 "Open to all members, please come along to the advertised clubroom and take a seat.",
-		 NULL
+		 null
 		)
 	,	("Member News and Planing Meeting",
 		 "This is where you can have your say, let us know what you want to see from your club, and we'll let you know whats coming up over the next couple of weeks",
 		 "",
-		 NULL
+		 null
 		)
 ;
 
@@ -645,7 +684,7 @@ INSERT INTO EVENT_DETAILS (EVENT_TITLE, EVENT_DESCRIPTION, MEETUP_INSTRUCTIONS, 
 	,	("May the forth be with you",
 		 "May the forth be with you, always. Every year May the 4th marks International Geek Day, celebrating everything geek and nerd!",
 		 "Come and find us, and join in the festivities",
-		 NULL
+		 null
 		)
 	,	("Animaga Expo",
 		 "Animaga Expo celebrates everything, Anime Manga and Games! come and join us in the fun!",
@@ -667,6 +706,18 @@ CREATE TABLE IF NOT EXISTS EVENT_DATA (
 	,	FOREIGN KEY						(EVENT_TYPE_ID) REFERENCES EVENT_TYPE (EVENT_TYPE_ID)
 	,	FOREIGN KEY						(EVENT_LOCATION) REFERENCES EVENT_LOCATION (LOCATION_ID)
 	,	FOREIGN KEY						(EVENT_TITLE) REFERENCES EVENT_DETAILS (EVENT_TITLE)
+);
+
+-- Linking Table for Staff Shifts
+CREATE TABLE IF NOT EXISTS EVENT_STAFF_DATA (
+		EVENT_TIME						DATETIME
+	,	STAFF_NAME						VARCHAR(200)
+	,	SHIFT_START						DATETIME
+	,	SHIFT_END						DATETIME
+	,	SHIFT_LENGTH					INT(1)
+	,	PRIMARY KEY						(EVENT_TIME,STAFF_NAME,SHIFT_START)
+	,	FOREIGN KEY						(EVENT_TIME) REFERENCES EVENT_DATA (EVENT_TIME)
+	,	FOREIGN KEY						(STAFF_NAME) REFERENCES STAFF (STAFF_NAME)
 );
 
 -- Table for Anime Events
@@ -692,7 +743,51 @@ CREATE TABLE IF NOT EXISTS EVENT_GAME_DATA (
 	,	FOREIGN KEY						(GAME_EVENT_TYPE) REFERENCES GAME_EVENT_TYPE (TYPE_ID)
 );
 
--- Anime Data
+-- Newsletter Data Core, Version 1.0.0, FEB18, JPGalovic
+-- Newsletter Table, contains data for newsletter releases
+CREATE TABLE IF NOT EXISTS NEWSLETTER (
+		PUBLICATION_DATE		DATETIME
+	,	PUBLICATION_TITLE		VARCHAR(100)
+	,	PUBLICATION_VOLUME		INT(11)
+	,	PRIMARY KEY				(PUBLICATION_DATE)
+);
+
+-- Newsletter Secions Table, contains definitions for article types
+CREATE TABLE IF NOT EXISTS ARTICLE_TYPE (
+		ARTICLE_TYPE_ID			INT(11)
+	,	ARTICLE_DESCRIPTION		VARCHAR(100)
+	,	PRIMARY KEY				(ARTICLE_TYPE_ID)
+);
+
+INSERT INTO ARTICLE_TYPE (ARTICLE_TYPE_ID, ARTICLE_DESCRIPTION) VALUES
+		(0, "Headline")
+	,	(1, "This week in news")
+	,	(2, "In other news")
+;
+
+-- News Article Table, contains indervidual news articles to be displayed.
+CREATE TABLE IF NOT EXISTS NEWS_ARTICLE (
+		ARTICLE_DATE			DATETIME
+	,	ARTICLE_HEADLINE		VARCHAR(100)
+	,	ARTICLE_IMAGE_URL		VARCHAR(300)
+	,	ARTICLE_TEXT			VARCHAR(1000)
+	,	ARTICLE_LINK			VARCHAR(300)
+	,	ARTICLE_LINK_TEXT		VARCHAR(300)
+	,	ARTICLE_AUTHOR			VARCHAR(100)
+	,	PRIMARY KEY				(ARTICLE_DATE, ARTICLE_HEADLINE)
+);
+
+-- News Article Linker, links news articles to news letters
+CREATE TABLE IF NOT EXISTS ARTICLE_LINKER (
+		PUBLICATION_DATE		DATETIME
+	,	ARTICLE_DATE			DATETIME
+	,	ARTICLE_HEADLINE		VARCHAR(100)
+	,	ARTICLE_TYPE_ID			INT(11)
+	,	PRIMARY KEY				(PUBLICATION_DATE, ARTICLE_DATE, ARTICLE_HEADLINE)
+	,	FOREIGN KEY				(PUBLICATION_DATE) REFERENCES NEWSLETTER (PUBLICATION_DATE)
+	,	FOREIGN KEY				(ARTICLE_DATE, ARTICLE_HEADLINE) REFERENCES NEWS_ARTICLE (ARTICLE_DATE, ARTICLE_HEADLINE)
+	,	FOREIGN KEY				(ARTICLE_TYPE_ID) REFERENCES ARTICLE_TYPE (ARTICLE_TYPE_ID)
+);-- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Shimoneta: A Boring World Where the Concept of Dirty Jokes Doesn't Exist",
 		 12,
@@ -3847,7 +3942,7 @@ INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIP
 		 "Fubuki is a Special Type Destroyer who has just been assigned to the Naval District. With a grand total of zero battles under her belt, she's sure to sink fast under the pressure of expectation. Luckily, she's grouped with Torpedo Squadron Three, and they're ready to support their new comrade. Together, they'll prove they have what it takes to defend the ocean and win it all for humanity!",
 		 "Fubuki is a Special Type Destroyer who has just been assigned to the Naval District. With a grand total of zero battles under her belt, she's sure to sink fast under the pressure of expectation.",
 		 "madman",
-		 NULL
+		 null
 		)
 ;
 
@@ -5057,7 +5152,7 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 ;
 
 INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
-		("Sailor Moon", 0, 1, 2)
+		("Sailor Moon", 3, 1, 2)
 ;-- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Samurai Jack",
@@ -5346,6 +5441,105 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 		("School-Live!", 0, 1, 4)
 	,	("School-Live!", 0, 2, 4)
 	,	("School-Live!", 0, 3, 4)
+;
+-- Anime Data
+INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
+		("Seiyu's Life",
+		 13,
+		 "Based on the doujinshi by accomplished voice actress, Masumi Asano, comes a fun but revealing look into the world of voice actors. And fun cameos from famous voice actors&#33; Being a professional voice actor is more than having a great voice. Rookie seiyu Futaba Ichinose must learn about the hard work, determination, and heart that goes into being the voice behind beloved characters. The work is far from easy and nothing hurts more than the dreaded rejection call, but Futaba works through it to achieve her dream of becoming a big-time seiyu-except she only has two years to prove to her agency that she's good enough to be one. Luckily, she's not alone&#33; Ichigo Moesaki, a self-claimed princess from Planet Strawberry, and Rin Kohana, a seasoned professional since the age of five, will be at her side when they form the seiyu unit, Earphones. But even being in a unit won't be enough to guarantee Futaba's success if she can't land more roles. Follow these three girls and learn just what it takes to be a professional voice actor.",
+		 "Based on the doujinshi by accomplished voice actress, Masumi Asano, comes a fun but revealing look into the world of voice actors. And fun cameos from famous voice actors! Being a professional voice actor is more than having a great voice. Rookie seiyu Futaba Ichinose must learn about the hard work, determination, and heart that goes into being the voice behind beloved characters.",
+		 "Madman",
+		 "&copy;Masumi Asano・Kenjiro Hata&#47;EARPHONES FAN CLUB"
+		)
+;
+
+INSERT INTO ANIME_VOLUME(ANIME_TITLE, VOLUME_TYPE_ID, VOLUME_NUMBER, CLASSIFICATION, NUMBER_OF_EPISODES, PURCHACE_URL) VALUES
+		("Seiyu's Life",
+		 1,
+		 1,
+		 "PG - Mild horror themes, animated violence and coarse language",
+		 13,
+		 "https://www.madman.com.au/catalogue/view/34329/seiyu-s-life-complete-series-subtitled-edition"
+		)
+	,	("Seiyu's Life",
+		 0,
+		 1,
+		 "PG - Mild horror themes, animated violence and coarse language",
+		 13,
+		 "https://www.animelab.com/shows/seiyus-life"
+		)
+;
+
+INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SYNOPSYS) VALUES
+		("Seiyu's Life",
+		 1,
+		 "Recording",
+		 "Futaba Ichinose, a rookie voice actress, nervously does an anime recording session alongside other rookie voice actress, Ichigo Moesaki and Rin Kohana, and veteran Masako Nozawa. During the recording, Futaba gets a chance to fill-in for a bit role, but due to her tendency to overthink the performance she should go for, ends up getting passed over."
+		)
+	,	("Seiyu's Life",
+		 2,
+		 "Audition",
+		 "After getting to meet Hiroshi Kamiya, Futaba is given an audition for a manga adaptation, which Ichigo and Rin also coincidentally happen to be applying for. Later, Futaba becomes downhearted when a recurring character she is voicing gets killed off early. Just then, Futaba, Ichigo, and Rin are approached by the show's producer, Kaibara, who wants them to appear in a web radio show."
+		)
+	,	("Seiyu's Life",
+		 3,
+		 "Web Radio",
+		 "After getting to meet Hiroshi Kamiya, Futaba is given an audition for a manga adaptation, which Ichigo and Rin also coincidentally happen to be applying for. Later, Futaba becomes downhearted when a recurring character she is voicing gets killed off early. Just then, Futaba, Ichigo, and Rin are approached by the show's producer, Kaibara, who wants them to appear in a web radio show."
+		)
+	,	("Seiyu's Life",
+		 4,
+		 "Unit",
+		 "With the anime she was working on ending, Futaba, who had failed her earlier audition, starts to fret about not having any more work in the pipeline once the web radio show ends. During the anime's wrap-up party, Futaba meets Banjo Ginga, who gives her some encouragement. Following the web radio's final broadcast, the producer reveals that, on top of the show continuing, he wants Futaba, Ichigo, and Rin to form a unit named &#39;Earphones&#39;, complete with a CD debut. As each girl goes through their own worries, they get together for a magazine interview and feel relieved that they'll be together."
+		)
+	,	("Seiyu's Life",
+		 5,
+		 "Event",
+		 "Ichigo ends up getting fired from her part-time job due to constantly missing shifts and finds the electricity shut off in her apartment. Just then, she manages to get a voice role in a video game, becoming asked to appear at an event with the rest of the voice cast, which includes Yui Horie. As Ichigo becomes nervous about how big the event turnout will be, she is surprised to find Horie is a lot more slovenly than her public appearances suggest. During the event, Ichigo gets very nervous and starts to doubt herself, but feels calmed by Horie's mini concert. Afterwards, Ichigo feels happy to receive a fan letter from one of the attendees while she and the others are given the song for Earphones' debut single."
+		)
+	,	("Seiyu's Life",
+		 6,
+		 "Music Video Filming",
+		 "While worrying about the prospect of having to memorize lyrics and prepare herself for a music video shoot, Futaba recalls when she took part in a drama CD recording alongside Rie Kugimiya. Futaba soon discovers that the manga she did the drama CD for is getting an anime adaptation, becoming excited about potentially working with Kugimiya again. However, Futaba becomes shocked when it is announced that the character she played in the drama CD will be voiced by Rin in the anime. As Futaba becomes depressed, uncertain of how to face Rin, her co-worker Hikari Shiodome tells her that regardless of what a voice actor goes through, it is their job not to let it show in their performance. Afterwards, Futaba puts aside her jealousy and looks forward to hearing Rin's interpretation of the character, allowing everyone to give their all for the music video shoot. However, the girls soon learn their CD's release date is being delayed."
+		)
+	,	("Seiyu's Life",
+		 7,
+		 "Dubbinge",
+		 "The girls assemble at the same studio for separate jobs; with Futaba dubbing a foreign horror film alongside Rikiya Koyama, Ichigo recording an audiobook, and Rin doing a game voiceover. During the dubbing session, Futaba runs into some issues, as well as some pressure from another voice actor, Yamori, who doesn't think much of her, but manages to pull through. Meanwhile, Ichigo has to try and voice in a lower tone than usual while Rin tries to perform reactions to different levels of attack. At the end of the day, each of the girls manage to finish their respective jobs in one piece, with Futaba receiving compliments from both Yamori and Koyama."
+		)
+	,	("Seiyu's Life",
+		 8,
+		 "Narration",
+		 "Earphones holds a mini concert to commemorate the release of their debut single, with a small but dedicated turnout. Despite the others being more popular than her, Futaba feels pleased when at least one fan comes a long way to see her. Later, Futaba is called in for a narration job at a TV studio, where she observes the dedicated performance of Yūji Machi. As Futaba struggles with recording her segment due to not getting the script and video until the last minute, Machi assures her that everyone goes through those troubles, allowing her to give a more relaxed performance."
+		)
+	,	("Seiyu's Life",
+		 9,
+		 "Future Plans",
+		 "Rin becomes troubled when her teacher suggests she attend a different high school, which would be beneficial for her work but also separate her from her best friend Sayo. As Rin becomes torn over whether she should continue being a voice actress, she is offered a role in an animated movie alongside Hiroshi Kamiya. During the recording, Rin struggles with playing the role of a 15-year-old, but Kamiya assures her that he too feels the pressure of living up to the expectations of all the other. After the movie recording, Rin decides to apply for a different high school, receiving full support from Sayo, who promises that they'll always be together even if they attend different schools."
+		)
+	,	("Seiyu's Life",
+		 10,
+		 "Self Care",
+		 "Futaba is chosen as a program-reg, a voice actress who regularly voices bit parts, in a western anime starring Ryoko Shiraishi. After the first day of recording, Futaba's throat starts acting up from the intense bit part she played, and has to miss a week of recording after getting a cold. While walking home with Futaba the week afterwards and hearing about her determination to keep up with Ichigo and Rin, Shiraishi explains how she got vocal cord nodules from pushing herself too hard and needed throat surgery. Later, as Earphones gets its first solo concert booked, Ichigo takes on the task of choosing and choreographing cover songs to fill the concert's runtime, while everyone also has to try and promote the concert in order to fill their venue. Just as things are progressing, Ichigo ends up spraining her ankle."
+		)
+	,	("Seiyu's Life",
+		 11,
+		 "Self Care",
+		 "Futaba is chosen as a program-reg, a voice actress who regularly voices bit parts, in a western anime starring Ryoko Shiraishi. After the first day of recording, Futaba's throat starts acting up from the intense bit part she played, and has to miss a week of recording after getting a cold. While walking home with Futaba the week afterwards and hearing about her determination to keep up with Ichigo and Rin, Shiraishi explains how she got vocal cord nodules from pushing herself too hard and needed throat surgery. Later, as Earphones gets its first solo concert booked, Ichigo takes on the task of choosing and choreographing cover songs to fill the concert's runtime, while everyone also has to try and promote the concert in order to fill their venue. Just as things are progressing, Ichigo ends up spraining her ankle."
+		)
+	,	("Seiyu's Life",
+		 12,
+		 "Concert",
+		 "Ichigo tries to play her sprained ankle off as nothing serious, asking Futaba and Rin to keep it a secret from the other staff so as not to betray everyone's expectations. Hearing from Horie about her experiences in concerts, as well as being part of a unit herself, Futaba decides it best not to keep Ichigo's injury a secret and instead focus on revising their choreography and setlist to make things easier on Ichigo. Meanwhile, Sayo makes some flags for the performance while Konno manages to come up with a way to adjust everyone's outfits so Ichigo's injury doesn't stand out. As the concert manages to become a great success thanks to everyone's efforts and support, Ichigo decides to dance her all for their encore performance."
+		)
+	,	("Seiyu's Life",
+		 13,
+		 "Assessment",
+		 "A month after Earphones' concert, Futaba faces an assessment to determine whether she can stay at Aozora Productions. While pondering how she will be assessed, Futaba meets up with some of her friends from training school, some of whom went on to different career paths, before being asked to think about where she wants to be in the future. On the day of her assessment, Futaba faces harsh criticism due to her lack of work but manages to work up the courage to state her desire to work as a voice actress for a long time. Although not able to move up to a higher position in the company, Futaba is given a deferral, allowing her to work at Aozora for another year in order to prove herself as a voice actress who can work for a long time."
+		)	
+;
+
+INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_OF_EPISODES) VALUES
+		("Seiyu's Life", 3, 1, 13)
 ;
 -- Anime Data
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
@@ -6028,7 +6222,7 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 		("Zetman", 3, 1, 2)
 ;
 
--- Anime Data
+-- Accel World Data, Version 1.0.0, JAN18, JSimmonds-Browne
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Accel world",
 		 24,
@@ -6184,7 +6378,7 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("Accel world", 0, 2, 8)
 	,	("Accel world", 0, 3, 8)
 ;
--- Anime Data
+-- AKB0048 Data, Version 1.0.0, JAN18, JSimmonds-Browne
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("AKB0048",
 		 13,
@@ -6278,13 +6472,13 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 	,	("AKB0048", 0, 2, 4)
 	,	("AKB0048", 0, 3, 5)
 	,	("AKB0048", 2, 1, 13)
-;-- Anime Data
+;-- ALIEN 9 Data, Version 1.0.0, JAN18, JSimmonds-Browne
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("ALIEN 9",
 		 4,
 		 "In sixth grade Yuri just wants to end her last year in elementary school on a quiet note...not as a member of the 'Alien Party'. The objective of the 'Alien Party' is to capture any rogue aliens that wonder on to the school premises. However to capture these aliens you need the help of one, called a &quot;Borg&quot;. A symbiotic life-form that offers the ability to protect, incapacitate and ultimately capture other aliens in compensation for being able to feed off their wastes by licking their back.",
 		 "In sixth grade Yuri just wants to end her last year in elementary school on a quiet note...not as a member of the 'Alien Party'.",
-		 "hanabee",
+		 "Hanabee",
 		 "&copy; J.C. STAFF"
 		)
 ;
@@ -6303,22 +6497,22 @@ INSERT INTO ANIME_EPISODE(ANIME_TITLE, EPISODE_NUMBER, EPISODE_TITLE, EPISODE_SY
 		("ALIEN 9",
 		 1,
 		 "9th Elementary Anti-Alien Squad",
-		 NULL
+		 null
 		)
 	,	("ALIEN 9",
 		 2,
 		 "Boredom, Spaceship and Overgrowth",
-		 NULL
+		 null
 		)
 	,	("ALIEN 9",
 		 3,
 		 "Summer Vacation, Borg and Death",
-		 NULL
+		 null
 		)
 	,	("ALIEN 9",
 		 4,
 		 "The End of the Beginning",
-		 NULL
+		 null
 		)
 ;
 
@@ -6619,7 +6813,7 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 		("Is it wrong to try to pick up girls in a dungeon", 0, 1, 4)
 	,	("Is it wrong to try to pick up girls in a dungeon", 0, 2, 4)
 	,	("Is it wrong to try to pick up girls in a dungeon", 0, 3, 5)
-;-- Anime Data
+;-- Kokoro Connect Data, Version 1.0.0, JAN18, JSimmonds-Browne
 INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIPTION, COMPANY_NAME, COPYRIGHT) VALUES
 		("Kokoro Connect",
 		 17,
@@ -8801,7 +8995,7 @@ INSERT INTO ANIME_SESSION(ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER, NUMBER_O
 INSERT INTO COMPANY (COMPANY_NAME, COMPANY_URL, IS_SPONSOR) VALUES
 		("Final Form Games", "http://www.finalformgames.com", FALSE)
 	,	("Wizards of the Coast", "http://company.wizards.com", FALSE)
-	,	("Indie Boards & Cards, La Mame Games", NULL, FALSE)
+	,	("Indie Boards & Cards, La Mame Games", null, FALSE)
 	,	("Fantasy Flight Games", "https://www.fantasyflightgames.com/", FALSE)
 	,	("Games Workshop", "https://www.games-workshop.com/", FALSE)
 	,	("Plaid Hat Games", "https://www.plaidhatgames.com/", FALSE)
@@ -8836,7 +9030,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 7,
 		 5,
 		 "Repos Production",
-		 NULL
+		 null
 		)
 ;
 
@@ -8854,7 +9048,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 6,
 		 5,
 		 "Fantasy Flight Games",
-		 NULL
+		 null
 		)
 ;
 
@@ -8872,7 +9066,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 6,
 		 5,
 		 "Indie Boards & Cards, La Mame Games",
-		 NULL
+		 null
 		)
 ;
 
@@ -8890,7 +9084,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 5,
 		 4,
 		 "Plaid Hat Games",
-		 NULL
+		 null
 		)
 ;
 
@@ -8906,7 +9100,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 4,
 		 2,
 		 "Wizards of the Coast",
-		 NULL
+		 null
 		)
 ;
 
@@ -8924,7 +9118,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 4,
 		 4,
 		 "Z-Man Games",
-		 NULL
+		 null
 		)
 ;
 
@@ -8942,7 +9136,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 8,
 		 4,
 		 "Slugfest Games",
-		 NULL
+		 null
 		)
 ;
 
@@ -8958,7 +9152,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 5,
 		 4,
 		 "Stonemaier Games",
-		 NULL
+		 null
 		)
 ;
 
@@ -8976,7 +9170,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 5,
 		 4,
 		 "Adventureland Games",
-		 NULL
+		 null
 		)
 ;
 
@@ -8987,12 +9181,12 @@ INSERT INTO GAME_PLATFORM (GAME_TITLE, PLATFORM_ID) VALUES
 ;-- Talisman Data, Version 1.0, FEB18, JPGalovic
 INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBER_OF_PLAYERS, RECOMMENDED_NUMBER_OF_PLAYERS, COMPANY_NAME, CLASSIFICATION) VALUES
 		("Talisman",
-		 "Welcome adventurer! I can see by your eyes that you’re here to locate the Portal of Power and claim the Crown of Command. Well you’d best know these lands are dangerous, filled with evil monsters, ancient relics and strange magics. You’ll need to find some of those yourself if you want to win. How do I know? You’re not the only one here seeking it, other adventurers will try to thwart you. Find the Crown and hold onto it, lest one of them seize it from your dead hands.",
+		 "Welcome adventurer! I can see by your eyes that you're here to locate the Portal of Power and claim the Crown of Command. Well you'd best know these lands are dangerous, filled with evil monsters, ancient relics and strange magics. You'll need to find some of those yourself if you want to win. How do I know? You're not the only one here seeking it, other adventurers will try to thwart you. Find the Crown and hold onto it, lest one of them seize it from your dead hands.",
 		 2,
 		 6,
 		 4,
 		 "Fantasy Flight Games",
-		 NULL
+		 null
 		)
 ;
 
@@ -9010,7 +9204,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 75,
 		 20,
 		 "Bezier Games",
-		 NULL
+		 null
 		)
 ;
 
@@ -9028,7 +9222,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 6,
 		 4,
 		 "Games Workshop",
-		 NULL
+		 null
 		)
 ;
 
@@ -9192,7 +9386,7 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 	,	("2018-03-05 15-30-00", "No-Rin", 3, 1)
 
  	,	("2018-03-12 14-30-00", "Oreimo", 3, 1)
--- 	,	("2018-03-12 15-30-00", "Seiu's Life", 3, 1)
+	,	("2018-03-12 15-30-00", "Seiyu's Life", 3, 1)
 ;
 
 -- B
@@ -9236,7 +9430,7 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 	,	("2018-04-09 15-30-00", 0, "SwinAnime x STARS Showcase", 39317, 0, "0")
 ;
 
--- INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
+ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_NUMBER) VALUES
 -- 		("2018-03-19 14-30-00", "Aquarion Logos", 3, 1)
 -- 	,	("2018-03-19 15-30-00", "Tengen Toppa Gurren Legan", 3, 1)
 
@@ -9244,8 +9438,8 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 -- 	,	("2018-03-26 15-30-00", "Azumanga Daioh", 3, 1)
 
 -- 	,	("2018-04-09 14-30-00", "Cardcaptor Sakura", 3, 1)
--- 	,	("2018-03-13 15-30-00", "Sailor Moon", 3, 1)
--- ;
+ 		("2018-04-09 15-30-00", "Sailor Moon", 3, 1)
+;
 
 -- C
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
@@ -9357,72 +9551,72 @@ INSERT INTO EVENT_ANIME_DATA (EVENT_TIME, ANIME_TITLE, SESSION_TYPE_ID, SESSION_
 
 -- Tabletop Events
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_SUBTITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
-		("2018-02-27 10-30-00", 5, "Tabletop Tonight", "Decks Out", 0, 0, "0")
-	,	("2018-03-06 10-30-00", 5, "Tabletop Tonight", "Political Games", 0, 0, "0")
-	,	("2018-03-13 10-30-00", 5, "Tabletop Tonight", "High Fantasy", 40217, 0, "0")
-	,	("2018-03-20 10-30-00", 5, "Tabletop Tonight", "Horror Games", 40217, 0, "0")
-	,	("2018-03-27 10-30-00", 5, "Tabletop Tonight", "Intregue and Betrayal", 40217, 0, "0")
-	,	("2018-04-03 10-30-00", 5, "Tabletop Tonight", "Big Box Games", 40217, 0, "0")
-	,	("2018-04-10 10-30-00", 5, "Tabletop Tonight", "Big Games Small Packages", 40217, 0, "0")
-	,	("2018-04-17 10-30-00", 5, "Tabletop Tonight", "Fight for the Crown", 40217, 0, "0")
-	,	("2018-04-24 10-30-00", 5, "Tabletop Tonight", "Thematic Games", 40217, 0, "0")
-	,	("2018-05-01 10-30-00", 5, "Tabletop Tonight", "To the Stars", 40217, 0, "0")
-	,	("2018-05-08 10-30-00", 5, "Tabletop Tonight", "Eurogames", 40217, 0, "0")
-	,	("2018-05-15 10-30-00", 5, "Tabletop Tonight", "Apocalypse!", 40217, 0, "0")
-	,	("2018-05-22 10-30-00", 5, "Tabletop Tonight", "Party Games", 40217, 0, "0")
+		("2018-02-27 14-30-00", 5, "Tabletop Tonight", "Decks Out", 0, 0, "0")
+	,	("2018-03-06 14-30-00", 5, "Tabletop Tonight", "Political Games", 0, 0, "0")
+	,	("2018-03-13 14-30-00", 5, "Tabletop Tonight", "High Fantasy", 40217, 0, "0")
+	,	("2018-03-20 14-30-00", 5, "Tabletop Tonight", "Horror Games", 40217, 0, "0")
+	,	("2018-03-27 14-30-00", 5, "Tabletop Tonight", "Intregue and Betrayal", 40217, 0, "0")
+	,	("2018-04-03 14-30-00", 5, "Tabletop Tonight", "Big Box Games", 40217, 0, "0")
+	,	("2018-04-10 14-30-00", 5, "Tabletop Tonight", "Big Games Small Packages", 40217, 0, "0")
+	,	("2018-04-17 14-30-00", 5, "Tabletop Tonight", "Fight for the Crown", 40217, 0, "0")
+	,	("2018-04-24 14-30-00", 5, "Tabletop Tonight", "Thematic Games", 40217, 0, "0")
+	,	("2018-05-01 14-30-00", 5, "Tabletop Tonight", "To the Stars", 40217, 0, "0")
+	,	("2018-05-08 14-30-00", 5, "Tabletop Tonight", "Eurogames", 40217, 0, "0")
+	,	("2018-05-15 14-30-00", 5, "Tabletop Tonight", "Apocalypse!", 40217, 0, "0")
+	,	("2018-05-22 14-30-00", 5, "Tabletop Tonight", "Party Games", 40217, 0, "0")
 	
-	,	("2018-03-03 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
-	,	("2018-03-31 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
-	,	("2018-04-28 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
-	,	("2018-05-26 08-30-00", 5, "The Dice Must Flow", NULL, 40217, 0, "0")
+	,	("2018-03-03 08-30-00", 5, "The Dice Must Flow", null, 40217, 0, "0")
+	,	("2018-03-31 08-30-00", 5, "The Dice Must Flow", null, 40217, 0, "0")
+	,	("2018-04-28 08-30-00", 5, "The Dice Must Flow", null, 40217, 0, "0")
+	,	("2018-05-26 08-30-00", 5, "The Dice Must Flow", null, 40217, 0, "0")
 ;
 
 INSERT INTO EVENT_GAME_DATA (EVENT_TIME, GAME_TITLE, GAME_EVENT_TYPE) VALUES
-		("2018-02-27 10-30-00", "Magic: The Gathering", 1)
-	,	("2018-03-06 10-30-00", "Coup", 1)
-	,	("2018-03-13 10-30-00", "Talisman", 1)
--- 	,	("2018-03-20 10-30-00", "Game_Title", 1)
-	,	("2018-03-27 10-30-00", "Dead of Winter", 1)
-	,	("2018-04-03 10-30-00", "Scythe", 1)
-	,	("2018-04-10 10-30-00", "Sushi Go", 1)
-	,	("2018-04-17 10-30-00", "Warhammer 40k", 1)
-	,	("2018-04-24 10-30-00", "Red Dragon Inn", 1)
-	,	("2018-05-01 10-30-00", "Battlestar Galactica", 1)
-	,	("2018-05-08 10-30-00", "7 Wonders", 1)
-	,	("2018-05-15 10-30-00", "Pandemic", 1)
-	,	("2018-05-22 10-30-00", "Ultimate Werewolf", 1)
+		("2018-02-27 14-30-00", "Magic: The Gathering", 1)
+	,	("2018-03-06 14-30-00", "Coup", 1)
+	,	("2018-03-13 14-30-00", "Talisman", 1)
+-- 	,	("2018-03-20 14-30-00", "Game_Title", 1)
+	,	("2018-03-27 14-30-00", "Dead of Winter", 1)
+	,	("2018-04-03 14-30-00", "Scythe", 1)
+	,	("2018-04-10 14-30-00", "Sushi Go", 1)
+	,	("2018-04-17 14-30-00", "Warhammer 40k", 1)
+	,	("2018-04-24 14-30-00", "Red Dragon Inn", 1)
+	,	("2018-05-01 14-30-00", "Battlestar Galactica", 1)
+	,	("2018-05-08 14-30-00", "7 Wonders", 1)
+	,	("2018-05-15 14-30-00", "Pandemic", 1)
+	,	("2018-05-22 14-30-00", "Ultimate Werewolf", 1)
 ;
 
 -- Roleplay Events
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
-		("2018-03-01 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
-	,	("2018-03-08 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
-	,	("2018-03-15 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
-	,	("2018-03-22 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
-	,	("2018-03-29 16-30-00", 4, "Adventurers Anonymous", 37220, 0, "0")
-	,	("2018-04-05 16-30-00", 4, "Adventurers Anonymous", 37220, 0, "0")
-	,	("2018-04-12 16-30-00", 4, "Adventurers Anonymous", 37220, 0, "0")
-	,	("2018-04-19 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
-	,	("2018-04-26 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
-	,	("2018-05-03 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
-	,	("2018-05-10 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
-	,	("2018-05-17 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
-	,	("2018-05-24 16-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+		("2018-03-01 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+	,	("2018-03-08 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+	,	("2018-03-15 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+	,	("2018-03-22 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+	,	("2018-03-29 14-30-00", 4, "Adventurers Anonymous", 37220, 0, "0")
+	,	("2018-04-05 14-30-00", 4, "Adventurers Anonymous", 37220, 0, "0")
+	,	("2018-04-12 14-30-00", 4, "Adventurers Anonymous", 37220, 0, "0")
+	,	("2018-04-19 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+	,	("2018-04-26 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+	,	("2018-05-03 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+	,	("2018-05-10 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+	,	("2018-05-17 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
+	,	("2018-05-24 14-30-00", 4, "Adventurers Anonymous", 18108, 0, "0")
 ;
 
 -- Workshop Events
 INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, EVENT_FACEBOOK_ID, EVENT_UNIONE_URL) VALUES
-		("2018-03-14 16-30-00", 2, "GM Skill's Workshop", 18108, 0, "0")
-	,	("2018-04-11 16-30-00", 2, "GM Skill's Workshop", 36212, 0, "0")
-	,	("2018-05-09 16-30-00", 2, "GM Skill's Workshop", 18108, 0, "0")
+		("2018-03-14 14-30-00", 2, "GM Skill's Workshop", 18108, 0, "0")
+	,	("2018-04-11 14-30-00", 2, "GM Skill's Workshop", 36212, 0, "0")
+	,	("2018-05-09 14-30-00", 2, "GM Skill's Workshop", 18108, 0, "0")
 
- 	,	("2018-03-07 16-30-00", 2, "Scene Planning and Blocking Workshop", 18108, 0, "0")
- 	,	("2018-03-21 16-30-00", 2, "Drawing Workshop", 18108, 0, "0")
- 	,	("2018-04-04 16-30-00", 2, "Animation Workshop", 36212, 0, "0")
- 	,	("2018-04-18 16-30-00", 2, "Voice Acting Workshop", 18108, 0, "0")
- 	,	("2018-05-02 16-30-00", 2, "Music and Sound Effects Workshop", 18108, 0, "0")
+ 	,	("2018-03-07 14-30-00", 2, "Scene Planning and Blocking Workshop", 18108, 0, "0")
+ 	,	("2018-03-21 14-30-00", 2, "Drawing Workshop", 18108, 0, "0")
+ 	,	("2018-04-04 14-30-00", 2, "Animation Workshop", 36212, 0, "0")
+ 	,	("2018-04-18 14-30-00", 2, "Voice Acting Workshop", 18108, 0, "0")
+ 	,	("2018-05-02 14-30-00", 2, "Music and Sound Effects Workshop", 18108, 0, "0")
 
--- 	,	("2018-05-16 16-30-00", 2, "Trivia", 18108, 0, "0")
+-- 	,	("2018-05-16 14-30-00", 2, "Trivia", 18108, 0, "0")
 ;
 
 -- General Meetings
@@ -9439,98 +9633,54 @@ INSERT INTO EVENT_DATA (EVENT_TIME, EVENT_TYPE_ID, EVENT_TITLE, EVENT_LOCATION, 
 	,	("2018-05-04 10-30-00", 7, "May the forth be with you", 0, 0, "0")
 ;
 
--- Newsletter Data Core, Version 1.0.0, FEB18, JPGalovic
--- Newsletter Table, contains data for newsletter releases
-CREATE TABLE IF NOT EXISTS NEWSLETTER (
-		PUBLICATION_DATE		DATETIME
-	,	PUBLICATION_TITLE		VARCHAR(100)
-	,	PUBLICATION_VOLUME		INT(11)
-	,	PRIMARY KEY				(PUBLICATION_DATE)
-);
-
--- Newsletter Secions Table, contains definitions for article types
-CREATE TABLE IF NOT EXISTS ARTICLE_TYPE (
-		ARTICLE_TYPE_ID			INT(11)
-	,	ARTICLE_DESCRIPTION		VARCHAR(100)
-	,	PRIMARY KEY				(ARTICLE_TYPE_ID)
-);
-
-INSERT INTO ARTICLE_TYPE (ARTICLE_TYPE_ID, ARTICLE_DESCRIPTION) VALUES
-		(0, "Headline")
-	,	(1, "This week in news")
-	,	(2, "In other news")
-;
-
--- News Article Table, contains indervidual news articles to be displayed.
-CREATE TABLE IF NOT EXISTS NEWS_ARTICLE (
-		ARTICLE_DATE			DATETIME
-	,	ARTICLE_HEADLINE		VARCHAR(100)
-	,	ARTICLE_IMAGE_URL		VARCHAR(300)
-	,	ARTICLE_TEXT			VARCHAR(1000)
-	,	ARTICLE_LINK			VARCHAR(300)
-	,	ARTICLE_LINK_TEXT		VARCHAR(300)
-	,	ARTICLE_AUTHOR			VARCHAR(100)
-	,	PRIMARY KEY				(ARTICLE_DATE, ARTICLE_HEADLINE)
-);
-
--- News Article Linker, links news articles to news letters
-CREATE TABLE IF NOT EXISTS ARTICLE_LINKER (
-		PUBLICATION_DATE		DATETIME
-	,	ARTICLE_DATE			DATETIME
-	,	ARTICLE_HEADLINE		VARCHAR(100)
-	,	ARTICLE_TYPE_ID			INT(11)
-	,	PRIMARY KEY				(PUBLICATION_DATE, ARTICLE_DATE, ARTICLE_HEADLINE)
-	,	FOREIGN KEY				(PUBLICATION_DATE) REFERENCES NEWSLETTER (PUBLICATION_DATE)
-	,	FOREIGN KEY				(ARTICLE_DATE, ARTICLE_HEADLINE) REFERENCES NEWS_ARTICLE (ARTICLE_DATE, ARTICLE_HEADLINE)
-	,	FOREIGN KEY				(ARTICLE_TYPE_ID) REFERENCES ARTICLE_TYPE (ARTICLE_TYPE_ID)
-);-- Friday Fill Newletter Definitions, Version 1.0.0, FEB18, JPGalovic
+-- Friday Fill Newletter Definitions, Version 1.0.0, FEB18, JPGalovic
 
 -- Semester 1, 2018
 INSERT INTO NEWSLETTER(PUBLICATION_DATE, PUBLICATION_TITLE, PUBLICATION_VOLUME) VALUES
-		("2018-02-23 12-00-00", "Friday Fill", 1)
-	,	("2018-03-02 12-00-00", "Friday Fill", 2)
-	,	("2018-03-09 12-00-00", "Friday Fill", 3)
-	,	("2018-03-16 12-00-00", "Friday Fill", 4)
-	,	("2018-03-23 12-00-00", "Friday Fill", 5)
-	,	("2018-03-30 12-00-00", "Friday Fill", 6)
-	,	("2018-04-06 12-00-00", "Friday Fill", 7)
-	,	("2018-04-13 12-00-00", "Friday Fill", 8)
-	,	("2018-04-20 12-00-00", "Friday Fill", 9)
-	,	("2018-04-27 12-00-00", "Friday Fill", 10)
-	,	("2018-05-04 12-00-00", "Friday Fill", 11)
-	,	("2018-05-11 12-00-00", "Friday Fill", 12)
-	,	("2018-05-18 12-00-00", "Friday Fill", 13)
-	,	("2018-05-25 12-00-00", "Friday Fill", 14)
+		("2018-02-23 12:00:00", "Friday Fill", 1)
+	,	("2018-03-02 12:00:00", "Friday Fill", 2)
+	,	("2018-03-09 12:00:00", "Friday Fill", 3)
+	,	("2018-03-16 12:00:00", "Friday Fill", 4)
+	,	("2018-03-23 12:00:00", "Friday Fill", 5)
+	,	("2018-03-30 12:00:00", "Friday Fill", 6)
+	,	("2018-04-06 12:00:00", "Friday Fill", 7)
+	,	("2018-04-13 12:00:00", "Friday Fill", 8)
+	,	("2018-04-20 12:00:00", "Friday Fill", 9)
+	,	("2018-04-27 12:00:00", "Friday Fill", 10)
+	,	("2018-05-04 12:00:00", "Friday Fill", 11)
+	,	("2018-05-11 12:00:00", "Friday Fill", 12)
+	,	("2018-05-18 12:00:00", "Friday Fill", 13)
+	,	("2018-05-25 12:00:00", "Friday Fill", 14)
 ;
 
 -- Winter Semester, 2018
 INSERT INTO NEWSLETTER(PUBLICATION_DATE, PUBLICATION_TITLE, PUBLICATION_VOLUME) VALUES
-		("2018-06-22 12-00-00", "Friday Fill", 15)
-	,	("2018-06-29 12-00-00", "Friday Fill", 16)
-	,	("2018-07-06 12-00-00", "Friday Fill", 17)
-	,	("2018-07-13 12-00-00", "Friday Fill", 18)
-	,	("2018-07-20 12-00-00", "Friday Fill", 19)
-	,	("2018-07-27 12-00-00", "Friday Fill", 20)
+		("2018-06-22 12:00:00", "Friday Fill", 15)
+	,	("2018-06-29 12:00:00", "Friday Fill", 16)
+	,	("2018-07-06 12:00:00", "Friday Fill", 17)
+	,	("2018-07-13 12:00:00", "Friday Fill", 18)
+	,	("2018-07-20 12:00:00", "Friday Fill", 19)
+	,	("2018-07-27 12:00:00", "Friday Fill", 20)
 ;
 
 -- Semester 2, 2018
 INSERT INTO NEWSLETTER(PUBLICATION_DATE, PUBLICATION_TITLE, PUBLICATION_VOLUME) VALUES
-		("2018-08-03 12-00-00", "Friday Fill", 21)
-	,	("2018-08-10 12-00-00", "Friday Fill", 22)
-	,	("2018-08-17 12-00-00", "Friday Fill", 23)
-	,	("2018-08-24 12-00-00", "Friday Fill", 24)
-	,	("2018-08-31 12-00-00", "Friday Fill", 25)
-	,	("2018-09-07 12-00-00", "Friday Fill", 26)
-	,	("2018-09-14 12-00-00", "Friday Fill", 27)
-	,	("2018-09-21 12-00-00", "Friday Fill", 28)
-	,	("2018-09-28 12-00-00", "Friday Fill", 29)
-	,	("2018-10-05 12-00-00", "Friday Fill", 30)
-	,	("2018-10-12 12-00-00", "Friday Fill", 31)
-	,	("2018-10-18 12-00-00", "Friday Fill", 32)
-	,	("2018-10-26 12-00-00", "Friday Fill", 33)
+		("2018-08-03 12:00:00", "Friday Fill", 21)
+	,	("2018-08-10 12:00:00", "Friday Fill", 22)
+	,	("2018-08-17 12:00:00", "Friday Fill", 23)
+	,	("2018-08-24 12:00:00", "Friday Fill", 24)
+	,	("2018-08-31 12:00:00", "Friday Fill", 25)
+	,	("2018-09-07 12:00:00", "Friday Fill", 26)
+	,	("2018-09-14 12:00:00", "Friday Fill", 27)
+	,	("2018-09-21 12:00:00", "Friday Fill", 28)
+	,	("2018-09-28 12:00:00", "Friday Fill", 29)
+	,	("2018-10-05 12:00:00", "Friday Fill", 30)
+	,	("2018-10-12 12:00:00", "Friday Fill", 31)
+	,	("2018-10-18 12:00:00", "Friday Fill", 32)
+	,	("2018-10-26 12:00:00", "Friday Fill", 33)
 ;-- Misc Articles (commonly used or plugged), Verson 1.0.0, FEB18, JPGalovic
 INSERT INTO NEWS_ARTICLE (ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_IMAGE_URL, ARTICLE_TEXT, ARTICLE_LINK, ARTICLE_LINK_TEXT, ARTICLE_AUTHOR) VALUES
-		("2018-02-22 12-00-00",
+		("2018-02-22 12:00:00",
 		 "SwinAnime x S.T.A.R.S. Wants You",
 		 "http://swinanime.net/image/news/volunteer_poster.png",
 		 "We are always looking for volunteers to help us run and plan our events, as such if you would like to help us to run or plan our events, simply visit volunteer.swinanime.net and submit your interest today!",
@@ -9538,7 +9688,58 @@ INSERT INTO NEWS_ARTICLE (ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_IMAGE_URL, ART
 		 "Volunteer to help SwinAnime x S.T.A.R.S",
 		 "J.P. Galovic"
 		)
-;-- Misc Article Linker, Links Misc Articles to Newsletters, Version 1.0.0, FEB18, JPGalovic
+;-- Showcase Articles, Verson 1.0.0, FEB18, JPGalovic
+INSERT INTO NEWS_ARTICLE (ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_IMAGE_URL, ARTICLE_TEXT, ARTICLE_LINK, ARTICLE_LINK_TEXT, ARTICLE_AUTHOR) VALUES
+		("2018-02-22 12:00:00",
+		 "SwinAnime x S.T.A.R.S. Showcase",
+		 "http://swinanime.net/image/anime/hacksign/session/01.jpg",
+		 "This Monday starting at 2.30pm SwinAnime X S.T.A.R.S. will be running its first Showcase screening of Semester 1. Showing at 2.30pm is .hack//SIGN a series about a boy name Tsukasa who is trapped in a virtual reality game and begins to discover the secrets of the game. Following that at 3.30pm is the classic anime Dragon Ball Z which shows the adventures of Goku and friends after Goku grows up. Come to TD317 at 2.30pm or 3.30pm on Monday 26th February if you want to see them!",
+		 NULL,
+		 NULL,
+		 "Thomas Tuhan"
+		)
+;-- Showcase Articles, Verson 1.0.0, MAR18, JPGalovic
+INSERT INTO NEWS_ARTICLE (ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_IMAGE_URL, ARTICLE_TEXT, ARTICLE_LINK, ARTICLE_LINK_TEXT, ARTICLE_AUTHOR) VALUES
+		("2018-03-02 12:00:00",
+		 "Screening Sessions Week 2!",
+		 "http://www.swinanime.net/image/anime/muv-luv%20alternative%20total%20eclipse/session/02.jpg",
+		 "This Friday March 9th starting from 11.30am SwinAnime X S.T.A.R.S. will be running its week 2 screening. Starting off the screening at 11.30am and going till 4.30pm will be Muv-Luv Alternative Total Eclipse an anime set on an alternate version of Earth where humanity has been fighting against an alien race known as the BETA since 1967.<br><br>Following that at 4.30pm and going untill 6.30pm will be Canaan which follows the adventures of the mercenary Canaan, her dealings with her friend Maria and her clashes with her rival and enemy Alphard.<br><br>Finishing up the screenings for the day, begining at 7.30pm is Danganronpa an anime which follows the adventures of a group of students at Hope's Peak Academy an elite private school whose graduates are said to have the world at their fingertips. If you wish to watch any of these anime please attend the screenings on Friday March 9th.",
+		 NULL,
+		 NULL,
+		 "Thomas Tuhan"
+		)
+;-- Headline Articles, Verson 1.0.0, FEB18, JPGalovic
+INSERT INTO NEWS_ARTICLE (ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_IMAGE_URL, ARTICLE_TEXT, ARTICLE_LINK, ARTICLE_LINK_TEXT, ARTICLE_AUTHOR) VALUES
+		("2018-02-22 12:00:00",
+		 "Welcome to all our new Members!",
+		 null,
+		 "First of all I would like to welcome our new members, we have lots in store for you this coming year!<br><br>This is the first of weekly (hopefully) newsletter we will be sending out each Friday, With lots of news and upcoming exciting events!!<br><br>If you have not alredy done so, please join our Discord Server, discord.swinanime.net!",
+		 "http://discord.swinanime.net/",
+		 "Join our Discord Server today!",
+		 "J.P. Galovic"
+		)
+	,	("2018-03-02 12:00:00",
+		 "What a week we have had!",
+		 null,
+		 "To all our new members welcome, and to those returning, welcome back. we have had a strong start to the year! Our summer program was sucessful, holding screenings, showcases and various social events. Club's day was definitly a highlight of the week.<br><br>If you have not alredy done so, please join our Discord Server, discord.swinanime.net!",
+		 "http://discord.swinanime.net/",
+		 "Join our Discord Server today!",
+		 "J.P. Galovic"
+		)
+;
+
+-- Misc Article Linker, Links Misc Articles to Newsletters, Version 1.0.0, FEB18, JPGalovic
 INSERT INTO ARTICLE_LINKER(PUBLICATION_DATE, ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_TYPE_ID) VALUES
-		("2018-02-23 12-00-00", "2018-02-22 12-00-00", "SwinAnime x S.T.A.R.S. Wants You", 2)
+		("2018-02-23 12:00:00", "2018-02-22 12:00:00", "SwinAnime x S.T.A.R.S. Wants You", 2)
+	,	("2018-03-02 12:00:00", "2018-02-22 12:00:00", "SwinAnime x S.T.A.R.S. Wants You", 2)
+;-- Showcase Article Linker, Links Showcase Articles to Newsletters, Version 1.0.0, FEB18, JPGalovic
+INSERT INTO ARTICLE_LINKER(PUBLICATION_DATE, ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_TYPE_ID) VALUES
+		("2018-02-23 12:00:00", "2018-02-22 12:00:00", "SwinAnime x S.T.A.R.S. Showcase", 1)
+;-- Screening Article Linker, Links Screening Articles to Newsletters, Version 1.0.0, MAR18, JPGalovic
+INSERT INTO ARTICLE_LINKER(PUBLICATION_DATE, ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_TYPE_ID) VALUES
+		("2018-03-02 12:00:00", "2018-03-02 12:00:00", "Screening Sessions Week 2!", 1)
+;-- Headline Article Linker, Headline Misc Articles to Newsletters, Version 1.0.0, FEB18, JPGalovic
+INSERT INTO ARTICLE_LINKER(PUBLICATION_DATE, ARTICLE_DATE, ARTICLE_HEADLINE, ARTICLE_TYPE_ID) VALUES
+		("2018-02-23 12:00:00", "2018-02-22 12:00:00", "Welcome to all our new Members!", 0)
+	,	("2018-03-02 12:00:00", "2018-03-02 12:00:00", "What a week we have had!", 0)
 ;

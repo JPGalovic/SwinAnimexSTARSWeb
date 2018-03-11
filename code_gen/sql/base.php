@@ -5,7 +5,7 @@
 	// db: refernce to database variable
 	function open_db(&$db)
 	{
-		$db = new MySQLi('localhost', 'swinan01', 'qdVbzdb498', 'swinan01_smart_web');
+		$db = new MySQLi('localhost', 'swinan01', 'EgLcxZ8uHT', 'swinan01_smart_web');
 		if($db->connect_errno > 0)
 			send_error($db->connect_errno+1000,'Unable to connect to Website Database, ['.$DB->connect_errno.', '.$DB->connect_error.']');
 	}
@@ -33,5 +33,3 @@
 	}
 
 ?>
-
-

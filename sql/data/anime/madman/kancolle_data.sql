@@ -5,7 +5,7 @@ INSERT INTO ANIME(ANIME_TITLE, NUMBER_OF_EPISODES, ANIME_SYNOPSIS, ANIME_DESCRIP
 		 "Fubuki is a Special Type Destroyer who has just been assigned to the Naval District. With a grand total of zero battles under her belt, she's sure to sink fast under the pressure of expectation. Luckily, she's grouped with Torpedo Squadron Three, and they're ready to support their new comrade. Together, they'll prove they have what it takes to defend the ocean and win it all for humanity!",
 		 "Fubuki is a Special Type Destroyer who has just been assigned to the Naval District. With a grand total of zero battles under her belt, she's sure to sink fast under the pressure of expectation.",
 		 "madman",
-		 NULL
+		 null
 		)
 ;
 

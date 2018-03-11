@@ -6,7 +6,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 4,
 		 2,
 		 "Wizards of the Coast",
-		 NULL
+		 null
 		)
 ;
 

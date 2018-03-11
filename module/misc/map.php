@@ -1,40 +1,43 @@
 <?php
+	// Map generator, Version 1.0.2, MAR18, JPGalovic
+	// Generates map based on a given location id
 	if(!isset($location_id))
 		$location_id = 0;
-	include('sql/events/get_event_location.php');
-	if($get_event_location_ok)
+	
+	$location_data = get_location_data($location_id);
+	if($location_data->num_rows > 0)
+		$location_row = $location_data->fetch_assoc();
+
+	if(isset($location_row))
 	{
-		$event_location_row = $get_event_location_data->fetch_assoc();
-		
-		$lat = $event_location_row['LAT'];
-		$lng = $event_location_row['LNG'];
-		$zoom = $event_location_row['ZOOM'];
+		$lat = $location_row['LAT'];
+		$lng = $location_row['LNG'];
+		$zoom = $location_row['ZOOM'];
 		if(!isset($location_text))
 		{
 			$location_text = '';
-			if(!($event_location_row['CAMPUS'] == NULL))
+			if(!($location_row['CAMPUS'] == null))
 			{
-				$location_text = $location_text.$event_location_row['CAMPUS'];
-				if(!($event_location_row['ROOM'] == NULL))
+				$location_text = $location_text.$location_row['CAMPUS'];
+				if(!($location_row['ROOM'] == null))
 				{
-					$location_text = $location_text.' - '.$event_location_row['ROOM'];
-					if(!($event_location_row['ADDRESS'] == NULL))
+					$location_text = $location_text.' - '.$location_row['ROOM'];
+					if(!($location_row['ADDRESS'] == null))
 					{
-						$location_text = $location_text.', '.$event_location_row['ADDRESS'];
+						$location_text = $location_text.', '.$location_row['ADDRESS'];
 					}
 				}
-				else if(!($event_location_row['ADDRESS'] == NULL))
+				else if(!($location_row['ADDRESS'] == null))
 				{
-					$location_text = $location_text.', '.$event_location_row['ADDRESS'];
+					$location_text = $location_text.', '.$location_row['ADDRESS'];
 				}
 			}
-			else if(!($event_location_row['ADDRESS'] == NULL))
+			else if(!($location_row['ADDRESS'] == null))
 			{
-				$location_text = $event_location_row['ADDRESS'];
+				$location_text = $location_row['ADDRESS'];
 			}
 		}
-
-		// Display Map, Half Width
+		
 		echo('<section class="half" id="location_map">');
 			echo('<div id="map"></div>');
 

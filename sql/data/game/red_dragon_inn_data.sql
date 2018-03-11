@@ -6,7 +6,7 @@ INSERT INTO GAME (GAME_TITLE, GAME_DESCIRPTION, MIN_NUMBER_OF_PLAYERS, MAX_NUMBE
 		 8,
 		 4,
 		 "Slugfest Games",
-		 NULL
+		 null
 		)
 ;
 

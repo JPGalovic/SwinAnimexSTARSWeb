@@ -2,7 +2,7 @@
 INSERT INTO COMPANY (COMPANY_NAME, COMPANY_URL, IS_SPONSOR) VALUES
 		("Final Form Games", "http://www.finalformgames.com", FALSE)
 	,	("Wizards of the Coast", "http://company.wizards.com", FALSE)
-	,	("Indie Boards & Cards, La Mame Games", NULL, FALSE)
+	,	("Indie Boards & Cards, La Mame Games", null, FALSE)
 	,	("Fantasy Flight Games", "https://www.fantasyflightgames.com/", FALSE)
 	,	("Games Workshop", "https://www.games-workshop.com/", FALSE)
 	,	("Plaid Hat Games", "https://www.plaidhatgames.com/", FALSE)
