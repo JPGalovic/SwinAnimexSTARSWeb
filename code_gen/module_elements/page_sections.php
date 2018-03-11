@@ -108,11 +108,11 @@
 			if($full_url)
 				echo('http://swinanime.net/');
 		if($anime_title != null && $session_type != null && $session_number != null)
-			echo('image/anime/'.remove_illegal_char(strtolower($anime_title)).'/session/'.$session_type.$session_number.'.jpg" onerror="this.src='."'".'image/event/'.remove_illegal_char(strtolower($event_title)).'.png'."'".'" alt="'.$anime_title.'" width="'.$width.'">');
+			echo('image/anime/'.remove_illegal_char(strtolower($anime_title)).'/session/'.$session_type.$session_number.'.jpg" onerror="this.src='."'".'image/misc/no_event_image.png'."'".'" alt="'.$anime_title.'" width="'.$width.'">');
 		else if ($game_title != null)
-			echo('image/game/'.remove_illegal_char(strtolower($game_title)).'.png" alt="'.$game_title.'" onerror="this.src='."'".'image/event/'.remove_illegal_char(strtolower($event_title)).'.png'."'".'" width="'.$width.'">');
+			echo('image/game/'.remove_illegal_char(strtolower($game_title)).'.png" alt="'.$game_title.'" onerror="this.src='."'".'image/misc/no_event_image.png'."'".'" width="'.$width.'">');
 		else
-			echo('image/event/'.remove_illegal_char(strtolower($event_title)).'.png" alt="'.$event_title.'" width="'.$width.'">');
+			echo('image/event/'.remove_illegal_char(strtolower($event_title)).'.png" onerror="this.src='."'".'image/misc/no_event_image.png'."'".'" alt="'.$event_title.'" width="'.$width.'">');
 	}
 
 	// Generate Event Tile
