@@ -17,6 +17,7 @@
 	echo('<head>');
 		echo('<meta charset="utf-8">');
 		echo('<meta name="viewport" content="width=device-width, initial-scale=1">');
+		facebook_metadata();
 		echo('<title>SwinAnime</title>');
 		echo('<link href="'.auto_version('css/main.css').'" rel="stylesheet" type="text/css">');
 		echo('<link href="image/icon.png" rel="icon">');
