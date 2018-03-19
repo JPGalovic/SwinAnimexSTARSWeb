@@ -15,19 +15,35 @@
 			'app_id' => '2101063340108182',
 			'app_secret' => 'de05c47c3c5e61a8d4f50d7227a0aa01',
 			'default_graph_version' => 'v2.10',
-			'default_access_token' => 'EAAd25ZB4JqZAYBAMsqjEIoXnwuwNdon7SCDWxSzSuymIZBgwWwHQC1yR5XxMJqvTLZB92lE2sJIriVwm8d6SIncPDtj5YCwVYTMwv3RMK1szIQITZBRPyNItWqO9q4wZB29Qd99f4nZBC0SU3tiJfBINVoiRup5kLzk2fTO0fd3hwTzFZAG4zZBPCnOT8DQchPZA7cnpZBhXQn6OQZDZD'
+			'default_access_token' => 'EAAd25ZB4JqZAYBACSwtYNWGO5rHcgJd4urVZCZCTqKcPoguq3ZCCDK4w3ZAWzkypJVgpF4Yias6PUZClF2ZCSkLdxBQcJ9Vo7OZCn8m7EjKzHJ1isgKhQCRzOnwrZBeqaw0pXLxCepd0wSfnItsKQZB5fKDojxIlofrdCpmUBVtSWZAwrkPKzsZABsIsfugWZBmOZBYSikudeD7CKs7twZDZD'
 		]);
 	}
 
 	$fb = fb_login();
 
+	function fb_image($event_title, $fetaured_title = null, $session_type = null, $session_number = null)
+	{
+		$image_url = 'http://swinanime.net/'; //base url
+		
+		if($fetaured_title != null && $session_type != null && $session_number != null) // title, session and type number, means title is anime
+			$image_url = $image_url.'image/anime/'.remove_illegal_char(strtolower($fetaured_title)).'/session/'.$session_type.$session_number.'.jpg';
+		else if($fetaured_title != null) // no session and type, means title is game
+			$image_url = $image_url.'image/game/'.remove_illegal_char(strtolower($fetaured_title)).'.png';
+		else
+			$image_url = $image_url.'image/event/'.remove_illegal_char(strtolower($event_title)).'.png';
+		
+		echo($image_url);
+		return $image_url;
+	}
+
 	// Facebook Posting Function, Posts to Facebook Page
-	function fb_post($msg, $date, $link = null)
+	function fb_post($msg, $date, $link = null, $image = null)
 	{
 		global $fb;
-		if($link != null)
+		if($link != null && $image != null)
 			$data = array(
 				'link' => $link,
+				'picture' => $image,
 				'message' => $msg,
 				'scheduled_publish_time' => $date,
 				'published' => 'false'
@@ -53,15 +69,19 @@
 		}
 	}
 
-	function fb_post_check($msg, $date, $link = null)
+	function fb_post_check($msg, $date, $link = null, $image = null)
 	{
 		echo('<p> Post to be posted on '.date('Y-m-d H:i:s', $date).'<br>Messae: '.$msg);
 		if($link != null)
 			echo('<br>Link: <a href="'.$link.'">'.$link.'</a>');
+		if($image != null)
+			echo('<br>Image URL: <a href="'.$image.'">'.$image.'</a>');
+		echo('</p>');
+		
 		global $debug;
 		
 		if($debug == false) // not debug, post msg
-			fb_post($msg, $date, $link);
+			fb_post($msg, $date, $link, $image);
 	}
 
 	// Post Generation
@@ -86,7 +106,12 @@
 
 		$link = 'http://swinanime.net/index.php?page=event_details&event_date='.$event_time;
 		
-		fb_post_check($msg, $post_time, $link);
+		if(isset($anime_event_row))
+			$image = fb_image($event_row['EVENT_TITLE'], $anime_event_row['ANIME_TITLE'], $anime_event_row['SESSION_TYPE_ID'], $anime_event_row['SESSION_NUMBER']);
+		else
+			$image = fb_image($event_row['EVENT_TITLE']);
+		
+		fb_post_check($msg, $post_time, $link, $image);
 	}
 
 	function fb_game_event_post($event_time, $event_row, $post_time)
@@ -114,8 +139,12 @@
 		$msg = 'In the next few days we will be running our event, '.$title.', come along to '.event_card_location($event_row['CAMPUS'], $event_row['ROOM'], $event_row['ADDRESS'], $event_row['LAT'], $event_row['LNG']).' in you want to join in on the fun! For more info see the event below!';
 
 		$link = 'http://swinanime.net/index.php?page=event_details&event_date='.$event_time;
+		if(isset($game_event_row))
+			$image = fb_image($event_row['EVENT_TITLE'], $game_event_row['GAME_TITLE']);
+		else
+			$image = fb_image($event_row['EVENT_TITLE']);
 		
-		fb_post_check($msg, $post_time, $link);
+		fb_post_check($msg, $post_time, $link, $image);
 	}
 
 	function fb_general_event_post($event_time, $event_row, $post_time)
@@ -123,8 +152,9 @@
 		$msg = 'In the next few days we will be running our event, '.$event_row['EVENT_TITLE'].', come along to '.event_card_location($event_row['CAMPUS'], $event_row['ROOM'], $event_row['ADDRESS'], $event_row['LAT'], $event_row['LNG']).' in you want to join in on the fun! For more info see the event below!';
 
 		$link = 'http://swinanime.net/index.php?page=event_details&event_date='.$event_time.'';
+		$image = fb_image($event_row['EVENT_TITLE']);
 		
-		fb_post_check($msg, $post_time, $link);
+		fb_post_check($msg, $post_time, $link, $image);
 	}
 	
 	function fb_event_posts($n_events = 8) // Pre process next 8 event worth of FB Posts (not event)
@@ -180,5 +210,5 @@
 		}	
 	}
 
-	fb_event_posts();
+	fb_event_posts(1);
 ?>	
