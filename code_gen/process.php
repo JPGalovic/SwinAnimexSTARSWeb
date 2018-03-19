@@ -23,4 +23,11 @@
 		$string = str_replace($illegal, '', $string);
 		return($string);
 	}
+
+	// Replaces spaces from a string with spaces.
+	function replace_space($string)
+	{
+		$string = str_replace(' ', '%20', $string);
+		return($string);
+	}
 ?>

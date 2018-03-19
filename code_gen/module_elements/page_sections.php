@@ -422,7 +422,7 @@
 		{
 			$event_date = $_GET['event_date'];
 			
-			$event_data = get_event_data(null, $event_date);
+			$event_data = get_event_data($event_date, null, false);
 			
 			if($event_data->num_rows > 0)
 			{
@@ -430,14 +430,14 @@
 				switch($event_row['EVENT_TYPE_DESCRIPTION'])
 					{
 						case 'Screening Session Event':
-							$anime_event_data = get_anime_event_data($event_time);
+							$anime_event_data = get_anime_event_data($event_date);
 							if($anime_event_data->num_rows > 0)
 								$anime_event_row = $anime_event_data->fetch_assoc();
 						
 							if(isset($anime_event_row))
-								$image = image_url($event_row['EVENT_TITLE'], $anime_event_row['ANIME_TITLE'], $anime_event_row['SESSION_TYPE_ID'], $anime_event_row['SESSION_NUMBER']);
+								return image_url($event_row['EVENT_TITLE'], $anime_event_row['ANIME_TITLE'], $anime_event_row['SESSION_TYPE_ID'], $anime_event_row['SESSION_NUMBER']);
 							else
-								$image = image_url($event_row['EVENT_TITLE']);
+								return image_url($event_row['EVENT_TITLE']);
 						case 'Social Episode Event':
 						case 'Workshop Event':
 						case 'General Meeting':
@@ -446,7 +446,7 @@
 						case 'Roleplay Event':
 						case 'Tabletop Event':
 						case 'Video Game Event':
-							$game_event_data = get_game_event_data($event_time);
+							$game_event_data = get_game_event_data($event_date);
 							
 							if($game_event_data->num_rows > 0)
 							{

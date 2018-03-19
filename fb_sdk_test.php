@@ -6,7 +6,6 @@
 
 	$debug = false;
 	
-
 	include('code_gen/include.php');
 
 	function fb_login()
@@ -15,7 +14,7 @@
 			'app_id' => '2101063340108182',
 			'app_secret' => 'de05c47c3c5e61a8d4f50d7227a0aa01',
 			'default_graph_version' => 'v2.10',
-			'default_access_token' => 'EAAd25ZB4JqZAYBACSwtYNWGO5rHcgJd4urVZCZCTqKcPoguq3ZCCDK4w3ZAWzkypJVgpF4Yias6PUZClF2ZCSkLdxBQcJ9Vo7OZCn8m7EjKzHJ1isgKhQCRzOnwrZBeqaw0pXLxCepd0wSfnItsKQZB5fKDojxIlofrdCpmUBVtSWZAwrkPKzsZABsIsfugWZBmOZBYSikudeD7CKs7twZDZD'
+			'default_access_token' => 'EAAd25ZB4JqZAYBABeWvz5mmwyCsWCZB50SK34S33hPGIbQbQyAJhaRNPdZCNZAt1rWVobiktf8x8gGMqc43eYLA7Lm4kF26jvPaH1j2pQBa1MufPRcxRBUXt7Nc6cLmSaATNTkz2koBZBKm3mt9C3NoPPD4jinH2826yBZBGBI4pgZDZD'
 		]);
 	}
 
@@ -23,17 +22,32 @@
 
 	function fb_image($event_title, $fetaured_title = null, $session_type = null, $session_number = null)
 	{
-		$image_url = 'http://swinanime.net/'; //base url
+		$url_base = 'http://swinanime.net/'; //base url
 		
 		if($fetaured_title != null && $session_type != null && $session_number != null) // title, session and type number, means title is anime
-			$image_url = $image_url.'image/anime/'.remove_illegal_char(strtolower($fetaured_title)).'/session/'.$session_type.$session_number.'.jpg';
+			$image_url = 'image/anime/'.replace_space(remove_illegal_char(strtolower($fetaured_title))).'/session/'.$session_type.$session_number.'.jpg';
 		else if($fetaured_title != null) // no session and type, means title is game
-			$image_url = $image_url.'image/game/'.remove_illegal_char(strtolower($fetaured_title)).'.png';
+			$image_url = 'image/game/'.replace_space(remove_illegal_char(strtolower($fetaured_title))).'.png';
 		else
-			$image_url = $image_url.'image/event/'.remove_illegal_char(strtolower($event_title)).'.png';
+			$image_url = 'image/event/'.replace_space(remove_illegal_char(strtolower($event_title))).'.png';
 		
-		echo($image_url);
-		return $image_url;
+		echo('<a href="'.$url_base.$image_url.'">Assigned Image: '.$image_url.'</a><br>');
+		
+		// Check for missing image pharse 1, replace with general image.
+		$headers = get_headers($url_base.$image_url, 1);
+		if($headers[0] != "HTTP/1.1 200 OK")
+		{
+			$image_url = 'image/event/'.replace_space(remove_illegal_char(strtolower($event_title))).'.png';
+			echo('<a href="'.$url_base.$image_url.'">Alt Image: '.$image_url.'</a><br>');
+		}
+			
+		
+		// Check for mising image pharse 2, replace with image coming.
+		$headers = get_headers($url_base.$image_url, 1);
+		if($headers[0] != "HTTP/1.1 200 OK")
+			$image_url = 'image/misc/no_event_image.png';
+		
+		return $url_base.$image_url;
 	}
 
 	// Facebook Posting Function, Posts to Facebook Page
@@ -210,5 +224,5 @@
 		}	
 	}
 
-	fb_event_posts(1);
+	fb_event_posts(20);
 ?>	
